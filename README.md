@@ -6,6 +6,12 @@ Designed for static site generators and content management systems, Codebase is 
 
 Plus, Codebase pairs well with AlpineJS.
 
+***
+
+Docs: https://codebase-frontend-library.github.io/codebase-5/
+
+***
+
 * Current version: 1.0.0
 * CSS filesize: 88 KB
 * Licence: MIT
