@@ -1,0 +1,52 @@
+// UTILITIES: BUTTONS
+// ~~~~~~~~~~~~~~~~~~
+
+// NOTE: for the bacic button styling (including `.btn`), see `01_basics/_form-elements.scss`
+
+@use "../00_setup/default-variables" as *;
+
+// Button size
+.btn {
+  &-sm {
+    height: $button-size-sm;
+    padding: $button-padding-sm;
+  }
+  &-lg {
+    height: $button-size-lg;
+    padding: $button-padding-lg;
+  }
+}
+// Button icon (makes square)
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  height: $button-size;
+  min-width: $button-size;
+  &.btn-sm {
+    height: $button-size-sm;
+    min-width: $button-size-sm;
+  }
+  &.btn-lg {
+    height: $button-size-lg;
+    min-width: $button-size-lg;  
+  }
+
+}
+
+// UI colors
+@each $key, $val in $ui-setup-color {
+  .btn-#{$key} {
+    border-color: nth($val, 1);
+    background-color: nth($val, 1);
+    color: nth($val, 2);
+    &:hover,
+    &:active,
+    &.active {
+      border-color: mix(black, nth($val, 1), 36) !important;
+      background-color: mix(black, nth($val, 1), 36) !important;
+      color: nth($val, 3);
+    }
+  }
+}

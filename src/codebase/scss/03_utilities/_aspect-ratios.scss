@@ -1,0 +1,156 @@
+// // UTILITIES: ASPECT RATIOS
+// // ~~~~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// @mixin aspect-ratio {
+//   // Common images
+//   &-16x9 {
+//     aspect-ratio: 16 / 9;
+//   }
+//   &-21x9 {
+//     aspect-ratio: 21 / 9;
+//   }
+//   &-24x9 {
+//     aspect-ratio: 24 / 9;
+//   }
+//   // Squared tiles
+//   &-1x1 { aspect-ratio: 1 / 1; }
+//   &-1x2 { aspect-ratio: 1 / 2; }
+//   &-1x3 { aspect-ratio: 1 / 3; }
+//   &-1x4 { aspect-ratio: 1 / 4; }
+//   &-1x5 { aspect-ratio: 1 / 5; }
+//   &-1x6 { aspect-ratio: 1 / 6; }
+
+//   &-2x1 { aspect-ratio: 2 / 1; }
+//   &-3x1 { aspect-ratio: 3 / 1; }
+//   &-4x1 { aspect-ratio: 4 / 1; }
+//   &-5x1 { aspect-ratio: 5 / 1; }
+//   &-6x1 { aspect-ratio: 6 / 1; }
+
+//   &-2x3 { aspect-ratio: 2 / 3; }
+//   &-3x2 { aspect-ratio: 3 / 2; }
+
+//   &-3x4 { aspect-ratio: 3 / 4; }
+//   &-4x3 { aspect-ratio: 4 / 3; }
+
+//   &-2x5 { aspect-ratio: 2 / 5; }
+//   &-5x2 { aspect-ratio: 5 / 2; }
+
+//   &-3x5 { aspect-ratio: 3 / 5; }
+//   &-5x3 { aspect-ratio: 5 / 3; }
+
+//   &-4x5 { aspect-ratio: 4 / 5; }
+//   &-5x4 { aspect-ratio: 5 / 4; }
+
+//   &-6x5 { aspect-ratio: 6 / 5; }
+//   &-5x6 { aspect-ratio: 5 / 6; }
+// }
+
+// .aspect-ratio {
+//   @include aspect-ratio;
+// }
+
+// @each $mq-key, $mq-value in $mq-width {
+//   @include break-min(#{$mq-value}) {
+//     .#{$mq-key}\:aspect-ratio {
+//       @include aspect-ratio;
+//     }
+//   }
+// }
+
+// [class*="aspect-ratio"] > * {
+//   height: 100%;
+//   max-height: 100%;
+// }
+
+[class*="aspect-ratio"] {
+  display: flex;
+  & > * {
+    width: 100%;
+  }
+  &:before {
+    content: '';
+    float: left;
+  }
+  &:after {
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin aspect-ratio {
+  // Images
+  &-16x9:before {
+    padding-top: 56.25%;
+  }
+  &-21x9:before {
+    padding-top: 42.857143%;
+  }
+  &-24x9:before {
+    padding-top: 37.5%;
+  }
+}
+
+@mixin aspect-ratio-square-tiles {
+  &-1x1:before {
+    padding-top: 100%;
+  }
+  &-1x2:before {
+    padding-top: 200%;
+  }
+  &-2x1:before {
+    padding-top: 50%;
+  }
+  &-3x4:before {
+    padding-top: 133.333333%;
+  }
+  &-4x3:before {
+    padding-top: 75%;
+  }
+
+  // Squared tiles
+  &-1x1:before { padding-top: 100%; }
+  &-1x2:before { padding-top: 200%; }
+  &-1x3:before { padding-top: 300%; }
+  &-1x4:before { padding-top: 400%; }
+  &-1x5:before { padding-top: 500%; }
+  &-1x6:before { padding-top: 600%; }
+
+  &-2x1:before { padding-top: 50%; }
+  &-3x1:before { padding-top: 3.333333%; }
+  &-4x1:before { padding-top: 25%; }
+  &-5x1:before { padding-top: 20%; }
+  &-6x1:before { padding-top: 16.666665%; }
+
+  &-2x3:before { padding-top: 150%; }
+  &-3x2:before { padding-top: 66.666667%; }
+
+  &-3x4:before { padding-top: 133.333333%; }
+  &-4x3:before { padding-top: 75%; }
+
+  &-2x5:before { padding-top: 250%; }
+  &-5x2:before { padding-top: 40%; }
+
+  &-3x5:before { padding-top: 166.666667%; }
+  &-5x3:before { padding-top: 60%; }
+
+  &-4x5:before { padding-top: 125%; }
+  &-5x4:before { padding-top: 80%; }
+
+  &-6x5:before { padding-top: 120%; }
+  &-5x6:before { padding-top: 83.333333%; }
+}
+
+.aspect-ratio {
+  @include aspect-ratio;
+  @include aspect-ratio-square-tiles;
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:aspect-ratio {
+      @include aspect-ratio-square-tiles;
+    }
+  }
+}

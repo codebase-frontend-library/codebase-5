@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Animations - Codebase</title>
+
+  <link href="/codebase-5/prism/prism.css" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.0" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-5/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-5/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-5/site.webmanifest">
+  <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      max-width: 100vw;
+    }
+    main h2, main h3, main h4, main h5, main h6 {
+      scroll-margin-top: 72px;
+    }
+    #site-top-bar {
+      height: 56px;
+      z-index: 990;
+    }
+    #site-title {
+      display: block;
+      font-size: 1.325rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+
+    #site-title,
+    #site-footer-title {
+      color: #9400d3;
+    }
+    #site-title:hover,
+    #site-footer-title:hover {
+      color: #5f0087;
+    }
+
+    #site-title svg,
+    #site-footer-title svg {
+      fill: #9400d3;
+    }
+    #site-title:hover svg,
+    #site-footer-title:hover svg {
+      fill: #5f0087;
+    }
+
+    @media (max-width: 767px) {
+      #side-menu-wrap {
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #site-page {
+        grid-template-columns: 256px calc(100vw - 256px);
+      }
+      #site-navigation > div {
+        top: 57px;
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #site-page {
+        grid-template-columns: 256px auto 256px;
+      }
+      #docs-article {
+        grid-template-columns: auto 256px;
+      }
+    }
+
+    #toc ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    #toc ul ul {
+      padding-left: 1rem;
+    }
+    #toc li {
+      margin-bottom: 1rem;
+    }
+    #toc a {
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 1279px) {
+      #toc ul ul {
+        display: none;
+      }
+    }
+
+    #docs-hero-feature {
+      display: block;
+      max-width: 280px;
+      margin: auto;
+    }
+    @media (min-width: 1024px) {
+      #docs-hero-feature {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+
+    /* Examples */
+    svg tspan {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .month span {
+      width: calc(100% / 7);
+      margin: 0.5rem 0;
+    }
+  </style>
+
+  <!-- Alpine and Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    let viewportWidth = window.innerWidth;
+    
+    Alpine.store('docsNav', {
+      open: window.innerWidth >= 768,
+      belowBP: window.innerWidth < 768,
+      menu1open: false,
+      menu2open: false,
+      menu3open: false,
+      menu4open: false,
+      menu5open: false,
+      menu6open: false,
+      menu7open: false,
+
+      checkURL() {
+        if (window.location.href.indexOf('1-getting-started') > -1) {
+          this.menu1open = true
+        }
+        if (window.location.href.indexOf('2-classless-basics') > -1) {
+          this.menu2open = true
+        }
+        if (window.location.href.indexOf('3-layout-utilities') > -1) {
+          this.menu3open = true
+        }
+        if (window.location.href.indexOf('4-decoration-utilities') > -1) {
+          this.menu4open = true
+        }
+        if (window.location.href.indexOf('5-typographic-utilities') > -1) {
+          this.menu5open = true
+        }
+        if (window.location.href.indexOf('6-simple-components') > -1) {
+          this.menu6open = true
+        }
+        if (window.location.href.indexOf('7-alpinejs-components') > -1) {
+          this.menu7open = true
+        }
+      },
+
+      reset() {
+        let currentWidth = window.innerWidth;
+
+        // Ignoring height changes (e.g. iPhone Safari top/bottom bars)
+        if (currentWidth != viewportWidth) {
+          // width has changed
+          
+          viewportWidth = currentWidth;
+          
+          if (viewportWidth >= 768) {
+            this.open = true,
+            this.belowBP = false
+          } else {
+            this.open = false,
+            this.belowBP = true
+          }
+        }
+      }
+
+    })
+
+  })
+</script>
+
+<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+  <div class="w-xxl mx-auto h-100% relative flex flex-middle">
+
+    <!-- Navicon -->
+    <div
+      x-data
+      @resize.window.throttle="$store.docsNav.reset()"
+    >
+      <button
+        x-cloak
+        class="btn-icon rounded-full ml-1"
+        @click="$store.docsNav.open = true"
+        aria-label="Site menu"
+        :aria-expanded="$store.docsNav"
+        x-show="$store.docsNav.belowBP"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+    </div>
+  
+    <div class="p-2">
+      <a
+        id="site-title"
+        class="mb-0 ml-1 t-decoration-none"
+        :class="scrollAtTop ? 'enlarged' : ''"
+        href="/codebase-5/"
+        tabindex="1"
+      >
+        <!-- Codebase logo-->
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/>
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">Codebase</span>
+      </a>
+    </div>
+  
+    <div class="grow">
+      <div class="menu flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      </div>  
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          <p class="h4 lg:mt-3">Documentation</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Getting started</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    id="docs-dropdown-1"
+    x-show="$store.docsNav.menu1open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    </ul>
+  </div>  
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu2open = !$store.docsNav.menu2open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu2open" @keyup.escape="$store.docsNav.menu2open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu2open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Classless basics</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu2open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu3open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Layout</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu3open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu4open = !$store.docsNav.menu4open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu4open" @keyup.escape="$store.docsNav.menu4open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu4open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Decoration</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu4open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu5open = !$store.docsNav.menu5open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu5open" @keyup.escape="$store.docsNav.menu5open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu5open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Typography</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu5open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
+    <svg
+      class="transition-all-300ms" 
+      :class="$store.docsNav.menu6open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Simple (CSS only)</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu6open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu7open = !$store.docsNav.menu7open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu7open" @keyup.escape="$store.docsNav.menu7open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu7open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">With AlpineJS</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu7open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    </ul>
+  </div>
+</div>
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        
+        <div class="my-1">AlpineJS components</div>
+        
+        <h1 class="mb-0 t-heavy t-primary">Animations</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      <p>Together, Codebase and AlpineJS can handle many basic animations – several examples are below.</p>
+<p>Codebase animation components are about adding and removing Codebase CSS utility classes in response to a trigger event (click, hover, or scroll). Utilities such as <code>translate-*</code> (i.e. move), <code>rotate-*</code>, <code>scale-*</code>, and <code>opacity-*</code> (for fading) are often used for CSS based animations. However, numeric utilities such as for dimensions, margins, paddings, and colors can also be animated.</p>
+<p><em>Codebase is not a full animation library, and neither is Alpine.</em> If you want to develop a richly animated interactive website, there are several frameworks and platforms out there that you can use. Some require payment, while some are free. Here are a few examples:</p>
+<ul>
+<li><a href="https://greensock.com/">GreenSock Animation Platform (GSAP)</a> – a JavaScript toolset for SVG, WebGL, and Canvas animations</li>
+<li><a href="https://animejs.com/">Anime.js</a> – a JavaScript animation engine</li>
+<li><a href="https://michalsnik.github.io/aos/">Animate on Scroll (AOS)</a> – a JavaScript/CSS library for triggering animations when you scroll down to them</li>
+</ul>
+<p>Also, “no code” website builders (such as <a href="https://webflow.com/">Webflow</a> and <a href="https://www.wix.com/">Wix</a>) have some element animation effects built in.</p>
+<p>Codebase animations can be used in components such as <a href="/codebase-5/docs/7-alpinejs-components/collapse">collapse</a>, <a href="/codebase-5/docs/7-alpinejs-components/dropdowns">dropdowns</a>, <a href="/codebase-5/docs/7-alpinejs-components/modals">modals</a>, and <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> panels. They can also be used for adding visual interest to block elements on a homepage of landing page.</p>
+<h2 id="animation-trigger-events" tabindex="-1">Animation trigger events</h2>
+<p>There are two options:</p>
+<ol>
+<li><strong>On click</strong> (or on tap, for touch-screen devices). “On click” triggered animations can be tapped repeatedly and they will be triggered every time.</li>
+<li><strong>On scroll into view</strong> (using the <a href="https://alpinejs.dev/plugins/intersect">Alpine Intersect plugin</a>). “On scroll” animations can be set to trigger once, when the visitor scrolls down to them the first time, or they can be set to trigger repeatedly whenever the visitor scrolls down or up through them. I.e. When the visitor scrolls beyond this animation, it can be reset so that it is ready to be triggered again.</li>
+</ol>
+<h3 id="on-click-(on-tap)" tabindex="-1">On click (on tap)</h3>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-1"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-1"
+    class="w-50% p-2 bg-green-200 transition-transform-600ms"
+    :class="activated && 'translate-right-100%'"
+  >
+    <strong>Click me, and I will move.</strong> Click me again, and I will return to my original position.
+  </div>
+</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = !activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keyup.escape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated &amp;&amp; <span class="token punctuation">'</span>translate-right-100%<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Click me, and I will move.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> Click me again, and I will return to my original position.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="on-hover-(a.k.a.-mouseover)-is-not-recommended-for-animations" tabindex="-1">On hover (a.k.a. mouseover) is not recommended for animations</h3>
+<p>While it is also possible to animate <strong>on hover</strong> (a.k.a. on mouseover), it is not recommended im most situations because you also have to support touch screens. “On hover” behaves as a <em>tap plus focus</em> for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away again (or double tap) to remove the focus. That will confuse your visitors.</p>
+<p>Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – the same experience whether using a touch screen or a pointing device (mouse or other).</p>
+<p>(“On hover” can sometimes be used in situations where there is little or no animations, and where leaving the focus behind may not matter so much – e.g. on dropdown menus and tooltips.)</p>
+<h3 id="on-scroll-into-view" tabindex="-1">On scroll into view</h3>
+<div class="mb-3">
+<div
+  x-data="{ activated: false }"
+  x-intersect.enter="activated = true"
+>
+  <div
+    id="panel-3"
+    class="w-50% p-2 bg-green-200 transition-transform-600ms"
+    x-show="activated"
+    x-transition:enter="translate-right-100%"
+  >
+    When you scroll down to me, I move.
+  </div>
+</div>
+</div>
+<p><em>The scroll animation above occurs once.</em> To see it happen again, refresh your browser.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-intersect:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = true<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-3<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-right-100%<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    When you scroll down to me, I move.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="animation-timing" tabindex="-1">Animation timing</h2>
+<p>Besides the three trigger events documented above, Cosebase also has seversl CSS built-in <code>transition</code> timings, that you can use to control faster or slower animations. Animation speeds are controlled in <em>milliseconds</em> (ms).</p>
+<ul>
+<li>Transition all:<br><code>transition-all-150ms</code> / <code>transition-all-300ms</code> / <code>transition-all-600ms</code> / <code>transition-all-900ms</code> / <code>transition-all-1200ms</code> / <code>transition-all-1500ms</code> / <code>transition-all-1800ms</code> / <code>transition-all-2400ms</code></li>
+<li>Transition CSS transforms only:<br><code>transition-transform-150ms</code> / <code>transition-transform-300ms</code> / <code>transition-transform-600ms</code> / <code>transition-transform-900ms</code> / <code>transition-transform-1200ms</code> / <code>transition-transform-1500ms</code> / <code>transition-transform-1800ms</code> / <code>transition-transform-2400ms</code></li>
+</ul>
+<p>You’ve seen <code>transition-transform-600ms</code> being used in the demo examples above.</p>
+<h2 id="animation-utilities" tabindex="-1">Animation utilities</h2>
+<h3 id="translate-(move)" tabindex="-1">Translate (move)</h3>
+<ul>
+<li><code>translate-up-100%</code> / <code>translate-right-100%</code> / <code>translate-down-100%</code> / <code>translate-left-100%</code> / <code>translate-0-0</code></li>
+</ul>
+<p>Example: used in the <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> component. The <code>offcanvas-panel</code> classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use <code>translate-0-0</code> to reveal it (<code>translate-0-0</code> works for both the x and y axis) .</p>
+<h3 id="grow-and-shrink" tabindex="-1">Grow and shrink</h3>
+<p>Scales both in the X and Y axis, retaining the elements proportions.</p>
+<ul>
+<li><code>scale-0</code> / <code>scale-25%</code> / <code>scale-50%</code> / <code>scale-75%</code> / <code>scale-100%</code> / <code>scale-125%</code> / <code>scale-150%</code> / <code>scale-175%</code> / <code>scale-200%</code></li>
+</ul>
+<p><code>scale-*</code> utilities scale from the center-middle of an element. If you want to grow from or shrink to an edge or corner, add in a <code>transform-origin-*</code> utility.</p>
+<p>Examples: a scale animation has been added to a <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel">dropdown</a> demo and a <a href="/codebase-5/docs/7-alpinejs-components/modals/#adding-animations-to-the-modal-panel">modal</a> demo.</p>
+<h3 id="rotate" tabindex="-1">Rotate</h3>
+<ul>
+<li><code>rotate-90</code> / <code>rotate-minus90</code> / <code>rotate-180</code> / <code>rotate-minus180</code> / <code>rotate-270</code></li>
+</ul>
+<p><code>rotate-*</code> utilities pivot aroung the center-middle of an element. If you want to pivot around a corner or center/middle of an edge, add in a <code>transform-origin-*</code> utility.</p>
+<p>Example: used in a <a href="/codebase-5/docs/7-alpinejs-components/collapse/#adding-a-rotation-animation">collapse</a> demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.</p>
+<h3 id="transform-origin" tabindex="-1">Transform origin</h3>
+<p>The transform origin of elements defalts to its center-middle. You can change that by adding one of the following <code>transform-origin-*</code> utilities:</p>
+<ul>
+<li>(Center or middle of) edges:<br><code>transform-origin-top</code> / <code>transform-origin-right</code> / <code>transform-origin-bottom</code>/ <code>transform-origin-left</code>/</li>
+<li>Corners:<br><code>transform-origin-top-right</code>/ <code>transform-origin-bottom-right</code> / <code>transform-origin-bottom-left</code> . <code>transform-origin-top-left</code></li>
+</ul>
+<p>Example: the <code>transform-origin-top</code> utility has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel">dropdown</a> animation demo.</p>
+<h3 id="opacity" tabindex="-1">Opacity</h3>
+<p><code>opacity-*</code> utilities can be used to fade or unfade elements:</p>
+<ul>
+<li><code>opacity-0</code> / <code>opacity-25%</code> / <code>opacity-50%</code> / <code>opacity-75%</code> / <code>opacity-100%</code></li>
+</ul>
+<p><strong>Note:</strong> AlpineJS has its own <a href="https://alpinejs.dev/directives/transition#customizing-opacity">opacity on x-transition</a>, that you may prefer to use.</p>
+<h3 id="flip" tabindex="-1">Flip</h3>
+<p><code>flip-*</code> utilities can be used to “turn over” cards or other block element, to show their back face:</p>
+<ul>
+<li><code>flip-x</code> – flips the element vertically (the pivot is on the x-axis)</li>
+<li><code>flip-y</code> - flips the element horizontally (the pivot is on the y-axis)</li>
+</ul>
+<p>Ordinarily, the back side of an element is a “mirror image” of the front face. If that’s not what you want a visitor to see, add the CSS utility <code>backface-hidden</code>. Then the back face will simply be transparent (so, the wrapping element background or page background will be seen instead).</p>
+<p><a href="">In some circumatances</a> you may also need to add the CSS utility <code>preserve-3d</code> to the wrapper of the flipped element.</p>
+<h3 id="fade-in%2Fout-and-scale-in%2Fout" tabindex="-1">Fade-in/out and scale-in/out</h3>
+<p>In addition to the above, a few simple <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">keyframes</a> animations have been provied. These are not for use in AlpineJS <code>x-transition</code> but they can be used in <code>x-bind:class</code> that is triggered by a change of state. These all have built-in <code>animation</code> timings of 300ms.</p>
+<ul>
+<li><code>fade-in</code> – goes from 0 to 1 (100%) opacity (transparent to fully visible)</li>
+<li><code>fade-out</code> – goes from 1 to 0 opacity (fully viible to transparent.</li>
+<li><code>scale-in</code> – goes from 75% to 100% transform scale</li>
+<li><code>scale-out</code> – goes from 100% to 75% transform scale</li>
+</ul>
+<p>These can be useful for revealing and hiding panels.</p>
+<h3 id="other-css-utilities-that-can-be-animated" tabindex="-1">Other CSS utilities that can be animated</h3>
+<p>Using Codebase CSS utility classes dimensions, margins, paddings, and colors can also be animated.</p>
+<h2 id="examples" tabindex="-1">Examples</h2>
+<h3 id="featured-image-and-text-card" tabindex="-1">Featured image and text card</h3>
+<p>With two components (one in each grid cell) that are triggered to <code>true</code> when they enter the viewport on scroll, using <code>x-intersect</code>. Refresh your browser to see it happen again.</p>
+<div class="my-6 rounded p-2 bg-green-100">
+  <div
+    class="grid gap md:equal-2-cols"
+  >
+    <div
+      class="xs:col-1 xs:row-1"
+      x-data="{ inViewport: false }"
+      x-intersect:enter="inViewport = true"
+    >
+      <div
+        class="h2 t-bold transition-all-300ms"
+        x-show="inViewport"
+        x-transition:enter-start="translate-bottom-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-bottom-100%"
+      >
+        Featured Title
+      </div>
+      <p
+        class="transition-all-600ms"
+        x-show="inViewport"
+        x-transition:enter-start="translate-bottom-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-bottom-100%"
+      >
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facere velit tempora fugiat nulla blanditiis.
+      </p>
+      <p
+        class="transition-all-900ms"
+          x-show="inViewport"
+          x-transition:enter-start="translate-bottom-100%"
+          x-transition:enter-end="translate-0-0"
+          x-transition:leave-start="translate-0-0"
+          x-transition:leave-end="translate-bottom-100%"
+      >
+        <a
+          class="btn b-black t-black hover:t-white hover:bg-black"
+          href=""
+        >
+          Find out more &rarr;
+        </a>
+      </p>
+    </div>
+        <div
+      class="xs:col-2 xs:row-1"
+      x-data="{ inViewport: false }"
+      x-intersect:enter="inViewport = true"
+    >
+      <div
+        class="flip"
+      >
+        <div
+          class="relative transition-all-1200ms preserve-3d"
+          :class="inViewport && 'flip-y'"
+        >
+          <div class="flip-y backface-hidden">
+            <img src="/codebase-5/img/pexels-erik-karits-3738673.jpg" alt="Photo by Erik Karits from Pexels">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 id="team-reveal" tabindex="-1">Team reveal</h3>
+<p>Click/tap to activate. (This could just as easily have been set to activate on scroll, using <code>x-intersect</code>.)</p>
+<div class="mb-2 b-thin rounded p-2" x-data="{ activated: false }">
+  <p>
+    <button
+      class="btn-primary"
+      @click="activated = true"
+      aria-controls="panel-5"
+      :aria-expanded="activated"
+    >Activate</button>
+    <button
+      class="btn-secondary"
+      @click="activated = false"
+      aria-controls="panel-5"
+      :aria-expanded="activated"
+      @keyup.escape="activated = true"
+    >Reset</button>
+  </p>
+  <div id="panel-5">
+    <div
+      class="h2 t-center t-heavy transition-transform-600ms"
+      x-show="activated"
+      x-transition:enter-start="opacity-0 translate-bottom-100%"
+      x-transition:enter-end="opacity-100% translate-0-0"
+    >Meet the team</div>
+    <div class="grid gap equal-2-cols sm:equal-4-cols">
+      <div>
+        <div
+          class="transition-all-300ms"
+          x-show="activated"
+          x-transition:enter-start="opacity-0 pt-4"
+          x-transition:enter-end="opacity-100% pt-0"
+        >
+          <div class="square mx-auto mb-2 rounded-full bg-orange-300">&nbsp;</div>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi.</div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="transition-all-600ms"
+          x-show="activated"
+          x-transition:enter-start="opacity-0 pt-4"
+          x-transition:enter-end="opacity-100% pt-0"
+        >
+          <div class="square mx-auto mb-2 rounded-full bg-orange-300">&nbsp;</div>
+          <div>In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque.</div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="transition-all-900ms"
+          x-show="activated"
+          x-transition:enter-start="opacity-0 pt-4"
+          x-transition:enter-end="opacity-100% pt-0"
+        >
+          <div class="square mx-auto mb-2 rounded-full bg-orange-300">&nbsp;</div>
+          <div>Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque.</div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="transition-all-1200ms"
+          x-show="activated"
+          x-transition:enter-start="opacity-0 pt-4"
+          x-transition:enter-end="opacity-100% pt-0"
+        >
+          <div class="square mx-auto mb-2 rounded-full bg-orange-300">&nbsp;</div>
+          <div>In ornare lectus dui, tempor ultricies felis commodo nec. Praesent placerat venenatis nibh vel consequat.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 id="sliding-panels" tabindex="-1">Sliding panels</h3>
+<p>Two panels that fade in and slide together from right and left, on scroll.</p>
+<p>For this example, these will be triggered every time the panels are scrolled into the viewport, whether you scroll down or up.</p>
+<div class="my-3">
+  <div class="grid gap xs:equal-2-cols">
+    <div
+      x-data="{ inViewport: false }"
+      x-intersect:enter="inViewport = true"
+      x-intersect:leave="inViewport = false"
+    >
+      <div
+        class="transition-all-900ms"
+        x-show="inViewport"
+        x-transition:enter-start="opacity-0 translate-left-100%"
+        x-transition:enter-end="opacity-100% translate-0-0"
+      >
+        <div class="aspect-ratio-4x3 bg-orange-500"></div>
+      </div>
+    </div>
+    <div
+      x-data="{ inViewport: false }"
+      x-intersect:enter="inViewport = true"
+      x-intersect:leave="inViewport = false"
+    >
+      <div
+        class="transition-all-900ms"
+        x-show="inViewport"
+        x-transition:enter-start="opacity-0 translate-right-100%"
+        x-transition:enter-end="opacity-100% translate-0-0"
+      >
+        <div class="aspect-ratio-4x3 bg-orange-500"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/7-alpinejs-components/slideshows">&larr; Slideshows</a></li>
+        
+          
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
+  <p>
+    <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
+      <span class="inline-flex flex-column flex-middle flex-center">
+        <!-- Codebase logo-->
+        <svg style="width: 144px; margin-bottom: 1.5rem;" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">
+          Codebase
+        </span>
+      </span>
+    </a>
+  </p>
+  
+  <p>Version 5.0.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+
+</footer>
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+</body>
+</html>

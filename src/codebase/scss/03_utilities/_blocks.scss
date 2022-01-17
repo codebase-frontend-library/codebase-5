@@ -1,0 +1,38 @@
+// UTILITIES: BLOCKS
+// ~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// For `display: none;` see `_invisibility.scss`
+
+@mixin block {
+  display: block;
+  width: 100%;
+}
+
+.block {
+  @include block;
+}
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:block {
+      @include block;
+    }
+  }
+}
+
+@mixin inline-block {
+  display: inline-block;
+  width: unset; // overrides for width: 100% on form inputs
+}
+
+.inline-block {
+  @include inline-block;
+}
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:inline-block {
+      @include inline-block;
+    }
+  }
+}

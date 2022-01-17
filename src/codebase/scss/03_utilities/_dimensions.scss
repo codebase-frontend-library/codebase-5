@@ -1,0 +1,121 @@
+// UTILITIES: DIMENSIONS
+// ~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+@use "sass:math";
+
+.w {
+  &-xxs { width: 100%; max-width: map-get($width, w-xxs); }
+  &-xs { width: 100%; max-width: map-get($width, w-xs); }
+  &-sm { width: 100%; max-width: map-get($width, w-sm); }
+  &-md { width: 100%; max-width: map-get($width, w-md); }
+  &-lg { width: 100%; max-width: map-get($width, w-lg); }
+  &-xl { width: 100%; max-width: map-get($width, w-xl); }
+  &-xxl { width: 100%; max-width: map-get($width, w-xxl); }
+  &-max-100vw { width: 100%; max-width:100vw; }
+  &-25\% { width: 25%; max-width: 25%; }
+  &-50\% { width: 50%; max-width: 50%; }
+  &-75\% { width: 75%; max-width: 75%; }
+  &-100\% { width: 100%; max-width: 100%; }
+  &-auto { max-width: unset;  width: auto !important; }
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:w-auto {
+      max-width: unset; width: auto !important;
+    }
+  }
+}
+
+.h-50vh {
+  min-height: 400px; // fallback for old browsers
+  min-height: 50vh;
+}
+.h-100vh {
+  min-height: 800px; // fallback for old browsers
+  min-height: 100vh;
+}
+
+.h-max-100vh {
+  max-height: 800px; // fallback for old browsers
+  max-height: 100vh;
+}
+
+.h-100\% {
+  height: 100%;
+}
+
+.h-max-100\% {
+  max-height: 100%;
+}
+
+// Squares
+
+.square {
+  min-width: $square-size;
+  width: $square-size;
+  min-height: $square-size;
+  height: $square-size;
+  &-sm {
+    min-width: $square-size-sm;
+    width: $square-size-sm;
+    min-height: $square-size-sm;
+    height: $square-size-sm;
+  }
+  &-md {
+    min-width: $square-size;
+    width: $square-size;
+    min-height: $square-size;
+    height: $square-size;
+  }
+  &-lg {
+    min-width: $square-size-lg;
+    width: $square-size-lg;
+    min-height: $square-size-lg;
+    height: $square-size-lg;
+  }
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:square {
+      min-width: $square-size;
+      width: $square-size;
+      min-height: $square-size;
+      height: $square-size;
+      &-sm {
+        min-width: $square-size-sm;
+        width: $square-size-sm;
+        min-height: $square-size-sm;
+        height: $square-size-sm;
+      }
+      &-md {
+        min-width: $square-size;
+        width: $square-size;
+        min-height: $square-size;
+        height: $square-size;
+      }
+      &-lg {
+        min-width: $square-size-lg;
+        width: $square-size-lg;
+        min-height: $square-size-lg;
+        height: $square-size-lg;
+      }
+    }
+  }
+}
+
+// Box stretching (requires a `.relative` wrapper)
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  &.fixed {
+    position: fixed;
+  }
+}
+

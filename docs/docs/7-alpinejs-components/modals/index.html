@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Modals - Codebase</title>
+
+  <link href="/codebase-5/prism/prism.css" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.0" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-5/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-5/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-5/site.webmanifest">
+  <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      max-width: 100vw;
+    }
+    main h2, main h3, main h4, main h5, main h6 {
+      scroll-margin-top: 72px;
+    }
+    #site-top-bar {
+      height: 56px;
+      z-index: 990;
+    }
+    #site-title {
+      display: block;
+      font-size: 1.325rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+
+    #site-title,
+    #site-footer-title {
+      color: #9400d3;
+    }
+    #site-title:hover,
+    #site-footer-title:hover {
+      color: #5f0087;
+    }
+
+    #site-title svg,
+    #site-footer-title svg {
+      fill: #9400d3;
+    }
+    #site-title:hover svg,
+    #site-footer-title:hover svg {
+      fill: #5f0087;
+    }
+
+    @media (max-width: 767px) {
+      #side-menu-wrap {
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #site-page {
+        grid-template-columns: 256px calc(100vw - 256px);
+      }
+      #site-navigation > div {
+        top: 57px;
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #site-page {
+        grid-template-columns: 256px auto 256px;
+      }
+      #docs-article {
+        grid-template-columns: auto 256px;
+      }
+    }
+
+    #toc ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    #toc ul ul {
+      padding-left: 1rem;
+    }
+    #toc li {
+      margin-bottom: 1rem;
+    }
+    #toc a {
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 1279px) {
+      #toc ul ul {
+        display: none;
+      }
+    }
+
+    #docs-hero-feature {
+      display: block;
+      max-width: 280px;
+      margin: auto;
+    }
+    @media (min-width: 1024px) {
+      #docs-hero-feature {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+
+    /* Examples */
+    svg tspan {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .month span {
+      width: calc(100% / 7);
+      margin: 0.5rem 0;
+    }
+  </style>
+
+  <!-- Alpine and Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    let viewportWidth = window.innerWidth;
+    
+    Alpine.store('docsNav', {
+      open: window.innerWidth >= 768,
+      belowBP: window.innerWidth < 768,
+      menu1open: false,
+      menu2open: false,
+      menu3open: false,
+      menu4open: false,
+      menu5open: false,
+      menu6open: false,
+      menu7open: false,
+
+      checkURL() {
+        if (window.location.href.indexOf('1-getting-started') > -1) {
+          this.menu1open = true
+        }
+        if (window.location.href.indexOf('2-classless-basics') > -1) {
+          this.menu2open = true
+        }
+        if (window.location.href.indexOf('3-layout-utilities') > -1) {
+          this.menu3open = true
+        }
+        if (window.location.href.indexOf('4-decoration-utilities') > -1) {
+          this.menu4open = true
+        }
+        if (window.location.href.indexOf('5-typographic-utilities') > -1) {
+          this.menu5open = true
+        }
+        if (window.location.href.indexOf('6-simple-components') > -1) {
+          this.menu6open = true
+        }
+        if (window.location.href.indexOf('7-alpinejs-components') > -1) {
+          this.menu7open = true
+        }
+      },
+
+      reset() {
+        let currentWidth = window.innerWidth;
+
+        // Ignoring height changes (e.g. iPhone Safari top/bottom bars)
+        if (currentWidth != viewportWidth) {
+          // width has changed
+          
+          viewportWidth = currentWidth;
+          
+          if (viewportWidth >= 768) {
+            this.open = true,
+            this.belowBP = false
+          } else {
+            this.open = false,
+            this.belowBP = true
+          }
+        }
+      }
+
+    })
+
+  })
+</script>
+
+<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+  <div class="w-xxl mx-auto h-100% relative flex flex-middle">
+
+    <!-- Navicon -->
+    <div
+      x-data
+      @resize.window.throttle="$store.docsNav.reset()"
+    >
+      <button
+        x-cloak
+        class="btn-icon rounded-full ml-1"
+        @click="$store.docsNav.open = true"
+        aria-label="Site menu"
+        :aria-expanded="$store.docsNav"
+        x-show="$store.docsNav.belowBP"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+    </div>
+  
+    <div class="p-2">
+      <a
+        id="site-title"
+        class="mb-0 ml-1 t-decoration-none"
+        :class="scrollAtTop ? 'enlarged' : ''"
+        href="/codebase-5/"
+        tabindex="1"
+      >
+        <!-- Codebase logo-->
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/>
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">Codebase</span>
+      </a>
+    </div>
+  
+    <div class="grow">
+      <div class="menu flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      </div>  
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          <p class="h4 lg:mt-3">Documentation</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Getting started</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    id="docs-dropdown-1"
+    x-show="$store.docsNav.menu1open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    </ul>
+  </div>  
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu2open = !$store.docsNav.menu2open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu2open" @keyup.escape="$store.docsNav.menu2open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu2open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Classless basics</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu2open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu3open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Layout</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu3open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu4open = !$store.docsNav.menu4open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu4open" @keyup.escape="$store.docsNav.menu4open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu4open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Decoration</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu4open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu5open = !$store.docsNav.menu5open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu5open" @keyup.escape="$store.docsNav.menu5open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu5open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Typography</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu5open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
+    <svg
+      class="transition-all-300ms" 
+      :class="$store.docsNav.menu6open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Simple (CSS only)</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu6open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu7open = !$store.docsNav.menu7open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu7open" @keyup.escape="$store.docsNav.menu7open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu7open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">With AlpineJS</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu7open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    </ul>
+  </div>
+</div>
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        
+        <div class="my-1">AlpineJS components</div>
+        
+        <h1 class="mb-0 t-heavy t-primary">Modals</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      <p>Codebase modals follow some aspects of the <a href="https://alpinejs.dev/pattern/modal">AlpineJS modal</a> component design pattern. The accessibility features are the same but there are a few differences in the way modals are built here.</p>
+<h2 id="the-simplest-modal" tabindex="-1">The simplest modal</h2>
+<p><strong>Modal example 1a</strong> – without “click outside to dismiss”:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-xs m-3 b-thin rounded p-2 bg-white"      
+    >
+      <div class="h3">Modal title</div>
+      <p>Modal content. Click the “Close” button to dismiss.</p>
+      <button
+        type="button"
+        class="float-right"
+        @click="open = false">Close</button>
+    </div>
+  </div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ open: false }<span class="token punctuation">"</span></span><br>  <span class="token attr-name">x-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>]<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- Modal open button --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = true<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span>Open modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- Modal (cover/backdrop with panel inside) --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">x-cloak</span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-trap.noscroll.inert</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-transition.opacity.duration.600ms</span><br>    <span class="token attr-name">@keydown.escape.prevent.stop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-modal</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br><br>    <span class="token comment">&lt;!-- Modal panel --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs m-3 b-thin rounded p-2 bg-white<span class="token punctuation">"</span></span>      <br>    <span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Modal title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Modal content. Click the “Close” button to dismiss.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br>      <span class="token comment">&lt;!-- Modal clode button --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>float-right<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="notes-on-modals" tabindex="-1">Notes on modals</h2>
+<ol>
+<li>There are four basic elements to a Codebase modal component:
+<ol>
+<li>The <strong>modal open button</strong> – control to open the modal</li>
+<li>The <strong>modal</strong> consisting of the full-viewport cover (a.k.a. backdrop), and the modal panel is inside it. The modal cover can be transparant (clear), or tinted (these Codebase examples use a semi-transparent black with blur-filter), or totally black if the modal is an image lightbox</li>
+<li>The <strong>modal panel</strong> containing your modal content</li>
+<li>The <strong>modal close button</strong> (a.k.a. dismiss button), usually placed within the modal panel but sometimes (e.g. for a lightbox) placed in a top corner of the cover</li>
+</ol>
+</li>
+<li><code>x-cloak</code> is used to hide the modal before AlpineJS has hidden it programatically. Codebase already contains the style <code>[x-cloak] {display: none;}.</code></li>
+<li>The modal open and close <code>&lt;button&gt;</code>’s are not being used as part of a form. Therefore they must have the attribute <code>type=&quot;button&quot;</code></li>
+<li>The modal cover (wrapper) covers the entire screen once the modal is opened. It is required for centering and middling the modal panel in the viewport window using flexbox. The modal cover  is transparent by default, but you can give it a dark blurry tint using <code>bg-black-glass-3</code>. Alternatively, you can use <code>bg-black</code> if you are using the modal as a lightbox.</li>
+<li>The modal panel will become as wide as its content requires. But you can constrain the width using one of Codebase’s <a href="/codebase-5/docs/4-layout-utilities/dimensions/#max-width-wrappers">max-width wrappers</a>. <code>w-xs</code> is commonly used for narrow modals.</li>
+<li>The modal can be opened open/close by the modal open button (mouse click, touch screen tap, etc.) and by <em>tabbing</em> onto the modal open button and hitting the <em>enter key</em> or the <em>space bar</em>. The modal open button operates as a <em>toggle</em> so that keyboard and assistive tech users can immediately close it again if they want to. However, mouse and touch screen users can’t toggle it closed because the modal will have opened and covered the viewport. Therefore a modal closed button needs to be supplied. (And an optional “click outside to dismiss” function.)</li>
+<li>Modals require the <a href="https://alpinejs.dev/plugins/focus">AlpineJS Focus plugin</a> for keeping the focus on the modal once it has been tabbed into, because you don’t want to allow tabbers to move the focus out of the modal until it has been dismissed. ALpine’s <code>x-trap</code> puts the focus on the <em>first</em> focusable element inside the modal. Usually you will want this to be the modal close button.</li>
+<li>Keyboard users can click the modal close button by tabbing onto it, then using the hitting the <em>enter key</em> or the <em>space bar</em> to dismiss the modal. The focus will then be returned to the dropdown button.</li>
+<li>The modal can be closed by hitting the <em>escape key</em>, whether the focus is on the modal open button or somewhere in the modal. And the focus will be returned to the modal open button.</li>
+<li>Modals require some <a href="https://www.w3.org/TR/wai-aria-practices/#dialog_modal">accessibility features</a> such as <code>role=&quot;dialog&quot;</code> and <code>aria-modal=&quot;true&quot;</code>. The example Codebase/ AlplineJS powered modals on this page should have all the accessibility features that you need, following the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role">MDN Accessibility (ARIA) guidelines for <code>role=&quot;dialog&quot;</code></a>. (If something is wrong or missing here, please open a pull request and provide an explanation and example.)</li>
+<li>All CSS transitions are handled by <a href="https://alpinejs.dev/directives/transition">AlpineJS x-transition</a>.</li>
+<li>If you want “click outside to dismiss”, you can easily add using AlpineJS <code>@click.outside=&quot;open = false&quot;</code> to the <code>modal-panel</code>.</li>
+<li>The ID of the modal (used by <code>aria-controls=&quot;&quot;</code> on its respective modal open button) has been assigned using the Alpine <a href="https://alpinejs.dev/directives/id">x-id</a> directive, which automatically adds an incremented number to your specified ID (prefix). That way, you can include several modal components to a webpage without having to think up an ID for each one. (However, this won’t work if you have your <a href="#modal-open-button-in-a-separate-alpine-component">modal open button in a separate Alpine component</a>.)</li>
+</ol>
+<h2 id="adding-%E2%80%9Cclick-outside-to-dismiss%E2%80%9D" tabindex="-1">Adding “click outside to dismiss”</h2>
+<p>Simply add <code>@click.outside</code> to the modal panel.</p>
+<p><strong>Modal example 1b</strong> – with “click outside to dismiss”:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-xs m-3 b-thin rounded p-2 bg-white"
+      @click.outside="open = false"      
+    >
+      <div class="h3">Modal title</div>
+      <p>Modal content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
+      <button
+        type="button"
+        class="float-right"
+        @click="open = false">Close</button>
+    </div>
+  </div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Modal panel --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs m-3 b-thin rounded p-2 bg-white<span class="token punctuation">"</span></span><br>  <span class="token attr-name">@click.outside</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="adding-a-panel-reveal-animation" tabindex="-1">Adding a panel reveal animation</h2>
+<p>You can add some animations to the modal panel using Codebase <a href="/codebase-5/docs/7-alpinejs-components/animations">animations</a> and Alpine 3’s <a href="https://alpinejs.dev/directives/transition">x-transition</a> directive.</p>
+<p><strong>Note:</strong> since these <code>x-transition</code> animations are being applied to the modal panel, therefore you will also need to put <code>x-show=&quot;open&quot;</code> on the panel as well as on the modal cover.</p>
+<p><strong>Modal example 1c</strong> – with CSS transform scale 75%-100%:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-xs m-3 b-thin rounded p-2 bg-white"
+      @click.outside="open = false"
+      x-show="open"
+      x-transition:enter="transition-all-300ms"
+      x-transition:enter-start="scale-75%"
+      x-transition:enter-end="scale-100%"
+      x-transition:leave="transition-all-300ms"
+      x-transition:leave-start="scale-100%"
+      x-transition:leave-end="scale-75%"
+    >
+      <div class="h3">Modal title</div>
+      <p>Modal content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
+      <button
+        type="button"
+        class="float-right"
+        @click="open = false">Close</button>
+    </div>
+  </div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Modal panel --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs m-3 b-thin rounded p-2 bg-white<span class="token punctuation">"</span></span><br>  <span class="token attr-name">@click.outside</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>  <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transition-all-300ms<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>enter-start</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-75%<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>enter-end</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-100%<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>leave</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transition-all-300ms<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>leave-start</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-100%<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-transition:</span>leave-end</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-75%<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="open-button-in-a-separate-alpine-component" tabindex="-1">Open button in a separate Alpine component</h2>
+<p>Until Alpine v.3, having a toggler or button as a separate component was possible using the Alpine <code>$dispatch</code> magic property and the window as an event bus (see Hugo Di Francesco, <a href="https://codewithhugo.com/alpinejs-component-communication-event-bus/">https://codewithhugo.com/alpinejs-component-communication-event-bus/</a>).</p>
+<p>But Alpine 3 has built-in global state storage, using <code>Alpine.store()</code> (see <a href="https://alpinejs.dev/globals/alpine-store">https://alpinejs.dev/globals/alpine-store</a>). So, we can use that instead.</p>
+<p><strong>Modal example 1d</strong> – with a control button in a separate Alpine component:</p>
+<!-- The expandedState store -->
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('modalEx1d', {
+      expandedState: false,
+    })
+  })
+</script>
+<!-- The (separate) button component -->
+<div
+  x-data
+  @keydown.escape.prevent.stop="$store.modalEx1d.expandedState = false"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="$store.modalEx1d.expandedState = true"
+    aria-controls="modal-ex-separate"
+    :aria-expanded="$store.modalEx1d.expandedState"
+  >Open modal</button>
+</div>
+<!-- The modal component (without button) -->
+<div x-data>
+  <div
+    x-cloak
+    x-show="$store.modalEx1d.expandedState"
+    x-transition.opacity.duration.600ms
+    x-trap.noscroll.inert="$store.modalEx1d.expandedState"
+    @keydown.escape.prevent.stop="$store.modalEx1d.expandedState = false"
+    role="dialog"
+    id="modal-ex-separate"
+    aria-modal="true"
+    :aria-label="modal-ex-separate"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-xs m-3 b-thin rounded p-3 bg-white"
+      @click.outside="$store.modalEx1d.expandedState = false"
+    >
+      <p id="modal-1d-title" class="h3">Modal title</p>
+      <p>Modal content.</p>
+      <button
+        type="button"
+        class="float-right"
+        @click="$store.modalEx1d.expandedState = false"
+      >Close</button>
+    </div>
+  </div>
+</div>
+<p>This is conceptually simpler than the window bus:</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- The expandedState store --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'alpine:init'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    Alpine<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">'modalEx1d'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">expandedState</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- The (separate) button component --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><br>  <span class="token attr-name">@keydown.escape.prevent.stop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState = false<span class="token punctuation">"</span></span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-3<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState = true<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-ex-separate<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span>Open modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- Modal component without button<br>(cover/backdrop with panel inside) --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">x-cloak</span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-transition.opacity.duration.600ms</span><br>    <span class="token attr-name">x-trap.noscroll.inert</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keydown.escape.prevent.stop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog<span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-ex-separate<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-modal</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-ex-separate<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Modal panel --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs p-3 b-thin rounded bg-white<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@click.outside</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState = false<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-1d-title<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Modal title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Modal content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- Modal close button --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>float-right<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$store.modalEx1d.expandedState = false<span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Notes:</p>
+<ol>
+<li>There needs to be <code>@keydown.escape.prevent.stop=&quot;&quot;</code> on both components – the separate button and the modal itself.</li>
+<li>Since the open button and the modal are in two separate components, they can’t share an <code>x-id</code>. So you will need to set up the modal <code>id</code>, <code>aria-controls</code> and <code>aria-label</code> another way (manually or programatically).</li>
+<li>Having a button in a separate Alpine component enables you to have the button and the modal in different parts of a webage. And, if required in your design, it enables you to have more than one button per modal.</li>
+</ol>
+<h2 id="styling-modal-panels" tabindex="-1">Styling modal panels</h2>
+<p>Here are a few examples of what you can do with Codebase CSS styling.</p>
+<h3 id="a-fancy-card-panel" tabindex="-1">A fancy card panel</h3>
+<p>Above, you’ve seen simple modal panels that have a thin border, rounded corners, and a white background. Following is an alternative panel design example.</p>
+<p><strong>Modal example 2a</strong> – panel is dressed as a card, with the close button over the top right corner, and “click outside to dismiss”:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="relative w-xs m-3 b-thin rounded bg-white"
+      @click.outside="open = false"
+    >
+      <button
+        type="button"
+        class="btn-icon bg-white rounded-full badge-top-right t-lg"
+        aria-label="Close modal"
+        @click="open = false"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+      <div class="p-block rounded-sm unrounded-bottom bg-orange-200">
+        <p class="h4 m-0" id="modal-2a-title">Modal header</p>
+      </div>
+      <div class="p-2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 id="panel-with-grid-layout" tabindex="-1">Panel with grid layout</h3>
+<p><strong>Modal example 2b</strong> – panel with a grid layout, and “click outside to dismiss”:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-lg h-max-100% flex flex-column m-3 b-thin rounded bg-white"
+      @click.outside="open = false"      
+    >
+      <div class="bb-thin p-block">
+        <button class="btn-icon btn-sm float-right my-1 scroll-unlock" aria-label="Close modal" @click="open = false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+        <p class="my-1 h4" id="modal-2b-title">Modal Header</p>
+      </div>
+      <div class="grow overflow-y p-2 grid sm:gap sm:equal-2-cols">
+        <div>
+          <div class="aspect-ratio-4x3 mb-2 relative">
+            <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-416179.jpg" alt="A placeholder image">
+          </div>
+        </div>
+        <div>
+          <p class="h2">European Robin (<em>Erithacus rubecula</em>)</p>
+          <p><em>Photo by <a href="https://www.pexels.com/photo/animal-avian-beak-bird-416179/">Pixabay</a> from <a href="https://www.pexels.com/">Pexels</a>.</em></p>
+          <p>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim.</p>
+          <p>
+            <button class="btn-primary">Download</button>
+            <button class="btn-secondary">Save</button>
+          </p>
+        </div>
+      </div>
+      <div class="bt-thin p-2">
+        <div class="t-right">
+          <button
+            type="button"
+            class="btn-small"
+            @click="open = false"
+          >Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>Notes:</p>
+<ol>
+<li>The <code>h-max-100%</code> is necessary for small viewports (phones) where the panel body will be displayed as a single column. <code>h-max-100%</code> works for the <em>max available</em> height, which also works well with iPhone Safari’s retractable browser bars.</li>
+<li>The <code>flex flex-column</code> on the panel and <code>grow</code> on the panel body enables the <code>overflow-y</code> on the panel body to scroll vertically if required for very small viewports.</li>
+</ol>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Modal panel --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-lg h-max-100% overflow-y flex flex-column m-3 b-thin rounded bg-white<span class="token punctuation">"</span></span><br>  <span class="token attr-name">@click.outside</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span>      <br><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Panel header --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bb-thin p-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon btn-sm float-right my-1 scroll-unlock<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Close modal<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentColor<span class="token punctuation">"</span></span> <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0 0 256 256<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>256<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>256<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rect</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span> <span class="token attr-name">x1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">y1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>56<span class="token punctuation">"</span></span> <span class="token attr-name">x2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>56<span class="token punctuation">"</span></span> <span class="token attr-name">y2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentColor<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-linecap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-linejoin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>line</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span> <span class="token attr-name">x1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">y1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">x2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>56<span class="token punctuation">"</span></span> <span class="token attr-name">y2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>56<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentColor<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-linecap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-linejoin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>line</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-1 h4<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-2b-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Modal Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- Panel body --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grow overflow-y p-2 grid sm:gap sm:equal-2-cols<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>      ...<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>      ...<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- Panel footer --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bt-thin p-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-small<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>Cancel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="panel-with-scrolling-body" tabindex="-1">Panel with scrolling body</h3>
+<p>Modal panels that contain (or may contain) a lot of content can break on small screen devices (phones) where their content becomes too tall for the viewport.</p>
+<p><strong>Modal example 2c</strong> – tall panel without “click outside to dismiss”:</p>
+<div
+  x-data="{ open: false, rows: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box flex flex-center flex-middle bg-black-glass-3 z-index-999"
+  >
+    <div
+      class="w-xs h-max-100% flex flex-column m-3 b-thin rounded bg-white"
+      @click.outside="open = false"      
+    >
+      <div class="bb-thin p-block">
+        <button type="button" class="float-right my-1 btn-sm" @click="open = false">Dismiss</button>
+        <p class="my-1 h4">Header</p>
+      </div>
+      <div class="grow overflow-y">
+        <p class="m-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+        <p class="m-2">Number of items: <span x-text="rows.length"></span>
+        <table class="table table-borderless bt-thin tracks">
+          <tbody>
+          <template x-for="row in rows" :key="row">
+            <tr class="bb-thin" x-show="row">
+              <td x-text="row"></td>
+              <td>
+                <div class="flex">
+                  <div>
+                    <img class="square-sm" src="/codebase-5/img/pexels-pixabay-416179.jpg" alt="A placeholder image">
+                  </div>
+                  <div class="grow ml-2">
+                    <b>Lorem ipsum dolor sit amet</b>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="118.1 174.1 152 208 185.9 174.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="152" y1="128" x2="152" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><path d="M96,208H72A56,56,0,0,1,72,96a57.5,57.5,0,0,1,13.9,1.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><path d="M80,128a80,80,0,1,1,144,48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M228.1,121.2,84.2,33.2A8,8,0,0,0,72,40V216a8,8,0,0,0,12.2,6.8l143.9-88A7.9,7.9,0,0,0,228.1,121.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M77.4,201.9l-32.3,27A8,8,0,0,1,32,222.8V64a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V192a8,8,0,0,1-8,8H82.5A7.8,7.8,0,0,0,77.4,201.9Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
+                </button>
+              </td>
+            </tr>
+          </template>
+          </tbody>
+        </table>
+        <p class="px-2"><em>Photo by <a href="https://www.pexels.com/photo/animal-avian-beak-bird-416179/">Pixabay</a> from <a href="https://www.pexels.com/">Pexels</a>.</em></p>
+      </div>
+      <div class="bt-thin p-2">
+        <form class="flex" action="">
+          <input type="text" class="unrounded-right" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search...">
+          <button type="button" aria-label="Search" class="btn-icon unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<p>Notes:</p>
+<ol>
+<li>The panel <code>h-max-100%</code> works for the <em>max available</em> height, which also works well with iPhone Safari’s retractable browser bars.</li>
+<li>The <code>flex flex-column</code> on the panel and <code>grow</code> on the panel body enables the <code>overflow-y</code> on the panel body to scroll vertically.</li>
+</ol>
+<h2 id="embedded-popout-modals" tabindex="-1">Embedded popout modals</h2>
+<p>Most modals are invisible (and inaccessible) until triggered, but some are embedded in a page. Popout modals can be used for displaying a larger product image on an exommerce site (“zooming in”), detail-dense infographics, maps, etc.</p>
+<p><strong>Modal example 3</strong> – modal panel as an embedded popout:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="relative mb-3 b-thin rounded py-2"
+>
+  <div class="absolute right inline-block mr-2">
+    <button
+      type="button"
+      @click="open = true"
+      :aria-controls="$id('modal')"
+      :aria-expanded="open"
+      aria-expanded="false"
+      aria-label="Enlarge infographic"
+      class="btn-primary btn-icon btn-sm"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="168 48 208 48 208 88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="88 208 48 208 48 168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="208 168 208 208 168 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="48 88 48 48 88 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    </button>
+  </div>
+  <div
+    :id="$id('modal')"
+    :aria-label="$id('modal')"
+    x-trap.noscroll.inert="open"
+    class="px-2"
+    :class="open ? 'fixed box z-index-999' : ''"
+    @keydown.escape.prevent.stop="open = false"
+  >
+    <div
+      :class="open ? 'box py-6 px-2 bg-white overflow-y scale-in' : 'mb-3'"
+    >
+      <button
+        type="button"
+        x-show="open"
+        class="fixed top right z-index-1 m-2 btn-sm btn-primary btn-icon"
+        @click="open = false"
+        :aria-expanded="open"
+        aria-label="close popout"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 160 96 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="48 160 96 160 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="160 208 160 160 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="96 48 96 96 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      </button>
+      <div class="container-xl">
+        <p class="t-center t-semibold" :class="open ? 'h1 mb-6' : 'h4'">Codebase popout modal demo</p>
+        <p>Notes:</p>
+        <ol>
+          <li>You will need to add <a href="/codebase-5/docs/3-layout-utilities/overflows">overflow</a> scrolling on the popout panel if you have a lot of content, especially if it will be too much for smaller viewports.</li>
+          <li>If you don’t want the popout to operate on smaller viewports, you can simply hide your “expand popout” button, e.g. using <code class="b-thin">md:hidden-below</code>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ open: false }<span class="token punctuation">"</span></span><br>  <span class="token attr-name">x-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>]<span class="token punctuation">"</span></span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>relative mb-3 b-thin rounded py-2<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>absolute right inline-block mr-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = true<span class="token punctuation">"</span></span><br>      <span class="token attr-name">:aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>      <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enlarge infographic<span class="token punctuation">"</span></span><br>      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary btn-icon btn-sm<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- Icon maximize --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">:id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$id(<span class="token punctuation">'</span>modal<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-trap.noscroll.inert</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open ? <span class="token punctuation">'</span>fixed box z-index-999<span class="token punctuation">'</span> : <span class="token punctuation">'</span><span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keydown.escape.prevent.stop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open ? <span class="token punctuation">'</span>box py-6 bg-white overflow-y scale-in<span class="token punctuation">'</span> : <span class="token punctuation">'</span>mb-3<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fixed top right z-index-1 m-2 btn-sm btn-primary btn-icon<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open = false<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open<span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close popout<span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span><br>        <span class="token comment">&lt;!-- Icon minimize --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-xl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-center t-semibold<span class="token punctuation">"</span></span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>open ? <span class="token punctuation">'</span>h1 mb-6<span class="token punctuation">'</span> : <span class="token punctuation">'</span>h4<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Codebase popout modal demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>        ...<br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note:</strong> The default popout Alpine state (un-popped) still initiates as <code>false</code> even though you can see its panel content as an integral part of the page.</p>
+<h2 id="modal-as-a-lightbox" tabindex="-1">Modal as a lightbox</h2>
+<p><strong>Modal example 4a</strong> – lightbox with a tall image:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box z-index-999 flex flex-center flex-middle bg-black"
+  >
+    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+    </button>
+    <img class="img-contain" src="/codebase-5/img/pexels-daniyal-ghanavati-110320.jpg" alt="A placeholder image">
+    <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4a-title">
+      <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Daniyal Ghanavati</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
+    </div>
+  </div>
+</div>
+<p><strong>Modal example 4b</strong> – lightbox with a wide image:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box z-index-999 flex flex-center flex-middle bg-black"
+  >
+    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+    </button>
+    <img class="img-contain" src="/codebase-5/img/pexels-trudie-roden-2419158.jpg" alt="A placeholder image">
+    <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4b-title">
+      <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@trudie-roden-1054578?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Trudie Roden</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
+    </div>
+  </div>
+</div>
+<p><strong>Modal example 4c</strong> – lightbox with a tall and wide image:</p>
+<div
+  x-data="{ open: false }"
+  x-id="['modal']"
+  class="mb-3"
+>
+  <button
+    type="button"
+    class="btn-primary"
+    @click="open = true"
+    :aria-controls="$id('modal')"
+    :aria-expanded="open"
+  >Open modal</button>
+  <div
+    x-cloak
+    x-show="open"
+    x-trap.noscroll.inert="open"
+    x-transition.opacity.duration.600ms
+    @keydown.escape.prevent.stop="open = false"
+    role="dialog"
+    :id="$id('modal')"
+    aria-modal="true"
+    :aria-label="$id('modal')"
+    class="fixed box z-index-999 flex flex-center flex-middle bg-black"
+  >
+    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+    </button>
+    <img class="img-contain" src="/codebase-5/img/pexels-erik-karits-3738673.jpg" alt="A placeholder image">
+    <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4c-title">
+      <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Eric Karits</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
+    </div>
+  </div>
+</div>
+<p>Notes:</p>
+<ol>
+<li>Use <code>bg-black</code> on the modal (cover/backdrop) instead of <code>bg-black-glass-3</code>, so that the page content doesn’t distract from the image in the lightbox.</li>
+<li>Place the modal close button in the modal (cover/backdrop) instead of in the modal panel.</li>
+<li>Place the image and title (caption) directly in the modal – you don’t need a modal panel element.</li>
+<li>You don’t need or a “click-away” function.</li>
+<li>The <code>img-contain</code> utility class on the <code>&lt;img&gt;</code> makes it max-out at the height and/or width of the viewport (or rather, the modal), depending on how tall or wide it is.</li>
+<li>You will need to optimize your image file-size, or use a <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading">lazy loading</a> technique if your image is heavy and therefore slows down the page load time, especially on slow internet connections (think of phones).</li>
+</ol>
+
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/7-alpinejs-components/dropdowns">&larr; Dropdowns</a></li>
+        
+        
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas &rarr;</a></li>
+          
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
+  <p>
+    <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
+      <span class="inline-flex flex-column flex-middle flex-center">
+        <!-- Codebase logo-->
+        <svg style="width: 144px; margin-bottom: 1.5rem;" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">
+          Codebase
+        </span>
+      </span>
+    </a>
+  </p>
+  
+  <p>Version 5.0.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+
+</footer>
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+</body>
+</html>

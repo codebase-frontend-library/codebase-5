@@ -1,0 +1,199 @@
+{% include "_html-head.njk" %}
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+{% include "site-top-bar.njk" %}
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        {# include "site-side-nav.njk" #}
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          {% include "site-side-nav.njk" %}
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        {% if '1-getting-started' in page.url %}
+        <div class="my-1">Getting started</div>
+        {% elif '2-classless-basics' in page.url %}
+        <div class="my-1">Classless basics</div>
+        {% elif '3-layout-utilities' in page.url %}
+        <div class="my-1">Layout utilities</div>
+        {% elif '4-decoration-utilities' in page.url %}
+        <div class="my-1">Decoration utilities</div>
+        {% elif '5-typographic-utilities' in page.url %}
+        <div class="my-1">Typographic utilities</div>
+        {% elif '6-simple-components' in page.url %}
+        <div class="my-1">Simple components</div>
+        {% elif '7-alpinejs-components' in page.url %}
+        <div class="my-1">AlpineJS components</div>
+        {% endif %}
+        <h1 class="mb-0 t-heavy t-primary">{{ headerTitle if headerTitle else title }}</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        {% if prevPage %}
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="{{ prevPage | url }}">&larr; {{ prevLink if prevLink else "Previous page" }}</a></li>
+        {% endif %}
+        {% if nextPage %}
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="{{ nextPage | url }}">{{ nextLink if nextLink else "Next page" }} &rarr;</a></li>
+        {% endif %}  
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+{% include "site-footer.njk" %}
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+{% include "_html-foot.njk" %}

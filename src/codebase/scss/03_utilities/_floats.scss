@@ -1,0 +1,37 @@
+// UTILITIES: FLOATS
+// ~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  .#{$mq-key}\:float-left {
+    @include break-min(#{$mq-value}) {
+      float: left;
+    }
+  }
+  .#{$mq-key}\:float-right {
+    @include break-min(#{$mq-value}) {
+      float: right;
+    }
+  }
+}

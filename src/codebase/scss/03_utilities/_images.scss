@@ -1,0 +1,31 @@
+// UTILITIES: IMAGES
+// ~~~~~~~~~~~~~~~~~
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  outline: 0;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center;
+  overflow: hidden;
+}
+
+.img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+.img-grayscale {
+  filter: grayscale(100%);
+}
+
+.img-blur {
+  filter: blur(5px);
+}

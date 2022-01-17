@@ -1,0 +1,28 @@
+// COMPONENTS: TABS
+// ~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.tablist {
+  position: relative;
+  bottom: -$detail-thickness;
+}
+
+.tab {
+  position: relative;
+  font-family: $font-stack-ui;
+  background-color: map-get($theme-color, page-bg-alt);
+}
+
+.tab[aria-selected="true"] {
+  z-index: 2;
+  background-color: map-get($theme-color, page-bg);
+  // Remove border-bottom to make tab label look “attached” to its respective panel
+  border-bottom: 0 !important;
+}
+
+.tabpanel {
+  position: relative;
+  z-index: 1;
+  background-color: map-get($theme-color, page-bg);
+}

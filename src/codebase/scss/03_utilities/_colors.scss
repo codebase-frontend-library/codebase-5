@@ -1,0 +1,68 @@
+// UTILITIES: COLORS
+// ~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// .bg-     background color
+// .t-      text color
+// .b-      border color
+
+.bg-under-border {
+  background-origin: border-box;
+}
+.bg-transparent,
+.hover\:bg-transparent:hover {
+  background-color: transparent;
+}
+
+.bg-white { background-color: white }
+.hover\:bg-white:hover { background-color: white !important }
+.t-white { color: white }
+.hover\:t-white:hover { color: white !important }
+.b-white { border-color: white }
+.hover\:b-white:hover { border-color: white !important }
+
+.bg-black { background-color: black }
+.hover\:bg-black:hover { background-color: black !important }
+.t-black { color: black }
+.hover\:t-black:hover { color: black !important }
+.b-black { border-color: black }
+.hover\:b-black:hover { border-color: black !important }
+
+// Base colors
+@each $key, $val in $ui-color {
+  .bg-#{$key} { background-color: $val }
+  .t-#{$key} { color: $val }
+  .b-#{$key} { border-color: $val }
+}
+
+// Shades of named colors
+
+@if $named-color-shades == true {
+  @each $key, $val in $named-color {
+    @each $key2, $val2 in $shades {
+      .b#{$key}-#{$key2} { 
+        border-color: mix(nth($val2, 1), $val, nth($val2, 2)) 
+      }
+      .hover\:b#{$key}-#{$key2}:hover { 
+        border-color: mix(nth($val2, 1), $val, nth($val2, 2)) !important 
+      }
+      .bg#{$key}-#{$key2} { 
+        background-color: mix(nth($val2, 1), $val, nth($val2, 2)) 
+      }
+      .hover\:bg#{$key}-#{$key2}:hover { 
+        background-color: mix(nth($val2, 1), $val, nth($val2, 2)) !important
+      }
+      .t#{$key}-#{$key2} { 
+        color: mix(nth($val2, 1), $val, nth($val2, 2)) 
+      }
+      .hover\:t#{$key}-#{$key2}:hover { 
+        color: mix(nth($val2, 1), $val, nth($val2, 2)) !important 
+      }
+    }
+  }
+}
+
+[class*="hover"] {
+  transition: all .2s ease-in-out;
+}

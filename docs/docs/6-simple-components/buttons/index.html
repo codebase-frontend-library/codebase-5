@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Buttons - Codebase</title>
+
+  <link href="/codebase-5/prism/prism.css" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.0" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-5/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-5/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-5/site.webmanifest">
+  <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      max-width: 100vw;
+    }
+    main h2, main h3, main h4, main h5, main h6 {
+      scroll-margin-top: 72px;
+    }
+    #site-top-bar {
+      height: 56px;
+      z-index: 990;
+    }
+    #site-title {
+      display: block;
+      font-size: 1.325rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+
+    #site-title,
+    #site-footer-title {
+      color: #9400d3;
+    }
+    #site-title:hover,
+    #site-footer-title:hover {
+      color: #5f0087;
+    }
+
+    #site-title svg,
+    #site-footer-title svg {
+      fill: #9400d3;
+    }
+    #site-title:hover svg,
+    #site-footer-title:hover svg {
+      fill: #5f0087;
+    }
+
+    @media (max-width: 767px) {
+      #side-menu-wrap {
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #site-page {
+        grid-template-columns: 256px calc(100vw - 256px);
+      }
+      #site-navigation > div {
+        top: 57px;
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #site-page {
+        grid-template-columns: 256px auto 256px;
+      }
+      #docs-article {
+        grid-template-columns: auto 256px;
+      }
+    }
+
+    #toc ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    #toc ul ul {
+      padding-left: 1rem;
+    }
+    #toc li {
+      margin-bottom: 1rem;
+    }
+    #toc a {
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 1279px) {
+      #toc ul ul {
+        display: none;
+      }
+    }
+
+    #docs-hero-feature {
+      display: block;
+      max-width: 280px;
+      margin: auto;
+    }
+    @media (min-width: 1024px) {
+      #docs-hero-feature {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+
+    /* Examples */
+    svg tspan {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .month span {
+      width: calc(100% / 7);
+      margin: 0.5rem 0;
+    }
+  </style>
+
+  <!-- Alpine and Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    let viewportWidth = window.innerWidth;
+    
+    Alpine.store('docsNav', {
+      open: window.innerWidth >= 768,
+      belowBP: window.innerWidth < 768,
+      menu1open: false,
+      menu2open: false,
+      menu3open: false,
+      menu4open: false,
+      menu5open: false,
+      menu6open: false,
+      menu7open: false,
+
+      checkURL() {
+        if (window.location.href.indexOf('1-getting-started') > -1) {
+          this.menu1open = true
+        }
+        if (window.location.href.indexOf('2-classless-basics') > -1) {
+          this.menu2open = true
+        }
+        if (window.location.href.indexOf('3-layout-utilities') > -1) {
+          this.menu3open = true
+        }
+        if (window.location.href.indexOf('4-decoration-utilities') > -1) {
+          this.menu4open = true
+        }
+        if (window.location.href.indexOf('5-typographic-utilities') > -1) {
+          this.menu5open = true
+        }
+        if (window.location.href.indexOf('6-simple-components') > -1) {
+          this.menu6open = true
+        }
+        if (window.location.href.indexOf('7-alpinejs-components') > -1) {
+          this.menu7open = true
+        }
+      },
+
+      reset() {
+        let currentWidth = window.innerWidth;
+
+        // Ignoring height changes (e.g. iPhone Safari top/bottom bars)
+        if (currentWidth != viewportWidth) {
+          // width has changed
+          
+          viewportWidth = currentWidth;
+          
+          if (viewportWidth >= 768) {
+            this.open = true,
+            this.belowBP = false
+          } else {
+            this.open = false,
+            this.belowBP = true
+          }
+        }
+      }
+
+    })
+
+  })
+</script>
+
+<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+  <div class="w-xxl mx-auto h-100% relative flex flex-middle">
+
+    <!-- Navicon -->
+    <div
+      x-data
+      @resize.window.throttle="$store.docsNav.reset()"
+    >
+      <button
+        x-cloak
+        class="btn-icon rounded-full ml-1"
+        @click="$store.docsNav.open = true"
+        aria-label="Site menu"
+        :aria-expanded="$store.docsNav"
+        x-show="$store.docsNav.belowBP"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+    </div>
+  
+    <div class="p-2">
+      <a
+        id="site-title"
+        class="mb-0 ml-1 t-decoration-none"
+        :class="scrollAtTop ? 'enlarged' : ''"
+        href="/codebase-5/"
+        tabindex="1"
+      >
+        <!-- Codebase logo-->
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/>
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">Codebase</span>
+      </a>
+    </div>
+  
+    <div class="grow">
+      <div class="menu flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      </div>  
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          <p class="h4 lg:mt-3">Documentation</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Getting started</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    id="docs-dropdown-1"
+    x-show="$store.docsNav.menu1open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    </ul>
+  </div>  
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu2open = !$store.docsNav.menu2open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu2open" @keyup.escape="$store.docsNav.menu2open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu2open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Classless basics</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu2open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu3open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Layout</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu3open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu4open = !$store.docsNav.menu4open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu4open" @keyup.escape="$store.docsNav.menu4open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu4open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Decoration</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu4open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu5open = !$store.docsNav.menu5open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu5open" @keyup.escape="$store.docsNav.menu5open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu5open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Typography</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu5open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
+    <svg
+      class="transition-all-300ms" 
+      :class="$store.docsNav.menu6open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Simple (CSS only)</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu6open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu7open = !$store.docsNav.menu7open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu7open" @keyup.escape="$store.docsNav.menu7open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu7open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">With AlpineJS</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu7open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    </ul>
+  </div>
+</div>
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        
+        <div class="my-1">Simple components</div>
+        
+        <h1 class="mb-0 t-heavy t-primary">Buttons</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      <p>Codebase <code>btn-*</code> classes enable you to apply button styles to buttons, input-buttons, and hyperlinks.</p>
+<h2 id="basic-buttons" tabindex="-1">Basic buttons</h2>
+<p><button>Button</button> – the Codebase basic (classless) button</p>
+<p><input value="Submit" type="submit"> – input button</p>
+<p><a class="btn" role="button" href="#/">Hyperlink</a> – hyperlink dressed as a button using the <code>btn</code> class.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note:</strong> Both <code>&lt;button&gt;</code> and <code>&lt;input type=&quot;submit&quot;&gt;</code> etc. are already buttons, receiving the Codebase classless button styling. They don’t need the <code>btn</code> class. (But it will do no harm if you include it.)</p>
+<h2>UI colors</h2>
+<p>The following UI colors conform to <a href="https://www.w3.org/TR/WCAG/#contrast-minimum">WCAG 2.1 Level AA guidelines</a> for readability: color contrast ratio 4.5:1 or better for text. See <a href="/codebase-5/docs/1-getting-started/accessibility/#accessible-ui-colors">Accessibility: Accessible UI colors</a>.</p>
+<p><button class="btn-success">Success</button>
+<button class="btn-warning">Warning</button>
+<button class="btn-danger">Danger</button>
+<button class="btn-info">Info</button>
+<button class="btn-primary">Primary</button>
+<button class="btn-secondary">Secondary</button>
+<button class="btn-tertiary">Tertiary</button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Success<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-warning<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Info<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-tertiary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tertiary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="states" tabindex="-1">States</h2>
+<p><code>:disabled</code> or <code>disabled</code> / Normal / <code>:hover</code> / <code>:active</code> or <code>active</code></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Default disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default active<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- Or --></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn disabled<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default active<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><button disabled>Default disabled</button>
+<button>Default</button>
+<button class="active">Default active</button></p>
+<p><button class="btn-success" disabled>Success disabled</button>
+<button class="btn-success">Success</button>
+<button class="btn-success active">Success active</button></p>
+<p><button class="btn-warning" disabled>Warning disabled</button>
+<button class="btn-warning">Warning</button>
+<button class="btn-warning active">Warning active</button></p>
+<p><button class="btn-danger" disabled>Danger disabled</button>
+<button class="btn-danger">Danger</button>
+<button class="btn-danger active">Danger active</button></p>
+<p><button class="btn-info" disabled>Info disabled</button>
+<button class="btn-info">Info</button>
+<button class="btn-info active">Info active</button></p>
+<p><button class="btn-primary" disabled>Primary disabled</button>
+<button class="btn-primary">Primary</button>
+<button class="btn-primary active">Primary active</button></p>
+<p><button class="btn-secondary" disabled>Secondary disabled</button>
+<button class="btn-secondary">Secondary</button>
+<button class="btn-secondary active">Secondary active</button></p>
+<p><button class="btn-tertiary" disabled>Tertiary disabled</button>
+<button class="btn-tertiary">Tertiary</button>
+<button class="btn-tertiary active">Tertiary active</button></p>
+<h2 id="full-width-buttons" tabindex="-1">Full-width buttons</h2>
+<p>Buttons are normally inline elements. However, if you want a button to be a block element, simply add <code>block</code> layout utility class. Alternatively, using <code>w-100%</code> utility class will expand the button to the full width of its containing element – achieving the same look.</p>
+<p><code>btn.block</code>:</p>
+<p><button class="btn-primary block">Block button</button></p>
+<p><a class="btn btn-primary block" role="button" href="#/">Hyperlink</a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Block button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn block<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><code>btn.w-100%</code>:</p>
+<p><button class="btn-primary w-100%">100% width button</button></p>
+<p><a class="btn btn-primary w-100%" role="button" href="#/">Hyperlink</a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary w-100%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100% width button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary w-100%<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Using the <code>w-100% flex-start</code> class instead of <code>block</code> will make the button full width, but the button text will not  be centered. This may be useful if you need to have a button in a menu.</p>
+<p><button class="btn-primary w-100% flex-start">100% width button</button></p>
+<p><a class="btn btn-primary w-100% flex-start" role="button" href="#/">Hyperlink</a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary w-100% flex-start<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100% width button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary w-100% flex-start<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Here’s something else you can do: if you have both text and an icon in the button, you can use <code>flex-space-between</code> instead of <code>flex-start</code>, to push the text and icon to opposite ends of the full-width button:</p>
+<p><button class="btn-primary w-100% flex-space-between">100% width button<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary w-100% flex-space-between<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  100% width button <br>  <span class="token comment">&lt;!-- icon caret down --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="pills" tabindex="-1">Pills</h2>
+<p>You can changed the rounded corners of buttons using <a href="/codebase-5/docs/5-decoration-utilities/rounded-corners">rounded corner</a> utilities.</p>
+<p><button class="btn-secondary rounded-pill">Pill-shaped button</button></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-secondary rounded-pill<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Pill-shaped button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="text-and-icons" tabindex="-1">Text and icons</h2>
+<p>Add SVG or icon-font icons from anywhere. (The Codebase docs demonstrate SVG icons using <a href="https://phosphoricons.com/">Phosphor Icons</a>.</p>
+<p>For SVG icons, set the height to match your line height (1.5rem = 24px). And within the SVG itself, set <code>stroke=&quot;currentColor&quot;</code> to that it inherits the Codebase UI element text color.</p>
+<div class="flex flex-middle flex-wrap mb-3">
+  <button class="btn-warning">Help <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="128" cy="176" r="16"></circle><path d="M128,136a28,28,0,1,0-28-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></button>&nbsp;
+  <button class="btn-danger">Reset <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-info">Menu <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg> OK</button>&nbsp;
+  <button class="btn-primary">Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button>&nbsp;
+  <button class="btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,80h88a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><path d="M93.3,104H32V64a8,8,0,0,1,8-8H93.3a8.1,8.1,0,0,1,4.8,1.6L128,80,98.1,102.4A8.1,8.1,0,0,1,93.3,104Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg> Archive</button>&nbsp;
+  <button class="btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg> Minimize</button>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Icon checkmark --></span><br>  OK<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Notes:</strong></p>
+<ol>
+<li>Codebase buttons already have built in <code>display: inline-flex;</code> with flex items centered and middled. This should automatically line up text and icons. However, if you use an <em>icon font</em>, you may find it necessary to put the icon in its own <code>&lt;span&gt;</code> or <code>&lt;i&gt;</code> tag within the button.</li>
+<li>In a situation where you have more than one button in a row (e.g. you are creating a button group or tool bar) and you are using icons and text in combination (or, different text sizes in combination), buttons can become misaligned because the text and icons have <em>different  baselines</em>. You can solve this problem by wrapping groups of buttons in <code>flex flex-middle</code>.</li>
+</ol>
+<h2 id="icons-only" tabindex="-1">Icons only</h2>
+<p>Add <code>btn-icon</code> to get square buttons.</p>
+<div class="flex flex-middle mb-3">
+  <button class="btn-icon btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="128" cy="176" r="16"></circle><path d="M128,136a28,28,0,1,0-28-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></button>&nbsp;
+  <button class="btn-icon btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-icon btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-icon btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button>&nbsp;
+  <button class="btn-icon btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button>&nbsp;
+  <button class="btn-icon btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,80h88a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><path d="M93.3,104H32V64a8,8,0,0,1,8-8H93.3a8.1,8.1,0,0,1,4.8,1.6L128,80,98.1,102.4A8.1,8.1,0,0,1,93.3,104Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></button>&nbsp;
+  <button class="btn-icon btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+</div>
+<p>Since <code>btn-icon</code> renders a square, you can also add  <code>rounded-full</code> to make it a circle.</p>
+<div class="flex flex-middle mb-3">
+  <button class="btn-icon rounded-full btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="128" cy="176" r="16"></circle><path d="M128,136a28,28,0,1,0-28-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,80h88a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><path d="M93.3,104H32V64a8,8,0,0,1,8-8H93.3a8.1,8.1,0,0,1,4.8,1.6L128,80,98.1,102.4A8.1,8.1,0,0,1,93.3,104Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></button>&nbsp;
+  <button class="btn-icon rounded-full btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+</div>
+<h2 id="button-sizes" tabindex="-1">Button sizes</h2>
+<div class="flex flex-middle mb-3"><a class="btn btn-primary btn-sm" href="#/">Small</a>&nbsp;<a class="btn btn-primary" href="#/">Default</a>&nbsp;<a class="btn btn-primary btn-lg" href="#/">Large</a></div>
+<div class="flex flex-middle mb-3"><a class="btn btn-sucess btn-sm rounded-pill" href="#/">Small</a>&nbsp;<a class="btn btn-sucess rounded-pill" href="#/">Default</a>&nbsp;<a class="btn btn-sucess btn-lg rounded-pill" href="#/">Large</a></div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Small<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Large<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Using <code>btn-icon</code> at these different button sizes will maintain its square shape. And maintain a circle shape if used in combination with <code>rounded-full</code>:</p>
+<p><button class="btn btn-sm btn-icon rounded-full">A</button>
+<button class="btn btn-icon rounded-full">B</button>
+<button class="btn btn-lg btn-icon rounded-full">C</button></p>
+<p><a class="btn btn-secondary btn-sm btn-icon" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="92" cy="108" r="16"></circle><circle cx="164" cy="108" r="16"></circle><path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a> <a class="btn btn-secondary btn-icon" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="92" cy="108" r="16"></circle><circle cx="164" cy="108" r="16"></circle><path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a> <a class="btn btn-secondary btn-lg btn-icon" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="92" cy="108" r="16"></circle><circle cx="164" cy="108" r="16"></circle><path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a></p>
+<p><a class="btn btn-danger btn-sm btn-icon rounded-full" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a> <a class="btn btn-danger btn-icon rounded-full" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a> <a class="btn btn-danger btn-lg btn-icon rounded-full" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-lg btn-icon rounded-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Do you want larger text on <code>btn-lg</code> too? Then add the <code>t-lg</code> <a href="/codebase-5/docs/4-utilities/text">text utility</a>:</p>
+<p><a class="btn btn-primary btn-lg" href="#/">Normal text</a> – large button</p>
+<p><a class="btn btn-primary btn-lg t-lg" href="#/">Large text</a> – large button with large text</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg t-lg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Large text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note:</strong> using <code>t-lg</code> will work for icon <em>fonts</em>, but not for SVG icons. If you want your SVG icon to be larger then you need to make it larger directly, or apply a CSS scale transform to it.</p>
+<p>Examples using <a href="https://phosphoricons.com/">Phosphor Icons</a> at 24px and 36px size:</p>
+<div class="flex flex-middle my-3">
+<a class="btn btn-secondary btn-lg btn-icon" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="92" cy="108" r="16"></circle><circle cx="164" cy="108" r="16"></circle><path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a>&nbsp;<a class="btn btn-secondary btn-lg btn-icon" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="92" cy="108" r="16"></circle><circle cx="164" cy="108" r="16"></circle><path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a>&nbsp;<a class="btn btn-danger btn-lg btn-icon rounded-full" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a>&nbsp;<a class="btn btn-danger btn-lg btn-icon rounded-full" href="#/"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg></a>
+</div>
+<p>(24px equates to the default single line height in Codebase. 36px equates to the <code>t-lg</code> size, that is 150% larger.)</p>
+<h2 id="combos" tabindex="-1">Combos</h2>
+<p>A row of buttons would touch each other (buttons are ordinarily inline elements), unless you leave spaces between them. Leave no spaces if you want the buttons to touch each other, as in a “tool bar”. Or if you find it necessary, wrap them in a <code>flex</code></p>
+<p>You can remove some of the rounded corners using some <code>unrounded</code> utilities (see <a href="/codebase-5/docs/5-decoration-utilities/rounded-corners">rounded corners</a>).</p>
+<div class="flex flex-center mb-3">
+<button class="btn-icon unrounded-right">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M64,120h88a40,40,0,0,1,0,80H64V48h76a36,36,0,0,1,0,72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
+</button>
+<button class="btn-icon unrounded-left">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="152" y1="56" x2="104" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="64" y1="200" x2="144" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="112" y1="56" x2="192" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+</button>
+&nbsp;
+<button class="btn-icon unrounded-right">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="108" x2="168" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="188" x2="168" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+</button>
+<button class="btn-icon unrounded">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="64" y1="108" x2="192" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="64" y1="188" x2="192" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+</button>
+<button class="btn-icon unrounded-left">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="88" y1="108" x2="216" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="88" y1="188" x2="216" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+</button>
+&nbsp;
+<button class="btn-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M223,123.5l-96.2,96.2a16.1,16.1,0,0,1-22.6,0L19.3,134.8a16.1,16.1,0,0,1,0-22.6L115.5,16Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><circle cx="124" cy="116" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><path d="M204,216c0-20,20-40,20-40s20,20,20,40a20,20,0,0,1-40,0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><line x1="107" y1="99" x2="37.9" y2="29.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+</button>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- left-align icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- center icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-icon unrounded-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- right-align icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Go large – to grab people’s attention:</p>
+<div class="w-xs mx-auto mb-3">
+  <form class="flex">
+    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right px-3 t-lg" name="examplename" placeholder="Your email" type="email">
+    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg rounded-pill unrounded-left t-lg">Subscribe</button>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email-example<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-lg b-thick b-success rounded-pill unrounded-right px-3 t-lg<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Your email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Submit<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success btn-lg rounded-pill unrounded-left t-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    Subscribe<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Go small – to fit a form into a menubar, or into a table cell:</p>
+<div class="w-xxs mx-auto mb-3">
+  <form class="flex" action="">
+    <input type="search" class="form-element-sm b-primary unrounded-right" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
+    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-sm b-primary unrounded-right<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-icon unrounded-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- search icon --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="outline-buttons" tabindex="-1">Outline buttons</h2>
+<p>Outline buttons (sometimes called “ghost buttons”) can be created using utility classes.</p>
+<p>Do this:</p>
+<ol>
+<li>Put <code>bg-transparent</code> to the button, in addition to e.g. <code>btn-success</code></li>
+<li>Put a text color on the button, to override the UI white (in this example, <code>t-success</code>).</li>
+</ol>
+<p>The button border and the hover states are taken care of already (in this example, by <code>btn-success</code>).</p>
+<p>Example:</p>
+<p><code>btn btn-success bg-transparent t-success</code>:</p>
+<p><a class="btn btn-success bg-transparent t-success" href="#/">Find out more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></a></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success flex bg-transparent t-success<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Find out more →<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/6-simple-components/tables">&larr; Tables</a></li>
+        
+        
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/6-simple-components/badges">Badges &rarr;</a></li>
+          
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
+  <p>
+    <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
+      <span class="inline-flex flex-column flex-middle flex-center">
+        <!-- Codebase logo-->
+        <svg style="width: 144px; margin-bottom: 1.5rem;" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">
+          Codebase
+        </span>
+      </span>
+    </a>
+  </p>
+  
+  <p>Version 5.0.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+
+</footer>
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+</body>
+</html>

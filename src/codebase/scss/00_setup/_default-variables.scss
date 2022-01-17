@@ -1,0 +1,340 @@
+// BASICS: DEFAULT VARIABLES
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@use "sass:math";
+
+// INDEX
+// ===== 
+// (1.) Colors
+// (2.) Decoration – used in utilities and components
+// (3.) Layout
+// (4.) Basics and Typography
+// (5.) Components
+// (6.) Media query mixins
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (1.) Colors /////////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Codebase 5 UI colors chosen to conform to WCAG 2.1 Level AA accessibility guidelines 
+// for text: color contrast ratio of 4.5:1 or better. See https://www.w3.org/TR/WCAG21/
+
+$ui-color: () !default;
+$ui-color: map-merge((
+  "warning":          #c25703,  // orange -- contrast ratio 4.51:1
+  "danger":           #cf000f,  // red    -- contrast ratio 5.74:1
+  "success":          #128a12,  // green  -- contrast ratio 4.5:1
+  "info":             #1262ed,  // blue   -- contrast ratio 5.26:1
+  "primary":          #9400d3,  // purple -- contrast ratio 6.56:1
+  "secondary":        #0080a2,  // teal   -- contrast ratio 4.56:1
+  "tertiary":         #767676,  // gray   -- contrast ratio 4.54:1
+), $ui-color);
+
+$ui-setup-color: () !default;
+$ui-setup-color: map-merge((
+  // "key":           (valueX, valueY, valueZ),
+  // valueX = UI component border and background color
+  // valueY = UI component text color
+  // valueY = UI component text color on :hover (buttons only)
+  // Background and border colors on :hover are handled by mix(black, nth($val, 1), 20)
+  // (see buttons, badges, labels).
+  "warning":          (map-get($ui-color, warning), #fff, #fff),   // orange
+  "danger":           (map-get($ui-color, danger), #fff, #fff),    // red
+  "success":          (map-get($ui-color, success), #fff, #fff),   // green
+  "info":             (map-get($ui-color, info), #fff, #fff),      // blue
+  "primary":          (map-get($ui-color, primary), #fff, #fff),   // purple
+  "secondary":        (map-get($ui-color, secondary), #fff, #fff), // teal
+  "tertiary":         (map-get($ui-color, tertiary), #fff, #fff),  // gray
+), $ui-setup-color);
+
+// I can’t know what colors you want for your design. Therefore, for demonstration 
+// purposes I have aliased the base (UI) colors above as the Codebase default named
+// colors.
+// The UI colors are darker than mid-range (for reason see above), therefore these
+// have been set to the -600 shade level in the utility color shades scale map 
+// below (from -100 to -900).
+// Swap these Codebase demo colors out for whatever colors (and names) you want for
+// your design/your brand. In the Sass map below, give your chosen names a single
+// hyphen `-` prefix. This `-` is essential, so that the Sass preprocessor doesn’t
+// mistake your named color for a preset HTML color of the same name. (And this
+// same `-` is also used as part of the named color utility classes.)
+
+$named-color: () !default;
+$named-color: map-merge((
+  "-green":           map-get($ui-color, success),
+  "-orange":          map-get($ui-color, warning),
+  "-red":             map-get($ui-color, danger),
+  "-blue":            map-get($ui-color, info),
+  "-purple":          map-get($ui-color, primary),
+  "-teal":            map-get($ui-color, secondary),
+  "-gray":            map-get($ui-color, tertiary),
+), $named-color);
+
+$named-color-shades: true !default;
+
+// $shades: () !default;
+// $shades: map-merge((
+//   "100":            (white, 92),
+//   "200":            (white, 69),
+//   "300":            (white, 46),
+//   "400":            (white, 23),
+//   "500":            (black, 0),
+//   "600":            (black, 16),
+//   "700":            (black, 32),
+//   "800":            (black, 48),
+//   "900":            (black, 64)
+// ), $shades);
+
+$shades: () !default;
+$shades: map-merge((
+  "100":            (white, 90),
+  "200":            (white, 72),
+  "300":            (white, 54),
+  "400":            (white, 36),
+  "500":            (white, 18),
+  "600":            (black, 0),
+  "700":            (black, 18),
+  "800":            (black, 36),
+  "900":            (black, 54)
+), $shades);
+
+$theme-color: () !default;
+$theme-color: map-merge((
+  "page-bg":                 #ffffff,
+  "page-bg-alt":             mix(white, map-get($named-color, -gray), 90),
+  "detail":                  transparentize(#000000, .88), // mix(white, map-get($named-color, -gray), 54),
+  "default":                 map-get($named-color, -gray),
+  "text":                    mix(black, map-get($named-color, -gray), 72),
+  "focus-ring":              mix(white, map-get($named-color, -blue), 18),
+  "link":                    map-get($named-color, -blue),
+  "link-hover":              mix(black, map-get($named-color, -blue), 36),
+  "link-visited":            mix(black, map-get($named-color, -purple), 18),
+  "form-element-bg":         mix(white, map-get($named-color, -gray), 90),
+  "button-default-text":     mix(black, map-get($named-color, -gray), 54),
+  "button-background-hover": mix(white, map-get($named-color, -gray), 90),
+  "highlight":               rgba(255, 122, 89, 0.32),
+  "selection":               rgba(0, 189, 165, 0.4),
+  "code":                    #000000
+), $theme-color);
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (2.) Decoration /////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Codebase component decoration is all controlled by the following
+// set of decoration variables. These same variables are used
+// throughout Codebase typography, components and utilities.
+
+// Element grid
+// ============
+// Throughout the Codebase SCSS, an element grid has been used
+// wherever possible. In other words, line-heights, margins and
+// paddings have been set at increments of 1 element grid unit.
+// In addition, a set of margin and padding decoration utility
+// classes are generated with increments of 1 element grid unit.
+// borders and border radii are also based on fractions of 
+// 1 element grid unit.
+
+$elem:                0.5 !default; // 1 elem = 1 element grid unit
+
+// SCSS map for decoration margins and paddings
+$spacing: (
+  "0":                0,
+  "1":                $elem * 1rem,
+  "2":                $elem * 2rem,
+  "3":                $elem * 3rem, // = same as the height of 1 line of text (default, paragraphs, etc.)
+  "4":                $elem * 4rem,
+  "5":                $elem * 5rem,
+  "6":                $elem * 6rem, // = same as the height of 2 lines of text
+);
+
+$spacing-mq:          true;
+// for different margins and paddings at different breakpoint widths.
+// This is heavy -- set it to false and save yourself 11 KB if you know you will never use it.
+
+// Other Spacing
+$spacing-block:                 ($elem * 1rem) ($elem * 2rem) !default; // E.g. menu links, table cell padding
+
+$spacing-space:                 0.25rem !default; // used in x-axis margins only (for adding a pseudo character space)
+
+// Borders
+
+$borders: (
+  "b":    "border",
+  "bt":   "border-top",
+  "br":   "border-right",
+  "bb":   "border-bottom",
+  "bl":   "border-left"
+);
+
+$detail-thickness:              0.0625rem; // 1px but must be in rem
+
+$border-thin:                   $detail-thickness;
+$border-thick:                  $elem * .5rem;
+$border-heavy:                  $elem * 1rem;
+
+// Border radius (rounded corners)
+$border-radius-sm:              $elem * .5rem; // will be used for UI elements (default)
+$border-radius:                 $elem * 1rem;
+$border-radius-lg:              $elem * 2rem;
+$border-radius-pill:            10em;
+$border-radius-circle:          50%;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (3.) Layout //////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Widths (used for media query breakpoints, containers, and width utilities)
+
+$width: (
+  "w-xxs":                    256px,
+  "w-xs":                     512px, // also used for the `xs` mq-width breakpoint
+  "w-sm":                     768px, // also used for the `sm` mq-width breakpoint
+  "w-md":                     1024px, // also used for the `md` mq-width breakpoint
+  "w-lg":                     1280px, // also used for the `lg` mq-width breakpoint
+  "w-xl":                     1536px,
+  "w-xxl":                    1792px 
+);
+
+$mq-width: ( // used in loops for inline-flex, flex, flex-gap, margins, spacings, text alignment, floats
+  "xs":                       "w-xs",
+  "sm":                       "w-sm",
+  "md":                       "w-md",
+  "lg":                       "w-lg",
+);
+
+// Containers
+$container-default:           map-get($width, w-lg);
+$container-x-space:           1rem !default;
+
+// Flexbox system
+$flex-gap:                    2rem !default;
+$use-flex-gap:                true !default; // toggling to `false` will revert Codebase to using the old negative margins plus paddings hack for flexbox gaps
+
+// Grid system
+$grid-gap-width:              2rem !default;
+
+// Layout utilities
+$square-size-sm:              3rem !default;
+$square-size:                 4.5rem !default;
+$square-size-lg:              6rem !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (4.) Basics and Typography ///////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$font-stack-base:                   ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-stack-mono:                   SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
+$font-stack-sans-serif:             $font-stack-base !default;
+$font-stack-serif:                  "Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif !default;
+$font-stack-ui:                     $font-stack-base !default;
+$font-stack-brand:                  $font-stack-base !default;
+$font-stack-prose:                  $font-stack-serif !default;
+
+$heading-size: () !default;
+$heading-size: map-merge((
+  "h1":         2.75, // multiples of the default font size (1rem)
+  "h2":         2,
+  "h3":         1.625,
+  "h4":         1.325,
+  "h5":         1.125,
+  "h6":         1
+), $heading-size);
+
+$heading-weight:      normal;
+$heading-line-height: calc(1em + .5rem); // gives .5rem more than the heading’s own size
+
+$text-font-size:                    16px !default;
+$text-base-line-height:             $elem * 3;
+$text-thin-font-weight:             200 !default;
+$text-base-font-weight:             400 !default;
+$text-semibold-font-weight:         600 !default;
+$text-bold-font-weight:             700 !default;
+$text-bolder-font-weight:           900 !default;
+$text-columns-gap-width:            clamp(#{$elem * 3rem}, 2.5vw, #{$elem * 5rem}) !default;
+$text-columns-width:                17.5em !default;
+
+$link-decoration:                   underline !default;
+$link-color-visited:                false !default;
+
+// Blockquotes
+$blockquotes-font-size:             $text-font-size !default;
+$blockquotes-side-padding:          2.5vw !default;
+
+// Horizontal Rules
+$horizontal-rule-spacing:           1.5rem !default;
+$horizontal-rule-thickness:         $border-thin !default;
+
+// Lists
+$li-spacing:                        1rem !default;
+
+// Code (see also $font-stack-mono above)
+$code-rounded-corners:              true !default;
+$code-radius:                       $border-radius-sm !default;
+$code-background-color:             true !default;
+
+// Forms
+$form-border-thickness:             $detail-thickness !default;
+$form-input-background-color:             false !default;
+$form-input-rounded-corners:        true !default;
+$form-border-radius:                $border-radius-sm !default;
+$form-padding-sm:                   0.25rem  0.5rem !default;
+$form-padding-default:              .5rem !default;
+$form-padding-lg:                   .75rem !default;
+$form-element-size-sm:              2rem + (2 * $form-border-thickness) !default;
+$form-element-size:                 2.5rem + (2 * $form-border-thickness) !default;
+$form-element-size-lg:              3rem + (2 * $form-border-thickness) !default;
+
+// Focus
+$focus-ring:                        0 0 0 2px #fff, 0 0 0 5px map-get($theme-color, focus-ring) !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (5.) Components //////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Buttons
+$button-state-transition:           all 0.15s ease-in-out !default;
+$button-border-thickness:           $detail-thickness !default;
+$button-rounded-corners:            true !default;
+$button-border-radius:              $border-radius-sm !default;
+$button-padding-sm:                 .25rem .75rem !default;
+$button-padding-default:            .5rem 1rem !default;
+$button-padding-lg:                 .75rem 1.75rem !default;
+$button-padding-icon:               0 !default;
+$button-font-size:                  $text-font-size !default;
+$button-font-weight:                600 !default;
+$button-size-sm:                    $form-element-size-sm !default;
+$button-size:                       $form-element-size !default;
+$button-size-lg:                    $form-element-size-lg !default;
+
+// Labels
+$label-rounded-corners:             true !default;
+$label-border-radius:               $border-radius-sm !default;
+
+// Tabs
+$tab-control-border-radius:         $border-radius-sm !default !default;
+
+// Tables
+$table-padding:                     $spacing-block !default;
+$table-line-thickness:              $detail-thickness !default;
+
+// z-index of components
+$z-index-backdrop:                  998 !default;
+$z-index-modal:                     999 !default;
+$z-index-offcanvas:                 999 !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (6.) Media query mixins /////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin break-min($min-width) {
+  @media (min-width: map-get($width, $min-width)) {
+    @content;
+  }
+}
+
+@mixin break-max($max-width) {
+  @media (max-width: (map-get($width, $max-width) - 1px)) {
+    @content;
+  }
+}

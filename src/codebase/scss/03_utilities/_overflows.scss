@@ -1,0 +1,31 @@
+// UTILITIES: OVERFLOWS
+// ~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.overflow-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.overflow-x > [class*=table] {
+  margin: 0;
+}
+
+.overflow-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.overflow-xy {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}

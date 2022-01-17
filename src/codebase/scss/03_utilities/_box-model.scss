@@ -1,0 +1,86 @@
+// UTILITIES: BOX MODEL
+// (margin / border / padding)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// EXTRAS -- coded first, so that they can be overridden
+// (the main `@each` generator is below the extras)
+
+// Margin extras
+// See mx-auto centering (below)
+
+// (Border extras -- none)
+
+// Padding extras
+.p-block { padding: $spacing-block; }
+
+// Box model generator
+
+// All viewports
+@each $key, $val in $spacing {
+  .m-#{$key} { margin: $val; }
+  .mt-#{$key} { margin-top: $val; }
+  .mr-#{$key} { margin-right: $val; }
+  .mb-#{$key} { margin-bottom: $val; }
+  .ml-#{$key} { margin-left: $val; }
+  .my-#{$key} { margin-top: $val; margin-bottom: $val; }
+  .mx-#{$key} { margin-right: $val; margin-left: $val; }
+  .m-auto { margin: auto; }
+  .mr-auto { margin-right: auto; }
+  .ml-auto { margin-left: auto; }
+  .mx-auto { margin-right: auto; margin-left: auto; }
+
+  .p-#{$key} { padding: $val; }
+  .pt-#{$key} { padding-top: $val; }
+  .pr-#{$key} { padding-right: $val; }
+  .pb-#{$key} { padding-bottom: $val; }
+  .pl-#{$key} { padding-left: $val; }
+  .py-#{$key} { padding-top: $val; padding-bottom: $val; }
+  .px-#{$key} { padding-right: $val; padding-left: $val; }
+}
+
+@each $key, $val in $borders {
+  .#{$key}-0 { #{$val}: none !important; }
+  .#{$key}-dashed { #{$val}: $border-thin dashed map-get($theme-color, detail); }
+  .#{$key}-thin { #{$val}: $border-thin solid map-get($theme-color, detail); }
+  .#{$key}-thick { #{$val}: $border-thick solid map-get($theme-color, detail); }
+  .#{$key}-heavy { #{$val}: $border-heavy solid map-get($theme-color, detail); }
+}
+
+// MQ responsive
+@if $spacing-mq == true {
+  @each $mq-key, $mq-value in $mq-width {
+    @include break-min(#{$mq-value}) {
+      @each $key, $val in $spacing {
+        .#{$mq-key}\:m-#{$key} { margin: $val; }
+        .#{$mq-key}\:mt-#{$key} { margin-top: $val; }
+        .#{$mq-key}\:mr-#{$key} { margin-right: $val; }
+        .#{$mq-key}\:mb-#{$key} { margin-bottom: $val; }
+        .#{$mq-key}\:ml-#{$key} { margin-left: $val; }
+        .#{$mq-key}\:my-#{$key} { margin-top: $val; margin-bottom: $val; }
+        .#{$mq-key}\:mx-#{$key} { margin-right: $val; margin-left: $val; }
+        .#{$mq-key}\:mr-auto { margin-right: auto; }
+        .#{$mq-key}\:ml-auto { margin-left: auto; }
+        .#{$mq-key}\:mx-auto { margin-right: auto; margin-left: auto; }
+
+        .#{$mq-key}\:p-#{$key} { padding: $val; }
+        .#{$mq-key}\:pt-#{$key} { padding-top: $val; }
+        .#{$mq-key}\:pr-#{$key} { padding-right: $val; }
+        .#{$mq-key}\:pb-#{$key} { padding-bottom: $val; }
+        .#{$mq-key}\:pl-#{$key} { padding-left: $val; }
+        .#{$mq-key}\:py-#{$key} { padding-top: $val; padding-bottom: $val; }
+        .#{$mq-key}\:px-#{$key} { padding-right: $val; padding-left: $val; }
+        .#{$mq-key}\:p-block { padding: $spacing-block; }
+      }
+
+      @each $key, $val in $borders {
+        .#{$mq-key}\:#{$key}-0 { #{$val}: 0; }
+        .#{$mq-key}\:#{$key}-dashed { #{$val}: $border-thin dashed map-get($theme-color, detail); }
+        .#{$mq-key}\:#{$key}-thin { #{$val}: $border-thin solid map-get($theme-color, detail); }
+        .#{$mq-key}\:#{$key}-thick { #{$val}: $border-thick solid map-get($theme-color, detail); }
+        .#{$mq-key}\:#{$key}-heavy { #{$val}: $border-heavy solid map-get($theme-color, detail); }
+      }  
+    }
+  }
+}

@@ -1,0 +1,237 @@
+// UTILITIES: TYPOGRAPHIC
+// ~~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// Also see `.t-` colors.
+
+// Text alignment
+@mixin text-alignment {
+  &-left {
+    text-align: left;
+  }
+  
+  &-center {
+    text-align: center;
+  }
+  
+  &-right {
+    text-align: right;
+  }
+}
+
+.t {
+  @include text-alignment;
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  .#{$mq-key}\:t {
+    @include break-min(#{$mq-value}) {
+      @include text-alignment;
+    }
+  }
+}
+
+// Text styles
+
+.t-ui {
+  font-family: $font-stack-ui;
+}
+.t-mono {
+  font-family: $font-stack-mono;
+}
+.t-brand {
+  font-family: $font-stack-brand;
+}
+.t-sans-serif {
+  font-family: $font-stack-sans-serif;
+}
+.t-serif {
+  font-family: $font-stack-serif;
+}
+.t-prose {
+  font-family: $font-stack-prose;
+}
+
+.t-bolder,
+.t-heavy {
+  font-weight: $text-bolder-font-weight;
+}
+
+.t-bold,
+.t-strong {
+  font-weight: $text-bold-font-weight;
+}
+
+.t-semibold {
+  font-weight: $text-semibold-font-weight;
+}
+
+.t-normal {
+  font-weight: $text-base-font-weight;
+  font-style: normal;
+}
+
+.p, .t-default {
+  font-size: $text-font-size;
+  font-weight: $text-base-font-weight;
+  font-style: normal;
+}
+
+.t-lighter,
+.t-thin {
+  font-weight: $text-thin-font-weight;
+}
+
+.t-italic,
+.t-italics,
+.t-em {
+  font-style: italic;
+}
+
+.t-decoration-none,
+.hover\:t-decoration-none:hover {
+  text-decoration: none;
+}
+
+.hover\:t-underscore:hover,
+.hover\:t-underline:hover {
+  text-decoration: underline;
+}
+
+.t-strike {
+  text-decoration: line-through;
+}
+
+.t-muted {
+  opacity: 0.4;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+.t-loose {
+  letter-spacing: .0625rem;
+}
+
+.t-tight {
+  letter-spacing: -.0625rem;
+}
+
+.t-columns {
+  column-width: $text-columns-width;
+  column-gap: 1.5rem; // fallback
+  column-gap: $text-columns-gap-width;
+}
+
+small,
+.t-sm {
+  font-size: .75em;
+  line-height: inherit;
+}
+
+.t-md,
+.t-1em {
+  font-size: 1em;
+}
+
+mark,
+.t-mark,
+.t-highlight {
+  color: currentColor;
+  background-color: map-get($theme-color, highlight);
+}
+
+.t-nowrap {
+  white-space: nowrap;
+}
+
+big,
+.t-lg {
+  h1, .h1 {
+    font-size: map-get($heading-size, h1) * 1em;
+  }
+  h2, .h2 {
+    font-size: map-get($heading-size, h2) * 1em;
+  }
+  h3, .h3 {
+    font-size: map-get($heading-size, h3) * 1em;
+  }
+  h4, .h4 {
+    font-size: map-get($heading-size, h4) * 1em;
+  }
+  h5, .h5 {
+    font-size: map-get($heading-size, h5) * 1em;
+  }
+  h6, .h6 {
+    font-size: map-get($heading-size, h6) * 1em;
+  }
+}
+
+@include break-min(w-sm) {
+  big,
+  .t-lg,
+  .t-long-read {
+    h1, .h1 {
+      font-size: map-get($heading-size, h1) * 1em;
+    }
+    h2, .h2 {
+      font-size: map-get($heading-size, h2) * 1em;
+    }
+    h3, .h3 {
+      font-size: map-get($heading-size, h3) * 1em;
+    }
+    h4, .h4 {
+      font-size: map-get($heading-size, h4) * 1em;
+    }
+    h5, .h5 {
+      font-size: map-get($heading-size, h5) * 1em;
+    }
+    h6, .h6 {
+      font-size: map-get($heading-size, h6) * 1em;
+    }
+    line-height: inherit;
+  }
+  .t-long-read {
+    font-size: clamp(1em, calc(0.625em + 1vw), 1.35em);
+  }
+}
+
+big,
+.t-lg {
+  font-size: 1.25em;
+  @include break-min(w-md) {
+    font-size: 1.5em;
+  }
+}
+
+.list-style-type {
+  &-none {
+    list-style-type: none;
+  }
+  &-square {
+    list-style-type: square;
+  }
+  &-disc {
+    list-style-type: disc;
+  }
+  &-circle {
+    list-style-type: circle;
+  }
+  &-lower-alpha {
+    list-style-type: lower-alpha;
+  }
+  &-upper-alpha {
+    list-style-type: upper-alpha;
+  }
+  &-lower-roman {
+    list-style-type: lower-roman;
+  }
+  &-upper-roman {
+    list-style-type: upper-roman;
+  }
+  &-decimal {
+    list-style-type: decimal;
+  }
+}

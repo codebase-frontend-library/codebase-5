@@ -1,0 +1,144 @@
+// UTILITIES: GRID
+// ~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+@mixin grid-auto {
+  &-2-cols {
+    grid-template-columns: repeat(2, minmax(1rem, auto));
+  }
+  &-3-cols {
+    grid-template-columns: repeat(3, minmax(1rem, auto));
+  }
+  &-4-cols {
+    grid-template-columns: repeat(4, minmax(1rem, auto));
+  }
+  &-5-cols {
+    grid-template-columns: repeat(5, minmax(1rem, auto));
+  }
+  &-6-cols {
+    grid-template-columns: repeat(6, minmax(1rem, auto));
+  }
+
+}
+
+@mixin grid-equal {
+  &-2-cols {
+    grid-template-columns: repeat(2, minmax(1rem, 1fr));
+  }
+  &-3-cols {
+    grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  }
+  &-4-cols {
+    grid-template-columns: repeat(4, minmax(1rem, 1fr));
+  }
+  &-5-cols {
+    grid-template-columns: repeat(5, minmax(1rem, 1fr));
+  }
+  &-6-cols {
+    grid-template-columns: repeat(6, minmax(1rem, 1fr));
+  }
+}
+
+@mixin grid-columns {
+  &-1 {grid-column: 1}
+  &s-1-2 {grid-column: 1 / span 2}
+  &s-1-3 {grid-column: 1 / span 3}
+  &s-1-4 {grid-column: 1 / span 4}
+  &s-1-5 {grid-column: 1 / span 5}
+  &s-1-6 {grid-column: 1 / span 6}
+
+  &-2 {grid-column: 2}
+  &s-2-3 {grid-column: 2 / span 2}
+  &s-2-4 {grid-column: 2 / span 3}
+  &s-2-5 {grid-column: 2 / span 4}
+  &s-2-6 {grid-column: 2 / span 5}
+
+  &-3 {grid-column: 3}
+  &s-3-4 {grid-column: 3 / span 2}
+  &s-3-5 {grid-column: 3 / span 3}
+  &s-3-6 {grid-column: 3 / span 4}
+
+  &-4 {grid-column: 4}
+  &s-4-5 {grid-column: 4 / span 2}
+  &s-4-6 {grid-column: 4 / span 3}
+
+  &-5 {grid-column: 5}
+  &s-5-6 {grid-column: 5 / span 2}
+
+  &-6 {grid-column: 6}
+}
+
+@mixin grid-rows {
+  &-1 {grid-row: 1}
+  &s-1-2 {grid-row: 1 / span 2}
+  &s-1-3 {grid-row: 1 / span 3}
+  &s-1-4 {grid-row: 1 / span 4}
+  &s-1-5 {grid-row: 1 / span 5}
+  &s-1-6 {grid-row: 1 / span 6}
+
+  &-2 {grid-row: 2}
+  &s-2-3 {grid-row: 2 / span 2}
+  &s-2-4 {grid-row: 2 / span 3}
+  &s-2-5 {grid-row: 2 / span 4}
+  &s-2-6 {grid-row: 2 / span 5}
+
+  &-3 {grid-row: 3}
+  &s-3-4 {grid-row: 3 / span 2}
+  &s-3-5 {grid-row: 3 / span 3}
+  &s-3-6 {grid-row: 3 / span 4}
+
+  &-4 {grid-row: 4}
+  &s-4-5 {grid-row: 4 / span 2}
+  &s-4-6 {grid-row: 4 / span 3}
+
+  &-5 {grid-row: 5}
+  &s-5-6 {grid-row: 5 / span 2}
+
+  &-6 {grid-row: 6}
+}
+
+.grid {
+  display: grid;
+}
+
+.auto {
+  @include grid-auto;
+}
+
+.equal {
+  @include grid-equal;
+}
+
+.gap {
+  gap: $grid-gap-width;
+}
+
+.col {
+  @include grid-columns;
+}
+.row {
+  @include grid-rows
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  .#{$mq-key} {
+    @include break-min(#{$mq-value}) {
+      &\:auto {
+        @include grid-auto;
+      }
+      &\:equal {
+        @include grid-equal;
+      }
+      &\:gap {
+        gap: $grid-gap-width;
+      }
+      &\:col {
+        @include grid-columns;
+      }
+      &\:row {
+        @include grid-rows
+      }
+    }
+  }
+}

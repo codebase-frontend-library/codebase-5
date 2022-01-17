@@ -1,0 +1,191 @@
+// BASICS: BASE (resets and other stuff)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Based on https://github.com/sindresorhus/modern-normalize v.1.0
+
+@use "../00_setup/default-variables" as *;
+
+// For AlpineJS =======================
+[x-cloak] { display: none !important; }
+// ====================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  font-family: $font-stack-base;
+  font-size: $text-font-size;
+  line-height: $text-base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+  -moz-font-feature-settings: "liga" on;
+  font-feature-settings: "liga" on;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  color: map-get($theme-color, text);
+  background-color: map-get($theme-color, page-bg);
+}
+
+*:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: $text-bold-font-weight;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: $focus-ring;
+}
+
+a:not(.btn):focus-visible {
+  outline-color: currentColor;
+  outline-offset: 2px;
+}
+
+small {
+  font-size: 85%;
+}
+
+::selection {
+  background-color: map-get($theme-color, selection);
+}
+
+legend {
+  padding: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+// For base button styles see 01_basics/_form-elements
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: block;
+  width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+[type="number"] {
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+summary {
+  display: list-item;
+}

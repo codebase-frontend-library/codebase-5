@@ -1,0 +1,176 @@
+// UTILITIES: TRANSFORMATIONS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.translate {
+  &-up-100\% {
+    transform: translateY(-100%);
+  }
+  &-left-100\% {
+    transform: translateX(-100%);
+  }
+  &-bottom-100\% {
+    transform: translateY(100%);
+  }
+  &-right-100\% {
+    transform: translateX(100%);
+  }
+  &-0-0 {
+    transform: translateXY(0,0);
+  }
+}
+
+.scale {
+  &-200\% {
+    transform: scale(2);
+  }
+  &-175\% {
+    transform: scale(1.75);
+  }
+  &-150\% {
+    transform: scale(1.5);
+  }
+  &-125\% {
+    transform: scale(1.25);
+  }
+  &-100\% {
+    transform: scale(1);
+  }
+  &-75\% {
+    transform: scale(.75);
+  }
+  &-50\% {
+    transform: scale(.5);
+  }
+  &-25\% {
+    transform: scale(.25);
+  }
+  &-0 {
+    transform: scale(0);
+  }
+}
+
+.rotate {
+  &-90 {
+    transform: rotate(90deg);
+  }
+  &-minus-90 {
+    transform: rotate(-90deg);
+  }
+  &-180 {
+    transform: rotate(180deg);
+  }
+  &-minus-180 {
+    transform: rotate(-180deg);
+  }
+  &-270 {
+    transform: rotate(270deg);
+  }
+}
+
+.flip {
+  perspective: 1000px;
+  //-webkit-perspective: 1000px;
+}
+
+.flip-x {
+  transform: rotateX(180deg);
+  transform: rotateY(0);
+}
+
+.flip-y {
+  transform: rotateX(0);
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.transform-origin {
+  &-top {
+    transform-origin: top;
+  }
+  &-top-right {
+    transform-origin: top right;
+  }
+  &-top-left {
+    transform-origin: top left;
+  }
+  &-right {
+    transform-origin: right;
+  }
+  &-bottom-right {
+    transform-origin: bottom right;
+  }
+  &-bottom {
+    transform-origin: bottom;
+  }
+  &-bottom-left {
+    transform-origin: bottom left;
+  }
+  &-left {
+    transform-origin: left;
+  }
+}
+
+.opacity {
+  &-100\% {
+    opacity: 1;
+  }
+  &-75\% {
+    opacity: .75;
+  }
+  &-50\% {
+    opacity: .5;
+  }
+  &-25\% {
+    opacity: .25;
+  }
+  &-0 {
+    opacity: 0;
+  }
+}
+
+// Make it pop
+
+@keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity:1; }
+  100% { opacity:0; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(.75); }
+  100% { transform: scale(1); }
+}
+
+@keyframes scaleOut {
+  0% { transform: scale(1); }
+  100% { transform: scale(.75); }
+}
+
+.fade-in {
+  animation: fadeIn 300ms;
+}
+
+.fade-out {
+  animation: fadeOut 300ms;
+  opacity: 0;
+}
+
+.scale-in {
+  animation: scaleIn 300ms;
+}
+
+.scale-out {
+  animation: scaleOut 300ms;
+  transform: scale(.75);
+}

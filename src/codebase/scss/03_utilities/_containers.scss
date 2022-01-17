@@ -1,0 +1,39 @@
+// UTILITIES: CONTAINERS
+// ~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+[class*=container] {
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-x-space;
+  padding-left: $container-x-space;
+  [class*=container] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.container {
+  max-width: $container-default;
+  &-xxl {
+    max-width: map-get($width, w-xxl);
+  }
+  &-xl {
+    max-width: map-get($width, w-xl);
+  }
+  &-lg {
+    max-width: map-get($width, w-lg);
+  }
+  &-md {
+    max-width: map-get($width, w-md);
+  }
+  &-sm {
+    max-width: map-get($width, w-sm);
+  }
+  &-xs {
+    max-width: map-get($width, w-xs);
+  }
+}

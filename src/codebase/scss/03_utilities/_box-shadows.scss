@@ -1,0 +1,42 @@
+// UTILITIES: BOX SHADOWS
+// ~~~~~~~~~~~~~~~~~~~~~~
+
+.bs-1 {
+  box-shadow: 
+  // z-axis lift
+  0 1px 4px rgba(0,0,0,.25),
+  // spread
+  0 2px 12px rgba(0,0,0,.05);
+}
+
+.bs-2 {
+  box-shadow:
+  // z-axis lift
+  0 2px 8px rgba(0,0,0,.2),
+  // spread
+  0 4px 24px rgba(0,0,0,.1);
+}
+
+.bs-3 {
+  box-shadow:
+  // z-axis lift
+  0 4px 12px rgba(0,0,0,.15),
+  // spread
+  0 8px 48px rgba(0,0,0,.1);
+}
+
+.bs-4 {
+  box-shadow: 
+  // z-axis lift
+  0 8px 24px rgba(0,0,0,.1),
+  // spread
+  0 16px 60px rgba(0,0,0,.1);
+}
+
+.bs-5 {
+  box-shadow:
+  // z-axis lift
+  0 12px 48px rgba(0,0,0,.05),
+  // spread
+  0 24px 84px rgba(0,0,0,.05);
+}

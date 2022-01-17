@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Slideshows - Codebase</title>
+
+  <link href="/codebase-5/prism/prism.css" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.0" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-5/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-5/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-5/site.webmanifest">
+  <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      max-width: 100vw;
+    }
+    main h2, main h3, main h4, main h5, main h6 {
+      scroll-margin-top: 72px;
+    }
+    #site-top-bar {
+      height: 56px;
+      z-index: 990;
+    }
+    #site-title {
+      display: block;
+      font-size: 1.325rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+
+    #site-title,
+    #site-footer-title {
+      color: #9400d3;
+    }
+    #site-title:hover,
+    #site-footer-title:hover {
+      color: #5f0087;
+    }
+
+    #site-title svg,
+    #site-footer-title svg {
+      fill: #9400d3;
+    }
+    #site-title:hover svg,
+    #site-footer-title:hover svg {
+      fill: #5f0087;
+    }
+
+    @media (max-width: 767px) {
+      #side-menu-wrap {
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #site-page {
+        grid-template-columns: 256px calc(100vw - 256px);
+      }
+      #site-navigation > div {
+        top: 57px;
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #site-page {
+        grid-template-columns: 256px auto 256px;
+      }
+      #docs-article {
+        grid-template-columns: auto 256px;
+      }
+    }
+
+    #toc ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    #toc ul ul {
+      padding-left: 1rem;
+    }
+    #toc li {
+      margin-bottom: 1rem;
+    }
+    #toc a {
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 1279px) {
+      #toc ul ul {
+        display: none;
+      }
+    }
+
+    #docs-hero-feature {
+      display: block;
+      max-width: 280px;
+      margin: auto;
+    }
+    @media (min-width: 1024px) {
+      #docs-hero-feature {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+
+    /* Examples */
+    svg tspan {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .month span {
+      width: calc(100% / 7);
+      margin: 0.5rem 0;
+    }
+  </style>
+
+  <!-- Alpine and Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    let viewportWidth = window.innerWidth;
+    
+    Alpine.store('docsNav', {
+      open: window.innerWidth >= 768,
+      belowBP: window.innerWidth < 768,
+      menu1open: false,
+      menu2open: false,
+      menu3open: false,
+      menu4open: false,
+      menu5open: false,
+      menu6open: false,
+      menu7open: false,
+
+      checkURL() {
+        if (window.location.href.indexOf('1-getting-started') > -1) {
+          this.menu1open = true
+        }
+        if (window.location.href.indexOf('2-classless-basics') > -1) {
+          this.menu2open = true
+        }
+        if (window.location.href.indexOf('3-layout-utilities') > -1) {
+          this.menu3open = true
+        }
+        if (window.location.href.indexOf('4-decoration-utilities') > -1) {
+          this.menu4open = true
+        }
+        if (window.location.href.indexOf('5-typographic-utilities') > -1) {
+          this.menu5open = true
+        }
+        if (window.location.href.indexOf('6-simple-components') > -1) {
+          this.menu6open = true
+        }
+        if (window.location.href.indexOf('7-alpinejs-components') > -1) {
+          this.menu7open = true
+        }
+      },
+
+      reset() {
+        let currentWidth = window.innerWidth;
+
+        // Ignoring height changes (e.g. iPhone Safari top/bottom bars)
+        if (currentWidth != viewportWidth) {
+          // width has changed
+          
+          viewportWidth = currentWidth;
+          
+          if (viewportWidth >= 768) {
+            this.open = true,
+            this.belowBP = false
+          } else {
+            this.open = false,
+            this.belowBP = true
+          }
+        }
+      }
+
+    })
+
+  })
+</script>
+
+<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+  <div class="w-xxl mx-auto h-100% relative flex flex-middle">
+
+    <!-- Navicon -->
+    <div
+      x-data
+      @resize.window.throttle="$store.docsNav.reset()"
+    >
+      <button
+        x-cloak
+        class="btn-icon rounded-full ml-1"
+        @click="$store.docsNav.open = true"
+        aria-label="Site menu"
+        :aria-expanded="$store.docsNav"
+        x-show="$store.docsNav.belowBP"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+    </div>
+  
+    <div class="p-2">
+      <a
+        id="site-title"
+        class="mb-0 ml-1 t-decoration-none"
+        :class="scrollAtTop ? 'enlarged' : ''"
+        href="/codebase-5/"
+        tabindex="1"
+      >
+        <!-- Codebase logo-->
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/>
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">Codebase</span>
+      </a>
+    </div>
+  
+    <div class="grow">
+      <div class="menu flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      </div>  
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          <p class="h4 lg:mt-3">Documentation</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Getting started</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    id="docs-dropdown-1"
+    x-show="$store.docsNav.menu1open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    </ul>
+  </div>  
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu2open = !$store.docsNav.menu2open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu2open" @keyup.escape="$store.docsNav.menu2open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu2open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Classless basics</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu2open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu3open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Layout</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu3open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu4open = !$store.docsNav.menu4open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu4open" @keyup.escape="$store.docsNav.menu4open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu4open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Decoration</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu4open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu5open = !$store.docsNav.menu5open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu5open" @keyup.escape="$store.docsNav.menu5open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu5open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Typography</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu5open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
+    <svg
+      class="transition-all-300ms" 
+      :class="$store.docsNav.menu6open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Simple (CSS only)</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu6open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu7open = !$store.docsNav.menu7open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu7open" @keyup.escape="$store.docsNav.menu7open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu7open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">With AlpineJS</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu7open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    </ul>
+  </div>
+</div>
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        
+        <div class="my-1">AlpineJS components</div>
+        
+        <h1 class="mb-0 t-heavy t-primary">Slideshows</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      <p>Codebase and AlpineJS can be used to create simple slideshows, such as you commonly see on ecommerce product pages.</p>
+<h2 id="simple-example" tabindex="-1">Simple example</h2>
+<p>A Codebase slideshow example with 5 slides:</p>
+<div class="my-6">
+<div 
+  role="region"
+  class="flex flex-column flex-column-reverse"
+  aria-label="Slideshow example title"
+  x-cloak
+  x-data="{ currentSlide: 1, slides: [1, 2, 3, 4, 5] }"
+>
+  <!-- Slide indicator buttons -->
+  <ul
+    role="region"
+    aria-label="Slide indicators"
+    class="list-style-type-none mb-0 p-2 flex flex-center"
+  >
+    <li>
+      <button 
+        id="slide1"
+        x-ref="slide1"
+        class="mx-1 btn-sm btn-icon rounded-full"
+        :class="currentSlide === 1 && 'btn-success'"
+        aria-label="Slide 1 selector"
+        aria-controls="slide1-panel"
+        :aria-selected="currentSlide === 1"
+        @click="currentSlide = 1; $nextTick(() => $refs.slide1Panel.focus())"
+        @keyup.right="currentSlide = 2; $nextTick(() => $refs.slide2.focus())"
+        :tabindex="currentSlide === 1 ? '0' : '-1'"
+      >1</button>
+    </li>
+    <li>
+      <button
+        id="slide2"
+        x-ref="slide2"
+        class="mx-1 btn-sm btn-icon rounded-full"
+        :class="currentSlide === 2 && 'btn-success'"
+        aria-label="Slide 2 selector"
+        aria-controls="slide2-panel"
+        :aria-selected="currentSlide === 2"
+        @click="currentSlide = 2; $nextTick(() => $refs.slide2Panel.focus())"
+        @keyup.right="currentSlide = 3; $nextTick(() => $refs.slide3.focus())"
+        @keyup.left="currentSlide = 1; $nextTick(() => $refs.slide1.focus())"
+        :tabindex="currentSlide === 2 ? '0' : '-1'"
+      >2</button>
+    </li>
+    <li>
+      <button
+        id="slide3"
+        x-ref="slide3"
+        class="mx-1 btn-sm btn-icon rounded-full"
+        :class="currentSlide === 3 && 'btn-success'"
+        aria-label="Slide 3 selector"
+        aria-controls="slide3-panel"
+        :aria-selected="currentSlide === 3"
+        @click="currentSlide = 3; $nextTick(() => $refs.slide3Panel.focus())"
+        @keyup.right="currentSlide = 4; $nextTick(() => $refs.slide4.focus())"
+        @keyup.left="currentSlide = 2; $nextTick(() => $refs.slide2.focus())"
+        :tabindex="currentSlide === 3 ? '0' : '-1'"
+      >3</button>
+    </li>
+    <li>
+      <button
+        id="slide4"
+        x-ref="slide4"
+        class="mx-1 btn-sm btn-icon rounded-full"
+        :class="currentSlide === 4 && 'btn-success'"
+        aria-label="Slide 3 selector"
+        aria-controls="slide4-panel"
+        :aria-selected="currentSlide === 4"
+        @click="currentSlide = 4; $nextTick(() => $refs.slide4Panel.focus())"
+        @keyup.right="currentSlide = 5; $nextTick(() => $refs.slide5.focus())"
+        @keyup.left="currentSlide = 3; $nextTick(() => $refs.slide3.focus())"
+        :tabindex="currentSlide === 4 ? '0' : '-1'"
+      >4</button>
+    </li>
+    <li>
+      <button
+        role="tab"
+        id="slide5"
+        x-ref="slide5"
+        class="mx-1 btn-sm btn-icon rounded-full"
+        :class="currentSlide === 5 && 'btn-success'"
+        aria-controls="slide5-panel"
+        :aria-selected="currentSlide === 5"
+        @click="currentSlide = 5; $nextTick(() => $refs.slide5Panel.focus())"
+        @keyup.left="currentSlide = 4; $nextTick(() => $refs.slide4.focus())"
+        :tabindex="currentSlide === 5 ? '0' : '-1'"
+      >5</button>
+  </ul><!-- / Slide indicator buttons -->
+  <!-- Slides -->
+  <div class="relative"><!-- For positioning the forward/back arrow icons -->
+    <div
+      role="group"
+      id="slide1-panel"
+      x-ref="slide1Panel"
+      aria-labelledby="slide1"
+      x-show="currentSlide === 1"
+      tabindex="0"
+      @keyup.shift.tab="currentSlide = 1; $nextTick(() => $refs.slide1.focus())"
+    >
+      <!-- demo -->
+      <div class="flex flex-center flex-middle t-thin bg-blue-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-blue-700">Slide 1 of 5</div>
+    </div>
+    <div
+      role="group"
+      id="slide2-panel"
+      x-ref="slide2Panel"
+      aria-labelledby="slide2"
+      x-show="currentSlide === 2"
+      tabindex="0"
+      @keyup.shift.tab="currentSlide = 2; $nextTick(() => $refs.slide2.focus())"
+    >
+      <!-- demo -->
+      <div class="flex flex-center flex-middle t-thin bg-teal-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-teal-700">Slide 2 of 5</div>
+    </div>
+    <div
+      role="group" 
+      id="slide3-panel"
+      x-ref="slide3Panel"
+      aria-labelledby="slide3"
+      x-show="currentSlide === 3"
+      tabindex="0"
+      @keyup.shift.tab="currentSlide = 3; $nextTick(() => $refs.slide3.focus())"
+    >
+      <!-- demo -->
+      <div class="flex flex-center flex-middle t-thin bg-green-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-green-700">Slide 3 of 5</div>
+    </div>
+    <div
+      role="group" 
+      id="slide4-panel"
+      x-ref="slide4Panel"
+      aria-labelledby="slide4"
+      x-show="currentSlide === 4"
+      tabindex="0"
+      @keyup.shift.tab="currentSlide = 4; $nextTick(() => $refs.slide4.focus())"
+    >
+      <!-- demo -->
+      <div class="flex flex-center flex-middle t-thin bg-orange-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-orange-700">Slide 4 of 5</div>
+    </div>
+    <div
+      role="group" 
+      id="slide5-panel"
+      x-ref="slide5Panel"
+      aria-labelledby="slide5"
+      x-show="currentSlide === 5"
+      tabindex="0"
+      @keyup.shift.tab="currentSlide = 5; $nextTick(() => $refs.slide5.focus())"
+    >
+      <!-- demo -->
+      <div class="flex flex-center flex-middle t-thin bg-red-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-red-700">Slide 5 of 5</div>
+    </div>
+    <!-- Prev/Next arrow buttons (looping) -->
+    <div class="box flex flex-space-between flex-middle flex-row-reverse lg:hidden-below">
+      <div class="translate-right-100%">
+        <button
+          class="ml-1 btn-icon rounded-full"
+          x-on:click="currentSlide = currentSlide === slides.length ? 1 : currentSlide + 1"
+          aria-hidden="true"
+        >→</button>
+      </div>
+      <div class="translate-left-100%">
+        <button
+          class="mr-1 btn-icon rounded-full"
+          x-on:click="currentSlide = currentSlide === 1 ? slides.length : currentSlide - 1"
+          aria-hidden="true"
+        >←</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <br>  <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>region<span class="token punctuation">"</span></span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column flex-column-reverse<span class="token punctuation">"</span></span><br>  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow example title<span class="token punctuation">"</span></span><br>  <span class="token attr-name">x-cloak</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ currentSlide: 1, slides: [1, 2, 3, 4, 5] }<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Slide indicator buttons --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><br>    <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>region<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slide indicators<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list-style-type-none mb-0 p-2 flex flex-center<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <br>        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-1 btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 1 &amp;&amp; <span class="token punctuation">'</span>btn-success<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slide 1 selector<span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1-panel<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 1<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 1; $nextTick(() => $refs.slide1Panel.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 2; $nextTick(() => $refs.slide2.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 1 ? <span class="token punctuation">'</span>0<span class="token punctuation">'</span> : <span class="token punctuation">'</span>-1<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-1 btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 2 &amp;&amp; <span class="token punctuation">'</span>btn-success<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slide 2 selector<span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2-panel<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 2<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 2; $nextTick(() => $refs.slide2Panel.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 3; $nextTick(() => $refs.slide3.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 1; $nextTick(() => $refs.slide1.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 2 ? <span class="token punctuation">'</span>0<span class="token punctuation">'</span> : <span class="token punctuation">'</span>-1<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-1 btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 3 &amp;&amp; <span class="token punctuation">'</span>btn-success<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slide 3 selector<span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3-panel<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 3<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 3; $nextTick(() => $refs.slide3Panel.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 4; $nextTick(() => $refs.slide4.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 2; $nextTick(() => $refs.slide2.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 3 ? <span class="token punctuation">'</span>0<span class="token punctuation">'</span> : <span class="token punctuation">'</span>-1<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-1 btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 4 &amp;&amp; <span class="token punctuation">'</span>btn-success<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slide 3 selector<span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4-panel<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 4<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 4; $nextTick(() => $refs.slide4Panel.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 5; $nextTick(() => $refs.slide5.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 3; $nextTick(() => $refs.slide3.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 4 ? <span class="token punctuation">'</span>0<span class="token punctuation">'</span> : <span class="token punctuation">'</span>-1<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>        <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><br>        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5<span class="token punctuation">"</span></span><br>        <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5<span class="token punctuation">"</span></span><br>        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-1 btn-sm btn-icon rounded-full<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 5 &amp;&amp; <span class="token punctuation">'</span>btn-success<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>        <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5-panel<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 5<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 5; $nextTick(() => $refs.slide5Panel.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">@keyup.left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 4; $nextTick(() => $refs.slide4.focus())<span class="token punctuation">"</span></span><br>        <span class="token attr-name">:tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 5 ? <span class="token punctuation">'</span>0<span class="token punctuation">'</span> : <span class="token punctuation">'</span>-1<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- / Slide indicator buttons --></span><br>  <span class="token comment">&lt;!-- Slides --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- For positioning the forward/back arrow icons --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span><br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1-panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1Panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide1<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 1<span class="token punctuation">"</span></span><br>      <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@keyup.shift.tab</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 1; $nextTick(() => $refs.slide1.focus())<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- demo --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-center flex-middle t-thin bg-blue-200 aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-block t-center t-white bg-blue-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 1 of 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span><br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2-panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2Panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide2<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 2<span class="token punctuation">"</span></span><br>      <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@keyup.shift.tab</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 2; $nextTick(() => $refs.slide2.focus())<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- demo --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-center flex-middle t-thin bg-teal-200 aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-block t-center t-white bg-teal-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 2 of 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span> <br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3-panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3Panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide3<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 3<span class="token punctuation">"</span></span><br>      <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@keyup.shift.tab</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 3; $nextTick(() => $refs.slide3.focus())<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- demo --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-center flex-middle t-thin bg-green-200 aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-block t-center t-white bg-green-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 3 of 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span> <br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4-panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4Panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide4<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 4<span class="token punctuation">"</span></span><br>      <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@keyup.shift.tab</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 4; $nextTick(() => $refs.slide4.focus())<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- demo --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-center flex-middle t-thin bg-orange-200 aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-block t-center t-white bg-orange-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 4 of 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span> <br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5-panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5Panel<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide5<span class="token punctuation">"</span></span><br>      <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide === 5<span class="token punctuation">"</span></span><br>      <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>      <span class="token attr-name">@keyup.shift.tab</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = 5; $nextTick(() => $refs.slide5.focus())<span class="token punctuation">"</span></span><br>    <span class="token punctuation">></span></span><br>      <span class="token comment">&lt;!-- demo --></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-center flex-middle t-thin bg-red-200 aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-block t-center t-white bg-red-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slide 5 of 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token comment">&lt;!-- Prev/Next arrow buttons (looping) --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box flex flex-space-between flex-middle flex-row-reverse md:hidden-below<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-right-100%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ml-1 btn-icon rounded-full<span class="token punctuation">"</span></span><br>          <span class="token attr-name"><span class="token namespace">x-on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = currentSlide === slides.length ? 1 : currentSlide + 1<span class="token punctuation">"</span></span><br>          <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><br>        <span class="token punctuation">></span></span>→<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-left-100%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><br>          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 btn-icon rounded-full<span class="token punctuation">"</span></span><br>          <span class="token attr-name"><span class="token namespace">x-on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentSlide = currentSlide === 1 ? slides.length : currentSlide - 1<span class="token punctuation">"</span></span><br>          <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><br>        <span class="token punctuation">></span></span>←<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="notes-on-slideshows" tabindex="-1">Notes on slideshows</h2>
+<ol>
+<li>Codebase slideshows are very similar to <a href="/codebase-5/docs/7-alpinejs-components/tabs">tabs</a> in operation – and therefore they take inspiration from <a href="https://www.w3.org/">W3C</a>’s WAI-ARIA design pattern for <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">tabs with automatic navigation</a>. You can click through the tabs, or use arrow keys.</li>
+<li>There is no special slideshow stying – everything in the example above is styled by Codebase base styles and utility classes.</li>
+<li>Also included in the example are forward and back arrow buttons for cycling through the slides. (The arrow buttons are displayed and functional for pointing devices only). Thy are visible only on medium viewport widths up (because there is no space for these buttons on smaller screens). These arrow buttons are hidden from screen readers, because irrelevant.</li>
+<li>The Codebase slideshow this is not an automated, self-advancing “carousel”.</li>
+</ol>
+<p>If you require something more powerful than a Codebase carousel, I recommend <a href="https://swiperjs.com/">Swiper.js</a>. Also, <a href="https://revealjs.com/">Reveal.js</a> is great for creating “PowerPoint”-like (and better) slideshow presentation experiences in the web browser.</p>
+<h2 id="slideshow-operation" tabindex="-1">Slideshow operation</h2>
+<p>By touch, pointing device, mouse, etc.:</p>
+<ul>
+<li>Clicking the indicator buttons (analogous to tab labels) will take the user to its respective slide</li>
+<li>Clicking the forward and back arrow icon buttons will loop forward or back thorugh the slides, in order.</li>
+</ul>
+<p>By keyboard, and assistive technology that operates similar to a keyboard:</p>
+<ul>
+<li>The slideshow indicator buttons are the <em>first</em> DOM elements inside the slideshow wrapper, so that keyboard and assisted tech users encounter them first. But they appear to be the last things in the slideshow, below the slides, being positioned there by <code>flex flex-column flex-column reverse</code>.</li>
+<li>After <code>tab</code>-bing to the first indicator button, the next tab will move the focus on to the first slide. (And, tabbing from any indicator moves the focus on to it’s respective slide.)</li>
+<li><code>shift</code>+<code>tab</code> from any focused tab to get back to its indicator button.</li>
+<li>The forward <code>→</code> and back <code>←</code> buttons are visible for medium viewports up. They clickable by pointing device and keyboard, but they are irrelevant and therefore hidden from screen readers by <code>aria-hidden=&quot;true&quot;</code>.</li>
+</ul>
+<h2 id="accessibility" tabindex="-1">Accessibility</h2>
+<ul>
+<li>The slideshow component wrapper has <code>role=&quot;region&quot;</code>, and it has a title in an <code>aria-label</code>.</li>
+<li>The slide indicator buttons are in an unordered list, and the list is labeled with <code>aria-label=&quot;Slide indicators&quot;</code>. Screen readers note how many list items, therefore the listener will be informed how many slides are in your slide deck.</li>
+<li>Slide indicator buttons are labeled with <code>aria-label=&quot;Slide 1 selector&quot;</code>, <code>aria-label=&quot;Slide 1 selector&quot;</code> etc. And each have <code>aria-controls=&quot;&quot;</code> to assign their respective slides.</li>
+<li>Each slide wrapper has <code>role=&quot;group&quot;</code> that indicates the beginning end of each slide, that may contain multiple elements such as a title, image(s), and figure legend(s). And each slide has <code>aria-labelledby=&quot;&quot;</code> associating it with its respective indicator button.</li>
+<li>The forward <code>→</code> and back <code>←</code> buttons are hidden from screen readers. These buttons are also hidden on smaller screens, where there is no room for them.</li>
+</ul>
+
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/7-alpinejs-components/tabs">&larr; Tabs</a></li>
+        
+        
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/7-alpinejs-components/animations">Animations &rarr;</a></li>
+          
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
+  <p>
+    <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
+      <span class="inline-flex flex-column flex-middle flex-center">
+        <!-- Codebase logo-->
+        <svg style="width: 144px; margin-bottom: 1.5rem;" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">
+          Codebase
+        </span>
+      </span>
+    </a>
+  </p>
+  
+  <p>Version 5.0.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+
+</footer>
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+</body>
+</html>

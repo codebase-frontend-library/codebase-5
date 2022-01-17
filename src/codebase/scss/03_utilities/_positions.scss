@@ -1,0 +1,80 @@
+// UTILITIES: LAYOUT
+// ~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.z-index-3 {
+  z-index: 3;
+}
+
+.z-index-999 {
+  z-index: 999;
+}
+
+@mixin sticky {
+  position: sticky;
+  top: 0;
+}
+.sticky {
+  @include sticky;
+}
+
+.top {
+  top: 0;
+}
+.right {
+  right: 0;
+}
+.bottom {
+  bottom: 0;
+}
+.left {
+  left: 0;
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:sticky {
+      @include sticky;
+    }
+    .#{$mq-key}\:fixed {
+      position: fixed;
+    }
+    .#{$mq-key}\:absolute {
+      position: absolute;
+    }
+    .#{$mq-key}\:relative {
+      position: relative;
+    }
+    .#{$mq-key}\:top {
+      top: 0
+    }
+    .#{$mq-key}\:right {
+      right: 0;
+    }
+    .#{$mq-key}\:bottom {
+      bottom: 0;
+    }
+    .#{$mq-key}\:left {
+      left: 0;
+    }
+  }
+}

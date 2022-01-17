@@ -1,0 +1,73 @@
+// UTILITIES: TABLES
+// ~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.table,
+.table-borderless,
+.table-compact,
+.table-fixed,
+.table-striped {
+  width: 100%;
+  margin-bottom: $text-base-line-height * 1rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  & > * {
+    width: 100%;
+  }
+  &:not(&.table-borderless) {
+    th, td {
+      border: $detail-thickness, solid map-get($theme-color, detail);
+    }
+  }
+  th, td {
+    padding: $spacing-block;
+    vertical-align: top;
+    text-align: unset;
+  }
+}
+
+// Table variations
+.table {
+  &-compact {
+    th, td {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  &-fixed {
+    table-layout: fixed;
+  }
+  &-striped {
+    thead,
+    tbody tr:nth-child(even) {
+      background-color: rgba(255,255,255, 0.05);
+    }
+    tbody tr:nth-child(odd) {
+      background-color: rgba(29,28,31, 0.05);
+
+    }
+  }
+}
+
+// Cell alignments
+
+[class*=table] .t-center {
+  text-align: center !important;
+}
+
+[class*=table] .t-right {
+  text-align: right !important;
+}
+
+.vertical-align,
+[class*=table] .vertical-align {
+  &-top {
+    vertical-align: top;
+  }
+  &-middle {
+    vertical-align: middle;
+  }
+  &-bottom {
+    vertical-align: bottom;
+  }
+}

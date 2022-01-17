@@ -1,0 +1,57 @@
+// COMPONENTS: OFFCANVAS
+// ~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+.offcanvas {
+  position: fixed;
+  z-index: $z-index-offcanvas;
+}
+.offcanvas-top {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.offcanvas-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.offcanvas-bottom {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.offcanvas-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin offcanvas-override {
+  position: unset !important;
+  z-index: unset !important;
+  overflow: unset !important;
+  box-shadow: none !important;
+}
+
+.sm\:offcanvas-override {
+  @include break-min(w-sm) {
+    @include offcanvas-override;
+  }
+}
+
+.md\:offcanvas-override {
+  @include break-min(w-md) {
+    @include offcanvas-override;
+  }
+}
+
+.lg\:offcanvas-override {
+  @include break-min(w-md) {
+    @include offcanvas-override;
+  }
+}

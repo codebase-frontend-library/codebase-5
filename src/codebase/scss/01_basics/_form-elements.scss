@@ -1,0 +1,170 @@
+// BASICS: FORM ELEMENTS (INCLUDING BUTTONS)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+@use "sass:math";
+
+label {
+  display: inline-block;
+  padding: .5rem 0;
+  font-family: $font-stack-ui;
+}
+
+input,
+select,
+textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  outline: 0 none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: $form-border-thickness, solid, map-get($theme-color, detail);
+  @if $form-input-background-color==true {
+    background-color: map-get($theme-color, form-element-bg)
+  }
+  @if $form-input-rounded-corners == true {
+    border-radius: $form-border-radius;
+  }
+  padding: $form-padding-default;
+  height: $form-element-size;
+  font-family: $font-stack-ui;
+  font-size: 1rem;
+  color: map-get($theme-color, text);
+  transition: all 0.15s ease-in-out;
+}
+[placeholder] {
+  text-overflow: ellipsis;
+}
+
+textarea,
+[multiple],
+input[type=file] {
+  height: auto;
+}
+
+[type=button],
+[type=reset],
+[type=submit] {
+  display: inline-block;
+  width: auto;
+}
+select {
+  padding-top: .25em;
+  padding-bottom: .25em;
+  overflow: auto;
+}
+select:not([multiple]) {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M6 6l4 4 4-4' fill='none' stroke='%23000' stroke-width='1.33334'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1em 1em;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+option {
+  padding: .25em 0;
+}
+
+input[type="number"] {
+  padding: 0;
+  padding-left: .125em;
+}
+
+select {
+  vertical-align: baseline;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: unset;
+  height: unset;
+  line-height: 1;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+textarea {
+  vertical-align: top;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+// min-height to prevent empty date fields collapsing on Safari (because no placeholder text)
+.form-element-sm {
+  height: $form-element-size-sm;
+  padding: $form-padding-sm;
+}
+.form-element-lg {
+  height: $form-element-size-lg;
+  padding: $form-padding-lg;
+}
+
+.inline-block input {
+  display: inline-block;
+}
+
+@mixin button {
+  position: relative;
+  -webkit-appearance: none;
+  height: $button-size;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border: $button-border-thickness, solid map-get($theme-color, detail);
+  border-radius: $border-radius-sm;
+  padding: $button-padding-default;
+  font-family: $font-stack-ui;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  text-decoration: none; // prevents hover underline when button styling is applied to links
+  white-space: nowrap;
+  color: map-get($theme-color, text); // so that button text isn’t overridden by the the color of link text
+  background-color: transparent;
+  transition: $button-state-transition;
+  &:hover,
+  &:active,
+  &.active {
+    color: map-get($theme-color, button-default-text);
+    background-color: map-get($theme-color, button-background-hover);
+    cursor: pointer;
+  }
+
+  &:disabled,
+  &.disabled {
+    position: relative;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @if $button-rounded-corners == true {
+    border-radius: $button-border-radius;
+  } else {
+    border-radius: 0;
+  }
+  &.block {
+    text-align: center;
+  }
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+.btn {
+  @include button;
+}

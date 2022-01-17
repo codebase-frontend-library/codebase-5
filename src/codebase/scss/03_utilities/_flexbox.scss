@@ -1,0 +1,112 @@
+// UTILITIES: FLEXBOX
+// ~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+@use "sass:math";
+
+@mixin flex {
+  display: flex;
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+  &-column {
+    flex-direction: column;
+  }
+  &-column-reverse {
+    flex-direction: column-reverse;
+  }
+  // Stretching
+  &-grow-equal {
+    > * {
+      flex: 1;
+    }
+  }
+  &-grow-auto {
+    > * {
+      flex: auto;
+    }
+  }
+  // Spacing
+  &-space-around {
+    justify-content: space-around;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-space-evenly {
+    justify-content: space-evenly;
+  }
+  // Positioning
+  &-start {
+    justify-content: flex-start;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-top {
+    align-items: flex-start;
+  }
+  &-middle {
+    align-items: center;
+  }
+  &-bottom {
+    align-items: flex-end;
+  }
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  .#{$mq-key}\:inline-flex {
+    @include break-min(#{$mq-value}) {
+      display: inline-flex;
+    }
+  }
+}
+
+.flex {
+  @include flex;
+}
+@each $mq-key, $mq-value in $mq-width {
+  .#{$mq-key}\:flex {
+    @include break-min(#{$mq-value}) {
+      display: flex;
+    }
+  }
+}
+
+@mixin flex-gap {
+  @if $use-flex-gap==true {
+    gap: $flex-gap; // bleeding edge; check CanIuse    
+  } @else {
+    margin-right: math.div(-$flex-gap, 2);
+    margin-left: math.div(-$flex-gap, 2);
+    > * {
+      padding-right: math.div($flex-gap, 2);
+      padding-left: math.div($flex-gap, 2);
+    }
+  }
+}
+
+.flex-gap {
+  @include flex-gap;
+}
+
+// Individual flex items
+.grow {
+  flex-grow: 1;
+}
+.order-start {
+  order: 0;
+}
+.order-end {
+  order: 9999;
+}
