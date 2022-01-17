@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+
+  <title>Block elements - Codebase</title>
+
+  <link href="/codebase-5/prism/prism.css" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.0" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/codebase-5/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/codebase-5/favicon-16x16.png">
+  <link rel="manifest" href="/codebase-5/site.webmanifest">
+  <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      max-width: 100vw;
+    }
+    main h2, main h3, main h4, main h5, main h6 {
+      scroll-margin-top: 72px;
+    }
+    #site-top-bar {
+      height: 56px;
+      z-index: 990;
+    }
+    #site-title {
+      display: block;
+      font-size: 1.325rem;
+      line-height: 1.5rem;
+    }
+    #site-title svg {
+      position: relative;
+      height: 18px;
+      width: 34px;
+      top: .0625em;
+      margin-right: .325em;
+      transform: scale(1.5);
+    }
+
+    #site-title,
+    #site-footer-title {
+      color: #9400d3;
+    }
+    #site-title:hover,
+    #site-footer-title:hover {
+      color: #5f0087;
+    }
+
+    #site-title svg,
+    #site-footer-title svg {
+      fill: #9400d3;
+    }
+    #site-title:hover svg,
+    #site-footer-title:hover svg {
+      fill: #5f0087;
+    }
+
+    @media (max-width: 767px) {
+      #side-menu-wrap {
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #site-page {
+        grid-template-columns: 256px calc(100vw - 256px);
+      }
+      #site-navigation > div {
+        top: 57px;
+        max-height: calc(100vh - 57px);
+        overflow-y: auto;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #site-page {
+        grid-template-columns: 256px auto 256px;
+      }
+      #docs-article {
+        grid-template-columns: auto 256px;
+      }
+    }
+
+    #toc ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    #toc ul ul {
+      padding-left: 1rem;
+    }
+    #toc li {
+      margin-bottom: 1rem;
+    }
+    #toc a {
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 1279px) {
+      #toc ul ul {
+        display: none;
+      }
+    }
+
+    #docs-hero-feature {
+      display: block;
+      max-width: 280px;
+      margin: auto;
+    }
+    @media (min-width: 1024px) {
+      #docs-hero-feature {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+
+    /* Examples */
+    svg tspan {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .month span {
+      width: calc(100% / 7);
+      margin: 0.5rem 0;
+    }
+  </style>
+
+  <!-- Alpine and Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+
+<div class="w-xxl mx-auto">
+  <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    let viewportWidth = window.innerWidth;
+    
+    Alpine.store('docsNav', {
+      open: window.innerWidth >= 768,
+      belowBP: window.innerWidth < 768,
+      menu1open: false,
+      menu2open: false,
+      menu3open: false,
+      menu4open: false,
+      menu5open: false,
+      menu6open: false,
+      menu7open: false,
+
+      checkURL() {
+        if (window.location.href.indexOf('1-getting-started') > -1) {
+          this.menu1open = true
+        }
+        if (window.location.href.indexOf('2-classless-basics') > -1) {
+          this.menu2open = true
+        }
+        if (window.location.href.indexOf('3-layout-utilities') > -1) {
+          this.menu3open = true
+        }
+        if (window.location.href.indexOf('4-decoration-utilities') > -1) {
+          this.menu4open = true
+        }
+        if (window.location.href.indexOf('5-typographic-utilities') > -1) {
+          this.menu5open = true
+        }
+        if (window.location.href.indexOf('6-simple-components') > -1) {
+          this.menu6open = true
+        }
+        if (window.location.href.indexOf('7-alpinejs-components') > -1) {
+          this.menu7open = true
+        }
+      },
+
+      reset() {
+        let currentWidth = window.innerWidth;
+
+        // Ignoring height changes (e.g. iPhone Safari top/bottom bars)
+        if (currentWidth != viewportWidth) {
+          // width has changed
+          
+          viewportWidth = currentWidth;
+          
+          if (viewportWidth >= 768) {
+            this.open = true,
+            this.belowBP = false
+          } else {
+            this.open = false,
+            this.belowBP = true
+          }
+        }
+      }
+
+    })
+
+  })
+</script>
+
+<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+  <div class="w-xxl mx-auto h-100% relative flex flex-middle">
+
+    <!-- Navicon -->
+    <div
+      x-data
+      @resize.window.throttle="$store.docsNav.reset()"
+    >
+      <button
+        x-cloak
+        class="btn-icon rounded-full ml-1"
+        @click="$store.docsNav.open = true"
+        aria-label="Site menu"
+        :aria-expanded="$store.docsNav"
+        x-show="$store.docsNav.belowBP"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      </button>
+    </div>
+  
+    <div class="p-2">
+      <a
+        id="site-title"
+        class="mb-0 ml-1 t-decoration-none"
+        :class="scrollAtTop ? 'enlarged' : ''"
+        href="/codebase-5/"
+        tabindex="1"
+      >
+        <!-- Codebase logo-->
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/>
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">Codebase</span>
+      </a>
+    </div>
+  
+    <div class="grow">
+      <div class="menu flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      </div>  
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
+
+  <div class="sm:rows-1-4 lg:rows-1-3">
+    <nav id="site-navigation" class="h-100%">
+      <div class="sm:sticky">
+        
+        <div
+        x-data
+        x-cloak
+        x-init="$store.docsNav.checkURL()"
+        x-show="$store.docsNav.open"
+        x-transition:enter="transition-all-300ms"
+        x-transition:enter-start="translate-left-100%"
+        x-transition:enter-end="translate-0-0"
+        x-transition:leave="transition-all-300ms"
+        x-transition:leave-start="translate-0-0"
+        x-transition:leave-end="translate-left-100%"
+        x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
+        class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+        @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
+        @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
+      >
+        <div
+          class="t-right"
+          x-show="$store.docsNav.belowBP"
+        >
+          <!-- Close button-->
+          <div
+            x-cloak
+            class="bg-white sticky w-100% z-index-1 t-right"
+            x-show="$store.docsNav.belowBP"
+          >
+            <button
+            class="m-1 btn-icon rounded-full"
+            aria-label="Close menu"
+            @click="$store.docsNav.open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div id="side-menu-wrap" class="p-2 pb-6">
+      
+          <div class="mb-3 sm:hidden">
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.0">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          </div>
+
+          <p class="h4 lg:mt-3">Documentation</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Getting started</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    id="docs-dropdown-1"
+    x-show="$store.docsNav.menu1open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    </ul>
+  </div>  
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu2open = !$store.docsNav.menu2open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu2open" @keyup.escape="$store.docsNav.menu2open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu2open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Classless basics</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu2open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu3open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Layout</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu3open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu4open = !$store.docsNav.menu4open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu4open" @keyup.escape="$store.docsNav.menu4open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu4open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Decoration</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu4open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu5open = !$store.docsNav.menu5open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu5open" @keyup.escape="$store.docsNav.menu5open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu5open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Typography</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu5open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
+    <svg
+      class="transition-all-300ms" 
+      :class="$store.docsNav.menu6open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">Simple (CSS only)</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu6open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-id="['menu']">
+  <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu7open = !$store.docsNav.menu7open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu7open" @keyup.escape="$store.docsNav.menu7open = false">
+    <svg
+      class="transition-all-300ms"
+      :class="$store.docsNav.menu7open && 'rotate-90'"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <span class="ml-space t-semibold">With AlpineJS</span>
+  </button>
+  <div
+    x-cloak
+    :id="$id('menu')"
+    x-show="$store.docsNav.menu7open"
+    x-collapse.duration.300ms
+  >
+    <ul class="list-style-type-none mb-0">
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    </ul>
+  </div>
+</div>
+      
+        </div>
+      </div>
+      </div>
+    </nav>  
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-6">
+      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+        
+        <div class="my-1">Classless basics</div>
+        
+        <h1 class="mb-0 t-heavy t-primary">Block elements</h1>    
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
+        <div class="h4 mb-2">Contents</div>
+        <div id="toc"></div>    
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-1 sm:col-2">
+    <div class="container-sm">
+      <p>In HTML, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">block-level elements</a> such as headers, paragraphs, and DIVs, occupy 100% of the width of their parent element. Their height depends on how much content they have inside.</p>
+<h2 id="headings" tabindex="-1">Headings</h2>
+<p>Heading font weights have been set to <code>normal</code> (default). You can override this for all headings in the SCSS default variables, or add a bold weight yourself on a per-heading or per-word basis, for emphasis.</p>
+<p>Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 <a href="/codebase-5/docs/1-getting-started/element-grid">element grid</a> units, or <em>one line-height of the default text size</em> (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings.</p>
+<p>Heading sizes, weights and line heights are set using three SCSS maps in the default variables file – you can control the rhythm of each from there.</p>
+<p>Below the <code>sm</code> small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.</p>
+<p><strong>Note:</strong> The demo headings below are actually faked using <code>h1</code> to <code>h6</code> <a href="/codebase-5/docs/6-typographic-utilities/inline-text">text utility classes</a> – so that they are not included in the generated “Contents” list on this page.</p>
+<p class="h1"><code>h1</code> heading</p>
+<p class="h2"><code>h2</code> heading</p>
+<p class="h3"><code>h3</code> heading</p>
+<p class="h4"><code>h4</code> heading</p>
+<p class="h5"><code>h5</code> heading</p>
+<p class="h6"><code>h6</code> heading</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>h2 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>h3 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span>h4 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">></span></span>h5 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">></span></span>h6 heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="paragraphs" tabindex="-1">Paragraphs</h2>
+<p>A simple paragraph:</p>
+<p>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Same as with headings, paragraphs have zero top margin while the bottom margin is set as equal to <em>one line-height of the default text size</em>, i.e. 1.5rem – thereby leaving an “empty line” gap between paragraphs and headings.</p>
+<h2 id="lists" tabindex="-1">Lists</h2>
+<h3 id="ordered-lists-(numbered)" tabindex="-1">Ordered lists (numbered)</h3>
+<ol>
+<li>List item</li>
+<li>List item
+<ol>
+<li>List item</li>
+<li>List item
+<ol>
+<li>List item</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>List item</li>
+</ol>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span><br>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span></code></pre>
+<p>See <a href="https://www.w3schools.com/html/html_lists_ordered.asp">W3schools</a> for more on ordered lists.</p>
+<h3 id="unordered-lists-(bullet-pointed)" tabindex="-1">Unordered lists (bullet pointed)</h3>
+<ul>
+<li>List item</li>
+<li>List item
+<ul>
+<li>List item</li>
+<li>List item
+<ul>
+<li>List item</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>List item</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><br>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="definition-lists" tabindex="-1">Definition lists</h3>
+<dl>
+<dt>Title 1</dt>
+<dd>Data 1 Lorem ipsum dolor sit amet</dd>
+<dt>Title 2</dt>
+<dd>Data 2 Lorem ipsum dolor sit amet</dd>
+<dt>Title 3</dt>
+<dd>Data 3 Lorem ipsum dolor sit amet</dd>
+</dl>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span>Title 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span>Data 1 Lorem ipsum dolor sit amet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span>Title 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span>Data 2 Lorem ipsum dolor sit amet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span>Title 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span>Data 3 Lorem ipsum dolor sit amet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="collapsible-details" tabindex="-1">Collapsible details</h2>
+<p>HTML5 has a simple show/hide component, with functionality provided by the browser (no JavaScript required).</p>
+<p>Clicking the (bold) <code>&lt;summary&gt;</code> will trigger the functionality of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">HTML details element</a>. When the main content of the <code>&lt;details&gt;</code> element is “open” (revealed), the indicator triangle (automatically supplied by the browser) is rotated to point downwards.</p>
+<details>
+  <summary>Summary/title</summary>
+  Here are the details – an extended discussion of what is summarised in the associated <code>&lt;summary&gt;</code> above. Hidden by default, this content becomes visible when the visitor clicks or taps the summary.
+</details>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span>Summary/title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><br>  Here are the details – an extended discussion of what is summarised in the associated <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span><span class="token entity named-entity" title="&lt;">&amp;lt;</span>summary<span class="token entity named-entity" title="&gt;">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span> above. Hidden by default, this content becomes visible when the visitor clicks or taps the summary.<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span></code></pre>
+<p>The Codebase basic (classless) styling is only supplying an empty line space (by bottom margin) below the <code>&lt;details&gt;</code> tag, bold rendering for the <code>&lt;summary&gt;</code> tag, and <code>cursor: pointer</code> for when the visitor hovers their mouse (or other pointing device) over the summary.</p>
+<p>The HTML5 <code>&lt;details&gt;</code> is an interactive element, so it will recieve focus (and a focus ring) when keyboard tabbed onto, and it will open and close in response to <code>enter</code> or <code>space</code>.</p>
+<h3 id="starting-%E2%80%9Cdetails%E2%80%9D-in-the-open-state" tabindex="-1">Starting “details” in the open state</h3>
+<p>What if you want the a set of <code>&lt;details&gt;</code> to start in the “open” state? Simply add the <code>open</code> attribute to the (opening) <code>&lt;details&gt;</code> tag:</p>
+<details open>
+  <summary>Summary/title</summary>
+  Here are the details (starting in the open state) ...
+</details>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span> <span class="token attr-name">open</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span>Summary/title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><br>  Here are the details (starting in the open state) ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="horizontal-rules" tabindex="-1">Horizontal rules</h2>
+<p>The horizontal rule <code>&lt;hr&gt;</code> tag is simply styled with a thin <em>top border</em>, so that it looks the same as <a href="/docs/5-decoration-utilities/borders">border utilities</a> and the <a href="/docs/7-simple-components/tables">table component</a> cell borders.</p>
+<p>Example:</p>
+<hr>
+<p>(That was it, above.)</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="block-quotes" tabindex="-1">Block quotes</h2>
+<p>In Codebase, blockquotes receive some padding right and left – to give the effect of indentation. This side padding is set based upon the viewport width (i.e. it is set in <code>vw</code> units in a CSS <code>clamp()</code>), so that it is narrower on narrower viewports.</p>
+<p>Otherwise, blockquotes have the same as paragraph styling.</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. Nullam ridens deterruisset an duo. Cum harum insolens ei, cum probo placerat praesent et.</p>
+</blockquote>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">></span></span><br>  Lorem ipsum dolor sit amet...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="tables" tabindex="-1">Tables</h2>
+<p>This is what a classless table looks like in Codebase:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Table Header 1</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1.1</td>
+      <td>Table content 2.1</td>
+      <td>Table content 3.1</td>
+    </tr>
+    <tr>
+      <td>Table content 1.2</td>
+      <td>Table content 2.2</td>
+      <td>Table content 3.2</td>
+    </tr>
+    <tr>
+      <td>Table content 1.3</td>
+      <td>Table content 2.3</td>
+      <td>Table content 3.3</td>
+    </tr>
+  </tbody>
+</table>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Table Header 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Table Header 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Table Header 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 1.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 2.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 3.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 1.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 3.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 1.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 2.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Table content 3.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<p>For special table styling, see the Codebase <a href="/codebase-5/docs/7-simple-components/tables/">table component</a>.</p>
+<h2 id="pre-formatted-text" tabindex="-1">Pre-formatted text</h2>
+<p>Use <code>&lt;pre&gt;</code> tags around any text that you want to remain in the same position in the webpage (as viewed in the browser) as you have put it in the source code. <code>&lt;pre&gt;</code> tags prevent browsers doing what they normally do to text – multiple spaces will not be collapsed into one, and long lines will not be wrapped.</p>
+<pre>Here is some preformatted text
+with some             extra                       spaces
+    and line
+breaks.</pre>
+<p>In other framewords (and in the browser default), <code>&lt;pre&gt;</code> is assigned a <em>monospace</em> typeface. Codebase, however, assigned <code>&lt;pre&gt;</code> the main text typeface (defaults to a sans-serif font stack.). This is done so that you can easily use <code>&lt;pre&gt;</code> for setting up poetry stanzas, song lyrics, etc.</p>
+<p>If you want a block of preformatted monospace, combine with the inline <code>&lt;code&gt;</code> tag too. Codebase willl render renders <code>&lt;code&gt;</code> as a block (with no wrapping, and x-axis overflow, same as <code>&lt;pre&gt;</code>), if it is the immediate child of a <code>&lt;pre&gt;</code> tag. Example:</p>
+<pre><code>10 print "Hello world";
+20 goto 10.
+Run</code></pre>
+<p>In the HTML source code, the example above above looks like this:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>10 print "Hello world";<br>20 goto 10.<br>Run<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="divs-and-other-html5-semantic-block-emements" tabindex="-1">DIVs and other HTML5 semantic block emements</h2>
+<p>All other block elements such as <code>&lt;div&gt;</code>,<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;aside&gt;</code> have no style applied to them by Codebase. They are still just blocks.</p>
+
+    </div>
+  </main>
+
+  <footer class="col-1 sm:col-2">
+    <div class="container-sm py-6">
+      <hr>
+      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+        
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">&larr; Improvements since Codebase 4</a></li>
+        
+        
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements &rarr;</a></li>
+          
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
+  <p>
+    <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
+      <span class="inline-flex flex-column flex-middle flex-center">
+        <!-- Codebase logo-->
+        <svg style="width: 144px; margin-bottom: 1.5rem;" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/>
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/>
+        </svg>
+        <span class="t-semibold">
+          Codebase
+        </span>
+      </span>
+    </a>
+  </p>
+  
+  <p>Version 5.0.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+
+</footer>
+
+<script>
+  let tocId = "toc";
+ 
+  let headings;
+  let headingIds = [];
+  let headingIntersectionData = {};
+    
+  function getTocList(heading, previousHeading, currentListElement) {
+    let listSection = currentListElement;
+    if (previousHeading) {
+      if (heading.tagName.slice(-1) > previousHeading.tagName.slice(-1)) {
+        let nextSection = document.createElement("ul");
+        listSection.appendChild(nextSection);
+        return nextSection;
+      } else if (heading.tagName.slice(-1) < previousHeading.tagName.slice(-1)) {
+        let indentationDiff =
+          parseInt(previousHeading.tagName.slice(-1)) -
+          parseInt(heading.tagName.slice(-1));
+        while (indentationDiff > 0) {
+          listSection = listSection.parentElement;
+          indentationDiff--;
+        }
+      }
+    }
+    return listSection;
+  }
+    
+  function setIdFromContent(element, appendedId) {
+    if (!element.id) {
+      element.id = `${element.innerHTML
+        .replace(/:/g, "")
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .join("-")}-${appendedId}`;
+    }
+  }
+    
+  function addNavLink(heading, currentSectionList) {
+    let listItem = document.createElement("li");
+    let anchor = document.createElement("a");
+    anchor.innerHTML = heading.innerHTML;
+    anchor.id = `${heading.id}-link`;
+    anchor.href = `#${heading.id}`;
+    listItem.appendChild(anchor);
+    currentSectionList.appendChild(listItem);
+  }
+    
+  function buildToc() {
+    const tocElement = document.querySelector(`#${tocId}`);
+    const main = document.querySelector("main");
+    headings = main.querySelectorAll("h2, h3, h4, h5, h6");
+    let previousHeading;
+    let currentSectionList = document.createElement("ul");
+    tocElement.appendChild(currentSectionList);
+    
+    headings.forEach((heading, index) => {
+      currentSectionList = getTocList(
+        heading,
+        previousHeading,
+        currentSectionList
+      );
+      setIdFromContent(heading, index);
+      addNavLink(heading, currentSectionList);
+    
+      headingIds.push(heading.id);
+      headingIntersectionData[heading.id] = {
+        y: 0
+      };
+      previousHeading = heading;
+    });
+  }
+    
+  window.addEventListener("load", (event) => {
+    buildToc();
+  });
+</script>
+
+</body>
+</html>
