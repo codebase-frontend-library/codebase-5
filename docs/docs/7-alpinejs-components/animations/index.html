@@ -540,9 +540,9 @@
 <li><a href="https://michalsnik.github.io/aos/">Animate on Scroll (AOS)</a> – a JavaScript/CSS library for triggering animations when you scroll down to them</li>
 </ul>
 <p>Also, “no code” website builders (such as <a href="https://webflow.com/">Webflow</a> and <a href="https://www.wix.com/">Wix</a>) have some element animation effects built in.</p>
-<p>Codebase animations can be used in components such as <a href="/codebase-5/docs/7-alpinejs-components/collapse">collapse</a>, <a href="/codebase-5/docs/7-alpinejs-components/dropdowns">dropdowns</a>, <a href="/codebase-5/docs/7-alpinejs-components/modals">modals</a>, and <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> panels. They can also be used for adding visual interest to block elements on a homepage of landing page.</p>
+<p>Codebase animations can be used in components such as <a href="/codebase-5/docs/7-alpinejs-components/collapse">collapse</a>, <a href="/codebase-5/docs/7-alpinejs-components/dropdowns">dropdowns</a>, <a href="/codebase-5/docs/7-alpinejs-components/modals">modals</a>, and <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> panels. They can also be used for adding visual interest to block elements on a homepage or landing page.</p>
 <h2 id="animation-trigger-events" tabindex="-1">Animation trigger events</h2>
-<p>There are two options:</p>
+<p>Here are two options:</p>
 <ol>
 <li><strong>On click</strong> (or on tap, for touch-screen devices). “On click” triggered animations can be tapped repeatedly and they will be triggered every time.</li>
 <li><strong>On scroll into view</strong> (using the <a href="https://alpinejs.dev/plugins/intersect">Alpine Intersect plugin</a>). “On scroll” animations can be set to trigger once, when the visitor scrolls down to them the first time, or they can be set to trigger repeatedly whenever the visitor scrolls down or up through them. I.e. When the visitor scrolls beyond this animation, it can be reset so that it is ready to be triggered again.</li>
@@ -565,9 +565,9 @@
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = !activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keyup.escape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated &amp;&amp; <span class="token punctuation">'</span>translate-right-100%<span class="token punctuation">'</span><span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Click me, and I will move.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> Click me again, and I will return to my original position.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="on-hover-(a.k.a.-mouseover)-is-not-recommended-for-animations" tabindex="-1">On hover (a.k.a. mouseover) is not recommended for animations</h3>
-<p>While it is also possible to animate <strong>on hover</strong> (a.k.a. on mouseover), it is not recommended im most situations because you also have to support touch screens. “On hover” behaves as a <em>tap plus focus</em> for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away again (or double tap) to remove the focus. That will confuse your visitors.</p>
-<p>Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – the same experience whether using a touch screen or a pointing device (mouse or other).</p>
-<p>(“On hover” can sometimes be used in situations where there is little or no animations, and where leaving the focus behind may not matter so much – e.g. on dropdown menus and tooltips.)</p>
+<p>While it is also possible to animate <strong>on hover</strong> (a.k.a. on mouseover), it is not recommended in most situations because you also have to support touch screens. “On hover” behaves as a <em>tap plus focus</em> for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away a second time (or double tap) in order to remove the focus. But that will confuse your visitors.</p>
+<p>Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – and provides essentially the same experience whether using a touch screen or a pointing device (mouse or other).</p>
+<p>(Hovever, “on hover” can sometimes be used in situations where there is little or no animations, and where leaving the focus behind may not matter so much – e.g. on dropdown menus and tooltips.)</p>
 <h3 id="on-scroll-into-view" tabindex="-1">On scroll into view</h3>
 <div class="mb-3">
 <div
@@ -605,26 +605,26 @@
 <li><code>scale-0</code> / <code>scale-25%</code> / <code>scale-50%</code> / <code>scale-75%</code> / <code>scale-100%</code> / <code>scale-125%</code> / <code>scale-150%</code> / <code>scale-175%</code> / <code>scale-200%</code></li>
 </ul>
 <p><code>scale-*</code> utilities scale from the center-middle of an element. If you want to grow from or shrink to an edge or corner, add in a <code>transform-origin-*</code> utility.</p>
-<p>Examples: a scale animation has been added to a <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel">dropdown</a> demo and a <a href="/codebase-5/docs/7-alpinejs-components/modals/#adding-animations-to-the-modal-panel">modal</a> demo.</p>
+<p>Examples: a scale animation has been added to a <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> demo and a <a href="/codebase-5/docs/7-alpinejs-components/modals/#adding-a-panel-reveal-animation">modal</a> demo.</p>
 <h3 id="rotate" tabindex="-1">Rotate</h3>
 <ul>
 <li><code>rotate-90</code> / <code>rotate-minus90</code> / <code>rotate-180</code> / <code>rotate-minus180</code> / <code>rotate-270</code></li>
 </ul>
 <p><code>rotate-*</code> utilities pivot aroung the center-middle of an element. If you want to pivot around a corner or center/middle of an edge, add in a <code>transform-origin-*</code> utility.</p>
-<p>Example: used in a <a href="/codebase-5/docs/7-alpinejs-components/collapse/#adding-a-rotation-animation">collapse</a> demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.</p>
+<p>Example: used in a <a href="/codebase-5/docs/7-alpinejs-components/collapse/#adding-an-indicator-rotation-animation">collapse</a> demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.</p>
 <h3 id="transform-origin" tabindex="-1">Transform origin</h3>
 <p>The transform origin of elements defalts to its center-middle. You can change that by adding one of the following <code>transform-origin-*</code> utilities:</p>
 <ul>
 <li>(Center or middle of) edges:<br><code>transform-origin-top</code> / <code>transform-origin-right</code> / <code>transform-origin-bottom</code>/ <code>transform-origin-left</code>/</li>
 <li>Corners:<br><code>transform-origin-top-right</code>/ <code>transform-origin-bottom-right</code> / <code>transform-origin-bottom-left</code> . <code>transform-origin-top-left</code></li>
 </ul>
-<p>Example: the <code>transform-origin-top</code> utility has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel">dropdown</a> animation demo.</p>
+<p>Example: the <code>transform-origin-top</code> utility has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> animation demo.</p>
 <h3 id="opacity" tabindex="-1">Opacity</h3>
 <p><code>opacity-*</code> utilities can be used to fade or unfade elements:</p>
 <ul>
 <li><code>opacity-0</code> / <code>opacity-25%</code> / <code>opacity-50%</code> / <code>opacity-75%</code> / <code>opacity-100%</code></li>
 </ul>
-<p><strong>Note:</strong> AlpineJS has its own <a href="https://alpinejs.dev/directives/transition#customizing-opacity">opacity on x-transition</a>, that you may prefer to use.</p>
+<p><strong>Note:</strong> AlpineJS also has its own <a href="https://alpinejs.dev/directives/transition#customizing-opacity">opacity on x-transition</a>, that you may prefer to use.</p>
 <h3 id="flip" tabindex="-1">Flip</h3>
 <p><code>flip-*</code> utilities can be used to “turn over” cards or other block element, to show their back face:</p>
 <ul>
@@ -632,7 +632,7 @@
 <li><code>flip-y</code> - flips the element horizontally (the pivot is on the y-axis)</li>
 </ul>
 <p>Ordinarily, the back side of an element is a “mirror image” of the front face. If that’s not what you want a visitor to see, add the CSS utility <code>backface-hidden</code>. Then the back face will simply be transparent (so, the wrapping element background or page background will be seen instead).</p>
-<p><a href="">In some circumatances</a> you may also need to add the CSS utility <code>preserve-3d</code> to the wrapper of the flipped element.</p>
+<p>In some circumatances, you may also need to add the CSS utility <code>preserve-3d</code> to the wrapper of the flipped element.</p>
 <h3 id="fade-in%2Fout-and-scale-in%2Fout" tabindex="-1">Fade-in/out and scale-in/out</h3>
 <p>In addition to the above, a few simple <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">keyframes</a> animations have been provied. These are not for use in AlpineJS <code>x-transition</code> but they can be used in <code>x-bind:class</code> that is triggered by a change of state. These all have built-in <code>animation</code> timings of 300ms.</p>
 <ul>

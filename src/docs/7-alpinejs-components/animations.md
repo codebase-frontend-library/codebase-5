@@ -17,11 +17,11 @@ _Codebase is not a full animation library, and neither is Alpine._ If you want t
 
 Also, “no code” website builders (such as [Webflow](https://webflow.com/) and [Wix](https://www.wix.com/)) have some element animation effects built in.
 
-Codebase animations can be used in components such as [collapse]({{ '/docs/7-alpinejs-components/collapse' | url }}), [dropdowns]({{ '/docs/7-alpinejs-components/dropdowns' | url }}), [modals]({{ '/docs/7-alpinejs-components/modals' | url }}), and [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) panels. They can also be used for adding visual interest to block elements on a homepage of landing page.
+Codebase animations can be used in components such as [collapse]({{ '/docs/7-alpinejs-components/collapse' | url }}), [dropdowns]({{ '/docs/7-alpinejs-components/dropdowns' | url }}), [modals]({{ '/docs/7-alpinejs-components/modals' | url }}), and [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) panels. They can also be used for adding visual interest to block elements on a homepage or landing page.
 
 ## Animation trigger events
 
-There are two options:
+Here are two options:
 
 1. **On click** (or on tap, for touch-screen devices). “On click” triggered animations can be tapped repeatedly and they will be triggered every time.
 2. **On scroll into view** (using the [Alpine Intersect plugin](https://alpinejs.dev/plugins/intersect)). “On scroll” animations can be set to trigger once, when the visitor scrolls down to them the first time, or they can be set to trigger repeatedly whenever the visitor scrolls down or up through them. I.e. When the visitor scrolls beyond this animation, it can be reset so that it is ready to be triggered again.
@@ -62,11 +62,11 @@ There are two options:
 
 ### On hover (a.k.a. mouseover) is not recommended for animations
 
-While it is also possible to animate **on hover** (a.k.a. on mouseover), it is not recommended im most situations because you also have to support touch screens. “On hover” behaves as a _tap plus focus_ for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away again (or double tap) to remove the focus. That will confuse your visitors. 
+While it is also possible to animate **on hover** (a.k.a. on mouseover), it is not recommended in most situations because you also have to support touch screens. “On hover” behaves as a _tap plus focus_ for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away a second time (or double tap) in order to remove the focus. But that will confuse your visitors. 
 
-Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – the same experience whether using a touch screen or a pointing device (mouse or other).
+Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – and provides essentially the same experience whether using a touch screen or a pointing device (mouse or other).
 
-(“On hover” can sometimes be used in situations where there is little or no animations, and where leaving the focus behind may not matter so much – e.g. on dropdown menus and tooltips.)
+(Hovever, “on hover” can sometimes be used in situations where there is little or no animations, and where leaving the focus behind may not matter so much – e.g. on dropdown menus and tooltips.)
 
 ### On scroll into view
 
@@ -129,7 +129,7 @@ Scales both in the X and Y axis, retaining the elements proportions.
 
 `scale-*` utilities scale from the center-middle of an element. If you want to grow from or shrink to an edge or corner, add in a `transform-origin-*` utility.
 
-Examples: a scale animation has been added to a [dropdown]({{ '/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel' | url }}) demo and a [modal]({{ '/docs/7-alpinejs-components/modals/#adding-animations-to-the-modal-panel' | url }}) demo.
+Examples: a scale animation has been added to a [dropdown]({{ '/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation' | url }}) demo and a [modal]({{ '/docs/7-alpinejs-components/modals/#adding-a-panel-reveal-animation' | url }}) demo.
 
 ### Rotate
 
@@ -137,7 +137,7 @@ Examples: a scale animation has been added to a [dropdown]({{ '/docs/7-alpinejs-
 
 `rotate-*` utilities pivot aroung the center-middle of an element. If you want to pivot around a corner or center/middle of an edge, add in a `transform-origin-*` utility.
 
-Example: used in a [collapse]({{ '/docs/7-alpinejs-components/collapse/#adding-a-rotation-animation' | url }}) demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.
+Example: used in a [collapse]({{ '/docs/7-alpinejs-components/collapse/#adding-an-indicator-rotation-animation' | url }}) demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.
 
 ### Transform origin
 
@@ -146,7 +146,7 @@ The transform origin of elements defalts to its center-middle. You can change th
 * (Center or middle of) edges:<br>`transform-origin-top` / `transform-origin-right` / `transform-origin-bottom`/ `transform-origin-left`/ 
 * Corners:<br>`transform-origin-top-right`/ `transform-origin-bottom-right` / `transform-origin-bottom-left` . `transform-origin-top-left`
 
-Example: the `transform-origin-top` utility has been used on the [dropdown]({{ '/docs/7-alpinejs-components/dropdowns/#adding-animations-to-the-dropdown-panel' | url }}) animation demo.
+Example: the `transform-origin-top` utility has been used on the [dropdown]({{ '/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation' | url }}) animation demo.
 
 ### Opacity
 
@@ -154,7 +154,7 @@ Example: the `transform-origin-top` utility has been used on the [dropdown]({{ '
 
 * `opacity-0` / `opacity-25%` / `opacity-50%` / `opacity-75%` / `opacity-100%`
 
-**Note:** AlpineJS has its own [opacity on x-transition](https://alpinejs.dev/directives/transition#customizing-opacity), that you may prefer to use.
+**Note:** AlpineJS also has its own [opacity on x-transition](https://alpinejs.dev/directives/transition#customizing-opacity), that you may prefer to use.
 
 ### Flip
 
@@ -165,7 +165,7 @@ Example: the `transform-origin-top` utility has been used on the [dropdown]({{ '
 
 Ordinarily, the back side of an element is a “mirror image” of the front face. If that’s not what you want a visitor to see, add the CSS utility `backface-hidden`. Then the back face will simply be transparent (so, the wrapping element background or page background will be seen instead).
 
-[In some circumatances]() you may also need to add the CSS utility `preserve-3d` to the wrapper of the flipped element.
+In some circumatances, you may also need to add the CSS utility `preserve-3d` to the wrapper of the flipped element.
 
 ### Fade-in/out and scale-in/out
 
