@@ -45,7 +45,7 @@ The real CSS Grid [grid system]({{ '/docs/3-layout-utilities/grid' | url }}) has
 
 ### Aspect ratios
 
-[Aspect ratio wrapper]({{ '/docs/4-layout-utilities/dimensions/#aspect-ratio-wrappers' | url }}) utility classes have been added, using the new (2021) `aspect-ratio` specification.
+[Aspect ratio wrapper]({{ '/docs/4-layout-utilities/dimensions/#aspect-ratio-wrappers' | url }}) utility classes have been added.
 
 ### Size and media query abbreviations
 
