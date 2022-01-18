@@ -637,13 +637,17 @@
 </div>
 </div>
 <h2 id="spacing-extras" tabindex="-1">Spacing extras</h2>
-<h3 id="margin-x-axis-auto-centering" tabindex="-1">Margin x-axis auto centering</h3>
+<h3 id="margin-x-axis-auto" tabindex="-1">Margin x-axis auto</h3>
 <ul>
 <li><code>mx-auto</code> / <code>xs:mx-auto</code> / <code>sm:mx-auto</code> / <code>md:mx-auto</code> / <code>lg:mx-auto</code></li>
 <li><code>mr-auto</code> / <code>xs:mr-auto</code> / <code>sm:mr-auto</code> / <code>md:mr-auto</code> / <code>lg:mr-auto</code></li>
 <li><code>ml-auto</code> / <code>xs:ml-auto</code> / <code>sm:ml-auto</code> / <code>md:ml-auto</code> / <code>lg:ml-auto</code></li>
 </ul>
-<p>These classes apply <code>margin-right: auto</code> and/or <code>margin-left: auto</code> to push an item away from siblings or wrapper walls.</p>
+<p>These classes apply <code>margin-right: auto</code> and/or <code>margin-left: auto</code> to push an item away from its siblings or its wrapper walls.</p>
+<p>For example, <code>ml-auto</code> will push an element to the right</p>
+<div class="mb-3 b-dashed">
+<div class="square ml-auto b-thin p-1 bg-gray-100"><code>ml-auto</code></div>
+</div>
 <p>If you use <code>mx</code> (that’s for margings on the x-axis), this push will happen equally from the left and right. This will result in your element being <em>centered</em>, providing that its width is smaller than the width of its wrapper.</p>
 <p>Example:</p>
 <div class="my-6">

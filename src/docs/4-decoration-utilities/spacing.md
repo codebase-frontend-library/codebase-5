@@ -122,13 +122,19 @@ Padding examples:
 
 ## Spacing extras
 
-### Margin x-axis auto centering
+### Margin x-axis auto
 
 * `mx-auto` / `xs:mx-auto` / `sm:mx-auto` / `md:mx-auto` / `lg:mx-auto`
 * `mr-auto` / `xs:mr-auto` / `sm:mr-auto` / `md:mr-auto` / `lg:mr-auto`
 * `ml-auto` / `xs:ml-auto` / `sm:ml-auto` / `md:ml-auto` / `lg:ml-auto`
 
-These classes apply `margin-right: auto` and/or `margin-left: auto` to push an item away from siblings or wrapper walls.
+These classes apply `margin-right: auto` and/or `margin-left: auto` to push an item away from its siblings or its wrapper walls.
+
+For example, `ml-auto` will push an element to the right 
+
+<div class="mb-3 b-dashed">
+<div class="square ml-auto b-thin p-1 bg-gray-100"><code>ml-auto</code></div>
+</div>
 
 If you use `mx` (that’s for margings on the x-axis), this push will happen equally from the left and right. This will result in your element being _centered_, providing that its width is smaller than the width of its wrapper.
 
