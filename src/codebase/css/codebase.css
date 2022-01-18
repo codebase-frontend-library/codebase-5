@@ -8350,8 +8350,8 @@ img {
 .translate-right-100\% {
   transform: translateX(100%);
 }
-.translate-0-0 {
-  transform: translateXY(0, 0);
+.translate-0 {
+  transform: translate3d(0, 0, 0);
 }
 
 .scale-200\% {

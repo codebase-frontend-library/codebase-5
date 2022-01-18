@@ -4,7 +4,7 @@ layout: layout.njk
 prevPage: "/docs/7-alpinejs-components/slideshows"
 prevLink: "Slideshows"
 ---
- 
+
 Together, Codebase and AlpineJS can handle many basic animations – several examples are below.
 
 Codebase animation components are about adding and removing Codebase CSS utility classes in response to a trigger event (click, hover, or scroll). Utilities such as `translate-*` (i.e. move), `rotate-*`, `scale-*`, and `opacity-*` (for fading) are often used for CSS based animations. However, numeric utilities such as for dimensions, margins, paddings, and colors can also be animated.
@@ -117,9 +117,9 @@ You’ve seen `transition-transform-600ms` being used in the demo examples above
 
 ### Translate (move)
 
-* `translate-up-100%` / `translate-right-100%` / `translate-down-100%` / `translate-left-100%` / `translate-0-0`
+* `translate-up-100%` / `translate-right-100%` / `translate-down-100%` / `translate-left-100%` / `translate-0`
 
-Example: used in the [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) component. The `offcanvas-panel` classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use `translate-0-0` to reveal it (`translate-0-0` works for both the x and y axis) .
+Example: used in the [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) component. The `offcanvas-panel` classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use `translate-0` to reveal it (`translate-0` works for both the x and y axis) .
 
 ### Grow and shrink
 
@@ -201,8 +201,8 @@ With two components (one in each grid cell) that are triggered to `true` when th
         class="h2 t-bold transition-all-300ms"
         x-show="inViewport"
         x-transition:enter-start="translate-bottom-100%"
-        x-transition:enter-end="translate-0-0"
-        x-transition:leave-start="translate-0-0"
+        x-transition:enter-end="translate-0"
+        x-transition:leave-start="translate-0"
         x-transition:leave-end="translate-bottom-100%"
       >
         Featured Title
@@ -211,8 +211,8 @@ With two components (one in each grid cell) that are triggered to `true` when th
         class="transition-all-600ms"
         x-show="inViewport"
         x-transition:enter-start="translate-bottom-100%"
-        x-transition:enter-end="translate-0-0"
-        x-transition:leave-start="translate-0-0"
+        x-transition:enter-end="translate-0"
+        x-transition:leave-start="translate-0"
         x-transition:leave-end="translate-bottom-100%"
       >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facere velit tempora fugiat nulla blanditiis.
@@ -221,8 +221,8 @@ With two components (one in each grid cell) that are triggered to `true` when th
         class="transition-all-900ms"
           x-show="inViewport"
           x-transition:enter-start="translate-bottom-100%"
-          x-transition:enter-end="translate-0-0"
-          x-transition:leave-start="translate-0-0"
+          x-transition:enter-end="translate-0"
+          x-transition:leave-start="translate-0"
           x-transition:leave-end="translate-bottom-100%"
       >
         <a
@@ -279,7 +279,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
       class="h2 t-center t-heavy transition-transform-600ms"
       x-show="activated"
       x-transition:enter-start="opacity-0 translate-bottom-100%"
-      x-transition:enter-end="opacity-100% translate-0-0"
+      x-transition:enter-end="opacity-100% translate-0"
     >Meet the team</div>
     <div class="grid gap equal-2-cols sm:equal-4-cols">
       <div>
@@ -347,7 +347,7 @@ For this example, these will be triggered every time the panels are scrolled int
         class="transition-all-900ms"
         x-show="inViewport"
         x-transition:enter-start="opacity-0 translate-left-100%"
-        x-transition:enter-end="opacity-100% translate-0-0"
+        x-transition:enter-end="opacity-100% translate-0"
       >
         <div class="aspect-ratio-4x3 bg-orange-500"></div>
       </div>
@@ -361,7 +361,7 @@ For this example, these will be triggered every time the panels are scrolled int
         class="transition-all-900ms"
         x-show="inViewport"
         x-transition:enter-start="opacity-0 translate-right-100%"
-        x-transition:enter-end="opacity-100% translate-0-0"
+        x-transition:enter-end="opacity-100% translate-0"
       >
         <div class="aspect-ratio-4x3 bg-orange-500"></div>
       </div>

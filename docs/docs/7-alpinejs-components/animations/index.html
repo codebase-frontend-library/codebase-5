@@ -596,9 +596,9 @@
 <h2 id="animation-utilities" tabindex="-1">Animation utilities</h2>
 <h3 id="translate-(move)" tabindex="-1">Translate (move)</h3>
 <ul>
-<li><code>translate-up-100%</code> / <code>translate-right-100%</code> / <code>translate-down-100%</code> / <code>translate-left-100%</code> / <code>translate-0-0</code></li>
+<li><code>translate-up-100%</code> / <code>translate-right-100%</code> / <code>translate-down-100%</code> / <code>translate-left-100%</code> / <code>translate-0</code></li>
 </ul>
-<p>Example: used in the <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> component. The <code>offcanvas-panel</code> classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use <code>translate-0-0</code> to reveal it (<code>translate-0-0</code> works for both the x and y axis) .</p>
+<p>Example: used in the <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> component. The <code>offcanvas-panel</code> classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use <code>translate-0</code> to reveal it (<code>translate-0</code> works for both the x and y axis) .</p>
 <h3 id="grow-and-shrink" tabindex="-1">Grow and shrink</h3>
 <p>Scales both in the X and Y axis, retaining the elements proportions.</p>
 <ul>
@@ -660,8 +660,8 @@
         class="h2 t-bold transition-all-300ms"
         x-show="inViewport"
         x-transition:enter-start="translate-bottom-100%"
-        x-transition:enter-end="translate-0-0"
-        x-transition:leave-start="translate-0-0"
+        x-transition:enter-end="translate-0"
+        x-transition:leave-start="translate-0"
         x-transition:leave-end="translate-bottom-100%"
       >
         Featured Title
@@ -670,8 +670,8 @@
         class="transition-all-600ms"
         x-show="inViewport"
         x-transition:enter-start="translate-bottom-100%"
-        x-transition:enter-end="translate-0-0"
-        x-transition:leave-start="translate-0-0"
+        x-transition:enter-end="translate-0"
+        x-transition:leave-start="translate-0"
         x-transition:leave-end="translate-bottom-100%"
       >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facere velit tempora fugiat nulla blanditiis.
@@ -680,8 +680,8 @@
         class="transition-all-900ms"
           x-show="inViewport"
           x-transition:enter-start="translate-bottom-100%"
-          x-transition:enter-end="translate-0-0"
-          x-transition:leave-start="translate-0-0"
+          x-transition:enter-end="translate-0"
+          x-transition:leave-start="translate-0"
           x-transition:leave-end="translate-bottom-100%"
       >
         <a
@@ -735,7 +735,7 @@
       class="h2 t-center t-heavy transition-transform-600ms"
       x-show="activated"
       x-transition:enter-start="opacity-0 translate-bottom-100%"
-      x-transition:enter-end="opacity-100% translate-0-0"
+      x-transition:enter-end="opacity-100% translate-0"
     >Meet the team</div>
     <div class="grid gap equal-2-cols sm:equal-4-cols">
       <div>
@@ -799,7 +799,7 @@
         class="transition-all-900ms"
         x-show="inViewport"
         x-transition:enter-start="opacity-0 translate-left-100%"
-        x-transition:enter-end="opacity-100% translate-0-0"
+        x-transition:enter-end="opacity-100% translate-0"
       >
         <div class="aspect-ratio-4x3 bg-orange-500"></div>
       </div>
@@ -813,7 +813,7 @@
         class="transition-all-900ms"
         x-show="inViewport"
         x-transition:enter-start="opacity-0 translate-right-100%"
-        x-transition:enter-end="opacity-100% translate-0-0"
+        x-transition:enter-end="opacity-100% translate-0"
       >
         <div class="aspect-ratio-4x3 bg-orange-500"></div>
       </div>
