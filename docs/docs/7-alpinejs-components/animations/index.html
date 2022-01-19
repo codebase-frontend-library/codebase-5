@@ -91,6 +91,10 @@
       #docs-article {
         grid-template-columns: auto 256px;
       }
+      #nav-on-this-page > div {
+        max-height: calc(100vh - 55px);
+        overflow-y: auto;
+      }
     }
 
     #toc ul {
@@ -521,9 +525,9 @@
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm lg:sticky mb-6 lg:mt-6" style="top: 104px;">
+    <div class="container-sm lg:sticky mb-6" style="top: 55px;">
       <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
-        <div class="h4 mb-2">Contents</div>
+        <div class="h4 mb-2 lg:pt-5">Contents</div>
         <div id="toc"></div>    
       </div>
     </div>
@@ -598,33 +602,101 @@
 <ul>
 <li><code>translate-up-100%</code> / <code>translate-right-100%</code> / <code>translate-down-100%</code> / <code>translate-left-100%</code> / <code>translate-0</code></li>
 </ul>
-<p>Example: used in the <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> component. The <code>offcanvas-panel</code> classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use <code>translate-0</code> to reveal it (<code>translate-0</code> works for both the x and y axis) .</p>
+<p>Example: <code>translate-right-100%</code> (with timing <code>transition-transform-600ms</code>)</p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-3"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-3"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+    :class="activated && 'translate-right-100%'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<p>A translation animation is also used in the <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> component. The <code>offcanvas-panel</code> classes merely position the panel in is expanded (revealed) location. Use one of the directional translation classes to start it hidden off canvas, and then use <code>translate-0</code> to reveal it (<code>translate-0</code> works for both the x and y axis) .</p>
 <h3 id="grow-and-shrink" tabindex="-1">Grow and shrink</h3>
 <p>Scales both in the X and Y axis, retaining the elements proportions.</p>
 <ul>
 <li><code>scale-0</code> / <code>scale-25%</code> / <code>scale-50%</code> / <code>scale-75%</code> / <code>scale-100%</code> / <code>scale-125%</code> / <code>scale-150%</code> / <code>scale-175%</code> / <code>scale-200%</code></li>
 </ul>
 <p><code>scale-*</code> utilities scale from the center-middle of an element. If you want to grow from or shrink to an edge or corner, add in a <code>transform-origin-*</code> utility.</p>
-<p>Examples: a scale animation has been added to a <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> demo and a <a href="/codebase-5/docs/7-alpinejs-components/modals/#adding-a-panel-reveal-animation">modal</a> demo.</p>
+<p>Example: <code>scale-150%</code></p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-4"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-4"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+    :class="activated && 'scale-150%'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<p>A scale animation has also been added to a <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> demo and a <a href="/codebase-5/docs/7-alpinejs-components/modals/#adding-a-panel-reveal-animation">modal</a> demo.</p>
 <h3 id="rotate" tabindex="-1">Rotate</h3>
 <ul>
 <li><code>rotate-90</code> / <code>rotate-minus90</code> / <code>rotate-180</code> / <code>rotate-minus180</code> / <code>rotate-270</code></li>
 </ul>
 <p><code>rotate-*</code> utilities pivot aroung the center-middle of an element. If you want to pivot around a corner or center/middle of an edge, add in a <code>transform-origin-*</code> utility.</p>
-<p>Example: used in a <a href="/codebase-5/docs/7-alpinejs-components/collapse/#adding-an-indicator-rotation-animation">collapse</a> demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.</p>
+<p>Example: <code>rotate-180</code></p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-4"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-4"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+    :class="activated && 'rotate-180'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<p>A rotation is also used in a <a href="/codebase-5/docs/7-alpinejs-components/collapse/#adding-an-indicator-rotation-animation">collapse</a> demo example for rotating a caret icon. A similar example us used in the sidebar menu of these docs.</p>
 <h3 id="transform-origin" tabindex="-1">Transform origin</h3>
 <p>The transform origin of elements defalts to its center-middle. You can change that by adding one of the following <code>transform-origin-*</code> utilities:</p>
 <ul>
 <li>(Center or middle of) edges:<br><code>transform-origin-top</code> / <code>transform-origin-right</code> / <code>transform-origin-bottom</code>/ <code>transform-origin-left</code>/</li>
 <li>Corners:<br><code>transform-origin-top-right</code>/ <code>transform-origin-bottom-right</code> / <code>transform-origin-bottom-left</code> . <code>transform-origin-top-left</code></li>
 </ul>
-<p>Example: the <code>transform-origin-top</code> utility has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> animation demo.</p>
+<p>Example: <code>transform-origin-top</code> has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> animation demo.</p>
 <h3 id="opacity" tabindex="-1">Opacity</h3>
-<p><code>opacity-*</code> utilities can be used to fade or unfade elements:</p>
 <ul>
 <li><code>opacity-0</code> / <code>opacity-25%</code> / <code>opacity-50%</code> / <code>opacity-75%</code> / <code>opacity-100%</code></li>
 </ul>
-<p><strong>Note:</strong> AlpineJS also has its own <a href="https://alpinejs.dev/directives/transition#customizing-opacity">opacity on x-transition</a>, that you may prefer to use.</p>
+<p>Example fading to <code>opacity-50%</code>:</p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-4"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-4"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-all-600ms"
+    :class="activated && 'opacity-50%'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<h4 id="notes-on-animating-opacity" tabindex="-1">Notes on animating opacity</h4>
+<ol>
+<li>Unlike the other examples above, in CSS <code>opacity</code> is not a CSS transform. Therefore you need to use <code>transition-all-*</code> (not <code>transition-transform-*</code>).</li>
+<li>There is also another way to animate opacity: you can pair the opacity utilities with <code>fade-in</code> or <code>fade-out</code> (see <a href="#fade-in%2Fout">fade-in/out</a> below).</li>
+<li>AlpineJS has its own (JavaScript powered) directive modifier,<a href="https://alpinejs.dev/directives/transition#customizing-opacity">opacity on x-transition</a>, that you can use on an <code>x-show</code>.</li>
+</ol>
 <h3 id="flip" tabindex="-1">Flip</h3>
 <p><code>flip-*</code> utilities can be used to “turn over” cards or other block element, to show their back face:</p>
 <ul>
@@ -633,17 +705,131 @@
 </ul>
 <p>Ordinarily, the back side of an element is a “mirror image” of the front face. If that’s not what you want a visitor to see, add the CSS utility <code>backface-hidden</code>. Then the back face will simply be transparent (so, the wrapping element background or page background will be seen instead).</p>
 <p>In some circumatances, you may also need to add the CSS utility <code>preserve-3d</code> to the wrapper of the flipped element.</p>
+<p>Example: <code>flip-y</code></p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-4"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-4"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+    :class="activated && 'flip-y'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<p>Example: <code>flip-y backface-hidden</code></p>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div
+    @click="activated = !activated"
+    aria-controls="panel-4"
+    :aria-expanded="activated"
+    @keyup.escape="activated = false"
+    id="panel-4"
+    class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+    :class="activated && 'flip-y backface-hidden'"
+  >
+    Click me
+  </div>
+</div>
+</div>
+<p>You can’t click a flipped <code>backface-hidden</code> element. So, to make the example above reappear, you will need to refresh your browser.</p>
 <h3 id="fade-in%2Fout-and-scale-in%2Fout" tabindex="-1">Fade-in/out and scale-in/out</h3>
 <p>In addition to the above, a few simple <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">keyframes</a> animations have been provied. These are not for use in AlpineJS <code>x-transition</code> but they can be used in <code>x-bind:class</code> that is triggered by a change of state. These all have built-in <code>animation</code> timings of 300ms.</p>
 <ul>
-<li><code>fade-in</code> – goes from 0 to 1 (100%) opacity (transparent to fully visible)</li>
-<li><code>fade-out</code> – goes from 1 to 0 opacity (fully viible to transparent.</li>
+<li><code>fade-in</code> – goes from 0 to 1 (100%) opacity (transparent to fully visible)</li>
+<li><code>fade-out</code> – goes from 1 to 0 opacity (fully viible to transparent).</li>
 <li><code>scale-in</code> – goes from 75% to 100% transform scale</li>
 <li><code>scale-out</code> – goes from 100% to 75% transform scale</li>
 </ul>
 <p>These can be useful for revealing and hiding panels.</p>
+<h4 id="fade-in%2Fout" tabindex="-1">Fade-in/out</h4>
+<p>Example fading. Here a ternary class toggler is required in the Alpine component:</p>
+<pre class="language-html"><code class="language-html">:class="activated ? 'fade-out opacity-0' : 'fade-in opacity-100%'"</code></pre>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div class="w-50% b-dashed b-black">
+    <div
+      @click="activated = !activated"
+      aria-controls="panel-4"
+      :aria-expanded="activated"
+      @keyup.escape="activated = false"
+      id="panel-4"
+      class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+      :class="activated ? 'fade-out opacity-0' : 'fade-in opacity-100%'"
+    >
+      Click me
+    </div>
+  </div>
+</div>
+</div>
+<p>The The faded out (invisible) element is still present, therefore it can be clicked. So, click inside the dashed area above and the invisible element will fade in again.</p>
+<h4 id="scale-in%2Fout" tabindex="-1">Scale-in/out</h4>
+<p>Example fading. Here a ternary class toggler is required in the Alpine component:</p>
+<pre class="language-html"><code class="language-html">:class="activated ? 'scale-out scale-75%' : 'scale-in scale-100%'"</code></pre>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div class="w-50% b-dashed b-black">
+    <div
+      @click="activated = !activated"
+      aria-controls="panel-4"
+      :aria-expanded="activated"
+      @keyup.escape="activated = false"
+      id="panel-4"
+      class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
+      :class="activated ? 'scale-out scale-75%' : 'scale-in scale-100%'"
+    >
+      Click me
+    </div>
+  </div>
+</div>
+</div>
+<p><code>scale-in</code> has also been used on the example <a href="/codebase-5/docs/7-alpinejs-components/modals/#embedded-popout-modals">embedded popout modal</a>.</p>
 <h3 id="other-css-utilities-that-can-be-animated" tabindex="-1">Other CSS utilities that can be animated</h3>
-<p>Using Codebase CSS utility classes dimensions, margins, paddings, and colors can also be animated.</p>
+<p>You can animate any style that has a numeric setting. So, you can animate using Codebase  utility classes for dimensions, spacing (margins, paddings), border (thickness), and colors.</p>
+<p><strong>Note:</strong> These other syles are CSS transforms. Therefore you need to use <code>transition-all-*</code> (not <code>transition-transform-*</code>).</p>
+<p>Example color animation:</p>
+<pre class="language-html"><code class="language-html">:class="activated ? 't-black bg-white' : 't-white bg-black'"</code></pre>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div class="w-50% b-dashed b-black">
+    <div
+      @click="activated = !activated"
+      aria-controls="panel-4"
+      :aria-expanded="activated"
+      @keyup.escape="activated = false"
+      id="panel-4"
+      class="p-2 t-bold t-white transition-all-600ms"
+      :class="activated ? 't-black bg-white' : 't-white bg-black'"
+    >
+      Click me
+    </div>
+  </div>
+</div>
+</div>
+<p>Example width animation:</p>
+<pre class="language-html"><code class="language-html">:class="activated ? 'w-100%' : 'w-25%'"</code></pre>
+<div class="mb-3">
+<div x-data="{ activated: false }">
+  <div class="b-dashed b-black">
+    <div
+      @click="activated = !activated"
+      aria-controls="panel-4"
+      :aria-expanded="activated"
+      @keyup.escape="activated = false"
+      id="panel-4"
+      class="p-2 t-bold t-white bg-blue-600 transition-all-600ms"
+      :class="activated ? 'w-100%' : 'w-25%'"
+    >
+      Click me
+    </div>
+  </div>
+</div>
+</div>
 <h2 id="examples" tabindex="-1">Examples</h2>
 <h3 id="featured-image-and-text-card" tabindex="-1">Featured image and text card</h3>
 <p>With two components (one in each grid cell) that are triggered to <code>true</code> when they enter the viewport on scroll, using <code>x-intersect</code>. Refresh your browser to see it happen again.</p>
@@ -686,7 +872,7 @@
       >
         <a
           class="btn b-black t-black hover:t-white hover:bg-black"
-          href=""
+          href="/#"
         >
           Find out more &rarr;
         </a>
@@ -701,7 +887,7 @@
         class="flip"
       >
         <div
-          class="relative transition-all-1200ms preserve-3d"
+          class="relative transition-all-1500ms preserve-3d"
           :class="inViewport && 'flip-y'"
         >
           <div class="flip-y backface-hidden">
