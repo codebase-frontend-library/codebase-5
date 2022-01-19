@@ -8338,19 +8338,19 @@ img {
   }
 }
 
-.translate-up-100\% {
+translate-up-100\% {
   transform: translateY(-100%);
 }
-.translate-left-100\% {
+translate-left-100\% {
   transform: translateX(-100%);
 }
-.translate-bottom-100\% {
+translate-bottom-100\% {
   transform: translateY(100%);
 }
-.translate-right-100\% {
+translate-right-100\% {
   transform: translateX(100%);
 }
-.translate-0 {
+translate-0-0 {
   transform: translate3d(0, 0, 0);
 }
 
