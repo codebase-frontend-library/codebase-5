@@ -27,7 +27,7 @@
     body { 
       max-width: 100vw;
     }
-    main h2, main h3, main h4, main h5, main h6 {
+    main article, #docs-header main h2, main h3, main h4, main h5, main h6 {
       scroll-margin-top: 72px;
     }
     #site-top-bar {
@@ -172,49 +172,51 @@
   </div>
 </div>
 
-<div id="docs-article">
+<div>
   <main class="container-sm my-3 lg:my-6">
 
-    <div class="t-long-read">
-      <div>
-        <h1 class="h1 t-primary"><span class="t-heavy">Codebase</span> is a modern website SCSS library</h1>
-        <p class="t-gray-600">Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.</p>
-        <p class="mb-0 t-gray-600">Plus, Codebase pairs well with AlpineJS.</p>
+    <article  id="docs-article">
+      <div class="t-long-read">
+        <div>
+          <h1 class="h1 t-primary"><span class="t-heavy">Codebase</span> is a modern website SCSS library</h1>
+          <p class="t-gray-600">Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.</p>
+          <p class="mb-0 t-gray-600">Plus, Codebase pairs well with AlpineJS.</p>
+        </div>
       </div>
-    </div>
-
-    <p class="my-6">
-      <a class="btn btn-success" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a>
-      <a class="btn btn-primary" href="/codebase-5/dist/codebase.css?v=1.0.0">Download CSS</a>
-      <a class="btn btn-secondary" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repository</a>
-    </p>
-
-    <div>
-      <ul class="list-style-type-none mb-0 pl-0">
-        <li class="mb-1">Current version: 1.0.0</li>
-        <li class="mb-1">CSS filesize: 88 KB</li>
-        <li class="mb-1">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></li>
-        <li>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></li>
-      </ul>
-    </div>
-
-    <hr>
-
-    <div class="my-6 md:py-6 xs:t-center">
-      <p>
-        Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing the CSS.
+  
+      <p class="my-6">
+        <a class="btn btn-success" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a>
+        <a class="btn btn-primary" href="/codebase-5/dist/codebase.css?v=1.0.0">Download CSS</a>
+        <a class="btn btn-secondary" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repository</a>
       </p>
-      <p>
-        AlpineJS and its plugins are provided from the CDN recommended in the <a href="https://alpinejs.dev/)">AlpineJS.dev</a> docs.
-      </p>
-      <p>
-        Other than the Codebase logo, docs icons are from <a href="https://phosphoricons.com/">Phosphor Icons</a>.
-      </p>
-      <p>
-        Placeholder images are from <a href="https://www.pexels.com">Pexels</a>.
-      </p>
-    </div>
-
+  
+      <div>
+        <ul class="list-style-type-none mb-0 pl-0">
+          <li class="mb-1">Current version: 1.0.0</li>
+          <li class="mb-1">CSS filesize: 88 KB</li>
+          <li class="mb-1">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></li>
+          <li>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></li>
+        </ul>
+      </div>
+  
+      <hr>
+  
+      <div class="my-6 md:py-6 xs:t-center">
+        <p>
+          Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing the CSS.
+        </p>
+        <p>
+          AlpineJS and its plugins are provided from the CDN recommended in the <a href="https://alpinejs.dev/)">AlpineJS.dev</a> docs.
+        </p>
+        <p>
+          Other than the Codebase logo, docs icons are from <a href="https://phosphoricons.com/">Phosphor Icons</a>.
+        </p>
+        <p>
+          Placeholder images are from <a href="https://www.pexels.com">Pexels</a>.
+        </p>
+      </div>  
+    </article>
+    
   </main>
 </div>
 
