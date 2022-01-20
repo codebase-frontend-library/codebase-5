@@ -83,11 +83,11 @@ There are several small things removed from Codebase CSS, that are not listed he
 
 ## Internet Explorer 11 is not supported
 
-IE11 came out in 2013, and is at ~0.5% market share, (as from December 2021). [Microsoft will stop supporting IE11](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser (17 August 2021). However, as IE11 is integral to older Windows operating systems, it will receive continual support until the [end of it’s life cycle](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge) in **May 2022** for these old versions of Windows. 
+IE11 came out in 2013, and is at ~0.5% market share, (as from December 2021). [Microsoft stopped supporting IE11 in August 2021](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser. However, as IE11 is integral to older Windows operating systems, it will receive continual support until the [end of it’s life cycle](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge) in **May 2022** for these old versions of Windows. 
 
 Several things have been included in Codebase CSS that have no backward-compatibility to older browsers such as IE11:
 
-* The real [CSS Grid [grid system]({{ '/docs/3-layout-utilities/grid' | url }}).
+* The real _CSS Grid_ based [grid system]({{ '/docs/3-layout-utilities/grid' | url }}).
 * [Aspect-ratio]({{ '/docs/3-layout-utilities/aspect-ratios' | url }}) wrappers
 * Some styles have size constraints using `clamp()`.
 
@@ -95,7 +95,7 @@ Several things have been included in Codebase CSS that have no backward-compatib
 
 ## Activator has been discontinued
 
-Since IE11 is not supported in Codebase (a.k.a. Codebase 5), Codebase 4’s Activator JavaScript `activator.js` have been removed (both the vanilla JS and jQuery versions).
+Since IE11 is not supported in Codebase 5, Codebase 4’s Activator JavaScript `activator.js` have been removed (both the vanilla JS and jQuery versions).
 
 Now, Codebase uses only AlpineJS (verion 3.x) for HTML/JS components.
 
