@@ -275,11 +275,12 @@ Utilities for the UI colors – for background, border, text, and text hover (UI
 * <span class="inline-block p-block bg-secondary t-white">bg-secondary</span>
 * <span class="inline-block p-block bg-tertiary t-white">bg-tertiary</span>
 
-### Transparent background
+### Transparent border and background
 
+* `b-transparent` / `hover:b-transparent`
 * `bg-transparent` / `hover:bg-transparent`
 
-Useful for removing unwanted background colors. E.g. for creating outline (“ghost”) buttons.
+Useful for removing unwanted colors. E.g. use `bg-transparent` for creating outline (“ghost”) buttons.
 
 ### Background under border
 

@@ -6208,6 +6208,11 @@ img, picture, video, canvas, svg {
   background-color: transparent;
 }
 
+.b-transparent,
+.hover\:b-transparent:hover {
+  border-color: transparent;
+}
+
 .bg-white {
   background-color: white;
 }
@@ -8634,7 +8639,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.1.0.0
+ * v.1.0.1
  */
 
 /*# sourceMappingURL=codebase.css.map */

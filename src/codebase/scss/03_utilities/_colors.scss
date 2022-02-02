@@ -14,6 +14,11 @@
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
+.b-transparent,
+.hover\:b-transparent:hover {
+  border-color: transparent;
+}
+
 
 .bg-white { background-color: white }
 .hover\:bg-white:hover { background-color: white !important }
