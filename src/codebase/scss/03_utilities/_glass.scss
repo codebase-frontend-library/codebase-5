@@ -36,7 +36,7 @@
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  // Black glassmorphoc
+  // Black glassmorphic
   .bg-black-glass-1 {
     background-color: rgba(0,0,0,.1);
     backdrop-filter: saturate(180%) blur(2px);
