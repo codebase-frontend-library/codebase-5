@@ -16,20 +16,19 @@ In addition, CodebaseCSS containers have several width modifiers, for easily set
 
 CodebaseCSS’s max-widths are set at **256px increments** – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px &times; 768px). Containers are first set to `width: 100%` and then constrained these max-widths.
 
-The default `container` behaves the same as `container-lg`.
+The default `container` behaves the same as `container-xxl`.
 
 <table class="table">
 <thead>
 <tr>
 <th>Containers</th>
-<th>Max-width of content block<br>
-<span class="t-italic t-normal">(grid cell 2)</span></th>
+<th>Max-width of content block</th>
 <th>Calculated from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>container-xxl</code></td>
+<td><code>container-xxl</code><br>(and <code>container</code>)</td>
 <td><strong>1760px</strong></td>
 <td><code>xxl</code> 1792px – (2 × 1rem side margins)</td>
 </tr>
@@ -39,7 +38,7 @@ The default `container` behaves the same as `container-lg`.
 <td><code>xl</code> 1536px – (2 × 1rem side margins)</td>
 </tr>
 <tr>
-<td><code>container-lg</code><br>(and <code>container</code>)</td>
+<td><code>container-lg</code></td>
 <td><strong>1228px</strong></td>
 <td><code>lg</code> 1280px – (2 × 1rem side margins)</td>
 </tr>
@@ -107,9 +106,9 @@ On large screens, you can expand the following demo:
           margin-left: 1rem !important;
         }
       </style>
-      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code></div></div>
+      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
       <div class="container-xl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
-      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code> (and <code>container</code>)</div></div>
+      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
       <div class="container-md container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-md</code></div></div>
       <div class="container-sm container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
     </div>

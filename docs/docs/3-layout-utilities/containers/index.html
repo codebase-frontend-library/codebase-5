@@ -8,7 +8,7 @@
   <title>Containers - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=1.0.1" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=1.0.2" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -260,7 +260,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.1">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.2">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +315,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.1">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.2">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -539,19 +539,18 @@
 <p>In addition, CodebaseCSS containers have several width modifiers, for easily setting up narrower centered layouts for e.g. blog posts.</p>
 <h2 id="containers-at-different-max-widths" tabindex="-1">Containers at different max-widths</h2>
 <p>CodebaseCSS’s max-widths are set at <strong>256px increments</strong> – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px × 768px). Containers are first set to <code>width: 100%</code> and then constrained these max-widths.</p>
-<p>The default <code>container</code> behaves the same as <code>container-lg</code>.</p>
+<p>The default <code>container</code> behaves the same as <code>container-xxl</code>.</p>
 <table class="table">
 <thead>
 <tr>
 <th>Containers</th>
-<th>Max-width of content block<br>
-<span class="t-italic t-normal">(grid cell 2)</span></th>
+<th>Max-width of content block</th>
 <th>Calculated from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>container-xxl</code></td>
+<td><code>container-xxl</code><br>(and <code>container</code>)</td>
 <td><strong>1760px</strong></td>
 <td><code>xxl</code> 1792px – (2 × 1rem side margins)</td>
 </tr>
@@ -561,7 +560,7 @@
 <td><code>xl</code> 1536px – (2 × 1rem side margins)</td>
 </tr>
 <tr>
-<td><code>container-lg</code><br>(and <code>container</code>)</td>
+<td><code>container-lg</code></td>
 <td><strong>1228px</strong></td>
 <td><code>lg</code> 1280px – (2 × 1rem side margins)</td>
 </tr>
@@ -626,9 +625,9 @@
           margin-left: 1rem !important;
         }
       </style>
-      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code></div></div>
+      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
       <div class="container-xl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
-      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code> (and <code>container</code>)</div></div>
+      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
       <div class="container-md container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-md</code></div></div>
       <div class="container-sm container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
     </div>
@@ -673,7 +672,7 @@
     </a>
   </p>
   
-  <p>Version 1.0.1 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 1.0.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

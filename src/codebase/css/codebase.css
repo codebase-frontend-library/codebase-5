@@ -983,7 +983,7 @@ img, picture, video, canvas, svg {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1792px;
 }
 .container-xxl {
   max-width: 1792px;
@@ -8639,7 +8639,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.1.0.1
+ * v.1.0.2
  */
 
 /*# sourceMappingURL=codebase.css.map */

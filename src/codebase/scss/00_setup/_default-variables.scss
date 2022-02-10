@@ -204,7 +204,7 @@ $mq-width: ( // used in loops for inline-flex, flex, flex-gap, margins, spacings
 );
 
 // Containers
-$container-default:           map-get($width, w-lg);
+$container-default:           map-get($width, w-xxl);
 $container-x-space:           1rem !default;
 
 // Flexbox system
