@@ -9,7 +9,12 @@ nextLink: "Floats"
 
 Here are several utility classes that can be used on _wrapper_ elements for constraining the aspect ratio of whatever is their immediate child element. These can be used to wrap tiles, cards, images, videos, embeds, or whatever you need to be constrained to an aspect ratio.
 
-**Note** Even though the new `aspect-ratio` CSS property saw widespread in browsers in 2021 (see [CanIuse CSS property: aspect-ratio](https://caniuse.com/mdn-css_properties_aspect-ratio)), Codebase 5’s `aspect ratio` wrappers don’t use it (yet). Instead they use an earlier technique based on top padding on a `:before` pseudo-element. This is done so that `aspect-ratio` can be used on components where text needs to be contained within the wrapper. On small viewports, the aspect-ratio needs to be deformed so that the  text remains contained within the component.
+Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this has seen [widespread adoption in browsers in 2021](https://caniuse.com/mdn-css_properties_aspect-ratio).
+
+## Notes on aspect ratios
+
+1. Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio _unless deformed by excess content within_. For example, you may have a [hero image with a text overlay]({{ '/docs/6-simple-components/heros' | url }}). On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.
+2. Mixins for the old [aspect ratio padding hack](https://www.w3schools.com/howto/howto_css_aspect_ratio.asp) are still present in the Codebase SCSS library. If you need to revert for supporting old browsers, you can tggle the  variable `$aspect-ratio-hack: false !default;` to `true`, and your preprocessor will swap them back.
 
 ## Common image/video aspect ratios 
 

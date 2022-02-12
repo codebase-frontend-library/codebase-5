@@ -534,13 +534,6 @@ button:disabled, button.disabled,
   opacity: 0.5;
   pointer-events: none;
 }
-button else,
-[type=button] else,
-[type=submit] else,
-[type=reset] else,
-.btn else {
-  border-radius: 0;
-}
 button.block,
 [type=button].block,
 [type=submit].block,
@@ -2379,457 +2372,367 @@ img, picture, video, canvas, svg {
   }
 }
 
-[class*=aspect-ratio] {
-  display: flex;
+.aspect-ratio-16x9 {
+  aspect-ratio: 16/9;
 }
-[class*=aspect-ratio] > * {
-  width: 100%;
+.aspect-ratio-21x9 {
+  aspect-ratio: 21/9;
 }
-[class*=aspect-ratio]:before {
-  content: "";
-  float: left;
+.aspect-ratio-24x9 {
+  aspect-ratio: 24/9;
 }
-[class*=aspect-ratio]:after {
-  content: "";
-  clear: both;
+.aspect-ratio-1x1 {
+  aspect-ratio: 1/1;
 }
-
-.aspect-ratio-16x9:before {
-  padding-top: 56.25%;
+.aspect-ratio-1x2 {
+  aspect-ratio: 1/2;
 }
-.aspect-ratio-21x9:before {
-  padding-top: 42.857143%;
+.aspect-ratio-1x3 {
+  aspect-ratio: 1/3;
 }
-.aspect-ratio-24x9:before {
-  padding-top: 37.5%;
+.aspect-ratio-1x4 {
+  aspect-ratio: 1/4;
 }
-.aspect-ratio-1x1:before {
-  padding-top: 100%;
+.aspect-ratio-1x5 {
+  aspect-ratio: 1/5;
 }
-.aspect-ratio-1x2:before {
-  padding-top: 200%;
+.aspect-ratio-1x6 {
+  aspect-ratio: 1/6;
 }
-.aspect-ratio-2x1:before {
-  padding-top: 50%;
+.aspect-ratio-2x1 {
+  aspect-ratio: 2/1;
 }
-.aspect-ratio-3x4:before {
-  padding-top: 133.333333%;
+.aspect-ratio-3x1 {
+  aspect-ratio: 3/1;
 }
-.aspect-ratio-4x3:before {
-  padding-top: 75%;
+.aspect-ratio-4x1 {
+  aspect-ratio: 4/1;
 }
-.aspect-ratio-1x1:before {
-  padding-top: 100%;
+.aspect-ratio-5x1 {
+  aspect-ratio: 5/1;
 }
-.aspect-ratio-1x2:before {
-  padding-top: 200%;
+.aspect-ratio-6x1 {
+  aspect-ratio: 6/1;
 }
-.aspect-ratio-1x3:before {
-  padding-top: 300%;
+.aspect-ratio-2x3 {
+  aspect-ratio: 2/3;
 }
-.aspect-ratio-1x4:before {
-  padding-top: 400%;
+.aspect-ratio-3x2 {
+  aspect-ratio: 3/2;
 }
-.aspect-ratio-1x5:before {
-  padding-top: 500%;
+.aspect-ratio-3x4 {
+  aspect-ratio: 3/4;
 }
-.aspect-ratio-1x6:before {
-  padding-top: 600%;
+.aspect-ratio-4x3 {
+  aspect-ratio: 4/3;
 }
-.aspect-ratio-2x1:before {
-  padding-top: 50%;
+.aspect-ratio-2x5 {
+  aspect-ratio: 2/5;
 }
-.aspect-ratio-3x1:before {
-  padding-top: 3.333333%;
+.aspect-ratio-5x2 {
+  aspect-ratio: 5/2;
 }
-.aspect-ratio-4x1:before {
-  padding-top: 25%;
+.aspect-ratio-3x5 {
+  aspect-ratio: 3/5;
 }
-.aspect-ratio-5x1:before {
-  padding-top: 20%;
+.aspect-ratio-5x3 {
+  aspect-ratio: 5/3;
 }
-.aspect-ratio-6x1:before {
-  padding-top: 16.666665%;
+.aspect-ratio-4x5 {
+  aspect-ratio: 4/5;
 }
-.aspect-ratio-2x3:before {
-  padding-top: 150%;
+.aspect-ratio-5x4 {
+  aspect-ratio: 5/4;
 }
-.aspect-ratio-3x2:before {
-  padding-top: 66.666667%;
+.aspect-ratio-6x5 {
+  aspect-ratio: 6/5;
 }
-.aspect-ratio-3x4:before {
-  padding-top: 133.333333%;
-}
-.aspect-ratio-4x3:before {
-  padding-top: 75%;
-}
-.aspect-ratio-2x5:before {
-  padding-top: 250%;
-}
-.aspect-ratio-5x2:before {
-  padding-top: 40%;
-}
-.aspect-ratio-3x5:before {
-  padding-top: 166.666667%;
-}
-.aspect-ratio-5x3:before {
-  padding-top: 60%;
-}
-.aspect-ratio-4x5:before {
-  padding-top: 125%;
-}
-.aspect-ratio-5x4:before {
-  padding-top: 80%;
-}
-.aspect-ratio-6x5:before {
-  padding-top: 120%;
-}
-.aspect-ratio-5x6:before {
-  padding-top: 83.333333%;
+.aspect-ratio-5x6 {
+  aspect-ratio: 5/6;
 }
 
 @media (min-width: 512px) {
-  .xs\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .xs\:aspect-ratio-1x1 {
+    aspect-ratio: 1/1;
   }
-  .xs\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .xs\:aspect-ratio-1x2 {
+    aspect-ratio: 1/2;
   }
-  .xs\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .xs\:aspect-ratio-1x3 {
+    aspect-ratio: 1/3;
   }
-  .xs\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .xs\:aspect-ratio-1x4 {
+    aspect-ratio: 1/4;
   }
-  .xs\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .xs\:aspect-ratio-1x5 {
+    aspect-ratio: 1/5;
   }
-  .xs\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .xs\:aspect-ratio-1x6 {
+    aspect-ratio: 1/6;
   }
-  .xs\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .xs\:aspect-ratio-2x1 {
+    aspect-ratio: 2/1;
   }
-  .xs\:aspect-ratio-1x3:before {
-    padding-top: 300%;
+  .xs\:aspect-ratio-3x1 {
+    aspect-ratio: 3/1;
   }
-  .xs\:aspect-ratio-1x4:before {
-    padding-top: 400%;
+  .xs\:aspect-ratio-4x1 {
+    aspect-ratio: 4/1;
   }
-  .xs\:aspect-ratio-1x5:before {
-    padding-top: 500%;
+  .xs\:aspect-ratio-5x1 {
+    aspect-ratio: 5/1;
   }
-  .xs\:aspect-ratio-1x6:before {
-    padding-top: 600%;
+  .xs\:aspect-ratio-6x1 {
+    aspect-ratio: 6/1;
   }
-  .xs\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .xs\:aspect-ratio-2x3 {
+    aspect-ratio: 2/3;
   }
-  .xs\:aspect-ratio-3x1:before {
-    padding-top: 3.333333%;
+  .xs\:aspect-ratio-3x2 {
+    aspect-ratio: 3/2;
   }
-  .xs\:aspect-ratio-4x1:before {
-    padding-top: 25%;
+  .xs\:aspect-ratio-3x4 {
+    aspect-ratio: 3/4;
   }
-  .xs\:aspect-ratio-5x1:before {
-    padding-top: 20%;
+  .xs\:aspect-ratio-4x3 {
+    aspect-ratio: 4/3;
   }
-  .xs\:aspect-ratio-6x1:before {
-    padding-top: 16.666665%;
+  .xs\:aspect-ratio-2x5 {
+    aspect-ratio: 2/5;
   }
-  .xs\:aspect-ratio-2x3:before {
-    padding-top: 150%;
+  .xs\:aspect-ratio-5x2 {
+    aspect-ratio: 5/2;
   }
-  .xs\:aspect-ratio-3x2:before {
-    padding-top: 66.666667%;
+  .xs\:aspect-ratio-3x5 {
+    aspect-ratio: 3/5;
   }
-  .xs\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .xs\:aspect-ratio-5x3 {
+    aspect-ratio: 5/3;
   }
-  .xs\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .xs\:aspect-ratio-4x5 {
+    aspect-ratio: 4/5;
   }
-  .xs\:aspect-ratio-2x5:before {
-    padding-top: 250%;
+  .xs\:aspect-ratio-5x4 {
+    aspect-ratio: 5/4;
   }
-  .xs\:aspect-ratio-5x2:before {
-    padding-top: 40%;
+  .xs\:aspect-ratio-6x5 {
+    aspect-ratio: 6/5;
   }
-  .xs\:aspect-ratio-3x5:before {
-    padding-top: 166.666667%;
-  }
-  .xs\:aspect-ratio-5x3:before {
-    padding-top: 60%;
-  }
-  .xs\:aspect-ratio-4x5:before {
-    padding-top: 125%;
-  }
-  .xs\:aspect-ratio-5x4:before {
-    padding-top: 80%;
-  }
-  .xs\:aspect-ratio-6x5:before {
-    padding-top: 120%;
-  }
-  .xs\:aspect-ratio-5x6:before {
-    padding-top: 83.333333%;
+  .xs\:aspect-ratio-5x6 {
+    aspect-ratio: 5/6;
   }
 }
 @media (min-width: 768px) {
-  .sm\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .sm\:aspect-ratio-1x1 {
+    aspect-ratio: 1/1;
   }
-  .sm\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .sm\:aspect-ratio-1x2 {
+    aspect-ratio: 1/2;
   }
-  .sm\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .sm\:aspect-ratio-1x3 {
+    aspect-ratio: 1/3;
   }
-  .sm\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .sm\:aspect-ratio-1x4 {
+    aspect-ratio: 1/4;
   }
-  .sm\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .sm\:aspect-ratio-1x5 {
+    aspect-ratio: 1/5;
   }
-  .sm\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .sm\:aspect-ratio-1x6 {
+    aspect-ratio: 1/6;
   }
-  .sm\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .sm\:aspect-ratio-2x1 {
+    aspect-ratio: 2/1;
   }
-  .sm\:aspect-ratio-1x3:before {
-    padding-top: 300%;
+  .sm\:aspect-ratio-3x1 {
+    aspect-ratio: 3/1;
   }
-  .sm\:aspect-ratio-1x4:before {
-    padding-top: 400%;
+  .sm\:aspect-ratio-4x1 {
+    aspect-ratio: 4/1;
   }
-  .sm\:aspect-ratio-1x5:before {
-    padding-top: 500%;
+  .sm\:aspect-ratio-5x1 {
+    aspect-ratio: 5/1;
   }
-  .sm\:aspect-ratio-1x6:before {
-    padding-top: 600%;
+  .sm\:aspect-ratio-6x1 {
+    aspect-ratio: 6/1;
   }
-  .sm\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .sm\:aspect-ratio-2x3 {
+    aspect-ratio: 2/3;
   }
-  .sm\:aspect-ratio-3x1:before {
-    padding-top: 3.333333%;
+  .sm\:aspect-ratio-3x2 {
+    aspect-ratio: 3/2;
   }
-  .sm\:aspect-ratio-4x1:before {
-    padding-top: 25%;
+  .sm\:aspect-ratio-3x4 {
+    aspect-ratio: 3/4;
   }
-  .sm\:aspect-ratio-5x1:before {
-    padding-top: 20%;
+  .sm\:aspect-ratio-4x3 {
+    aspect-ratio: 4/3;
   }
-  .sm\:aspect-ratio-6x1:before {
-    padding-top: 16.666665%;
+  .sm\:aspect-ratio-2x5 {
+    aspect-ratio: 2/5;
   }
-  .sm\:aspect-ratio-2x3:before {
-    padding-top: 150%;
+  .sm\:aspect-ratio-5x2 {
+    aspect-ratio: 5/2;
   }
-  .sm\:aspect-ratio-3x2:before {
-    padding-top: 66.666667%;
+  .sm\:aspect-ratio-3x5 {
+    aspect-ratio: 3/5;
   }
-  .sm\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .sm\:aspect-ratio-5x3 {
+    aspect-ratio: 5/3;
   }
-  .sm\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .sm\:aspect-ratio-4x5 {
+    aspect-ratio: 4/5;
   }
-  .sm\:aspect-ratio-2x5:before {
-    padding-top: 250%;
+  .sm\:aspect-ratio-5x4 {
+    aspect-ratio: 5/4;
   }
-  .sm\:aspect-ratio-5x2:before {
-    padding-top: 40%;
+  .sm\:aspect-ratio-6x5 {
+    aspect-ratio: 6/5;
   }
-  .sm\:aspect-ratio-3x5:before {
-    padding-top: 166.666667%;
-  }
-  .sm\:aspect-ratio-5x3:before {
-    padding-top: 60%;
-  }
-  .sm\:aspect-ratio-4x5:before {
-    padding-top: 125%;
-  }
-  .sm\:aspect-ratio-5x4:before {
-    padding-top: 80%;
-  }
-  .sm\:aspect-ratio-6x5:before {
-    padding-top: 120%;
-  }
-  .sm\:aspect-ratio-5x6:before {
-    padding-top: 83.333333%;
+  .sm\:aspect-ratio-5x6 {
+    aspect-ratio: 5/6;
   }
 }
 @media (min-width: 1024px) {
-  .md\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .md\:aspect-ratio-1x1 {
+    aspect-ratio: 1/1;
   }
-  .md\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .md\:aspect-ratio-1x2 {
+    aspect-ratio: 1/2;
   }
-  .md\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .md\:aspect-ratio-1x3 {
+    aspect-ratio: 1/3;
   }
-  .md\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .md\:aspect-ratio-1x4 {
+    aspect-ratio: 1/4;
   }
-  .md\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .md\:aspect-ratio-1x5 {
+    aspect-ratio: 1/5;
   }
-  .md\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .md\:aspect-ratio-1x6 {
+    aspect-ratio: 1/6;
   }
-  .md\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .md\:aspect-ratio-2x1 {
+    aspect-ratio: 2/1;
   }
-  .md\:aspect-ratio-1x3:before {
-    padding-top: 300%;
+  .md\:aspect-ratio-3x1 {
+    aspect-ratio: 3/1;
   }
-  .md\:aspect-ratio-1x4:before {
-    padding-top: 400%;
+  .md\:aspect-ratio-4x1 {
+    aspect-ratio: 4/1;
   }
-  .md\:aspect-ratio-1x5:before {
-    padding-top: 500%;
+  .md\:aspect-ratio-5x1 {
+    aspect-ratio: 5/1;
   }
-  .md\:aspect-ratio-1x6:before {
-    padding-top: 600%;
+  .md\:aspect-ratio-6x1 {
+    aspect-ratio: 6/1;
   }
-  .md\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .md\:aspect-ratio-2x3 {
+    aspect-ratio: 2/3;
   }
-  .md\:aspect-ratio-3x1:before {
-    padding-top: 3.333333%;
+  .md\:aspect-ratio-3x2 {
+    aspect-ratio: 3/2;
   }
-  .md\:aspect-ratio-4x1:before {
-    padding-top: 25%;
+  .md\:aspect-ratio-3x4 {
+    aspect-ratio: 3/4;
   }
-  .md\:aspect-ratio-5x1:before {
-    padding-top: 20%;
+  .md\:aspect-ratio-4x3 {
+    aspect-ratio: 4/3;
   }
-  .md\:aspect-ratio-6x1:before {
-    padding-top: 16.666665%;
+  .md\:aspect-ratio-2x5 {
+    aspect-ratio: 2/5;
   }
-  .md\:aspect-ratio-2x3:before {
-    padding-top: 150%;
+  .md\:aspect-ratio-5x2 {
+    aspect-ratio: 5/2;
   }
-  .md\:aspect-ratio-3x2:before {
-    padding-top: 66.666667%;
+  .md\:aspect-ratio-3x5 {
+    aspect-ratio: 3/5;
   }
-  .md\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .md\:aspect-ratio-5x3 {
+    aspect-ratio: 5/3;
   }
-  .md\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .md\:aspect-ratio-4x5 {
+    aspect-ratio: 4/5;
   }
-  .md\:aspect-ratio-2x5:before {
-    padding-top: 250%;
+  .md\:aspect-ratio-5x4 {
+    aspect-ratio: 5/4;
   }
-  .md\:aspect-ratio-5x2:before {
-    padding-top: 40%;
+  .md\:aspect-ratio-6x5 {
+    aspect-ratio: 6/5;
   }
-  .md\:aspect-ratio-3x5:before {
-    padding-top: 166.666667%;
-  }
-  .md\:aspect-ratio-5x3:before {
-    padding-top: 60%;
-  }
-  .md\:aspect-ratio-4x5:before {
-    padding-top: 125%;
-  }
-  .md\:aspect-ratio-5x4:before {
-    padding-top: 80%;
-  }
-  .md\:aspect-ratio-6x5:before {
-    padding-top: 120%;
-  }
-  .md\:aspect-ratio-5x6:before {
-    padding-top: 83.333333%;
+  .md\:aspect-ratio-5x6 {
+    aspect-ratio: 5/6;
   }
 }
 @media (min-width: 1280px) {
-  .lg\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .lg\:aspect-ratio-1x1 {
+    aspect-ratio: 1/1;
   }
-  .lg\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .lg\:aspect-ratio-1x2 {
+    aspect-ratio: 1/2;
   }
-  .lg\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .lg\:aspect-ratio-1x3 {
+    aspect-ratio: 1/3;
   }
-  .lg\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .lg\:aspect-ratio-1x4 {
+    aspect-ratio: 1/4;
   }
-  .lg\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .lg\:aspect-ratio-1x5 {
+    aspect-ratio: 1/5;
   }
-  .lg\:aspect-ratio-1x1:before {
-    padding-top: 100%;
+  .lg\:aspect-ratio-1x6 {
+    aspect-ratio: 1/6;
   }
-  .lg\:aspect-ratio-1x2:before {
-    padding-top: 200%;
+  .lg\:aspect-ratio-2x1 {
+    aspect-ratio: 2/1;
   }
-  .lg\:aspect-ratio-1x3:before {
-    padding-top: 300%;
+  .lg\:aspect-ratio-3x1 {
+    aspect-ratio: 3/1;
   }
-  .lg\:aspect-ratio-1x4:before {
-    padding-top: 400%;
+  .lg\:aspect-ratio-4x1 {
+    aspect-ratio: 4/1;
   }
-  .lg\:aspect-ratio-1x5:before {
-    padding-top: 500%;
+  .lg\:aspect-ratio-5x1 {
+    aspect-ratio: 5/1;
   }
-  .lg\:aspect-ratio-1x6:before {
-    padding-top: 600%;
+  .lg\:aspect-ratio-6x1 {
+    aspect-ratio: 6/1;
   }
-  .lg\:aspect-ratio-2x1:before {
-    padding-top: 50%;
+  .lg\:aspect-ratio-2x3 {
+    aspect-ratio: 2/3;
   }
-  .lg\:aspect-ratio-3x1:before {
-    padding-top: 3.333333%;
+  .lg\:aspect-ratio-3x2 {
+    aspect-ratio: 3/2;
   }
-  .lg\:aspect-ratio-4x1:before {
-    padding-top: 25%;
+  .lg\:aspect-ratio-3x4 {
+    aspect-ratio: 3/4;
   }
-  .lg\:aspect-ratio-5x1:before {
-    padding-top: 20%;
+  .lg\:aspect-ratio-4x3 {
+    aspect-ratio: 4/3;
   }
-  .lg\:aspect-ratio-6x1:before {
-    padding-top: 16.666665%;
+  .lg\:aspect-ratio-2x5 {
+    aspect-ratio: 2/5;
   }
-  .lg\:aspect-ratio-2x3:before {
-    padding-top: 150%;
+  .lg\:aspect-ratio-5x2 {
+    aspect-ratio: 5/2;
   }
-  .lg\:aspect-ratio-3x2:before {
-    padding-top: 66.666667%;
+  .lg\:aspect-ratio-3x5 {
+    aspect-ratio: 3/5;
   }
-  .lg\:aspect-ratio-3x4:before {
-    padding-top: 133.333333%;
+  .lg\:aspect-ratio-5x3 {
+    aspect-ratio: 5/3;
   }
-  .lg\:aspect-ratio-4x3:before {
-    padding-top: 75%;
+  .lg\:aspect-ratio-4x5 {
+    aspect-ratio: 4/5;
   }
-  .lg\:aspect-ratio-2x5:before {
-    padding-top: 250%;
+  .lg\:aspect-ratio-5x4 {
+    aspect-ratio: 5/4;
   }
-  .lg\:aspect-ratio-5x2:before {
-    padding-top: 40%;
+  .lg\:aspect-ratio-6x5 {
+    aspect-ratio: 6/5;
   }
-  .lg\:aspect-ratio-3x5:before {
-    padding-top: 166.666667%;
-  }
-  .lg\:aspect-ratio-5x3:before {
-    padding-top: 60%;
-  }
-  .lg\:aspect-ratio-4x5:before {
-    padding-top: 125%;
-  }
-  .lg\:aspect-ratio-5x4:before {
-    padding-top: 80%;
-  }
-  .lg\:aspect-ratio-6x5:before {
-    padding-top: 120%;
-  }
-  .lg\:aspect-ratio-5x6:before {
-    padding-top: 83.333333%;
+  .lg\:aspect-ratio-5x6 {
+    aspect-ratio: 5/6;
   }
 }
 .p-block {
@@ -8639,7 +8542,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.1.0.2
+ * v.1.0.3
  */
 
 /*# sourceMappingURL=codebase.css.map */

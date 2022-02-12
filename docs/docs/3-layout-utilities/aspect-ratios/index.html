@@ -8,7 +8,7 @@
   <title>Aspect ratios - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=1.0.2" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=1.0.3" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -260,7 +260,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.2">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.3">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +315,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.2">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.3">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -536,7 +536,12 @@
   <main class="col-1 sm:col-2">
     <div class="container-sm">
       <p>Here are several utility classes that can be used on <em>wrapper</em> elements for constraining the aspect ratio of whatever is their immediate child element. These can be used to wrap tiles, cards, images, videos, embeds, or whatever you need to be constrained to an aspect ratio.</p>
-<p><strong>Note</strong> Even though the new <code>aspect-ratio</code> CSS property saw widespread in browsers in 2021 (see <a href="https://caniuse.com/mdn-css_properties_aspect-ratio">CanIuse CSS property: aspect-ratio</a>), Codebase 5’s <code>aspect ratio</code> wrappers don’t use it (yet). Instead they use an earlier technique based on top padding on a <code>:before</code> pseudo-element. This is done so that <code>aspect-ratio</code> can be used on components where text needs to be contained within the wrapper. On small viewports, the aspect-ratio needs to be deformed so that the  text remains contained within the component.</p>
+<p>Since v.1.0.3, Codebase 5 uses the new <code>aspect-ratio</code> CSS property, since this has seen <a href="https://caniuse.com/mdn-css_properties_aspect-ratio">widespread adoption in browsers in 2021</a>.</p>
+<h2 id="notes-on-aspect-ratios" tabindex="-1">Notes on aspect ratios</h2>
+<ol>
+<li>Codebase 5’s <code>aspect-ratio</code> classes maintain a block wrapper’s aspect ratio <em>unless deformed by excess content within</em>. For example, you may have a <a href="/codebase-5/docs/6-simple-components/heros">hero image with a text overlay</a>. On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.</li>
+<li>Mixins for the old <a href="https://www.w3schools.com/howto/howto_css_aspect_ratio.asp">aspect ratio padding hack</a> are still present in the Codebase SCSS library. If you need to revert for supporting old browsers, you can tggle the  variable <code>$aspect-ratio-hack: false !default;</code> to <code>true</code>, and your preprocessor will swap them back.</li>
+</ol>
 <h2 id="common-image%2Fvideo-aspect-ratios" tabindex="-1">Common image/video aspect ratios</h2>
 <div class="mb-3 grid gap equal-5-cols">
   <div>
@@ -740,7 +745,7 @@ gulls by <a href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=at
     </a>
   </p>
   
-  <p>Version 1.0.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 1.0.3 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

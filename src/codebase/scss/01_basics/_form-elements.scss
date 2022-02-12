@@ -153,7 +153,7 @@ textarea {
 
   @if $button-rounded-corners == true {
     border-radius: $button-border-radius;
-  } else {
+  } @else {
     border-radius: 0;
   }
   &.block {

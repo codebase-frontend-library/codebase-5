@@ -165,7 +165,7 @@ The `box` utility expands (you could say, “inflates”) an element to the full
 
 <div class="mb-3 aspect-ratio-16x9 relative">
   <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" alt="Photo by Oleg Magni from Pexels">
-  <div class="z-index-2 flex flex-column flex-center flex-middle">
+  <div class="aspect-ratio-16x9 flex flex-column flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
       <h1 class="t-semibold t-black">Overlay title</h1>
       <p class="mb-0 t-black">Lorem ipsum dolor sit amet...</p>
@@ -178,7 +178,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 ```html
 <div class="aspect-ratio-16x9 relative">
   <img class="box img-cover" src="" alt="">
-  <div class="z-index-2 flex flex-column flex-center flex-middle">
+  <div class="aspect-ratio-16x9 flex flex-column flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
       <h1 class="t-semibold t-black">Overlay title</h1>
       <p class="mb-0 t-black">Lorem ipsum dolor sit amet...</p>

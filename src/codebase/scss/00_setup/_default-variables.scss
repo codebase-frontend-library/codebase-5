@@ -214,6 +214,9 @@ $use-flex-gap:                true !default; // toggling to `false` will revert 
 // Grid system
 $grid-gap-width:              2rem !default;
 
+// Aspect ratios
+$aspect-ratio-hack:           false !default;
+
 // Layout utilities
 $square-size-sm:              3rem !default;
 $square-size:                 4.5rem !default;

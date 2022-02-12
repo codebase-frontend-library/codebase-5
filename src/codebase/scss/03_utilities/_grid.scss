@@ -19,7 +19,6 @@
   &-6-cols {
     grid-template-columns: repeat(6, minmax(1rem, auto));
   }
-
 }
 
 @mixin grid-equal {
