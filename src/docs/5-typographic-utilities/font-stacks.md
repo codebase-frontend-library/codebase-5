@@ -13,7 +13,7 @@ Codebase contains several text utilites for font stacks, that are either directl
 $font-stack-base:       ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-stack-mono:       SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
 $font-stack-sans-serif: $font-stack-base !default;
-$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif !default;
+$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif !default;
 $font-stack-ui:         $font-stack-base !default;
 $font-stack-brand:      $font-stack-base !default;
 $font-stack-prose:      $font-stack-serif !default;
@@ -56,7 +56,7 @@ There is also a default serif `$font-stack-serif` but Codebase does not apply it
 Unless you change things in your design, `$font-stack-serif` is only available via the text utility class `t-serif`.
 
 ```css
-"Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif
+"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif
 ```
 
 ### User interface (UI) font stack
@@ -106,7 +106,7 @@ Unless you change things in your design, these last three font stacks are only a
     </tr>
     <tr>
       <td><code>$font-stack-serif</code</td>
-      <td><code>"Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif</code></td>
+      <td><code>"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif</code></td>
       <td>None</td>
       <td><code>t-serif</code></td>
     </tr>

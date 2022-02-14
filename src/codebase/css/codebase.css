@@ -7930,11 +7930,11 @@ img, picture, video, canvas, svg {
 }
 
 .t-serif {
-  font-family: "Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif;
+  font-family: "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif;
 }
 
 .t-prose {
-  font-family: "Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif;
+  font-family: "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif;
 }
 
 .t-bolder,

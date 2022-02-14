@@ -108,7 +108,7 @@ The SCSS library is clean, modern and minimalist, and highly versatile because o
 
 All the Codebase SCSS files are [available in the repository](https://github.com/codebase-frontend-library/codebase-5). If you have knowledge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables.
 
-You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` – or whichever way you need to do it in your design platform. And you can customize Codebase itself.
+You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 
 The Codebase SCSS library contains a lot of [default variables](https://github.com/codebase-frontend-library/codebase-5/tree/master/src/codebase/scss/00_setup/_default-variables.scss) that are under a `!default` flag – so that they can be overridden.
 
@@ -117,12 +117,13 @@ For example, here is the [Sass map](https://sass-lang.com/documentation/values/m
 ```scss
 $ui-color: () !default;
 $ui-color: map-merge((
-  "primary":          #1262ed,
-  "secondary":        #0082a8,
-  "success":          #128912,
-  "warning":          #c25703,
-  "danger":           #cf000f,
-  "info":             #767676
+  "warning":          #c25703,  // orange -- contrast ratio 4.51:1
+  "danger":           #cf000f,  // red    -- contrast ratio 5.74:1
+  "success":          #128a12,  // green  -- contrast ratio 4.5:1
+  "info":             #1262ed,  // blue   -- contrast ratio 5.26:1
+  "primary":          #9400d3,  // purple -- contrast ratio 6.56:1
+  "secondary":        #0080a2,  // teal   -- contrast ratio 4.56:1
+  "tertiary":         #767676,  // gray   -- contrast ratio 4.54:1
 ), $ui-color);
 ```
 
@@ -138,7 +139,7 @@ Codebase contains three `font-family` font stacks, plus a few more that are alia
 $font-stack-base:       ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-stack-mono:       SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
 $font-stack-sans-serif: $font-stack-base !default;
-$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", Utopia, "Liberation Serif", Times, serif !default;
+$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif !default;
 $font-stack-ui:         $font-stack-base !default;
 $font-stack-brand:      $font-stack-base !default;
 $font-stack-prose:      $font-stack-serif !default;
