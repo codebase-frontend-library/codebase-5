@@ -16,7 +16,7 @@ You can start working immediately with Codebase in a simple HTML setup.
   </div>
 </div>
 
-The sourcemap is also available in the <a href="{{ '/dist' | url }}">codebase/dist/</a> folder.
+The sourcemap is also available in the <a href="https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist">codebase/dist/</a> folder.
 
 ```js
 dist/
@@ -26,7 +26,7 @@ dist/
 
 ## Simple HTML setup
 
-1. [Download the CSS]({{ '/dist/codebase.css' | url }}) (alternatively, get the entire [dist/ folder](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist) and place it in your project.
+1. [Download the CSS]({{ '/dist/codebase.css' | url }}) (alternatively, get the entire `dist/`) and place it in your project.
 2. Create your first HTML page – e.g. copying the starter example below.
 3. Link to `codebase.css` and `alpine.js` in the HTML `<head>`:
 
