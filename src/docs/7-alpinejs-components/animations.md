@@ -465,7 +465,7 @@ With two components (one in each grid cell) that are triggered to `true` when th
           :class="inViewport && 'flip-y'"
         >
           <div class="flip-y backface-hidden">
-            <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="Photo by Erik Karits from Pexels">
+            <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="Photo by Erik Karits from Pexels">
           </div>
         </div>
       </div>

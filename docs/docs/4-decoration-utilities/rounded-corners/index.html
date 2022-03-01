@@ -563,15 +563,15 @@
 <p>If you use a <code>rounded</code> utility on a <em>wrapper</em> around an image without padding), you will also need to add <code>overflow: hidden;</code> so that the corners of the image are hidden.</p>
 <div class="grid gap sm:equal-3-cols">
   <div>
-    <img class="rounded mb-3" src="/codebase-5/img/pexels-pixabay-416179.jpg">
+    <img class="rounded mb-3" src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy">
     <p>Image with utility class <code>&lt;img class="rounded" src="" alt=""&gt;</code> — works OK</p>
   </div>
   <div>
-    <div class="rounded mb-3"><img src="/codebase-5/img/pexels-pixabay-416179.jpg"></div>
+    <div class="rounded mb-3"><img src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy"></div>
     <p>Image wrapped in <code>&lt;div class="rounded"&gt;</code> (but the image corners protrude into the rounded corners)</p>
   </div>
   <div>
-    <div class="rounded overflow-hidden mb-3"><img src="/codebase-5/img/pexels-pixabay-416179.jpg"></div>
+    <div class="rounded overflow-hidden mb-3"><img src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy"></div>
     <p>Image wrapped in <code>&lt;div class="rounded overflow-hidden"&gt;</code></p>
   </div>
 </div>

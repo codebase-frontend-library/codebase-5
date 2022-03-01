@@ -242,16 +242,16 @@ Another example:
 
 <div class="mb-3 grid xs:equal-2-cols sm:equal-3-cols">
   <div class="xs:col-1 xs:rows-1-2 aspect-ratio-1x1 xs:aspect-ratio-1x2 relative">
-    <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" alt="Photo by Daniyal Ghanavati from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="Photo by Daniyal Ghanavati from Pexels">
   </div>
   <div class="sm:col-2 sm:row-1 aspect-ratio-1x1 relative">
-    <img class="box img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
   </div>
   <div class="sm:col-3 sm:row-1 aspect-ratio-1x1 relative">
-    <img class="box img-cover" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="Photo by Erik Karits from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="Photo by Erik Karits from Pexels">
   </div>
   <div class="xs:cols-1-2 xs:row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 xs:aspect-ratio-2x1 relative">
-    <img class="box img-cover" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" alt="Photo by Trudie Roden from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" width="1280" height="640" loading="lazy" alt="Photo by Trudie Roden from Pexels">
   </div>
 </div>
 

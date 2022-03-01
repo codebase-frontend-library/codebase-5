@@ -25,13 +25,13 @@ The proportions of the image are retained. If the actual image rectangle is diff
 The image below is a square, but you will only see a middle rectangle of it.
 
 <div class="b-dashed b-gray-900" style="height: 460px;">
-  <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+  <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 _Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/) from [Pexels](https://www.pexels.com)._
 
 ```html
-<img class="img-cover" src="" alt="">
+<img class="img-cover" src="" width="" height="" loading="lazy" alt="">
 ```
 
 ### Make your images big enough, but not too heavy
@@ -45,7 +45,7 @@ Follow these two rules when using `img-cover`:
 ### Infographic: using `img-cover`
 
 <div class="mb-6">
-  <img src="{{ '/img/cover-images.svg' | url }}">
+  <img src="{{ '/img/cover-images.svg' | url }}" width="1539" height="890">
 </div>
 
 Some website content management systems handle “image crunching” for you. If you know your CMS does this, you can upload large images and it will generate several smaller images — and it will serve the appropriate sized image to the visitor depending on what sized device they are using (phones get serves a smaller, lighter image). 
@@ -63,13 +63,13 @@ The proportions of the image are retained. If the actual image rectangle is diff
 The image below is a square, therefore on wider viewports, there will be empty space to its right and left.
 
 <div class="b-dashed b-gray-900" style="height: 460px;">
-  <img class="img-contain" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+  <img class="img-contain" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 <br/>
 
 ```html
-<img class="img-contain" src="" alt="">
+<img class="img-contain" src="" width="" height="" loading="lazy" alt="">
 ```
 
 **Note:** The CSS classes `img-cover` and `img-contain` are designed to work on the `<img>` tag. They may not work very well on an embedded `<svg>` (i.e. if you copy-pasted the SVG code into the HTML). But they work fine if an SVG image is inserted into a page the normal way for images: via the `<img>` tag.
@@ -79,31 +79,31 @@ The image below is a square, therefore on wider viewports, there will be empty s
 ### Grayscale filter
 
 <div style="height: 460px;">
-  <img class="img-cover img-grayscale" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+  <img class="img-cover img-grayscale" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 ```html
-<img class="img-grayscale" src="" alt="">
+<img class="img-grayscale" src="" width="" height="" loading="lazy" alt="">
 ```
 
 ### Blur filter
 
 <div style="height: 460px;">
-  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 ```html
-<img class="img-blur" src="" alt="">
+<img class="img-blur" src="" width="" height="" loading="lazy" alt="">
 ```
 
 What if you don’t want the blurry edges spreading outside of the image rectangle? Then you can wrap the image in a block that has the `overflow-hidden` utility class.
 
 <div class="overflow-hidden" style="height: 460px;">
-  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 ```html
 <div class="overflow-hidden">
-  <img class="img-blur" src="" alt="">
+  <img class="img-blur" src="" width="" height="" loading="lazy" alt="">
 </div>
 ```

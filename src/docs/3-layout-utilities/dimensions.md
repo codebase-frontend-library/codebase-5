@@ -88,17 +88,17 @@ With Codebase, you can use `square` to make elements square, and `square rounded
 <div class="flex flex-middle flex-gap mb-1">
   <div>
     <div class="square-sm">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A square image">
     </div>
   </div>
   <div>
     <div class="square">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A square image">
     </div>
   </div>
   <div>
     <div class="square-lg">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A square image">
     </div>
   </div>
 </div>
@@ -107,32 +107,32 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 
 ```html
 <div class="square-sm">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 
 <div class="square">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 
 <div class="square-lg">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 ```
 
 <div class="flex flex-middle flex-gap mb-1">
   <div>
     <div class="square-sm rounded-full overflow-hidden">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A fully rounded square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
   <div>
     <div class="square rounded-full overflow-hidden">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A fully rounded square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
   <div>
     <div class="square-lg rounded-full overflow-hidden">
-      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A fully rounded square image">
+      <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
 </div>
@@ -143,15 +143,15 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 
 ```html
 <div class="square-sm rounded-full overflow-hidden">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 
 <div class="square rounded-full overflow-hidden">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 
 <div class="square-lg rounded-full overflow-hidden">
-  <img src="" alt="">
+  <img src="" width="" height="" alt="">
 </div>
 ```
 
@@ -164,7 +164,7 @@ The `box` utility expands (you could say, “inflates”) an element to the full
 `box` is used to make a hero image fill its wrapper in the Codebase [hero component]({{ '/docs/7-simple-components/heros' | url }}).
 
 <div class="mb-3 aspect-ratio-16x9 relative">
-  <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" alt="Photo by Oleg Magni from Pexels">
+  <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   <div class="aspect-ratio-16x9 flex flex-column flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
       <h1 class="t-semibold t-black">Overlay title</h1>
@@ -177,7 +177,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 
 ```html
 <div class="aspect-ratio-16x9 relative">
-  <img class="box img-cover" src="" alt="">
+  <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
   <div class="aspect-ratio-16x9 flex flex-column flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
       <h1 class="t-semibold t-black">Overlay title</h1>

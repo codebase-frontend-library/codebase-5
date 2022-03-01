@@ -15,7 +15,7 @@ Control the width of a card any way that makes sense in your design. “Raise”
 
 <div class="flex flex-column w-xxs mx-auto rounded overflow-hidden bs-1 mb-3">
   <a href="#/" class="aspect-ratio-16x9 relative">
-    <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" alt="Photo by Oleg Magni from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   </a>
   <div class="grow p-2">
     <div class="h4 mb-2">Card Title</div>
@@ -31,7 +31,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 ```html
 <div class="flex flex-column w-xxs mx-auto rounded overflow-hidden bs-1 mb-3">
   <a href="" class="aspect-ratio-16x9 relative">
-    <img class="box img-cover" src="" alt="">
+    <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
   </a>
   <div class="grow p-2">
     <div class="h4 mb-2">Card Title</div>
@@ -53,7 +53,7 @@ Another example, with a header and a footer — and a thin border instead of a b
   <div class="bb-thin p-block">Header</div>
   <div class="flex flex-column">
     <a href="#/" class="aspect-ratio-16x9 relative">
-      <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" alt="Photo by Oleg Magni from Pexels">
+      <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
     </a>
     <div class="p-2">
     <div class="h4 mb-2">Card Title</div>
@@ -68,7 +68,7 @@ Another example, with a header and a footer — and a thin border instead of a b
   <div class="bb-thin p-block">Header</div>
   <div class="flex flex-column">
     <a href="#/" class="aspect-ratio-16x9 relative">
-      <img class="box img-cover" src="" alt="">
+      <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
     </a>
     <div class="p-2">
       <h4 class="mb-0">Card Title</h4>
@@ -174,17 +174,17 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
   <div class="grid equal-2-cols">
     <div class="cols-1-2 b-thin b-white aspect-ratio-2x1 relative">
       <a href="#/" class="box relative">
-        <img class="box img-cover" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" alt="Placeholder image">
+        <img class="box img-cover" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" width="1280" height="640" loading="lazy" alt="Placeholder image">
       </a>
     </div>
     <div class="b-thin b-white aspect-ratio-1x1 relative">
       <a href="#/" class="box relative">
-        <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" alt="Placeholder image">
+        <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="Placeholder image">
       </a>
     </div>
     <div class="b-thin b-white aspect-ratio-1x1 relative">
       <a href="#/" class="box relative">
-        <img class="box img-cover" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="Placeholder image">
+        <img class="box img-cover" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="Placeholder image">
       </a>
     </div>
   </div>

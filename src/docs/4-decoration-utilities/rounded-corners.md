@@ -39,15 +39,15 @@ If you use a `rounded` utility on a _wrapper_ around an image without padding), 
 
 <div class="grid gap sm:equal-3-cols">
   <div>
-    <img class="rounded mb-3" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+    <img class="rounded mb-3" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy">
     <p>Image with utility class <code>&lt;img class="rounded" src="" alt=""&gt;</code> — works OK</p>
   </div>
   <div>
-    <div class="rounded mb-3"><img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}"></div>
+    <div class="rounded mb-3"><img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy"></div>
     <p>Image wrapped in <code>&lt;div class="rounded"&gt;</code> (but the image corners protrude into the rounded corners)</p>
   </div>
   <div>
-    <div class="rounded overflow-hidden mb-3"><img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}"></div>
+    <div class="rounded overflow-hidden mb-3"><img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy"></div>
     <p>Image wrapped in <code>&lt;div class="rounded overflow-hidden"&gt;</code></p>
   </div>
 </div>

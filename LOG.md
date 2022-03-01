@@ -1,5 +1,9 @@
 # Log
 
+## 1 March 2022 (still v1.0.3)
+
+* Added `loading="lazy"` to the docs placeholder images, and mentioned `loading="lazy"` in the docs at `classless-basics/media`.
+
 ## 12 Feb 2022 -- v1.0.3
 
 * `aspect-ratio` classes now using the new CSS aspect ratio style (the old padding hack is still available in mixins).

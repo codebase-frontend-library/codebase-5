@@ -25,24 +25,32 @@ The `max-width: 100%` makes images “responsive”, so that oversized images sh
 
 The image below is wider than this column of text, but it is constrained to downsize proportionately to the width of the wrapper.
 
-<img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="Photo by Erik Karits from Pexels">
+<img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="736" height="480" loading="lazy" alt="Photo by Erik Karits from Pexels">
 
 _Photo by [Eric Karits](https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
 
 ```html
-<img src="" alt="">
+<img src="" width="" height="" loading="lazy" alt="">
 ```
+
+### Lazy loading
+
+As in the example above, you can add the attribute `loading="lazy"` to images, especially if they are big and lower down the webpage (below the “fold”). Then the visitor’s browser can defer loading the image until the visitor has scrolled down to see it. This will improve your page’s performance, making it seem to load quicker.
+
+You must also set the image width and the height attributes, because the visitor’s browser needs these so that it can lay out the page correctly before the image is called and loaded.
+
+### Figure images
 
 An image with a `<figcaption>`, all enclosed in `<figure>`:
 
 <figure>
-  <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="Photo by Erik Karits from Pexels">
+  <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="736" height="480" loading="lazy" alt="Photo by Erik Karits from Pexels">
   <figcaption>Photo by <a href="https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Eric Karits</a> from <a href="https://www.pexels.com">Pexels</a>.</figcaption>
 </figure>
 
 ```html
 <figure>
-  <img src="" alt=""> 
+  <img src="" width="" height="" loading="lazy" alt=""> 
   <figcaption>Here is the caption for the image above.</figcaption>
 </figure>
 ```

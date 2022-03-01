@@ -462,7 +462,7 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
       <div class="grow overflow-y p-2 grid sm:gap sm:equal-2-cols">
         <div>
           <div class="aspect-ratio-4x3 mb-2 relative">
-            <img class="box img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" alt="A placeholder image">
+            <img class="box img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A placeholder image">
           </div>
         </div>
         <div>
@@ -758,7 +758,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
     </button>
-    <img class="img-contain" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" alt="A placeholder image">
+    <img class="img-contain" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="A placeholder image">
     <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4a-title">
       <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Daniyal Ghanavati</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
     </div>
@@ -794,7 +794,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
     </button>
-    <img class="img-contain" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" alt="A placeholder image">
+    <img class="img-contain" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" width="1280" height="640" loading="lazy" alt="A placeholder image">
     <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4b-title">
       <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@trudie-roden-1054578?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Trudie Roden</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
     </div>
@@ -830,7 +830,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
     </button>
-    <img class="img-contain" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" alt="A placeholder image">
+    <img class="img-contain" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="A placeholder image">
     <div class="absolute right bottom left bg-black-glass-3 p-3 t-white t-center" id="modal-4c-title">
       <em>Photo by <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Eric Karits</a> from <a class="t-gray-400 hover:t-gray-500" href="https://www.pexels.com">Pexels</a>.</em>
     </div>

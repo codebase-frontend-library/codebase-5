@@ -55,7 +55,7 @@ The _singular named_ `col-` and `row-` classes are used to instruct the grid whi
 ## Infographic: the Codebase grid
 
 <div class="my-3">
-<img src="{{ '/img/grid.svg' | url }}">
+<img src="{{ '/img/grid.svg' | url }}" width="1200" height="860">
 </div>
 
 ## The Codebase grid in practice

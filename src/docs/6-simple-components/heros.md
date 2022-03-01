@@ -12,7 +12,7 @@ Creating a hero image with a text overlay is simple using Codebase utilities.
 ## Hero example
 
 <div class="mb-3 aspect-ratio-16x9 relative">
-  <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" alt="Photo by Oleg Magni from Pexels">
+  <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
       <h1 class="t-semibold t-black">Overlay title</h1>
@@ -27,7 +27,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 <div class="aspect-ratio-16x9 relative">
 
   <!-- The hero image -->
-  <img class="box img-cover" src="" alt="">
+  <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
 
   <!-- The hero overlay -->
   <div class="aspect-ratio-16x9 flex flex-center flex-middle">

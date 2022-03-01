@@ -29,7 +29,7 @@ The Codebase element grid has been deployed a follows:
 ## Infographic: the Codebase element grid
 
 <div class="my-6">
-<img src="{{ '/img/element-grid.svg' | url }}">
+<img src="{{ '/img/element-grid.svg' | url }}" width="736" height="446">
 </div>
 
 **Note:** the padding for buttons and table cells corresponds to Codebase utility classes `px-2 py-1`. Since this would be used frequently for menu itams, tab labels, etc., Codebase also has `p-block` that adds this margin (`margin: 0.5rem 1rem;`) in one utility class.

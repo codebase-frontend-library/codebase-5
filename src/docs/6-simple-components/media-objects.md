@@ -13,7 +13,7 @@ Traditional “media objects” (à la <a href="http://www.stubbornella.org/cont
 
 <div class="flex">
   <a class="square mr-2" href="#/">
-    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
   </a>
   <div>
     <div class="h4 mb-1">Name or Title</div>
@@ -26,7 +26,7 @@ _Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/)
 ```html
 <div class="flex">
   <a class="square mr-2" href="">
-    <img src="" alt="">
+    <img src="" width="" height="" loading="lazy" alt="">
   </a>
   <div>
     <div class="h4 mb-1">Name or Title</div>
@@ -42,7 +42,7 @@ Example with image on the right, and some other decoration:
 <div class="container-sm my-6">
 <div class="flex flex-row-reverse b-thin rounded-lg p-2">
   <a class="square rounded overflow-hidden" href="#/">
-    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="placeholder">
   </a>
   <div class="mr-2">
     <div class="h4 mb-0">Name or Title</div>
@@ -54,7 +54,7 @@ Example with image on the right, and some other decoration:
 ```html
 <div class="flex flex-row-reverse mb-3 b-thin rounded-lg p-2">
   <a class="square rounded overflow-hidden" href="#/">
-    <img src="" alt="">
+    <img src="" width="" height="" loading="lazy" alt="">
   </a>
   <div class="mr-2">
     <div class="h4 mb-0">Name or Title</div>
@@ -69,14 +69,14 @@ Media objects can easily be modified as required, and nested. For example:
 
 <div class="flex">
   <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
   </a>
   <div>
     <div class="h4 mb-1">Freda Blogworthy</div>
     <div class="mb-3 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
     <div class="flex">
       <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-        <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+        <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
       </a>
       <div>
         <div class="h4 mb-1">Thomas Wingman</div>
@@ -85,7 +85,7 @@ Media objects can easily be modified as required, and nested. For example:
     </div>
     <div class="flex">
       <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-        <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
+        <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
       </a>
       <div>
         <div class="h4 mb-1">Duck Billington</div>

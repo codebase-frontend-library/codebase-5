@@ -20,7 +20,7 @@ Dark glass `glass-black-*` utilities over a dark background image:
 
 <div class="mb-3">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-6-cols">
         <div class="p-1 t-center"><code>(None)</code></div>
@@ -38,7 +38,7 @@ Light glass `glass-white-*` utilities over a dark background image:
 
 <div class="mb-3">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" alt="Photo by Pixabay from Pexels">
+    <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-6-cols">
         <div class="p-1 t-center"><code>(None)</code></div>
@@ -60,7 +60,7 @@ Dark glass `glass-black-*` utilities over a dark background image:
 
 <div class="mb-3">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" alt="Photo by Ollie Craig from Pexels">
+    <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-6-cols">
         <div class="p-1 t-center"><code>(None)</code></div>
@@ -78,7 +78,7 @@ Light glass `glass-white-*` utilities over a dark background image:
 
 <div class="mb-3">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" alt="Photo by Ollie Craig from Pexels">
+    <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-6-cols">
         <div class="p-1 t-center"><code>(None)</code></div>

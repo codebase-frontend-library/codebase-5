@@ -135,7 +135,7 @@ Codebase typography is also responsive to viewport width (device size):
       </button>
       <div class="container-lg">
         <p class="t-center t-semibold" :class="open ? 'h1' : 'h4'">Responsive CSS classes<br>in Codebase</p>
-        <img src="{{ '/img/responsive-design.svg' | url }}">
+        <img src="{{ '/img/responsive-design.svg' | url }}" width="1280" height="1792">
       </div>
     </div>
   </div>
