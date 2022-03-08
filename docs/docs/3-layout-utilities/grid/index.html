@@ -8,7 +8,7 @@
   <title>Grid - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=1.0.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=1.0.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -260,7 +260,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.3">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.4">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +315,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.3">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.4">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -558,7 +558,13 @@
 <li><strong>Controling tracks at <em>grid wrapper</em> level:</strong>
 <ul>
 <li><a href="#the-codebase-5-grid-in-practice">Grid</a> – <code>grid</code> initializes the CSS grid. It adds <code>display: grid;</code> but it doesn’t provide information about how many columns you want.</li>
-<li><a href="#adding-gaps-along-the-grid-lines">Gap</a> – <code>gap</code> (optional) adds vertical and horizontal whitespace along internal grid tracks. Also known as a <em>gutter</em> between grid items.</li>
+<li><a href="#adding-gaps-along-the-grid-lines">Gap</a> – also known as a <em>gutter</em> between grid items:
+<ul>
+<li><code>gap</code> (optional) adds vertical <em>and</em> horizontal whitespace along internal grid tracks.</li>
+<li><code>col-gap</code> (optional) adds vertical whitespace along internal grid tracks – between columns.</li>
+<li><code>row-gap</code> (optional) adds horizontal whitespace along internal grid tracks – between rows.</li>
+</ul>
+</li>
 <li><a href="#auto-width-or-equal-width-columns">Column control</a>:
 <ul>
 <li><code>auto-{x}-cols</code> (optional) – specifies how many columns your layout has (up to six), where each column width can be different. The width depends on the width of the placed element’s content, or you can control it by specifying the width (on a per-column basis).</li>
@@ -660,8 +666,13 @@
   </div>
 </li>
 </ul>
-<h3 id="adding-gaps-along-the-grid-lines" tabindex="-1">Adding gaps along the grid lines</h3>
-<p>Add a gap (also known as a <em>gutter</em>) between grid items using <code>grid gap</code>. Grid gaps run in two dimensions – vertically along column tracks and horizontally along row tracks.</p>
+<h3 id="adding-gaps-along-grid-lines" tabindex="-1">Adding gaps along grid lines</h3>
+<p>Add a gap (also known as a <em>gutter</em>) between grid items using <code>gap</code> classes. Grid gaps run in two dimensions:</p>
+<ul>
+<li>vertically along column tracks: use <code>col-gap</code></li>
+<li>horizontally along row tracks : use <code>row-gap</code></li>
+<li>vertically along column tracks and horizontally along row tracks: use <code>gap</code></li>
+</ul>
 <p><code>grid gap equal-3-cols</code>:</p>
 <div class="grid gap equal-3-cols my-6">
   <div class="rows-1-2 b-thin p-1 bg-gray-100">rows-1-2</div>
@@ -670,6 +681,31 @@
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+<p><code>grid col-gap equal-3-cols</code>:</p>
+<div class="grid col-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+<p><code>grid row-gap equal-3-cols</code>:</p>
+<div class="grid row-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+<p>See also <a href="#grid-layouts-at-different-media-query-breakpoints">grid layouts at different media query breakpoints</a>.</p>
 <h3 id="controlling-grid-item-positioning-on-a-per-item-basis" tabindex="-1">Controlling grid item positioning on a per-item basis</h3>
 <p>If you don’t specify how many columns on the grid-wrapper level (using <code>auto-{x}-cols</code> or <code>equal-{x}-cols</code>), but you use <code>col-</code> positioning classes on your grid items, the CSS Grid engine can usually figure out what you want, if your layout is relatively simple.</p>
 <p>Similar to the behavior of <code>auto-{x}-cols</code>, grid item <code>col-</code> classes do not have a percentile or other max-width built in. So, if you don not constrain columns, then they will expand depending on their content:</p>
@@ -736,6 +772,19 @@
   <div class="xs:col-1 md:col-3 b-thin p-1 bg-gray-100">xs:col-1 md:col-3</div>
   <div class="xs:col-2 md:col-4 b-thin p-1 bg-gray-100">xs:col-2 md:col-4</div>
 </div>
+<p>You can switch on or off column gaps and row gaps at various breakpoints, if you design requires it. The responsive (i.e. media-query controlled) column gaps switch off their respective row gaps, and row gaps switch off their respective column gaps.</p>
+<p><code>grid sm:row-gap md:col-gap equal-3-cols</code>:</p>
+<div class="grid sm:row-gap md:col-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
     </div>
   </main>
 
@@ -772,7 +821,7 @@
     </a>
   </p>
   
-  <p>Version 1.0.3 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 1.0.4 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

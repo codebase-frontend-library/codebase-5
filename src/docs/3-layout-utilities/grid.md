@@ -39,7 +39,10 @@ _Grid items_ are immediate child elements of an element that has the `grid` CSS 
 
 * **Controling tracks at _grid wrapper_ level:**
     * [Grid](#the-codebase-5-grid-in-practice) – `grid` initializes the CSS grid. It adds `display: grid;` but it doesn’t provide information about how many columns you want.
-    * [Gap](#adding-gaps-along-the-grid-lines) – `gap` (optional) adds vertical and horizontal whitespace along internal grid tracks. Also known as a _gutter_ between grid items.
+    * [Gap](#adding-gaps-along-the-grid-lines) – also known as a _gutter_ between grid items:
+        * `gap` (optional) adds vertical _and_ horizontal whitespace along internal grid tracks.
+        * `col-gap` (optional) adds vertical whitespace along internal grid tracks – between columns.
+        * `row-gap` (optional) adds horizontal whitespace along internal grid tracks – between rows.
     * [Column control](#auto-width-or-equal-width-columns):
         * `auto-{x}-cols` (optional) – specifies how many columns your layout has (up to six), where each column width can be different. The width depends on the width of the placed element’s content, or you can control it by specifying the width (on a per-column basis).
         * `equal-{x}-cols` (optional) – specifies how many columns your layout has (up to six), where each column width is equalized. So, if you have two columns each will have width 50%; if you have 3 columns each will be 33.3...%; and so on. (If you have a `gap`, these column widths are automatically recalculated by the CSS Grid engine.)
@@ -187,9 +190,14 @@ The two examples that follow differ only in whether they have `auto-3-cols` or `
       <div class="b-thin p-1 bg-gray-100">fugit sunt aliquam!</div>
     </div>
 
-### Adding gaps along the grid lines
+### Adding gaps along grid lines
 
-Add a gap (also known as a _gutter_) between grid items using `grid gap`. Grid gaps run in two dimensions – vertically along column tracks and horizontally along row tracks.
+Add a gap (also known as a _gutter_) between grid items using `gap` classes. Grid gaps run in two dimensions:
+
+* vertically along column tracks: use `col-gap`
+* horizontally along row tracks : use `row-gap`
+* vertically along column tracks and horizontally along row tracks: use `gap`
+
 
 `grid gap equal-3-cols`:
 
@@ -200,6 +208,36 @@ Add a gap (also known as a _gutter_) between grid items using `grid gap`. Grid g
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+
+`grid col-gap equal-3-cols`:
+
+<div class="grid col-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+
+`grid row-gap equal-3-cols`:
+
+<div class="grid row-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+
+See also [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints).
 
 ### Controlling grid item positioning on a per-item basis
 
@@ -336,4 +374,20 @@ Here’s a simple example: a “gallery” layout with 4 items:
   <div class="xs:col-2 md:col-2 b-thin p-1 bg-gray-100">xs:col-2 md:col-2</div>
   <div class="xs:col-1 md:col-3 b-thin p-1 bg-gray-100">xs:col-1 md:col-3</div>
   <div class="xs:col-2 md:col-4 b-thin p-1 bg-gray-100">xs:col-2 md:col-4</div>
+</div>
+
+You can switch on or off column gaps and row gaps at various breakpoints, if you design requires it. The responsive (i.e. media-query controlled) column gaps switch off their respective row gaps, and row gaps switch off their respective column gaps.
+
+`grid sm:row-gap md:col-gap equal-3-cols`:
+
+<div class="grid sm:row-gap md:col-gap equal-3-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>

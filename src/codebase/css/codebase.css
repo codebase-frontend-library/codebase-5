@@ -1596,6 +1596,14 @@ img, picture, video, canvas, svg {
   gap: 2rem;
 }
 
+.col-gap {
+  column-gap: 2rem;
+}
+
+.row-gap {
+  row-gap: 2rem;
+}
+
 .col-1 {
   grid-column: 1;
 }
@@ -1757,6 +1765,14 @@ img, picture, video, canvas, svg {
   }
   .xs\:gap {
     gap: 2rem;
+  }
+  .xs\:col-gap {
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .xs\:row-gap {
+    column-gap: 0;
+    row-gap: 2rem;
   }
   .xs\:col-1 {
     grid-column: 1;
@@ -1920,6 +1936,14 @@ img, picture, video, canvas, svg {
   .sm\:gap {
     gap: 2rem;
   }
+  .sm\:col-gap {
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .sm\:row-gap {
+    column-gap: 0;
+    row-gap: 2rem;
+  }
   .sm\:col-1 {
     grid-column: 1;
   }
@@ -2082,6 +2106,14 @@ img, picture, video, canvas, svg {
   .md\:gap {
     gap: 2rem;
   }
+  .md\:col-gap {
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .md\:row-gap {
+    column-gap: 0;
+    row-gap: 2rem;
+  }
   .md\:col-1 {
     grid-column: 1;
   }
@@ -2243,6 +2275,14 @@ img, picture, video, canvas, svg {
   }
   .lg\:gap {
     gap: 2rem;
+  }
+  .lg\:col-gap {
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .lg\:row-gap {
+    column-gap: 0;
+    row-gap: 2rem;
   }
   .lg\:col-1 {
     grid-column: 1;
@@ -8542,7 +8582,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.1.0.3
+ * v.1.0.4
  */
 
 /*# sourceMappingURL=codebase.css.map */

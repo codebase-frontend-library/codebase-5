@@ -112,6 +112,12 @@
 .gap {
   gap: $grid-gap-width;
 }
+.col-gap {
+  column-gap: $grid-gap-width;
+}
+.row-gap {
+  row-gap: $grid-gap-width;
+}
 
 .col {
   @include grid-columns;
@@ -132,6 +138,14 @@
       &\:gap {
         gap: $grid-gap-width;
       }
+      &\:col-gap {
+        column-gap: $grid-gap-width;
+        row-gap: 0;
+      }
+      &\:row-gap {
+        column-gap: 0;
+        row-gap: $grid-gap-width;
+      }      
       &\:col {
         @include grid-columns;
       }
