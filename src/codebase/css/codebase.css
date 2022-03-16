@@ -1541,7 +1541,7 @@ img, picture, video, canvas, svg {
 }
 
 .flex-gap {
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .grow {
@@ -1593,15 +1593,33 @@ img, picture, video, canvas, svg {
 }
 
 .gap {
-  gap: 2rem;
+  gap: 1.5rem;
+}
+.gap-sm {
+  gap: 0.5rem;
+}
+.gap-lg {
+  gap: 3rem;
 }
 
 .col-gap {
-  column-gap: 2rem;
+  column-gap: 1.5rem;
+}
+.col-gap-sm {
+  column-gap: 0.5rem;
+}
+.col-gap-lg {
+  column-gap: 3rem;
 }
 
 .row-gap {
-  row-gap: 2rem;
+  row-gap: 1.5rem;
+}
+.row-gap-sm {
+  row-gap: 0.5rem;
+}
+.row-gap-lg {
+  row-gap: 3rem;
 }
 
 .col-1 {
@@ -1764,15 +1782,15 @@ img, picture, video, canvas, svg {
     grid-template-columns: repeat(6, minmax(1rem, 1fr));
   }
   .xs\:gap {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .xs\:col-gap {
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     row-gap: 0;
   }
   .xs\:row-gap {
     column-gap: 0;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
   .xs\:col-1 {
     grid-column: 1;
@@ -1934,15 +1952,15 @@ img, picture, video, canvas, svg {
     grid-template-columns: repeat(6, minmax(1rem, 1fr));
   }
   .sm\:gap {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .sm\:col-gap {
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     row-gap: 0;
   }
   .sm\:row-gap {
     column-gap: 0;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
   .sm\:col-1 {
     grid-column: 1;
@@ -2104,15 +2122,15 @@ img, picture, video, canvas, svg {
     grid-template-columns: repeat(6, minmax(1rem, 1fr));
   }
   .md\:gap {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .md\:col-gap {
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     row-gap: 0;
   }
   .md\:row-gap {
     column-gap: 0;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
   .md\:col-1 {
     grid-column: 1;
@@ -2274,15 +2292,15 @@ img, picture, video, canvas, svg {
     grid-template-columns: repeat(6, minmax(1rem, 1fr));
   }
   .lg\:gap {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .lg\:col-gap {
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     row-gap: 0;
   }
   .lg\:row-gap {
     column-gap: 0;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
   .lg\:col-1 {
     grid-column: 1;

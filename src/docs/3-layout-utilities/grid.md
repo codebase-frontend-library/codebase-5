@@ -208,6 +208,40 @@ Add a gap (also known as a _gutter_) between grid items using `gap` classes. Gri
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
+#### Gap thickness
+
+The default `gap` is 1.5rem – which is 3 [element grid units]({{ '/docs/1-getting-started/element-grid/' | url }}), or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase. There is also `gap-sm` (0.5rem, or 1 element grid unit) and `grid-lg` (3rem, or 6 element grid units).
+
+`grid gap-sm equal-4-cols`:
+
+<div class="grid gap-sm equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+
+`grid gap equal-4-cols`:
+
+<div class="grid gap equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+
+`grid gap-lg equal-4-cols`:
+
+<div class="grid gap-lg equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+
+
+#### Column gaps and row gaps
+
 `grid col-gap equal-3-cols`:
 
 <div class="grid col-gap equal-3-cols my-6">
@@ -235,6 +269,8 @@ Add a gap (also known as a _gutter_) between grid items using `gap` classes. Gri
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+
+#### Responsive gap tiers
 
 All of the above `gap` permutations have 5 responsive tiers: at (all), `xs:`, `sm:`, `md:`, and `lg:` breakpoints. See [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints).
 
@@ -303,6 +339,8 @@ Not exemplified here: you can even overlap grid items by specifying that they oc
 ### Spanning multiple columns and/or rows
 
 By default, one grid item sits on one grid cell – the grid item spans one column track wide and one row track high. But you can make grid items span up to 6 columns and/or up to 6 rows using the _plural named_ classes `cols-{first}-{last}` and/or `rows-{first}-{last}`.
+
+**Note:** grid items can occupy grid cells to form any square or recangular shape, but cannot form e.g. irregular “L” shape.
 
 Thinking about one row: the first grid item can span up to six columns (columns 1 to 6). The second grid item can span up to five columns (columns 2 to 6). And so on. And it’s similar for spanning rows.
 

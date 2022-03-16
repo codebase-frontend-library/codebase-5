@@ -111,12 +111,30 @@
 
 .gap {
   gap: $grid-gap-width;
+  &-sm {
+    gap: $grid-gap-width-sm;
+  }
+  &-lg {
+    gap: $grid-gap-width-lg;
+  }
 }
 .col-gap {
   column-gap: $grid-gap-width;
+  &-sm {
+    column-gap: $grid-gap-width-sm;
+  }
+  &-lg {
+    column-gap: $grid-gap-width-lg;
+  }
 }
 .row-gap {
   row-gap: $grid-gap-width;
+  &-sm {
+    row-gap: $grid-gap-width-sm;
+  }
+  &-lg {
+    row-gap: $grid-gap-width-lg;
+  }
 }
 
 .col {

@@ -1,8 +1,17 @@
 # Log
 
+_Note: update version numbers need updating every time in `metadata.json`, `README.md`, `LOG.md`, and `codebase.scss`_
+
+***
+
+## 16 March 2022 -- v.1.0.5
+
+* Default gaps for flexbox and grid are now 1.5rem.
+* Added for `gap-sm` and `gap-lg` for grid (only, not flexbox). This done for all grid `gap`, `col-gap`, and `row-gap` at 5 media query tiers.
+
 ## 8 March 2022 -- v.1.0.4
 
-* Added CSS Grid `col-gap` and `row-gap` classes (at 5 media query tiers).
+* Added grid `col-gap` and `row-gap` classes (at 5 media query tiers).
 
 ## 1 March 2022 (still v.1.0.3)
 

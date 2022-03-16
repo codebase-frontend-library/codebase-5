@@ -8,7 +8,7 @@
   <title>Grid - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=1.0.4" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=1.0.5" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -260,7 +260,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.4">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=1.0.5">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +315,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.4">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=1.0.5">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -681,6 +681,30 @@
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+<h4 id="gap-thickness" tabindex="-1">Gap thickness</h4>
+<p>The default <code>gap</code> is 1.5rem – which is 3 <a href="/codebase-5/docs/1-getting-started/element-grid/">element grid units</a>, or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase. There is also <code>gap-sm</code> (0.5rem, or 1 element grid unit) and <code>grid-lg</code> (3rem, or 6 element grid units).</p>
+<p><code>grid gap-sm equal-4-cols</code>:</p>
+<div class="grid gap-sm equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+<p><code>grid gap equal-4-cols</code>:</p>
+<div class="grid gap equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+<p><code>grid gap-lg equal-4-cols</code>:</p>
+<div class="grid gap-lg equal-4-cols my-6">
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
+</div>
+<h4 id="column-gaps-and-row-gaps" tabindex="-1">Column gaps and row gaps</h4>
 <p><code>grid col-gap equal-3-cols</code>:</p>
 <div class="grid col-gap equal-3-cols my-6">
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
@@ -705,6 +729,7 @@
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+<h4 id="responsive-gap-tiers" tabindex="-1">Responsive gap tiers</h4>
 <p>All of the above <code>gap</code> permutations have 5 responsive tiers: at (all), <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> breakpoints. See <a href="#grid-layouts-at-different-media-query-breakpoints">grid layouts at different media query breakpoints</a>.</p>
 <h3 id="controlling-grid-item-positioning-on-a-per-item-basis" tabindex="-1">Controlling grid item positioning on a per-item basis</h3>
 <p>If you don’t specify how many columns on the grid-wrapper level (using <code>auto-{x}-cols</code> or <code>equal-{x}-cols</code>), but you use <code>col-</code> positioning classes on your grid items, the CSS Grid engine can usually figure out what you want, if your layout is relatively simple.</p>
@@ -736,6 +761,7 @@
 <p>Not exemplified here: you can even overlap grid items by specifying that they occupy the same grid cell (whether entirely or in part). So, it’s a three dimensional grid system!</p>
 <h3 id="spanning-multiple-columns-and%2For-rows" tabindex="-1">Spanning multiple columns and/or rows</h3>
 <p>By default, one grid item sits on one grid cell – the grid item spans one column track wide and one row track high. But you can make grid items span up to 6 columns and/or up to 6 rows using the <em>plural named</em> classes <code>cols-{first}-{last}</code> and/or <code>rows-{first}-{last}</code>.</p>
+<p><strong>Note:</strong> grid items can occupy grid cells to form any square or recangular shape, but cannot form e.g. irregular “L” shape.</p>
 <p>Thinking about one row: the first grid item can span up to six columns (columns 1 to 6). The second grid item can span up to five columns (columns 2 to 6). And so on. And it’s similar for spanning rows.</p>
 <p>Example: the second column spans three grid cells, from 2 through 4.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid equal-4-cols<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cols-2-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
@@ -821,7 +847,7 @@
     </a>
   </p>
   
-  <p>Version 1.0.4 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 1.0.5 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

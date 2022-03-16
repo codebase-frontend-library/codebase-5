@@ -208,11 +208,13 @@ $container-default:           map-get($width, w-xxl);
 $container-x-space:           1rem !default;
 
 // Flexbox system
-$flex-gap:                    2rem !default;
+$flex-gap:                    1.5rem !default;
 $use-flex-gap:                true !default; // toggling to `false` will revert Codebase to using the old negative margins plus paddings hack for flexbox gaps
 
 // Grid system
-$grid-gap-width:              2rem !default;
+$grid-gap-width-sm:           0.5rem !default;
+$grid-gap-width:              1.5rem !default;
+$grid-gap-width-lg:           3rem !default;
 
 // Aspect ratios
 $aspect-ratio-hack:           false !default;

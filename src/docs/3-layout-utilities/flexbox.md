@@ -220,9 +220,9 @@ If you want a gap between flex items, add `flex-gap` to the `flex` wrapper:
 </div>
 </div>
 
-If you need to revert to using the old “flexbox gap hack“ that adds _negative x-axis margins_ to the `flex` wrapper and corresponding _positive x-axis paddings_ to the flex items, this is still available: just change `$use-flex-gap: true` to `false` in the default variables file.
+The thickness `flex-gap` is 1.5rem (default) – which is 3 [element grid units]({{ '/docs/1-getting-started/element-grid/' | url }}), or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase.
 
-However, the old flexbox hap hack only added gaps vertically between columns. The new `flex-gap` can also add gaps horizontally between rows, as you see in the example below:
+`flex-gap` adds gaps vertically (between columns) and horizontally (between rows)s, as you see in the example below:
 
 <div class="my-6">
 <div class="flex flex-gap flex-grow-auto flex-wrap">
@@ -239,6 +239,8 @@ However, the old flexbox hap hack only added gaps vertically between columns. Th
   <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
 </div>
 </div>
+
+**Note:** if you need to revert to using the old “flexbox gap hack“ that adds _negative x-axis margins_ to the `flex` wrapper and corresponding _positive x-axis paddings_ to the flex items, this is still available: just change `$use-flex-gap: true` to `false` in the default variables file.
 
 ### Other ways to add white space
 
