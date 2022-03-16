@@ -2,7 +2,7 @@
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.1.0.5
+ * v.5.0.5
  */
 
 // BASICS
@@ -41,4 +41,4 @@
 @use "03_utilities/transitions";
 @use "03_utilities/invisibility";
 
-// The “utility first” principle means that utility classes have priority from the point of view of the HTML/template creator -- therefore utilities must come _after_ component classes in the CSS.
+// NOTE: The “utility first” principle means that utility classes have priority from the point of view of the HTML/template creator -- therefore utilities must come _after_ component classes in the CSS.

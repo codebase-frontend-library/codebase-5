@@ -12,7 +12,7 @@ Docs: https://codebase-frontend-library.github.io/codebase-5/
 
 ***
 
-* Current version: 1.0.5 -- see [log](https://github.com/codebase-frontend-library/codebase-5/blob/main/LOG.md)
+* Current version: 5.0.5 -- see [log](https://github.com/codebase-frontend-library/codebase-5/blob/main/LOG.md)
 * CSS file size: 88 KB
 * Licence: MIT
 * Developer: Simon Padbury
