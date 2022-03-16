@@ -31,7 +31,7 @@ A grid consists of vertical and horizontal lines with square or rectangular spac
 
 Web designers place HTML elements (called _grid items_ in this context) _on_ the grid. The CSS Grid engine “snaps” the elements to the grid tracks, and you can design them to sit on one grid cell or to span multiple cells. 
 
-Web browser screens can be any size from very small (phones) to very large (desktop or wall mounted displays). So, unlike with paper, CSS Grid is _stretchy_. Grid cells can have any width, dependant on the width of the browser screen, or dependant on the width of the Grid controlled area within a design. And grid cells can have any height, dependant on how much content (or, the height of the content) in an element that is places on the grid.
+Web browser screens can be any size from very small (phones) to very large (desktop or wall mounted displays). So, unlike with set grids paper-based poster or magazine page designs, and unlike with squared math or graph paper, CSS Grid can be _stretchy_, which is good for responsive layouts. Grid cells can have any width, dependant on the width of the browser screen, or dependant on the width of the Grid controlled area within a design. And grid cells can have any height, dependant on how much content (or, the height of the content) in an element that is places on the grid.
 
 Codebase’s `grid` system has utility classes for controlling up to six _column tracks_ and six _row tracks_.
 
@@ -39,7 +39,7 @@ _Grid items_ are immediate child elements of an element that has the `grid` CSS 
 
 * **Controling tracks at _grid wrapper_ level:**
     * [Grid](#the-codebase-5-grid-in-practice) – `grid` initializes the CSS grid. It adds `display: grid;` but it doesn’t provide information about how many columns you want.
-    * [Gap](#adding-gaps-along-the-grid-lines) – also known as a _gutter_ between grid items:
+    * [Gap](#adding-gaps) – also known as a _gutter_ between grid items:
         * `gap` (optional) adds vertical _and_ horizontal whitespace along internal grid tracks.
         * `col-gap` (optional) adds vertical whitespace along internal grid tracks – between columns.
         * `row-gap` (optional) adds horizontal whitespace along internal grid tracks – between rows.
@@ -190,14 +190,13 @@ The two examples that follow differ only in whether they have `auto-3-cols` or `
       <div class="b-thin p-1 bg-gray-100">fugit sunt aliquam!</div>
     </div>
 
-### Adding gaps along grid lines
+### Adding gaps
 
 Add a gap (also known as a _gutter_) between grid items using `gap` classes. Grid gaps run in two dimensions:
 
 * vertically along column tracks: use `col-gap`
 * horizontally along row tracks : use `row-gap`
 * vertically along column tracks and horizontally along row tracks: use `gap`
-
 
 `grid gap equal-3-cols`:
 
@@ -237,7 +236,7 @@ Add a gap (also known as a _gutter_) between grid items using `gap` classes. Gri
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
-See also [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints).
+All of the above `gap` permutations have 5 responsive tiers: at (all), `xs:`, `sm:`, `md:`, and `lg:` breakpoints. See [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints).
 
 ### Controlling grid item positioning on a per-item basis
 

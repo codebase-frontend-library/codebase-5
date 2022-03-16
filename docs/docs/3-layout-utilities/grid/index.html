@@ -551,14 +551,14 @@
 <p>Let’s start with some basic concepts and terminology.</p>
 <p>A grid consists of vertical and horizontal lines with square or rectangular spaces in between. In web design, we call the lines <em>grid tracks</em> and the spaces <em>grid cells</em>. And the grid is not actually drawn on the browser screen – though it can be visualized e.g. by dashed lines in a browser’s <em>code inspector</em> (dev tools).</p>
 <p>Web designers place HTML elements (called <em>grid items</em> in this context) <em>on</em> the grid. The CSS Grid engine “snaps” the elements to the grid tracks, and you can design them to sit on one grid cell or to span multiple cells.</p>
-<p>Web browser screens can be any size from very small (phones) to very large (desktop or wall mounted displays). So, unlike with paper, CSS Grid is <em>stretchy</em>. Grid cells can have any width, dependant on the width of the browser screen, or dependant on the width of the Grid controlled area within a design. And grid cells can have any height, dependant on how much content (or, the height of the content) in an element that is places on the grid.</p>
+<p>Web browser screens can be any size from very small (phones) to very large (desktop or wall mounted displays). So, unlike with set grids paper-based poster or magazine page designs, and unlike with squared math or graph paper, CSS Grid can be <em>stretchy</em>, which is good for responsive layouts. Grid cells can have any width, dependant on the width of the browser screen, or dependant on the width of the Grid controlled area within a design. And grid cells can have any height, dependant on how much content (or, the height of the content) in an element that is places on the grid.</p>
 <p>Codebase’s <code>grid</code> system has utility classes for controlling up to six <em>column tracks</em> and six <em>row tracks</em>.</p>
 <p><em>Grid items</em> are immediate child elements of an element that has the <code>grid</code> CSS class. By default, grid items occupy one <em>grid cell</em> (the smallest rectangle). The Codebase grid system has CSS classes for:</p>
 <ul>
 <li><strong>Controling tracks at <em>grid wrapper</em> level:</strong>
 <ul>
 <li><a href="#the-codebase-5-grid-in-practice">Grid</a> – <code>grid</code> initializes the CSS grid. It adds <code>display: grid;</code> but it doesn’t provide information about how many columns you want.</li>
-<li><a href="#adding-gaps-along-the-grid-lines">Gap</a> – also known as a <em>gutter</em> between grid items:
+<li><a href="#adding-gaps">Gap</a> – also known as a <em>gutter</em> between grid items:
 <ul>
 <li><code>gap</code> (optional) adds vertical <em>and</em> horizontal whitespace along internal grid tracks.</li>
 <li><code>col-gap</code> (optional) adds vertical whitespace along internal grid tracks – between columns.</li>
@@ -666,7 +666,7 @@
   </div>
 </li>
 </ul>
-<h3 id="adding-gaps-along-grid-lines" tabindex="-1">Adding gaps along grid lines</h3>
+<h3 id="adding-gaps" tabindex="-1">Adding gaps</h3>
 <p>Add a gap (also known as a <em>gutter</em>) between grid items using <code>gap</code> classes. Grid gaps run in two dimensions:</p>
 <ul>
 <li>vertically along column tracks: use <code>col-gap</code></li>
@@ -705,7 +705,7 @@
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
-<p>See also <a href="#grid-layouts-at-different-media-query-breakpoints">grid layouts at different media query breakpoints</a>.</p>
+<p>All of the above <code>gap</code> permutations have 5 responsive tiers: at (all), <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> breakpoints. See <a href="#grid-layouts-at-different-media-query-breakpoints">grid layouts at different media query breakpoints</a>.</p>
 <h3 id="controlling-grid-item-positioning-on-a-per-item-basis" tabindex="-1">Controlling grid item positioning on a per-item basis</h3>
 <p>If you don’t specify how many columns on the grid-wrapper level (using <code>auto-{x}-cols</code> or <code>equal-{x}-cols</code>), but you use <code>col-</code> positioning classes on your grid items, the CSS Grid engine can usually figure out what you want, if your layout is relatively simple.</p>
 <p>Similar to the behavior of <code>auto-{x}-cols</code>, grid item <code>col-</code> classes do not have a percentile or other max-width built in. So, if you don not constrain columns, then they will expand depending on their content:</p>
