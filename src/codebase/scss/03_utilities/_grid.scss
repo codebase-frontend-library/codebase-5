@@ -109,7 +109,14 @@
   @include grid-equal;
 }
 
-.gap {
+.col {
+  @include grid-columns;
+}
+.row {
+  @include grid-rows
+}
+
+@mixin gap {
   gap: $grid-gap-width;
   &-sm {
     gap: $grid-gap-width-sm;
@@ -118,30 +125,39 @@
     gap: $grid-gap-width-lg;
   }
 }
-.col-gap {
+@mixin col-gap {
   column-gap: $grid-gap-width;
+  row-gap: 0;
   &-sm {
     column-gap: $grid-gap-width-sm;
+    row-gap: 0;
   }
   &-lg {
     column-gap: $grid-gap-width-lg;
+    row-gap: 0;
   }
 }
-.row-gap {
+@mixin row-gap {
+  column-gap: 0;
   row-gap: $grid-gap-width;
   &-sm {
+    column-gap: 0;
     row-gap: $grid-gap-width-sm;
   }
   &-lg {
+    column-gap: 0;
     row-gap: $grid-gap-width-lg;
   }
 }
 
-.col {
-  @include grid-columns;
+.gap {
+  @include gap;
 }
-.row {
-  @include grid-rows
+.col-gap {
+  @include col-gap;
+}
+.row-gap {
+  @include row-gap;
 }
 
 @each $mq-key, $mq-value in $mq-width {
@@ -154,15 +170,13 @@
         @include grid-equal;
       }
       &\:gap {
-        gap: $grid-gap-width;
+        @include gap;
       }
       &\:col-gap {
-        column-gap: $grid-gap-width;
-        row-gap: 0;
+        @include col-gap;
       }
       &\:row-gap {
-        column-gap: 0;
-        row-gap: $grid-gap-width;
+        @include row-gap;
       }      
       &\:col {
         @include grid-columns;
