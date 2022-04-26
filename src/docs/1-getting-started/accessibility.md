@@ -145,7 +145,7 @@ Also, study some websites of governments, local governments, universities, etc. 
 * [contrast-ratio.com](https://contrast-ratio.com/)
 * [Accessible colors](https://accessible-colors.com/)
 
-### Aps and browser extensions
+### Apps and browser extensions
 
 * Web Accessibility Evaluation tool [WAVE extension](https://wave.webaim.org/extension/) for web browsers – Google Chrome, Mozilla Firefox, and Microsoft Edge.
 * Google Chrome [axe DevTools extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
