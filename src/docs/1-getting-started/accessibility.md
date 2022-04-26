@@ -78,7 +78,7 @@ Besides moving up to AlpineJS version 3, the Alpine powered components in these 
 * [Modals]({{ '/docs/7-alpinejs-components/modals' | url }})
 * [Offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }})
 * [Tabs]({{ '/docs/7-alpinejs-components/tabs' | url }})
-* [Slideshow]({{ '/docs/7-alpinejs-components/slideshow' | url }})
+* [Slideshows]({{ '/docs/7-alpinejs-components/slideshows' | url }})
 * [Animations]({{ '/docs/7-alpinejs-components/animations' | url }})
 
 For all these components, keyboard `tab`, `enter`, `space` and `escape` can be used to expand and retract hidden panels, or to switch between tabs or slides. `aria` attributes have also been built in.
