@@ -74,11 +74,12 @@ In addition, Codebase UI colored buttons with `:focus-visible` will receive the 
 Besides moving up to AlpineJS version 3, the Alpine powered components in these docs have been improved to enable usability via keyboard and assistive tech:
 
 * [Collapse]({{ '/docs/7-alpinejs-components/collapse' | url }})
-* [Dropdown]({{ '/docs/7-alpinejs-components/dropdown' | url }})
-* [Modal]({{ '/docs/7-alpinejs-components/modal' | url }})
+* [Dropdowns]({{ '/docs/7-alpinejs-components/dropdowns' | url }})
+* [Modals]({{ '/docs/7-alpinejs-components/modals' | url }})
 * [Offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }})
 * [Tabs]({{ '/docs/7-alpinejs-components/tabs' | url }})
 * [Slideshow]({{ '/docs/7-alpinejs-components/slideshow' | url }})
+* [Animations]({{ '/docs/7-alpinejs-components/animations' | url }})
 
 For all these components, keyboard `tab`, `enter`, `space` and `escape` can be used to expand and retract hidden panels, or to switch between tabs or slides. `aria` attributes have also been built in.
 
