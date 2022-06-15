@@ -8,10 +8,10 @@
     <path d="M2,290 L770,290 L770,720 L2,720 L2,290 z" fill="#363636" fill-opacity="0.1"/>
     <path d="M2,288 L770,288 L770,720 L2,720 L2,288 z" fill-opacity="0" stroke="#363636" stroke-width="2" stroke-dasharray="6,6"/>
     <text transform="matrix(2, 0, 0, 2, 371.813, 89)">
-      <tspan x="-128.247" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">Your `img-cover` image on a large device</tspan>
+      <tspan x="-128.247" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">Your `img-cover` image on a large device</tspan>
     </text>
     <text transform="matrix(2, 0, 0, 2, 1236.155, 257)">
-      <tspan x="-129.016" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">Your `img-cover` image on a small device</tspan>
+      <tspan x="-129.016" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">Your `img-cover` image on a small device</tspan>
     </text>
     <g>
       <path d="M812,702 L812,306" fill-opacity="0" stroke="#363636" stroke-width="2"/>
@@ -22,47 +22,47 @@
     </g>
     <g>
       <text transform="matrix(2, 0, 0, 2, 883.19, 473)">
-        <tspan x="-23.595" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">You set </tspan>
+        <tspan x="-23.595" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">You set </tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 900.82, 505)">
-        <tspan x="-32.41" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">this height </tspan>
+        <tspan x="-32.41" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">this height </tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 903.145, 537)">
-        <tspan x="-33.572" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">constraint*</tspan>
+        <tspan x="-33.572" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">constraint*</tspan>
       </text>
     </g>
     <path d="M788,288 L1004,288 M788,720 L1004,720" fill-opacity="0" stroke="#363636" stroke-width="2" stroke-dasharray="6,6"/>
     <g>
       <text transform="matrix(2, 0, 0, 2, 1115.227, 809)">
-        <tspan x="-124.613" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">* Best practice is to make this set height</tspan>
+        <tspan x="-124.613" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">* Best practice is to make this set height</tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 1140.082, 841)">
-        <tspan x="-137.041" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">responsive, or smaller for smaller viewports.</tspan>
+        <tspan x="-137.041" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">responsive, or smaller for smaller viewports.</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2, 0, 0, 2, 1252.341, 473)">
-        <tspan x="-38.491" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">Visitors may</tspan>
+        <tspan x="-38.491" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">Visitors may</tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 1252.341, 505)">
-        <tspan x="-36.683" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">see most of</tspan>
+        <tspan x="-36.683" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">see most of</tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 1252.343, 537)">
-        <tspan x="-37.072" y="4.5" font-family="ArialMT" font-size="14" fill="#363636"> your image</tspan>
+        <tspan x="-37.072" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636"> your image</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2, 0, 0, 2, 386.999, 457)">
-        <tspan x="-38.491" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">Visitors may</tspan>
+        <tspan x="-38.491" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">Visitors may</tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 387, 489)">
-        <tspan x="-39.41" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">see only this </tspan>
+        <tspan x="-39.41" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">see only this </tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 386.999, 521)">
-        <tspan x="-44.852" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">middle slice of </tspan>
+        <tspan x="-44.852" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">middle slice of </tspan>
       </text>
       <text transform="matrix(2, 0, 0, 2, 387.001, 553)">
-        <tspan x="-35.127" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">your image</tspan>
+        <tspan x="-35.127" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">your image</tspan>
       </text>
     </g>
     <path d="M1032.666,288 L1464.666,288 L1464.666,720 L1032.666,720 L1032.666,288 z" fill-opacity="0" stroke="#363636" stroke-width="2" stroke-dasharray="6,6"/>

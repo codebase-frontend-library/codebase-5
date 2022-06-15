@@ -13,25 +13,25 @@
       </g>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 580.171, 124.3)">
-      <tspan x="-9.831" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">sm</tspan>
+      <tspan x="-9.831" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">sm</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 738.593, 124.3)">
-      <tspan x="-10.224" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">md</tspan>
+      <tspan x="-10.224" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">md</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 897.002, 124.3)">
-      <tspan x="-5.948" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">lg</tspan>
+      <tspan x="-5.948" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">lg</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 1057.097, 124.3)">
-      <tspan x="-3.389" y="2" font-family="ArialMT" font-size="8" fill="#363636">xl</tspan>
+      <tspan x="-3.389" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xl</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 265.1, 124.3)">
-      <tspan x="-6.5" y="2" font-family="ArialMT" font-size="8" fill="#363636">xxs</tspan>
+      <tspan x="-6.5" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xxs</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 1215.497, 124.3)">
-      <tspan x="-5.389" y="2" font-family="ArialMT" font-size="8" fill="#363636">xxl</tspan>
+      <tspan x="-5.389" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xxl</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 183.453, 222.2)">
-      <tspan x="-10.721" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-xxs</tspan>
+      <tspan x="-10.721" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-xxs</tspan>
     </text>
     <g>
       <g>
@@ -55,10 +55,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 500.5, 301.4)">
-        <tspan x="-23.619" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-sm</tspan>
+        <tspan x="-23.619" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-sm</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 500.497, 321.2)">
-        <tspan x="-10.053" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-sm</tspan>
+        <tspan x="-10.053" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-sm</tspan>
       </text>
     </g>
     <g>
@@ -73,10 +73,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 658.653, 354.2)">
-        <tspan x="-23.844" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-md</tspan>
+        <tspan x="-23.844" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-md</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 658.656, 374)">
-        <tspan x="-10.277" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-md</tspan>
+        <tspan x="-10.277" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-md</tspan>
       </text>
     </g>
     <g>
@@ -91,32 +91,32 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 817.057, 407)">
-        <tspan x="-21.4" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-lg</tspan>
+        <tspan x="-21.4" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-lg</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 817.056, 426.8)">
-        <tspan x="-7.834" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-lg</tspan>
+        <tspan x="-7.834" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-lg</tspan>
       </text>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 264.126, 169.4)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">256px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">256px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 422.526, 169.4)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">512px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">512px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 580.926, 169.4)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">768px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">768px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 739.326, 169.4)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1024px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1024px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 897.726, 169.4)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1280px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1280px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 1056.125, 169.4)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1536px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1536px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 1214.526, 169.4)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1792px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1792px</tspan>
     </text>
     <g>
       <g>
@@ -130,10 +130,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 975.455, 459.8)">
-        <tspan x="-21.176" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-xl</tspan>
+        <tspan x="-21.176" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-xl</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 975.456, 479.6)">
-        <tspan x="-7.609" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-xl</tspan>
+        <tspan x="-7.609" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-xl</tspan>
       </text>
     </g>
     <g>
@@ -148,10 +148,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 1136.563, 512.6)">
-        <tspan x="-23.176" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-xxl</tspan>
+        <tspan x="-23.176" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-xxl</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 1139.473, 532.4)">
-        <tspan x="-9.609" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-xxl</tspan>
+        <tspan x="-9.609" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-xxl</tspan>
       </text>
     </g>
     <g>
@@ -165,21 +165,21 @@
       </g>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 648.901, 1225.4)">
-      <tspan x="-18.955" y="2" font-family="ArialMT" font-size="8" fill="#363636">sm:hidden</tspan>
+      <tspan x="-18.955" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">sm:hidden</tspan>
     </text>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 199.626, 1199)">
-        <tspan x="-30.738" y="2" font-family="ArialMT" font-size="8" fill="#363636">sm:hidden-below</tspan>
+        <tspan x="-30.738" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">sm:hidden-below</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 219.508, 1218.8)">
-        <tspan x="-39.775" y="2" font-family="ArialMT" font-size="8" fill="#363636">sm:offcanvas-override</tspan>
+        <tspan x="-39.775" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">sm:offcanvas-override</tspan>
       </text>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 807.793, 1304.6)">
-      <tspan x="-19.18" y="2" font-family="ArialMT" font-size="8" fill="#363636">md:hidden</tspan>
+      <tspan x="-19.18" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">md:hidden</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 960.822, 1383.8)">
-      <tspan x="-16.736" y="2" font-family="ArialMT" font-size="8" fill="#363636">lg:hidden</tspan>
+      <tspan x="-16.736" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">lg:hidden</tspan>
     </text>
     <g>
       <g>
@@ -203,18 +203,18 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 200.118, 1278.2)">
-        <tspan x="-30.963" y="2" font-family="ArialMT" font-size="8" fill="#363636">md:hidden-below</tspan>
+        <tspan x="-30.963" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">md:hidden-below</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 220, 1298)">
-        <tspan x="-40" y="2" font-family="ArialMT" font-size="8" fill="#363636">md:offcanvas-override</tspan>
+        <tspan x="-40" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">md:offcanvas-override</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 194.741, 1357.4)">
-        <tspan x="-28.52" y="2" font-family="ArialMT" font-size="8" fill="#363636">lg:hidden-below</tspan>
+        <tspan x="-28.52" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">lg:hidden-below</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 214.624, 1377.2)">
-        <tspan x="-37.557" y="2" font-family="ArialMT" font-size="8" fill="#363636">lg:offcanvas-override</tspan>
+        <tspan x="-37.557" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">lg:offcanvas-override</tspan>
       </text>
     </g>
     <g>
@@ -313,10 +313,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 344.303, 1436.6)">
-        <tspan x="-61.648" y="2" font-family="ArialMT" font-size="8" fill="#363636">Below `sm`, headings &lt;h1&gt;...&lt;h6&gt;</tspan>
+        <tspan x="-61.648" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Below `sm`, headings &lt;h1&gt;...&lt;h6&gt;</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 342.106, 1456.4)">
-        <tspan x="-63.094" y="2" font-family="ArialMT" font-size="8" fill="#363636">are reduced to ×0.875 size (87.5%)</tspan>
+        <tspan x="-63.094" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">are reduced to ×0.875 size (87.5%)</tspan>
       </text>
     </g>
     <g>
@@ -345,41 +345,41 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 473.857, 1542.2)">
-        <tspan x="-69.857" y="2" font-family="ArialMT" font-size="8" fill="#363636">Below `md`, the typographic class `t-lg` </tspan>
+        <tspan x="-69.857" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Below `md`, the typographic class `t-lg` </tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 476.303, 1562)">
-        <tspan x="-67.197" y="2" font-family="ArialMT" font-size="8" fill="#363636">increases text size by 1.25em (125%)</tspan>
+        <tspan x="-67.197" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">increases text size by 1.25em (125%)</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 1028.253, 1542.2)">
-        <tspan x="-69.182" y="2" font-family="ArialMT" font-size="8" fill="#363636">From `md` up, `t-lg` increases text size </tspan>
+        <tspan x="-69.182" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">From `md` up, `t-lg` increases text size </tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 1030.7, 1562)">
-        <tspan x="-30.959" y="2" font-family="ArialMT" font-size="8" fill="#363636">by 1.5em (150%)</tspan>
+        <tspan x="-30.959" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">by 1.5em (150%)</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 620.245, 1658.8)">
-        <tspan x="-162.93" y="2" font-family="ArialMT" font-size="8" fill="#363636">Other utility classes with variants that take effect at the `xs`, `sm`, `md` and `lg` breakpoints:</tspan>
+        <tspan x="-162.93" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Other utility classes with variants that take effect at the `xs`, `sm`, `md` and `lg` breakpoints:</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 444.534, 1698.4)">
-        <tspan x="-83.061" y="2" font-family="ArialMT" font-size="8" fill="#363636">• Spacing (margins and paddings) and borders</tspan>
+        <tspan x="-83.061" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Spacing (margins and paddings) and borders</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 349.127, 1718.2)">
-        <tspan x="-39.693" y="2" font-family="ArialMT" font-size="8" fill="#363636">• Floats (left and right)</tspan>
+        <tspan x="-39.693" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Floats (left and right)</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 444.02, 1738)">
-        <tspan x="-82.826" y="2" font-family="ArialMT" font-size="8" fill="#363636">• Positions (relative, absolute, fixed and sticky)</tspan>
+        <tspan x="-82.826" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Positions (relative, absolute, fixed and sticky)</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 415.495, 1757.8)">
-        <tspan x="-69.859" y="2" font-family="ArialMT" font-size="8" fill="#363636">• Text alignments (right, center and left)</tspan>
+        <tspan x="-69.859" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Text alignments (right, center and left)</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 561.737, 1797.4)">
-        <tspan x="-136.334" y="2" font-family="ArialMT" font-size="8" fill="#363636">The utility classes for `t-long-read` text are also responsive to viewport width.</tspan>
+        <tspan x="-136.334" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">The utility classes for `t-long-read` text are also responsive to viewport width.</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 624.396, 1817.2)">
-        <tspan x="-164.814" y="2" font-family="ArialMT" font-size="8" fill="#363636">But these cannot be represented in the scheme above because they involve a CSS `clamp()`</tspan>
+        <tspan x="-164.814" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">But these cannot be represented in the scheme above because they involve a CSS `clamp()`</tspan>
       </text>
     </g>
     <g>
@@ -407,7 +407,7 @@
       <path d="M897.6,1425.6 L897.6,1372.8" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 342.1, 268.4)">
-      <tspan x="-8.721" y="2" font-family="ArialMT" font-size="8" fill="#363636">w-xs</tspan>
+      <tspan x="-8.721" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">w-xs</tspan>
     </text>
     <g>
       <g>
@@ -420,10 +420,10 @@
       </g>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 487.571, 1146.2)">
-      <tspan x="-17.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">xs:hidden</tspan>
+      <tspan x="-17.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xs:hidden</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 196.696, 1146.2)">
-      <tspan x="-29.406" y="2" font-family="ArialMT" font-size="8" fill="#363636">xs:hidden-below</tspan>
+      <tspan x="-29.406" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xs:hidden-below</tspan>
     </text>
     <g>
       <g>
@@ -462,7 +462,7 @@
       <path d="M422.4,765.6 L422.4,712.8" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 421.771, 124.3)">
-      <tspan x="-7.5" y="4.5" font-family="ArialMT" font-size="14" fill="#363636">xs</tspan>
+      <tspan x="-7.5" y="4.5" font-family="Arial, sans-serif" font-size="14" fill="#363636">xs</tspan>
     </text>
     <g>
       <path d="M580.8,1504.8 L580.8,1452" fill="#000000"/>
@@ -474,10 +474,10 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 474.839, 723.8)">
-        <tspan x="-11.836" y="2" font-family="ArialMT" font-size="8" fill="#363636">xs:flex</tspan>
+        <tspan x="-11.836" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">xs:flex</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 579.514, 763.4)">
-        <tspan x="-59.416" y="2" font-family="ArialMT" font-size="8" fill="#363636">grid xs:gap xs:auto-{x}-cols ...etc.</tspan>
+        <tspan x="-59.416" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">grid xs:gap xs:auto-{x}-cols ...etc.</tspan>
       </text>
     </g>
     <g>
@@ -500,38 +500,38 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 212.811, 618.2)">
-        <tspan x="-36.732" y="2" font-family="ArialMT" font-size="8" fill="#363636">Flexbox system: flex</tspan>
+        <tspan x="-36.732" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Flexbox system: flex</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 608.516, 655.6)">
-        <tspan x="-216.139" y="2" font-family="ArialMT" font-size="8" fill="#363636">Grid system: grid (wrapper), gap, auto-{x}-cols, equal-{x}-cols / per-item: col-{x}, row-{y}, cols-{first}-{last}, rows-{first}-{last} </tspan>
+        <tspan x="-216.139" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Grid system: grid (wrapper), gap, auto-{x}-cols, equal-{x}-cols / per-item: col-{x}, row-{y}, cols-{first}-{last}, rows-{first}-{last} </tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 636.17, 829.4)">
-        <tspan x="-13.168" y="2" font-family="ArialMT" font-size="8" fill="#363636">sm:flex</tspan>
+        <tspan x="-13.168" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">sm:flex</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 678.241, 869)">
-        <tspan x="-32.291" y="2" font-family="ArialMT" font-size="8" fill="#363636">grid sm:gap ...etc.</tspan>
+        <tspan x="-32.291" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">grid sm:gap ...etc.</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 795.062, 935)">
-        <tspan x="-13.393" y="2" font-family="ArialMT" font-size="8" fill="#363636">md:flex</tspan>
+        <tspan x="-13.393" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">md:flex</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 837.133, 974.6)">
-        <tspan x="-32.516" y="2" font-family="ArialMT" font-size="8" fill="#363636">grid md:gap ...etc.</tspan>
+        <tspan x="-32.516" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">grid md:gap ...etc.</tspan>
       </text>
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 948.089, 1040.6)">
-        <tspan x="-10.949" y="2" font-family="ArialMT" font-size="8" fill="#363636">lg:flex</tspan>
+        <tspan x="-10.949" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">lg:flex</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 990.161, 1080.2)">
-        <tspan x="-30.072" y="2" font-family="ArialMT" font-size="8" fill="#363636">grid lg:gap ...etc.</tspan>
+        <tspan x="-30.072" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">grid lg:gap ...etc.</tspan>
       </text>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 648.934, 40.7)">
-      <tspan x="-68.315" y="2.5" font-family="ArialMT" font-size="10" fill="#363636">Media query breakpoint widths</tspan>
+      <tspan x="-68.315" y="2.5" font-family="Arial, sans-serif" font-size="10" fill="#363636">Media query breakpoint widths</tspan>
     </text>
     <path d="M396,105.6 C396,91.021 407.821,79.2 422.4,79.2" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     <path d="M897.6,80.3 C912.179,80.3 924,91.628 924,105.6" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
@@ -540,34 +540,34 @@
     <path d="M422.4,79.2 L633.6,79.2" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     <path d="M686.4,79.2 L897.6,80.3" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     <text transform="matrix(2.2, 0, 0, 2.2, 422.526, 1119.8)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">512px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">512px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 580.926, 1199)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">768px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">768px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 739.326, 1278.2)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1024px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1024px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 897.726, 1357.4)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1280px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1280px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 581.903, 1436.6)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">768px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">768px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 740.3, 1542.2)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1024px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1024px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 422.526, 697.4)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">512px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">512px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 580.926, 803)">
-      <tspan x="-11.398" y="2" font-family="ArialMT" font-size="8" fill="#363636">768px</tspan>
+      <tspan x="-11.398" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">768px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 739.326, 908.6)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1024px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1024px</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 897.726, 1014.2)">
-      <tspan x="-13.623" y="2" font-family="ArialMT" font-size="8" fill="#363636">1280px</tspan>
+      <tspan x="-13.623" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">1280px</tspan>
     </text>
     <g>
       <path d="M1214.4,580.8 L1214.4,528" fill="#000000"/>
@@ -626,19 +626,19 @@
       <path d="M105.6,1610.4 L105.6,1557.6" fill-opacity="0" stroke="#363636" stroke-width="2.2"/>
     </g>
     <text transform="matrix(2.2, 0, 0, 2.2, 90.438, 124.3)">
-      <tspan x="-29.107" y="2" font-family="ArialMT" font-size="8" fill="#363636">Variable names:</tspan>
+      <tspan x="-29.107" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Variable names:</tspan>
     </text>
     <text transform="matrix(2.2, 0, 0, 2.2, 128.253, 169.4)">
-      <tspan x="-46.297" y="2" font-family="ArialMT" font-size="8" fill="#363636">Default max-width values:</tspan>
+      <tspan x="-46.297" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Default max-width values:</tspan>
     </text>
     <text transform="matrix(0, -2.2, 2.2, 0, 38.5, 434.7)">
-      <tspan x="-73.31" y="2.5" font-family="ArialMT" font-size="10" fill="#363636">Containers and max-width wraps</tspan>
+      <tspan x="-73.31" y="2.5" font-family="Arial, sans-serif" font-size="10" fill="#363636">Containers and max-width wraps</tspan>
     </text>
     <text transform="matrix(0, -2.2, 2.2, 0, 38.5, 892.2)">
-      <tspan x="-54.697" y="2.5" font-family="ArialMT" font-size="10" fill="#363636">Flexbox and grid layouts</tspan>
+      <tspan x="-54.697" y="2.5" font-family="Arial, sans-serif" font-size="10" fill="#363636">Flexbox and grid layouts</tspan>
     </text>
     <text transform="matrix(0, -2.2, 2.2, 0, 40.702, 1366.189)">
-      <tspan x="-13.005" y="2.5" font-family="ArialMT" font-size="10" fill="#363636">Other</tspan>
+      <tspan x="-13.005" y="2.5" font-family="Arial, sans-serif" font-size="10" fill="#363636">Other</tspan>
     </text>
     <g>
       <path d="M1214.4,528 L1214.4,184.8" fill="#000000"/>
@@ -670,7 +670,7 @@
     </g>
     <g>
       <text transform="matrix(2.2, 0, 0, 2.2, 344.038, 248.6)">
-        <tspan x="-21.787" y="2" font-family="ArialMT" font-size="8" fill="#363636">container-xs</tspan>
+        <tspan x="-21.787" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">container-xs</tspan>
       </text>
     </g>
     <g>
