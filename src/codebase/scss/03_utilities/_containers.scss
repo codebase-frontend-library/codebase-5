@@ -5,35 +5,31 @@
 
 [class*=container] {
   display: block;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $container-x-space;
-  padding-left: $container-x-space;
+  margin-inline: auto;
+  padding-inline: $container-x-space;
   [class*=container] {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
   }
 }
 
 .container {
-  max-width: $container-default;
+  width: min(100%, $container-default);
   &-xxl {
-    max-width: map-get($width, w-xxl);
+    width: min(100%, map-get($width, w-xxl));
   }
   &-xl {
-    max-width: map-get($width, w-xl);
+    width: min(100%, map-get($width, w-xl));
   }
   &-lg {
-    max-width: map-get($width, w-lg);
+    width: min(100%, map-get($width, w-lg));
   }
   &-md {
-    max-width: map-get($width, w-md);
+    width: min(100%, map-get($width, w-md));
   }
   &-sm {
-    max-width: map-get($width, w-sm);
+    width: min(100%, map-get($width, w-sm));
   }
   &-xs {
-    max-width: map-get($width, w-xs);
+    width: min(100%, map-get($width, w-xs));
   }
 }

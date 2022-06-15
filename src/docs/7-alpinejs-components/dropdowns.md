@@ -316,7 +316,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="btn-primary"
   >
     <span>Click me</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <!-- Icon chevron down -->
   </button>
   <!-- Panel -->
   <div

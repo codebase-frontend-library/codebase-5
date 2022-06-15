@@ -24,20 +24,20 @@
   .mr-#{$key} { margin-right: $val; }
   .mb-#{$key} { margin-bottom: $val; }
   .ml-#{$key} { margin-left: $val; }
-  .my-#{$key} { margin-top: $val; margin-bottom: $val; }
-  .mx-#{$key} { margin-right: $val; margin-left: $val; }
+  .my-#{$key} { margin-block: $val; }
+  .mx-#{$key} { margin-inline: $val; }
   .m-auto { margin: auto; }
   .mr-auto { margin-right: auto; }
   .ml-auto { margin-left: auto; }
-  .mx-auto { margin-right: auto; margin-left: auto; }
+  .mx-auto { margin-inline: auto; }
 
   .p-#{$key} { padding: $val; }
   .pt-#{$key} { padding-top: $val; }
   .pr-#{$key} { padding-right: $val; }
   .pb-#{$key} { padding-bottom: $val; }
   .pl-#{$key} { padding-left: $val; }
-  .py-#{$key} { padding-top: $val; padding-bottom: $val; }
-  .px-#{$key} { padding-right: $val; padding-left: $val; }
+  .py-#{$key} { padding-block: $val; }
+  .px-#{$key} { padding-inline: $val; }
 }
 
 @each $key, $val in $borders {
@@ -58,19 +58,19 @@
         .#{$mq-key}\:mr-#{$key} { margin-right: $val; }
         .#{$mq-key}\:mb-#{$key} { margin-bottom: $val; }
         .#{$mq-key}\:ml-#{$key} { margin-left: $val; }
-        .#{$mq-key}\:my-#{$key} { margin-top: $val; margin-bottom: $val; }
-        .#{$mq-key}\:mx-#{$key} { margin-right: $val; margin-left: $val; }
+        .#{$mq-key}\:my-#{$key} { margin-block: $val; }
+        .#{$mq-key}\:mx-#{$key} { margin-inline: $val;}
         .#{$mq-key}\:mr-auto { margin-right: auto; }
         .#{$mq-key}\:ml-auto { margin-left: auto; }
-        .#{$mq-key}\:mx-auto { margin-right: auto; margin-left: auto; }
+        .#{$mq-key}\:mx-auto { margin-block: auto; }
 
         .#{$mq-key}\:p-#{$key} { padding: $val; }
         .#{$mq-key}\:pt-#{$key} { padding-top: $val; }
         .#{$mq-key}\:pr-#{$key} { padding-right: $val; }
         .#{$mq-key}\:pb-#{$key} { padding-bottom: $val; }
         .#{$mq-key}\:pl-#{$key} { padding-left: $val; }
-        .#{$mq-key}\:py-#{$key} { padding-top: $val; padding-bottom: $val; }
-        .#{$mq-key}\:px-#{$key} { padding-right: $val; padding-left: $val; }
+        .#{$mq-key}\:py-#{$key} { padding-block: $val; }
+        .#{$mq-key}\:px-#{$key} { padding-inline: $val; }
         .#{$mq-key}\:p-block { padding: $spacing-block; }
       }
 

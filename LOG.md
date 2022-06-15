@@ -1,8 +1,18 @@
 # Log
 
-_Note: update version numbers need updating every time in `metadata.json`, `package.json`, `README.md`, `LOG.md`, and `codebase.scss`_
+_Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json`, `README.md`, `LOG.md`, and `codebase.scss`_
 
 ***
+
+## 15 Jun 2022 v.5.0.6
+
+* For improved accessibility, defailt font size is now 100% (not 16px). This will still be 16px for many people, but now visually impaired people or others who increase the default font size in their browser settings can do so.
+* x-axis and y-axis margin utilities (`mx-` and `my-`) now use `margin-inline` and `margin-block`. Similar for paddings.
+* Improved system font stacks, based on https://systemfontstack.com.
+* Hover states for box shadows.
+* Added posiiton utilities `z-index-997` and `z-index-998` fir better handling of offcanvas, modals, etc..
+* Other minor fixes.
+* Some corrections and improvements in the docs.
 
 ## 16 March 2022 -- v.5.0.5
 
@@ -22,7 +32,7 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 * `aspect-ratio` classes now using the new CSS aspect ratio style (the old padding hack is still available in mixins).
 * The same `aspect-ratio` class is required to map an overlay on to a hero component.
-* Minor fixes
+* Other minor fixes
 
 ## 2 Feb 2022 -- v.5.0.2
 

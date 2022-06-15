@@ -131,19 +131,11 @@ You can override all these names and color codes, remove some or add more – an
 
 There are similar Sass maps for named colors, theme colors (controlling page background, text, borders around form fields, etc.), font sizes, media query breakpoint widths, and so on.
 
-## Font stacks
+## System font stacks
 
-Codebase contains three `font-family` font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.
+Codebase contains three `font-family` system font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.
 
-```scss
-$font-stack-base:       ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-stack-mono:       SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
-$font-stack-sans-serif: $font-stack-base !default;
-$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif !default;
-$font-stack-ui:         $font-stack-base !default;
-$font-stack-brand:      $font-stack-base !default;
-$font-stack-prose:      $font-stack-serif !default;
-```
+Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [System Font Stacks](https://systemfontstack.com) (but not including the emoji fonts).
 
 Codebase’s `$font-stack-base` follows the popular trend for sans-serif in web design. It is applied to the HTML `<body>` tag by default.
 

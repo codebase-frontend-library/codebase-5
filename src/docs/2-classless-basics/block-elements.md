@@ -157,7 +157,7 @@ Clicking the (bold) `<summary>` will trigger the functionality of the [HTML deta
 ```html
 <details>
   <summary>Summary/title</summary>
-  Here are the details – an extended discussion of what is summarised in the associated <code>&lt;summary&gt;</code> above. Hidden by default, this content becomes visible when the visitor clicks or taps the summary.
+  Here are the details...
 </details>
 ```
 

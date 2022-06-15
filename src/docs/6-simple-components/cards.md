@@ -43,8 +43,6 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 </div>
 ```
 
-_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
-
 ## Header and footer
 
 Another example, with a header and a footer — and a thin border instead of a box shadow:
@@ -67,13 +65,7 @@ Another example, with a header and a footer — and a thin border instead of a b
 <div class="mx-auto b-thin rounded">
   <div class="bb-thin p-block">Header</div>
   <div class="flex flex-column">
-    <a href="#/" class="aspect-ratio-16x9 relative">
-      <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
-    </a>
-    <div class="p-2">
-      <h4 class="mb-0">Card Title</h4>
-      <p class="mb-0">Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. </p>
-    </div>
+    ...
   </div>
   <div class="bt-thin p-block">Footer</div>
 </div>

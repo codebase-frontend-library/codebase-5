@@ -10,11 +10,11 @@ nextLink: "Blocks"
 
 The CodebaseCSS `container` class works the same way as in other CSS frameworks (e.g. Bootstrap), using x-axis `margin: auto` centering, and x-axis padding to improve legibility of content against screen sides right and left.
 
-In addition, CodebaseCSS containers have several width modifiers, for easily setting up narrower centered layouts for e.g. blog posts.
+In addition, CodebaseCSS containers have several variable width modifiers, for easily setting up narrower centered layouts for e.g. blog posts.
 
 ## Containers at different max-widths
 
-CodebaseCSS’s max-widths are set at **256px increments** – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px &times; 768px). Containers are first set to `width: 100%` and then constrained these max-widths.
+CodebaseCSS’s (max) widths are set at **256px increments** – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px &times; 768px). Containers are first set to `width: 100%` and then constrained these max-widths.
 
 The default `container` behaves the same as `container-xxl`.
 
@@ -22,42 +22,40 @@ The default `container` behaves the same as `container-xxl`.
 <thead>
 <tr>
 <th>Containers</th>
-<th>Max-width of content block</th>
-<th>Calculated from</th>
+<th>(Max) width of content block</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>container-xxl</code><br>(and <code>container</code>)</td>
-<td><strong>1760px</strong></td>
-<td><code>xxl</code> 1792px – (2 × 1rem side margins)</td>
+<td><code>xxl</code> 1792px</td>
 </tr>
 <tr>
 <td><code>container-xl</code></td>
-<td><strong>1504px</strong></td>
-<td><code>xl</code> 1536px – (2 × 1rem side margins)</td>
+<td><code>xl</code> 1536px</td>
 </tr>
 <tr>
 <td><code>container-lg</code></td>
-<td><strong>1228px</strong></td>
-<td><code>lg</code> 1280px – (2 × 1rem side margins)</td>
+<td><code>lg</code> 1280px</td>
 </tr>
 <tr>
 <td><code>container-md</code></td>
-<td><strong>992px</strong></td>
-<td><code>md</code> 1024px – (2 × 1rem side margins)</td>
+<td><code>md</code> 1024px</td>
 </tr>
 <tr>
 <td><code>container-sm</code></td>
-<td><strong>736px</strong></td>
-<td><code>sm</code> 768px – (2 × 1rem side margins)</td>
+<td><code>sm</code> 768px</td>
+</tr>
+<tr>
+<td><code>container-xs</code></td>
+<td><code>xs</code> 512px</td>
 </tr>
 </tbody>
 </table>
 
 ## Containers demo (popout)
 
-On large screens, you can expand the following demo:
+On medium screens up, you can expand the following demo:
 
 <div
   x-data="{ open: false }"
@@ -101,9 +99,8 @@ On large screens, you can expand the following demo:
         Codebase containers demo
       </p>
       <style>
-        .container-demo > * {
-          margin-right: 1rem !important;
-          margin-left: 1rem !important;
+        .container-demo {
+          padding-inline: 1rem !important;
         }
       </style>
       <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
@@ -111,11 +108,12 @@ On large screens, you can expand the following demo:
       <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
       <div class="container-md container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-md</code></div></div>
       <div class="container-sm container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
+      <div class="container-xs container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xs</code></div></div>
     </div>
   </div>
 </div>
 
-**Note:** the demo containers (above) are nested in this page’s container based layout. Therefore, ordinarily they have their x-axis margins removed. But for purposes of the demo, these margins have been added back in.
+**Note:** the demo containers above are nested in this page’s container based layout. Therefore, ordinarily they have their x-axis paddings removed. But for demonstration purposes here, these have been added back in.
 
 ```html
 <div class="container-xxl">
@@ -135,6 +133,10 @@ On large screens, you can expand the following demo:
 </div>
 
 <div class="container-sm">
+  <div>Content ...</div>
+</div>
+
+<div class="container-xs">
   <div>Content ...</div>
 </div>
 ```

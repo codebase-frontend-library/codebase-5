@@ -8,7 +8,7 @@
   <title>Block positions - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.5" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.6" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -80,6 +80,10 @@
       #site-navigation > div {
         top: 57px;
         max-height: calc(100vh - 57px);
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+      #site-navigation:hover > div {
         overflow-y: auto;
       }
     }
@@ -260,7 +264,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.5">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.6">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +319,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.5">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.6">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -545,11 +549,14 @@
 <li><code>sticky</code></li>
 </ul>
 <p>Each of the above affect blocks at all viewport widths. Plus there are <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> responsive tiers of each.</p>
-<p>Then there are a few z-index utilities, that can be used for layering:</p>
+<h3 id="z-index-layers" tabindex="-1">Z-index layers</h3>
+<p>There are several z-index utilities, that can be used for layering (alongside <code>absolute</code>, <code>fixed</code>, and <code>sticky</code>):</p>
 <ul>
-<li><code>z-index-1</code> / <code>z-index-2</code> / <code>z-index-3</code> / <code>z-index-999</code></li>
+<li><code>z-index-1</code> / <code>z-index-2</code> / <code>z-index-3</code></li>
+<li><code>z-index-997</code> / <code>z-index-998</code> / <code>z-index-999</code></li>
 </ul>
-<p>The lower <code>z-index-*</code> utilities are used for dropdown panels, stacking hero text (title, call-to-action, etc.) over a hero image, tabs, and whatever you need to be on different “layers”. <code>z-index-999</code> can be used for modals or offcanvas sidebars.</p>
+<p>The lower <code>z-index-*</code> utilities (1, 2, and 3) can be used for dropdown panels, stacking hero text (title, call-to-action, etc.) over a hero image, tabs, etc.</p>
+<p>The upper <code>z-index-*</code> utilities (997, 998 and 999) can be used for modals, offcanvas sidebars, etc.</p>
 <h2 id="positioning-absolute-and-fixed-elements" tabindex="-1">Positioning absolute and fixed elements</h2>
 <p>In conjunction with the <code>absolute</code> and <code>fixed</code> positioning utilities above, you can also control where the positioned element will be placed: in the <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code> of its parent element.</p>
 <div class="my-6 b-dashed">
@@ -636,7 +643,7 @@ Look, I’m sticky on <code class="b-thin">xs</code> screens up!
     </a>
   </p>
   
-  <p>Version 5.0.5 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.6 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

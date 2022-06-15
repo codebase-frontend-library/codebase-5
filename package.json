@@ -1,6 +1,6 @@
 {
   "name": "codebase-5",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "description": "Codebase is a modern SCSS library. Pairs well with AlpineJS for HTML/JavaScript components.",
   "scripts": {
     "sass": "npx sass --watch src/codebase/scss:src/codebase/css",

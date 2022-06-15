@@ -10,11 +10,36 @@ nextLink: "Block elements"
 
 Numerous accessibility improvements have been made to Codebase since version 4.
 
-The three main improvements for accessability in Codebase are:
+The four main improvements for accessability in Codebase are:
 
-1. Accessible UI colors
-2. Focus ring styling
-3. AlpineJS powered components have been refactored
+1. Default font size is `100%`
+2. Accessible UI colors
+3. Focus ring styling
+4. AlpineJS powered components have been refactored
+
+## Default font size
+
+For improved accessibility, since v.5.0.6 Codebase defaults to `font-size: 100%` on the `<body>` element. This font size defaults to 16px in most web browsers (in 2022).
+
+```scss
+// In: 00_setup/_default-variables.scss
+$text-font-size: 100% !default;
+
+// In: 01_basics/_base.scss
+body {
+  ...
+  font-size: $text-font-size;
+  ...
+}
+```
+
+The advantage of _not setting a default font size in px_ is that it allows your website to be scaled to the _user’s_ chosen default font size – some people with sight impairments may increase their default font size in their browser settings. You don’t want to prevent that from happening by setting your font size in px.
+
+For more information, see:
+
+* W3Schools, [https://www.w3schools.com/accessibility/accessibility_text_size.php](https://www.w3schools.com/accessibility/accessibility_text_size.php)
+* Matej Latin’s [The State of Fluid Web Typography](https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/).
+* Craig Abbot, [Accessibility and Font Sizes](https://www.craigabbott.co.uk/blog/accessibility-and-font-sizes)
 
 ## Accessible UI colors
 

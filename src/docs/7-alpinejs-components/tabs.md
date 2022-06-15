@@ -121,6 +121,7 @@ Here’s an unstyled tabs example, ready for you to style your own way. Explanat
 </div>
 </div>
 
+
 ```html
 <div x-cloak x-data="{ currentTab: 1 }">
   <nav
@@ -182,7 +183,7 @@ Here’s an unstyled tabs example, ready for you to style your own way. Explanat
     @keyup.shift.tab="currentTab = 1; $nextTick(() => $refs.firstTab.focus())"
   >
     <p><em>First tab panel.</em> With an <a href="#/">example link</a>.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium modi mollitia perspiciatis, sunt enim saepe velit tempore. Repellat qui ducimus magni odio suscipit, cumque a ea eaque ipsum corrupti? Et, at ex quod repellendus quia omnis perspiciatis dolorum cumque eaque quos praesentium accusamus facilis optio rerum maiores animi cum expedita reiciendis aliquid culpa, iste voluptates. Numquam accusamus illum, ad sequi distinctio provident quibusdam.</p>
+    <p>Lorem ipsum dolor sit amet...</p>
   </div>
   <div
     role="tabpanel"
@@ -194,7 +195,7 @@ Here’s an unstyled tabs example, ready for you to style your own way. Explanat
     @keyup.shift.tab="currentTab = 2; $nextTick(() => $refs.secondTab.focus())"
   >
     <p><em>Second tab panel.</em></p>
-    <p>Magnam fuga vero facere <a href="#/">nulla itaque</a> facilis, eos doloremque error maiores amet fugiat ullam et officiis voluptatum obcaecati hic odit similique consectetur enim alias assumenda reiciendis sint libero. Eos, porro? <a href="#/">Accusamus</a>, natus!</p>
+    <p>Magnam fuga vero facere...</p>
   </div>
   <div
     role="tabpanel" 
@@ -206,10 +207,11 @@ Here’s an unstyled tabs example, ready for you to style your own way. Explanat
     @keyup.shift.tab="currentTab = 3; $nextTick(() => $refs.thirdTab.focus())"
   >
     <p><em>Third tab panel.</em></p>
-    <p>Cumque doloribus fugit, eos neque nulla quidem excepturi iusto magnam possimus odit enim labore aut quas error maxime nam minima quae, libero tempore sint! Placeat pariatur adipisci consectetur laborum est cum, nulla soluta porro harum, odio ut totam reiciendis. Aliquam, provident dolor! Saepe, fugiat eligendi cupiditate unde corporis tempore eveniet! Perspiciatis quibusdam nulla accusantium quisquam ducimus tempore voluptas non iure vitae. Debitis hic laudantium excepturi id harum ea obcaecati delectus, sit, aliquam nesciunt aspernatur voluptates, officia atque. At voluptas illo earum ipsam corrupti adipisci exercitationem, recusandae nulla repellat, alias, voluptatibus dolorem architecto dolores maxime doloremque voluptate! Totam dignissimos nisi animi vitae, possimus similique facere?</p>
+    <p>Cumque doloribus fugit...</p>
   </div>
 </div>
 ```
+
 
 ### Classic tabs
 

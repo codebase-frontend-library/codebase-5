@@ -9,15 +9,7 @@ nextLink: "Headings"
 
 Codebase contains several text utilites for font stacks, that are either directly coded or aliased from three default font families. These are set in the SCSS default-variables file.
 
-```scss
-$font-stack-base:       ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-stack-mono:       SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
-$font-stack-sans-serif: $font-stack-base !default;
-$font-stack-serif:      "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif !default;
-$font-stack-ui:         $font-stack-base !default;
-$font-stack-brand:      $font-stack-base !default;
-$font-stack-prose:      $font-stack-serif !default;
-```
+Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [System Font Stacks](https://systemfontstack.com) (but not including the emoji fonts).
 
 ## Default font stacks
 
@@ -25,11 +17,24 @@ $font-stack-prose:      $font-stack-serif !default;
 
 The HTML `<body>` tag has `$font-stack-base` that is a common sans-serif font stack. This is what most of Codebase looks like, by default.
 
-<p class="b-thin p-3"><code>$font-stack-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
-
 ```css
-ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+$font-stack-base:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Avenir Next",
+  Avenir,
+  "Segoe UI",
+  "Helvetica Neue",
+  Helvetica,
+  Cantarell,
+  Ubuntu,
+  Roboto,
+  Noto,
+  Arial,
+  sans-serif !default;
 ```
+
+<p class="b-thin p-3"><code>$font-stack-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
 Codebase also carries a sans-serif font stack in the SCSS variable `$font-stack-sans-serif`. But by default, it is aliased from `$font-stack-base` – it’s the same.
 
@@ -39,11 +44,17 @@ Unless you change things in your design, `$font-stack-sans-serif` is only availa
 
 A few elements such as `<code>` have a monospaced font stack, `$font-stack-mono`.
 
-<p class="b-thin p-3 t-mono"><code>$font-stack-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
-
 ```css
-SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace
+$font-stack-mono:
+  Menlo,
+  Consolas,
+  Monaco,
+  "Liberation Mono",
+  "Lucida Console",
+  monospace !default;
 ```
+
+<p class="b-thin p-3 t-mono"><code>$font-stack-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
 Unless you change things in your design, `$font-stack-mono` is only available via the text utility class `t-mono`.
 
@@ -51,13 +62,21 @@ Unless you change things in your design, `$font-stack-mono` is only available vi
 
 There is also a default serif `$font-stack-serif` but Codebase does not apply it to any classless HTML elements.
 
-<p class="b-thin p-3 t-serif"><code>$font-stack-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
-
 Unless you change things in your design, `$font-stack-serif` is only available via the text utility class `t-serif`.
 
 ```css
-"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif
+$font-stack-serif:
+  "Iowan Old Style",
+  "Apple Garamond",
+  Baskerville,
+  "Times New Roman",
+  "Droid Serif",
+  Times,
+  "Source Serif Pro",
+  serif !default;
 ```
+
+<p class="b-thin p-3 t-serif"><code>$font-stack-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
 ### User interface (UI) font stack
 

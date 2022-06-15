@@ -228,13 +228,14 @@ $square-size-lg:              6rem !default;
 // (4.) Basics and Typography ///////////////////////////////////////
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$font-stack-base:                   ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-stack-mono:                   SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace !default;
-$font-stack-sans-serif:             $font-stack-base !default;
-$font-stack-serif:                  "Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif !default;
-$font-stack-ui:                     $font-stack-base !default;
-$font-stack-brand:                  $font-stack-base !default;
-$font-stack-prose:                  $font-stack-serif !default;
+// Font stacks based on https://systemfontstack.com
+$font-stack-base:       -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif !default;
+$font-stack-mono:       Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace !default;
+$font-stack-sans-serif: $font-stack-base !default;
+$font-stack-serif:      "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif !default;
+$font-stack-ui:         $font-stack-base !default;
+$font-stack-brand:      $font-stack-base !default;
+$font-stack-prose:      $font-stack-serif !default;
 
 $heading-size: () !default;
 $heading-size: map-merge((
@@ -249,7 +250,7 @@ $heading-size: map-merge((
 $heading-weight:      normal;
 $heading-line-height: calc(1em + .5rem); // gives .5rem more than the heading’s own size
 
-$text-font-size:                    16px !default;
+$text-font-size:                    100% !default; // see https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/
 $text-base-line-height:             $elem * 3;
 $text-thin-font-weight:             200 !default;
 $text-base-font-weight:             400 !default;

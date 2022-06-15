@@ -20,11 +20,16 @@ Codebase has utility classes for several types of block positioning:
 
 Each of the above affect blocks at all viewport widths. Plus there are `xs:`, `sm:`, `md:`, and `lg:` responsive tiers of each. 
 
-Then there are a few z-index utilities, that can be used for layering:
+### Z-index layers
 
-* `z-index-1` / `z-index-2` / `z-index-3` / `z-index-999`
+There are several z-index utilities, that can be used for layering (alongside `absolute`, `fixed`, and `sticky`):
 
-The lower `z-index-*` utilities are used for dropdown panels, stacking hero text (title, call-to-action, etc.) over a hero image, tabs, and whatever you need to be on different “layers”. `z-index-999` can be used for modals or offcanvas sidebars.
+* `z-index-1` / `z-index-2` / `z-index-3` 
+* `z-index-997` / `z-index-998` / `z-index-999`
+
+The lower `z-index-*` utilities (1, 2, and 3) can be used for dropdown panels, stacking hero text (title, call-to-action, etc.) over a hero image, tabs, etc.
+
+The upper `z-index-*` utilities (997, 998 and 999) can be used for modals, offcanvas sidebars, etc.
 
 ## Positioning absolute and fixed elements
 

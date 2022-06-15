@@ -74,7 +74,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     class="btn-primary"
     @click="isOpen = true"
     aria-label="Offcanvas example 2"
-    aria-controls="offcanvas-ex-1"
+    aria-controls="offcanvas-ex-2"
     :aria-expanded="isOpen"
   >Open offcanvas (right)</button>
   <div
@@ -263,7 +263,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <!-- Icon close x -->
         </button>
       </div>
       <div class="h3" id="offcanvas-ex-4-title">Offcanvas 4 Panel Title</div>
@@ -417,9 +417,6 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     class="offcanvas offcanvas-top w-100% overflow-y bs-1 p-2 bg-white"
     @click.stop
     @keyup.escape="$store.offcanvasEx5.isOpen = false"
-    x-effect="$store.offcanvasEx5.isOpen 
-      ? document.body.classList.add('body-scroll-lock') 
-      : document.body.classList.remove('body-scroll-lock')"
   >
     <div class="mb-3 t-right">
       <button
@@ -485,16 +482,13 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     class="offcanvas offcanvas-top w-100% overflow-y bs-1 p-2 bg-white"
     @click.stop
     @keyup.escape="$store.offcanvasEx5.isOpen = false"
-    x-effect="$store.offcanvasEx5.isOpen 
-      ? document.body.classList.add('body-scroll-lock') 
-      : document.body.classList.remove('body-scroll-lock')"
   >
     <div class="mb-3 t-right">
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx5.isOpen = false">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+        <!-- Icon close x -->
       </button>
     </div>
     <div class="h3" id="offcanvas-ex-5-title">Offcanvas 5 Panel Title</div>
@@ -514,149 +508,25 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
 
 To override Codebase offcanvas above any of the media query breakpoints, we need the following:
 
-1. **Codebase CSS overrides** (`sm:offcanvas-override` etc.):
+1. **Codebase CSS overrides** (`md:offcanvas-override` etc.):
     1. Stop the offcanvas panel’s `position: fixed` etc. happening above that breakpoint.
     2. Remove the box shadow (if you have one).
-    3. If your offcanvas panel slides in from the right or left, then you need to put `sm:w-auto` (or other) on the panel to override its width at the `offvanvas-override` breakpoint.
+    3. If your offcanvas panel slides in from the right or left, then you need to put `md:w-auto` (or other) on the panel to override its width at the `offvanvas-override` breakpoint.
 2. **AlpineJS overrides**:
-    1. Set `isOpen` to `true` above that breakpoint (use the same breakpoint as you’re using in the stylesheet; in this example `sm` = 768px default).
-    2. Stop the `@click.outside` and `@keyup.escape` dismissers happening at and above that breakpoint. (because you don’t want the panel to disappear while it is behaving as a normal on-canvas panel).
-    3. Stop the `x-trap` happening at and above that breakpoint.
+    1. Set `isOpen` to `true` above that breakpoint (use the same breakpoint as you’re using in the stylesheet; in this example `md` = 1024px default).
+    2. Stop the `@click.outside` and `@keyup.escape` dismissers happening at and above that breakpoint (because you don’t want the panel to disappear while it is behaving as a normal on-canvas panel).
+    3. Stop the `x-trap.noscroll.inert` happening at and above that breakpoint.
 
-So, in the `x-data` you want the `isOpen` state to initialize as `false` below the breadpoint (the offcanvas panel is retracted) but `true` at and above the breakpoint (so that it can behaves as a normal visible panel).
+So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `false` below the breadpoint (the offcanvas panel is retracted) but as `true` at and above the breakpoint (so that it can behaves as a normal visible panel).
 
-**Note:** At this time (Dec 2021), `x-trap`’s `.noscroll` (and `.inert`) modifiers can’t be utilized on offcanvas components that have media query overrides. This is because above the breakpoint, the panel is technically in the _open_ state (i.e. it is not retracted/hidden off canvas, but it is displayed as part of the document flow). And in this scenario, you don’t want the page to be scroll-locked or its other Alpine components rendered inert.
-
-**Example 6:** with control button within the Alpine component – the offcanvas panel (slides in from the right, below the `sm` breakpoint (768px default)), behaves as a normal panel at and above `sm`:
-
-<div
-  x-data="{
-    windowWidth: window.innerWidth,
-    breakpoint: 768,
-    isOpen: false || window.innerWidth >= 768
-  }"
-  @resize.window.debounce="windowWidth = window.innerWidth; isOpen = windowWidth >= breakpoint"
->
-  <p class="sm:hidden">
-    <button
-      class="btn-primary"
-      @click="isOpen = true"
-      aria-label="Offcanvas example 6"
-      aria-controls="offcanvas-ex-6"
-      :aria-expanded="isOpen"
-    >Open offcanvas</button>
-  </p>
-  <div
-    class="fixed box z-index-999 sm:offcanvas-override"
-    x-show="isOpen"
-    @click="isOpen = false"
-  >
-    <div
-      id="offcanvas-ex-6"
-      aria-labelledby="offcanvas-ex-6-title"
-      x-cloak
-      x-show="isOpen"
-      x-transition:enter="transition-all-300ms"
-      x-transition:enter-start="translate-right-100%"
-      x-transition:enter-end="translate-0"
-      x-transition:leave="transition-all-300ms"
-      x-transition:leave-start="translate-0"
-      x-transition:leave-end="translate-right-100%"
-      x-trap="isOpen && width < breakpoint"
-      class="offcanvas offcanvas-right sm:offcanvas-override w-xxs sm:w-auto h-100% overflow-y bs-1 sm:b-thick p-2 bg-white"
-      @click.stop
-      @keyup.escape="isOpen = windowWidth >= breakpoint || false"
-    >
-      <div class="mb-3 sm:hidden">
-        <button
-        class="btn-icon btn-sm rounded-full"
-        aria-label="Close offcanvas panel"
-        @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
-        </button>
-      </div>
-      <div class="h3" id="offcanvas-ex-6-title">Offcanvas 6 Panel Title</div>
-      <p>This panel will behave as a normal panel at and above the <code class="b-thin">sm</code> breakpoint (768px default). And it will behave as an offcanvas panel below <code class="b-thin">sm</code>.</p>
-      <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-```html
-<div
-  x-data="{
-    windowWidth: window.innerWidth,
-    breakpoint: 768,
-    isOpen: false || window.innerWidth >= 768
-  }"
-  @resize.window.debounce="windowWidth = window.innerWidth; isOpen = windowWidth >= breakpoint"
->
-  <p class="sm:hidden">
-    <button
-      class="btn-primary mb-3"
-      @click="isOpen = true"
-      aria-label="Offcanvas example 6"
-      aria-controls="offcanvas-ex-6"
-      :aria-expanded="isOpen"
-    >Open offcanvas</button>
-  </p>
-  <div
-    class="fixed box z-index-999 sm:offcanvas-override"
-    x-show="isOpen"
-    @click="isOpen = false"
-  >
-    <div
-      id="offcanvas-ex-6"
-      aria-labelledby="offcanvas-ex-6-title"
-      x-cloak
-      x-show="isOpen"
-      x-transition:enter="transition-all-300ms"
-      x-transition:enter-start="translate-right-100%"
-      x-transition:enter-end="translate-0"
-      x-transition:leave="transition-all-300ms"
-      x-transition:leave-start="translate-0"
-      x-transition:leave-end="translate-right-100%"
-      x-trap="isOpen && width < breakpoint"
-      class="offcanvas offcanvas-right sm:offcanvas-override w-xxs sm:w-auto h-100% overflow-y bs-1 sm:b-thick p-2 bg-white"
-      @click.stop
-      @keyup.escape="isOpen = windowWidth >= breakpoint || false"
-    >
-      <div class="mb-3 sm:hidden">
-        <button
-        class="btn-icon btn-sm rounded-full"
-        aria-label="Close offcanvas panel"
-        @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
-        </button>
-      </div>
-      <div class="h3" id="offcanvas-ex-6-title">Offcanvas 6 Panel Title</div>
-      <p>This panel will behave as a normal panel at and above the <code class="b-thin">sm</code> breakpoint (768px default). And it will behave as an offcanvas panel below <code class="b-thin">sm</code>.</p>
-      <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
-```
-
-**Example 7:** with control button as a separate Alpine component – the offcanvas panel (slides in from the top, below the `md` breakpoint (1024px default)), behaves as a normal panel at and above `md`:
+**Example 6:** with control button as a separate Alpine component, and with offcanvas override. Below the `md` breakpoint (1024px default), the offcanvas panel slides in from the top. At or above `md` it behaves as a normal (on canvas) panel. And the control button and the close button are both hidden a  or above `md`:
 
 <div class="mb-6">
 <!-- The state store -->
 <script>
   document.addEventListener('alpine:init', () => {
     let windowWidth = window.innerWidth;
-    Alpine.store('offcanvasEx7', {
+    Alpine.store('offcanvasEx6', {
       isOpen: window.innerWidth >= 1024,
       isBelowBP: window.innerWidth < 1024,
       reset() {
@@ -679,15 +549,15 @@ So, in the `x-data` you want the `isOpen` state to initialize as `false` below t
 <!-- The (separate) button component -->
 <div
   x-data
-  @resize.window.debounce="$store.offcanvasEx7.reset()"
+  @resize.window.debounce="$store.offcanvasEx6.reset()"
 >
   <button
     class="btn-primary"
-    @click="$store.offcanvasEx7.isOpen = true"
-    aria-label="Offcanvas example 7"
-    aria-controls="offcanvas-ex-7"
-    :aria-expanded="$store.offcanvasEx7"
-    x-show="$store.offcanvasEx7.isBelowBP"
+    @click="$store.offcanvasEx6.isOpen = true"
+    aria-label="Offcanvas example 6"
+    aria-controls="offcanvas-ex-6"
+    :aria-expanded="$store.offcanvasEx6"
+    x-show="$store.offcanvasEx6.isBelowBP"
   >Open offcanvas</button>
 </div>
 
@@ -695,37 +565,37 @@ So, in the `x-data` you want the `isOpen` state to initialize as `false` below t
 <div
   x-data
   class="fixed box z-index-999 md:offcanvas-override"
-  x-show="$store.offcanvasEx7.isOpen"
-  @click="$store.offcanvasEx7.isOpen = false"
+  x-show="$store.offcanvasEx6.isOpen"
+  @click="$store.offcanvasEx6.isOpen = false"
 >
   <div
-    id="offcanvas-ex-7"
+    id="offcanvas-ex-6"
     aria-labelledby="offcanvas-ex-7-title"
     x-cloak
-    x-show="$store.offcanvasEx7.isOpen"
+    x-show="$store.offcanvasEx6.isOpen"
     x-transition:enter="transition-all-300ms"
     x-transition:enter-start="translate-up-100%"
     x-transition:enter-end="translate-0"
     x-transition:leave="transition-all-300ms"
     x-transition:leave-start="translate-0"
     x-transition:leave-end="translate-up-100%"
-    x-trap="$store.offcanvasEx7.isOpen && $store.offcanvasEx7.isBelowBP"
+    x-trap.noscroll.inert="$store.offcanvasEx6.isOpen && $store.offcanvasEx6.isBelowBP"
     class="offcanvas offcanvas-top md:offcanvas-override w-100% overflow-y bs-1 md:b-thick p-2 bg-white"
     @click.stop
-    @keyup.escape="$store.offcanvasEx7.isOpen = !$store.offcanvasEx7.isBelowBP || false"
+    @keyup.escape="$store.offcanvasEx6.isOpen = !$store.offcanvasEx6.isBelowBP || false"
   >
     <div
       class="mb-3 t-right"
-      x-show="$store.offcanvasEx7.isBelowBP"
+      x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
-      @click="$store.offcanvasEx7.isOpen = false">
+      @click="$store.offcanvasEx6.isOpen = false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
       </button>
     </div>
-    <div class="h3" id="offcanvas-ex-7-title">Offcanvas 7 Panel Title</div>
+    <div class="h3" id="offcanvas-ex-6-title">Offcanvas 6 Panel Title</div>
     <p>This panel will behave as a normal panel at and above the 
         <code class="b-thin">md</code> breakpoint (1024px default). 
         And it will behave as an offcanvas panel below 
@@ -746,7 +616,7 @@ So, in the `x-data` you want the `isOpen` state to initialize as `false` below t
 <script>
   document.addEventListener('alpine:init', () => {
     let windowWidth = window.innerWidth;
-    Alpine.store('offcanvasEx7', {
+    Alpine.store('offcanvasEx6', {
       isOpen: window.innerWidth >= 1024,
       isBelowBP: window.innerWidth < 1024,
       reset() {
@@ -769,15 +639,15 @@ So, in the `x-data` you want the `isOpen` state to initialize as `false` below t
 <!-- The (separate) button component -->
 <div
   x-data
-  @resize.window.debounce="$store.offcanvasEx7.reset()"
+  @resize.window.debounce="$store.offcanvasEx6.reset()"
 >
   <button
     class="btn-primary"
-    @click="$store.offcanvasEx7.isOpen = true"
-    aria-label="Offcanvas example 7"
-    aria-controls="offcanvas-ex-7"
-    :aria-expanded="$store.offcanvasEx7"
-    x-show="$store.offcanvasEx7.isBelowBP"
+    @click="$store.offcanvasEx6.isOpen = true"
+    aria-label="Offcanvas example 6"
+    aria-controls="offcanvas-ex-6"
+    :aria-expanded="$store.offcanvasEx6"
+    x-show="$store.offcanvasEx6.isBelowBP"
   >Open offcanvas</button>
 </div>
 
@@ -785,37 +655,37 @@ So, in the `x-data` you want the `isOpen` state to initialize as `false` below t
 <div
   x-data
   class="fixed box z-index-999 md:offcanvas-override"
-  x-show="$store.offcanvasEx7.isOpen"
-  @click="$store.offcanvasEx7.isOpen = false"
+  x-show="$store.offcanvasEx6.isOpen"
+  @click="$store.offcanvasEx6.isOpen = false"
 >
   <div
-    id="offcanvas-ex-7"
+    id="offcanvas-ex-6"
     aria-labelledby="offcanvas-ex-7-title"
     x-cloak
-    x-show="$store.offcanvasEx7.isOpen"
+    x-show="$store.offcanvasEx6.isOpen"
     x-transition:enter="transition-all-300ms"
     x-transition:enter-start="translate-up-100%"
     x-transition:enter-end="translate-0"
     x-transition:leave="transition-all-300ms"
     x-transition:leave-start="translate-0"
     x-transition:leave-end="translate-up-100%"
-    x-trap="$store.offcanvasEx7.isOpen && $store.offcanvasEx7.isBelowBP"
+    x-trap.noscroll.inert="$store.offcanvasEx6.isOpen && $store.offcanvasEx6.isBelowBP"
     class="offcanvas offcanvas-top md:offcanvas-override w-100% overflow-y bs-1 md:b-thick p-2 bg-white"
     @click.stop
-    @keyup.escape="$store.offcanvasEx7.isOpen = !$store.offcanvasEx7.isBelowBP || false"
+    @keyup.escape="$store.offcanvasEx6.isOpen = !$store.offcanvasEx6.isBelowBP || false"
   >
     <div
       class="mb-3 t-right"
-      x-show="$store.offcanvasEx7.isBelowBP"
+      x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
-      @click="$store.offcanvasEx7.isOpen = false">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      @click="$store.offcanvasEx6.isOpen = false">
+        <!--icon close x -->
       </button>
     </div>
-    <div class="h3" id="offcanvas-ex-7-title">Offcanvas 7 Panel Title</div>
+    <div class="h3" id="offcanvas-ex-6-title">Offcanvas 6 Panel Title</div>
     <p>This panel will behave as a normal panel at and above the 
         <code class="b-thin">md</code> breakpoint (1024px default). 
         And it will behave as an offcanvas panel below 

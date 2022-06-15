@@ -51,7 +51,7 @@
 }
 
 .lg\:offcanvas-override {
-  @include break-min(w-md) {
+  @include break-min(w-lg) {
     @include offcanvas-override;
   }
 }

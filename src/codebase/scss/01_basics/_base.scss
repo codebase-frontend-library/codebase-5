@@ -14,13 +14,9 @@
   box-sizing: border-box;
 }
 
-html {
-  min-height: 100%;
-  scroll-behavior: smooth;
-}
-
 body {
   min-height: 100%;
+  scroll-behavior: smooth;
   margin: 0;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   font-family: $font-stack-base;

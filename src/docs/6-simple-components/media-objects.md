@@ -51,18 +51,6 @@ Example with image on the right, and some other decoration:
 </div>
 </div>
 
-```html
-<div class="flex flex-row-reverse mb-3 b-thin rounded-lg p-2">
-  <a class="square rounded overflow-hidden" href="#/">
-    <img src="" width="" height="" loading="lazy" alt="">
-  </a>
-  <div class="mr-2">
-    <div class="h4 mb-0">Name or Title</div>
-    <p class="mb-0">Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. </p>
-  </div>
-</div>
-```
-
 ## Nesting media objects
 
 Media objects can easily be modified as required, and nested. For example:

@@ -493,41 +493,6 @@ Notes:
 1. The `h-max-100%` is necessary for small viewports (phones) where the panel body will be displayed as a single column. `h-max-100%` works for the _max available_ height, which also works well with iPhone Safari’s retractable browser bars.
 2. The `flex flex-column` on the panel and `grow` on the panel body enables the `overflow-y` on the panel body to scroll vertically if required for very small viewports.
 
-```html
-<!-- Modal panel -->
-<div
-  class="w-lg h-max-100% overflow-y flex flex-column m-3 b-thin rounded bg-white"
-  @click.outside="open = false"      
->
-  <!-- Panel header -->
-  <div class="bb-thin p-block">
-    <button class="btn-icon btn-sm float-right my-1 scroll-unlock" aria-label="Close modal" @click="open = false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
-    <p class="my-1 h4" id="modal-2b-title">Modal Header</p>
-  </div>
-
-  <!-- Panel body -->
-  <div class="grow overflow-y p-2 grid sm:gap sm:equal-2-cols">
-    <div>
-      ...
-    </div>
-    <div>
-      ...
-    </div>
-  </div>
-
-  <!-- Panel footer -->
-  <div class="bt-thin p-2">
-    <div class="t-right">
-      <button
-        type="button"
-        class="btn-small"
-        @click="open = false"
-      >Cancel</button>
-    </div>
-  </div>
-</div>
-```
-
 ### Panel with scrolling body
 
 Modal panels that contain (or may contain) a lot of content can break on small screen devices (phones) where their content becomes too tall for the viewport.
@@ -676,56 +641,6 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     </div>
   </div>
 </div>
-
-```html
-<div
-  x-data="{ open: false }"
-  x-id="['modal']"
-  class="relative mb-3 b-thin rounded py-2"
->
-  <div class="absolute right inline-block mr-2">
-    <button
-      type="button"
-      @click="open = true"
-      :aria-controls="$id('modal')"
-      :aria-expanded="open"
-      aria-expanded="false"
-      aria-label="Enlarge infographic"
-      class="btn-primary btn-icon btn-sm"
-    >
-      <!-- Icon maximize -->
-    </button>
-  </div>
-  <div
-    :id="$id('modal')"
-    :aria-label="$id('modal')"
-    x-trap.noscroll.inert="open"
-    :class="open ? 'fixed box z-index-999' : ''"
-    @keydown.escape.prevent.stop="open = false"
-  >
-    <div
-      :class="open ? 'box py-6 bg-white overflow-y scale-in' : 'mb-3'"
-    >
-      <button
-        type="button"
-        x-show="open"
-        class="fixed top right z-index-1 m-2 btn-sm btn-primary btn-icon"
-        @click="open = false"
-        :aria-expanded="open"
-        aria-label="close popout"
-      >
-        <!-- Icon minimize -->
-      </button>
-      <div class="container-xl">
-        <p class="t-center t-semibold" :class="open ? 'h1 mb-6' : 'h4'">Codebase popout modal demo</p>
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-**Note:** The default popout Alpine state (un-popped) still initiates as `false` even though you can see its panel content as an integral part of the page.
 
 ## Modal as a lightbox
 

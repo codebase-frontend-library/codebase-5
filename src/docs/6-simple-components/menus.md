@@ -144,10 +144,9 @@ With some other simple components inside for proof of concept.
 ```html
 <ul class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
   <li><a class="block p-block t-decoration-none t-nowrap" href="#/">Link 1</a></li>
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/">Link 2 with a badge<sup class="badge badge-warning">1</sup></a></li>
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/"><span class="label bg-success t-white t-uppercase">New</span> Link 3 with a label</a></li>
+  ...
   <li><a class="btn btn-primary btn-sm w-100% flex-start" href="#/">Link 5</a></li>
-  <li><a class="block p-block t-decoration-none" href="#/">Link 6</a></li>
+  ...
 </ul>
 ```
 

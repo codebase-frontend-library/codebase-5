@@ -1,69 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="1274.281" height="771.306" viewBox="0, 0, 1274.281, 771.306">
-  <style>
-    text {
-      font-family: Arial, sans-serif;
-    }
-  </style>
-  <path d="M97,48.003 L97,96.003 M97,48.003 L49.276,48.003 M49.276,48.003 L49.276,96.003 M49.276,96.003 L97,96.003 M49.276,96.003 L49.276,144.003 M49.276,96.003 L1.552,96.003 M1,96.003 L1,144.003 M1.552,144.003 L49.276,144.003 M97,144.003 L97,192.003 M97,144.003 L49.276,144.003 M49.276,144.003 L49.276,192.003 M49.276,192.003 L97,192.003 M49.276,192.003 L49.276,240.003 M49.276,192.003 L1.552,192.003 M1,192.003 L1,240.003 M1.552,240.003 L49.276,240.003 M96.448,240.003 L96.448,288.003 M96.448,240.003 L48.724,240.003 M48.724,240.003 L48.724,288.003 M48.724,288.003 L96.448,288.003 M48.724,288.003 L48.724,336.003 M48.724,288.003 L1,288.003 M1,288.003 L1,336.003 M1,336.003 L48.724,336.003 M841.276,48.003 L97,48.003 M841.276,192.003 L97,192.003 M841.276,336.003 L48.724,336.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
-  <text transform="matrix(5.67, 0, 0, 5.67, 167.899, 24.001)">
-    <tspan x="-29.439" y="-1.233" font-size="3.528" fill="#363636">Margin for paragraphs and headings:</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 466.668, 118.869)">
-    <tspan x="-61.188" y="6.5" font-size="21" fill="#363636">Lorem ipsum</tspan>
-  </text>
-  <path d="M865,48.003 C882.974,48.003 859.25,120.003 889.276,120.003 C859.356,120.003 882.974,192.003 865,192.003 M865,192.003 M865,192.003 C882.974,192.003 859.25,264.003 889.276,264.003 C859.356,264.003 882.974,336.003 865,336.003 M865,336.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
-  <path d="M145,432.003 L145,672.003 M49,432.003 L49,672.003 M938.224,432.003 L49,432.003 M937.276,624.003 L49,624.003 M938.224,672.003 L49,672.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
-  <text transform="matrix(5.67, 0, 0, 5.67, 158.929, 406.488)">
-    <tspan x="-27.857" y="-1.5" font-size="3.528" fill="#363636">Padding for buttons and table cells:</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 491.892, 550.869)">
-    <tspan x="-61.188" y="6.5" font-size="21" fill="#363636">Lorem ipsum</tspan>
-  </text>
-  <path d="M961,432.003 C978.974,432.003 955.25,456.003 985.276,456.003 C955.356,456.003 978.974,480.003 961,480.003 M961,480.003 M961,480.003 C978.974,480.003 955.25,552.003 985.276,552.003 C955.356,552.003 978.974,624.003 961,624.003 M961,624.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
-  <path d="M937.276,480.003 L49,480.003 M938.224,432.003 L938.224,672.003 M841,432.003 L841,672.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
-  <path d="M961,624.003 C978.974,624.003 955.25,648.003 985.276,648.003 C955.356,648.003 978.974,672.003 961,672.003 M961,672.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1052.158, 110.177)">
-    <tspan x="-24.545" y="0.5" font-size="3.528" fill="#363636">Default text line-height: 1.5rem</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1011.727, 132.857)">
-    <tspan x="-17.415" y="0.5" font-size="3.528" fill="#363636">= 3 element grid units</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1016.99, 254.177)">
-    <tspan x="-18.342" y="0.5" font-size="3.528" fill="#363636">margin-bottom: 1.5rem</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1011.727, 276.857)">
-    <tspan x="-17.415" y="0.5" font-size="3.528" fill="#363636">= 3 element grid units</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1136.63, 459.178)">
-    <tspan x="-22.513" y="0.5" font-size="3.528" fill="#363636">0.5rem = 1 element grid unit</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1136.63, 651.003)">
-    <tspan x="-22.513" y="0.5" font-size="3.528" fill="#363636">0.5rem = 1 element grid unit</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1141.631, 542.177)">
-    <tspan x="-23.395" y="0.5" font-size="3.528" fill="#363636">1.5rem = 3 element grid units</tspan>
-  </text>
-  <text transform="matrix(5.67, 0, 0, 5.67, 1067.412, 564.857)">
-    <tspan x="-10.304" y="0.5" font-size="3.528" fill="#363636">(default text)</tspan>
-  </text>
-  <path d="M937,696.003 C937,713.977 889,690.253 889,720.279 C889,690.359 841,713.977 841,696.003 M841,696.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
-  <g>
-    <text transform="matrix(5.67, 0, 0, 5.67, 891.835, 734.451)">
-      <tspan x="-4.519" y="0.5" font-size="3.528" fill="#363636">1rem </tspan>
+  <g id="Layer_1">
+    <path d="M97,48.003 L97,96.003 M97,48.003 L49.276,48.003 M49.276,48.003 L49.276,96.003 M49.276,96.003 L97,96.003 M49.276,96.003 L49.276,144.003 M49.276,96.003 L1.552,96.003 M1,96.003 L1,144.003 M1.552,144.003 L49.276,144.003 M97,144.003 L97,192.003 M97,144.003 L49.276,144.003 M49.276,144.003 L49.276,192.003 M49.276,192.003 L97,192.003 M49.276,192.003 L49.276,240.003 M49.276,192.003 L1.552,192.003 M1,192.003 L1,240.003 M1.552,240.003 L49.276,240.003 M96.448,240.003 L96.448,288.003 M96.448,240.003 L48.724,240.003 M48.724,240.003 L48.724,288.003 M48.724,288.003 L96.448,288.003 M48.724,288.003 L48.724,336.003 M48.724,288.003 L1,288.003 M1,288.003 L1,336.003 M1,336.003 L48.724,336.003 M841.276,48.003 L97,48.003 M841.276,192.003 L97,192.003 M841.276,336.003 L48.724,336.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
+    <text transform="matrix(5.67, 0, 0, 5.67, 167.84, 14.175)">
+      <tspan x="-29.429" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">Margin for paragraphs and headings:</tspan>
     </text>
-    <text transform="matrix(5.67, 0, 0, 5.67, 891.838, 757.131)">
-      <tspan x="-17.415" y="0.5" font-size="3.528" fill="#363636">= 2 element grid units</tspan>
+    <text transform="matrix(5.67, 0, 0, 5.67, 466.667, 118.869)">
+      <tspan x="-61.188" y="6.5" font-family="ArialMT" font-size="21" fill="#363636">Lorem ipsum</tspan>
     </text>
-  </g>
-  <path d="M145,696.003 C145,713.977 97,690.253 97,720.279 C97,690.359 49,713.977 49,696.003 M49,696.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
-  <g>
-    <text transform="matrix(5.67, 0, 0, 5.67, 99.835, 734.451)">
-      <tspan x="-4.519" y="0.5" font-size="3.528" fill="#363636">1rem </tspan>
+    <path d="M865,48.003 C882.974,48.003 859.25,120.003 889.276,120.003 C859.356,120.003 882.974,192.003 865,192.003 M865,192.003 M865,192.003 C882.974,192.003 859.25,264.003 889.276,264.003 C859.356,264.003 882.974,336.003 865,336.003 M865,336.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
+    <path d="M145,432.003 L145,672.003 M49,432.003 L49,672.003 M938.224,432.003 L49,432.003 M937.276,624.003 L49,624.003 M938.224,672.003 L49,672.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
+    <text transform="matrix(5.67, 0, 0, 5.67, 160.06, 395.148)">
+      <tspan x="-28.056" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">Padding for buttons and table cells:</tspan>
     </text>
-    <text transform="matrix(5.67, 0, 0, 5.67, 99.838, 757.131)">
-      <tspan x="-17.415" y="0.5" font-size="3.528" fill="#363636">= 2 element grid units</tspan>
+    <text transform="matrix(5.67, 0, 0, 5.67, 491.891, 550.869)">
+      <tspan x="-61.188" y="6.5" font-family="ArialMT" font-size="21" fill="#363636">Lorem ipsum</tspan>
     </text>
+    <path d="M961,432.003 C978.974,432.003 955.25,456.003 985.276,456.003 C955.356,456.003 978.974,480.003 961,480.003 M961,480.003 M961,480.003 C978.974,480.003 955.25,552.003 985.276,552.003 C955.356,552.003 978.974,624.003 961,624.003 M961,624.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
+    <path d="M937.276,480.003 L49,480.003 M938.224,432.003 L938.224,672.003 M841,432.003 L841,672.003" fill-opacity="0" stroke="#363636" stroke-width="1.562" stroke-dasharray="4.684,4.684"/>
+    <path d="M961,624.003 C978.974,624.003 955.25,648.003 985.276,648.003 C955.356,648.003 978.974,672.003 961,672.003 M961,672.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1052.03, 110.177)">
+      <tspan x="-24.522" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">Default text line-height: 1.5rem</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1011.726, 132.857)">
+      <tspan x="-17.415" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">= 3 element grid units</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1016.992, 254.177)">
+      <tspan x="-18.342" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">margin-bottom: 1.5rem</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1011.726, 276.857)">
+      <tspan x="-17.415" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">= 3 element grid units</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1136.63, 459.178)">
+      <tspan x="-22.513" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">0.5rem = 1 element grid unit</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1136.63, 651.003)">
+      <tspan x="-22.513" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">0.5rem = 1 element grid unit</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1141.631, 542.177)">
+      <tspan x="-23.395" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">1.5rem = 3 element grid units</tspan>
+    </text>
+    <text transform="matrix(5.67, 0, 0, 5.67, 1067.415, 564.857)">
+      <tspan x="-10.304" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">(default text)</tspan>
+    </text>
+    <path d="M937,696.003 C937,713.977 889,690.253 889,720.279 C889,690.359 841,713.977 841,696.003 M841,696.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
+    <g>
+      <text transform="matrix(5.67, 0, 0, 5.67, 891.835, 734.451)">
+        <tspan x="-4.519" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">1rem </tspan>
+      </text>
+      <text transform="matrix(5.67, 0, 0, 5.67, 891.837, 757.131)">
+        <tspan x="-17.415" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">= 2 element grid units</tspan>
+      </text>
+    </g>
+    <path d="M145,696.003 C145,713.977 97,690.253 97,720.279 C97,690.359 49,713.977 49,696.003 M49,696.003" fill-opacity="0" stroke="#363636" stroke-width="2"/>
+    <g>
+      <text transform="matrix(5.67, 0, 0, 5.67, 99.835, 734.451)">
+        <tspan x="-4.519" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">1rem </tspan>
+      </text>
+      <text transform="matrix(5.67, 0, 0, 5.67, 99.837, 757.131)">
+        <tspan x="-17.415" y="0.5" font-family="ArialMT" font-size="3.528" fill="#363636">= 2 element grid units</tspan>
+      </text>
+    </g>
   </g>
 </svg>

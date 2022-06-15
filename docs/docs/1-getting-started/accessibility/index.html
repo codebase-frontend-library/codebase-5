@@ -8,7 +8,7 @@
   <title>Accessibility - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.5" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.6" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -80,6 +80,10 @@
       #site-navigation > div {
         top: 57px;
         max-height: calc(100vh - 57px);
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+      #site-navigation:hover > div {
         overflow-y: auto;
       }
     }
@@ -260,7 +264,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.5">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.6">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -315,7 +319,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.5">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.6">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -536,12 +540,23 @@
   <main class="col-1 sm:col-2">
     <div class="container-sm">
       <p>Numerous accessibility improvements have been made to Codebase since version 4.</p>
-<p>The three main improvements for accessability in Codebase are:</p>
+<p>The four main improvements for accessability in Codebase are:</p>
 <ol>
+<li>Default font size is <code>100%</code></li>
 <li>Accessible UI colors</li>
 <li>Focus ring styling</li>
 <li>AlpineJS powered components have been refactored</li>
 </ol>
+<h2 id="default-font-size" tabindex="-1">Default font size</h2>
+<p>For improved accessibility, since v.5.0.6 Codebase defaults to <code>font-size: 100%</code> on the <code>&lt;body&gt;</code> element. This font size defaults to 16px in most web browsers (in 2022).</p>
+<pre class="language-scss"><code class="language-scss"><span class="token comment">// In: 00_setup/_default-variables.scss</span><br><span class="token property"><span class="token variable">$text-font-size</span></span><span class="token punctuation">:</span> 100% <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><br><span class="token comment">// In: 01_basics/_base.scss</span><br><span class="token selector">body </span><span class="token punctuation">{</span><br>  ...<br>  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">$text-font-size</span><span class="token punctuation">;</span><br>  ...<br><span class="token punctuation">}</span></code></pre>
+<p>The advantage of <em>not setting a default font size in px</em> is that it allows your website to be scaled to the <em>user’s</em> chosen default font size – some people with sight impairments may increase their default font size in their browser settings. You don’t want to prevent that from happening by setting your font size in px.</p>
+<p>For more information, see:</p>
+<ul>
+<li>W3Schools, <a href="https://www.w3schools.com/accessibility/accessibility_text_size.php">https://www.w3schools.com/accessibility/accessibility_text_size.php</a></li>
+<li>Matej Latin’s <a href="https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/">The State of Fluid Web Typography</a>.</li>
+<li>Craig Abbot, <a href="https://www.craigabbott.co.uk/blog/accessibility-and-font-sizes">Accessibility and Font Sizes</a></li>
+</ul>
 <h2 id="accessible-ui-colors" tabindex="-1">Accessible UI colors</h2>
 <p>Colored UI components are those most commonly expected worldwide, as used on signage and user interfaces:</p>
 <ul>
@@ -684,7 +699,7 @@ t-center">warning<br>#c25703<br>4.51:1</span>
     </a>
   </p>
   
-  <p>Version 5.0.5 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.6 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 
