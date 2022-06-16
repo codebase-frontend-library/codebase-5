@@ -3525,7 +3525,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-0 {
@@ -3597,7 +3597,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-1 {
@@ -3669,7 +3669,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-2 {
@@ -3741,7 +3741,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-3 {
@@ -3813,7 +3813,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-4 {
@@ -3885,7 +3885,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-5 {
@@ -3957,7 +3957,7 @@ img, picture, video, canvas, svg {
   }
 
   .xs\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .xs\:p-6 {
@@ -4130,7 +4130,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-0 {
@@ -4202,7 +4202,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-1 {
@@ -4274,7 +4274,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-2 {
@@ -4346,7 +4346,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-3 {
@@ -4418,7 +4418,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-4 {
@@ -4490,7 +4490,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-5 {
@@ -4562,7 +4562,7 @@ img, picture, video, canvas, svg {
   }
 
   .sm\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .sm\:p-6 {
@@ -4735,7 +4735,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-0 {
@@ -4807,7 +4807,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-1 {
@@ -4879,7 +4879,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-2 {
@@ -4951,7 +4951,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-3 {
@@ -5023,7 +5023,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-4 {
@@ -5095,7 +5095,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-5 {
@@ -5167,7 +5167,7 @@ img, picture, video, canvas, svg {
   }
 
   .md\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .md\:p-6 {
@@ -5340,7 +5340,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-0 {
@@ -5412,7 +5412,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-1 {
@@ -5484,7 +5484,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-2 {
@@ -5556,7 +5556,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-3 {
@@ -5628,7 +5628,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-4 {
@@ -5700,7 +5700,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-5 {
@@ -5772,7 +5772,7 @@ img, picture, video, canvas, svg {
   }
 
   .lg\:mx-auto {
-    margin-block: auto;
+    margin-inline: auto;
   }
 
   .lg\:p-6 {

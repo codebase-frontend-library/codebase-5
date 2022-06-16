@@ -62,7 +62,7 @@
         .#{$mq-key}\:mx-#{$key} { margin-inline: $val;}
         .#{$mq-key}\:mr-auto { margin-right: auto; }
         .#{$mq-key}\:ml-auto { margin-left: auto; }
-        .#{$mq-key}\:mx-auto { margin-block: auto; }
+        .#{$mq-key}\:mx-auto { margin-inline: auto; }
 
         .#{$mq-key}\:p-#{$key} { padding: $val; }
         .#{$mq-key}\:pt-#{$key} { padding-top: $val; }
