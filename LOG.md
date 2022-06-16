@@ -10,7 +10,8 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 * x-axis and y-axis margin utilities (`mx-` and `my-`) now use `margin-inline` and `margin-block`. Similar for paddings.
 * Improved system font stacks, based on https://systemfontstack.com.
 * Hover states for box shadows.
-* Added posiiton utilities `z-index-997` and `z-index-998` fir better handling of offcanvas, modals, etc..
+* Added posiiton utilities `z-index-997` and `z-index-998` fir better handling of offcanvas, modals, etc.
+* Set long-read `clamp()` to max at 1.25rem size.
 * Other minor fixes.
 * Some corrections and improvements in the docs.
 

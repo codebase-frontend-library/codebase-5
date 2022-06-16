@@ -194,7 +194,7 @@ big,
     line-height: inherit;
   }
   .t-long-read {
-    font-size: clamp(1em, calc(0.625em + 1vw), 1.35em);
+    font-size: $text-long-read-clamp;
   }
 }
 

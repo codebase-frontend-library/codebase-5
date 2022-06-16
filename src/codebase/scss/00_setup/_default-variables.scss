@@ -259,6 +259,7 @@ $text-bold-font-weight:             700 !default;
 $text-bolder-font-weight:           900 !default;
 $text-columns-gap-width:            clamp(#{$elem * 3rem}, 2.5vw, #{$elem * 5rem}) !default;
 $text-columns-width:                17.5em !default;
+$text-long-read-clamp:              clamp(1em, calc(0.5em + 1vw), 1.25em) !default;
 
 $link-decoration:                   underline !default;
 $link-color-visited:                false !default;

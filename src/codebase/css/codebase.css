@@ -8091,7 +8091,7 @@ big h6, big .h6,
   }
 
   .t-long-read {
-    font-size: clamp(1em, 0.625em + 1vw, 1.35em);
+    font-size: clamp(1em, 0.5em + 1vw, 1.25em);
   }
 }
 big,
