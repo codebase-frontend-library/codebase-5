@@ -36,7 +36,7 @@ textarea {
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem map-get($theme-color, form-focus);
+    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
   }
 }
 [placeholder] {
@@ -163,7 +163,7 @@ textarea {
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem map-get($theme-color, form-focus);
+    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
   }
 
   @if $button-rounded-corners == true {

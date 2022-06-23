@@ -325,11 +325,11 @@ a:hover, a:active,
 
 .t-hyperlink:-moz-focusring {
   outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #3d7ef0;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
 }
 .t-hyperlink:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #3d7ef0;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
 }
 
 table {
@@ -390,7 +390,7 @@ select:focus,
 textarea:focus {
   z-index: 1;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem #92b7f7;
+  box-shadow: 0 0 0 0.1875rem #92b7f7;
 }
 
 [placeholder] {
@@ -547,7 +547,7 @@ button:focus,
 .btn:focus {
   z-index: 1;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem #92b7f7;
+  box-shadow: 0 0 0 0.1875rem #92b7f7;
 }
 button.block,
 [type=button].block,

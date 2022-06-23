@@ -105,7 +105,6 @@ $theme-color: map-merge((
   "detail":                  transparentize(#000000, .88), // mix(white, map-get($named-color, -gray), 54),
   "default":                 map-get($named-color, -gray),
   "text":                    mix(black, map-get($named-color, -gray), 72),
-  "focus-ring":              mix(white, map-get($named-color, -blue), 18),
   "form-focus":              mix(white, map-get($named-color, -blue), 54),
   "link":                    map-get($named-color, -blue),
   "link-hover":              mix(black, map-get($named-color, -blue), 36),
@@ -169,6 +168,7 @@ $borders: (
 );
 
 $detail-thickness:              0.0625rem; // 1px but must be in rem
+$form-focus-ring-thickness:     0.1875rem;
 
 $border-thin:                   $detail-thickness;
 $border-thick:                  $elem * .5rem;
