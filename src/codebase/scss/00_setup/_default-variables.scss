@@ -106,6 +106,7 @@ $theme-color: map-merge((
   "default":                 map-get($named-color, -gray),
   "text":                    mix(black, map-get($named-color, -gray), 72),
   "focus-ring":              mix(white, map-get($named-color, -blue), 18),
+  "form-focus":              mix(white, map-get($named-color, -blue), 54),
   "link":                    map-get($named-color, -blue),
   "link-hover":              mix(black, map-get($named-color, -blue), 36),
   "link-visited":            mix(black, map-get($named-color, -purple), 18),

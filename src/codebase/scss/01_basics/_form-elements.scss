@@ -35,6 +35,8 @@ textarea {
   transition: all 0.15s ease-in-out;
   &:focus {
     z-index: 1;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem map-get($theme-color, form-focus);
   }
 }
 [placeholder] {
@@ -84,10 +86,16 @@ select {
 
 input[type="radio"],
 input[type="checkbox"] {
+  position: relative;
   display: inline-block;
   width: unset;
   height: unset;
   line-height: 1;
+  &:focus {
+    z-index: 1;
+    outline: 0;
+    box-shadow: 0 0 0 0.25 map-get($theme-color, form-focus);
+  }
 }
 
 input[type="radio"] {
@@ -154,6 +162,8 @@ textarea {
   }
   &:focus {
     z-index: 1;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem map-get($theme-color, form-focus);
   }
 
   @if $button-rounded-corners == true {

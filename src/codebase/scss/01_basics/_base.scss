@@ -68,14 +68,20 @@ sup {
   box-shadow: none;
 }
 
-:focus-visible {
-  outline: none;
-  box-shadow: $focus-ring;
-}
+// :focus-visible {
+//   outline: none;
+//   box-shadow: $focus-ring;
+// }
 
-a:not(.btn):focus-visible {
-  outline-color: currentColor;
+// a:not(.btn):focus-visible {
+//   outline-color: currentColor;
+//   outline-offset: 2px;
+// }
+
+:focus-visible {
+  outline-width: 2px;
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff; // helpful over a dark background
 }
 
 small {

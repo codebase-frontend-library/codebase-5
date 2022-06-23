@@ -76,23 +76,10 @@ While other CSS frameworks (such as [Bootstrap](https://getbootstrap.com/docs/5.
 
 Interactive elements require a visual indicator that to lake them obvious for sighted keyboard users, who use “tabbing” to get around the webpage’s [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) (a.k.a. tab index). 
 
-In Codebase, focus ring styling has been improved for links, buttons, form inputs, etc. The default focus ring in various web browsers is different – examples include a 1px dotted black outline, a thicker gray outline, or a pale blue blurred outline. In Codebase, these have all been replaced by a solid (unblurred) _double_ box-shadow applied to `:focus`: a 2px white shadow surrounded by a 2px black shadow. That way, one and/or the other box shadow is visible over both light and dark backgrounds.
+In Codebase, focus ring styling has been improved for links, buttons, form inputs, etc. Seeing that Chrome, Edge, Firefox, and Safari all now have a similar-looking default focus ring, since v.5.0.7 Codebase improves upon this as follows:
 
-```scss
-:focus-visible {
-  outline: none;
-  box-shadow: $focus-ring;
-}
-
-a:not(.btn):focus-visible {
-  outline-color: currentColor;
-  outline-offset: 2px;
-}
-```
-
-`:focus-visible` has been available in most web browsers since 2018 (Safari is a notable exception). Browsers that don’t implement `:focus-visible` will still use their built-in focus ring styles.)
-
-In addition, Codebase UI colored buttons with `:focus-visible` will receive the same color change as happens with their `:hover` state.
+* `:focus-visible` focus rings on links are now the _default gray outline_, offset by 2px, with a solid white 2px box-shadow inside the offset (this improves focus ring visibility over dark backgrounds).
+* `:focus` focus rings on form elements and buttons (including styled `.btn` pseudo-buttons) have a 0.25rem light blue box shadow.
 
 ## AlpineJS powered components
 

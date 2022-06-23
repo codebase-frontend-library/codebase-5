@@ -63,13 +63,9 @@ sup {
 }
 
 :focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #3d7ef0;
-}
-
-a:not(.btn):focus-visible {
-  outline-color: currentColor;
+  outline-width: 2px;
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
 }
 
 small {
@@ -393,6 +389,8 @@ input:focus,
 select:focus,
 textarea:focus {
   z-index: 1;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #92b7f7;
 }
 
 [placeholder] {
@@ -444,10 +442,17 @@ select {
 
 input[type=radio],
 input[type=checkbox] {
+  position: relative;
   display: inline-block;
   width: unset;
   height: unset;
   line-height: 1;
+}
+input[type=radio]:focus,
+input[type=checkbox]:focus {
+  z-index: 1;
+  outline: 0;
+  box-shadow: 0 0 0 0.25 #92b7f7;
 }
 
 input[type=radio] {
@@ -541,6 +546,8 @@ button:focus,
 [type=reset]:focus,
 .btn:focus {
   z-index: 1;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #92b7f7;
 }
 button.block,
 [type=button].block,
@@ -8521,7 +8528,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.0.6
+ * v.5.0.7
  */
 
 /*# sourceMappingURL=codebase.css.map */
