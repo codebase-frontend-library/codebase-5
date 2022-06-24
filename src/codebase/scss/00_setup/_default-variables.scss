@@ -102,7 +102,7 @@ $theme-color: () !default;
 $theme-color: map-merge((
   "page-bg":                 #ffffff,
   "page-bg-alt":             mix(white, map-get($named-color, -gray), 90),
-  "detail":                  transparentize(#000000, .88), // mix(white, map-get($named-color, -gray), 54),
+  "detail":                  transparentize(#000000, .85), // mix(white, map-get($named-color, -gray), 54),
   "default":                 map-get($named-color, -gray),
   "text":                    mix(black, map-get($named-color, -gray), 72),
   "form-focus":              mix(white, map-get($named-color, -blue), 54),
@@ -175,7 +175,7 @@ $border-thick:                  $elem * .5rem;
 $border-heavy:                  $elem * 1rem;
 
 // Border radius (rounded corners)
-$border-radius-sm:              $elem * .5rem; // will be used for UI elements (default)
+$border-radius-sm:              $elem * .5rem; // will be used for form and button elements (default)
 $border-radius:                 $elem * 1rem;
 $border-radius-lg:              $elem * 2rem;
 $border-radius-pill:            10em;

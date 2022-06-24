@@ -1,6 +1,13 @@
 // UTILITIES: BOX SHADOWS
 // ~~~~~~~~~~~~~~~~~~~~~~
 
+@use "../00_setup/default-variables" as *;
+
+.bs-0 {
+  box-shadow: none;
+}
+// see responsive bs-0 below
+
 .bs-1,
 .hover\:bs-1:hover {
   transition: box-shadow 0.6s ease-in-out;
@@ -49,4 +56,20 @@
   0 12px 48px rgba(0,0,0,.075),
   // spread
   0 24px 84px rgba(0,0,0,.075);
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
+    .#{$mq-key}\:bs-0 {
+      box-shadow: none;
+    }
+  }
+}
+
+@each $mq-key, $mq-value in $mq-width {
+  @include break-max(#{$mq-value}) {
+    .#{$mq-key}\:bs-0-below {
+      box-shadow: none;
+    }
+  }
 }

@@ -74,3 +74,22 @@ Since v.5.0.6 Codebase has hover states for each of the 5 levels of box shadows.
     </div>
   </div>
 </div>
+
+## Removing box shadows
+
+Codebase has the CSS class `bs-0` that can be added programmatically (e.g. by [AlpineJS](https://alpinejs.dev)) to remove box shadows under various conditions). Similarly, any of the box shadows above can be progamatically added under various conditions.
+
+Since v.5.0.7 Codebase also has responsive box shadow removal. Sometimes you want to remove box shadow at a box shadow on a box below or above a breakpoint (`xs`, `sm`, `md`, or `lg`). 
+
+**Example 1:** you may have an offcanvas sidebar (requiring a box shadow) on small screens that becomes a normal on-canvas panel (requiring no box shadow) for medium screens up.
+
+<div class="w-xs mx-auto mb-3 bs-2 md:bs-0 b-thin p-2">
+  bs-2 md:bs-0
+</div>
+
+**Example 2:**  you may have a box that is part of the page (or part of an offcanvas sidebar) for small screens, but the box becomes a dropdown panel (requiring a box shadow) for medium screens up.
+
+<div class="w-xs mx-auto bs-2 md:bs-0-below b-thin p-2">
+  bs-2 md:bs-0-below
+</div>
+

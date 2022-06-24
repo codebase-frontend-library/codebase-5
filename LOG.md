@@ -8,6 +8,7 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 * For improved keyboard-user accessibility, `:focus-visible` focus rings on links are now the default user-agent stylesheet gray offset, with a white box-shadow inside the offset (for inproved visibility over dark backgrounds)
 * For improved keyboard-user accessibility, `:focus-visible` focus rings on form elements and `.btn` buttons a 0.25rem light blue box shadow.
+* Capability to remove box shadows above or below a media query breakpoint.
 
 ## 15 Jun 2022 v.5.0.6
 
@@ -15,7 +16,7 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 * x-axis and y-axis margin utilities (`mx-` and `my-`) now use `margin-inline` and `margin-block`. Similar for paddings.
 * Improved system font stacks, based on https://systemfontstack.com.
 * Hover states for box shadows.
-* Added posiiton utilities `z-index-997` and `z-index-998` fir better handling of offcanvas, modals, etc.
+* Added posiiton utilities `z-index-997` and `z-index-998` for better handling of offcanvas, modals, etc.
 * Set long-read `clamp()` to max at 1.25rem size.
 * Other minor fixes.
 * Some corrections and improvements in the docs.

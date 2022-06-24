@@ -68,16 +68,6 @@ sup {
   box-shadow: none;
 }
 
-// :focus-visible {
-//   outline: none;
-//   box-shadow: $focus-ring;
-// }
-
-// a:not(.btn):focus-visible {
-//   outline-color: currentColor;
-//   outline-offset: 2px;
-// }
-
 :focus-visible {
   outline-width: 2px;
   outline-offset: 2px;
@@ -139,10 +129,6 @@ select {
 
 fieldset {
   padding: 0.35em 0.75em 0.625em;
-}
-
-legend {
-  padding: 0;
 }
 
 img {

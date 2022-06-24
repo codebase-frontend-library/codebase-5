@@ -611,6 +611,8 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
 </div>
 </div>
 
+**Note:** the `offcanvas-override` class is required on both the outer (component) `<div>` and the moving part (offcanvas panel) `<div>`.
+
 ```html
 <!-- The state store -->
 <script>
