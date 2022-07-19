@@ -537,6 +537,13 @@
     </div>
   </nav>
 
+  <style>
+    @media (min-width: 1280px) {
+      main {
+        max-width: calc(100vw - 512px);
+      }
+    }
+  </style>
   <main class="col-1 sm:col-2">
     <div class="container-sm">
       <p>Sonce Codebase v5.0.7, <code>container</code> classes work in a different way to containers in other CSS frameworks (e.g. Bootstrap), in that <em>no x-axis padding</em> is used to inset the content away from the viewport (or wrapping block) sides. Instead, container widths are set by a modern CSS <code>min()</code> function, so that they are either <code>100% - 2rem</code> (default), or the set width (default).</p>

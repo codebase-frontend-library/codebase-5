@@ -537,6 +537,13 @@
     </div>
   </nav>
 
+  <style>
+    @media (min-width: 1280px) {
+      main {
+        max-width: calc(100vw - 512px);
+      }
+    }
+  </style>
   <main class="col-1 sm:col-2">
     <div class="container-sm">
       <p>Codebase’s offcanvas panels can slide in from any side of the viewport (top, right, bottom, or left). They can be dismissed by a close button and/or by clicking outside. Their control button can be within the Alpine component, or in a separate component. Also, offcanvas panels can be overridden, so that they become like a normal (on-canvas) panel within the document flow above a breakpoint of your choice.</p>

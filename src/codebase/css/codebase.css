@@ -987,6 +987,7 @@ img, picture, video, canvas, svg {
   width: min(100% - 2rem, 1792px);
   margin-inline: auto;
 }
+
 .container-xxl {
   width: min(100% - 2rem, 1792px);
   margin-inline: auto;
