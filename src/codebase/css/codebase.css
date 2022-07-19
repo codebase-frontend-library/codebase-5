@@ -984,31 +984,31 @@ img, picture, video, canvas, svg {
 }
 
 .container {
-  width: min(100% - 1rem, 1792px);
+  width: min(100% - 2rem, 1792px);
   margin-inline: auto;
 }
 .container-xxl {
-  width: min(100% - 1rem, 1792px);
+  width: min(100% - 2rem, 1792px);
   margin-inline: auto;
 }
 .container-xl {
-  width: min(100% - 1rem, 1536px);
+  width: min(100% - 2rem, 1536px);
   margin-inline: auto;
 }
 .container-lg {
-  width: min(100% - 1rem, 1280px);
+  width: min(100% - 2rem, 1280px);
   margin-inline: auto;
 }
 .container-md {
-  width: min(100% - 1rem, 1024px);
+  width: min(100% - 2rem, 1024px);
   margin-inline: auto;
 }
 .container-sm {
-  width: min(100% - 1rem, 768px);
+  width: min(100% - 2rem, 768px);
   margin-inline: auto;
 }
 .container-xs {
-  width: min(100% - 1rem, 512px);
+  width: min(100% - 2rem, 512px);
   margin-inline: auto;
 }
 
