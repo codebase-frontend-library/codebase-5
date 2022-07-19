@@ -161,11 +161,35 @@ blockquote {
   font-size: $blockquotes-font-size;
 }
 
-a,
-.t-hyperlink {
+.t-link-inside {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.t-link-inside:hover .t-link {
+  color: inherit;
+}
+
+.t-link {
+  &:-moz-focusring {
+    outline-width: 2px;
+    outline-offset: 2px;
+    box-shadow: $focus-ring;
+  }
+  &:focus-visible {
+    outline-width: 2px;
+    outline-offset: 2px;
+    box-shadow: $focus-ring;
+  }
+}
+
+.t-link,
+a {
   text-decoration: $link-decoration;
   text-decoration-skip-ink: auto;
   color: map-get($theme-color, link);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
   &:hover,
   &:active {
     color: map-get($theme-color, link-hover);
@@ -174,17 +198,6 @@ a,
     &:visited {
       color: map-get($theme-color, link-visited);
     }
-  }
-}
-
-.t-hyperlink {
-  &:-moz-focusring {
-    outline: none;
-    box-shadow: $focus-ring;
-  }
-  &:focus-visible {
-    outline: none;
-    box-shadow: $focus-ring;
   }
 }
 

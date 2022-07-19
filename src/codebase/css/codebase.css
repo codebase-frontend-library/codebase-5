@@ -65,7 +65,7 @@ sup {
 :focus-visible {
   outline-width: 2px;
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fff;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
 }
 
 small {
@@ -307,25 +307,38 @@ blockquote {
   font-size: 100%;
 }
 
-a,
-.t-hyperlink {
+.t-link-inside {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.t-link-inside:hover .t-link {
+  color: inherit;
+}
+
+.t-link:-moz-focusring {
+  outline-width: 2px;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
+}
+.t-link:focus-visible {
+  outline-width: 2px;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
+}
+
+.t-link,
+a {
   text-decoration: underline;
   text-decoration-skip-ink: auto;
   color: #1262ed;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
-a:hover, a:active,
-.t-hyperlink:hover,
-.t-hyperlink:active {
+.t-link:hover, .t-link:active,
+a:hover,
+a:active {
   color: #0c3f98;
-}
-
-.t-hyperlink:-moz-focusring {
-  outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
-}
-.t-hyperlink:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px;
 }
 
 table {
@@ -970,35 +983,33 @@ img, picture, video, canvas, svg {
   }
 }
 
-[class*=container] {
-  display: block;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-[class*=container] [class*=container] {
-  padding-inline: 0;
-}
-
 .container {
-  width: min(100%, 1792px);
+  width: min(100% - 1rem, 1792px);
+  margin-inline: auto;
 }
 .container-xxl {
-  width: min(100%, 1792px);
+  width: min(100% - 1rem, 1792px);
+  margin-inline: auto;
 }
 .container-xl {
-  width: min(100%, 1536px);
+  width: min(100% - 1rem, 1536px);
+  margin-inline: auto;
 }
 .container-lg {
-  width: min(100%, 1280px);
+  width: min(100% - 1rem, 1280px);
+  margin-inline: auto;
 }
 .container-md {
-  width: min(100%, 1024px);
+  width: min(100% - 1rem, 1024px);
+  margin-inline: auto;
 }
 .container-sm {
-  width: min(100%, 768px);
+  width: min(100% - 1rem, 768px);
+  margin-inline: auto;
 }
 .container-xs {
-  width: min(100%, 512px);
+  width: min(100% - 1rem, 512px);
+  margin-inline: auto;
 }
 
 .x-bleed {
@@ -5973,31 +5984,31 @@ img, picture, video, canvas, svg {
 
 .bs-1,
 .hover\:bs-1:hover {
-  transition: box-shadow 0.6s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .bs-2,
 .hover\:bs-2:hover {
-  transition: box-shadow 0.6s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
 .bs-3,
 .hover\:bs-3:hover {
-  transition: box-shadow 0.6s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 48px rgba(0, 0, 0, 0.1);
 }
 
 .bs-4,
 .hover\:bs-4:hover {
-  transition: box-shadow 0.6s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 16px 60px rgba(0, 0, 0, 0.1);
 }
 
 .bs-5,
 .hover\:bs-5:hover {
-  transition: box-shadow 0.6s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.075), 0 24px 84px rgba(0, 0, 0, 0.075);
 }
 
@@ -6043,31 +6054,26 @@ img, picture, video, canvas, svg {
 }
 .block {
   display: block;
-  width: 100%;
 }
 
 @media (min-width: 512px) {
   .xs\:block {
     display: block;
-    width: 100%;
   }
 }
 @media (min-width: 768px) {
   .sm\:block {
     display: block;
-    width: 100%;
   }
 }
 @media (min-width: 1024px) {
   .md\:block {
     display: block;
-    width: 100%;
   }
 }
 @media (min-width: 1280px) {
   .lg\:block {
     display: block;
-    width: 100%;
   }
 }
 .inline-block {
@@ -8568,7 +8574,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.0.7
+ * v.5.0.8
  */
 
 /*# sourceMappingURL=codebase.css.map */

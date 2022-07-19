@@ -497,7 +497,7 @@ Notes:
 
 Modal panels that contain (or may contain) a lot of content can break on small screen devices (phones) where their content becomes too tall for the viewport.
 
-**Modal example 2c** – tall panel without “click outside to dismiss”:
+**Modal example 2c** – tall panel _without “click outside to dismiss”_:
 
 <div
   x-data="{ open: false, rows: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}"
@@ -525,7 +525,6 @@ Modal panels that contain (or may contain) a lot of content can break on small s
   >
     <div
       class="w-xs h-max-100% flex flex-column m-3 b-thin rounded bg-white"
-      @click.outside="open = false"      
     >
       <div class="bb-thin p-block">
         <button type="button" class="float-right my-1 btn-sm" @click="open = false">Dismiss</button>

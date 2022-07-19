@@ -11,10 +11,10 @@ Responsive design in Codebase is accomplished by [containers](/docs/3-layout-uti
 
 ## Layouts
 
-Layouts in Codebase follow the familiar responsive “from small screens up” design methodology. For controlling layouts on increasingly wider viewports, Codebase has various containers and max-width wrappers:
+Layouts in Codebase follow the familiar responsive “from small screens up” design methodology. For controlling layouts on increasingly wider viewports, Codebase has several containers and max-width wrappers:
 
-* [Containers]({{ '/docs/3-layout-utilities/containers' | url }}) have a max-width, some x-axis padding (for keeping container content away from the sides of screens, thereby preventing legibility problems), and x-axis margin-auto-centering.
-* Codebase also has [max-width wrappers]({{ '/docs/3-layout-utilities/dimensions/#max-widths' | url }}) that are similmar to the containers above, but without the x-axis padding and margin-auto-cenering.
+* [Containers]({{ '/docs/3-layout-utilities/containers' | url }}) have a max-width that will be  either 2rem less than 100%, or a set max width (in the defaults), thereby preventing legibility problems), and x-axis margin-auto-centering.
+* Codebase also has [max-width wrappers]({{ '/docs/3-layout-utilities/dimensions/#max-widths' | url }}) that simply have set max widths.
 
 ## Widths and breakpoint tiers
 

@@ -8,13 +8,13 @@ prevLink: "Media"
 nextLink: "Blocks"
 ---
 
-The CodebaseCSS `container` class works the same way as in other CSS frameworks (e.g. Bootstrap), using x-axis `margin: auto` centering, and x-axis padding to improve legibility of content against screen sides right and left.
+Sonce Codebase v5.0.7, `container` classes work in a different way to containers in other CSS frameworks (e.g. Bootstrap), in that _no x-axis padding_ is used to inset the content away from the viewport (or wrapping block) sides. Instead, container widths are set by a modern CSS `min()` function, so that they are either `100% - 2rem` (default), or the set width (default).
 
-In addition, CodebaseCSS containers have several variable width modifiers, for easily setting up narrower centered layouts for e.g. blog posts.
+Plus, also unlike other frameworks, Codebase containers have several set width modifiers, for different use cases. For example, use `container-xs` for modals, `container-sm` for centered blog layouts, and others as you need for wider and multi-column layouts.
 
 ## Containers at different max-widths
 
-CodebaseCSS’s (max) widths are set at **256px increments** – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px &times; 768px). Containers are first set to `width: 100%` and then constrained these max-widths.
+Codebase’s (max) set widths are set at **256px increments** – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px &times; 768px). Containers are first set to `width: 100%` and then constrained these max-widths.
 
 The default `container` behaves the same as `container-xxl`.
 
@@ -98,22 +98,15 @@ On medium screens up, you can expand the following demo:
       <p class="t-center" :class="open ? 'h1 mb-6' : 'h4'">
         Codebase containers demo
       </p>
-      <style>
-        .container-demo {
-          padding-inline: 1rem !important;
-        }
-      </style>
-      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
-      <div class="container-xl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
-      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
-      <div class="container-md container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-md</code></div></div>
-      <div class="container-sm container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
-      <div class="container-xs container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xs</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xxl b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xl b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-lg b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-md b-thin b-blue-500 py-1"><code>container-md</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-sm b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xs b-thin b-blue-500 py-1"><code>container-xs</code></div></div>
     </div>
   </div>
 </div>
-
-**Note:** the demo containers above are nested in this page’s container based layout. Therefore, ordinarily they have their x-axis paddings removed. But for demonstration purposes here, these have been added back in.
 
 ```html
 <div class="container-xxl">

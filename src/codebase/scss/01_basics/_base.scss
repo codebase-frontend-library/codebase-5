@@ -71,7 +71,7 @@ sup {
 :focus-visible {
   outline-width: 2px;
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fff; // helpful over a dark background
+  box-shadow: $focus-ring;
 }
 
 small {

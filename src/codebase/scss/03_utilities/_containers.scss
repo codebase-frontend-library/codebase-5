@@ -3,33 +3,40 @@
 
 @use "../00_setup/default-variables" as *;
 
-[class*=container] {
-  display: block;
-  margin-inline: auto;
-  padding-inline: $container-x-space;
-  [class*=container] {
-    padding-inline: 0;
-  }
-}
+// [class*=container] {
+//   display: block;
+//   margin-inline: auto;
+//   padding-inline: $container-x-space;
+//   [class*=container] {
+//     padding-inline: 0;
+//   }
+// }
 
 .container {
-  width: min(100%, $container-default);
+  width: min(100% - $container-x-space, $container-default);
+  margin-inline: auto;
   &-xxl {
-    width: min(100%, map-get($width, w-xxl));
+    width: min(100% - $container-x-space, map-get($width, w-xxl));
+    margin-inline: auto;
   }
   &-xl {
-    width: min(100%, map-get($width, w-xl));
+    width: min(100% - $container-x-space, map-get($width, w-xl));
+    margin-inline: auto;
   }
   &-lg {
-    width: min(100%, map-get($width, w-lg));
+    width: min(100% - $container-x-space, map-get($width, w-lg));
+    margin-inline: auto;
   }
   &-md {
-    width: min(100%, map-get($width, w-md));
+    width: min(100% - $container-x-space, map-get($width, w-md));
+    margin-inline: auto;
   }
   &-sm {
-    width: min(100%, map-get($width, w-sm));
+    width: min(100% - $container-x-space, map-get($width, w-sm));
+    margin-inline: auto;
   }
   &-xs {
-    width: min(100%, map-get($width, w-xs));
+    width: min(100% - $container-x-space, map-get($width, w-xs));
+    margin-inline: auto;
   }
 }

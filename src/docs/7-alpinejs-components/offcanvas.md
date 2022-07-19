@@ -40,7 +40,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-up-100%"
       x-trap.noscroll.inert="isOpen"
-      class="offcanvas offcanvas-top w-100% overflow-y bs-1 p-2 bg-white"
+      class="offcanvas offcanvas-top w-100% overflow-y bs-1 p-2 bg-green-100"
       @click.stop
       @keyup.escape="isOpen = false"
     >
@@ -94,7 +94,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-right-100%"
       x-trap.noscroll.inert="isOpen"
-      class="offcanvas offcanvas-right w-xxs h-100% overflow-y bs-1 p-2 bg-white"
+      class="offcanvas offcanvas-right w-xxs h-100% overflow-y bs-1 p-2 bg-green-100"
       @click.stop
       @keyup.escape="isOpen = false"
     >
@@ -148,7 +148,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-bottom-100%"
       x-trap.noscroll.inert="isOpen"
-      class="offcanvas offcanvas-bottom w-100% overflow-y bs-1 p-2 bg-white"
+      class="offcanvas offcanvas-bottom w-100% overflow-y bs-1 p-2 bg-green-100"
       @click.stop
       @keyup.escape="isOpen = false"
     >
@@ -202,7 +202,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-left-100%"
       x-trap.noscroll.inert="isOpen"
-      class="offcanvas offcanvas-left w-xxs overflow-y bs-1 p-2 bg-white"
+      class="offcanvas offcanvas-left w-xxs overflow-y bs-1 p-2 bg-green-100"
       @click.stop
       @keyup.escape="isOpen = false"
     >

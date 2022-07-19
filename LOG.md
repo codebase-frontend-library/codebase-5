@@ -4,7 +4,13 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
-## 23 Jun 2022 v.5.0.7
+## 19 Jul 2022 -- v.5.0.8
+
+* `container` classes base no longer set using `[class=container]` -- improving compatibillity with other platforms.
+* `container` classes now have x-axis insets controlled by a `min()` finction on the width -- so, no more need for x-axis paddings.
+* Added `t-link-inside` and `t-link`. (Removed the previously undocumented `t-hyperlink`).
+
+## 23 Jun 2022 -- v.5.0.7
 
 * For improved keyboard-user accessibility, `:focus-visible` focus rings on links are now the default user-agent stylesheet gray offset, with a white box-shadow inside the offset (for inproved visibility over dark backgrounds)
 * For improved keyboard-user accessibility, `:focus-visible` focus rings on form elements and `.btn` buttons a 0.25rem light blue box shadow.

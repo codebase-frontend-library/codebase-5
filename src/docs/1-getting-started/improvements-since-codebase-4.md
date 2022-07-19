@@ -8,7 +8,7 @@ prevLink: "Element grid"
 nextLink: "Accessibility"
 ---
 
-Codebase has grown up a lot since in the last year. So much has changed since version 4, that this has become a separate project. And we’re calling Codebase 5 “Codebase”, to make it obvious that this is a web frontend CSS library.
+Codebase has grown up a lot since in the last year. So much has changed since version 4, that this has become a separate project. (Meanwhile Codebase 4 and Codebase 3 are still available as archives.)
 
 Besides hundreds of tiny tweeks, there are several important things added and removed:
 

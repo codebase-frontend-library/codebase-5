@@ -8,7 +8,7 @@
   <title>Containers - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.7" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.8" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -264,7 +264,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.7">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.8">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -319,7 +319,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.7">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.8">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -539,10 +539,10 @@
 
   <main class="col-1 sm:col-2">
     <div class="container-sm">
-      <p>The CodebaseCSS <code>container</code> class works the same way as in other CSS frameworks (e.g. Bootstrap), using x-axis <code>margin: auto</code> centering, and x-axis padding to improve legibility of content against screen sides right and left.</p>
-<p>In addition, CodebaseCSS containers have several variable width modifiers, for easily setting up narrower centered layouts for e.g. blog posts.</p>
+      <p>Sonce Codebase v5.0.7, <code>container</code> classes work in a different way to containers in other CSS frameworks (e.g. Bootstrap), in that <em>no x-axis padding</em> is used to inset the content away from the viewport (or wrapping block) sides. Instead, container widths are set by a modern CSS <code>min()</code> function, so that they are either <code>100% - 2rem</code> (default), or the set width (default).</p>
+<p>Plus, also unlike other frameworks, Codebase containers have several set width modifiers, for different use cases. For example, use <code>container-xs</code> for modals, <code>container-sm</code> for centered blog layouts, and others as you need for wider and multi-column layouts.</p>
 <h2 id="containers-at-different-max-widths" tabindex="-1">Containers at different max-widths</h2>
-<p>CodebaseCSS’s (max) widths are set at <strong>256px increments</strong> – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px × 768px). Containers are first set to <code>width: 100%</code> and then constrained these max-widths.</p>
+<p>Codebase’s (max) set widths are set at <strong>256px increments</strong> – as is traditionally used in many web design layouts and also in some hardware (e.g. the classic iPad has a screen of 1024px × 768px). Containers are first set to <code>width: 100%</code> and then constrained these max-widths.</p>
 <p>The default <code>container</code> behaves the same as <code>container-xxl</code>.</p>
 <table class="table">
 <thead>
@@ -621,21 +621,15 @@
       <p class="t-center" :class="open ? 'h1 mb-6' : 'h4'">
         Codebase containers demo
       </p>
-      <style>
-        .container-demo {
-          padding-inline: 1rem !important;
-        }
-      </style>
-      <div class="container-xxl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
-      <div class="container-xl container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
-      <div class="container-lg container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
-      <div class="container-md container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-md</code></div></div>
-      <div class="container-sm container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
-      <div class="container-xs container-demo mb-1 b-dashed b-blue-300 bg-white"><div class="b-thin b-blue-500 py-1"><code>container-xs</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xxl b-thin b-blue-500 py-1"><code>container-xxl</code> (and <code>container</code>)</div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xl b-thin b-blue-500 py-1"><code>container-xl</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-lg b-thin b-blue-500 py-1"><code>container-lg</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-md b-thin b-blue-500 py-1"><code>container-md</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-sm b-thin b-blue-500 py-1"><code>container-sm</code></div></div>
+      <div class="mb-1 b-dashed b-blue-300 bg-white"><div class="container-xs b-thin b-blue-500 py-1"><code>container-xs</code></div></div>
     </div>
   </div>
 </div>
-<p><strong>Note:</strong> the demo containers above are nested in this page’s container based layout. Therefore, ordinarily they have their x-axis paddings removed. But for demonstration purposes here, these have been added back in.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-xxl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-xl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-md<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-sm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-xs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Content ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 
     </div>
@@ -674,7 +668,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.7 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.8 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 
