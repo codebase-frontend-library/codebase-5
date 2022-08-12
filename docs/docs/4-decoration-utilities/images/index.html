@@ -8,7 +8,7 @@
   <title>Image utilities - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.8" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.9" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -81,9 +81,12 @@
         top: 57px;
         max-height: calc(100vh - 57px);
         scrollbar-gutter: stable;
+        overflow-y: auto;
+      }
+      .ms-windows #site-navigation > nav {
         overflow-y: hidden;
       }
-      #site-navigation:hover > div {
+      .ms-windows #site-navigation:hover > nav {
         overflow-y: auto;
       }
     }
@@ -152,6 +155,12 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
+
+  <script>
+    if (navigator.appVersion.indexOf("Win") != -1) {
+      document.body.classList.add('ms-windows');
+    }
+  </script>
 </head>
 
 <body>
@@ -264,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.8">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -277,8 +286,7 @@
 
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-  <div class="sm:rows-1-4 lg:rows-1-3">
-    <nav id="site-navigation" class="h-100%">
+    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
       <div class="sm:sticky">
         
         <div
@@ -319,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.8">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -514,8 +522,7 @@
         </div>
       </div>
       </div>
-    </nav>  
-  </div>
+    </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
     <div class="container-sm py-6">
@@ -568,18 +575,91 @@
 <p>Follow these two rules when using <code>img-cover</code>:</p>
 <ol>
 <li>
-<p>Your image will need to be approximately a square. Also, ensure that no important part of the image is towards the top or bottom edge – otherwise it may get “cropped” when viewed on wider viewports.</p>
+<p>If your image is approximately a square, with the focal point toward the center, you can use <code>img-cover</code> as-is. Alternatively, if the focal point of the image is off to one side or corner, you may need to add a <a href="#cover-image-positions">cover image position</a> utility class.</p>
 </li>
 <li>
 <p>Be sure to optimize the filesize of your image. You don’t want to make your visitor wait a long time  (several seconds, or more) for your image to load if they have a slow connection.</p>
 </li>
 </ol>
+<p>Many web platforms have <em>image processors</em> built in, or added via a plugin. For example:</p>
+<ul>
+<li>The <a href="https://www.11ty.dev">Eleventy</a> ststic site generator has an <a href="https://www.11ty.dev/docs/plugins/image/">Eleventy-image plugin</a></li>
+<li><a href="https://wordpress.org">WordPress</a> has a <a href="https://www.wpbeginner.com/beginners-guide/wordpress-image-sizes-beginners-guide/">built-in image processor</a> for automatic image resizing and loading for different sized devices (and lazy loading). Plus, there are several image-optimizer plugins.</li>
+<li><a href="https://www.hubspot.com">HubSpot</a> has a <a href="https://knowledge.hubspot.com/files/automatic-image-resizing-on-hubspot-content">built-in image processor</a>  for automatic image resizing and loading for different sized devices (and lazy loading).</li>
+</ul>
+<div>
+</div>
 <h3 id="infographic%3A-using-img-cover" tabindex="-1">Infographic: using <code>img-cover</code></h3>
 <div class="mb-6">
   <img src="/codebase-5/img/cover-images.svg" width="1539" height="890">
 </div>
 <p>Some website content management systems handle “image crunching” for you. If you know your CMS does this, you can upload large images and it will generate several smaller images — and it will serve the appropriate sized image to the visitor depending on what sized device they are using (phones get serves a smaller, lighter image).</p>
 <p>Some CMS’s also have “lazy loading” built in — they only serve larger images when the visitor has scrolled down to where they would see the image. That way, the image is not loaded up-front, and the page will seem to load quicker.</p>
+<h3 id="cover-image-positions" tabindex="-1">Cover image positions</h3>
+<p><code>img-cover</code> defaults to positining the image from its centre-middle, so that all four edges (top, right, bottom, left) could be invisible outside of the constrained rectangle.</p>
+<p>So, you would want the most important part of the image to be in the centre-middle, or else your visitors could lose part of it. Or, you may intend to shoft the visitor’s eye to different parts of the image, depending on what you are fixating on.</p>
+<p>Since v.5.0.9 Codebase has <code>img-cover-*</code> positioning utility classes, using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-position">object-position</a>.</p>
+<ul>
+<li><code>img-cover img-top-right</code></li>
+<li><code>img-cover img-right</code></li>
+<li><code>img-cover img-bottom-right</code></li>
+<li><code>img-cover</code> – image is centred and middled (default)</li>
+<li><code>img-cover img-bottom</code></li>
+<li><code>img-cover img-bottom-left</code></li>
+<li><code>img-cover img-left</code></li>
+<li><code>img-cover img-top-left</code></li>
+</ul>
+<p>The same tall image, positioned vertically three ways:</p>
+<div class="grid gap xs:equal-2-cols mb-3">
+  <div>
+    <img src="/codebase-5/img/pexels-andrew-hawkes-5063027-tall.jpg">
+  </div>
+  <div>
+    <div>
+      <p class="mb-1"><code>img-cover img-cover-top</code></p>
+      <div class="mb-1 aspect-ratio-2x1 relative">
+        <img class="box img-cover img-cover-top" src="/codebase-5/img/pexels-andrew-hawkes-5063027-tall.jpg">
+      </div>
+    </div>
+    <div>
+      <p class="mb-1"><code>img-cover</code></p>
+      <div class="mb-1 aspect-ratio-2x1 relative">
+        <img class="box img-cover" src="/codebase-5/img/pexels-andrew-hawkes-5063027-tall.jpg">
+      </div>
+    </div>
+    <div>
+      <p class="mb-1"><code>img-cover img-cover-bottom</code></p>
+      <div class="aspect-ratio-2x1 relative">
+        <img class="box img-cover img-cover-bottom" src="/codebase-5/img/pexels-andrew-hawkes-5063027-tall.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+<p><em>Photo by <a href="https://www.pexels.com/photo/farmhouse-on-green-grass-field-under-the-blue-sky-5063027/">Andrew Hawkes</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
+<p>The same wide image, positioned horizontally three ways:</p>
+<p class="mb-1"><img src="/codebase-5/img/pexels-pixabay-206762-short.jpg"></p>
+<div class="grid gap xs:equal-3-cols mb-3">
+  <div>
+    <p class="mb-1"><code>img-cover img-cover-left</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover img-cover-left" src="/codebase-5/img/pexels-pixabay-206762-short.jpg">
+    </div>
+  </div>
+  <div>
+    <p class="mb-1"><code>img-cover</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-206762-short.jpg">
+    </div>
+  </div>
+  <div>
+    <p class="mb-1"><code>img-cover img-cover-right</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover img-cover-right" src="/codebase-5/img/pexels-pixabay-206762-short.jpg">
+    </div>
+  </div>
+</div>
+<p><em>Photo by <a href="https://www.pexels.com/photo/ancient-architecture-attraction-blue-sky-206762/">Pixabay</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
+<p><em>Not exemplified here: corner positioning.</em></p>
 <h2 id="contained-images" tabindex="-1">Contained images</h2>
 <ul>
 <li><code>img-contain</code></li>
@@ -646,7 +726,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.8 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.9 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

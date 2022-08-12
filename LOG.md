@@ -4,6 +4,11 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 12 Aug 2022 -- v.5.0.9
+
+* Added `img-cover-*` positioning (top-right, right, etc.).
+* Fixed docs sidebar, was prevented from independently scrolling on iPad and touch devices.
+
 ## 19 Jul 2022 -- v.5.0.8
 
 * `container` classes base no longer set using `[class=container]` -- improving compatibillity with other platforms.

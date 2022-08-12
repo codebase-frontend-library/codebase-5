@@ -81,9 +81,12 @@
         top: 57px;
         max-height: calc(100vh - 57px);
         scrollbar-gutter: stable;
+        overflow-y: auto;
+      }
+      .ms-windows #site-navigation > nav {
         overflow-y: hidden;
       }
-      #site-navigation:hover > div {
+      .ms-windows #site-navigation:hover > nav {
         overflow-y: auto;
       }
     }
@@ -152,6 +155,12 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
+
+  <script>
+    if (navigator.appVersion.indexOf("Win") != -1) {
+      document.body.classList.add('ms-windows');
+    }
+  </script>
 </head>
 
 <body>

@@ -8201,6 +8201,30 @@ img {
   object-position: center;
   overflow: hidden;
 }
+.img-cover-right-top {
+  object-position: right top;
+}
+.img-cover-right {
+  object-position: right;
+}
+.img-cover-right-bottom {
+  object-position: right bottom;
+}
+.img-cover-bottom {
+  object-position: bottom;
+}
+.img-cover-left-bottom {
+  object-position: left bottom;
+}
+.img-cover-left {
+  object-position: left;
+}
+.img-cover-left-top {
+  object-position: left top;
+}
+.img-cover-top {
+  object-position: top;
+}
 
 .img-contain {
   width: 100%;
@@ -8575,7 +8599,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.0.8
+ * v.5.0.9
  */
 
 /*# sourceMappingURL=codebase.css.map */

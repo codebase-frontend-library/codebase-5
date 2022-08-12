@@ -38,9 +38,18 @@ _Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/)
 
 Follow these two rules when using `img-cover`:
 
-1. Your image will need to be approximately a square. Also, ensure that no important part of the image is towards the top or bottom edge – otherwise it may get “cropped” when viewed on wider viewports.
+1. If your image is approximately a square, with the focal point toward the center, you can use `img-cover` as-is. Alternatively, if the focal point of the image is off to one side or corner, you may need to add a [cover image position](#cover-image-positions) utility class.
 
 2. Be sure to optimize the filesize of your image. You don’t want to make your visitor wait a long time  (several seconds, or more) for your image to load if they have a slow connection.
+
+Many web platforms have _image processors_ built in, or added via a plugin. For example: 
+
+* The [Eleventy](https://www.11ty.dev) ststic site generator has an [Eleventy-image plugin](https://www.11ty.dev/docs/plugins/image/)
+* [WordPress](https://wordpress.org) has a [built-in image processor](https://www.wpbeginner.com/beginners-guide/wordpress-image-sizes-beginners-guide/) for automatic image resizing and loading for different sized devices (and lazy loading). Plus, there are several image-optimizer plugins.
+* [HubSpot](https://www.hubspot.com) has a [built-in image processor](https://knowledge.hubspot.com/files/automatic-image-resizing-on-hubspot-content)  for automatic image resizing and loading for different sized devices (and lazy loading).
+
+<div>
+</div>
 
 ### Infographic: using `img-cover`
 
@@ -51,6 +60,82 @@ Follow these two rules when using `img-cover`:
 Some website content management systems handle “image crunching” for you. If you know your CMS does this, you can upload large images and it will generate several smaller images — and it will serve the appropriate sized image to the visitor depending on what sized device they are using (phones get serves a smaller, lighter image). 
 
 Some CMS’s also have “lazy loading” built in — they only serve larger images when the visitor has scrolled down to where they would see the image. That way, the image is not loaded up-front, and the page will seem to load quicker.
+
+### Cover image positions
+
+`img-cover` defaults to positining the image from its centre-middle, so that all four edges (top, right, bottom, left) could be invisible outside of the constrained rectangle.
+
+So, you would want the most important part of the image to be in the centre-middle, or else your visitors could lose part of it. Or, you may intend to shoft the visitor’s eye to different parts of the image, depending on what you are fixating on.
+
+Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position).
+
+* `img-cover img-top-right`
+* `img-cover img-right`
+* `img-cover img-bottom-right`
+* `img-cover` – image is centred and middled (default)
+* `img-cover img-bottom`
+* `img-cover img-bottom-left`
+* `img-cover img-left`
+* `img-cover img-top-left`
+
+The same tall image, positioned vertically three ways:
+
+<div class="grid gap xs:equal-2-cols mb-3">
+  <div>
+    <img src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
+  </div>
+  <div>
+    <div>
+      <p class="mb-1"><code>img-cover img-cover-top</code></p>
+      <div class="mb-1 aspect-ratio-2x1 relative">
+        <img class="box img-cover img-cover-top" src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
+      </div>
+    </div>
+    <div>
+      <p class="mb-1"><code>img-cover</code></p>
+      <div class="mb-1 aspect-ratio-2x1 relative">
+        <img class="box img-cover" src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
+      </div>
+    </div>
+    <div>
+      <p class="mb-1"><code>img-cover img-cover-bottom</code></p>
+      <div class="aspect-ratio-2x1 relative">
+        <img class="box img-cover img-cover-bottom" src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
+      </div>
+    </div>
+  </div>
+</div>
+
+_Photo by [Andrew Hawkes](https://www.pexels.com/photo/farmhouse-on-green-grass-field-under-the-blue-sky-5063027/) from [Pexels](https://www.pexels.com)._
+
+The same wide image, positioned horizontally three ways:
+
+<p class="mb-1"><img src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}"></p>
+
+<div class="grid gap xs:equal-3-cols mb-3">
+  <div>
+    <p class="mb-1"><code>img-cover img-cover-left</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover img-cover-left" src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}">
+    </div>
+  </div>
+  <div>
+    <p class="mb-1"><code>img-cover</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover" src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}">
+    </div>
+  </div>
+  <div>
+    <p class="mb-1"><code>img-cover img-cover-right</code></p>
+    <div class="aspect-ratio-1x1 relative">
+      <img class="box img-cover img-cover-right" src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}">
+    </div>
+  </div>
+</div>
+
+_Photo by [Pixabay](https://www.pexels.com/photo/ancient-architecture-attraction-blue-sky-206762/) from [Pexels](https://www.pexels.com)._
+
+_Not exemplified here: corner positioning._
 
 ## Contained images
 
