@@ -123,7 +123,7 @@ You can look at the source code to see how the following examples have been deco
 
 ## Menubars
 
-You can use [flexbox]({{ '/docs/3-responsive-layouts/flex' | url }}) on menus for making menubars.
+You can use [flexbox]({{ '/docs/3-layout-utilities/flexbox' | url }}) layout utilities on menus for making menubars.
 
 ### Simple menubar
 

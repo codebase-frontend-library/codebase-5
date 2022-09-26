@@ -1,13 +1,18 @@
 # Log
 
-_Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json`, `README.md`, `LOG.md`, and `codebase.scss`_
+_Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `LOG.md`, and `codebase.scss`_
 
 ***
+
+## 26 Sep 2022 -- v.5.0.10
+
+* Added hover states to opacity utilities.
+* improved the docs -- fixed broken links.
 
 ## 12 Aug 2022 -- v.5.0.9
 
 * Added `img-cover-*` positioning (top-right, right, etc.).
-* Fixed docs sidebar, was prevented from independently scrolling on iPad and touch devices.
+* Fixed the docs sidebar, was prevented from independently scrolling on iPad and touch devices.
 
 ## 19 Jul 2022 -- v.5.0.8
 

@@ -56,17 +56,17 @@ Some of the size abbreviations (`xs`, `sm`, `md`, and `lg`) do a double duty, an
 
 ## Color system
 
-Improvements to [colors]({{ '/docs/5-decoration-utilities/colors' | url }}):
+Improvements to [colors]({{ '/docs/4-decoration-utilities/colors' | url }}):
 
 * Codebase’s UI colors for <label class="label label-success">success</label>, <label class="label label-warning">warning</label>, <label class="label label-danger">danger</label>, and <label class="label label-info">info</label> have been darkened so that they conform to the [WCAG 2.1 Level AA accessibility guidelines](https://www.w3.org/TR/WCAG21/) _for text_: the UI colors now each have a color contrast ratio of at least 4.5:1. There are also  defaults for <label class="label label-primary">primary</label>, <label class="label label-secondary">secondary</label>, and <label class="label label-tertiary">tertiary</label> accent colors. All of these can be overridden in the default variables file to make them as required in your design.
-* For demonstration purposes, Codebase contains seven named colors that have been aliased and generated from the UI and accent colors: these are simply named <label class="label t-white bg-green-500">green</label>, <label class="label t-white bg-orange-500">orange</label>, <label class="label t-white bg-red-500">red</label>, <label class="label t-white bg-blue-500">blue</label>, <label class="label t-white bg-purple-500">purple</label>, <label class="label t-white bg-teal-500">teal</label>, and <label class="label t-white bg-gray-500">gray</label>. These have been used for the [utility classes for _shades_ of each color]({{ '/codebase-5/docs/5-decoration-utilities/colors' | url }}) (`-100` to `-900`) for background, border, and text – and for hover states of each.
+* For demonstration purposes, Codebase contains seven named colors that have been aliased and generated from the UI and accent colors: these are simply named <label class="label t-white bg-green-500">green</label>, <label class="label t-white bg-orange-500">orange</label>, <label class="label t-white bg-red-500">red</label>, <label class="label t-white bg-blue-500">blue</label>, <label class="label t-white bg-purple-500">purple</label>, <label class="label t-white bg-teal-500">teal</label>, and <label class="label t-white bg-gray-500">gray</label>. These have been used for the [utility classes for _shades_ of each color]({{ '/docs/4-decoration-utilities/colors' | url }}) `-100` to `-900` for background, border, and text – and for hover states of each.
 * Color names and shades have been made easier to understand in Codebase, because “dark mode” is no longer built into Codebase. So, you will not here use Codebase 4’s contextual suffixes for the grayscale (“-background”, “-fineline”, “-text”, etc.). But you will use e.g. `-gray-100` to `-gray-900` plus `-white` and `-black`.
 * Hover states of color utilities are also available, with the `hover:` prefix.
-* Added semi-transparent [glass layers]({{ '/docs/4-decoration-utilities/glass' }}) for use e.g. on modal backdrops, and hero image overlays.
+* Added semi-transparent [glass layers]({{ '/docs/4-decoration-utilities/glass' | url }}) for use e.g. on modal backdrops, and hero image overlays.
 
 ## Accessibility
 
-Codebase CSS has several mproved accessibility features, such as `:focus` rings on [buttons]({{ '/docs/7-simple-components/buttons' | url }}), and `:focus-visible` rings on links.
+Codebase CSS has several mproved accessibility features, such as `:focus` rings on [buttons]({{ '/docs/6-simple-components/buttons' | url }}), and `:focus-visible` rings on links.
 
 In addition, AlpineJS dropdown component examples have been refactored for accessibility, and they include [ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) labels, roles, and states.
 
@@ -83,7 +83,7 @@ There are several small things removed from Codebase CSS, that are not listed he
 
 ## Internet Explorer 11 is not supported
 
-IE11 came out in 2013, and is at ~0.5% market share, (as from December 2021). [Microsoft stopped supporting IE11 in August 2021](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser. However, as IE11 is integral to older Windows operating systems, it will receive continual support until the [end of it’s life cycle](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge) in **May 2022** for these old versions of Windows. 
+IE11 came out in 2013, and [Microsoft stopped supporting IE11 in August 2021](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser. However, as IE11 is integral to older Windows operating systems, it continued to receive continual support until the [end of it’s life cycle](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge) in **May 2022** for these old versions of Windows. But now, Internet explorer has finally been [laid to rest](https://death-to-ie11.com).
 
 Several things have been included in Codebase CSS that have no backward-compatibility to older browsers such as IE11:
 
@@ -93,7 +93,7 @@ Several things have been included in Codebase CSS that have no backward-compatib
 
 **Note:** also, [Alpine 3 does not support Interet Explorer 11](https://alpinejs.dev/upgrade-guide#no-ie-11).
 
-## Activator has been discontinued
+## Activator.JS has been discontinued
 
 Since IE11 is not supported in Codebase 5, Codebase 4’s Activator JavaScript `activator.js` have been removed (both the vanilla JS and jQuery versions).
 

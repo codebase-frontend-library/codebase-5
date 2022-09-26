@@ -17,7 +17,7 @@ Use `overflow-x` when you may need a sideways scroll. (`overflow-x` shows horizo
 
 * `overflow-y`
 
-Use `overflow-y` when you have content that is too tall for its wrapper. (`overflow-y` shows vertical scroll but not horizontal scroll.) E.g. see [AlpineJS modal with scrollable content]({{ '/docs/7-alpinejs-components/modal#styling-modal-panels' | url }}).
+Use `overflow-y` when you have content that is too tall for its wrapper. (`overflow-y` shows vertical scroll but not horizontal scroll.) E.g. see [AlpineJS modal with scrollable content]({{ '/docs/7-alpinejs-components/modals/#styling-modal-panels' | url }}).
 
 * `overflow-xy`
 

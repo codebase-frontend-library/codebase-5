@@ -8,7 +8,7 @@
   <title>Image utilities - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.9" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -583,7 +583,7 @@
 </ol>
 <p>Many web platforms have <em>image processors</em> built in, or added via a plugin. For example:</p>
 <ul>
-<li>The <a href="https://www.11ty.dev">Eleventy</a> ststic site generator has an <a href="https://www.11ty.dev/docs/plugins/image/">Eleventy-image plugin</a></li>
+<li>The <a href="https://www.11ty.dev">Eleventy</a> static site generator has an <a href="https://www.11ty.dev/docs/plugins/image/">Eleventy-image plugin</a></li>
 <li><a href="https://wordpress.org">WordPress</a> has a <a href="https://www.wpbeginner.com/beginners-guide/wordpress-image-sizes-beginners-guide/">built-in image processor</a> for automatic image resizing and loading for different sized devices (and lazy loading). Plus, there are several image-optimizer plugins.</li>
 <li><a href="https://www.hubspot.com">HubSpot</a> has a <a href="https://knowledge.hubspot.com/files/automatic-image-resizing-on-hubspot-content">built-in image processor</a>  for automatic image resizing and loading for different sized devices (and lazy loading).</li>
 </ul>
@@ -689,7 +689,61 @@
   <img class="img-cover img-blur" src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>overflow-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img-blur<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">loading</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-
+<h2 id="opacity-and-images" tabindex="-1">Opacity and Images</h2>
+<p>Codebase has a set of opacity utility classes that can be used on images.</p>
+<p>Since Codebase v5.10, there are hover states set for each.</p>
+<ul>
+<li><code>opacity-100%</code> / <code>hover:opacity-100%</code></li>
+<li><code>opacity-75%</code> / <code>hover:opacity-75%</code></li>
+<li><code>opacity-50%</code> / <code>hover:opacity-50%</code></li>
+<li><code>opacity-25%</code> / <code>hover:opacity-25%</code></li>
+<li><code>opacity-0%</code> / <code>hover:opacity-0%</code></li>
+</ul>
+<p>These opacity utility classes can also be manipulated by <a href="/codebase-5/docs/7-alpinejs-components/animations/">AlpineJS animations</a>.</p>
+<div class="mb-3 grid gap xs:equal-3-cols">
+  <div>
+    <p><code>opacity-25%</code></p>
+    <img class="opacity-25%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>opacity-50%</code></p>
+    <img class="opacity-50%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>opacity-75%</code></p>
+    <img class="opacity-75%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+</div>
+<p>Hover states:</p>
+<div class="mb-3 grid gap xs:equal-3-cols">
+  <div>
+    <p><code>hover:opacity-25%</code></p>
+    <img class="hover:opacity-25%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>hover:opacity-50%</code></p>
+    <img class="hover:opacity-50%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>hover:opacity-75%</code></p>
+    <img class="hover:opacity-75%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+</div>
+<p>Add a colored background behind the image, and the opacity enables the image to show as tinted:</p>
+<div class="grid gap xs:equal-3-cols">
+  <div>
+    <p><code>opacity-50%</code> over a purpla background</p>
+    <div class="bg-purple-500"><img class="opacity-50%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+  <div>
+    <p><code>opacity-50%</code> over an orange background</p>
+    <div class="bg-orange-500"><img class="opacity-50%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+  <div>
+    <p><code>opacity-50%</code> over a green background</p>
+    <div class="bg-green-500"><img class="opacity-50%" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+</div>
     </div>
   </main>
 
@@ -726,7 +780,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.9 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

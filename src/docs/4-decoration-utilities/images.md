@@ -44,7 +44,7 @@ Follow these two rules when using `img-cover`:
 
 Many web platforms have _image processors_ built in, or added via a plugin. For example: 
 
-* The [Eleventy](https://www.11ty.dev) ststic site generator has an [Eleventy-image plugin](https://www.11ty.dev/docs/plugins/image/)
+* The [Eleventy](https://www.11ty.dev) static site generator has an [Eleventy-image plugin](https://www.11ty.dev/docs/plugins/image/)
 * [WordPress](https://wordpress.org) has a [built-in image processor](https://www.wpbeginner.com/beginners-guide/wordpress-image-sizes-beginners-guide/) for automatic image resizing and loading for different sized devices (and lazy loading). Plus, there are several image-optimizer plugins.
 * [HubSpot](https://www.hubspot.com) has a [built-in image processor](https://knowledge.hubspot.com/files/automatic-image-resizing-on-hubspot-content)  for automatic image resizing and loading for different sized devices (and lazy loading).
 
@@ -192,3 +192,66 @@ What if you don’t want the blurry edges spreading outside of the image rectang
   <img class="img-blur" src="" width="" height="" loading="lazy" alt="">
 </div>
 ```
+
+## Opacity and Images
+
+Codebase has a set of opacity utility classes that can be used on images.
+
+Since Codebase v5.10, there are hover states set for each.
+
+* `opacity-100%` / `hover:opacity-100%`
+* `opacity-75%` / `hover:opacity-75%`
+* `opacity-50%` / `hover:opacity-50%`
+* `opacity-25%` / `hover:opacity-25%`
+* `opacity-0%` / `hover:opacity-0%`
+
+These opacity utility classes can also be manipulated by [AlpineJS animations]({{ '/docs/7-alpinejs-components/animations/' | url }}).
+
+<div class="mb-3 grid gap xs:equal-3-cols">
+  <div>
+    <p><code>opacity-25%</code></p>
+    <img class="opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>opacity-50%</code></p>
+    <img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>opacity-75%</code></p>
+    <img class="opacity-75%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+</div>
+
+Hover states:
+
+<div class="mb-3 grid gap xs:equal-3-cols">
+  <div>
+    <p><code>hover:opacity-25%</code></p>
+    <img class="hover:opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>hover:opacity-50%</code></p>
+    <img class="hover:opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+  <div>
+    <p><code>hover:opacity-75%</code></p>
+    <img class="hover:opacity-75%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+  </div>
+</div>
+
+Add a colored background behind the image, and the opacity enables the image to show as tinted:
+
+<div class="grid gap xs:equal-3-cols">
+  <div>
+    <p><code>opacity-50%</code> over a purpla background</p>
+    <div class="bg-purple-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+  <div>
+    <p><code>opacity-50%</code> over an orange background</p>
+    <div class="bg-orange-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+  <div>
+    <p><code>opacity-50%</code> over a green background</p>
+    <div class="bg-green-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+  </div>
+</div>

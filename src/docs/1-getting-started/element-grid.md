@@ -23,7 +23,7 @@ The Codebase element grid has been deployed a follows:
 2. By default, the base typography vertical rhythm (line-height) is set at 1.5rem (= 3 element grid units). 
  The line heights for headers have also been set using 0.5rem increments.
 3. For [flex]({{ '/docs/3-responsive-layouts/flex' | url }}) layouts, `flex-gap` has been set at 2rem.
-4. For [grid]({{ '/docs/3-responsive-layouts/flex' | url }}) layouts, `gap` has been set at 2rem.
+4. For [grid]({{ '/docs/3-responsive-layouts/grid' | url }}) layouts, `gap` has been set at 2rem.
 5. Decoration utilities for margins and paddings have been set using values from the 0.5rem element grid.
 
 ## Infographic: the Codebase element grid

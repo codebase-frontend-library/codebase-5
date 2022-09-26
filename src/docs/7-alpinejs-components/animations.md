@@ -205,6 +205,7 @@ Example: `transform-origin-top` has been used on the [dropdown]({{ '/docs/7-alpi
 ### Opacity
 
 * `opacity-0` / `opacity-25%` / `opacity-50%` / `opacity-75%` / `opacity-100%`
+* `hover:opacity-0` / `hover:opacity-25%` / `hover:opacity-50%` / `hover:opacity-75%` / `hover:opacity-100%`
 
 Example fading to `opacity-50%`:
 

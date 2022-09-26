@@ -8,7 +8,7 @@
   <title>Offcanvas - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.9" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -776,7 +776,7 @@
 <ol start="5">
 <li>Offcanvas panels must have a title. I have styled offcanvas titles using the <code>h3</code> utility class in a <code>&lt;div&gt;</code> (instead of using the <code>&lt;h3&gt;</code> HTML tag), making the titles are obvious for sighted people but not upsetting the <a href="https://www.w3.org/WAI/tutorials/page-structure/headings/">heading hierarchy</a> (which could mislead people who are reliant on screen readers, and it is bad for SEO).</li>
 <li>Codebase offcanvas panels have <code>style=&quot;display: none;&quot;</code> applied to them in their retracted state, by Alpine the <code>x-show</code> directive. This means that thet are not included in the accessibility tree (tab index) while retracted. And it means that if you have a box shadow on the offcanvas panel, it will not be seen protruding from the edge of the viewport.</li>
-<li><code>offcanvas-top</code>, <code>offcanvas-right</code> etc. set the initial retracted position styles for the offcanvas panel. They don’t handle its animation. <a href="#offcanvas-override">You can override these styles</a> above particular breakpoints, using e.g. <code>sm:offcanvas-override</code>. This will allow your panel to behave as a normal panel above that breakpoint.</li>
+<li><code>offcanvas-top</code>, <code>offcanvas-right</code> etc. set the initial retracted position styles for the offcanvas panel. They don’t handle its animation. <a href="#offcanvas-override-(for-wide-viewports)">You can override these styles</a> above particular breakpoints, using e.g. <code>sm:offcanvas-override</code>. This will allow your panel to behave as a normal panel above that breakpoint.</li>
 <li>The <code>transition-all-300ms</code> and <code>translate-*</code> classes are all applied using Alpine 3’s <a href="https://alpinejs.dev/directives/transition">x-transition</a> directive.</li>
 </ol>
 <h2 id="offcanvas-classes" tabindex="-1">Offcanvas classes</h2>
@@ -798,11 +798,11 @@
       <td>Fixes the position of the offcanvas panel in its <em>unretracted</em> state, and its z-index layer above the webpage.</td>
     </tr>
     <tr>
-      <td><code>offcanvas-top</code>,<br> <code>offcanvas-right</code>,<br> <code>offcanvas-bottom</code>, or<br> <code>offcanvas-left</code></td>
+      <td><code>offcanvas-top</code><br> <code>offcanvas-right</code>,<br> <code>offcanvas-bottom</code> or<br> <code>offcanvas-left</code></td>
       <td>Sets the side of the viewport that your offcanvas panel will slide in from.</td>
     </tr>
     <tr>
-      <td><code>sm:offcanvas-override</code>,<br> <code>md:offcanvas-override</code>, or<br> <code>lg:offcanvas-override</code></td>
+      <td><code>sm:offcanvas-override</code><br> <code>md:offcanvas-override</code> or<br> <code>lg:offcanvas-override</code></td>
       <td>Overrides the offvanvas panel’s styling, so that it is displayed as a normal panel within the document flow.</td>
     </tr>
     <tr>
@@ -813,7 +813,7 @@
       <td>Used by the AlpineJS <code>x-transition</code> directive, this sets the CSS transition for the offcanvas panel.</td>
     </tr>
     <tr>
-      <td><code class="t-nowrap">translate-up-100%</code>,<br> <code class="t-nowrap">translate-right-100%</code>,<br> <code class="t-nowrap">translate-bottom-100%</code>, or <code class="t-nowrap">translate-right-100%</code></td>
+      <td><code class="t-nowrap">translate-up-100%</code><br> <code class="t-nowrap">translate-right-100%</code><br> <code class="t-nowrap">translate-bottom-100%</code> or <code class="t-nowrap">translate-right-100%</code></td>
       <td>Used by AlpineJS <code>x-transition</code> directive, these set the <em>retracted</em> position of the panel by CSS transform.</td>
     </tr>
     <tr>
@@ -1037,7 +1037,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.9 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

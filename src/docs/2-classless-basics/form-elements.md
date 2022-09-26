@@ -9,7 +9,7 @@ nextLink: "Media"
 
 In Codebase, form elements are rendered as block elements, for ease of styling.
 
-If you want to make an input field an inline element, add the layout [block utility class]({{ '/docs/4-layout-utilities/blocks/' | url }}) `inline-block`.
+If you want to make an input field an inline element, add the layout [block utility class]({{ '/docs/3-layout-utilities/blocks/' | url }}) `inline-block`.
 
 ## Single line input fields
 

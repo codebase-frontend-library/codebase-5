@@ -50,7 +50,7 @@ Colored UI components are those most commonly expected worldwide, as used on sig
 * Success is green
 * Information is blue
 
-These are the colors used for UI elements such as ([buttons]({{ '/docs/7-simple-components/buttons' | url }}), [badges]({{ '/docs/7-simple-components/badges' | url }}) and [labels]({{ '/docs/7-simple-components/labels' | url }})) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
+These are the colors used for UI elements such as ([buttons]({{ '/docs/6-simple-components/buttons' | url }}), [badges]({{ '/docs/6-simple-components/badges' | url }}) and [labels]({{ '/docs/6-simple-components/labels' | url }})) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
 
 <div class="flex flex-wrap my-6">
 <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-warning t-white 
@@ -95,7 +95,7 @@ Besides moving up to AlpineJS version 3, the Alpine powered components in these 
 
 For all these components, keyboard `tab`, `enter`, `space` and `escape` can be used to expand and retract hidden panels, or to switch between tabs or slides. `aria` attributes have also been built in.
 
-**Note:** the [modal]({{ '/docs/8-alpinejs-components/modal' | url }}) component also requires the [AlpineJS Focus plugin](https://alpinejs.dev/plugins/focus) to trap the focus within the modal panel while it is open. You can also add this focus trapping to the [offcanvas]({{ '/docs/8-alpinejs-components/offcanvas' | url }}) component if you need it in your design.
+**Note:** the [modal]({{ '/docs/7-alpinejs-components/modals' | url }}) component also requires the [AlpineJS Focus plugin](https://alpinejs.dev/plugins/focus) to trap the focus within the modal panel while it is open. You can also add this focus trapping to the [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) component if you need it in your design.
 
 ## Building an accessible website
 

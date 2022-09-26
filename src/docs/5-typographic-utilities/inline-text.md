@@ -65,13 +65,19 @@ See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).
 
     `t-lg` enlarges text by 1.25em (125%) on small to medium screens and then 1.5em (150%) on medium screens up, to make the enlargement more obvious when viewed at a distance.
 
-    **Note:** `t-lg` doesn’t work as an _inline class_ on [headings]({{ '/docs/2-classless-basics/headings' | url }}) or [heading utilities]({{ '/docs/6-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See [large display text]({{ '/docs/6-typographic-utilities/large-display-text' | url }}).
+    **Note:** `t-lg` doesn’t work as an _inline class_ on headings or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
 
 ## Links
 
 Links (also called _hyperlinks_) in Codebase are blue with an underscore by default, following the old tradition.
 
-**What if you wanted a whole panel, [card]({{ '/codebase-5/docs/6-simple-components/cards' | url }}), or [hero]({{ '/codebase-5/docs/6-simple-components/heros' | url }}) block to operate as a link?** You can simply use the link instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element: `<a class="block" href="">...</a>`.
+**What if you wanted a whole panel, [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) block to operate as a link?** You can simply use the `<a href="">` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
+
+```html
+<a class="block" href="">
+    ...
+</a>`
+```
 
 **Then, what if you only wanted some of the text in the panel to be styled as the link, but not some accompanying text?** Codebase has you covered. Since v.5.0.8, you can put class `t-typerlink-inside` on the wrapper `<a>` tag and pair this with `t-link` on the text that you want to be the inner link (this would be the panel title).
 
@@ -107,7 +113,7 @@ Above, that color change on hover isn’t very obvious. But you can add some ext
     <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 
-The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/codebase-5/docs/4-decoration-utilities/box-shadows' | url }}).
+The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4-decoration-utilities/box-shadows' | url }}).
 
 ```html
 <style>

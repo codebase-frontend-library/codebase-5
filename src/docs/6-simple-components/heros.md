@@ -42,7 +42,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
 
 ## Notes on heros
 
-1. You can set the dimensions of your hero component to suit your needs. But an easy way to do it is to use a Codebase [aspect ratio wrapper]({{ '/docs/4-layout-utilities/dimensions/*aspect-ratio-wrappers' | url }}) utility class, as you can see in the example above. Alternatively you could set a `min-height` on the wrapper.
+1. You can set the dimensions of your hero component to suit your needs. But an easy way to do it is to use a Codebase [aspect ratio wrapper]({{ '/docs/3-layout-utilities/aspect-ratios/' | url }}) utility class, as you can see in the example above. Alternatively you could set a `min-height` on the wrapper.
 2. When necessary on small viewports, `aspect-ratio-*` wrappers will _vertically deform_ to accommodate the content of their immediate child element – so, if you (or a subsequent content creator) puts in a title or other stuff that is longer or more than you expected, it doesn’t get messed up pn small devices. 
 3. The hero image needs CSS classes `box img-cover`.
 4. _The overlay also needs the same aspect-ratio wrapper_ so that it expands to cover the image. Then you can use [flexbox]({{ '/docs/3-layout-utilities/flexbox' | url }}) to position your overlay panel anywhere you want (the example here is centered and middled).

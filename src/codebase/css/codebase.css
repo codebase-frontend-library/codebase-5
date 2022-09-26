@@ -8426,6 +8426,22 @@ img {
   opacity: 0;
 }
 
+.hover\:opacity-100\%:hover {
+  opacity: 1;
+}
+.hover\:opacity-75\%:hover {
+  opacity: 0.75;
+}
+.hover\:opacity-50\%:hover {
+  opacity: 0.5;
+}
+.hover\:opacity-25\%:hover {
+  opacity: 0.25;
+}
+.hover\:opacity-0:hover {
+  opacity: 0;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -8599,7 +8615,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.0.9
+ * v.5.0.10
  */
 
 /*# sourceMappingURL=codebase.css.map */

@@ -19,7 +19,7 @@ Heading sizes, weights and line heights are set using three SCSS maps in the def
 
 Below the `sm` small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.
 
-**Note:** The demo headings below are actually faked using `h1` to `h6` [text utility classes]({{ '/docs/6-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.
+**Note:** The demo headings below are actually faked using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.
 
 <p class="h1"><code>h1</code> heading</p>
 <p class="h2"><code>h2</code> heading</p>
@@ -183,7 +183,7 @@ What if you want the a set of `<details>` to start in the “open” state? Simp
 
 ## Horizontal rules
 
-The horizontal rule `<hr>` tag is simply styled with a thin _top border_, so that it looks the same as [border utilities]({{ '/docs/5-decoration-utilities/borders' | }}) and the [table component]({{ '/docs/7-simple-components/tables' | }}) cell borders.
+The horizontal rule `<hr>` tag is simply styled with a thin _top border_, so that it looks the same as [border utilities]({{ '/docs/4-decoration-utilities/borders' | url }}) and the [table component]({{ '/docs/6-simple-components/tables' | url }}) cell borders.
 
 Example:
 
@@ -269,7 +269,7 @@ This is what a classless table looks like in Codebase:
 </table>
 ```
 
-For special table styling, see the Codebase [table component]({{ '/docs/7-simple-components/tables/' | url }}).
+For special table styling, see the Codebase [table component]({{ '/docs/6-simple-components/tables/' | url }}).
 
 ## Pre-formatted text
 

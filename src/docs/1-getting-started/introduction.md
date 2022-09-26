@@ -60,7 +60,7 @@ Codebase has a good base of styles even before you add CSS classes. Take a walk 
 
 ### Utilities
 
-Almost everything else is done in Codebase using utility classes. _Utility classes do one thing well_, such as control a background color or set a margin. You will find an extensive range of utilities for [layout]({{ '/docs/3-layout-utilities/containers' | url }}), [decoration]({{ '/docs/4-decoration-utilities/colors' | url }}), and [typography]({{ '/docs/5-typographic-utilities/headings' | url }}).
+Almost everything else is done in Codebase using utility classes. _Utility classes do one thing well_, such as control a background color or set a padding. You will find an extensive range of utilities for layout, decoration, and typography.
 
 ### Components
 
@@ -106,7 +106,7 @@ Codebase is a highly versatile SCSS library, preprocessed and minified to CSS.
 
 The SCSS library is clean, modern and minimalist, and highly versatile because of all the utility classes it contains. It can do most things that most people want, “out of the box”.
 
-All the Codebase SCSS files are [available in the repository](https://github.com/codebase-frontend-library/codebase-5). If you have knowledge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables.
+Available in the reository are all the Codebase [SCSS files](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/codebase/scss). If you have knowledge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables.
 
 You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 

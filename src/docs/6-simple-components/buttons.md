@@ -150,7 +150,7 @@ Here’s something else you can do: if you have both text and an icon in the but
 
 ## Pills
 
-You can changed the rounded corners of buttons using [rounded corner]({{ '/docs/5-decoration-utilities/rounded-corners' | url }}) utilities.
+You can changed the rounded corners of buttons using [rounded corner]({{ '/docs/4-decoration-utilities/rounded-corners' | url }}) utilities.
 
 <button class="btn-secondary rounded-pill">Pill-shaped button</button>
 
@@ -239,7 +239,7 @@ Using `btn-icon` at these different button sizes will maintain its square shape.
 <button class="btn btn-lg btn-icon rounded-full">C</button>
 ```
 
-Do you want larger text on `btn-lg` too? Then add the `t-lg` [text utility]({{ '/docs/4-utilities/text' | url }}):
+Do you want larger text on `btn-lg` too? Then add the `t-lg` [large display text utility]({{ '/5-typographic-utilities/large-display-text/' | url }}):
 
 <a class="btn btn-primary btn-lg" href="#/">Normal text</a> – large button
 
@@ -264,7 +264,7 @@ Examples using [Phosphor Icons](https://phosphoricons.com/) at 24px and 36px siz
 
 A row of buttons would touch each other (buttons are ordinarily inline elements), unless you leave spaces between them. Leave no spaces if you want the buttons to touch each other, as in a “tool bar”. Or if you find it necessary, wrap them in a `flex`
 
-You can remove some of the rounded corners using some `unrounded` utilities (see [rounded corners]({{ '/docs/5-decoration-utilities/rounded-corners' | url }})).
+You can remove some of the rounded corners using some `unrounded` utilities (see [rounded corners]({{ '/docs/4-decoration-utilities/rounded-corners' | url }})).
 
 <div class="flex flex-center mb-3">
 <button class="btn-icon unrounded-right">

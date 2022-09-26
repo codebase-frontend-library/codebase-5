@@ -301,7 +301,7 @@ In all these examples, no background color (and no glass effect) has been set fo
 
 5. Offcanvas panels must have a title. I have styled offcanvas titles using the `h3` utility class in a `<div>` (instead of using the `<h3>` HTML tag), making the titles are obvious for sighted people but not upsetting the [heading hierarchy](https://www.w3.org/WAI/tutorials/page-structure/headings/) (which could mislead people who are reliant on screen readers, and it is bad for SEO).
 6. Codebase offcanvas panels have `style="display: none;"` applied to them in their retracted state, by Alpine the `x-show` directive. This means that thet are not included in the accessibility tree (tab index) while retracted. And it means that if you have a box shadow on the offcanvas panel, it will not be seen protruding from the edge of the viewport.
-7. `offcanvas-top`, `offcanvas-right` etc. set the initial retracted position styles for the offcanvas panel. They don’t handle its animation. [You can override these styles](#offcanvas-override) above particular breakpoints, using e.g. `sm:offcanvas-override`. This will allow your panel to behave as a normal panel above that breakpoint.
+7. `offcanvas-top`, `offcanvas-right` etc. set the initial retracted position styles for the offcanvas panel. They don’t handle its animation. [You can override these styles](#offcanvas-override-(for-wide-viewports)) above particular breakpoints, using e.g. `sm:offcanvas-override`. This will allow your panel to behave as a normal panel above that breakpoint.
 8. The `transition-all-300ms` and `translate-*` classes are all applied using Alpine 3’s [x-transition](https://alpinejs.dev/directives/transition) directive.
 
 ## Offcanvas classes
@@ -339,11 +339,11 @@ The Codebase offcanvas CSS classes are as follows:
       <td>Fixes the position of the offcanvas panel in its <em>unretracted</em> state, and its z-index layer above the webpage.</td>
     </tr>
     <tr>
-      <td><code>offcanvas-top</code>,<br> <code>offcanvas-right</code>,<br> <code>offcanvas-bottom</code>, or<br> <code>offcanvas-left</code></td>
+      <td><code>offcanvas-top</code><br> <code>offcanvas-right</code>,<br> <code>offcanvas-bottom</code> or<br> <code>offcanvas-left</code></td>
       <td>Sets the side of the viewport that your offcanvas panel will slide in from.</td>
     </tr>
     <tr>
-      <td><code>sm:offcanvas-override</code>,<br> <code>md:offcanvas-override</code>, or<br> <code>lg:offcanvas-override</code></td>
+      <td><code>sm:offcanvas-override</code><br> <code>md:offcanvas-override</code> or<br> <code>lg:offcanvas-override</code></td>
       <td>Overrides the offvanvas panel’s styling, so that it is displayed as a normal panel within the document flow.</td>
     </tr>
     <tr>
@@ -354,7 +354,7 @@ The Codebase offcanvas CSS classes are as follows:
       <td>Used by the AlpineJS <code>x-transition</code> directive, this sets the CSS transition for the offcanvas panel.</td>
     </tr>
     <tr>
-      <td><code class="t-nowrap">translate-up-100%</code>,<br> <code class="t-nowrap">translate-right-100%</code>,<br> <code class="t-nowrap">translate-bottom-100%</code>, or <code class="t-nowrap">translate-right-100%</code></td>
+      <td><code class="t-nowrap">translate-up-100%</code><br> <code class="t-nowrap">translate-right-100%</code><br> <code class="t-nowrap">translate-bottom-100%</code> or <code class="t-nowrap">translate-right-100%</code></td>
       <td>Used by AlpineJS <code>x-transition</code> directive, these set the <em>retracted</em> position of the panel by CSS transform.</td>
     </tr>
     <tr>

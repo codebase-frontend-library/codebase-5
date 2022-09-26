@@ -1,5 +1,5 @@
 ---
-title: "Grid"
+title: "Grid Layouts"
 layout: layout.njk
 prevPage: "/docs/3-layout-utilities/flexbox"
 nextPage: "/docs/3-layout-utilities/aspect-ratios"
@@ -38,7 +38,7 @@ Codebase’s `grid` system has utility classes for controlling up to six _column
 _Grid items_ are immediate child elements of an element that has the `grid` CSS class. By default, grid items occupy one _grid cell_ (the smallest rectangle). The Codebase grid system has CSS classes for:
 
 * **Controling tracks at _grid wrapper_ level:**
-    * [Grid](#the-codebase-5-grid-in-practice) – `grid` initializes the CSS grid. It adds `display: grid;` but it doesn’t provide information about how many columns you want.
+    * [Grid](#the-codebase-grid-in-practice) – `grid` initializes the CSS grid. It adds `display: grid;` but it doesn’t provide information about how many columns you want.
     * [Gap](#adding-gaps) – also known as a _gutter_ between grid items:
         * `gap` (optional) adds vertical _and_ horizontal whitespace along internal grid tracks.
         * `col-gap` (optional) adds vertical whitespace along internal grid tracks – between columns.

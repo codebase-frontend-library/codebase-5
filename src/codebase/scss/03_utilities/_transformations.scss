@@ -135,6 +135,24 @@
   }
 }
 
+.hover\:opacity {
+  &-100\%:hover {
+    opacity: 1;
+  }
+  &-75\%:hover {
+    opacity: .75;
+  }
+  &-50\%:hover {
+    opacity: .5;
+  }
+  &-25\%:hover {
+    opacity: .25;
+  }
+  &-0:hover {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeIn {
   0% { opacity:0; }
   100% { opacity:1; }

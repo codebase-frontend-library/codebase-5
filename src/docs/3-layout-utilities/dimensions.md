@@ -9,7 +9,7 @@ nextLink: "Flexbox"
 
 Controlling widths and heights of blocks in one dimension (width _or_ height).
 
-See also [container layouts]({{ '/docs/3-layout-utilities/containers' | url }})
+See also [container layouts]({{ '/docs/3-layout-utilities/containers' | url }}).
 
 ## Width constraint wrappers
 

@@ -8,7 +8,7 @@
   <title>Modals - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.9" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.9">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -606,7 +606,7 @@
 <li><code>x-cloak</code> is used to hide the modal before AlpineJS has hidden it programatically. Codebase already contains the style <code>[x-cloak] {display: none;}.</code></li>
 <li>The modal open and close <code>&lt;button&gt;</code>’s are not being used as part of a form. Therefore they must have the attribute <code>type=&quot;button&quot;</code></li>
 <li>The modal cover (wrapper) covers the entire screen once the modal is opened. It is required for centering and middling the modal panel in the viewport window using flexbox. The modal cover  is transparent by default, but you can give it a dark blurry tint using <code>bg-black-glass-3</code>. Alternatively, you can use <code>bg-black</code> if you are using the modal as a lightbox.</li>
-<li>The modal panel will become as wide as its content requires. But you can constrain the width using one of Codebase’s <a href="/codebase-5/docs/4-layout-utilities/dimensions/#max-width-wrappers">max-width wrappers</a>. <code>w-xs</code> is commonly used for narrow modals.</li>
+<li>The modal panel will become as wide as its content requires. But you can constrain the width using one of Codebase’s (max-width) <a href="/codebase-5/docs/3-layout-utilities/dimensions/#max-width-wrappers">width constraint wrappers</a>. <code>w-xs</code> is commonly used for narrow modals.</li>
 <li>The modal can be opened open/close by the modal open button (mouse click, touch screen tap, etc.) and by <em>tabbing</em> onto the modal open button and hitting the <em>enter key</em> or the <em>space bar</em>. The modal open button operates as a <em>toggle</em> so that keyboard and assistive tech users can immediately close it again if they want to. However, mouse and touch screen users can’t toggle it closed because the modal will have opened and covered the viewport. Therefore a modal closed button needs to be supplied. (And an optional “click outside to dismiss” function.)</li>
 <li>Modals require the <a href="https://alpinejs.dev/plugins/focus">AlpineJS Focus plugin</a> for keeping the focus on the modal once it has been tabbed into, because you don’t want to allow tabbers to move the focus out of the modal until it has been dismissed. ALpine’s <code>x-trap</code> puts the focus on the <em>first</em> focusable element inside the modal. Usually you will want this to be the modal close button.</li>
 <li>Keyboard users can click the modal close button by tabbing onto it, then using the hitting the <em>enter key</em> or the <em>space bar</em> to dismiss the modal. The focus will then be returned to the dropdown button.</li>
@@ -1174,7 +1174,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.9 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

@@ -1,5 +1,5 @@
 ---
-title: "Flexbox"
+title: "Flexbox Layouts"
 layout: layout.njk
 prevPage: "/docs/3-layout-utilities/dimensions"
 nextPage: "/docs/3-layout-utilities/grid"
@@ -88,7 +88,7 @@ Flex columns are great for setting up, e.g. [cards]({{ '/docs/6-simple-component
 
 There are two ways that you can expand flex items horizontally to “fill” a row.
 
-**Note:** it’s also possible to cause individual flex items to grow – see [growing individual flex items](#growing-individual-flex-items) below.
+**Note:** it’s also possible to cause individual flex items to grow – see [using `grow` to stretch individual flex items](#using-grow-to-stretch-individual-flex-items) below.
 
 ### Equal stretching
 

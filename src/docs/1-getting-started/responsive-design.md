@@ -7,7 +7,7 @@ prevLink: "Introduction"
 nextLink: "Element grid"
 ---
 
-Responsive design in Codebase is accomplished by [containers](/docs/3-layout-utilities/containers), [flexbox](/docs/3-layout-utilities/flexbox) and [grid](/docs/3-layout-utilities/grid) layouts, and various utility classes all controlled by media query breakpoint widths, plus a few utilities controlled by `CSS clamp()`.</p>
+Responsive design in Codebase is accomplished by [containers]({{ '/docs/3-layout-utilities/containers' | url }}), [flexbox]({{ '/docs/3-layout-utilities/flexbox' | url }}) and [grid]({{ '/docs/3-layout-utilities/grid' | url }}) layouts, and various utility classes all controlled by media query breakpoint widths, plus a few utilities controlled by `CSS clamp()`.</p>
 
 ## Layouts
 
