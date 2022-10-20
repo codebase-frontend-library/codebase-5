@@ -8,7 +8,7 @@
   <title>Buttons - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.1.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -559,7 +559,11 @@
 <p><input value="Submit" type="submit"> – input button</p>
 <p><a class="btn" role="button" href="#/">Hyperlink</a> – hyperlink dressed as a button using the <code>btn</code> class.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hyperlink<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p><strong>Note:</strong> Both <code>&lt;button&gt;</code> and <code>&lt;input type=&quot;submit&quot;&gt;</code> etc. are already buttons, receiving the Codebase classless button styling. They don’t need the <code>btn</code> class. (But it will do no harm if you include it.)</p>
+<p><strong>Notes:</strong></p>
+<ol>
+<li>Both <code>&lt;button&gt;</code> and <code>&lt;input type=&quot;submit&quot;&gt;</code> etc. are already buttons, receiving the Codebase classless button styling. They don’t need the <code>btn</code> class. (But it will do no harm if you include it.)</li>
+<li>For accessibility reasons, since Codebase v.5.1.0 the <code>btn</code> class, used for styling <code>&lt;a href=&quot;&quot;&gt;</code> links, <em>does not have the form input focus ring</em> (the blue border). Instead, it reverts to the <em>link focus ring</em> (the black and white checker dotted line). See <a href="/codebase-5/docs/1-getting-started/accessibility/#focus-ring-styling">Accessibility: Focus ring styling</a>.</li>
+</ol>
 <h2>UI colors</h2>
 <p>The following UI colors conform to <a href="https://www.w3.org/TR/WCAG/#contrast-minimum">WCAG 2.1 Level AA guidelines</a> for readability: color contrast ratio 4.5:1 or better for text. See <a href="/codebase-5/docs/1-getting-started/accessibility/#accessible-ui-colors">Accessibility: Accessible UI colors</a>.</p>
 <p><button class="btn-success">Success</button>
@@ -767,7 +771,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.1.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

@@ -33,7 +33,7 @@ With these, you can set the text alignment for phones first, and then _override_
 
 Consider this card design:
 
-<div class="mb-3 grid gap sm:equal-2-cols">
+<div class="mb-3 grid gap-3 sm:equal-2-cols">
   <div>
     <div class="rounded p-2 bg-orange-100">
       <p class="h4 mb-1 sm:t-center">Card title</p>

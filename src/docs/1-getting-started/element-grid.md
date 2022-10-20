@@ -19,12 +19,9 @@ This is similar in principle to various 8px grids out there (also known as 8-poi
 
 The Codebase element grid has been deployed a follows:
 
-1. Element grid increments of 0.5rem have been used for setting all line-heights, margins and paddings throughout Codebase.
-2. By default, the base typography vertical rhythm (line-height) is set at 1.5rem (= 3 element grid units). 
+1. By default, the base typography vertical rhythm (line-height) is set at 1.5rem (= 3 element grid units). 
  The line heights for headers have also been set using 0.5rem increments.
-3. For [flex]({{ '/docs/3-responsive-layouts/flex' | url }}) layouts, `flex-gap` has been set at 2rem.
-4. For [grid]({{ '/docs/3-responsive-layouts/grid' | url }}) layouts, `gap` has been set at 2rem.
-5. Decoration utilities for margins and paddings have been set using values from the 0.5rem element grid.
+2. Spacing utilities for margins, paddings and gaps (used in both flexbox and grid) have been set using values from the 0.5rem element grid.
 
 ## Infographic: the Codebase element grid
 

@@ -21,7 +21,7 @@
 
 $ui-color: () !default;
 $ui-color: map-merge((
-  "warning":          #c25703,  // orange -- contrast ratio 4.51:1
+  "warning":          #c25705,  // orange -- contrast ratio 4.5:1
   "danger":           #cf000f,  // red    -- contrast ratio 5.74:1
   "success":          #128a12,  // green  -- contrast ratio 4.5:1
   "info":             #1262ed,  // blue   -- contrast ratio 5.26:1
@@ -137,7 +137,7 @@ $theme-color: map-merge((
 
 $elem:                0.5 !default; // 1 elem = 1 element grid unit
 
-// SCSS map for decoration margins and paddings
+// SCSS map for decoration margins, paddings flexbox gaps and grid gaps
 $spacing: (
   "0":                0,
   "1":                $elem * 1rem,
@@ -197,7 +197,7 @@ $width: (
   "w-xxl":                    1792px 
 );
 
-$mq-width: ( // used in loops for inline-flex, flex, flex-gap, margins, spacings, text alignment, floats
+$mq-width: ( // used in loops for inline-flex, flex, gap, margins, spacings, text alignment, floats
   "xs":                       "w-xs",
   "sm":                       "w-sm",
   "md":                       "w-md",
@@ -207,15 +207,6 @@ $mq-width: ( // used in loops for inline-flex, flex, flex-gap, margins, spacings
 // Containers
 $container-default:           map-get($width, w-xxl);
 $container-x-space:           1rem !default;
-
-// Flexbox system
-$flex-gap:                    1.5rem !default;
-$use-flex-gap:                true !default; // toggling to `false` will revert Codebase to using the old negative margins plus paddings hack for flexbox gaps
-
-// Grid system
-$grid-gap-width-sm:           0.5rem !default;
-$grid-gap-width:              1.5rem !default;
-$grid-gap-width-lg:           3rem !default;
 
 // Aspect ratios
 $aspect-ratio-hack:           false !default;
@@ -293,8 +284,9 @@ $form-element-size-sm:              2rem + (2 * $form-border-thickness) !default
 $form-element-size:                 2.5rem + (2 * $form-border-thickness) !default;
 $form-element-size-lg:              3rem + (2 * $form-border-thickness) !default;
 
-// Focus
-$focus-ring:                        0 0 0 2px #fff, 0 0 0 5px map-get($theme-color, focus-ring) !default;
+// Focus -- a white and black "checker" dotted line, visible over both light or dark backgrounds
+$focus-ring-outline:                2px dotted black;
+$focus-ring-shadow:                 0 0 0 2px white;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // (5.) Components //////////////////////////////////////////////////

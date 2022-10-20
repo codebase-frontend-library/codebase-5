@@ -117,36 +117,18 @@
 }
 
 @mixin gap {
-  gap: $grid-gap-width;
-  &-sm {
-    gap: $grid-gap-width-sm;
-  }
-  &-lg {
-    gap: $grid-gap-width-lg;
+  @each $key, $val in $spacing {
+    &-#{$key} { gap: $val; }
   }
 }
 @mixin col-gap {
-  column-gap: $grid-gap-width;
-  row-gap: 0;
-  &-sm {
-    column-gap: $grid-gap-width-sm;
-    row-gap: 0;
-  }
-  &-lg {
-    column-gap: $grid-gap-width-lg;
-    row-gap: 0;
+  @each $key, $val in $spacing {
+    &-#{$key} { column-gap: $val; }
   }
 }
 @mixin row-gap {
-  column-gap: 0;
-  row-gap: $grid-gap-width;
-  &-sm {
-    column-gap: 0;
-    row-gap: $grid-gap-width-sm;
-  }
-  &-lg {
-    column-gap: 0;
-    row-gap: $grid-gap-width-lg;
+  @each $key, $val in $spacing {
+    &-#{$key} { row-gap: $val; }
   }
 }
 

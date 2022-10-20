@@ -27,7 +27,7 @@ You can also use `t-lg` on the first paragraph in your page or blog post, to mak
 
 ## Example
 
-<div class="mb-3 grid gap xs:equal-2-cols">
+<div class="mb-3 grid gap-3 xs:equal-2-cols">
   <div class="b-thin p-1">
     <div class="h1">H1 title</div>
     <p>Lead paragraph / Lorem ipsum dolor sit amet...</p>

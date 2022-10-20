@@ -8,7 +8,7 @@
   <title>Improvements - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.1.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -571,6 +571,7 @@
 <li><a href="/codebase-5/docs/4-layout-utilities/positions">Positions</a> - <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>, <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code></li>
 <li><a href="/codebase-5/docs/4-layout-utilities/floats">Floats</a> – <code>right</code> and <code>left</code></li>
 <li><a href="/codebase-5/docs/5-decoration-utilities/spacing">Spacing</a> – margins and paddings</li>
+<li><code>Gap-*</code> in <a href="/codebase-5/docs/3-layout-utilities/flexbox/#adding-gaps">flexbox</a> and <a href="/codebase-5/docs/3-layout-utilities/grid/#adding-gaps">grid</a></li>
 <li><a href="/codebase-5/docs/5-decoration-utilities/borders">Borders</a></li>
 </ul>
 <h3 id="real-css-grid-system" tabindex="-1">Real CSS grid system</h3>
@@ -602,20 +603,18 @@
 <li>“Dark mode” styling is not included in Codebase. (Dark mode may come back again as a side project in future.)</li>
 <li>The flexbox percentile “pseudo grid” system has been removed from Codebase. You can use the real CSS Grid <a href="/codebase-5/docs/3-layout-utilities/grid">grid system</a> instead.</li>
 <li>Support for Internet Explorer 11 has been dropped.</li>
-<li>The Codebase 4 <code>activator.js</code> has been retired, therefore Codebase 5 does not have CSS pertaining to it.</li>
+<li>The Codebase 4 <code>activator.js</code> has been retired, and all CSS pertaining to it has been removed. (Use AlpineJS instead.)</li>
 </ul>
 <h2 id="internet-explorer-11-is-not-supported" tabindex="-1">Internet Explorer 11 is not supported</h2>
-<p>IE11 came out in 2013, and <a href="https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy">Microsoft stopped supporting IE11 in August 2021</a> as a standalone browser. However, as IE11 is integral to older Windows operating systems, it continued to receive continual support until the <a href="https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge">end of it’s life cycle</a> in <strong>May 2022</strong> for these old versions of Windows. But now, Internet explorer has finally been <a href="https://death-to-ie11.com">laid to rest</a>.</p>
+<p>IE11 came out in 2013, and <a href="https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy">Microsoft stopped supporting IE11 in August 2021</a> as a standalone browser. Microsoft stopped supporting IE11 in <a href="https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge">May 2022</a>.</p>
 <p>Several things have been included in Codebase CSS that have no backward-compatibility to older browsers such as IE11:</p>
 <ul>
-<li>The real <em>CSS Grid</em> based <a href="/codebase-5/docs/3-layout-utilities/grid">grid system</a>.</li>
+<li>The real <em>CSS Grid</em> based <a href="/codebase-5/docs/3-layout-utilities/grid">grid system</a></li>
+<li>The <code>gap</code> CSS property for flexbox and grid</li>
 <li><a href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect-ratio</a> wrappers</li>
-<li>Some styles have size constraints using <code>clamp()</code>.</li>
+<li>Some styles have size constraints using <code>clamp()</code></li>
 </ul>
 <p><strong>Note:</strong> also, <a href="https://alpinejs.dev/upgrade-guide#no-ie-11">Alpine 3 does not support Interet Explorer 11</a>.</p>
-<h2 id="activator.js-has-been-discontinued" tabindex="-1">Activator.JS has been discontinued</h2>
-<p>Since IE11 is not supported in Codebase 5, Codebase 4’s Activator JavaScript <code>activator.js</code> have been removed (both the vanilla JS and jQuery versions).</p>
-<p>Now, Codebase uses only AlpineJS (verion 3.x) for HTML/JS components.</p>
 <h2 id="gulp-is-no-longer-required" tabindex="-1">Gulp is no longer required</h2>
 <p>The <a href="https://gulpjs.com/">Gulp</a> taskrunner is no longer required.</p>
 <ul>
@@ -661,7 +660,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.1.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

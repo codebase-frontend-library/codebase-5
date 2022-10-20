@@ -23,7 +23,7 @@ In Codebase, borders and other detail elements (table cells, form inputs, etc.) 
 
 Examples using `-heavy`:
 
-<div class="mb-3 flex flex-gap flex-grow-equal">
+<div class="mb-3 flex gap-3 flex-grow-equal">
   <div><div class="mb-1 bt-heavy bg-gray-100 p-1">bt-heavy</div></div>
   <div><div class="mb-1 br-heavy bg-gray-100 p-1">br-heavy</div></div>
   <div><div class="mb-1 bb-heavy bg-gray-100 p-1">bb-heavy</div></div>

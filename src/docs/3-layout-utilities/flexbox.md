@@ -48,7 +48,7 @@ Codebase’s simple `flex` flexbox layout system enables you to organize wrapped
 
     Below these breakpoints the child block element layout will be displayed the default way: all stacked in a single column with 100% width.
 
-2. The flexbox modifier classes documented below (`flex-gap`, `flex-wrap`, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.
+2. The flexbox modifier classes documented below (`gap-3`, `flex-wrap`, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.
 3. All flexbox system wrappers affect their _immediate child elements_ (i.e. flex-items).
 4. `flex` is not used for a pseudo grid system. Instead, Codebase has a [real grid]({{ '/docs/3-layout-utilities/grid' | url }}) that uses _CSS Grid Layout_.
 5. By default, flex sytems do not _wrap_ their content onto a new row if there is not enough space available. So, if you require wrapping, use `flex flex-wrap`.
@@ -201,31 +201,67 @@ With `flex flex-column` (and the flex wrapper has `style="height: 250px"` for th
 </div>
 ```
 
-## Adding a gap
+## Adding gaps
 
 There are two ways to add gaps in `flex` sets.
 
-### Gaps using `flex-gap`
+### Gaps using `gap-*`
 
-Codebase uses [flexbox-gap](https://caniuse.com/flexbox-gap) style rule for flex gaps.
+Codebase uses the [gap property](https://caniuse.com/flexbox-gap) for flexbox to style `flex` gaps (i.e. the same gap property as for CSS grid).
 
-If you want a gap between flex items, add `flex-gap` to the `flex` wrapper:
+Since Codebase v.5.1.0, these have ben set using the same element grid unit spacing variables as are used for the margins and paddings utilities
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Element grid measure</th>
+      <th>Utility class suffix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5rem</td>
+      <td><code>-1</code></td>
+    </tr>
+    <tr>
+      <td>1rem</td>
+      <td><code>-2</code></td>
+    </tr>
+    <tr>
+      <td>1.5rem</td>
+      <td><code>-3</code></td>
+    </tr>
+    <tr>
+      <td>2rem</td>
+      <td><code>-4</code></td>
+    </tr>
+    <tr>
+      <td>2.5rem</td>
+      <td><code>-5</code></td>
+    </tr>
+    <tr>
+      <td>3rem</td>
+      <td><code>-6</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### Responsive gap tiers
+
+All of the above `gap` permutations have 5 responsive tiers: at (all), `xs:`, `sm:`, `md:`, and `lg:` breakpoints. Like so:
+
+* Gaps between both rows and columns: `gap-` / `xs:gap-` / `sm:gap-` / `md:gap-` / `lg:gap-`
+* Gaps between both columns only: `col-gap-` / `xs:col-gap-` / `sm:col-gap-` / `md:col-gap-` / `lg:col-gap-`
+* Gaps between both rows only: `row-gap-` / `xs:row-gap-` / `sm:row-gap-` / `md:row-gap-` / `lg:row-gap-`
+
+That makes 90 (`flex` or `grid`) gap utilities.
+
+#### Gap example
+
+`flex gap-2 flex-grow-auto flex-wrap`
 
 <div class="my-6">
-<div class="flex flex-gap flex-grow-auto">
-  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
-  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
-  <div class="b-thin p-1 bg-gray-100">And a third</div>
-  <div class="b-thin p-1 bg-gray-100">Last flex-item in this flexbox set</div>
-</div>
-</div>
-
-The thickness `flex-gap` is 1.5rem (default) – which is 3 [element grid units]({{ '/docs/1-getting-started/element-grid/' | url }}), or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase.
-
-`flex-gap` adds gaps vertically (between columns) and horizontally (between rows)s, as you see in the example below:
-
-<div class="my-6">
-<div class="flex flex-gap flex-grow-auto flex-wrap">
+<div class="flex gap-2 flex-grow-auto flex-wrap">
   <div class="b-thin p-1 bg-gray-100">First flex-item</div>
   <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
   <div class="b-thin p-1 bg-gray-100">And a third</div>
@@ -240,7 +276,43 @@ The thickness `flex-gap` is 1.5rem (default) – which is 3 [element grid units]
 </div>
 </div>
 
-**Note:** if you need to revert to using the old “flexbox gap hack“ that adds _negative x-axis margins_ to the `flex` wrapper and corresponding _positive x-axis paddings_ to the flex items, this is still available: just change `$use-flex-gap: true` to `false` in the default variables file.
+#### Column Gaps and Row Gaps
+
+`flex col-gap-2 flex-grow-auto flex-wrap`
+
+<div class="my-6">
+<div class="flex col-gap-2 flex-grow-auto flex-wrap">
+  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">And a third</div>
+  <div class="b-thin p-1 bg-gray-100">Fourth flex-item in this flexbox set</div>
+  <div class="b-thin p-1 bg-gray-100">Here’s another item</div>
+  <div class="b-thin p-1 bg-gray-100">We’re not finished yet</div>
+  <div class="b-thin p-1 bg-gray-100">There’s more to come</div>
+  <div class="b-thin p-1 bg-gray-100">Still not finished</div>
+  <div class="b-thin p-1 bg-gray-100">What, you want more?</div>
+  <div class="b-thin p-1 bg-gray-100">Really?</div>
+  <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
+</div>
+</div>
+
+`flex row-gap-2 flex-grow-auto flex-wrap`
+
+<div class="my-6">
+<div class="flex row-gap-2 flex-grow-auto flex-wrap">
+  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">And a third</div>
+  <div class="b-thin p-1 bg-gray-100">Fourth flex-item in this flexbox set</div>
+  <div class="b-thin p-1 bg-gray-100">Here’s another item</div>
+  <div class="b-thin p-1 bg-gray-100">We’re not finished yet</div>
+  <div class="b-thin p-1 bg-gray-100">There’s more to come</div>
+  <div class="b-thin p-1 bg-gray-100">Still not finished</div>
+  <div class="b-thin p-1 bg-gray-100">What, you want more?</div>
+  <div class="b-thin p-1 bg-gray-100">Really?</div>
+  <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
+</div>
+</div>
 
 ### Other ways to add white space
 

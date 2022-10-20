@@ -80,7 +80,7 @@ Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [obj
 
 The same tall image, positioned vertically three ways:
 
-<div class="grid gap xs:equal-2-cols mb-3">
+<div class="grid gap-3 xs:equal-2-cols mb-3">
   <div>
     <img src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
   </div>
@@ -207,7 +207,7 @@ Since Codebase v5.10, there are hover states set for each.
 
 These opacity utility classes can also be manipulated by [AlpineJS animations]({{ '/docs/7-alpinejs-components/animations/' | url }}).
 
-<div class="mb-3 grid gap xs:equal-3-cols">
+<div class="mb-3 grid gap-3 xs:equal-3-cols">
   <div>
     <p><code>opacity-25%</code></p>
     <img class="opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
@@ -241,7 +241,7 @@ Hover states:
 
 Add a colored background behind the image, and the opacity enables the image to show as tinted:
 
-<div class="grid gap xs:equal-3-cols">
+<div class="grid gap-3 xs:equal-3-cols">
   <div>
     <p><code>opacity-50%</code> over a purpla background</p>
     <div class="bg-purple-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>

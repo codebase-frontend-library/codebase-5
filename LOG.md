@@ -4,6 +4,13 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 20 Oct 2022 -- v.5.1.0
+
+* **Breaking change:** improved CSS grid gap and flexbox gap, using the full set of responsive spacing variables: now `gap-1` thru `gap-6` (and column only and row only versions, and breakpoint alternatives) instead of the simpler `gap-sm`, `gap-md`, and `gap-lg`. Also `flexbox-gap` has gone; use these new `gap-*` utilities instead.
+* Improved `focus-visible` focus ring: black and white "checker" dotted line, comprised of black dotted outline overlaying a solid white box-shadow of the same thickness.
+* `btn` class (for links) now _doesn't_ have the input focus ring; it has the link focus ring.
+* Updated npm packages.
+
 ## 26 Sep 2022 -- v.5.0.10
 
 * Added hover states to opacity utilities.

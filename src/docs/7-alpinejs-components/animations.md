@@ -410,7 +410,7 @@ With two components (one in each grid cell) that are triggered to `true` when th
 
 <div class="my-6 rounded p-2 bg-green-100">
   <div
-    class="grid gap md:equal-2-cols"
+    class="grid gap-3 md:equal-2-cols"
   >
     <div
       class="xs:col-1 xs:row-1"
@@ -501,7 +501,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
       x-transition:enter-start="opacity-0 translate-bottom-100%"
       x-transition:enter-end="opacity-100% translate-0"
     >Meet the team</div>
-    <div class="grid gap equal-2-cols sm:equal-4-cols">
+    <div class="grid gap-3 equal-2-cols sm:equal-4-cols">
       <div>
         <div
           class="transition-all-300ms"
@@ -557,7 +557,7 @@ Two panels that fade in and slide together from right and left, on scroll.
 For this example, these will be triggered every time the panels are scrolled into the viewport, whether you scroll down or up.
 
 <div class="my-3">
-  <div class="grid gap xs:equal-2-cols">
+  <div class="grid gap-3 xs:equal-2-cols">
     <div
       x-data="{ inViewport: false }"
       x-intersect:enter="inViewport = true"

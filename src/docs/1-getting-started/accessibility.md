@@ -78,8 +78,8 @@ Interactive elements require a visual indicator that to lake them obvious for si
 
 In Codebase, focus ring styling has been improved for links, buttons, form inputs, etc. Seeing that Chrome, Edge, Firefox, and Safari all now have a similar-looking default focus ring, since v.5.0.7 Codebase improves upon this as follows:
 
-* `:focus-visible` focus rings on links are now the _default gray outline_, offset by 2px, with a solid white 2px box-shadow inside the offset (this improves focus ring visibility over dark backgrounds).
-* `:focus` focus rings on form elements and buttons (including styled `.btn` pseudo-buttons) have a 0.25rem light blue box shadow.
+* `:focus-visible` – since Codebase v.5.1.0, focus rings on links have black and white "checker" dotted line, comprised of black dotted outline overlaying a solid white box-shadow of the same thickness. The black makes the focus ring easy to see over light colors whereas the white makes it easy to see over dark colors.
+* `:focus` – focus rings on form elements and buttons (including styled `.btn` pseudo-buttons) have a 0.25rem light blue box shadow.
 
 ## AlpineJS powered components
 

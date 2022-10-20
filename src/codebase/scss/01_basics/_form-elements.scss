@@ -160,12 +160,6 @@ textarea {
     opacity: 0.5;
     pointer-events: none;
   }
-  &:focus {
-    z-index: 1;
-    outline: 0;
-    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
-  }
-
   @if $button-rounded-corners == true {
     border-radius: $button-border-radius;
   } @else {
@@ -179,7 +173,15 @@ textarea {
 button,
 [type="button"],
 [type="submit"],
-[type="reset"],
+[type="reset"] {
+  @include button;
+  &:focus {
+    z-index: 1;
+    outline: 0;
+    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
+  }
+}
+
 .btn {
   @include button;
 }

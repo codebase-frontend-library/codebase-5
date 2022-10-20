@@ -25,7 +25,10 @@ Codebase `btn-*` classes enable you to apply button styles to buttons, input-but
 <a class="btn" role="button" href="#/">Hyperlink</a>
 ```
 
-**Note:** Both `<button>` and `<input type="submit">` etc. are already buttons, receiving the Codebase classless button styling. They don’t need the `btn` class. (But it will do no harm if you include it.)
+**Notes:**
+
+1. Both `<button>` and `<input type="submit">` etc. are already buttons, receiving the Codebase classless button styling. They don’t need the `btn` class. (But it will do no harm if you include it.)
+2. For accessibility reasons, since Codebase v.5.1.0 the `btn` class, used for styling `<a href="">` links, _does not have the form input focus ring_ (the blue border). Instead, it reverts to the _link focus ring_ (the black and white checker dotted line). See [Accessibility: Focus ring styling]({{ '/docs/1-getting-started/accessibility/#focus-ring-styling' | url }}).
 
 <h2>UI colors</h2>
 

@@ -85,7 +85,7 @@ With Codebase, you can use `square` to make elements square, and `square rounded
 
 `square`’s have the full set of media query breakpoint variations (`md:`, `sm:`, `md:`, and `lg:`) so that you can make them larger or smaller in various layout contexts.
 
-<div class="flex flex-middle flex-gap mb-1">
+<div class="flex flex-middle gap-3 mb-1">
   <div>
     <div class="square-sm">
       <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A square image">
@@ -119,7 +119,7 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 </div>
 ```
 
-<div class="flex flex-middle flex-gap mb-1">
+<div class="flex flex-middle gap-3 mb-1">
   <div>
     <div class="square-sm rounded-full overflow-hidden">
       <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">

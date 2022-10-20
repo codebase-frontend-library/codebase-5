@@ -22,7 +22,7 @@ If you are using an `ol` or `ul` then the following example is a good place to s
 4. Make each link in the menu to be styled as a block-level element, and add some padding – this increases the link area for large fingers on touch screen devices.
 5. You may want menu links not to be styled the same as traditional colored links within your main content (prose text).
 
-<div class="mb-3 xs:flex flex-gap flex-grow-equal">
+<div class="mb-3 xs:flex gap-3 flex-grow-equal">
 <div>
 <p>An unordered list of links:</p>
 <ul>
@@ -78,7 +78,7 @@ Following the code example below are three examples of menus with sub menus – 
 You can look at the source code to see how the following examples have been decorated with utility classes.
 
 <div class="my-6">
-<div class="xs:flex flex-gap flex-grow-equal">
+<div class="xs:flex gap-3 flex-grow-equal">
 <ul class="list-style-type-none pl-0">
   <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 1</a></li>
   <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 2</a></li>

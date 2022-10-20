@@ -67,9 +67,9 @@ The `grid` class does not specify or predict where you will position or how you 
 
 ```html
 <div class="grid">
-  <div> ... </div>
-  <div> ... </div>
-  <div> ... </div>
+  <div></div>
+  <div></div>
+  <div></div>
 </div>
 ```
 
@@ -85,12 +85,12 @@ Grid items will _automatically wrap_ onto a new row if your layout requires it. 
 
 ```html
 <div class="grid">
-  <div class="col-1"> ... </div>
-  <div class="col-2"> ... </div>
-  <div class="col-3"> ... </div>
-  <div class="col-1"> ... </div>
-  <div class="col-2"> ... </div>
-  <div class="col-3"> ... </div>
+  <div class="col-1"></div>
+  <div class="col-2"></div>
+  <div class="col-3"></div>
+  <div class="col-1"></div>
+  <div class="col-2"></div>
+  <div class="col-3"></div>
 </div>
 ```
 
@@ -109,12 +109,21 @@ The `col-` classes on subsequent rows are redundant but harmless – but you can
 
 ```html
 <div class="grid">
-  <div class="col-1"> ... </div>
-  <div class="col-2"> ... </div>
-  <div class="col-3"> ... </div>
-  <div class="col-4"> ... </div>
-  <div class="col-5"> ... </div>
-  ...
+  <div class="col-1"></div>
+  <div class="col-2"></div>
+  <div class="col-3"></div>
+  <div class="col-4"></div>
+  <div class="col-5"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </div>
 ```
 
@@ -198,9 +207,60 @@ Add a gap (also known as a _gutter_) between grid items using `gap` classes. Gri
 * horizontally along row tracks : use `row-gap`
 * vertically along column tracks and horizontally along row tracks: use `gap`
 
-`grid gap equal-3-cols`:
+Codebase uses the same [gap property](https://caniuse.com/?search=gap) for CSS grid as for flexbox.
 
-<div class="grid gap equal-3-cols my-6">
+Since Codebase v.5.1.0, these have ben set using the same element grid unit spacing variables as are used for the margins and paddings utilities
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Element grid measure</th>
+      <th>Utility class suffix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5rem</td>
+      <td><code>-1</code></td>
+    </tr>
+    <tr>
+      <td>1rem</td>
+      <td><code>-2</code></td>
+    </tr>
+    <tr>
+      <td>1.5rem</td>
+      <td><code>-3</code></td>
+    </tr>
+    <tr>
+      <td>2rem</td>
+      <td><code>-4</code></td>
+    </tr>
+    <tr>
+      <td>2.5rem</td>
+      <td><code>-5</code></td>
+    </tr>
+    <tr>
+      <td>3rem</td>
+      <td><code>-6</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### Responsive gap tiers
+
+All of the above `gap` permutations have 5 responsive tiers: at (all), `xs:`, `sm:`, `md:`, and `lg:` breakpoints. See [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints). Like so:
+
+* Gaps between both rows and columns: `gap-` / `xs:gap-` / `sm:gap-` / `md:gap-` / `lg:gap-`
+* Gaps between both columns only: `col-gap-` / `xs:col-gap-` / `sm:col-gap-` / `md:col-gap-` / `lg:col-gap-`
+* Gaps between both rows only: `row-gap-` / `xs:row-gap-` / `sm:row-gap-` / `md:row-gap-` / `lg:row-gap-`
+
+That makes 90 (`flex` or `grid`) gap utilities.
+
+#### Gap examples
+
+`grid gap-1 equal-3-cols`:
+
+<div class="grid gap-1 equal-3-cols my-6">
   <div class="rows-1-2 b-thin p-1 bg-gray-100">rows-1-2</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
@@ -208,43 +268,33 @@ Add a gap (also known as a _gutter_) between grid items using `gap` classes. Gri
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
-#### Gap thickness
+`grid gap-3 equal-3-cols`:
 
-The default `gap` is 1.5rem – which is 3 [element grid units]({{ '/docs/1-getting-started/element-grid/' | url }}), or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase. There is also `gap-sm` (0.5rem, or 1 element grid unit) and `grid-lg` (3rem, or 6 element grid units).
-
-`grid gap-sm equal-4-cols`:
-
-<div class="grid gap-sm equal-4-cols my-6">
+<div class="grid gap-3 equal-3-cols my-6">
+  <div class="rows-1-2 b-thin p-1 bg-gray-100">rows-1-2</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
-`grid gap equal-4-cols`:
+`grid gap-6 equal-3-cols`:
 
-<div class="grid gap equal-4-cols my-6">
+<div class="grid gap-6 equal-3-cols my-6">
+  <div class="rows-1-2 b-thin p-1 bg-gray-100">rows-1-2</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
-
-`grid gap-lg equal-4-cols`:
-
-<div class="grid gap-lg equal-4-cols my-6">
-  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
-  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
-  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
-  <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
-</div>
-
 
 #### Column gaps and row gaps
 
-`grid col-gap equal-3-cols`:
+Examples:
 
-<div class="grid col-gap equal-3-cols my-6">
+`grid col-gap-3 equal-3-cols`:
+
+<div class="grid col-gap-3 equal-3-cols my-6">
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
@@ -256,9 +306,9 @@ The default `gap` is 1.5rem – which is 3 [element grid units]({{ '/docs/1-gett
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
-`grid row-gap equal-3-cols`:
+`grid row-gap-3 equal-3-cols`:
 
-<div class="grid row-gap equal-3-cols my-6">
+<div class="grid row-gap-3 equal-3-cols my-6">
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
@@ -269,10 +319,6 @@ The default `gap` is 1.5rem – which is 3 [element grid units]({{ '/docs/1-gett
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
-
-#### Responsive gap tiers
-
-All of the above `gap` permutations have 5 responsive tiers: at (all), `xs:`, `sm:`, `md:`, and `lg:` breakpoints. See [grid layouts at different media query breakpoints](#grid-layouts-at-different-media-query-breakpoints).
 
 ### Controlling grid item positioning on a per-item basis
 

@@ -8,7 +8,7 @@
   <title>Flexbox Layouts - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.0.10" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.1.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.0.10">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -593,7 +593,7 @@
 <p>Below these breakpoints the child block element layout will be displayed the default way: all stacked in a single column with 100% width.</p>
 </li>
 <li>
-<p>The flexbox modifier classes documented below (<code>flex-gap</code>, <code>flex-wrap</code>, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.</p>
+<p>The flexbox modifier classes documented below (<code>gap-3</code>, <code>flex-wrap</code>, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.</p>
 </li>
 <li>
 <p>All flexbox system wrappers affect their <em>immediate child elements</em> (i.e. flex-items).</p>
@@ -690,23 +690,57 @@
 </div>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 250px</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  &lt;div class="grow>grow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="adding-a-gap" tabindex="-1">Adding a gap</h2>
+<h2 id="adding-gaps" tabindex="-1">Adding gaps</h2>
 <p>There are two ways to add gaps in <code>flex</code> sets.</p>
-<h3 id="gaps-using-flex-gap" tabindex="-1">Gaps using <code>flex-gap</code></h3>
-<p>Codebase uses <a href="https://caniuse.com/flexbox-gap">flexbox-gap</a> style rule for flex gaps.</p>
-<p>If you want a gap between flex items, add <code>flex-gap</code> to the <code>flex</code> wrapper:</p>
+<h3 id="gaps-using-gap-*" tabindex="-1">Gaps using <code>gap-*</code></h3>
+<p>Codebase uses the <a href="https://caniuse.com/flexbox-gap">gap property</a> for flexbox to style <code>flex</code> gaps (i.e. the same gap property as for CSS grid).</p>
+<p>Since Codebase v.5.1.0, these have ben set using the same element grid unit spacing variables as are used for the margins and paddings utilities</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Element grid measure</th>
+      <th>Utility class suffix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5rem</td>
+      <td><code>-1</code></td>
+    </tr>
+    <tr>
+      <td>1rem</td>
+      <td><code>-2</code></td>
+    </tr>
+    <tr>
+      <td>1.5rem</td>
+      <td><code>-3</code></td>
+    </tr>
+    <tr>
+      <td>2rem</td>
+      <td><code>-4</code></td>
+    </tr>
+    <tr>
+      <td>2.5rem</td>
+      <td><code>-5</code></td>
+    </tr>
+    <tr>
+      <td>3rem</td>
+      <td><code>-6</code></td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="responsive-gap-tiers" tabindex="-1">Responsive gap tiers</h4>
+<p>All of the above <code>gap</code> permutations have 5 responsive tiers: at (all), <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> breakpoints. Like so:</p>
+<ul>
+<li>Gaps between both rows and columns: <code>gap-</code> / <code>xs:gap-</code> / <code>sm:gap-</code> / <code>md:gap-</code> / <code>lg:gap-</code></li>
+<li>Gaps between both columns only: <code>col-gap-</code> / <code>xs:col-gap-</code> / <code>sm:col-gap-</code> / <code>md:col-gap-</code> / <code>lg:col-gap-</code></li>
+<li>Gaps between both rows only: <code>row-gap-</code> / <code>xs:row-gap-</code> / <code>sm:row-gap-</code> / <code>md:row-gap-</code> / <code>lg:row-gap-</code></li>
+</ul>
+<p>That makes 90 (<code>flex</code> or <code>grid</code>) gap utilities.</p>
+<h4 id="gap-example" tabindex="-1">Gap example</h4>
+<p><code>flex gap-2 flex-grow-auto flex-wrap</code></p>
 <div class="my-6">
-<div class="flex flex-gap flex-grow-auto">
-  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
-  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
-  <div class="b-thin p-1 bg-gray-100">And a third</div>
-  <div class="b-thin p-1 bg-gray-100">Last flex-item in this flexbox set</div>
-</div>
-</div>
-<p>The thickness <code>flex-gap</code> is 1.5rem (default) – which is 3 <a href="/codebase-5/docs/1-getting-started/element-grid/">element grid units</a>, or the same as the default line height, and the height of the “empty line“ margin below paragraphs and headings in Codebase.</p>
-<p><code>flex-gap</code> adds gaps vertically (between columns) and horizontally (between rows)s, as you see in the example below:</p>
-<div class="my-6">
-<div class="flex flex-gap flex-grow-auto flex-wrap">
+<div class="flex gap-2 flex-grow-auto flex-wrap">
   <div class="b-thin p-1 bg-gray-100">First flex-item</div>
   <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
   <div class="b-thin p-1 bg-gray-100">And a third</div>
@@ -720,7 +754,39 @@
   <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
 </div>
 </div>
-<p><strong>Note:</strong> if you need to revert to using the old “flexbox gap hack“ that adds <em>negative x-axis margins</em> to the <code>flex</code> wrapper and corresponding <em>positive x-axis paddings</em> to the flex items, this is still available: just change <code>$use-flex-gap: true</code> to <code>false</code> in the default variables file.</p>
+<h4 id="column-gaps-and-row-gaps" tabindex="-1">Column Gaps and Row Gaps</h4>
+<p><code>flex col-gap-2 flex-grow-auto flex-wrap</code></p>
+<div class="my-6">
+<div class="flex col-gap-2 flex-grow-auto flex-wrap">
+  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">And a third</div>
+  <div class="b-thin p-1 bg-gray-100">Fourth flex-item in this flexbox set</div>
+  <div class="b-thin p-1 bg-gray-100">Here’s another item</div>
+  <div class="b-thin p-1 bg-gray-100">We’re not finished yet</div>
+  <div class="b-thin p-1 bg-gray-100">There’s more to come</div>
+  <div class="b-thin p-1 bg-gray-100">Still not finished</div>
+  <div class="b-thin p-1 bg-gray-100">What, you want more?</div>
+  <div class="b-thin p-1 bg-gray-100">Really?</div>
+  <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
+</div>
+</div>
+<p><code>flex row-gap-2 flex-grow-auto flex-wrap</code></p>
+<div class="my-6">
+<div class="flex row-gap-2 flex-grow-auto flex-wrap">
+  <div class="b-thin p-1 bg-gray-100">First flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">Another flex-item</div>
+  <div class="b-thin p-1 bg-gray-100">And a third</div>
+  <div class="b-thin p-1 bg-gray-100">Fourth flex-item in this flexbox set</div>
+  <div class="b-thin p-1 bg-gray-100">Here’s another item</div>
+  <div class="b-thin p-1 bg-gray-100">We’re not finished yet</div>
+  <div class="b-thin p-1 bg-gray-100">There’s more to come</div>
+  <div class="b-thin p-1 bg-gray-100">Still not finished</div>
+  <div class="b-thin p-1 bg-gray-100">What, you want more?</div>
+  <div class="b-thin p-1 bg-gray-100">Really?</div>
+  <div class="b-thin p-1 bg-gray-100">Finally, the last flex-item</div>
+</div>
+</div>
 <h3 id="other-ways-to-add-white-space" tabindex="-1">Other ways to add white space</h3>
 <p><code>flex flex-space-between</code>:</p>
 <div class="my-6">
@@ -833,7 +899,7 @@
     </a>
   </p>
   
-  <p>Version 5.0.10 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.1.0 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

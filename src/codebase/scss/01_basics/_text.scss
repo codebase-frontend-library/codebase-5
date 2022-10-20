@@ -172,14 +172,12 @@ blockquote {
 
 .t-link {
   &:-moz-focusring {
-    outline-width: 2px;
-    outline-offset: 2px;
-    box-shadow: $focus-ring;
+    outline: $focus-ring-outline;
+    box-shadow: $focus-ring-shadow;
   }
   &:focus-visible {
-    outline-width: 2px;
-    outline-offset: 2px;
-    box-shadow: $focus-ring;
+    outline: $focus-ring-outline;
+    box-shadow: $focus-ring-shadow;
   }
 }
 

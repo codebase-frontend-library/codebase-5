@@ -19,7 +19,7 @@ I don’t know what colors you want in your web design project. 😁
 
 Therefore, Codebase borrows the default set of seven [UI colors](#ui-colors) (as used for buttons, etc.), giving them obvious color names as aliases: <label class="label bg-orange-500 t-white">orange</label>, <label class="label bg-red-500 t-white">red</label>, <label class="label bg-green-500 t-white">green</label>, <label class="label bg-blue-500 t-white">blue</label>, <label class="label bg-purple-500 t-white">purple</label>, <label class="label bg-teal-500 t-white">teal</label>, and <label class="label bg-gray-500 t-white">gray</label>.
 
-**Note:** since the base default color of each is aliased from the _UI colors_ (which are necessarily dark, for following the [WCAG 2.1 Level AA accessibility guidelines](https://www.w3.org/TR/WCAG21/)), these are set as the `-600` shades in the series.
+**Note:** since the base default color of each is aliased from the _UI colors_ (which are necessarily dark, for following the [WCAG 2.1 Level AA accessibility guidelines](https://www.w3.org/TR/WCAG21/)), these are set as the `-600` swatch shades in the series (see below).
 
 _These default colors are merely here for demonstration purposes._ You can use them to get you started as-is, but you can also swap them out for whatever you need in your project. You can have your own named colors and color codes.
 

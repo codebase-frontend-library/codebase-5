@@ -14,7 +14,7 @@ There are several options for rounded corners in Codebase, handled by CSS border
 * `rounded-sm` / `rounded` / `rounded-lg` / `rounded-pill` / `rounded-full`
 
 <div class="my-6">
-  <div class="grid gap equal-2-cols sm:equal-3-cols t-center">
+  <div class="grid gap-3 equal-2-cols sm:equal-3-cols t-center">
     <div>
       <div class="mx-auto p-1 b-thin rounded-sm" style="width:100px;height:100px;"></div>rounded-sm <br> <span class="t-teal-600">border-radius<br>= 0.25rem (4px) default</span>
     </div>
@@ -65,7 +65,7 @@ These `unrounded-*` classes work on all the `rounded-*` variations above. They a
 * `unrounded-all` (alias `unrounded`)
 
 <div class="my-6">
-<div class="grid gap equal-2-cols sm:equal-4-cols t-center">
+<div class="grid gap-3 equal-2-cols sm:equal-4-cols t-center">
   <div>
     <div class="mx-auto p-1 b-thin rounded-lg unrounded-top-right" style="width:100px;height:100px;"></div>unrounded-top-right
   </div>

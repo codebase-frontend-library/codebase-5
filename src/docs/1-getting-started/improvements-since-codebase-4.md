@@ -37,6 +37,7 @@ Several utility classes now have a large range media width variants, so that you
 * [Positions]({{ '/docs/4-layout-utilities/positions' | url }}) - `relative`, `absolute`, `fixed`, `sticky`, `top`, `right`, `bottom` and `left`
 * [Floats]({{ '/docs/4-layout-utilities/floats' | url }}) – `right` and `left`
 * [Spacing]({{ '/docs/5-decoration-utilities/spacing' | url }}) – margins and paddings
+* `Gap-*` in [flexbox]({{ '/docs/3-layout-utilities/flexbox/#adding-gaps' | url }}) and [grid]({{ '/docs/3-layout-utilities/grid/#adding-gaps' | url }})
 * [Borders]({{ '/docs/5-decoration-utilities/borders' | url }})
 
 ### Real CSS grid system
@@ -79,25 +80,20 @@ There are several small things removed from Codebase CSS, that are not listed he
 * “Dark mode” styling is not included in Codebase. (Dark mode may come back again as a side project in future.)
 * The flexbox percentile “pseudo grid” system has been removed from Codebase. You can use the real CSS Grid [grid system]({{ '/docs/3-layout-utilities/grid' | url }}) instead.
 * Support for Internet Explorer 11 has been dropped.
-* The Codebase 4 `activator.js` has been retired, therefore Codebase 5 does not have CSS pertaining to it.
+* The Codebase 4 `activator.js` has been retired, and all CSS pertaining to it has been removed. (Use AlpineJS instead.)
 
 ## Internet Explorer 11 is not supported
 
-IE11 came out in 2013, and [Microsoft stopped supporting IE11 in August 2021](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser. However, as IE11 is integral to older Windows operating systems, it continued to receive continual support until the [end of it’s life cycle](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge) in **May 2022** for these old versions of Windows. But now, Internet explorer has finally been [laid to rest](https://death-to-ie11.com).
+IE11 came out in 2013, and [Microsoft stopped supporting IE11 in August 2021](https://docs.microsoft.com/en-us/lifecycle/announcements/m365-ie11-microsoft-edge-legacy) as a standalone browser. Microsoft stopped supporting IE11 in [May 2022](https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge).
 
 Several things have been included in Codebase CSS that have no backward-compatibility to older browsers such as IE11:
 
-* The real _CSS Grid_ based [grid system]({{ '/docs/3-layout-utilities/grid' | url }}).
+* The real _CSS Grid_ based [grid system]({{ '/docs/3-layout-utilities/grid' | url }})
+* The `gap` CSS property for flexbox and grid
 * [Aspect-ratio]({{ '/docs/3-layout-utilities/aspect-ratios' | url }}) wrappers
-* Some styles have size constraints using `clamp()`.
+* Some styles have size constraints using `clamp()`
 
 **Note:** also, [Alpine 3 does not support Interet Explorer 11](https://alpinejs.dev/upgrade-guide#no-ie-11).
-
-## Activator.JS has been discontinued
-
-Since IE11 is not supported in Codebase 5, Codebase 4’s Activator JavaScript `activator.js` have been removed (both the vanilla JS and jQuery versions).
-
-Now, Codebase uses only AlpineJS (verion 3.x) for HTML/JS components.
 
 ## Gulp is no longer required
 

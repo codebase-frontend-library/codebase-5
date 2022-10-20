@@ -7,7 +7,7 @@ nextLink: "Responsive design"
 
 You can start working immediately with Codebase in a simple HTML setup.
 
-<div class="my-6 flex flex-gap flex-wrap flex-center t-center">
+<div class="my-6 flex gap-3 flex-wrap flex-center t-center">
   <div>
     <a class="btn btn-primary btn-lg rounded-pill" href="{{ '/dist/codebase.css' | url }}">Download CSS</code></a>
   </div>

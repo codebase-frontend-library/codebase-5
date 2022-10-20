@@ -18,7 +18,7 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
 
 ## Common image/video aspect ratios 
 
-<div class="mb-3 grid gap equal-5-cols">
+<div class="mb-3 grid gap-3 equal-5-cols">
   <div>
     <div class="aspect-ratio-3x4 b-thin bg-gray-100">
       3×4

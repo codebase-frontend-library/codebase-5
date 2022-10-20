@@ -364,7 +364,7 @@
         <tspan x="-162.93" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">Other utility classes with variants that take effect at the `xs`, `sm`, `md` and `lg` breakpoints:</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 444.534, 1698.4)">
-        <tspan x="-83.061" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Spacing (margins and paddings) and borders</tspan>
+        <tspan x="-83.061" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Spacing (margins, paddings, gaps) and borders</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 349.127, 1718.2)">
         <tspan x="-39.693" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Floats (left and right)</tspan>

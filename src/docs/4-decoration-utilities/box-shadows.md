@@ -14,7 +14,7 @@ Box shadows can take your design to a new level. 😂
 * `bs-1` / `bs-2` / `bs-3` / `bs-4` / `bs-5`
 
 <div class="my-6">
-  <div class="flex flex-wrap flex-gap">
+  <div class="flex flex-wrap gap-3">
     <div class="sm:w-20%">
       <div class="bs-1 mb-3 p-2">bs-1</div>
     </div>
@@ -56,7 +56,7 @@ Box shadows can take your design to a new level. 😂
 Since v.5.0.6 Codebase has hover states for each of the 5 levels of box shadows. Hover the panels below to see them in action
 
 <div class="my-6">
-  <div class="flex flex-wrap flex-gap">
+  <div class="flex flex-wrap gap-3">
     <div class="sm:w-20%">
       <div class="hover:bs-1 b-thin p-2">hover:bs-1</div>
     </div>
