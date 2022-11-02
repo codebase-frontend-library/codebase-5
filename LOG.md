@@ -4,6 +4,10 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 2 Nov 2022 -- v.5.0.1
+
+* Added `width: 100%` to the `block` utility class, because in Safari `<input type="text" class="block">` and `<button class="block">` were not going full width.
+
 ## 20 Oct 2022 -- v.5.1.0
 
 * **Breaking change:** improved CSS grid gap and flexbox gap, using the full set of responsive spacing variables: now `gap-1` thru `gap-6` (and column only and row only versions, and breakpoint alternatives) instead of the simpler `gap-sm`, `gap-md`, and `gap-lg`. Also `flexbox-gap` has gone; use these new `gap-*` utilities instead.
