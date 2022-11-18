@@ -8,7 +8,7 @@
   <title>Tables - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.1.1" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.1.2" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -273,7 +273,7 @@
   
     <div class="grow">
       <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.1">Download</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -327,7 +327,7 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.1">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
@@ -756,6 +756,19 @@
 </ul>
 <p><code>table</code> cells in Codebase normally have their content aligned top left of each cell (<code>&lt;th&gt;</code> or <code>&lt;td&gt;</code>). You cacn change the vertical alignment with <code>vertical-align-middle</code> or <code>vertical-align-bottom</code>.</p>
 <p>For <code>table</code> <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> center or right alignment, use <code>t-center</code> or <code>t-right</code>.</p>
+<h2 id="cell-content-alignments" tabindex="-1">Cell content alignments</h2>
+<p>By default, all Codebase table cell content is top-aligned, and aligned right or left depending on the language used in the HTML.</p>
+<p>On a <em>per-cell basis</em> you can set:</p>
+<ul>
+<li>Horizontal alignment: <code>t-right</code> / <code>t-center</code> / <code>t-left</code> can be used on any element (see <a href="/codebase-5/docs/5-typographic-utilities/text-alignment/">text alignment</a> utilities)</li>
+<li><code>th</code> and <code>td</code> vertical alignment:
+<ul>
+<li><code>vertical-align-top</code></li>
+<li><code>vertical-align-middle</code></li>
+<li><code>vertical-align-bottom</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="oversized-tables" tabindex="-1">Oversized tables</h2>
 <p>For adding horizontal scrolling to a table that is too wide for the available space (especially important on narrow viewports), wrap the table in a <code>&lt;div&gt;</code> that has the <code>overflow-x</code> utility class.</p>
 <p>Codebase <code>overflow-x</code> uses to remove margins from around Codebase table classes (but not from the classless <code>&lt;table&gt;</code> tag). Therefore you may also need to add some bottom margin to the overflow wrapper – e.g. using <code>mb-3</code></p>
@@ -876,7 +889,7 @@
     </a>
   </p>
   
-  <p>Version 5.1.1 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.1.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

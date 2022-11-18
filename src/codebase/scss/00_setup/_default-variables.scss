@@ -74,44 +74,44 @@ $named-color-shades: true !default;
 
 // $shades: () !default;
 // $shades: map-merge((
-//   "100":            (white, 92),
-//   "200":            (white, 69),
-//   "300":            (white, 46),
-//   "400":            (white, 23),
-//   "500":            (black, 0),
-//   "600":            (black, 16),
-//   "700":            (black, 32),
-//   "800":            (black, 48),
-//   "900":            (black, 64)
+//   "100":            (white, 92%),
+//   "200":            (white, 69%),
+//   "300":            (white, 46%),
+//   "400":            (white, 23%),
+//   "500":            (black, 0%),
+//   "600":            (black, 16%),
+//   "700":            (black, 32%),
+//   "800":            (black, 48%),
+//   "900":            (black, 64%)
 // ), $shades);
 
 $shades: () !default;
 $shades: map-merge((
-  "100":            (white, 90),
-  "200":            (white, 72),
-  "300":            (white, 54),
-  "400":            (white, 36),
-  "500":            (white, 18),
-  "600":            (black, 0),
-  "700":            (black, 18),
-  "800":            (black, 36),
-  "900":            (black, 54)
+  "100":            (white, 90%),
+  "200":            (white, 72%),
+  "300":            (white, 54%),
+  "400":            (white, 36%),
+  "500":            (white, 18%),
+  "600":            (black, 0%),
+  "700":            (black, 18%),
+  "800":            (black, 36%),
+  "900":            (black, 54%)
 ), $shades);
 
 $theme-color: () !default;
 $theme-color: map-merge((
   "page-bg":                 #ffffff,
-  "page-bg-alt":             mix(white, map-get($named-color, -gray), 90),
-  "detail":                  transparentize(#000000, .85), // mix(white, map-get($named-color, -gray), 54),
+  "page-bg-alt":             mix(white, map-get($named-color, -gray), 90%),
+  "detail":                  transparentize(#000000, .85), // ~ mix(white, map-get($named-color, -gray), 54%),
   "default":                 map-get($named-color, -gray),
-  "text":                    mix(black, map-get($named-color, -gray), 72),
-  "form-focus":              mix(white, map-get($named-color, -blue), 54),
+  "text":                    mix(black, map-get($named-color, -gray), 72%),
+  "form-focus":              mix(white, map-get($named-color, -blue), 54%),
   "link":                    map-get($named-color, -blue),
-  "link-hover":              mix(black, map-get($named-color, -blue), 36),
-  "link-visited":            mix(black, map-get($named-color, -purple), 18),
-  "form-element-bg":         mix(white, map-get($named-color, -gray), 90),
-  "button-default-text":     mix(black, map-get($named-color, -gray), 54),
-  "button-background-hover": mix(white, map-get($named-color, -gray), 90),
+  "link-hover":              mix(black, map-get($named-color, -blue), 36%),
+  "link-visited":            mix(black, map-get($named-color, -purple), 18%),
+  "form-element-bg":         mix(white, map-get($named-color, -gray), 90%),
+  "button-default-text":     mix(black, map-get($named-color, -gray), 54%),
+  "button-background-hover": mix(white, map-get($named-color, -gray), 90%),
   "highlight":               rgba(255, 122, 89, 0.32),
   "selection":               rgba(0, 189, 165, 0.4),
   "code":                    #000000

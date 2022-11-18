@@ -4,7 +4,13 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
-## 2 Nov 2022 -- v.5.0.1
+## 2 Nov 2022 -- v.5.1.2
+
+* To enable running on Windows machines, added `npm-run-all` and changed the `npm run dev` script in `package.json` (still runs on Macs).
+* Updated dependencies. Corrected Sass function units, adding % to color mix in default variables and button hover states (because of the Dart Sass breaking change).
+* Improvements to tables (this shaved 2KB off of the minified file size!)
+
+## 2 Nov 2022 -- v.5.1.1
 
 * Added `width: 100%` to the `block` utility class, because in Safari `<input type="text" class="block">` and `<button class="block">` were not going full width.
 

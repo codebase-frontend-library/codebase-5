@@ -275,6 +275,18 @@ You can combine table styles. For example:
 
 For `table` `<th>` or `<td>` center or right alignment, use `t-center` or `t-right`.
 
+## Cell content alignments
+
+By default, all Codebase table cell content is top-aligned, and aligned right or left depending on the language used in the HTML.
+
+On a _per-cell basis_ you can set:
+
+* Horizontal alignment: `t-right` / `t-center` / `t-left` can be used on any element (see [text alignment]({{ '/docs/5-typographic-utilities/text-alignment/' | url }}) utilities)
+* `th` and `td` vertical alignment:
+  * `vertical-align-top`
+  * `vertical-align-middle`
+  * `vertical-align-bottom`
+
 ## Oversized tables
 
 For adding horizontal scrolling to a table that is too wide for the available space (especially important on narrow viewports), wrap the table in a `<div>` that has the `overflow-x` utility class.

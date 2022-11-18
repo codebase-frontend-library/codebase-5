@@ -811,83 +811,19 @@ img, picture, video, canvas, svg {
   color: #fff;
 }
 
-.table,
-.table-borderless,
-.table-compact,
-.table-fixed,
-.table-striped {
+[class*=table] {
   width: 100%;
   margin-bottom: 1.5rem;
   border-collapse: collapse;
   border-spacing: 0;
 }
-.table > *,
-.table-borderless > *,
-.table-compact > *,
-.table-fixed > *,
-.table-striped > * {
+[class*=table] > * {
   width: 100%;
 }
-.table:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) th, .table:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) td,
-.table-borderless:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) th,
-.table-borderless:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) td,
-.table-compact:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) th,
-.table-compact:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) td,
-.table-fixed:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) th,
-.table-fixed:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) td,
-.table-striped:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) th,
-.table-striped:not(.table.table-borderless,
-.table-borderless.table-borderless,
-.table-compact.table-borderless,
-.table-fixed.table-borderless,
-.table-striped.table-borderless) td {
+[class*=table]:not([class*=table].table-borderless) th, [class*=table]:not([class*=table].table-borderless) td {
   border: 0.0625rem, solid rgba(0, 0, 0, 0.15);
 }
-.table th, .table td,
-.table-borderless th,
-.table-borderless td,
-.table-compact th,
-.table-compact td,
-.table-fixed th,
-.table-fixed td,
-.table-striped th,
-.table-striped td {
+[class*=table] th, [class*=table] td {
   padding: 0.5rem 1rem;
   vertical-align: top;
   text-align: unset;
@@ -7635,50 +7571,50 @@ big h6, big .h6,
 
 @media (min-width: 768px) {
   big,
-.t-lg,
-.t-long-read {
+  .t-lg,
+  .t-long-read {
     line-height: inherit;
   }
   big h1, big .h1,
-.t-lg h1,
-.t-lg .h1,
-.t-long-read h1,
-.t-long-read .h1 {
+  .t-lg h1,
+  .t-lg .h1,
+  .t-long-read h1,
+  .t-long-read .h1 {
     font-size: 2.75em;
   }
   big h2, big .h2,
-.t-lg h2,
-.t-lg .h2,
-.t-long-read h2,
-.t-long-read .h2 {
+  .t-lg h2,
+  .t-lg .h2,
+  .t-long-read h2,
+  .t-long-read .h2 {
     font-size: 2em;
   }
   big h3, big .h3,
-.t-lg h3,
-.t-lg .h3,
-.t-long-read h3,
-.t-long-read .h3 {
+  .t-lg h3,
+  .t-lg .h3,
+  .t-long-read h3,
+  .t-long-read .h3 {
     font-size: 1.625em;
   }
   big h4, big .h4,
-.t-lg h4,
-.t-lg .h4,
-.t-long-read h4,
-.t-long-read .h4 {
+  .t-lg h4,
+  .t-lg .h4,
+  .t-long-read h4,
+  .t-long-read .h4 {
     font-size: 1.325em;
   }
   big h5, big .h5,
-.t-lg h5,
-.t-lg .h5,
-.t-long-read h5,
-.t-long-read .h5 {
+  .t-lg h5,
+  .t-lg .h5,
+  .t-long-read h5,
+  .t-long-read .h5 {
     font-size: 1.125em;
   }
   big h6, big .h6,
-.t-lg h6,
-.t-lg .h6,
-.t-long-read h6,
-.t-long-read .h6 {
+  .t-lg h6,
+  .t-lg .h6,
+  .t-long-read h6,
+  .t-long-read .h6 {
     font-size: 1em;
   }
   .t-long-read {
@@ -7691,7 +7627,7 @@ big,
 }
 @media (min-width: 1024px) {
   big,
-.t-lg {
+  .t-lg {
     font-size: 1.5em;
   }
 }
@@ -8152,7 +8088,7 @@ img {
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.1.1
+ * v.5.1.2
  */
 
 /*# sourceMappingURL=codebase.css.map */

@@ -3,11 +3,7 @@
 
 @use "../00_setup/default-variables" as *;
 
-.table,
-.table-borderless,
-.table-compact,
-.table-fixed,
-.table-striped {
+[class*=table] {
   width: 100%;
   margin-bottom: $text-base-line-height * 1rem;
   border-collapse: collapse;

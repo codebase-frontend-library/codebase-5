@@ -41,8 +41,8 @@
     &:hover,
     &:active,
     &.active {
-      border-color: mix(black, nth($val, 1), 36) !important;
-      background-color: mix(black, nth($val, 1), 36) !important;
+      border-color: mix(black, nth($val, 1), 36%) !important;
+      background-color: mix(black, nth($val, 1), 36%) !important;
       color: nth($val, 3);
     }
   }
