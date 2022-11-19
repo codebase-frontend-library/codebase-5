@@ -64,10 +64,6 @@ textarea {
   text-overflow: ellipsis;
 }
 
-select, [type="number"] {
-  width: auto;
-}
-
 ::file-selector-button {
   border: var(--line-detail);
   padding-block: 0.125em;
@@ -82,11 +78,20 @@ select, [type="number"] {
   padding: 0.125rem
 }
 
+select,
+[type=number],
+[type=date],
+[type=month],
+[type=time],
 [type=button],
 [type=reset],
 [type=submit] {
   display: inline-block;
   width: auto;
+}
+
+[type=search] {
+  -webkit-appearance: none;
 }
 
 option {

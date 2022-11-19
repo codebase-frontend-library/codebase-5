@@ -13,9 +13,7 @@ In HTML, [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTM
 
 Heading font weights have been set to `normal` (default). You can override this for all headings in the SCSS default variables, or add a bold weight yourself on a per-heading or per-word basis, for emphasis.
 
-Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 [element grid]({{ '/docs/1-getting-started/element-grid' | url }}) units, or _one line-height of the default text size_ (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings.
-
-Heading sizes, weights and line heights are set using three SCSS maps in the default variables file – you can control the rhythm of each from there.
+Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 [element grid]({{ '/docs/1-getting-started/element-grid' | url }}) units, or _one line-height of the default text size_ (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.
 
 Below the `sm` small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.
 

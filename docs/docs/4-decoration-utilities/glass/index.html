@@ -91,6 +91,7 @@
         grid-template-columns: auto 256px;
       }
       #nav-on-this-page > div {
+        width: 100%;
         max-height: calc(100vh - 55px);
         overflow-y: auto;
       }
@@ -531,8 +532,8 @@
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
-      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+    <div class="container-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
         <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
@@ -617,7 +618,7 @@
 <h2 id="notes-on-glass" tabindex="-1">Notes on glass</h2>
 <p>These glassmorphic overlays utility classes can be used in various ways. There are a couple of examples in the Codebase docs:</p>
 <ol>
-<li>The Codebase documentation uses <code>bg-white-glass-5</code> for its topbar and sidebar (but you will only see the sidebar glass when it is an offcanvas panel on narrow viewports).</li>
+<li>The Codebase documentation uses <code>bg-black-glass-5</code> for its topbar and <code>bg-white-glass-5</code> for its sidebar (but you will only see the sidebar glass when it is an offcanvas panel on narrow viewports).</li>
 <li>Demos of <a href="/codebase-5/docs/7-alpinejs-components/modals">modal components</a> have a backdrop that uses <code>bg-black-glass-3</code>.</li>
 <li>Demos of <a href="/codebase-5/docs/6-simple-components/heros">hero components</a> have an overlay that uses <code>bg-white-glass-3</code>.</li>
 </ol>
@@ -637,7 +638,7 @@
     <img class="box img-cover" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-2-cols">
-        <div class="p-1 t-center" style="backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter only</code></div>
+        <div class="p-1 t-center" style="backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter only (no tint)</code></div>
         <div class="p-1 t-center" style="background-color: rgba(0,0,153,0.4); backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter plus blue tint</code></div>
       </div>
     </div>

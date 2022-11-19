@@ -35,7 +35,7 @@ Many of Codebase’s CSS utility classes have media query width variants. Four v
   <tbody>
     <tr>
       <td><code>-xxs</code></td>
-      <td>None (for all viewport widths)</td>
+      <td>—</td>
       <td>256px</td>
     </tr>
     <tr>

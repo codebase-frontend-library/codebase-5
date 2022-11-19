@@ -91,6 +91,7 @@
         grid-template-columns: auto 256px;
       }
       #nav-on-this-page > div {
+        width: 100%;
         max-height: calc(100vh - 55px);
         overflow-y: auto;
       }
@@ -531,8 +532,8 @@
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
-      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+    <div class="container-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
         <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
@@ -574,7 +575,7 @@
 </div>
 <h2 id="rounded-corners-on-images" tabindex="-1">Rounded corners on images</h2>
 <p>If you use a <code>rounded</code> utility on a <em>wrapper</em> around an image without padding), you will also need to add <code>overflow: hidden;</code> so that the corners of the image are hidden.</p>
-<div class="grid gap sm:equal-3-cols">
+<div class="grid gap-3 sm:equal-3-cols">
   <div>
     <img class="rounded mb-3" src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy">
     <p>Image with utility class <code>&lt;img class="rounded" src="" alt=""&gt;</code> — works OK</p>

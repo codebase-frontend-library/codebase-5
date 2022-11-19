@@ -8,14 +8,12 @@ prevLink: "Improvements since Codebase 4"
 nextLink: "Block elements"
 ---
 
-Numerous accessibility improvements have been made to Codebase since version 4.
-
-The four main improvements for accessability in Codebase are:
+Numerous accessibility considerations have been factored into Codebase 5. These are, in summary:
 
 1. Default font size is `100%`
 2. Accessible UI colors
 3. Focus ring styling
-4. AlpineJS powered components have been refactored
+4. AlpineJS powered components have been refactored for accessibility
 
 ## Default font size
 
@@ -139,30 +137,30 @@ Also, study some websites of governments, local governments, universities, etc. 
 ### Articles on accessibility
 
 * [Designing for accessibility is not that hard](https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94) by Pablo Stanley. Sub-heading: _Seven easy-to-implement guidelines to design a more accessible web_.
-* Smashing Magazine: [Web Standards: The What, The Why, And The How](https://www.smashingmagazine.com/2019/01/web-standards-guide/) by Amy Dickens
+* Smashing Magazine: [Web Standards: The What, The Why, And The How](https://www.smashingmagazine.com/2019/01/web-standards-guide/) by Amy Dickens.
 
 ### Videos
 
-* W3C’s WAI [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
-* _Google Chrome Developers_ [Accessibility - The State of the Web](https://www.youtube.com/watch?v=TomOQYxFnrU) with Nektarios Paisios
-* Lighthouse audit – [The new way to test accessibility with Chrome DevTools - A11ycasts #23](https://youtu.be/b0Q5Zp_yKaU)
-* [Accessible Web Design: What Is It & How To Do It](https://youtu.be/-ao_Kc_8rpE) by Ran Segall
+* W3C’s WAI [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/).
+* _Google Chrome Developers_ [Accessibility - The State of the Web](https://www.youtube.com/watch?v=TomOQYxFnrU) with Nektarios Paisios.
+* Lighthouse audit – [The new way to test accessibility with Chrome DevTools - A11ycasts #23](https://youtu.be/b0Q5Zp_yKaU).
+* [Accessible Web Design: What Is It & How To Do It](https://youtu.be/-ao_Kc_8rpE) by Ran Segall.
 * [Understanding Accessibility: WCAG’s 13 Guidelines](https://youtu.be/RjpvOqZigao) by Kasey Bonifacio. See also the accompanying [slide deck](https://speakerdeck.com/sparkbox/understanding-accessibility-wcags-13-guidelines).
-* [Design like you give a damn: Practical accessibility for web pros](https://www.youtube.com/watch?v=vK1tlLOavvM) by Léonie Watson
+* [Design like you give a damn: Practical accessibility for web pros](https://www.youtube.com/watch?v=vK1tlLOavvM) by Léonie Watson.
 * [Introduction to Keyboard Navigation and Accessibility](https://youtu.be/FvpUNiB-2T0) by VLE Guru
-* _Google Chrome Developers_ series on accessibility – [A11ycasts](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) with Rob Dodson
-* [WCAG 2 1 What You Need to Know About the Most Recent Accessibility Standards](https://youtu.be/AoHfqq0eQww) – UXPA International (2018)
+* _Google Chrome Developers_ series on accessibility – [A11ycasts](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) with Rob Dodson.
+* [WCAG 2 1 What You Need to Know About the Most Recent Accessibility Standards](https://youtu.be/AoHfqq0eQww) – UXPA International (2018).
 
 ### Online accessibility tools
 
-* w3c.org’s curated (unendorsed) [Web Accessibility Evaluation Tools List](https://www.w3.org/WAI/ER/tools/)
-* [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/) – “Check that your HTML code conforms to your coding standard”
-* [contrast-ratio.com](https://contrast-ratio.com/)
-* [Accessible colors](https://accessible-colors.com/)
+* w3c.org’s curated (unendorsed) [Web Accessibility Evaluation Tools List](https://www.w3.org/WAI/ER/tools/).
+* [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/) – “Check that your HTML code conforms to your coding standard”.
+* [contrast-ratio.com](https://contrast-ratio.com/).
+* [Accessible colors](https://accessible-colors.com/).
 
 ### Apps and browser extensions
 
 * Web Accessibility Evaluation tool [WAVE extension](https://wave.webaim.org/extension/) for web browsers – Google Chrome, Mozilla Firefox, and Microsoft Edge.
-* Google Chrome [axe DevTools extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
-* MacOS app: [Contrast](https://usecontrast.com/)
-* Microsoft’s [Web Accessibility Insights](https://accessibilityinsights.io) tools
+* Google Chrome [axe DevTools extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
+* MacOS app: [Contrast](https://usecontrast.com/).
+* Microsoft’s [Web Accessibility Insights](https://accessibilityinsights.io) tools.

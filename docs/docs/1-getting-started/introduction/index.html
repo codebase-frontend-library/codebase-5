@@ -91,6 +91,7 @@
         grid-template-columns: auto 256px;
       }
       #nav-on-this-page > div {
+        width: 100%;
         max-height: calc(100vh - 55px);
         overflow-y: auto;
       }
@@ -531,8 +532,8 @@
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
-      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+    <div class="container-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
         <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
@@ -611,15 +612,15 @@
 <p>Available in the repository are all the Codebase <a href="https://github.com/codebase-frontend-library/codebase-5/tree/main/src/codebase/scss">SCSS files</a>.</p>
 <p><strong>Notes:</strong></p>
 <ol>
-<li><strong>Since v.5.2, Codebase has been refactored to use <a href="/codebase-5/docs/1-getting-started/css-variables/">CSS variables</a></strong>, whereas these were all Sass variables previously. Also, all the <code>!default</code> flags have been removed from these variables, as they can now be overrifdden in the CSS without requiring Sass to do so.</li>
-<li><strong>Since Codebase v.5.2, <em>PostCSS</em> has not been used as part of this project</strong>, as it isn’t needed for adding vendor prefixes (older browsers, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why <em>PostCSS</em> has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with <em>PostCSS</em> removed, I can’t use <em>cssnano</em> (a dependency) for minification; therefore I am simply using <code>--style compact</code> in the <em>sass</em> package.</li>
+<li><strong>Since v.5.2, Codebase has been refactored to use <a href="/codebase-5/docs/1-getting-started/css-variables/">CSS variables</a></strong>, whereas these were all Sass variables previously. Also, all the <code>!default</code> flags have been removed from these variables, as they can now be overridden in the CSS without requiring Sass to do so.</li>
+<li><strong>Since Codebase v.5.2, <em>PostCSS</em> and its associated dependencies have not been used in this project</strong>, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why <em>PostCSS</em> has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with <em>PostCSS</em> removed, I can’t use <em>cssnano</em> (a dependency) for minification; therefore I am simply using <code>--style compact</code> on the <em>Sass</em> package.</li>
 </ol>
 <p>You can incrementally add your web project’s distinctive design features after including Codebase in your HTML <code>&lt;head&gt;</code> (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.</p>
 <p>The Codebase SCSS library contains a lot of <a href="https://github.com/codebase-frontend-library/codebase-5/tree/master/src/codebase/scss/00_setup/_default-variables.scss">default variables</a> that are under a <code>!default</code> flag – so that they can be overridden.</p>
 <p>For example, here is the <a href="https://sass-lang.com/documentation/values/maps">Sass map</a> of the seven default theme colors in Codebase:</p>
 <pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$theme-color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"blue"</span><span class="token punctuation">:</span>   #1262ed<span class="token punctuation">,</span><br>  <span class="token string">"green"</span><span class="token punctuation">:</span>  #128a12<span class="token punctuation">,</span><br>  <span class="token string">"amber"</span><span class="token punctuation">:</span>  #f0b300<span class="token punctuation">,</span><br>  <span class="token string">"red"</span><span class="token punctuation">:</span>    #cf000f<span class="token punctuation">,</span><br>  <span class="token string">"purple"</span><span class="token punctuation">:</span> #9400d3<span class="token punctuation">,</span><br>  <span class="token string">"teal"</span><span class="token punctuation">:</span>   #0080a2<span class="token punctuation">,</span><br>  <span class="token string">"gray"</span><span class="token punctuation">:</span>   #767676<span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>These are the same as the UI colors (for buttons, badges, and labels) but you can change that by editing the <code>$theme-color</code> map and preprocessing the SCSS.</p>
-<p>You can override all these names and color codes, remove some or add more – to suit your branding — and the Codebase utility classes will all be generated using <code>each()</code> loops. This means that you don’t need to figure out or input all the shades or each color.</p>
+<p>These colors are the same as those in the <code>$ui-color</code> map that sets the UI colors (for buttons, badges, and labels) but you can change that by editing the <code>$theme-color</code> map and preprocessing the SCSS.</p>
+<p>You can override all these names and color codes, remove some or add more – to suit your branding – and the Codebase utility classes will all be generated using <code>each()</code> loops. So, you don’t need to figure out or input all the shades or each color.</p>
 <p>Read more on <a href="/codebase-5/docs/1-getting-started/css-variables/">CSS variables in Codebase</a>.</p>
 <h2 id="system-font-stacks" tabindex="-1">System font stacks</h2>
 <p>Codebase contains three <code>font-family</code> system font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.</p>
@@ -630,7 +631,7 @@
 <p>More information on Codebase font stacks, and how they are used, can be found at <a href="/codebase-5/docs/5-typographic-utilities/font-stacks/">typographic utilities: font stacks</a>.</p>
 <h2 id="browser-support" tabindex="-1">Browser support</h2>
 <p>Codebase works on all the common modern web browsers such as Chrome, Safari, Edge, Firefox, Opera, and others.</p>
-<p>Codebase is not compatible with older browsers such as Internet Explorer 11.</p>
+<p>Codebase is not compatible with older browsers such as Internet Explorer 11 and Opera Mini.</p>
 <p><strong>Note:</strong> also, <a href="https://alpinejs.dev/upgrade-guide#no-ie-11">Alpine v.3x does not support IE11</a>.</p>
 
     </div>

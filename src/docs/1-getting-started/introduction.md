@@ -110,8 +110,8 @@ Available in the repository are all the Codebase [SCSS files](https://github.com
 
 **Notes:**
 
-1. **Since v.5.2, Codebase has been refactored to use [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, whereas these were all Sass variables previously. Also, all the `!default` flags have been removed from these variables, as they can now be overrifdden in the CSS without requiring Sass to do so.
-2. **Since Codebase v.5.2, _PostCSS_ has not been used as part of this project**, as it isn’t needed for adding vendor prefixes (older browsers, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` in the _sass_ package.
+1. **Since v.5.2, Codebase has been refactored to use [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, whereas these were all Sass variables previously. Also, all the `!default` flags have been removed from these variables, as they can now be overridden in the CSS without requiring Sass to do so.
+2. **Since Codebase v.5.2, _PostCSS_ and its associated dependencies have not been used in this project**, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` on the _Sass_ package.
 
 You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 
@@ -131,9 +131,9 @@ $theme-color: (
 );
 ```
 
-These are the same as the UI colors (for buttons, badges, and labels) but you can change that by editing the `$theme-color` map and preprocessing the SCSS.
+These colors are the same as those in the `$ui-color` map that sets the UI colors (for buttons, badges, and labels) but you can change that by editing the `$theme-color` map and preprocessing the SCSS.
 
-You can override all these names and color codes, remove some or add more – to suit your branding — and the Codebase utility classes will all be generated using `each()` loops. This means that you don’t need to figure out or input all the shades or each color.
+You can override all these names and color codes, remove some or add more – to suit your branding – and the Codebase utility classes will all be generated using `each()` loops. So, you don’t need to figure out or input all the shades or each color.
 
 Read more on [CSS variables in Codebase]({{ '/docs/1-getting-started/css-variables/' | url }}).
 
@@ -155,6 +155,6 @@ More information on Codebase font stacks, and how they are used, can be found at
 
 Codebase works on all the common modern web browsers such as Chrome, Safari, Edge, Firefox, Opera, and others.
 
-Codebase is not compatible with older browsers such as Internet Explorer 11.
+Codebase is not compatible with older browsers such as Internet Explorer 11 and Opera Mini.
 
 **Note:** also, [Alpine v.3x does not support IE11](https://alpinejs.dev/upgrade-guide#no-ie-11).

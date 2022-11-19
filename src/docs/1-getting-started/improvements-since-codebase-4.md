@@ -8,7 +8,7 @@ prevLink: "CSS variables"
 nextLink: "Accessibility"
 ---
 
-Codebase has grown up a lot since in the last year. So much has changed since version 4, that this has become a separate project. (Meanwhile Codebase 4 and Codebase 3 are still available as archives.)
+Codebase has grown up a lot since 2020. So much has changed since version 4, that this has become a separate project. (Meanwhile Codebase 4 and Codebase 3 are still available as archives.)
 
 Besides hundreds of tiny tweeks, there are several important things added and removed:
 
@@ -46,11 +46,11 @@ The real CSS Grid [grid system]({{ '/docs/3-layout-utilities/grid' | url }}) has
 
 ### Aspect ratios
 
-[Aspect ratio wrapper]({{ '/docs/4-layout-utilities/dimensions/#aspect-ratio-wrappers' | url }}) utility classes have been added.
+[Aspect ratio]({{ '/docs/3-layout-utilities/aspect-ratios' | url }}) wrapper utility classes have been added.
 
 ### Size and media query abbreviations
 
-Some of the size abbreviations (`xs`, `sm`, `md`, and `lg`) do a double duty, and this could cause confusion. But Codebase now separates these out as either prefixes or suffixes, the same way as is done in Tailwind:
+Some of the size abbreviations (`xs`, `sm`, `md`, and `lg`) do a double duty, and this could cause confusion. But Codebase now separates these out as either _prefixes_ or _suffixes_, the same way as is done in Tailwind:
 
 * **Colon separated prefix** (`xs:`, `sm:`, `md:` `lg:`) – this means the CSS class takes effect at media query width. Block display (e.g. flexbox), widths, invisibility (`hidden`), positions, spacing (margins, paddings) and other elements all have media query width variants. 
 * **Hyphen separated suffix** (`-xxs`, `-xs`, `-sm`, `-md`, `-lg`, `-xl`, `-xxl`) – this means a size variation. Containers can have any of these pre-set widths. Buttons can be small, medium (default), or large. And so on.
@@ -102,4 +102,4 @@ The [Gulp](https://gulpjs.com/) taskrunner is no longer required.
 * Since `activator.js` has been removed, Babel and Uglify are no longer required.
 * Since support for IE11 has been dropped, Autoprefixer is no longer required for the CSS.
 * Since only the minified `codebase.css` (and sourcemap) remain, there is no longer a need to provide a Zipped folder.
-* So, only NPM modules for preprocessing `codebase.css` are required. Sass and PostCSS are run directly the script `npm run dev` (see `package.json`). And PostCSS CLI handles postcss-preset-env (which contains autoprefixer, among other things) and cssnano.
+* So, only NPM modules for preprocessing `codebase.css` are required. Sass and Eleventy (for the docs) are run directly the script `npm run dev` (see `package.json`).

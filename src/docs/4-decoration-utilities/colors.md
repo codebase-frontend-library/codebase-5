@@ -267,13 +267,13 @@ In the default decorative color scales (see above), it is the `-500` shade of ea
 
 Utilities for the UI colors – for background, border, text, and text hover (UI colors do not have shade suffix variations). Example:
 
-* <span class="inline-block p-block bg-warning t-white">bg-warning</span>
-* <span class="inline-block p-block bg-danger t-white">bg-danger</span>
-* <span class="inline-block p-block bg-success t-white">bg-success</span>
-* <span class="inline-block p-block bg-info t-white">bg-info</span>
-* <span class="inline-block p-block bg-primary t-white">bg-primary</span>
-* <span class="inline-block p-block bg-secondary t-white">bg-secondary</span>
-* <span class="inline-block p-block bg-tertiary t-white">bg-tertiary</span>
+* <span class="inline-block px-6 bg-warning t-white">&nbsp;</span> – bg-warning
+* <span class="inline-block px-6 bg-danger t-white">&nbsp;</span> – bg-danger
+* <span class="inline-block px-6 bg-success t-white">&nbsp;</span> – bg-success
+* <span class="inline-block px-6 bg-info t-white">&nbsp;</span> – bg-info
+* <span class="inline-block px-6 bg-primary t-white">&nbsp;</span> – bg-primary
+* <span class="inline-block px-6 bg-secondary t-white">&nbsp;</span> – bg-secondary
+* <span class="inline-block px-6 bg-tertiary t-white">&nbsp;</span> – bg-tertiary
 
 ### Transparent border and background
 

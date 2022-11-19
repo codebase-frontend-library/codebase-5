@@ -112,7 +112,7 @@ The same wide image, positioned horizontally three ways:
 
 <p class="mb-1"><img src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}"></p>
 
-<div class="grid gap xs:equal-3-cols mb-3">
+<div class="grid gap-3 xs:equal-3-cols mb-3">
   <div>
     <p class="mb-1"><code>img-cover img-cover-left</code></p>
     <div class="aspect-ratio-1x1 relative">
@@ -224,7 +224,7 @@ These opacity utility classes can also be manipulated by [AlpineJS animations]({
 
 Hover states:
 
-<div class="mb-3 grid gap xs:equal-3-cols">
+<div class="mb-3 grid gap-3 xs:equal-3-cols">
   <div>
     <p><code>hover:opacity-25%</code></p>
     <img class="hover:opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">

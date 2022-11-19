@@ -37,7 +37,7 @@ There are several options for rounded corners in Codebase, handled by CSS border
 
 If you use a `rounded` utility on a _wrapper_ around an image without padding), you will also need to add `overflow: hidden;` so that the corners of the image are hidden.
 
-<div class="grid gap sm:equal-3-cols">
+<div class="grid gap-3 sm:equal-3-cols">
   <div>
     <img class="rounded mb-3" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy">
     <p>Image with utility class <code>&lt;img class="rounded" src="" alt=""&gt;</code> — works OK</p>

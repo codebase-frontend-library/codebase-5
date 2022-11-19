@@ -91,6 +91,7 @@
         grid-template-columns: auto 256px;
       }
       #nav-on-this-page > div {
+        width: 100%;
         max-height: calc(100vh - 55px);
         overflow-y: auto;
       }
@@ -531,8 +532,8 @@
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
-      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+    <div class="container-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
         <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
@@ -722,13 +723,13 @@
 <h3 id="ui-color-utilities" tabindex="-1">UI color utilities</h3>
 <p>Utilities for the UI colors – for background, border, text, and text hover (UI colors do not have shade suffix variations). Example:</p>
 <ul>
-<li><span class="inline-block p-block bg-warning t-white">bg-warning</span></li>
-<li><span class="inline-block p-block bg-danger t-white">bg-danger</span></li>
-<li><span class="inline-block p-block bg-success t-white">bg-success</span></li>
-<li><span class="inline-block p-block bg-info t-white">bg-info</span></li>
-<li><span class="inline-block p-block bg-primary t-white">bg-primary</span></li>
-<li><span class="inline-block p-block bg-secondary t-white">bg-secondary</span></li>
-<li><span class="inline-block p-block bg-tertiary t-white">bg-tertiary</span></li>
+<li><span class="inline-block px-6 bg-warning t-white"> </span> – bg-warning</li>
+<li><span class="inline-block px-6 bg-danger t-white"> </span> – bg-danger</li>
+<li><span class="inline-block px-6 bg-success t-white"> </span> – bg-success</li>
+<li><span class="inline-block px-6 bg-info t-white"> </span> – bg-info</li>
+<li><span class="inline-block px-6 bg-primary t-white"> </span> – bg-primary</li>
+<li><span class="inline-block px-6 bg-secondary t-white"> </span> – bg-secondary</li>
+<li><span class="inline-block px-6 bg-tertiary t-white"> </span> – bg-tertiary</li>
 </ul>
 <h3 id="transparent-border-and-background" tabindex="-1">Transparent border and background</h3>
 <ul>

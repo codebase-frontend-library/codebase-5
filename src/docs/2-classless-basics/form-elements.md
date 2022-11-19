@@ -237,7 +237,7 @@ You can wrap a number of related inputs and buttons together in a `<fieldset>` a
     <legend>Subscribe to our email</legend>
     <label for="email-example">Your email:</label>
     <input id="email-example" class="mb-1" name="examplename" placeholder="Example email input field" type="email">
-    <input id="checkbox-terms" name="examplename" checked="checked" type="checkbox">
+    <input id="checkbox-terms" name="examplename" type="checkbox">
     <label for="checkbox-terms">I have read your <a href="">privacy policy</a>.</label><br>
     <button type="submit" class="mt-1 btn-primary">Subscribe</button>
   </fieldset>

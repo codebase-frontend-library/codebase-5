@@ -459,7 +459,7 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
         <button class="btn-icon btn-sm float-right my-1 scroll-unlock" aria-label="Close modal" @click="open = false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
         <p class="my-1 h4" id="modal-2b-title">Modal Header</p>
       </div>
-      <div class="grow overflow-y p-2 grid sm:gap sm:equal-2-cols">
+      <div class="grow overflow-y p-2 grid sm:gap-3 sm:equal-2-cols">
         <div>
           <div class="aspect-ratio-4x3 mb-2 relative">
             <img class="box img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A placeholder image">

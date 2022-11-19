@@ -90,7 +90,7 @@ _Photo by [Ollie Craig](https://www.pexels.com/@olliecraig1?utm_content=attribut
 
 These glassmorphic overlays utility classes can be used in various ways. There are a couple of examples in the Codebase docs:
 
-1. The Codebase documentation uses `bg-white-glass-5` for its topbar and sidebar (but you will only see the sidebar glass when it is an offcanvas panel on narrow viewports).
+1. The Codebase documentation uses `bg-black-glass-5` for its topbar and `bg-white-glass-5` for its sidebar (but you will only see the sidebar glass when it is an offcanvas panel on narrow viewports).
 2. Demos of [modal components]({{ '/docs/7-alpinejs-components/modals' | url }}) have a backdrop that uses `bg-black-glass-3`.
 3. Demos of [hero components]({{ '/docs/6-simple-components/heros' | url }}) have an overlay that uses `bg-white-glass-3`.
 
@@ -127,7 +127,7 @@ Examples:
     <img class="box img-cover" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
     <div class="box p-3 sm:p-6">
       <div class="h-100% grid equal-2-cols">
-        <div class="p-1 t-center" style="backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter only</code></div>
+        <div class="p-1 t-center" style="backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter only (no tint)</code></div>
         <div class="p-1 t-center" style="background-color: rgba(0,0,153,0.4); backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter plus blue tint</code></div>
       </div>
     </div>
