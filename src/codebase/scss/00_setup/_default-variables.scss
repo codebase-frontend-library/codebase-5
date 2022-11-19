@@ -5,326 +5,361 @@
 
 // INDEX
 // ===== 
-// (1.) Colors
-// (2.) Decoration – used in utilities and components
-// (3.) Layout
-// (4.) Basics and Typography
-// (5.) Components
-// (6.) Media query mixins
+// (1.) Toggles
+// (2.) Colors
+// (3.) Decoration – used in utilities and components
+// (4.) Root variables
+// (5.) Media query mixins
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (1.) Colors /////////////////////////////////////////////////////////////////
+// (1.) Toggles ////////////////////////////////////////////////////////////////
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Codebase 5 UI colors chosen to conform to WCAG 2.1 Level AA accessibility guidelines 
-// for text: color contrast ratio of 4.5:1 or better. See https://www.w3.org/TR/WCAG21/
-
-$ui-color: () !default;
-$ui-color: map-merge((
-  "warning":          #c25705,  // orange -- contrast ratio 4.5:1
-  "danger":           #cf000f,  // red    -- contrast ratio 5.74:1
-  "success":          #128a12,  // green  -- contrast ratio 4.5:1
-  "info":             #1262ed,  // blue   -- contrast ratio 5.26:1
-  "primary":          #9400d3,  // purple -- contrast ratio 6.56:1
-  "secondary":        #0080a2,  // teal   -- contrast ratio 4.56:1
-  "tertiary":         #767676,  // gray   -- contrast ratio 4.54:1
-), $ui-color);
-
-$ui-setup-color: () !default;
-$ui-setup-color: map-merge((
-  // "key":           (valueX, valueY, valueZ),
-  // valueX = UI component border and background color
-  // valueY = UI component text color
-  // valueY = UI component text color on :hover (buttons only)
-  // Background and border colors on :hover are handled by mix(black, nth($val, 1), 20)
-  // (see buttons, badges, labels).
-  "warning":          (map-get($ui-color, warning), #fff, #fff),   // orange
-  "danger":           (map-get($ui-color, danger), #fff, #fff),    // red
-  "success":          (map-get($ui-color, success), #fff, #fff),   // green
-  "info":             (map-get($ui-color, info), #fff, #fff),      // blue
-  "primary":          (map-get($ui-color, primary), #fff, #fff),   // purple
-  "secondary":        (map-get($ui-color, secondary), #fff, #fff), // teal
-  "tertiary":         (map-get($ui-color, tertiary), #fff, #fff),  // gray
-), $ui-setup-color);
-
-// I can’t know what colors you want for your design. Therefore, for demonstration 
-// purposes I have aliased the base (UI) colors above as the Codebase default named
-// colors.
-// The UI colors are darker than mid-range (for reason see above), therefore these
-// have been set to the -600 shade level in the utility color shades scale map 
-// below (from -100 to -900).
-// Swap these Codebase demo colors out for whatever colors (and names) you want for
-// your design/your brand. In the Sass map below, give your chosen names a single
-// hyphen `-` prefix. This `-` is essential, so that the Sass preprocessor doesn’t
-// mistake your named color for a preset HTML color of the same name. (And this
-// same `-` is also used as part of the named color utility classes.)
-
-$named-color: () !default;
-$named-color: map-merge((
-  "-green":           map-get($ui-color, success),
-  "-orange":          map-get($ui-color, warning),
-  "-red":             map-get($ui-color, danger),
-  "-blue":            map-get($ui-color, info),
-  "-purple":          map-get($ui-color, primary),
-  "-teal":            map-get($ui-color, secondary),
-  "-gray":            map-get($ui-color, tertiary),
-), $named-color);
-
-$named-color-shades: true !default;
-
-// $shades: () !default;
-// $shades: map-merge((
-//   "100":            (white, 92%),
-//   "200":            (white, 69%),
-//   "300":            (white, 46%),
-//   "400":            (white, 23%),
-//   "500":            (black, 0%),
-//   "600":            (black, 16%),
-//   "700":            (black, 32%),
-//   "800":            (black, 48%),
-//   "900":            (black, 64%)
-// ), $shades);
-
-$shades: () !default;
-$shades: map-merge((
-  "100":            (white, 90%),
-  "200":            (white, 72%),
-  "300":            (white, 54%),
-  "400":            (white, 36%),
-  "500":            (white, 18%),
-  "600":            (black, 0%),
-  "700":            (black, 18%),
-  "800":            (black, 36%),
-  "900":            (black, 54%)
-), $shades);
-
-$theme-color: () !default;
-$theme-color: map-merge((
-  "page-bg":                 #ffffff,
-  "page-bg-alt":             mix(white, map-get($named-color, -gray), 90%),
-  "detail":                  transparentize(#000000, .85), // ~ mix(white, map-get($named-color, -gray), 54%),
-  "default":                 map-get($named-color, -gray),
-  "text":                    mix(black, map-get($named-color, -gray), 72%),
-  "form-focus":              mix(white, map-get($named-color, -blue), 54%),
-  "link":                    map-get($named-color, -blue),
-  "link-hover":              mix(black, map-get($named-color, -blue), 36%),
-  "link-visited":            mix(black, map-get($named-color, -purple), 18%),
-  "form-element-bg":         mix(white, map-get($named-color, -gray), 90%),
-  "button-default-text":     mix(black, map-get($named-color, -gray), 54%),
-  "button-background-hover": mix(white, map-get($named-color, -gray), 90%),
-  "highlight":               rgba(255, 122, 89, 0.32),
-  "selection":               rgba(0, 189, 165, 0.4),
-  "code":                    #000000
-), $theme-color);
+$link-color-visited: false !default;
+$form-input-background-color: false !default;
+$form-input-rounded-corners: true !default;
+$button-rounded-corners: true !default;
+$label-rounded-corners: true !default;
+$color-shade-utilities: true !default;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (2.) Decoration /////////////////////////////////////////////////////////////
+// (2.) Colors /////////////////////////////////////////////////////////////////
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Codebase component decoration is all controlled by the following
-// set of decoration variables. These same variables are used
-// throughout Codebase typography, components and utilities.
+// Colors were initially chosen for use in in UI buttons, badges and labels. 
+// But then these have also been used for the default color swatches.
+
+// Codebase 5 UI colors chosen to conform to WCAG 2.1 Level AA accessibility 
+// guidelines for text (white): color contrast ratio of 4.5:1 or better (see 
+// https://www.w3.org/TR/WCAG21/ ). These are equivalent to the -600 shade of 
+// each color.
+
+// You can override the color names and their hex values, and the Sass 
+// generators will rebuild Codebase accordingly -- i.e. the color variables 
+// generator in the :root {}, and the class generators in buttons, badges, 
+// labels, and color utilities.
+
+// The Codebase default $theme-color:() are identical to #ui-color:() 
+// But you can cgange that, because they are declared separately
+
+$theme-color: (
+"blue":     #1262ed,
+  "green":  #128a12,
+  "amber":  #f0b300,
+  "red":    #cf000f,
+  "purple": #9400d3,
+  "teal":   #0080a2,
+  "gray":   #767676,
+);
+
+// "info":      #1262ed   // background contrast ratio 5.26:1 against WHITE text
+// "success":   #128a12   // background contrast ratio 4.5:1 against WHITE text
+// "warning":   #f0b300   // background contrast ratio 11.15:1 against BLACK text
+// "danger":    #cf000f   // background contrast ratio 5.74:1 against WHITE text
+// "primary":   #9400d3   // background contrast ratio 6.56:1 against WHITE text
+// "secondary": #0080a2   // background contrast ratio 4.56:1 against WHITE text
+// "tertiary":  #767676   // background contrast ratio 4.54:1 against WHITE text
+
+$ui-color: (
+  "info":     #1262ed,
+  "success":  #128a12,
+  "warning":  #F5D042,
+  "danger":   #cf000f,
+  "primary":  #9400d3,
+  "secondary":#0080a2,
+  "tertiary": #767676,
+);
+
+// These colors are used for UI elements, and they are used for the color utilities, at the `-600` shade level.
+
+$shade: (
+  "100": (white, 90%),
+  "200": (white, 72%),
+  "300": (white, 54%),
+  "400": (white, 36%),
+  "500": (white, 18%),
+  "600": (black, 0%),
+  "700": (black, 18%),
+  "800": (black, 36%),
+  "900": (black, 54%)
+);
+
+$ui-color-states: (
+  // By default, using the same colors. However, you can override any color,
+  // because as all variables for named color swatches and ui-colors are  
+  // available in the :root{}
+  "info": #{map-get($ui-color, "info")},
+  "success": #{map-get($ui-color, "success")},
+  "warning": #{map-get($ui-color, "warning")},
+  "danger": #{map-get($ui-color, "danger")},
+  "primary": #{map-get($ui-color, "primary")},
+  "secondary": #{map-get($ui-color, "secondary")},
+  "tertiary": #{map-get($ui-color, "tertiary")},
+
+  "info-hover": #{mix(black, map-get($ui-color, "info"), 18%)},
+  "success-hover": #{mix(black, map-get($ui-color, "success"), 18%)},
+  "warning-hover": #{mix(black, map-get($ui-color, "warning"), 18%)},
+  "danger-hover": #{mix(black, map-get($ui-color, "danger"), 18%)},
+  "primary-hover": #{mix(black, map-get($ui-color, "primary"), 18%)},
+  "secondary-hover": #{mix(black, map-get($ui-color, "secondary"), 18%)},
+  "tertiary-hover": #{mix(black, map-get($ui-color, "tertiary"), 18%)},
+);
+
+$ui-setup: (
+  // Used by buttons, badges, and labels
+  // "key": = (val1, val2, val3, val4),
+  // val1 = UI component border and background color
+  // val2 = UI component border and background color on :hover (buttons only)
+  // val3 = UI component text color
+  // val4 = UI component text color on :hover (buttons only)
+  "info": (#{var(--c-info)}, #{var(--c-info-hover)}, #fff, #fff),
+  "success": (#{var(--c-success)}, #{var(--c-success-hover)}, #fff, #fff),
+  "warning": (#{var(--c-warning)}, #{var(--c-warning-hover)}, #000, #000),
+  "danger": (#{var(--c-danger)}, #{var(--c-danger-hover)}, #fff, #fff),
+  "primary": (#{var(--c-primary)}, #{var(--c-primary-hover)}, #fff, #fff),
+  "secondary": (#{var(--c-secondary)}, #{var(--c-secondary-hover)}, #fff, #fff),
+  "tertiary": (#{var(--c-tertiary)}, #{var(--c-tertiary-hover)}, #fff, #fff),
+);
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (3.) Decoration /////////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Codebase component decoration is all controlled by the following set of 
+// decoration variables. These same variables are used throughout Codebase 
+// typography, components and utilities.
 
 // Element grid
 // ============
-// Throughout the Codebase SCSS, an element grid has been used
-// wherever possible. In other words, line-heights, margins and
-// paddings have been set at increments of 1 element grid unit.
-// In addition, a set of margin and padding decoration utility
-// classes are generated with increments of 1 element grid unit.
-// borders and border radii are also based on fractions of 
-// 1 element grid unit.
+// Throughout the Codebase SCSS, an element grid has been used wherever 
+// possible. In other words, line-heights, margins and paddings have been set at 
+// increments of 1 element grid unit. In addition, a set of margin and padding 
+// decoration utility classes are generated with increments of 1 element grid 
+// unit.
 
-$elem:                0.5 !default; // 1 elem = 1 element grid unit
+// 1 element grid unit = 0.5rem (8px, default)
 
-// SCSS map for decoration margins, paddings flexbox gaps and grid gaps
+// Note: "3" is also the  height of 1 line of default text (paragraphs, 
+// list-items, form inputs, etc.)
 $spacing: (
-  "0":                0,
-  "1":                $elem * 1rem,
-  "2":                $elem * 2rem,
-  "3":                $elem * 3rem, // = same as the height of 1 line of text (default, paragraphs, etc.)
-  "4":                $elem * 4rem,
-  "5":                $elem * 5rem,
-  "6":                $elem * 6rem, // = same as the height of 2 lines of text
+  "0": 0,
+  "1": 0.5rem,
+  "2": 1rem,
+  "3": 1.5rem,
+  "4": 2rem,
+  "5": 2.5rem,
+  "6": 3rem,
 );
 
-$spacing-mq:          true;
-// for different margins and paddings at different breakpoint widths.
-// This is heavy -- set it to false and save yourself 11 KB if you know you will never use it.
-
-// Other Spacing
-$spacing-block:                 ($elem * 1rem) ($elem * 2rem) !default; // E.g. menu links, table cell padding
-
-$spacing-space:                 0.25rem !default; // used in x-axis margins only (for adding a pseudo character space)
+$spacing-setup: (
+  "0": 0,
+  "1": #{var(--sp-1)},
+  "2": #{var(--sp-2)},
+  "3": #{var(--sp-3)},
+  "4": #{var(--sp-4)},
+  "5": #{var(--sp-5)},
+  "6": #{var(--sp-6)},
+);
 
 // Borders
 
 $borders: (
-  "b":    "border",
-  "bt":   "border-top",
-  "br":   "border-right",
-  "bb":   "border-bottom",
-  "bl":   "border-left"
+  "b": "border",
+  "bt": "border-top",
+  "br": "border-right",
+  "bb": "border-bottom",
+  "bl": "border-left"
 );
 
-$detail-thickness:              0.0625rem; // 1px but must be in rem
-$form-focus-ring-thickness:     0.1875rem;
-
-$border-thin:                   $detail-thickness;
-$border-thick:                  $elem * .5rem;
-$border-heavy:                  $elem * 1rem;
-
-// Border radius (rounded corners)
-$border-radius-sm:              $elem * .5rem; // will be used for form and button elements (default)
-$border-radius:                 $elem * 1rem;
-$border-radius-lg:              $elem * 2rem;
-$border-radius-pill:            10em;
-$border-radius-circle:          50%;
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (3.) Layout //////////////////////////////////////////////////////
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Widths (used for media query breakpoints, containers, and width utilities)
-
+// Widths (256px increments. Used for media query breakpoints, containers, 
+// and width utilities)
 $width: (
-  "w-xxs":                    256px,
-  "w-xs":                     512px, // also used for the `xs` mq-width breakpoint
-  "w-sm":                     768px, // also used for the `sm` mq-width breakpoint
-  "w-md":                     1024px, // also used for the `md` mq-width breakpoint
-  "w-lg":                     1280px, // also used for the `lg` mq-width breakpoint
-  "w-xl":                     1536px,
-  "w-xxl":                    1792px 
+  "w-xxs": 256px,
+  "w-xs": 512px,
+  "w-sm": 768px,
+  "w-md": 1024px,
+  "w-lg": 1280px,
+  "w-xl": 1536px,
+  "w-xxl": 1792px
 );
 
-$mq-width: ( // used in loops for inline-flex, flex, gap, margins, spacings, text alignment, floats
-  "xs":                       "w-xs",
-  "sm":                       "w-sm",
-  "md":                       "w-md",
-  "lg":                       "w-lg",
+$mq-width: (
+  // media query widths used in loops for inline-flex, flex, gap, 
+  // margins, paddings, text alignment, floats
+  "xs": "w-xs",
+  "sm": "w-sm",
+  "md": "w-md",
+  "lg": "w-lg",
 );
 
-// Containers
-$container-default:           map-get($width, w-xxl);
-$container-x-space:           1rem !default;
-
-// Aspect ratios
-$aspect-ratio-hack:           false !default;
-
-// Layout utilities
-$square-size-sm:              3rem !default;
-$square-size:                 4.5rem !default;
-$square-size-lg:              6rem !default;
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (4.) Basics and Typography ///////////////////////////////////////
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Font stacks based on https://systemfontstack.com
-$font-stack-base:       -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif !default;
-$font-stack-mono:       Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace !default;
-$font-stack-sans-serif: $font-stack-base !default;
-$font-stack-serif:      "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif !default;
-$font-stack-ui:         $font-stack-base !default;
-$font-stack-brand:      $font-stack-base !default;
-$font-stack-prose:      $font-stack-serif !default;
-
-$heading-size: () !default;
-$heading-size: map-merge((
-  "h1":         2.75, // multiples of the default font size (1rem)
-  "h2":         2,
-  "h3":         1.625,
-  "h4":         1.325,
-  "h5":         1.125,
-  "h6":         1
-), $heading-size);
-
-$heading-weight:      normal;
-$heading-line-height: calc(1em + .5rem); // gives .5rem more than the heading’s own size
-
-$text-font-size:                    100% !default; // see https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/
-$text-base-line-height:             $elem * 3;
-$text-thin-font-weight:             200 !default;
-$text-base-font-weight:             400 !default;
-$text-semibold-font-weight:         600 !default;
-$text-bold-font-weight:             700 !default;
-$text-bolder-font-weight:           900 !default;
-$text-columns-gap-width:            clamp(#{$elem * 3rem}, 2.5vw, #{$elem * 5rem}) !default;
-$text-columns-width:                17.5em !default;
-$text-long-read-clamp:              clamp(1em, calc(0.5em + 1vw), 1.25em) !default;
-
-$link-decoration:                   underline !default;
-$link-color-visited:                false !default;
-
-// Blockquotes
-$blockquotes-font-size:             $text-font-size !default;
-$blockquotes-side-padding:          2.5vw !default;
-
-// Horizontal Rules
-$horizontal-rule-spacing:           1.5rem !default;
-$horizontal-rule-thickness:         $border-thin !default;
-
-// Lists
-$li-spacing:                        1rem !default;
-
-// Code (see also $font-stack-mono above)
-$code-rounded-corners:              true !default;
-$code-radius:                       $border-radius-sm !default;
-$code-background-color:             true !default;
-
-// Forms
-$form-border-thickness:             $detail-thickness !default;
-$form-input-background-color:             false !default;
-$form-input-rounded-corners:        true !default;
-$form-border-radius:                $border-radius-sm !default;
-$form-padding-sm:                   0.25rem  0.5rem !default;
-$form-padding-default:              .5rem !default;
-$form-padding-lg:                   .75rem !default;
-$form-element-size-sm:              2rem + (2 * $form-border-thickness) !default;
-$form-element-size:                 2.5rem + (2 * $form-border-thickness) !default;
-$form-element-size-lg:              3rem + (2 * $form-border-thickness) !default;
-
-// Focus -- a white and black "checker" dotted line, visible over both light or dark backgrounds
-$focus-ring-outline:                2px dotted black;
-$focus-ring-shadow:                 0 0 0 2px white;
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (5.) Components //////////////////////////////////////////////////
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Buttons
-$button-state-transition:           all 0.15s ease-in-out !default;
-$button-border-thickness:           $detail-thickness !default;
-$button-rounded-corners:            true !default;
-$button-border-radius:              $border-radius-sm !default;
-$button-padding-sm:                 .25rem .75rem !default;
-$button-padding-default:            .5rem 1rem !default;
-$button-padding-lg:                 .75rem 1.75rem !default;
-$button-padding-icon:               0 !default;
-$button-font-size:                  $text-font-size !default;
-$button-font-weight:                600 !default;
-$button-size-sm:                    $form-element-size-sm !default;
-$button-size:                       $form-element-size !default;
-$button-size-lg:                    $form-element-size-lg !default;
-
-// Labels
-$label-rounded-corners:             true !default;
-$label-border-radius:               $border-radius-sm !default;
-
-// Tabs
-$tab-control-border-radius:         $border-radius-sm !default !default;
-
-// Tables
-$table-padding:                     $spacing-block !default;
-$table-line-thickness:              $detail-thickness !default;
-
-// z-index of components
-$z-index-backdrop:                  998 !default;
-$z-index-modal:                     999 !default;
-$z-index-offcanvas:                 999 !default;
+$heading-size: (
+  "h1": 2.75em,
+  "h2": 2em,
+  "h3": 1.625em,
+  "h4": 1.325em,
+  "h5": 1.125em,
+  "h6": 1em
+);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// (6.) Media query mixins /////////////////////////////////////////////////////
+// (4.) Root Variables /////////////////////////////////////////////////////////
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:root {
+  // Font stacks based on https://systemfontstack.com
+  --font-base: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+  --font-serif: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif;
+  --font-sans-serif: var(--font-base);
+  --font-ui: var(--font-base);
+  --font-brand: var(--font-base);
+  --font-prose: var(--font-serif);
+
+  // UI colors -- equate to the -600 shade of each named color (see the $shade() map)
+  --c-info: #{map-get($ui-color-states, "info")};
+  --c-success: #{map-get($ui-color-states, "success")};
+  --c-warning: #{map-get($ui-color-states, "warning")};
+  --c-danger: #{map-get($ui-color-states, "danger")};
+  --c-primary: #{map-get($ui-color-states, "primary")};
+  --c-secondary: #{map-get($ui-color-states, "secondary")};
+  --c-tertiary: #{map-get($ui-color-states, "tertiary")};
+
+  // UI colors on :hover -- equate to the -700 shade of each named color (see the $shade() map)
+  --c-warning-hover: #{map-get($ui-color-states, "warning-hover")};
+  --c-danger-hover: #{map-get($ui-color-states, "danger-hover")};
+  --c-success-hover: #{map-get($ui-color-states, "success-hover")};
+  --c-info-hover: #{map-get($ui-color-states, "info-hover")};
+  --c-primary-hover: #{map-get($ui-color-states, "primary-hover")};
+  --c-secondary-hover: #{map-get($ui-color-states, "secondary-hover")};
+  --c-tertiary-hover: #{map-get($ui-color-states, "tertiary-hover")};
+
+  // Color variable generator
+  @each $key,
+  $val in $theme-color {
+
+    @each $key2,
+    $val2 in $shade {
+      --#{$key}-#{$key2}: #{mix(nth($val2, 1), $val, nth($val2, 2))};
+    }
+  }
+
+  // Base theme colors
+  --c-page-bg: #ffffff;
+  --c-page-bg-alt: var(--gray-100);
+  --c-detail: #{transparentize(#000000, .85)}; // ~ var(--gray-200);
+  --c-default: var(--c-tertiary);
+  --c-text: var(--gray-900);
+  --c-form-focus: var(--blue-300);
+  --c-link: var(--blue-600);
+  --c-link-hover: var(--blue-700);
+  --c-link-visited: var(--purple-700);
+  --c-form-bg: var(--gray-100);
+  --c-btn-text: var(--gray-900);
+  --c-btn-hover: var(--gray-100);
+  --c-highlight: rgba(255, 122, 89, 0.32);
+  --c-selection: rgba(0, 189, 165, 0.4);
+  --c-code: var(--teal-700);
+  --c-code-b: var(--teal-200);
+  --c-code-bg: var(--teal-100);
+
+  // Glassmorphic backgrounds
+  --alpha-1: 0.1;
+  --alpha-2: 0.23;
+  --alpha-3: 0.35;
+  --alpha-4: 0.58;
+  --alpha-5: 0.8;
+  --glass-1: saturate(1.8) blur(1px);
+  --glass-2: saturate(1.8) blur(4px);
+  --glass-3: saturate(1.8) blur(8px);
+  --glass-4: saturate(1.8) blur(13px);
+  --glass-5: saturate(1.8) blur(18px);
+
+  // State transition (used on form focus, button hover, link hover, and color utility hover)
+  --ease: all 0.15s ease-in-out;
+
+  @each $name,
+  $value in $width {
+    --#{$name}: #{$value};
+  }
+
+  @each $name,
+  $value in $spacing {
+    --sp-#{$name}: #{$value};
+  }
+
+  --b1: 1px; // used by b-thin and line-detail (hr, .table, etc.)
+  --b2: 4px; // used by b-thick
+  --b3: 8px; // used by b-heavy
+
+  --line-detail: var(--b1) solid var(--c-detail); // used on hr, table cell borders, inputs, classic tabs.
+
+  // border radius for rounded corners
+  --rad-sm: .25rem;
+  --rad: .5rem;
+  --rad-lg: 1rem;
+  --rad-pill: 99em;
+  --rad-circle: 50%;
+
+  --sp-block: 0.5rem 1rem;
+
+  --container: var(--w-xxl);
+  --container-x-space: 1rem;
+
+  --sq-sm: 3rem;
+  --sq: 4.5rem;
+  --sq-lg: 6rem;
+
+  // Focus -- outline & shadow combo creates a white and black "checker" dotted 
+  // line, visible over both light or dark backgrounds
+  --focus-outline: 2px dotted black;
+  --focus-shadow: 0 0 0 2px white;
+
+  // Forms AND buttons
+  // See also --c-form-* and --c-btn-* in colors above
+  --form-b: var(--b1); // border
+  --form-font: var(--font-ui);
+  --form-size-sm: 2rem; // height
+  --form-size: 2.5rem;
+  --form-size-lg: 3rem;
+  --form-p-sm: 0.25rem 0.5rem; // padding
+  --form-p: .5rem;
+  --form-p-lg: .75rem;
+  --form-focus: 0.1875rem;
+  --btn-fw: 600;
+  --btn-p-sm: .25rem .75rem;
+  --btn-p: .5rem 1rem;
+  --btn-p-lg: .75rem 1.75rem;
+
+  // Headings
+  --h1: 2.75em;
+  --h2: 2em;
+  --h3: 1.625em;
+  --h4: 1.325em;
+  --h5: 1.125em;
+  --h6: 1em;
+  --hd-weight: normal;
+  --hd-lh: calc(1em + .5rem); // gives .5rem more than the heading’s own size
+
+  // Text
+  --t-fs: 100%; // font-size see https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/
+  --t-base-lh: 1.5; // line-height
+  --t-thin-fw: 200;
+  --t-base-fw: 400;
+  --t-semi-fw: 600;
+  --t-bold-fw: 700;
+  --t-bolder-fw: 900;
+  --t-cols-gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  --t-cols: 17.5em;
+  --t-long-read: clamp(1em, calc(0.5em + 1vw), 1.25em);
+  --link: underline; // link text-decoration
+  --bq-fs: var(--t-fs); // blockquote
+  --bq-x: 2.5vw;
+  --hr: var(--b1); // horizontal rule
+  --hr-y: var(--t-base-lh);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// (5.) Media query mixins /////////////////////////////////////////////////////
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @mixin break-min($min-width) {

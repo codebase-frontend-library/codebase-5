@@ -3,79 +3,56 @@
 
 @use "../00_setup/default-variables" as *;
 
+// Black glassmorphic
 .bg-black-glass-1 {
-  background-color: rgba(0,0,0, 0.39);
-}
+  background-color: rgba(0, 0, 0, var(--alpha-1));
+  -webkit-backdrop-filter: var(--glass-1);
+  backdrop-filter: var(--glass-1);
+}  
 .bg-black-glass-2 {
-  background-color: rgba(0,0,0, 0.55);
+  background-color: rgba(0, 0, 0, var(--alpha-2));
+  -webkit-backdrop-filter: var(--glass-2);
+  backdrop-filter: var(--glass-2);
 }
 .bg-black-glass-3 {
-  background-color: rgba(0,0,0, 0.7);
+  background-color: rgba(0, 0, 0, var(--alpha-3));
+  -webkit-backdrop-filter: var(--glass-3);
+  backdrop-filter: var(--glass-3);
 }
 .bg-black-glass-4 {
-  background-color: rgba(0,0,0, 0.82);
+  background-color: rgba(0, 0, 0, var(--alpha-4));
+  -webkit-backdrop-filter: var(--glass-4);
+  backdrop-filter: var(--glass-4);
 }
 .bg-black-glass-5 {
-  background-color: rgba(0,0,0, 0.95);
+  background-color: rgba(0, 0, 0, var(--alpha-5));
+  -webkit-backdrop-filter: var(--glass-5);
+  backdrop-filter: var(--glass-5);
 }
 
+// White glassmorphic
 .bg-white-glass-1 {
-  background-color: rgba(255, 255, 255, 0.39);
+  background-color: rgba(255, 255, 255, var(--alpha-1));
+  -webkit-backdrop-filter: var(--glass-1);
+  backdrop-filter: var(--glass-1);
 }
 .bg-white-glass-2 {
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, var(--alpha-2));
+  backdrop-filter: var(--glass-2);
+  -webkit-backdrop-filter: var(--glass-2);
 }
 .bg-white-glass-3 {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, var(--alpha-3));
+  -webkit-backdrop-filter: var(--glass-3);
+  backdrop-filter: var(--glass-3);
 }
 .bg-white-glass-4 {
-  background-color: rgba(255, 255, 255, 0.82);
+  background-color: rgba(255, 255, 255, var(--alpha-4));
+  -webkit-backdrop-filter: var(--glass-4);
+  backdrop-filter: var(--glass-4);
 }
 .bg-white-glass-5 {
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  // Black glassmorphic
-  .bg-black-glass-1 {
-    background-color: rgba(0,0,0,.1);
-    backdrop-filter: saturate(180%) blur(2px);
-  }  
-  .bg-black-glass-2 {
-    background-color: rgba(0,0,0,.25);
-    backdrop-filter: saturate(180%) blur(3px);
-  }
-  .bg-black-glass-3 {
-    background-color: rgba(0,0,0,.4);
-    backdrop-filter: saturate(180%) blur(5px);
-  }
-  .bg-black-glass-4 {
-    background-color: rgba(0, 0, 0, 0.55);
-    backdrop-filter: saturate(180%) blur(8px);
-  }
-  .bg-black-glass-5 {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: saturate(180%) blur(20px);
-  }
-  // White glassmorphic
-  .bg-white-glass-1 {
-    background-color: rgba(255,255,255,.1);
-    backdrop-filter: saturate(180%) blur(2px);
-  }
-  .bg-white-glass-2 {
-    background-color: rgba(255,255,255,.25);
-    backdrop-filter: saturate(180%) blur(3px);
-  }
-  .bg-white-glass-3 {
-    background-color: rgba(255,255,255,.4);
-    backdrop-filter: saturate(180%) blur(5px);
-  }
-  .bg-white-glass-4 {
-    background-color: rgba(255, 255, 255, 0.55);
-    backdrop-filter: saturate(180%) blur(8px);
-  }
-  .bg-white-glass-5 {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: saturate(180%) blur(20px);
-  }
+  background-color: rgba(255, 255, 255, var(--alpha-5));
+  -webkit-backdrop-filter: var(--glass-5);
+  backdrop-filter: var(--glass-5);
 }

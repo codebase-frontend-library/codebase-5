@@ -11,7 +11,6 @@ code[class*="language-"],
 pre[class*="language-"] {
   max-height: 36rem;
   color: black;
-  background: none;
   font-size: 1rem;
   text-align: left;
   white-space: pre;
@@ -30,17 +29,19 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+/* pre[class*="language-"] {
   margin-bottom: 1.5rem;
   border-radius: .5rem;
   overflow: auto;
-}
-pre[class*="language-"] > code {
-  padding: 1em;
-}
+} */
 
-code[class*="language-"] {
-  background: #e7effd;
+/* code[class*="language-"] {
+  border: 1px solid var(--teal-200);
+  border-radius: .5rem;
+  background-color: var(--teal-100);
+} */
+code[class*="language-"] * {
+  background-color: unset !important;
 }
 
 /* Inline code */
@@ -90,8 +91,6 @@ code[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: #9a6e3a;
-  /* This background color was intended by the author of this theme. */
-  background: hsla(0, 0%, 100%, 0.5);
 }
 
 .token.atrule,

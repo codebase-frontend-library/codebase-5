@@ -6,9 +6,10 @@
 
 {% include "site-top-bar.njk" %}
 
+</div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
+    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 md:pt-6 relative">
       <div class="sm:sticky">
         {# include "site-side-nav.njk" #}
         <div
@@ -61,8 +62,8 @@
     </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-6">
-      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
+      <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         {% if '1-getting-started' in page.url %}
         <div class="my-1">Getting started</div>
         {% elif '2-classless-basics' in page.url %}
@@ -78,15 +79,15 @@
         {% elif '7-alpinejs-components' in page.url %}
         <div class="my-1">AlpineJS components</div>
         {% endif %}
-        <h1 class="mb-0 t-heavy t-primary">{{ headerTitle if headerTitle else title }}</h1>    
+        <h1 class="mb-0 t-bold t-black">{{ headerTitle if headerTitle else title }}</h1>    
       </div>
     </div>
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm lg:sticky mb-6" style="top: 55px;">
-      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
-        <div class="h4 mb-2 lg:pt-5">Contents</div>
+    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+        <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
     </div>

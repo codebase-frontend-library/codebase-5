@@ -16,7 +16,7 @@ You can start working immediately with Codebase in a simple HTML setup.
   </div>
 </div>
 
-The sourcemap is also available in the <a href="https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist">codebase/dist/</a> folder.
+The sourcemap is also available in the <a href="https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist">src/dist/</a> folder.
 
 ```js
 dist/
@@ -106,30 +106,36 @@ Codebase is a highly versatile SCSS library, preprocessed and minified to CSS.
 
 The SCSS library is clean, modern and minimalist, and highly versatile because of all the utility classes it contains. It can do most things that most people want, “out of the box”.
 
-Available in the reository are all the Codebase [SCSS files](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/codebase/scss). If you have knowledge of Sass/SCSS and a preprocessor, you can override the Codebase `!default` SCSS variables.
+Available in the repository are all the Codebase [SCSS files](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/codebase/scss).
+
+**Notes:**
+
+1. **Since v.5.2, Codebase has been refactored to use [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, whereas these were all Sass variables previously. Also, all the `!default` flags have been removed from these variables, as they can now be overrifdden in the CSS without requiring Sass to do so.
+2. **Since Codebase v.5.2, _PostCSS_ has not been used as part of this project**, as it isn’t needed for adding vendor prefixes (older browsers, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` in the _sass_ package.
 
 You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 
 The Codebase SCSS library contains a lot of [default variables](https://github.com/codebase-frontend-library/codebase-5/tree/master/src/codebase/scss/00_setup/_default-variables.scss) that are under a `!default` flag – so that they can be overridden.
 
-For example, here is the [Sass map](https://sass-lang.com/documentation/values/maps) of the six user interface (UI) colors in Codebase:
+For example, here is the [Sass map](https://sass-lang.com/documentation/values/maps) of the seven default theme colors in Codebase:
 
 ```scss
-$ui-color: () !default;
-$ui-color: map-merge((
-  "warning":          #c25703,  // orange -- contrast ratio 4.51:1
-  "danger":           #cf000f,  // red    -- contrast ratio 5.74:1
-  "success":          #128a12,  // green  -- contrast ratio 4.5:1
-  "info":             #1262ed,  // blue   -- contrast ratio 5.26:1
-  "primary":          #9400d3,  // purple -- contrast ratio 6.56:1
-  "secondary":        #0080a2,  // teal   -- contrast ratio 4.56:1
-  "tertiary":         #767676,  // gray   -- contrast ratio 4.54:1
-), $ui-color);
+$theme-color: (
+  "blue":   #1262ed,
+  "green":  #128a12,
+  "amber":  #f0b300,
+  "red":    #cf000f,
+  "purple": #9400d3,
+  "teal":   #0080a2,
+  "gray":   #767676,
+);
 ```
 
-You can override all these names and color codes, remove some or add more – and the Codebase utility classes will all be generated using some `each()` loops and `for()` loops. This means that you don’t need to figure out or input all the shades or each color.
+These are the same as the UI colors (for buttons, badges, and labels) but you can change that by editing the `$theme-color` map and preprocessing the SCSS.
 
-There are similar Sass maps for named colors, theme colors (controlling page background, text, borders around form fields, etc.), font sizes, media query breakpoint widths, and so on.
+You can override all these names and color codes, remove some or add more – to suit your branding — and the Codebase utility classes will all be generated using `each()` loops. This means that you don’t need to figure out or input all the shades or each color.
+
+Read more on [CSS variables in Codebase]({{ '/docs/1-getting-started/css-variables/' | url }}).
 
 ## System font stacks
 

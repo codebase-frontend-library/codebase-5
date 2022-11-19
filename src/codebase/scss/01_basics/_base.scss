@@ -5,7 +5,10 @@
 @use "../00_setup/default-variables" as *;
 
 // For AlpineJS =======================
-[x-cloak] { display: none !important; }
+[x-cloak] {
+  display: none !important;
+}
+
 // ====================================
 
 *,
@@ -18,21 +21,17 @@ body {
   min-height: 100%;
   scroll-behavior: smooth;
   margin: 0;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  font-family: $font-stack-base;
-  font-size: $text-font-size;
-  line-height: $text-base-line-height;
+  //-ms-overflow-style: -ms-autohiding-scrollbar;
+  font-family: var(--font-base);
+  font-size: var(--t-fs);
+  line-height: var(--t-base-lh);
   -webkit-font-smoothing: antialiased;
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-overflow-scrolling: touch;
-  -moz-font-feature-settings: "liga" on;
+  //-webkit-overflow-scrolling: touch;
   font-feature-settings: "liga" on;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
-  color: map-get($theme-color, text);
-  background-color: map-get($theme-color, page-bg);
+  color: var(--c-text);
+  background-color: var(--c-page-bg);
 }
 
 *:root {
@@ -44,8 +43,9 @@ abbr[title] {
   text-decoration: underline dotted;
 }
 
-b, strong {
-  font-weight: $text-bold-font-weight;
+b,
+strong {
+  font-weight: var(--t-bold-fw);
 }
 
 sub,
@@ -70,12 +70,13 @@ sup {
 
 // see also .t-link in _text.css
 :-moz-focusring {
-  outline: $focus-ring-outline;
-  box-shadow: $focus-ring-shadow;
+  outline: var(--focus-outline);
+  box-shadow: var(--focus-shadow);
 }
+
 :focus-visible {
-  outline: $focus-ring-outline;
-  box-shadow: $focus-ring-shadow;
+  outline: var(--focus-outline);
+  box-shadow: var(--focus-shadow);
 }
 
 small {
@@ -83,7 +84,7 @@ small {
 }
 
 ::selection {
-  background-color: map-get($theme-color, selection);
+  background-color: var(--c-selection);
 }
 
 legend {
@@ -101,15 +102,18 @@ progress {
 
 [type='search'] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
+  appearance: button;
   font: inherit;
 }
 
@@ -120,13 +124,6 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-button,
-select {
-  text-transform: none;
 }
 
 // For base button styles see 01_basics/_form-elements
@@ -156,14 +153,8 @@ iframe {
   border: 0;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 [type="number"] {
+
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     height: auto;
@@ -172,9 +163,12 @@ select {
 
 [type="search"] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
+
   ::-webkit-search-decoration {
     -webkit-appearance: none;
+    appearance: none;
   }
 }
 

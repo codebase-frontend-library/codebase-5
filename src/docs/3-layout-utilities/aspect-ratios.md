@@ -14,19 +14,23 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
 ## Notes on aspect ratios
 
 1. Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio _unless deformed by excess content within_. For example, you may have a [hero image with a text overlay]({{ '/docs/6-simple-components/heros' | url }}). On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.
-2. Mixins for the old [aspect ratio padding hack](https://www.w3schools.com/howto/howto_css_aspect_ratio.asp) are still present in the Codebase SCSS library. If you need to revert for supporting old browsers, you can tggle the  variable `$aspect-ratio-hack: false !default;` to `true`, and your preprocessor will swap them back.
 
-## Common image/video aspect ratios 
+## Image/video aspect ratios 
 
-<div class="mb-3 grid gap-3 equal-5-cols">
+<div class="mb-3 flex flex-grow-equal gap-1">
   <div>
-    <div class="aspect-ratio-3x4 b-thin bg-gray-100">
-      3×4
+    <div class="aspect-ratio-9x16 b-thin bg-gray-100">
+      9×16
     </div>
   </div>
   <div>
-    <div class="aspect-ratio-4x3 b-thin bg-gray-100">
-      4×3
+    <div class="aspect-ratio-5x7 b-thin bg-gray-100">
+      5×7
+    </div>
+  </div>
+  <div>
+    <div class="aspect-ratio-7x5 b-thin bg-gray-100">
+      7×5
     </div>
   </div>
   <div>
@@ -44,42 +48,41 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
       24×9
     </div>
   </div>
+  <div>
+    <div class="aspect-ratio-32x9 b-thin bg-gray-100">
+      32×9
+    </div>
+  </div>
 </div>
 
 ```html
-<div class="aspect-ratio-3x4">
-  3×4
-</div>
+<div class="aspect-ratio-9x16"> ... </div>
 
-<div class="aspect-ratio-4x3">
-  4×3
-</div>
+<div class="aspect-ratio-5x7"> ... </div>
 
-<div class="aspect-ratio-16x9">
-  16×9
-</div>
+<div class="aspect-ratio-7x5"> ... </div>
 
-<div class="aspect-ratio-21x9">
-  21×9
-</div>
+<div class="aspect-ratio-16x9"> ... </div>
 
-<div class="aspect-ratio-24x9">
-  24×9
-</div>
+<div class="aspect-ratio-21x9"> ... </div>
+
+<div class="aspect-ratio-24x9"> ... </div>
+
+<div class="aspect-ratio-32x9"> ... </div>
 ```
 
-`aspect-ratio-24×9` is included in Codebase, although it is not a common image or video aspect ratio. 24×9 is useful for full-width hero images where you want your top menubar _plus_ the hero _plus_ a teaser of your subsequent content to be on display on a laptop screen (laptops typically have screen sizes of 21×9 aspect ratio).
+**Note:** `aspect-ratio-24×9` and `aspect-ratio-32×9` have been included in Codebase, although these are not common image or video aspect ratios, becausethey are useful for _full-width hero components_ where you want your top menubar _plus_ the hero _plus_ a teaser of your subsequent content to be on display on a laptop screen (laptops, display monitors, and HDTVs often have screen sizes of 16x9 or 21×9 aspect ratio).
 
 ## Aspect ratio styles can be distorted
 
 `aspect-ratio-*` wrappers constrain their content to the set aspect ratio _unless there’s too much content_ in the immediate child element. This means that at small viewport widths, if you have a lot of text content inside, it will “override” the aspect ratio for phones. Example:
 
-<div class="mb-3 aspect-ratio-21x9 bg-orange-200 flex flex-center flex-middle">
+<div class="mb-3 aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle">
   <div class="w-xs p-1">This content is within a wrapper with <code class="b-thin">aspect-ratio-21x9</code> but at smaller viewport widths, all this text will deform the aspect ratio wrapper constraint. (That’s a good thing.) // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad corrupti expedita blanditiis! Consequatur mollitia temporibus dolorum, dolorem dolor soluta vero ab facere sint velit. Dolor consequuntur repellat, minus molestiae totam earum accusantium dolorum eligendi exercitationem ratione aliquam quibusdam nihil veniam atque labore magni doloremque iusto!</div>
 </div>
 
 ```html
-<div class="aspect-ratio-21x9 bg-orange-200 flex flex-center flex-middle">
+<div class="aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle">
   <div class="w-xs p-1">
     Lorem ipsum dolor sit amet...
   </div>
@@ -94,7 +97,7 @@ However, in situations where you don’t want this deformation to happen, you ca
 
 For setting up squared tile arrays, as popularised by the modern Microsoft Windows home screen (or, desktop) layout.
 
-There are sufficient aspect ratio squared tile utility classes, for up to a 6×6 tile layout. Threfore squared tiles can be mapped on to the Codebase 6×6 [grid]({{ '/docs/3-layout-utilities/grid' | url }}) system.
+There are sufficient aspect ratio squared tile utility classes, for up to a 6×6 tile layout — and “responsive” breakpoint width `xs`, `sm`, `md`, and `lg` variants of each squared tile are included. This is because Codebase  squared tile aspect ratios can be mapped on to the Codebase 6×6 [grid]({{ '/docs/3-layout-utilities/grid' | url }}) system.
 
 Example:
 

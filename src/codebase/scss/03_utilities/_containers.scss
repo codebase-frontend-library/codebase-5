@@ -3,34 +3,33 @@
 
 @use "../00_setup/default-variables" as *;
 
-.container {
-  width: min(100% - ($container-x-space * 2), $container-default);
+[class*=container] {
+  width: min(100% - (var(--container-x-space) * 2), var(--container));
   margin-inline: auto;
 }
 
 .container {
   &-xxl {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-xxl));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-xxl));
   }
+
   &-xl {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-xl));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-xl));
   }
+
   &-lg {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-lg));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-lg));
   }
+
   &-md {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-md));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-md));
   }
+
   &-sm {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-sm));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-sm));
   }
+
   &-xs {
-    width: min(100% - ($container-x-space * 2), map-get($width, w-xs));
-    margin-inline: auto;
+    width: min(100% - (var(--container-x-space) * 2), var(--w-xs));
   }
 }

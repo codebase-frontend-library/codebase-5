@@ -5,24 +5,23 @@
 
 .tablist {
   position: relative;
-  bottom: -$detail-thickness;
+  bottom: calc(var(--b1) * -1);
 }
 
 .tab {
   position: relative;
-  font-family: $font-stack-ui;
-  background-color: map-get($theme-color, page-bg-alt);
+  background-color: var(--c-page-bg-alt);
 }
 
 .tab[aria-selected="true"] {
   z-index: 2;
-  background-color: map-get($theme-color, page-bg);
+  background-color: var(--c-page-bg);
   // Remove border-bottom to make tab label look “attached” to its respective panel
-  border-bottom: 0 !important;
+  border-bottom: 0;
 }
 
 .tabpanel {
   position: relative;
   z-index: 1;
-  background-color: map-get($theme-color, page-bg);
+  background-color: var(--c-page-bg);
 }

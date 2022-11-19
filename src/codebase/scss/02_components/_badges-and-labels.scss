@@ -1,0 +1,72 @@
+// UTILITIES: BADGES AND LABELS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@use "../00_setup/default-variables" as *;
+
+// Badges
+
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.625em;
+  height: 1.625em;
+  border-radius: 2em;
+  padding: 0 0.325em;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--c-page-bg-alt);
+}
+
+.badge {
+  &-top-right {
+    position: absolute;
+    top: -.75em;
+    right: -.75em;
+  }
+
+  &-top-left {
+    position: absolute;
+    top: -.75em;
+    left: -.75em;
+  }
+
+  &-bottom-right {
+    position: absolute;
+    bottom: -.75em;
+    right: -.75em;
+  }
+
+  &-bottom-left {
+    position: absolute;
+    bottom: -.75em;
+    left: -.75em;
+  }
+}
+
+// Labels
+
+.label {
+  position: relative;
+  display: inline-block;
+
+  @if $label-rounded-corners==true {
+    border-radius: var(--rad-sm);
+  }
+
+  line-height: 1.5em;
+  padding: 0 0.4em 0.1em;
+  white-space: nowrap;
+  background-color: var(--c-page-bg-alt);
+}
+
+// UI colors
+@each $key,
+$val in $ui-setup {
+  .badge-#{$key},
+  .label-#{$key} {
+    background-color: nth($val, 1);
+    color: nth($val, 3)
+  }
+}

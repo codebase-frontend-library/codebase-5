@@ -1,9 +1,9 @@
 ---
 title: "Font stacks"
 layout: layout.njk
-prevPage: "/docs/4-decoration-utilities/images"
+prevPage: "/docs/4-decoration-utilities/forms"
 nextPage: "/docs/5-typographic-utilities/headings"
-prevLink: "Images"
+prevLink: "Form utilities"
 nextLink: "Headings"
 ---
 

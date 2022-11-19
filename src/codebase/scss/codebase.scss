@@ -2,7 +2,7 @@
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.1.2
+ * v.5.2.0
  */
 
 // BASICS
@@ -13,15 +13,13 @@
 
 // COMPONENTS
 @use "02_components/buttons";
-@use "02_components/badges";
-@use "02_components/labels";
+@use "02_components/badges-and-labels";
 @use "02_components/tables";
 @use "02_components/tabs";
 @use "02_components/offcanvas";
 
 // UTILITIES
 @use "03_utilities/containers";
-@use "03_utilities/bleeds";
 @use "03_utilities/positions";
 @use "03_utilities/dimensions";
 @use "03_utilities/flexbox";

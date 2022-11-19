@@ -8,18 +8,22 @@
 // }
 
 .rounded {
-  border-radius: $border-radius;
+  border-radius: var(--rad);
+
   &-sm {
-    border-radius: $border-radius-sm;      
+    border-radius: var(--rad-sm);
   }
+
   &-lg {
-    border-radius: $border-radius-lg;      
+    border-radius: var(--rad-lg);
   }
+
   &-pill {
-    border-radius: $border-radius-pill;
+    border-radius: var(--rad-pill);
   }
+
   &-full {
-    border-radius: $border-radius-circle;
+    border-radius: var(--rad-circle);
   }
 }
 

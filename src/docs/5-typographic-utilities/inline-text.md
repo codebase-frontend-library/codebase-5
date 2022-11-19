@@ -83,7 +83,7 @@ Links (also called _hyperlinks_) in Codebase are blue with an underscore by defa
 
 `t-link-inside` simply removes the traditional link underscore. And `t-link` reinstates the underscore, on the element to which is applied. Everything else is handled either by the wrapper `<a>` tag, and by Codebase decoration classes.
 
-**Note:** `t-link` doesn’t actually make an element operate like an `<a>` tag.
+**Note:** `t-link` doesn’t actually make an element _operate_ like an `<a>` tag.
 
 <a class="block container-xs mb-3 b-thin p-2 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
@@ -149,7 +149,7 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
 
     Removes underscore (underline) on hover
 
-* `hover:t-underscore` (alias `hover:t-underline`)
+* `hover:t-decoration-underscore` (alias `hover:t-decoration-underline`)
 
     Adds underscore (underline) on hover
 

@@ -5,8 +5,9 @@
 
 .offcanvas {
   position: fixed;
-  z-index: $z-index-offcanvas;
+  z-index: 999;
 }
+
 .offcanvas-top {
   top: 0;
   right: 0;

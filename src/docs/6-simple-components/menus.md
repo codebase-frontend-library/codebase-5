@@ -35,23 +35,23 @@ If you are using an `ol` or `ul` then the following example is a good place to s
 </div>
 <div>
 <p>The same unordered list, styled as a menu:</p>
-<ul class="list-style-type-none mb-0 p-0">
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="#/">Here’s a thing</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="#/">Something else</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="#/">Thingmabob</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="#/">And another thing</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="#/">One last thing</a></li>
+<ul class="list-style-type-none p-0 flex flex-column gap-2">
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Here’s a thing</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Something else</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Thingmabob</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">And another thing</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">One last thing</a></li>
 </ul>
 </div>
 </div>
 
 ```html
-<ul class="list-style-type-none mb-0 p-0">
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
+<ul class="list-style-type-none p-0 flex flex-column gap-2">
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
 </ul>
 ```
 
@@ -79,18 +79,18 @@ You can look at the source code to see how the following examples have been deco
 
 <div class="my-6">
 <div class="xs:flex gap-3 flex-grow-equal">
-<ul class="list-style-type-none pl-0">
-  <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 1</a></li>
-  <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 2</a></li>
-  <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 3</a>
-    <ul class="list-style-type-none pl-2">
-      <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 3.1</a></li>
-      <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 3.2</a></li>
-      <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 3.3</a></li>
+<ul class="list-style-type-none p-0 flex flex-column gap-2">
+  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 1</a></li>
+  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 2</a></li>
+  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3</a>
+    <ul class="list-style-type-none mt-2 flex flex-column gap-2">
+      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.1</a></li>
+      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.2</a></li>
+      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 4</a></li>
-  <li><a class="block py-1 t-decoration-none hover:t-underscore" href="#/">Link 5</a></li>
+  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 4</a></li>
+  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 5</a></li>
 </ul>
 <ul class="list-style-type-none pl-0">
   <li><a class="bb-thin b-white block p-block t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black" href="#/">Link 1</a></li>

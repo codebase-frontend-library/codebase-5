@@ -2,7 +2,7 @@
 
 <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
 
-<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
     <div class="p-2">
       <a
@@ -26,9 +26,11 @@
     <article  id="docs-article">
       <div class="t-long-read">
         <div>
-          <h1 class="h1 t-primary"><span class="t-heavy">Codebase</span> is a modern website SCSS library</h1>
-          <p class="t-gray-600">Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.</p>
-          <p class="mb-0 t-gray-600">Plus, Codebase pairs well with AlpineJS.</p>
+          <div class="md:aspect-ratio-2x1 flex flex-column flex-center">
+            <h1 class="h1 md:mb-6 bb-thick b-gray-900 pb-3 md:pb-6"><span class="t-heavy">Codebase</span> is a modern website SCSS library</h1>
+          </div>
+          <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.</p>
+          <p class="mb-6 pb-3">Plus, Codebase pairs well with AlpineJS.</p>
         </div>
       </div>
   
@@ -38,17 +40,13 @@
         <a class="btn btn-secondary" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repository</a>
       </p>
   
-      <div>
-        <ul class="list-style-type-none mb-0 pl-0">
-          <li class="mb-1">Current version: {{ metadata.version }}</li>
-          <li class="mb-1">CSS file size: {{ metadata.css_filesize }}</li>
-          <li class="mb-1">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></li>
-          <li>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></li>
-        </ul>
-      </div>
-  
-      <hr>
-  
+      <ul class="list-style-type-none pl-0">
+        <li class="mb-1">Current version: {{ metadata.version }}</li>
+        <li class="mb-1">CSS file size: {{ metadata.css_filesize }}</li>
+        <li class="mb-1">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></li>
+        <li>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></li>
+      </ul>
+    
       <div class="my-6 md:py-6 xs:t-center">
         <p>
           Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing the CSS.

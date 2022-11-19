@@ -151,8 +151,8 @@ A Codebase slideshow example with 5 slides:
       @keyup.shift.tab="currentSlide = 4; $nextTick(() => $refs.slide4.focus())"
     >
       <!-- demo -->
-      <div class="flex flex-center flex-middle t-thin bg-orange-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-orange-700">Slide 4 of 5</div>
+      <div class="flex flex-center flex-middle t-thin bg-amber-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-amber-700">Slide 4 of 5</div>
     </div>
     <div
       role="group" 
@@ -326,8 +326,8 @@ A Codebase slideshow example with 5 slides:
       @keyup.shift.tab="currentSlide = 4; $nextTick(() => $refs.slide4.focus())"
     >
       <!-- demo -->
-      <div class="flex flex-center flex-middle t-thin bg-orange-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-orange-700">Slide 4 of 5</div>
+      <div class="flex flex-center flex-middle t-thin bg-amber-200 aspect-ratio-21x9"></div>
+      <div class="p-block t-center t-white bg-amber-700">Slide 4 of 5</div>
     </div>
     <div
       role="group" 

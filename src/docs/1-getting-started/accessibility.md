@@ -43,24 +43,26 @@ For more information, see:
 
 ## Accessible UI colors
 
-Colored UI components are those most commonly expected worldwide, as used on signage and user interfaces:
+Colored UI components are those most commonly expected worldwide, as used on signage, traffic lights, and user interfaces:
 
-* Warning is orange
-* Danger is red
 * Success is green
+* Warning is amber
+* Danger is red
 * Information is blue
 
 These are the colors used for UI elements such as ([buttons]({{ '/docs/6-simple-components/buttons' | url }}), [badges]({{ '/docs/6-simple-components/badges' | url }}) and [labels]({{ '/docs/6-simple-components/labels' | url }})) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
 
 <div class="flex flex-wrap my-6">
-<span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-warning t-white 
-t-center">warning<br>#c25703<br>4.51:1</span>
-<span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-danger t-white t-center">danger<br>#cf000f<br>5.74:1</span>
-<span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-success t-white t-center">success<br>#128a12<br>4.5:1</span>
-<span class="square-lg inline-flex flex-center flex-middle bg-info t-white t-center">info<br>#1262ed<br>4.54:1</span>
+  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-success t-white t-center">success<br>#128a12<br>4.5:1</span>
+  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-warning t-black 
+  t-center">warning<br>#f0b300<br>11.15:1</span>
+  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-danger t-white t-center">danger<br>#cf000f<br>5.74:1</span>
+  <span class="square-lg inline-flex flex-center flex-middle bg-info t-white t-center">info<br>#1262ed<br>4.54:1</span>
 </div>
 
-The default folor for links `<a href="">` is also the UI color for information (blue), because blue is the most commonly expected color for links, and links generally link to further information within paragraphs of text on the internet. Meanwhile, the default text color `#212121` on a white background has a color contrast ratio of 16.1:1.
+**Note:** yellowish colors (yellow, amber, orange, yellow-green) are notoriously difficult to pair with white for an accessible color contrast. Therefore the text color is set to black on “warning” buttons, badges, and labels. (Until v.5.2.0 Codebase “warning” color was a dark orange, but it was to close to the “danger” red.)
+
+The default color for links `<a href="">` is also the UI color for information (blue), because blue is the most commonly expected color for links, and links generally link to further information within paragraphs of text on the internet. Meanwhile, the default text color `#212121` on a white background has a color contrast ratio of 16.1:1.
 
 In addition, three “accent” colors are provided:
 

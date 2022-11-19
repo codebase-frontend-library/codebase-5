@@ -3,9 +3,9 @@ title: "Element grid"
 headerTitle: "The Codebase element grid"
 layout: layout.njk
 prevPage: "/docs/1-getting-started/responsive-design"
-nextPage: "/docs/1-getting-started/improvements-since-codebase-4"
+nextPage: "/docs/1-getting-started/css-variables"
 prevLink: "Responsive design"
-nextLink: "Improvements since Codebase 4"
+nextLink: "CSS variables"
 ---
 
 Codebase uses a “soft” 0.5rem element grid (default 8px) for consistently positioning elements relative to each other.
@@ -23,13 +23,35 @@ The Codebase element grid has been deployed a follows:
  The line heights for headers have also been set using 0.5rem increments.
 2. Spacing utilities for margins, paddings and gaps (used in both flexbox and grid) have been set using values from the 0.5rem element grid.
 
+```scss
+$spacing: (
+  "0": 0,
+  "1": 0.5rem,
+  "2": 1rem,
+  "3": 1.5rem,
+  "4": 2rem,
+  "5": 2.5rem,
+  "6": 3rem,
+);
+
+$spacing-setup: (
+  "0": 0,
+  "1": var(--sp-1),
+  "2": var(--sp-2),
+  "3": var(--sp-3),
+  "4": var(--sp-4),
+  "5": var(--sp-5),
+  "6": var(--sp-6),
+);
+```
+
 ## Infographic: the Codebase element grid
 
 <div class="my-6">
 <img src="{{ '/img/element-grid.svg' | url }}" width="736" height="446">
 </div>
 
-**Note:** the padding for buttons and table cells corresponds to Codebase utility classes `px-2 py-1`. Since this would be used frequently for menu itams, tab labels, etc., Codebase also has `p-block` that adds this margin (`margin: 0.5rem 1rem;`) in one utility class.
+**Note:** the padding for buttons and table cells corresponds to Codebase utility classes `px-2 py-1`. Since this would be used frequently for menu itams, tab labels, etc., Codebase also has `p-block` that adds this margin (`margin: var(--sp-1) var(--sp-2);`) in one utility class.
 
 ## Utility class spacing
 

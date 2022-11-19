@@ -308,19 +308,54 @@ Go large – to grab people’s attention:
 
 <div class="w-xs mx-auto mb-3">
   <form class="flex">
-    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right px-3 t-lg" name="examplename" placeholder="Your email" type="email">
-    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg rounded-pill unrounded-left t-lg">Subscribe</button>
+    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
+    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg">Subscribe</button>
   </form>
 </div>
+
+```html
+<input 
+  id="email-example" 
+  class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" 
+  name="examplename" 
+  placeholder="Your email" 
+  type="email"
+>
+<button 
+  aria-label="Submit" 
+  type="submit" 
+  class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg"
+>Subscribe</button>
+```
 
 Go small – to fit a form into a menubar, or into a table cell:
 
 <div class="w-xxs mx-auto mb-3">
   <form class="flex" action="">
-    <input type="search" class="form-element-sm b-primary unrounded-right" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
-    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+    <input type="search" class="form-element-sm b-primary unrounded-right bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
+    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
   </form>
 </div>
+
+```html
+<input 
+  type="search" 
+  class="form-element-sm b-primary unrounded-right bg-purple-100" 
+  id="site-search" 
+  name="site-search" 
+  autocomplete="off" 
+  aria-label="" 
+  placeholder="Search"
+>
+<button 
+  aria-label="Search"
+  class="btn btn-primary btn-icon btn-sm unrounded-left"
+>
+  <!-- Search icon -->
+</button>
+```
+
+See [form elements]({{ 'http://localhost:8080/codebase-5/docs/2-classless-basics/form-elements' | url }}) and [form utilities]({{ 'http://localhost:8080/codebase-5/docs/4-decoration-utilities/forms' | url }})
 
 ## Outline buttons
 
@@ -337,7 +372,7 @@ Example:
 
 `btn btn-success bg-transparent t-success`:
 
-<a class="btn btn-success bg-transparent t-success" href="#/">Find out more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></a>
+<a class="btn btn-success bg-transparent t-success" href="#/">Find out more&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg></a>
 
 ```html
 <a class="btn btn-success flex bg-transparent t-success" href="#/">Find out more →</a>

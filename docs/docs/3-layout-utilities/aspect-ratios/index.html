@@ -8,7 +8,7 @@
   <title>Aspect ratios - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.1.2" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -50,20 +50,12 @@
 
     #site-title,
     #site-footer-title {
-      color: #9400d3;
-    }
-    #site-title:hover,
-    #site-footer-title:hover {
-      color: #5f0087;
+      color: white;
     }
 
     #site-title svg,
     #site-footer-title svg {
-      fill: #9400d3;
-    }
-    #site-title:hover svg,
-    #site-footer-title:hover svg {
-      fill: #5f0087;
+      fill: white;
     }
 
     @media (max-width: 767px) {
@@ -232,7 +224,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -242,7 +234,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1"
+        class="btn-icon rounded-full ml-1 t-gray-500 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -272,9 +264,9 @@
     </div>
   
     <div class="grow">
-      <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-300 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
+        <div><a class="p-block t-gray-300 t-decoration-none hover:t-decoration-underline hover:t-white  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
   
@@ -284,9 +276,10 @@
 
 
 
+</div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
+    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 md:pt-6 relative">
       <div class="sm:sticky">
         
         <div
@@ -327,11 +320,11 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
-          <p class="h4 lg:mt-3">Documentation</p>
+          <p class="h4 lg:mt-3 t-semibold">Documentation</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
@@ -347,12 +340,13 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
     </ul>
   </div>  
 </div>
@@ -371,16 +365,16 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Utilities</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
@@ -396,17 +390,17 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
     </ul>
   </div>
 </div>
@@ -425,14 +419,15 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
     </ul>
   </div>
 </div>
@@ -451,20 +446,20 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Components</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
@@ -480,15 +475,15 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
     </ul>
   </div>
 </div>
@@ -507,14 +502,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -525,20 +520,20 @@
     </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-6">
-      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
+      <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         
         <div class="my-1">Layout utilities</div>
         
-        <h1 class="mb-0 t-heavy t-primary">Aspect ratios</h1>    
+        <h1 class="mb-0 t-bold t-black">Aspect ratios</h1>    
       </div>
     </div>
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm lg:sticky mb-6" style="top: 55px;">
-      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
-        <div class="h4 mb-2 lg:pt-5">Contents</div>
+    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+        <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
     </div>
@@ -558,18 +553,22 @@
 <h2 id="notes-on-aspect-ratios" tabindex="-1">Notes on aspect ratios</h2>
 <ol>
 <li>Codebase 5’s <code>aspect-ratio</code> classes maintain a block wrapper’s aspect ratio <em>unless deformed by excess content within</em>. For example, you may have a <a href="/codebase-5/docs/6-simple-components/heros">hero image with a text overlay</a>. On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.</li>
-<li>Mixins for the old <a href="https://www.w3schools.com/howto/howto_css_aspect_ratio.asp">aspect ratio padding hack</a> are still present in the Codebase SCSS library. If you need to revert for supporting old browsers, you can tggle the  variable <code>$aspect-ratio-hack: false !default;</code> to <code>true</code>, and your preprocessor will swap them back.</li>
 </ol>
-<h2 id="common-image%2Fvideo-aspect-ratios" tabindex="-1">Common image/video aspect ratios</h2>
-<div class="mb-3 grid gap-3 equal-5-cols">
+<h2 id="image%2Fvideo-aspect-ratios" tabindex="-1">Image/video aspect ratios</h2>
+<div class="mb-3 flex flex-grow-equal gap-1">
   <div>
-    <div class="aspect-ratio-3x4 b-thin bg-gray-100">
-      3×4
+    <div class="aspect-ratio-9x16 b-thin bg-gray-100">
+      9×16
     </div>
   </div>
   <div>
-    <div class="aspect-ratio-4x3 b-thin bg-gray-100">
-      4×3
+    <div class="aspect-ratio-5x7 b-thin bg-gray-100">
+      5×7
+    </div>
+  </div>
+  <div>
+    <div class="aspect-ratio-7x5 b-thin bg-gray-100">
+      7×5
     </div>
   </div>
   <div>
@@ -587,20 +586,25 @@
       24×9
     </div>
   </div>
+  <div>
+    <div class="aspect-ratio-32x9 b-thin bg-gray-100">
+      32×9
+    </div>
+  </div>
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-3x4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  3×4<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-4x3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  4×3<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-16x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  16×9<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  21×9<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-24x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  24×9<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p><code>aspect-ratio-24×9</code> is included in Codebase, although it is not a common image or video aspect ratio. 24×9 is useful for full-width hero images where you want your top menubar <em>plus</em> the hero <em>plus</em> a teaser of your subsequent content to be on display on a laptop screen (laptops typically have screen sizes of 21×9 aspect ratio).</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-9x16<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-5x7<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-7x5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-16x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-21x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-24x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-32x9<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note:</strong> <code>aspect-ratio-24×9</code> and <code>aspect-ratio-32×9</code> have been included in Codebase, although these are not common image or video aspect ratios, becausethey are useful for <em>full-width hero components</em> where you want your top menubar <em>plus</em> the hero <em>plus</em> a teaser of your subsequent content to be on display on a laptop screen (laptops, display monitors, and HDTVs often have screen sizes of 16x9 or 21×9 aspect ratio).</p>
 <h2 id="aspect-ratio-styles-can-be-distorted" tabindex="-1">Aspect ratio styles can be distorted</h2>
 <p><code>aspect-ratio-*</code> wrappers constrain their content to the set aspect ratio <em>unless there’s too much content</em> in the immediate child element. This means that at small viewport widths, if you have a lot of text content inside, it will “override” the aspect ratio for phones. Example:</p>
-<div class="mb-3 aspect-ratio-21x9 bg-orange-200 flex flex-center flex-middle">
+<div class="mb-3 aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle">
   <div class="w-xs p-1">This content is within a wrapper with <code class="b-thin">aspect-ratio-21x9</code> but at smaller viewport widths, all this text will deform the aspect ratio wrapper constraint. (That’s a good thing.) // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad corrupti expedita blanditiis! Consequatur mollitia temporibus dolorum, dolorem dolor soluta vero ab facere sint velit. Dolor consequuntur repellat, minus molestiae totam earum accusantium dolorum eligendi exercitationem ratione aliquam quibusdam nihil veniam atque labore magni doloremque iusto!</div>
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-21x9 bg-orange-200 flex flex-center flex-middle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs p-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    Lorem ipsum dolor sit amet...<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-xs p-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    Lorem ipsum dolor sit amet...<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>This deformation is a good thing, because it means that downstream designers and content creators can’t break your layout wrapper so easily.</p>
 <p>However, in situations where you don’t want this deformation to happen, you can simply wrap your content in a block with the CSS class <a href="/codebase-5/docs/3-layout-utilities/dimensions/#box">box</a> – and you may need to add <code>overflow-y</code> if you have content therefore needs to be scrolled.</p>
 <h2 id="squared-tile-aspect-ratios" tabindex="-1">Squared tile aspect ratios</h2>
 <p>For setting up squared tile arrays, as popularised by the modern Microsoft Windows home screen (or, desktop) layout.</p>
-<p>There are sufficient aspect ratio squared tile utility classes, for up to a 6×6 tile layout. Threfore squared tiles can be mapped on to the Codebase 6×6 <a href="/codebase-5/docs/3-layout-utilities/grid">grid</a> system.</p>
+<p>There are sufficient aspect ratio squared tile utility classes, for up to a 6×6 tile layout — and “responsive” breakpoint width <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> variants of each squared tile are included. This is because Codebase  squared tile aspect ratios can be mapped on to the Codebase 6×6 <a href="/codebase-5/docs/3-layout-utilities/grid">grid</a> system.</p>
 <p>Example:</p>
 <div class="mb-3 grid equal-6-cols">
   <div class="col-1 row-1 aspect-ratio-1x1 b-thin bg-gray-100">
@@ -746,8 +750,8 @@ gulls by <a href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=at
 
 </div>
 
-<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
-  <p>
+<footer class="relative py-6 bg-gray-900 t-center t-gray-300">
+  <p class="sm:mt-6">
     <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
         <!-- Codebase logo-->
@@ -763,7 +767,7 @@ gulls by <a href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=at
     </a>
   </p>
   
-  <p>Version 5.1.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.0 • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

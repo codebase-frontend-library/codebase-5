@@ -8,7 +8,7 @@
   <title>Colors - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.1.2" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -50,20 +50,12 @@
 
     #site-title,
     #site-footer-title {
-      color: #9400d3;
-    }
-    #site-title:hover,
-    #site-footer-title:hover {
-      color: #5f0087;
+      color: white;
     }
 
     #site-title svg,
     #site-footer-title svg {
-      fill: #9400d3;
-    }
-    #site-title:hover svg,
-    #site-footer-title:hover svg {
-      fill: #5f0087;
+      fill: white;
     }
 
     @media (max-width: 767px) {
@@ -232,7 +224,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -242,7 +234,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1"
+        class="btn-icon rounded-full ml-1 t-gray-500 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -272,9 +264,9 @@
     </div>
   
     <div class="grow">
-      <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-300 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
+        <div><a class="p-block t-gray-300 t-decoration-none hover:t-decoration-underline hover:t-white  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
   
@@ -284,9 +276,10 @@
 
 
 
+</div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
+    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 md:pt-6 relative">
       <div class="sm:sticky">
         
         <div
@@ -327,11 +320,11 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
-          <p class="h4 lg:mt-3">Documentation</p>
+          <p class="h4 lg:mt-3 t-semibold">Documentation</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
@@ -347,12 +340,13 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
     </ul>
   </div>  
 </div>
@@ -371,16 +365,16 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Utilities</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
@@ -396,17 +390,17 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
     </ul>
   </div>
 </div>
@@ -425,14 +419,15 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
     </ul>
   </div>
 </div>
@@ -451,20 +446,20 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Components</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
@@ -480,15 +475,15 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
     </ul>
   </div>
 </div>
@@ -507,14 +502,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -525,20 +520,20 @@
     </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-6">
-      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
+      <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         
         <div class="my-1">Decoration utilities</div>
         
-        <h1 class="mb-0 t-heavy t-primary">Colors</h1>    
+        <h1 class="mb-0 t-bold t-black">Colors</h1>    
       </div>
     </div>
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm lg:sticky mb-6" style="top: 55px;">
-      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
-        <div class="h4 mb-2 lg:pt-5">Contents</div>
+    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+        <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
     </div>
@@ -561,7 +556,7 @@
 </ul>
 <h2 id="default-colors" tabindex="-1">Default colors</h2>
 <p>I don’t know what colors you want in your web design project. 😁</p>
-<p>Therefore, Codebase borrows the default set of seven <a href="#ui-colors">UI colors</a> (as used for buttons, etc.), giving them obvious color names as aliases: <label class="label bg-orange-500 t-white">orange</label>, <label class="label bg-red-500 t-white">red</label>, <label class="label bg-green-500 t-white">green</label>, <label class="label bg-blue-500 t-white">blue</label>, <label class="label bg-purple-500 t-white">purple</label>, <label class="label bg-teal-500 t-white">teal</label>, and <label class="label bg-gray-500 t-white">gray</label>.</p>
+<p>Therefore, Codebase borrows the default set of seven <a href="#ui-colors">UI colors</a> (as used for buttons, etc.), giving them obvious color names as aliases: <label class="label bg-amber-500 t-white">amber</label>, <label class="label bg-red-500 t-white">red</label>, <label class="label bg-green-500 t-white">green</label>, <label class="label bg-blue-500 t-white">blue</label>, <label class="label bg-purple-500 t-white">purple</label>, <label class="label bg-teal-500 t-white">teal</label>, and <label class="label bg-gray-500 t-white">gray</label>.</p>
 <p><strong>Note:</strong> since the base default color of each is aliased from the <em>UI colors</em> (which are necessarily dark, for following the <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 Level AA accessibility guidelines</a>), these are set as the <code>-600</code> swatch shades in the series (see below).</p>
 <p><em>These default colors are merely here for demonstration purposes.</em> You can use them to get you started as-is, but you can also swap them out for whatever you need in your project. You can have your own named colors and color codes.</p>
 <p>In the utility classes, shades of each named color are available. These shades are identified by suffixes <code>-100</code> to <code>-900</code>.</p>
@@ -593,17 +588,17 @@
         <div><code>800</code></div>
         <div><code>900</code></div>
       </div>
-      <p class="my-1"><code>bg-orange-</code></p>
+      <p class="my-1"><code>bg-amber-</code></p>
       <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-orange-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-900 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-100 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-200 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-300 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-400 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-500 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-600 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-700 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-800 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-red-</code></p>
       <div class="flex flex-grow-equal">
@@ -685,7 +680,7 @@
 <p>The color shades are generated by nested <code>@each</code> loops in <code>codebase/scss/03_utilities/colors.scss</code>, that follow the Sass map in <code>codebase/scss/00_setup/default-variables.scss</code>.</p>
 <p>The generator picks the theme <em>named colors</em>, and then mixes in white or black to generate the shades.</p>
 <p>In the default variables file, the following two Sass maps set up the named colors and their shades:</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$named-color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$named-color</span></span><span class="token punctuation">:</span> <span class="token function">map-merge</span><span class="token punctuation">(</span><span class="token punctuation">(</span><br>  <span class="token string">"-green"</span><span class="token punctuation">:</span>          <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> success<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-orange"</span><span class="token punctuation">:</span>         <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> warning<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-red"</span><span class="token punctuation">:</span>            <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> danger<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-blue"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> info<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-purple"</span><span class="token punctuation">:</span>         <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> primary<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-teal"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> secondary<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-gray"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> tertiary<span class="token punctuation">)</span><span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$named-color</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token property"><span class="token variable">$shades</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$shades</span></span><span class="token punctuation">:</span> <span class="token function">map-merge</span><span class="token punctuation">(</span><span class="token punctuation">(</span><br>  <span class="token string">"100"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 90<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"200"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 72<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"300"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 54<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"400"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 36<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"500"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 18<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"600"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"700"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 18<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"800"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 36<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"900"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 54<span class="token punctuation">)</span><br><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$shades</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$named-color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$named-color</span></span><span class="token punctuation">:</span> <span class="token function">map-merge</span><span class="token punctuation">(</span><span class="token punctuation">(</span><br>  <span class="token string">"-green"</span><span class="token punctuation">:</span>          <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> success<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-amber"</span><span class="token punctuation">:</span>         <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> warning<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-red"</span><span class="token punctuation">:</span>            <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> danger<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-blue"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> info<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-purple"</span><span class="token punctuation">:</span>         <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> primary<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-teal"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> secondary<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"-gray"</span><span class="token punctuation">:</span>           <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$ui-color</span><span class="token punctuation">,</span> tertiary<span class="token punctuation">)</span><span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$named-color</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token property"><span class="token variable">$shades</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$shades</span></span><span class="token punctuation">:</span> <span class="token function">map-merge</span><span class="token punctuation">(</span><span class="token punctuation">(</span><br>  <span class="token string">"100"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 90<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"200"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 72<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"300"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 54<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"400"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 36<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"500"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 18<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"600"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"700"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 18<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"800"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 36<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"900"</span><span class="token punctuation">:</span>            <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 54<span class="token punctuation">)</span><br><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$shades</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>And there’s a simple true/false toggle, that determines whether or not to crank the generator</p>
 <pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$named-color-shades</span></span><span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span></code></pre>
 <p>And in the <code>_colors.scss</code> file, this is the generator that outputs all the named color utilities:</p>
@@ -709,7 +704,7 @@
 <p>Examples:</p>
 <div class="my-6">
   <p class="b-thin b-green-400 rounded-sm p-block bg-green-200 t-green-700">b-thin b-green-400 rounded-sm p-block bg-green-200 t-green-700</p>
-  <p class="t-orange-600">t-orange-600</p>
+  <p class="t-amber-600">t-amber-600</p>
   <p class="p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700">p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700</p>
 </div>
 <h2 id="ui-colors" tabindex="-1">UI colors</h2>
@@ -776,8 +771,8 @@
 
 </div>
 
-<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
-  <p>
+<footer class="relative py-6 bg-gray-900 t-center t-gray-300">
+  <p class="sm:mt-6">
     <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
         <!-- Codebase logo-->
@@ -793,7 +788,7 @@
     </a>
   </p>
   
-  <p>Version 5.1.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.0 • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
 
-  <title>Text alignment - Codebase</title>
+  <title>Forms - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
   <link href="/codebase-5/dist/codebase.css?v=5.2.0" rel="stylesheet">
@@ -523,9 +523,9 @@
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
       <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         
-        <div class="my-1">Typographic utilities</div>
+        <div class="my-1">Decoration utilities</div>
         
-        <h1 class="mb-0 t-bold t-black">Text alignment</h1>    
+        <h1 class="mb-0 t-bold t-black">Forms</h1>    
       </div>
     </div>
   </header>
@@ -548,39 +548,41 @@
   </style>
   <main class="col-1 sm:col-2">
     <div class="container-sm">
-      <h2 id="simple-text-alignment" tabindex="-1">Simple text alignment</h2>
-<p><code>t-left</code></p>
-<p class="t-left">Lorem ipsum dolor sit amet...</p>
-<p><code>t-center</code></p>
-<p class="t-center">Lorem ipsum dolor sit amet...</p>
-<p><code>t-right</code></p>
-<p class="t-right">Lorem ipsum dolor sit amet...</p>
-<h2 id="responsive-text-alignment" tabindex="-1">Responsive text-alignment</h2>
-<p>Besides the text alignment classes above, there are other text alignment classes that take effect at the different media query breakpoint widths. So, here’s the full set of text alignment utility classes:</p>
+      <h2 id="form-element-utility-classes" tabindex="-1">Form element utility classes</h2>
+<p>There are only two <em>form</em> utility classes, and these are:</p>
 <ul>
-<li><code>t-left</code> / <code>sm:t-left</code> / <code>md:t-left</code> / <code>lg:t-left</code></li>
-<li><code>t-center</code> / <code>sm:t-center</code> / <code>md:t-center</code> / <code>lg:t-center</code></li>
-<li><code>t-right</code> / <code>sm:t-right</code> / <code>md:t-right</code> / <code>lg:t-right</code></li>
+<li><code>form-element-sm</code> (can be paired with <code>btn-sm</code>)</li>
+<li><code>form-element-lg</code> (can be paired with <code>btn-lg</code>)</li>
 </ul>
-<p>With these, you can set the text alignment for phones first, and then <em>override</em> with a different text alignment for medium or large screens up.</p>
-<h2 id="an-example-card" tabindex="-1">An example card</h2>
-<p>Consider this card design:</p>
-<div class="mb-3 grid gap-3 sm:equal-2-cols">
-  <div>
-    <div class="rounded p-2 bg-amber-100">
-      <p class="h4 mb-1 sm:t-center">Card title</p>
-      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
-    </div>
-  </div>
-  <div>
-    <div class="rounded p-2 bg-amber-100">
-      <p class="h4 mb-1 sm:t-center">Card title</p>
-      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
-    </div>    
-  </div>
+<p>Examples:</p>
+<div class="grid xs:equal-3-cols col-gap-3">
+  <p class="mb-1"><code>form-element-sm</code></p>
+  <p class="mb-1">Default</p>
+  <p class="mb-1"><code>form-element-sm</code></p>
+  <p><input class="form-element-sm" id="text-example" name="examplename" placeholder="Example text input field" type="text"></p>
+  <p><input id="text-example" name="examplename" placeholder="Example text input field" type="text"></p>
+  <p><input class="form-element-lg" id="text-example" name="examplename" placeholder="Example text input field" type="text"></p>
 </div>
-<p>In these cards the titles are left aligned (default) for small devices, and the cards are stacked on two rows. But for medium viewports up, the header becomes centered (at the same breakpount when the cards become arranged side-by-side).</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rounded p-2 bg-amber-100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sm:t-center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-sm<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-example<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example text input field<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-example<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example text input field<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-lg<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-example<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example text input field<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="other-things-you-can-do-with-forms" tabindex="-1">Other things you can do with forms</h2>
+<p>Besides the form-element classes above, you can change <a href="/codebase-5/docs/4-decoration-utilities/borders">border</a> thickness, background and border <a href="/codebase-5/docs/4-decoration-utilities/colors">colors</a>, and <a href="/codebase-5/docs/4-decoration-utilities/rounded-corners">rounded corners</a>.</p>
+<p>Go large – to grab people’s attention:</p>
+<div class="w-xs mx-auto mb-3">
+  <form class="flex">
+    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
+    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg">Subscribe</button>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <br>  <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email-example<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examplename<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Your email<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <br>  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Submit<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span>Subscribe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Go small – to fit a form into a menubar, or into a table cell:</p>
+<div class="w-xxs mx-auto mb-3">
+  <form class="flex" action="">
+    <input type="search" class="form-element-sm b-primary unrounded-right bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
+    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></button>
+  </form>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <br>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element-sm b-primary unrounded-right bg-purple-100<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site-search<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span> <br>  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <br>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <br>  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span><br>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary btn-icon btn-sm unrounded-left<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token comment">&lt;!-- Search icon --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>See <a href="/codebase-5/docs/6-simple-components/buttons">buttons</a>.</p>
 
     </div>
   </main>
@@ -590,10 +592,10 @@
       <hr>
       <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/headings">&larr; Headings</a></li>
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/4-decoration-utilities/images">&larr; Images</a></li>
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text &rarr;</a></li>
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font Stacks &rarr;</a></li>
           
       </ul>
     </div>

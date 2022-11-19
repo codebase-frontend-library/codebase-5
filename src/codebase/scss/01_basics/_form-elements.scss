@@ -7,7 +7,17 @@
 label {
   display: inline-block;
   padding: .5rem 0;
-  font-family: $font-stack-ui;
+  font-family: var(--font-ui);
+}
+
+fieldset {
+  border: var(--line-detail);
+  padding: 0 var(--sp-2) var(--sp-2);
+  font-family: var(--form-font);
+}
+
+legend {
+  font-family: var(--font-ui);
 }
 
 input,
@@ -17,36 +27,59 @@ textarea {
   display: block;
   width: 100%;
   outline: 0 none;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  border: $form-border-thickness, solid, map-get($theme-color, detail);
+  margin-block: 0;
+  // -webkit-appearance: none;
+  border: var(--line-detail);
+
+  @if $form-input-rounded-corners==true {
+    -webkit-border-radius: var(--rad-sm);
+    border-radius: var(--rad-sm);
+  } @else {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+
+  padding: var(--form-p);
+  min-height: var(--form-size);
+  font-family: var(--form-font);
+  text-align: start;
+  color: var(--c-text);
+
   @if $form-input-background-color==true {
-    background-color: map-get($theme-color, form-element-bg)
+    background-color: var(--c-form-bg)
   }
-  @if $form-input-rounded-corners == true {
-    border-radius: $form-border-radius;
-  }
-  padding: $form-padding-default;
-  height: $form-element-size;
-  font-family: $font-stack-ui;
-  font-size: 1rem;
-  color: map-get($theme-color, text);
-  transition: all 0.15s ease-in-out;
+
+  transition: var(--ease);
+
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
+    box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
   }
 }
-[placeholder] {
+
+::placeholder {
+  color: var(--c-text);
+  opacity: .7;
   text-overflow: ellipsis;
 }
 
-textarea,
-[multiple],
-input[type=file] {
-  height: auto;
+select, [type="number"] {
+  width: auto;
+}
+
+::file-selector-button {
+  border: var(--line-detail);
+  padding-block: 0.125em;
+  font-size: 1em;
+  color: white;
+  background: var(--c-tertiary);
+}
+
+[type="color"] {
+  width: var(--form-size);
+  height: var(--form-size);
+  padding: 0.125rem
 }
 
 [type=button],
@@ -55,116 +88,100 @@ input[type=file] {
   display: inline-block;
   width: auto;
 }
-select {
-  padding-top: .25em;
-  padding-bottom: .25em;
-  overflow: auto;
-}
-select:not([multiple]) {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M6 6l4 4 4-4' fill='none' stroke='%23000' stroke-width='1.33334'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1em 1em;
-}
-
-fieldset {
-  min-width: 0;
-}
 
 option {
   padding: .25em 0;
 }
 
-input[type="number"] {
-  padding: 0;
-  padding-left: .125em;
-}
-
-select {
-  vertical-align: baseline;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  position: relative;
-  display: inline-block;
-  width: unset;
-  height: unset;
-  line-height: 1;
-  &:focus {
-    z-index: 1;
-    outline: 0;
-    box-shadow: 0 0 0 0.25 map-get($theme-color, form-focus);
-  }
-}
-
+input[type="checkbox"],
 input[type="radio"] {
-  -webkit-appearance: radio;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -0.125em;
+  width: 1.25em;
+  height: 1em;
+  margin: 0;
 }
-
-input[type="checkbox"] {
-  -webkit-appearance: checkbox;
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  margin-left: 0.25em;
 }
 
 textarea {
   vertical-align: top;
   padding-top: 4px;
   padding-bottom: 4px;
-  line-height: 1.5;
   overflow: auto;
 }
 
-// min-height to prevent empty date fields collapsing on Safari (because no placeholder text)
-.form-element-sm {
-  height: $form-element-size-sm;
-  padding: $form-padding-sm;
+input.form-element-sm,
+select.form-element-sm {
+  height: var(--form-size-sm);
+  min-height: unset;
+  padding: var(--form-p-sm);
 }
+
+textarea.form-element-sm {
+  padding: var(--form-p-sm);
+}
+
 .form-element-lg {
-  height: $form-element-size-lg;
-  padding: $form-padding-lg;
+  height: var(--form-size-lg);
+  min-height: unset;
+  padding: var(--form-p-lg);
 }
 
 .inline-block input {
   display: inline-block;
 }
 
+:disabled,
+.disabled {
+  position: relative;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @mixin button {
   position: relative;
   -webkit-appearance: none;
-  height: $button-size;
+  height: var(--form-size);
   display: inline-flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  border: $button-border-thickness, solid map-get($theme-color, detail);
-  border-radius: $border-radius-sm;
-  padding: $button-padding-default;
-  font-family: $font-stack-ui;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
+  border: var(--line-detail);
+
+  @if $form-input-rounded-corners == true {
+    border-radius: var(--rad-sm);
+  }
+  
+  padding: var(--btn-p);
+  font-family: var(--form-font);
+  font-weight: var(--btn-fw);
   text-decoration: none; // prevents hover underline when button styling is applied to links
   white-space: nowrap;
-  color: map-get($theme-color, text); // so that button text isn’t overridden by the the color of link text
+  color: var(--c-text); // so that button text isn’t overridden by the the color of link text
   background-color: transparent;
-  transition: $button-state-transition;
+  transition: var(--ease);
+
   &:hover,
   &:active,
   &.active {
-    color: map-get($theme-color, button-default-text);
-    background-color: map-get($theme-color, button-background-hover);
+    color: var(--c-btn-text);
+    background-color: var(--c-btn-hover);
     cursor: pointer;
   }
-  &:disabled,
-  &.disabled {
-    position: relative;
-    opacity: 0.5;
-    pointer-events: none;
+
+  @if $button-rounded-corners ==true {
+    border-radius: var(--rad-sm);
   }
-  @if $button-rounded-corners == true {
-    border-radius: $button-border-radius;
-  } @else {
+
+  @else {
     border-radius: 0;
   }
+
   &.block {
     text-align: center;
   }
@@ -175,13 +192,19 @@ button,
 [type="submit"],
 [type="reset"] {
   @include button;
+
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: 0 0 0 $form-focus-ring-thickness map-get($theme-color, form-focus);
+    box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
   }
 }
 
 .btn {
   @include button;
+}
+
+:disabled:hover,
+.disabled:hover {
+  cursor: not-allowed;
 }

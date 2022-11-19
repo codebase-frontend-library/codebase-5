@@ -8,7 +8,7 @@
   <title>Glass - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.1.2" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -50,20 +50,12 @@
 
     #site-title,
     #site-footer-title {
-      color: #9400d3;
-    }
-    #site-title:hover,
-    #site-footer-title:hover {
-      color: #5f0087;
+      color: white;
     }
 
     #site-title svg,
     #site-footer-title svg {
-      fill: #9400d3;
-    }
-    #site-title:hover svg,
-    #site-footer-title:hover svg {
-      fill: #5f0087;
+      fill: white;
     }
 
     @media (max-width: 767px) {
@@ -232,7 +224,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -242,7 +234,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1"
+        class="btn-icon rounded-full ml-1 t-gray-500 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -272,9 +264,9 @@
     </div>
   
     <div class="grow">
-      <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-300 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
+        <div><a class="p-block t-gray-300 t-decoration-none hover:t-decoration-underline hover:t-white  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
   
@@ -284,9 +276,10 @@
 
 
 
+</div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
+    <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 md:pt-6 relative">
       <div class="sm:sticky">
         
         <div
@@ -327,11 +320,11 @@
         <div id="side-menu-wrap" class="p-2 pb-6">
       
           <div class="mb-3 sm:hidden">
-            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.1.2">Download</a></div>
+            <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.0">Download</a></div>
             <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
           </div>
 
-          <p class="h4 lg:mt-3">Documentation</p>
+          <p class="h4 lg:mt-3 t-semibold">Documentation</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
@@ -347,12 +340,13 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
     </ul>
   </div>  
 </div>
@@ -371,16 +365,16 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Utilities</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
@@ -396,17 +390,17 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
     </ul>
   </div>
 </div>
@@ -425,14 +419,15 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
     </ul>
   </div>
 </div>
@@ -451,20 +446,20 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Components</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
@@ -480,15 +475,15 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
     </ul>
   </div>
 </div>
@@ -507,14 +502,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -525,20 +520,20 @@
     </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-6">
-      <div class="lg:bb-thin lg:pb-6 t-lg t-gray-600">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
+      <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         
         <div class="my-1">Decoration utilities</div>
         
-        <h1 class="mb-0 t-heavy t-primary">Glass</h1>    
+        <h1 class="mb-0 t-bold t-black">Glass</h1>    
       </div>
     </div>
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm lg:sticky mb-6" style="top: 55px;">
-      <div class="b-thin px-2 pt-2 lg:b-0 lg:p-0">
-        <div class="h4 mb-2 lg:pt-5">Contents</div>
+    <div class="w-sm mx-auto lg:sticky mb-6" style="top: 55px;">
+      <div class="mx-2 md:mx-0 b-thin b-gray-400 rounded-lg px-2 pt-2 lg:b-0 lg:p-6">
+        <div class="h4 mb-2 lg:pt-5 t-semibold">Contents</div>
         <div id="toc"></div>    
       </div>
     </div>
@@ -558,84 +553,98 @@
 <li><code>bg-black-glass-1</code> / <code>bg-black-glass-2</code> / <code>bg-black-glass-3</code> / <code>bg-black-glass-4</code> / <code>bg-black-glass-5</code></li>
 <li><code>bg-white-glass-1</code> / <code>bg-white-glass-2</code> / <code>bg-white-glass-3</code> / <code>bg-white-glass-4</code> / <code>bg-white-glass-5</code></li>
 </ul>
-<p><strong>Note:</strong> Browsers that do not support background-blur filters (Firefox,  older browsers) will simply get a partially transparent tint instead.</p>
+<p><strong>Note:</strong> Browsers that do not support background-blur filters will simply get a partially transparent tint instead.</p>
 <h2 id="glass-over-a-dark-background-image" tabindex="-1">Glass over a dark background image</h2>
-<p>Dark glass <code>glass-black-*</code> utilities over a dark background image:</p>
-<div class="mb-3">
-  <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-372470.jpg" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
-    <div class="box p-3 sm:p-6">
-      <div class="h-100% grid equal-6-cols">
-        <div class="p-1 t-center"><code>(None)</code></div>
-        <div class="bg-black-glass-1 p-1 t-center"><code>-1</code></div>
-        <div class="bg-black-glass-2 p-1 t-center"><code>-2</code></div>
-        <div class="bg-black-glass-3 p-1 t-center"><code>-3</code></div>
-        <div class="bg-black-glass-4 p-1 t-center"><code>-4</code></div>
-        <div class="bg-black-glass-5 p-1 t-center"><code>-5</code></div>
-      </div>
+<p>Dark glass <code>bg-black-glass-*</code> utilities over a dark background image:</p>
+<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+  <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-372470.jpg" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
+  <div class="box p-3 sm:p-6">
+    <div class="h-100% grid equal-6-cols">
+      <div class="p-1 t-center"><code>(None)</code></div>
+      <div class="bg-black-glass-1 p-1 t-center"><code>-1</code></div>
+      <div class="bg-black-glass-2 p-1 t-center"><code>-2</code></div>
+      <div class="bg-black-glass-3 p-1 t-center"><code>-3</code></div>
+      <div class="bg-black-glass-4 p-1 t-center"><code>-4</code></div>
+      <div class="bg-black-glass-5 p-1 t-center"><code>-5</code></div>
     </div>
   </div>
 </div>
-<p>Light glass <code>glass-white-*</code> utilities over a dark background image:</p>
-<div class="mb-3">
-  <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-372470.jpg" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
-    <div class="box p-3 sm:p-6">
-      <div class="h-100% grid equal-6-cols">
-        <div class="p-1 t-center"><code>(None)</code></div>
-        <div class="bg-white-glass-1 p-1 t-center"><code>-1</code></div>
-        <div class="bg-white-glass-2 p-1 t-center"><code>-2</code></div>
-        <div class="bg-white-glass-3 p-1 t-center"><code>-3</code></div>
-        <div class="bg-white-glass-4 p-1 t-center"><code>-4</code></div>
-        <div class="bg-white-glass-5 p-1 t-center"><code>-5</code></div>
-      </div>
+<p>Light glass <code>bg-white-glass-*</code> utilities over a dark background image:</p>
+<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+  <img class="box img-cover" src="/codebase-5/img/pexels-pixabay-372470.jpg" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
+  <div class="box p-3 sm:p-6">
+    <div class="h-100% grid equal-6-cols">
+      <div class="p-1 t-center"><code>(None)</code></div>
+      <div class="bg-white-glass-1 p-1 t-center"><code>-1</code></div>
+      <div class="bg-white-glass-2 p-1 t-center"><code>-2</code></div>
+      <div class="bg-white-glass-3 p-1 t-center"><code>-3</code></div>
+      <div class="bg-white-glass-4 p-1 t-center"><code>-4</code></div>
+      <div class="bg-white-glass-5 p-1 t-center"><code>-5</code></div>
     </div>
   </div>
 </div>
 <p><em>Photo by <a href="https://www.pexels.com/photo/architecture-bay-boats-bridge-372470/">Pixabay</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
 <h2 id="glass-over-a-light-background-image" tabindex="-1">Glass over a light background image</h2>
 <p>Dark glass <code>glass-black-*</code> utilities over a dark background image:</p>
-<div class="mb-3">
-  <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover opacity-50%" src="/codebase-5/img/pexels-ollie-craig-6398582.jpg" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
-    <div class="box p-3 sm:p-6">
-      <div class="h-100% grid equal-6-cols">
-        <div class="p-1 t-center"><code>(None)</code></div>
-        <div class="bg-black-glass-1 p-1 t-center"><code>-1</code></div>
-        <div class="bg-black-glass-2 p-1 t-center"><code>-2</code></div>
-        <div class="bg-black-glass-3 p-1 t-center"><code>-3</code></div>
-        <div class="bg-black-glass-4 p-1 t-center"><code>-4</code></div>
-        <div class="bg-black-glass-5 p-1 t-center"><code>-5</code></div>
-      </div>
+<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+  <img class="box img-cover opacity-50%" src="/codebase-5/img/pexels-ollie-craig-6398582.jpg" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
+  <div class="box p-3 sm:p-6">
+    <div class="h-100% grid equal-6-cols">
+      <div class="p-1 t-center"><code>(None)</code></div>
+      <div class="bg-black-glass-1 p-1 t-center"><code>-1</code></div>
+      <div class="bg-black-glass-2 p-1 t-center"><code>-2</code></div>
+      <div class="bg-black-glass-3 p-1 t-center"><code>-3</code></div>
+      <div class="bg-black-glass-4 p-1 t-center"><code>-4</code></div>
+      <div class="bg-black-glass-5 p-1 t-center"><code>-5</code></div>
     </div>
   </div>
 </div>
 <p>Light glass <code>glass-white-*</code> utilities over a dark background image:</p>
-<div class="mb-3">
-  <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
-    <img class="box img-cover opacity-50%" src="/codebase-5/img/pexels-ollie-craig-6398582.jpg" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
-    <div class="box p-3 sm:p-6">
-      <div class="h-100% grid equal-6-cols">
-        <div class="p-1 t-center"><code>(None)</code></div>
-        <div class="bg-white-glass-1 p-1 t-center"><code>-1</code></div>
-        <div class="bg-white-glass-2 p-1 t-center"><code>-2</code></div>
-        <div class="bg-white-glass-3 p-1 t-center"><code>-3</code></div>
-        <div class="bg-white-glass-4 p-1 t-center"><code>-4</code></div>
-        <div class="bg-white-glass-5 p-1 t-center"><code>-5</code></div>
-      </div>
+<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+  <img class="box img-cover opacity-50%" src="/codebase-5/img/pexels-ollie-craig-6398582.jpg" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
+  <div class="box p-3 sm:p-6">
+    <div class="h-100% grid equal-6-cols">
+      <div class="p-1 t-center"><code>(None)</code></div>
+      <div class="bg-white-glass-1 p-1 t-center"><code>-1</code></div>
+      <div class="bg-white-glass-2 p-1 t-center"><code>-2</code></div>
+      <div class="bg-white-glass-3 p-1 t-center"><code>-3</code></div>
+      <div class="bg-white-glass-4 p-1 t-center"><code>-4</code></div>
+      <div class="bg-white-glass-5 p-1 t-center"><code>-5</code></div>
     </div>
   </div>
 </div>
 <p><em>Photo by <a href="https://www.pexels.com/@olliecraig1?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">Ollie Craig</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
 <h2 id="notes-on-glass" tabindex="-1">Notes on glass</h2>
-<p>These glassmorphic overlays can be used in various ways. There are a couple of examples in the Codebase docs:</p>
+<p>These glassmorphic overlays utility classes can be used in various ways. There are a couple of examples in the Codebase docs:</p>
 <ol>
 <li>The Codebase documentation uses <code>bg-white-glass-5</code> for its topbar and sidebar (but you will only see the sidebar glass when it is an offcanvas panel on narrow viewports).</li>
 <li>Demos of <a href="/codebase-5/docs/7-alpinejs-components/modals">modal components</a> have a backdrop that uses <code>bg-black-glass-3</code>.</li>
 <li>Demos of <a href="/codebase-5/docs/6-simple-components/heros">hero components</a> have an overlay that uses <code>bg-white-glass-3</code>.</li>
 </ol>
 <p>When you have your own background images, you can lay out panels and cards as an overlay (i.e. on a higher z-axis) and give them a glass background appropriate to your design.</p>
+<h2 id="glass-css-variables" tabindex="-1">Glass CSS variables</h2>
+<p>The glass utility classes are comprised of separate CSS variabled for <code>rgba()</code> alpha channel (tint) and background blur filter in the <code>:root{}</code>:</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property">--alpha-1</span><span class="token punctuation">:</span> 0.1<span class="token punctuation">;</span><br><span class="token property">--alpha-2</span><span class="token punctuation">:</span> 0.23<span class="token punctuation">;</span><br><span class="token property">--alpha-3</span><span class="token punctuation">:</span> 0.35<span class="token punctuation">;</span><br><span class="token property">--alpha-4</span><span class="token punctuation">:</span> 0.58<span class="token punctuation">;</span><br><span class="token property">--alpha-5</span><span class="token punctuation">:</span> 0.8<span class="token punctuation">;</span><br><span class="token property">--glass-1</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1.8<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>1px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">--glass-2</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1.8<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>4px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">--glass-3</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1.8<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>8px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">--glass-4</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1.8<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>13px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">--glass-5</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1.8<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>18px<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Of course, you can use different colors for greating a tinted glass effect. I don’t know what colors you will choose for your design – therefore Codebase contains only black and white glass background colors, allowing the colors from underlying images to show through.</p>
+<ul>
+<li>You can use one of the backdrop filters (glass blurs) with your own RGBA (or HSLA) color, adding your own alpha channel or one from Codebase (see above).</li>
+<li>Alternatively, you can use the backdrop filters without an alpha channel color (i.e. a transparent background).</li>
+</ul>
+<p><strong>Note:</strong> at the present time (November 2022) you still need to include a <code>-webkit-backdrop-filter</code> for Mac/iOS Safari.</p>
+<p>Examples:</p>
+<div class="mb-3">
+  <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
+    <img class="box img-cover" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
+    <div class="box p-3 sm:p-6">
+      <div class="h-100% grid equal-2-cols">
+        <div class="p-1 t-center" style="backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter only</code></div>
+        <div class="p-1 t-center" style="background-color: rgba(0,0,153,0.4); backdrop-filter: var(--glass-2); -webkit-backdrop-filter: var(--glass-2)"><code>filter plus blue tint</code></div>
+      </div>
+    </div>
+  </div>
+</div>
+<p><em>Photo by <a href="https://www.pexels.com/@oleg-magni?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">Oleg Magni</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Filter only */</span><br><span class="token property">backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--glass-2<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">-webkit-backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--glass-2<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">/* Filter plus blue tint */</span><br><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 153<span class="token punctuation">,</span> 0.4<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--glass-2<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">-webkit-backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--glass-2<span class="token punctuation">)</span></code></pre>
 
     </div>
   </main>
@@ -656,8 +665,8 @@
 
 </div>
 
-<footer class="relative bt-thin pt-6 pb-3 bg-white t-center">
-  <p>
+<footer class="relative py-6 bg-gray-900 t-center t-gray-300">
+  <p class="sm:mt-6">
     <a id="site-footer-title" class="h3 t-decoration-none" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
         <!-- Codebase logo-->
@@ -673,7 +682,7 @@
     </a>
   </p>
   
-  <p>Version 5.1.2 • <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.0 • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT licence</a> • <a class="t-gray-400 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

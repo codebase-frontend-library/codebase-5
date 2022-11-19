@@ -2,9 +2,9 @@
 title: "Image utilities"
 layout: layout.njk
 prevPage: "/docs/4-decoration-utilities/box-shadows"
-nextPage: "/docs/5-typographic-utilities/font-stacks"
+nextPage: "/docs/4-decoration-utilities/forms"
 prevLink: "Box shadows"
-nextLink: "Font stacks"
+nextLink: "forms"
 ---
 
 A few image manipulation classes.
@@ -247,8 +247,8 @@ Add a colored background behind the image, and the opacity enables the image to 
     <div class="bg-purple-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
   </div>
   <div>
-    <p><code>opacity-50%</code> over an orange background</p>
-    <div class="bg-orange-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
+    <p><code>opacity-50%</code> over an amber background</p>
+    <div class="bg-amber-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
   </div>
   <div>
     <p><code>opacity-50%</code> over a green background</p>

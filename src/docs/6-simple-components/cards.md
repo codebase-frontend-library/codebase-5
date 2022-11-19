@@ -291,7 +291,7 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
                   </a>
                   <div>
                     <div class="h4 mb-1">Tomas Wingman <span class="t-sm t-uppercase">[Author]</span></div>
-                    <div class="mb-3 bg-orange-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+                    <div class="mb-3 bg-amber-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
                   </div>
                 </div>
                 <div class="flex">

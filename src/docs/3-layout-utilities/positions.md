@@ -92,7 +92,7 @@ Each of the above affect positioning at all viewport widths. Plus there are `xs:
 <p class="mb-0">There are situations when you will want to prevent <code>sticky</code> doing its thing. E.g. if it is a sticky sidebar element, and the visitor is viewing your webpage on a phone or a screen that’s too narrow for the <code>sticky</code> to behave that way. For example, this demo has a sticky element that’s deliberately immobilized on small viewports – narrower than the grid system’s <code>md</code> breakpoint width (1024px default).</p>
 </div>
 <div class="xs:col-3">
-<div class="sticky bg-orange-200 p-block" style="top: 57px;">
+<div class="sticky bg-amber-200 p-block" style="top: 57px;">
 Look, I’m sticky on <code class="b-thin">xs</code> screens up!
 </div>
 </div>

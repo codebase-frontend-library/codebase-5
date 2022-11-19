@@ -12,10 +12,6 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["*"]
   });
 
-  eleventyConfig.addFilter('date', function (date, dateFormat) {
-    return format(date, dateFormat)
-  })
-
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/dist");
   eleventyConfig.addPassthroughCopy("src/prism");

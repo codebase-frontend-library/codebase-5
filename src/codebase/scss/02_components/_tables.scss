@@ -3,21 +3,29 @@
 
 @use "../00_setup/default-variables" as *;
 
-[class*=table] {
+table[class*=table] {
+  // Use table[class*=table] because you don’t want to damage TABLER ICONS,
+  // https://tablericons.com -- they have “table” in their class names.
   width: 100%;
-  margin-bottom: $text-base-line-height * 1rem;
+  margin-bottom: calc(var(--t-base-lh) * 1rem);
   border-collapse: collapse;
   border-spacing: 0;
-  & > * {
+
+  &>* {
     width: 100%;
   }
+
   &:not(&.table-borderless) {
-    th, td {
-      border: $detail-thickness, solid map-get($theme-color, detail);
+
+    th,
+    td {
+      border: var(--line-detail);
     }
   }
-  th, td {
-    padding: $spacing-block;
+
+  th,
+  td {
+    padding: var(--sp-block);
     vertical-align: top;
     text-align: unset;
   }
@@ -26,20 +34,26 @@
 // Table variations
 .table {
   &-compact {
-    th, td {
+
+    th,
+    td {
       padding: 0.25rem 0.5rem;
     }
   }
+
   &-fixed {
     table-layout: fixed;
   }
+
   &-striped {
+
     thead,
     tbody tr:nth-child(even) {
-      background-color: rgba(255,255,255, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
     }
+
     tbody tr:nth-child(odd) {
-      background-color: rgba(29,28,31, 0.05);
+      background-color: rgba(29, 28, 31, 0.05);
 
     }
   }
@@ -60,9 +74,11 @@
   &-top {
     vertical-align: top;
   }
+
   &-middle {
     vertical-align: middle;
   }
+
   &-bottom {
     vertical-align: bottom;
   }

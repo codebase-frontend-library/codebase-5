@@ -6,13 +6,15 @@ Designed for static site generators and content management systems, Codebase is 
 
 Plus, Codebase pairs well with AlpineJS.
 
+**New in v.5.2:** CSS variables.
+
 ***
 
 Docs: https://codebase-frontend-library.github.io/codebase-5/
 
 ***
 
-* Current version: 5.1.2 -- see [log](https://github.com/codebase-frontend-library/codebase-5/blob/main/LOG.md)
-* CSS file size: 91 KB
+* Current version: 5.2.0 -- see [log](https://github.com/codebase-frontend-library/codebase-5/blob/main/LOG.md)
+* CSS file size: 90 KB
 * Licence: MIT
 * Developer: Simon Padbury

@@ -4,57 +4,74 @@
 @use "../00_setup/default-variables" as *;
 @use "sass:math";
 
+// For flexbox gap -- see grid (it's the same)
+
 @mixin flex {
   display: flex;
+
   &-wrap {
     flex-wrap: wrap;
   }
+
   &-row-reverse {
     flex-direction: row-reverse;
   }
+
   &-column {
     flex-direction: column;
   }
+
   &-column-reverse {
     flex-direction: column-reverse;
   }
+
   // Stretching
   &-grow-equal {
-    > * {
+    >* {
       flex: 1;
     }
   }
+
   &-grow-auto {
-    > * {
+    >* {
       flex: auto;
     }
   }
+
   // Spacing
   &-space-around {
     justify-content: space-around;
   }
+
   &-space-between {
     justify-content: space-between;
   }
+
   &-space-evenly {
     justify-content: space-evenly;
   }
+
   // Positioning
   &-start {
     justify-content: flex-start;
   }
+
   &-center {
     justify-content: center;
   }
+
   &-end {
     justify-content: flex-end;
   }
+
   &-top {
     align-items: flex-start;
   }
+
   &-middle {
     align-items: center;
   }
+
   &-bottom {
     align-items: flex-end;
   }
@@ -64,7 +81,8 @@
   display: inline-flex;
 }
 
-@each $mq-key, $mq-value in $mq-width {
+@each $mq-key,
+$mq-value in $mq-width {
   .#{$mq-key}\:inline-flex {
     @include break-min(#{$mq-value}) {
       display: inline-flex;
@@ -75,7 +93,9 @@
 .flex {
   @include flex;
 }
-@each $mq-key, $mq-value in $mq-width {
+
+@each $mq-key,
+$mq-value in $mq-width {
   .#{$mq-key}\:flex {
     @include break-min(#{$mq-value}) {
       display: flex;
@@ -87,9 +107,11 @@
 .grow {
   flex-grow: 1;
 }
+
 .order-start {
   order: 0;
 }
+
 .order-end {
   order: 9999;
 }

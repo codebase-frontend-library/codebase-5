@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
 
-  <title>Text alignment - Codebase</title>
+  <title>CSS Variables - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
   <link href="/codebase-5/dist/codebase.css?v=5.2.0" rel="stylesheet">
@@ -523,9 +523,9 @@
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
       <div class="md:bb-thick b-gray-900 md:pb-3 t-lg t-gray-500">
         
-        <div class="my-1">Typographic utilities</div>
+        <div class="my-1">Getting started</div>
         
-        <h1 class="mb-0 t-bold t-black">Text alignment</h1>    
+        <h1 class="mb-0 t-bold t-black">CSS variables in Codebase</h1>    
       </div>
     </div>
   </header>
@@ -548,39 +548,42 @@
   </style>
   <main class="col-1 sm:col-2">
     <div class="container-sm">
-      <h2 id="simple-text-alignment" tabindex="-1">Simple text alignment</h2>
-<p><code>t-left</code></p>
-<p class="t-left">Lorem ipsum dolor sit amet...</p>
-<p><code>t-center</code></p>
-<p class="t-center">Lorem ipsum dolor sit amet...</p>
-<p><code>t-right</code></p>
-<p class="t-right">Lorem ipsum dolor sit amet...</p>
-<h2 id="responsive-text-alignment" tabindex="-1">Responsive text-alignment</h2>
-<p>Besides the text alignment classes above, there are other text alignment classes that take effect at the different media query breakpoint widths. So, here’s the full set of text alignment utility classes:</p>
+      <p>Since version 5.2, Codebase has been using CSS variables to control everything that it previously used Sass variables for.</p>
+<p>Capability for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS variables (also known as custom properties)</a> has been implemented in <a href="https://caniuse.com/css-variables">all major web browsers</a>. While phone browsers have caught up (except Opera Mini) in the last year or two, most laptop/desktop browsers have had it since 2015 (some 2014). Internet Explorer never had CSS variables – and since IE is consigned to history (even Microsoft stopped supporting it in May 2022), <a href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4/#internet-explorer-11-is-not-supported">Codebase 5 has never supported IE</a> anyway. It’s past <a href="https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/">time to switch to CSS variables</a>.</p>
+<p>Codebase itself still uses the <a href="https://www.npmjs.com/package/sass">sass package from NPM.JS</a> for
+Sass (nesting, loops, maps, if-logic) and CSS minification.</p>
+<p>Until Codebase v.5.2, the <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/src/codebase/scss/00_setup/_default-variables.scss">default variables</a> file was full of <a href="https://sass-lang.com/documentation/variables">Sass variables</a> that controlled the entire look and feel of Codebase. Editing (or overriding) these variables could only be done using a Sass preprocessor. But now, all interpotated Sass variables have been refactored as CSS variables, while the toggle variables that were used to control true/false <code>@if {} @else {}</code> logic are still Sass variables.</p>
+<p>In Codebase, CSS variables are either “hard coded” or generated via <a href="https://sass-lang.com/documentation/values/maps">Sass maps</a> that are used by <code>@each</code> <a href="https://sass-lang.com/documentation/at-rules/control/for">Sass loops</a>. But by the time they get into the CSS, they are all simply CSS variables. And they are all in the <code>:root {}</code> selector.</p>
+<h2 id="the-codebase-%3Aroot-%7B%7D" tabindex="-1">The Codebase <code>:root {}</code></h2>
+<p>There’s only one a massive <code>:root {}</code> selector in codebase, originating in the <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/src/codebase/scss/00_setup/_default-variables.scss">default variables</a> file. In summary, it has CSS variables for setting all of the following:</p>
+<ol>
+<li>Font stacks</li>
+<li>UI colors (base and hover state colors for <label class="label label-warning">warning</label>, <label class="label label-danger">danger</label>, <label class="label label-success">success</label>, <label class="label label-info">info</label>, <label class="label label-primary">primary</label>, <label class="label label-secondary">secondary</label>, and <label class="label label-tertiary">tertiary</label>), generated from the Sass map <code>$ui-setup</code></li>
+<li>A color variable generator that outputs all the shade variations <code>-100</code> through <code>-900</code> of the Codebase color swatches amber <label class="label bg-amber-500 t-white">  </label>, red <label class="label bg-red-500 t-white">  </label>, green <label class="label bg-green-500 t-white">  </label>, blue <label class="label bg-blue-500 t-white">  </label>, purple <label class="label bg-purple-500 t-white">  </label>, teal <label class="label bg-teal-500 t-white">  </label>, and gray <label class="label bg-gray-500 t-white">  </label> (<strong>note:</strong> the UI colors are the <code>-600</code> shades of these colors, and the hover states for buttons are the <code>-700</code> shades)</li>
+<li>Base theme colors — for page background, default text color, line details (e.g. <code>&lt;hr&gt;</code>, form input borders, table cell borders), form input background, links (various states), default buttons, code blocks, and highlight and selection colors</li>
+<li>Widths (generated by Sass map) — used in media query breakpoint widths, containers and width utilities</li>
+<li>Spacing (generated by Sass map) — used in utilities for margins, paddings, and flexbox/grid gaps</li>
+<li>Borders and border-radius (rounded corners)</li>
+<li>Forms and buttons</li>
+<li>Heading sizes (generated by Sass map)</li>
+<li>Text settings — used in classless tag styles and utility classes</li>
+</ol>
+<h2 id="how-codebase-uses-css-variables" tabindex="-1">How Codebase uses CSS variables</h2>
+<p>Many Codebase variables are generated from <a href="https://sass-lang.com/documentation/values/maps">Sass maps</a> that are used by <a href="https://sass-lang.com/documentation/at-rules/control/for">Sass loops</a> to output the variables.</p>
+<p>Here’s a simple example of how these work. The Codebase default theme color map and shade map:</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$theme-color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"blue"</span><span class="token punctuation">:</span>   #1262ed<span class="token punctuation">,</span><br>  <span class="token string">"green"</span><span class="token punctuation">:</span>  #128a12<span class="token punctuation">,</span><br>  <span class="token string">"amber"</span><span class="token punctuation">:</span>  #f0b300<span class="token punctuation">,</span><br>  <span class="token string">"red"</span><span class="token punctuation">:</span>    #cf000f<span class="token punctuation">,</span><br>  <span class="token string">"purple"</span><span class="token punctuation">:</span> #9400d3<span class="token punctuation">,</span><br>  <span class="token string">"teal"</span><span class="token punctuation">:</span>   #0080a2<span class="token punctuation">,</span><br>  <span class="token string">"gray"</span><span class="token punctuation">:</span>   #767676<span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token property"><span class="token variable">$shade</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"100"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 90%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"200"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 72%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"300"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 54%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"400"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 36%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"500"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>white<span class="token punctuation">,</span> 18%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"600"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 0%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"700"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 18%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"800"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 36%<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"900"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>black<span class="token punctuation">,</span> 54%<span class="token punctuation">)</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>These are used by several loops in the Sass <code>:root{}</code> to output 7 colors × 9 shades = 63 colour variables.</p>
 <ul>
-<li><code>t-left</code> / <code>sm:t-left</code> / <code>md:t-left</code> / <code>lg:t-left</code></li>
-<li><code>t-center</code> / <code>sm:t-center</code> / <code>md:t-center</code> / <code>lg:t-center</code></li>
-<li><code>t-right</code> / <code>sm:t-right</code> / <code>md:t-right</code> / <code>lg:t-right</code></li>
+<li>A few of these variables are used for setting the base theme styles for page background, default text, links, table cell border color, etc.</li>
+<li>All of the base colors are used for generating the UI colors for buttons, badges and labels (you can decouple these).</li>
+<li>All of the shades of all colours are used for generating utility classes for backgrounds, text, and border color — and hover states of each.</li>
 </ul>
-<p>With these, you can set the text alignment for phones first, and then <em>override</em> with a different text alignment for medium or large screens up.</p>
-<h2 id="an-example-card" tabindex="-1">An example card</h2>
-<p>Consider this card design:</p>
-<div class="mb-3 grid gap-3 sm:equal-2-cols">
-  <div>
-    <div class="rounded p-2 bg-amber-100">
-      <p class="h4 mb-1 sm:t-center">Card title</p>
-      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
-    </div>
-  </div>
-  <div>
-    <div class="rounded p-2 bg-amber-100">
-      <p class="h4 mb-1 sm:t-center">Card title</p>
-      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
-    </div>    
-  </div>
-</div>
-<p>In these cards the titles are left aligned (default) for small devices, and the cards are stacked on two rows. But for medium viewports up, the header becomes centered (at the same breakpount when the cards become arranged side-by-side).</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rounded p-2 bg-amber-100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sm:t-center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="how-you-can-use-and-override-codebase-css-variables" tabindex="-1">How you can use and override Codebase CSS variables</h2>
+<p>All of the Codebase <code>:root{}</code> variables are available for you to use in your own CSS, and you can override any of them at any point in your document object model (DOM). For example:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.hero</span> <span class="token punctuation">{</span><br>  <span class="token property">--red-500</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span> <br>  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-6<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--red-500<span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>Also, if you use a Sass preprocessor, you can edit any of the Sass maps in the <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/src/codebase/scss/00_setup/_default-variables.scss">default variables</a> file, that are used to generate variables in the <code>:root{}</code> and elsewhere in Codebase.</p>
+<p>In front of the Sass <code>:root{}</code> you will find the following maps:</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// see above</span><br><span class="token property"><span class="token variable">$shade</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// see above</span><br><br><span class="token property"><span class="token variable">$ui-color</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// defines the default and hover colors for “info”, “success”, “warning”, etc.</span><br><span class="token property"><span class="token variable">$ui-setup</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// used to generate the UI color variables</span><br><br><span class="token property"><span class="token variable">$spacing</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// defines the marings, paddings and flexbox/grid gaps</span><br><span class="token property"><span class="token variable">$spacing-setup</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// used to generate the spacing variables</span><br><br><span class="token property"><span class="token variable">$width</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// for max-width of containers and other block utilities</span><br><span class="token property"><span class="token variable">$mq-width</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// wetting the breakpoint width tiers</span></code></pre>
 
     </div>
   </main>
@@ -590,10 +593,10 @@
       <hr>
       <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/headings">&larr; Headings</a></li>
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/1-getting-started/element-grid">&larr; Element grid</a></li>
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text &rarr;</a></li>
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4 &rarr;</a></li>
           
       </ul>
     </div>

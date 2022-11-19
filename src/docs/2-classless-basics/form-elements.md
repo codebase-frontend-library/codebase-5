@@ -7,7 +7,7 @@ prevLink: "Inline elements"
 nextLink: "Media"
 ---
 
-In Codebase, form elements are rendered as block elements, for ease of styling.
+In Codebase, most form elements are rendered as block elements, for ease of styling.
 
 If you want to make an input field an inline element, add the layout [block utility class]({{ '/docs/3-layout-utilities/blocks/' | url }}) `inline-block`.
 
@@ -53,34 +53,40 @@ If you want to make an input field an inline element, add the layout [block util
 <input id="search-example" name="examplename" placeholder="Example search input field" type="search">
 ```
 
-### Numeric
+### Number (picker)
 
 <label for="number-example">Number:</label>
-<input id="number-example" name="examplename" placeholder=" Example number input field" type="number">
+<input type="number" id="quantity" name="example" min="0" inputmode="numeric" pattern="\d*">
 
 ```html
 <label for="number-example">Number:</label>
 <input id="number-example" name="examplename" placeholder=" Example number input field" type="number">
 ```
 
-### Date
+### Date and time
 
 <label for="date-example">Date:</label>
-<input id="date-example" name="examplename" placeholder="Example date input field" type="date">
+<input id="date-example" name="examplename" type="date">
 
 ```html
 <label for="date-example">Date:</label>
-<input id="date-example" name="examplename" placeholder="Example date input field" type="date">
+<input id="date-example" name="examplename" type="date">
 ```
 
-### Time
+<label for="month-example">Month (and year):</label>
+<input id="month-example" name="examplename" type="month">
+
+```html
+<label for="month-example">Month (and year):</label>
+<input id="month-example" name="examplename" type="month">
+```
 
 <label for="time-example">Time:</label>
-<input id="time-example" name="examplename" placeholder="Example time input field" type="time">
+<input id="time-example" name="examplename" type="time">
 
 ```html
 <label for="time-example">Time:</label>
-<input id="time-example" name="examplename" placeholder="Example time input field" type="time">
+<input id="time-example" name="examplename" type="time">
 ```
 
 ### Password
@@ -102,6 +108,11 @@ If you want to make an input field an inline element, add the layout [block util
 <label for="upload-example">File upload:</label>
 <input id="upload-example" type="file" id="upload-1" name="examplename" accept="image/png, image/jpeg">
 ```
+
+## Color picker
+
+<label for="color-example">Color</label>
+<input type="color" id="color-example">
 
 ## Textareas (multi line)
 
@@ -216,3 +227,18 @@ This is what a Codebase default (classless) button looks like:
 ```
 
 See also the UI [button component]({{ '/docs/7-simple-components/buttons' | url }}).
+
+## Fieldsets and legends
+
+You can wrap a number of related inputs and buttons together in a `<fieldset>` and label it with a `<legend>`.
+
+<form get="">
+  <fieldset>
+    <legend>Subscribe to our email</legend>
+    <label for="email-example">Your email:</label>
+    <input id="email-example" class="mb-1" name="examplename" placeholder="Example email input field" type="email">
+    <input id="checkbox-terms" name="examplename" checked="checked" type="checkbox">
+    <label for="checkbox-terms">I have read your <a href="">privacy policy</a>.</label><br>
+    <button type="submit" class="mt-1 btn-primary">Subscribe</button>
+  </fieldset>
+</form>

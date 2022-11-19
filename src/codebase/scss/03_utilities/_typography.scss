@@ -10,11 +10,11 @@
   &-left {
     text-align: left;
   }
-  
+
   &-center {
     text-align: center;
   }
-  
+
   &-right {
     text-align: right;
   }
@@ -24,7 +24,8 @@
   @include text-alignment;
 }
 
-@each $mq-key, $mq-value in $mq-width {
+@each $mq-key,
+$mq-value in $mq-width {
   .#{$mq-key}\:t {
     @include break-min(#{$mq-value}) {
       @include text-alignment;
@@ -35,52 +36,58 @@
 // Text styles
 
 .t-ui {
-  font-family: $font-stack-ui;
+  font-family: var(--font-ui);
 }
+
 .t-mono {
-  font-family: $font-stack-mono;
+  font-family: var(--font-mono);
 }
+
 .t-brand {
-  font-family: $font-stack-brand;
+  font-family: var(--font-brand);
 }
+
 .t-sans-serif {
-  font-family: $font-stack-sans-serif;
+  font-family: var(--font-sans-serif);
 }
+
 .t-serif {
-  font-family: $font-stack-serif;
+  font-family: var(--font-serif);
 }
+
 .t-prose {
-  font-family: $font-stack-prose;
+  font-family: var(--font-prose);
 }
 
 .t-bolder,
 .t-heavy {
-  font-weight: $text-bolder-font-weight;
+  font-weight: var(--t-bolder-fw);
 }
 
 .t-bold,
 .t-strong {
-  font-weight: $text-bold-font-weight;
+  font-weight: var(--t-bold-fw);
 }
 
 .t-semibold {
-  font-weight: $text-semibold-font-weight;
+  font-weight: var(--t-semi-fw);
 }
 
 .t-normal {
-  font-weight: $text-base-font-weight;
+  font-weight: var(--t-base-fw);
   font-style: normal;
 }
 
-.p, .t-default {
-  font-size: $text-font-size;
-  font-weight: $text-base-font-weight;
+.p,
+.t-default {
+  font-size: var(--t-fs);
+  font-weight: var(--t-base-fw);
   font-style: normal;
 }
 
 .t-lighter,
 .t-thin {
-  font-weight: $text-thin-font-weight;
+  font-weight: var(--t-thin-fw);
 }
 
 .t-italic,
@@ -94,8 +101,8 @@
   text-decoration: none;
 }
 
-.hover\:t-underscore:hover,
-.hover\:t-underline:hover {
+.hover\:t-decoration-underscore:hover,
+.hover\:t-decoration-underline:hover {
   text-decoration: underline;
 }
 
@@ -120,9 +127,9 @@
 }
 
 .t-columns {
-  column-width: $text-columns-width;
+  column-width: var(--t-cols);
   column-gap: 1.5rem; // fallback
-  column-gap: $text-columns-gap-width;
+  column-gap: var(--t-cols-gap);
 }
 
 small,
@@ -140,7 +147,7 @@ mark,
 .t-mark,
 .t-highlight {
   color: currentColor;
-  background-color: map-get($theme-color, highlight);
+  background-color: var(--c-highlight);
 }
 
 .t-nowrap {
@@ -149,88 +156,50 @@ mark,
 
 big,
 .t-lg {
-  h1, .h1 {
-    font-size: map-get($heading-size, h1) * 1em;
-  }
-  h2, .h2 {
-    font-size: map-get($heading-size, h2) * 1em;
-  }
-  h3, .h3 {
-    font-size: map-get($heading-size, h3) * 1em;
-  }
-  h4, .h4 {
-    font-size: map-get($heading-size, h4) * 1em;
-  }
-  h5, .h5 {
-    font-size: map-get($heading-size, h5) * 1em;
-  }
-  h6, .h6 {
-    font-size: map-get($heading-size, h6) * 1em;
-  }
-}
-
-@include break-min(w-sm) {
-  big,
-  .t-lg,
-  .t-long-read {
-    h1, .h1 {
-      font-size: map-get($heading-size, h1) * 1em;
-    }
-    h2, .h2 {
-      font-size: map-get($heading-size, h2) * 1em;
-    }
-    h3, .h3 {
-      font-size: map-get($heading-size, h3) * 1em;
-    }
-    h4, .h4 {
-      font-size: map-get($heading-size, h4) * 1em;
-    }
-    h5, .h5 {
-      font-size: map-get($heading-size, h5) * 1em;
-    }
-    h6, .h6 {
-      font-size: map-get($heading-size, h6) * 1em;
-    }
-    line-height: inherit;
-  }
-  .t-long-read {
-    font-size: $text-long-read-clamp;
-  }
-}
-
-big,
-.t-lg {
   font-size: 1.25em;
+
   @include break-min(w-md) {
     font-size: 1.5em;
   }
+}
+
+.t-long-read {
+  font-size: var(--t-long-read);
 }
 
 .list-style-type {
   &-none {
     list-style-type: none;
   }
+
   &-square {
     list-style-type: square;
   }
+
   &-disc {
     list-style-type: disc;
   }
+
   &-circle {
     list-style-type: circle;
   }
+
   &-lower-alpha {
     list-style-type: lower-alpha;
   }
+
   &-upper-alpha {
     list-style-type: upper-alpha;
   }
+
   &-lower-roman {
     list-style-type: lower-roman;
   }
+
   &-upper-roman {
     list-style-type: upper-roman;
   }
+
   &-decimal {
     list-style-type: decimal;
   }

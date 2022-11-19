@@ -61,7 +61,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -71,7 +71,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1"
+        class="btn-icon rounded-full ml-1 t-gray-500 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -101,9 +101,9 @@
     </div>
   
     <div class="grow">
-      <div class="menu flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download</a></div>
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below">
+        <div><a class="p-block t-gray-300 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white  t-semibold" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download</a></div>
+        <div><a class="p-block t-gray-300 t-decoration-none hover:t-decoration-underline hover:t-white  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
   

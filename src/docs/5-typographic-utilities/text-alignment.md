@@ -35,13 +35,13 @@ Consider this card design:
 
 <div class="mb-3 grid gap-3 sm:equal-2-cols">
   <div>
-    <div class="rounded p-2 bg-orange-100">
+    <div class="rounded p-2 bg-amber-100">
       <p class="h4 mb-1 sm:t-center">Card title</p>
       <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
     </div>
   </div>
   <div>
-    <div class="rounded p-2 bg-orange-100">
+    <div class="rounded p-2 bg-amber-100">
       <p class="h4 mb-1 sm:t-center">Card title</p>
       <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec.</p>
     </div>    
@@ -51,7 +51,7 @@ Consider this card design:
 In these cards the titles are left aligned (default) for small devices, and the cards are stacked on two rows. But for medium viewports up, the header becomes centered (at the same breakpount when the cards become arranged side-by-side).
 
 ```html
-<div class="rounded p-2 bg-orange-100">
+<div class="rounded p-2 bg-amber-100">
   <h4 class="sm:t-center">Card header</h4>
   <p>Lorem ipsum dolor sit amet ...</p>
 </div>

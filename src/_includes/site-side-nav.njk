@@ -1,4 +1,4 @@
-<p class="h4 lg:mt-3">Documentation</p>
+<p class="h4 lg:mt-3 t-semibold">Documentation</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
@@ -14,12 +14,13 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/introduction/' | url }}">Introduction</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/responsive-design' | url }}">Responsive design</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/element-grid' | url }}">Element grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/improvements-since-codebase-4' | url }}">Improvements since Codebase 4</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/accessibility' | url }}">Assessibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/introduction/' | url }}">Introduction</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/responsive-design' | url }}">Responsive design</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/element-grid' | url }}">Element grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/css-variables' | url }}">CSS variables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/improvements-since-codebase-4' | url }}">Improvements since Codebase 4</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/1-getting-started/accessibility' | url }}">Assessibility</a></li>
     </ul>
   </div>  
 </div>
@@ -38,16 +39,16 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/block-elements' | url }}">Block elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/inline-elements' | url }}">Inline elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/form-elements' | url }}">Form elements</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/media' | url }}">Media</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/block-elements' | url }}">Block elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/inline-elements' | url }}">Inline elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/form-elements' | url }}">Form elements</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/2-classless-basics/media' | url }}">Media</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Utilities</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Utilities</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
@@ -63,17 +64,17 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/containers' | url }}">Containers</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/blocks' | url }}">Blocks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/positions' | url }}">Positions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/dimensions' | url }}">Dimensions</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/flexbox' | url }}">Flexbox</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/grid' | url }}">Grid</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/aspect-ratios' | url }}">Aspect ratios</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/floats' | url }}">Floats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/overflows' | url }}">Overflows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/invisibility' | url }}">Invisibility</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/containers' | url }}">Containers</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/blocks' | url }}">Blocks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/positions' | url }}">Positions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/dimensions' | url }}">Dimensions</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/flexbox' | url }}">Flexbox</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/grid' | url }}">Grid</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/aspect-ratios' | url }}">Aspect ratios</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/floats' | url }}">Floats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/overflows' | url }}">Overflows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/3-layout-utilities/invisibility' | url }}">Invisibility</a></li>
     </ul>
   </div>
 </div>
@@ -92,14 +93,15 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/colors' | url }}">Colors</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/glass' | url }}">Glass</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/spacing' | url }}">Spacing</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/borders' | url }}">Borders</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/rounded-corners' | url }}">Rounded corners</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/box-shadows' | url }}">Box shadows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/images' | url }}">Images</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/colors' | url }}">Colors</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/glass' | url }}">Glass</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/spacing' | url }}">Spacing</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/borders' | url }}">Borders</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/rounded-corners' | url }}">Rounded corners</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/box-shadows' | url }}">Box shadows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/images' | url }}">Images</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/4-decoration-utilities/forms' | url }}">Forms</a></li>
     </ul>
   </div>
 </div>
@@ -118,20 +120,20 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/font-stacks' | url }}">Font stacks</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/headings' | url }}">Heading formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/text-alignment' | url }}">Text alignment</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/inline-text' | url }}">Inline text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/lists' | url }}">List formats</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/large-display-text' | url }}">Large display text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/long-read-text' | url }}">Long read text</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/text-columns' | url }}">Text columns</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/font-stacks' | url }}">Font stacks</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/headings' | url }}">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/text-alignment' | url }}">Text alignment</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/inline-text' | url }}">Inline text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/lists' | url }}">List formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/large-display-text' | url }}">Large display text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/long-read-text' | url }}">Long read text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/5-typographic-utilities/text-columns' | url }}">Text columns</a></li>
     </ul>
   </div>
 </div>
 
-<p class="mb-0 py-1 t-loose t-uppercase t-gray-600">Components</p>
+<p class="my-2 t-loose t-uppercase t-gray-600">Components</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
@@ -147,15 +149,15 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/menus' | url }}">Menus</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/heros' | url }}">Heros</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/buttons' | url }}">Buttons</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/badges' | url }}">Badges</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/labels' | url }}">Labels</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/tables' | url }}">Tables</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/media-objects' | url }}">Media objects</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/cards' | url }}">Cards</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/menus' | url }}">Menus</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/heros' | url }}">Heros</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/buttons' | url }}">Buttons</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/badges' | url }}">Badges</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/labels' | url }}">Labels</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/tables' | url }}">Tables</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/media-objects' | url }}">Media objects</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/6-simple-components/cards' | url }}">Cards</a></li>
     </ul>
   </div>
 </div>
@@ -174,14 +176,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mb-0">
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/collapse' | url }}">Collapse</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/dropdowns' | url }}">Dropdowns</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/modals' | url }}">Modals</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/offcanvas' | url }}">Offcanvas</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/tabs' | url }}">Tabs</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/slideshows' | url }}">Slideshows</a></li>
-      <li><a class="block py-1 t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/animations' | url }}">Animations</a></li>
+    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/collapse' | url }}">Collapse</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/dropdowns' | url }}">Dropdowns</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/modals' | url }}">Modals</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/offcanvas' | url }}">Offcanvas</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/tabs' | url }}">Tabs</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/slideshows' | url }}">Slideshows</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="{{ '/docs/7-alpinejs-components/animations' | url }}">Animations</a></li>
     </ul>
   </div>
 </div>

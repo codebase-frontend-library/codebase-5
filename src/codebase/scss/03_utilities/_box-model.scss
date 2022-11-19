@@ -13,74 +13,212 @@
 // (Border extras -- none)
 
 // Padding extras
-.p-block { padding: $spacing-block; }
+.p-block {
+  padding: var(--sp-block);
+}
 
 // Box model generator
 
 // All viewports
-@each $key, $val in $spacing {
-  .m-#{$key} { margin: $val; }
-  .mt-#{$key} { margin-top: $val; }
-  .mr-#{$key} { margin-right: $val; }
-  .mb-#{$key} { margin-bottom: $val; }
-  .ml-#{$key} { margin-left: $val; }
-  .my-#{$key} { margin-block: $val; }
-  .mx-#{$key} { margin-inline: $val; }
-  .m-auto { margin: auto; }
-  .mr-auto { margin-right: auto; }
-  .ml-auto { margin-left: auto; }
-  .mx-auto { margin-inline: auto; }
+@each $key,
+$val in $spacing-setup {
+  .m-#{$key} {
+    margin: $val;
+  }
 
-  .p-#{$key} { padding: $val; }
-  .pt-#{$key} { padding-top: $val; }
-  .pr-#{$key} { padding-right: $val; }
-  .pb-#{$key} { padding-bottom: $val; }
-  .pl-#{$key} { padding-left: $val; }
-  .py-#{$key} { padding-block: $val; }
-  .px-#{$key} { padding-inline: $val; }
+  .mt-#{$key} {
+    margin-top: $val;
+  }
+
+  .mr-#{$key} {
+    margin-right: $val;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $val;
+  }
+
+  .ml-#{$key} {
+    margin-left: $val;
+  }
+
+  .my-#{$key} {
+    margin-block: $val;
+  }
+
+  .mx-#{$key} {
+    margin-inline: $val;
+  }
+
+  .m-auto {
+    margin: auto;
+  }
+
+  .mr-auto {
+    margin-right: auto;
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+
+  .mx-auto {
+    margin-inline: auto;
+  }
+
+  .p-#{$key} {
+    padding: $val;
+  }
+
+  .pt-#{$key} {
+    padding-top: $val;
+  }
+
+  .pr-#{$key} {
+    padding-right: $val;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $val;
+  }
+
+  .pl-#{$key} {
+    padding-left: $val;
+  }
+
+  .py-#{$key} {
+    padding-block: $val;
+  }
+
+  .px-#{$key} {
+    padding-inline: $val;
+  }
 }
 
-@each $key, $val in $borders {
-  .#{$key}-0 { #{$val}: none !important; }
-  .#{$key}-dashed { #{$val}: $border-thin dashed map-get($theme-color, detail); }
-  .#{$key}-thin { #{$val}: $border-thin solid map-get($theme-color, detail); }
-  .#{$key}-thick { #{$val}: $border-thick solid map-get($theme-color, detail); }
-  .#{$key}-heavy { #{$val}: $border-heavy solid map-get($theme-color, detail); }
+@each $key,
+$val in $borders {
+  .#{$key}-0 {
+    #{$val}: none !important;
+  }
+
+  .#{$key}-dashed {
+    #{$val}: var(--b1) dashed var(--c-detail);
+  }
+
+  .#{$key}-thin {
+    #{$val}: var(--b1) solid var(--c-detail);
+  }
+
+  .#{$key}-thick {
+    #{$val}: var(--b2) solid var(--c-detail);
+  }
+
+  .#{$key}-heavy {
+    #{$val}: var(--b3) solid var(--c-detail);
+  }
 }
 
 // MQ responsive
-@if $spacing-mq == true {
-  @each $mq-key, $mq-value in $mq-width {
-    @include break-min(#{$mq-value}) {
-      @each $key, $val in $spacing {
-        .#{$mq-key}\:m-#{$key} { margin: $val; }
-        .#{$mq-key}\:mt-#{$key} { margin-top: $val; }
-        .#{$mq-key}\:mr-#{$key} { margin-right: $val; }
-        .#{$mq-key}\:mb-#{$key} { margin-bottom: $val; }
-        .#{$mq-key}\:ml-#{$key} { margin-left: $val; }
-        .#{$mq-key}\:my-#{$key} { margin-block: $val; }
-        .#{$mq-key}\:mx-#{$key} { margin-inline: $val;}
-        .#{$mq-key}\:mr-auto { margin-right: auto; }
-        .#{$mq-key}\:ml-auto { margin-left: auto; }
-        .#{$mq-key}\:mx-auto { margin-inline: auto; }
+@each $mq-key,
+$mq-value in $mq-width {
+  @include break-min(#{$mq-value}) {
 
-        .#{$mq-key}\:p-#{$key} { padding: $val; }
-        .#{$mq-key}\:pt-#{$key} { padding-top: $val; }
-        .#{$mq-key}\:pr-#{$key} { padding-right: $val; }
-        .#{$mq-key}\:pb-#{$key} { padding-bottom: $val; }
-        .#{$mq-key}\:pl-#{$key} { padding-left: $val; }
-        .#{$mq-key}\:py-#{$key} { padding-block: $val; }
-        .#{$mq-key}\:px-#{$key} { padding-inline: $val; }
-        .#{$mq-key}\:p-block { padding: $spacing-block; }
+    @each $key,
+    $val in $spacing {
+      .#{$mq-key}\:m-#{$key} {
+        margin: $val;
       }
 
-      @each $key, $val in $borders {
-        .#{$mq-key}\:#{$key}-0 { #{$val}: 0; }
-        .#{$mq-key}\:#{$key}-dashed { #{$val}: $border-thin dashed map-get($theme-color, detail); }
-        .#{$mq-key}\:#{$key}-thin { #{$val}: $border-thin solid map-get($theme-color, detail); }
-        .#{$mq-key}\:#{$key}-thick { #{$val}: $border-thick solid map-get($theme-color, detail); }
-        .#{$mq-key}\:#{$key}-heavy { #{$val}: $border-heavy solid map-get($theme-color, detail); }
-      }  
+      .#{$mq-key}\:mt-#{$key} {
+        margin-top: $val;
+      }
+
+      .#{$mq-key}\:mr-#{$key} {
+        margin-right: $val;
+      }
+
+      .#{$mq-key}\:mb-#{$key} {
+        margin-bottom: $val;
+      }
+
+      .#{$mq-key}\:ml-#{$key} {
+        margin-left: $val;
+      }
+
+      .#{$mq-key}\:my-#{$key} {
+        margin-block: $val;
+      }
+
+      .#{$mq-key}\:mx-#{$key} {
+        margin-inline: $val;
+      }
+
+      .#{$mq-key}\:mr-auto {
+        margin-right: auto;
+      }
+
+      .#{$mq-key}\:ml-auto {
+        margin-left: auto;
+      }
+
+      .#{$mq-key}\:mx-auto {
+        margin-inline: auto;
+      }
+
+      .#{$mq-key}\:p-#{$key} {
+        padding: $val;
+      }
+
+      .#{$mq-key}\:pt-#{$key} {
+        padding-top: $val;
+      }
+
+      .#{$mq-key}\:pr-#{$key} {
+        padding-right: $val;
+      }
+
+      .#{$mq-key}\:pb-#{$key} {
+        padding-bottom: $val;
+      }
+
+      .#{$mq-key}\:pl-#{$key} {
+        padding-left: $val;
+      }
+
+      .#{$mq-key}\:py-#{$key} {
+        padding-block: $val;
+      }
+
+      .#{$mq-key}\:px-#{$key} {
+        padding-inline: $val;
+      }
+
+      .#{$mq-key}\:p-block {
+        padding: var(--sp-block);
+      }
+    }
+
+    @each $key,
+    $val in $borders {
+      .#{$mq-key}\:#{$key}-0 {
+        #{$val}: 0;
+      }
+
+      .#{$mq-key}\:#{$key}-dashed {
+        #{$val}: var(--b1) dashed var(--c-detail);
+      }
+
+      .#{$mq-key}\:#{$key}-thin {
+        #{$val}: var(--b1) solid var(--c-detail);
+      }
+
+      .#{$mq-key}\:#{$key}-thick {
+        #{$val}: var(--b2) solid var(--c-detail);
+      }
+
+      .#{$mq-key}\:#{$key}-heavy {
+        #{$val}: var(--b3) solid var(--c-detail);
+      }
     }
   }
 }

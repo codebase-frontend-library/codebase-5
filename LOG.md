@@ -4,11 +4,18 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
-## 2 Nov 2022 -- v.5.1.2
+## 19 Nov 2022 -- v.5.2.0
 
-* To enable running on Windows machines, added `npm-run-all` and changed the `npm run dev` script in `package.json` (still runs on Macs).
+* **Changed all interpolated Sass variables to CSS variables (custom properties)**, and refactored
 * Updated dependencies. Corrected Sass function units, adding % to color mix in default variables and button hover states (because of the Dart Sass breaking change).
+* Removed PostCSS and associated dependencies, and CSSNANO. Now no auto-added vendor prefixes. (A few are still required; these have been added manually.) CSS minification is now done by the NPM _Sass_ plugin, using `--style compressed`.
+* To enable running on Windows machines, added `npm-run-all` and changed the `npm run dev` script in `package.json` (still runs on Macs).
+* Changed “warning” orange to amber, because it was too similar to “danger” red. Maintained accessability by changing text on warning UI elements (buttons, badges, and labels) from white to black. Also, the named color `-orange` is now named `-amber` (this is a breaking change).
 * Improvements to tables (this shaved 2KB off of the minified file size!)
+* Improvements to forms.
+* Improvements to glassmorphic backgrounds.
+* Additions to aspect-ratios.
+* Updated the documentation.
 
 ## 2 Nov 2022 -- v.5.1.1
 

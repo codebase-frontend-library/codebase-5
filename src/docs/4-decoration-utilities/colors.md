@@ -17,7 +17,7 @@ Codebase’s color swatches have been deployed as utility classes for background
 
 I don’t know what colors you want in your web design project. 😁
 
-Therefore, Codebase borrows the default set of seven [UI colors](#ui-colors) (as used for buttons, etc.), giving them obvious color names as aliases: <label class="label bg-orange-500 t-white">orange</label>, <label class="label bg-red-500 t-white">red</label>, <label class="label bg-green-500 t-white">green</label>, <label class="label bg-blue-500 t-white">blue</label>, <label class="label bg-purple-500 t-white">purple</label>, <label class="label bg-teal-500 t-white">teal</label>, and <label class="label bg-gray-500 t-white">gray</label>.
+Therefore, Codebase borrows the default set of seven [UI colors](#ui-colors) (as used for buttons, etc.), giving them obvious color names as aliases: <label class="label bg-amber-500 t-white">amber</label>, <label class="label bg-red-500 t-white">red</label>, <label class="label bg-green-500 t-white">green</label>, <label class="label bg-blue-500 t-white">blue</label>, <label class="label bg-purple-500 t-white">purple</label>, <label class="label bg-teal-500 t-white">teal</label>, and <label class="label bg-gray-500 t-white">gray</label>.
 
 **Note:** since the base default color of each is aliased from the _UI colors_ (which are necessarily dark, for following the [WCAG 2.1 Level AA accessibility guidelines](https://www.w3.org/TR/WCAG21/)), these are set as the `-600` swatch shades in the series (see below).
 
@@ -56,17 +56,17 @@ Toggle the panel background color (white or black):
         <div><code>800</code></div>
         <div><code>900</code></div>
       </div>
-      <p class="my-1"><code>bg-orange-</code></p>
+      <p class="my-1"><code>bg-amber-</code></p>
       <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-orange-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-orange-900 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-100 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-200 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-300 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-400 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-500 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-600 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-700 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-800 aspect-ratio-1x1"></div>
+        <div class="mr-1 rounded bg-amber-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-red-</code></p>
       <div class="flex flex-grow-equal">
@@ -158,7 +158,7 @@ In the default variables file, the following two Sass maps set up the named colo
 $named-color: () !default;
 $named-color: map-merge((
   "-green":          map-get($ui-color, success),
-  "-orange":         map-get($ui-color, warning),
+  "-amber":         map-get($ui-color, warning),
   "-red":            map-get($ui-color, danger),
   "-blue":           map-get($ui-color, info),
   "-purple":         map-get($ui-color, primary),
@@ -239,7 +239,7 @@ Examples:
 
 <div class="my-6">
   <p class="b-thin b-green-400 rounded-sm p-block bg-green-200 t-green-700">b-thin b-green-400 rounded-sm p-block bg-green-200 t-green-700</p>
-  <p class="t-orange-600">t-orange-600</p>
+  <p class="t-amber-600">t-amber-600</p>
   <p class="p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700">p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700</p>
 </div>
 

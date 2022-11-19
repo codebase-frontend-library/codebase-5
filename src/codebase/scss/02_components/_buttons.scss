@@ -8,42 +8,50 @@
 // Button size
 .btn {
   &-sm {
-    height: $button-size-sm;
-    padding: $button-padding-sm;
+    height: var(--form-size-sm);
+    min-height: unset;
+    padding: var(--btn-p-sm);
   }
+
   &-lg {
-    height: $button-size-lg;
-    padding: $button-padding-lg;
+    height: var(--form-size-lg);
+    min-height: unset;
+    padding: var(--btn-p-lg);
   }
 }
+
 // Button icon (makes square)
 .btn-icon {
   padding: 0 !important;
-  height: $button-size;
-  min-width: $button-size;
+  height: var(--form-size);
+  min-width: var(--form-size);
+
   &.btn-sm {
-    height: $button-size-sm;
-    min-width: $button-size-sm;
+    height: var(--form-size-sm);
+    min-width: var(--form-size-sm);
   }
+
   &.btn-lg {
-    height: $button-size-lg;
-    min-width: $button-size-lg;  
+    height: var(--form-size-lg);
+    min-width: var(--form-size-lg);
   }
 
 }
 
 // UI colors
-@each $key, $val in $ui-setup-color {
+@each $key,
+$val in $ui-setup {
   .btn-#{$key} {
     border-color: nth($val, 1);
     background-color: nth($val, 1);
-    color: nth($val, 2);
+    color: nth($val, 3);
+
     &:hover,
     &:active,
     &.active {
-      border-color: mix(black, nth($val, 1), 36%) !important;
-      background-color: mix(black, nth($val, 1), 36%) !important;
-      color: nth($val, 3);
+      border-color: nth($val, 2);
+      background-color: nth($val, 2);
+      color: nth($val, 4);
     }
   }
 }
