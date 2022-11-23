@@ -7,36 +7,17 @@ prevLink: "Text alignment"
 nextLink: "Lists"
 ---
 
-Codebase has several simple text utility classes.
-
-See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).
-
-<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
-<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
-<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
-<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
-<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
-
-<div class="t-serif">
-<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
-<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
-<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
-<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
-<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
-</div>
-
-<div class="t-mono">
-<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
-<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
-<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
-<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
-<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
-</div>
-
-
-**Note:** Your visitor needs to have lighter (thin), semi-bold and bolder (heavy) fonts in your website’s typeface installed on their device, or else they may not see these weights.
+Codebase has several simple text utility classes. (See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).)
 
 ## Text weights
+
+**Note:** Your visitor needs to have font-weights 200, 400, 600, 700, and 900 (both normal and italic) in your website’s typeface installed on their device, or added via a CDN (e.g. Google Fonts), or else they may not see these weights.
+
+<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
+<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
+<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
+<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
+<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
 
 * `t-bolder` (and alias `t-heavy`)
 
@@ -54,7 +35,7 @@ See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).
 
     <span class="t-bold t-italic">Returns text to normal weight (default 400) and removes italicization. <span class="t-normal">Perhaps you may find this useful</span> in some circumstances.</span>
 
-* `t-lighter`
+* `t-lighter` (and alias `t-thin`)
 
     <span class="t-lighter">Lighter text (default 200)</span>
 
