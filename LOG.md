@@ -4,6 +4,11 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 23 Nov 2022 -- v.5.2.1
+
+* Improvements to container classes, to prevent interference with e.g. the HubSpot required container-fluid class
+* Improvements to forms, for compatibility with iOS added features
+
 ## 19 Nov 2022 -- v.5.2.0
 
 * **Changed all interpolated Sass variables to CSS variables (custom properties)**, and refactored

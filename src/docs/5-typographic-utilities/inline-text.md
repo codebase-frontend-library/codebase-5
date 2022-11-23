@@ -17,6 +17,23 @@ See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).
 <span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
 <span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
 
+<div class="t-serif">
+<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
+<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
+<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
+<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
+<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
+</div>
+
+<div class="t-mono">
+<span class="t-bolder">Bolder • <span class="t-italic">Italic</span></span><br>
+<span class="t-bold">Bold • <span class="t-italic">Italic</span></span><br>
+<span class="t-semibold">Semibold • <span class="t-italic">Italic</span></span><br>
+<span class="t-normal">Normal • <span class="t-italic">Italic</span></span><br>
+<span class="t-lighter">Lighter • <span class="t-italic">Italic</span></span>
+</div>
+
+
 **Note:** Your visitor needs to have lighter (thin), semi-bold and bolder (heavy) fonts in your website’s typeface installed on their device, or else they may not see these weights.
 
 ## Text weights

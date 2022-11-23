@@ -264,15 +264,15 @@ $heading-size: (
 
   // Glassmorphic backgrounds
   --alpha-1: 0.1;
-  --alpha-2: 0.23;
-  --alpha-3: 0.35;
-  --alpha-4: 0.58;
-  --alpha-5: 0.8;
+  --alpha-2: 0.25;
+  --alpha-3: 0.4;
+  --alpha-4: 0.55;
+  --alpha-5: 0.7;
   --glass-1: saturate(1.8) blur(1px);
   --glass-2: saturate(1.8) blur(4px);
   --glass-3: saturate(1.8) blur(8px);
   --glass-4: saturate(1.8) blur(13px);
-  --glass-5: saturate(1.8) blur(18px);
+  --glass-5: saturate(1.8) blur(19px);
 
   // State transition (used on form focus, button hover, link hover, and color utility hover)
   --ease: all 0.15s ease-in-out;
@@ -287,7 +287,7 @@ $heading-size: (
     --sp-#{$name}: #{$value};
   }
 
-  --b1: 1px; // used by b-thin and line-detail (hr, .table, etc.)
+  --b1: 1px; // used by b-thin, b-dashed, and --line-detail (hr, .table, form inputs, etc.)
   --b2: 4px; // used by b-thick
   --b3: 8px; // used by b-heavy
 

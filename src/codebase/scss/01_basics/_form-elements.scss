@@ -4,32 +4,33 @@
 @use "../00_setup/default-variables" as *;
 @use "sass:math";
 
-label {
-  display: inline-block;
-  padding: .5rem 0;
-  font-family: var(--font-ui);
-}
-
 fieldset {
-  border: var(--line-detail);
-  padding: 0 var(--sp-2) var(--sp-2);
-  font-family: var(--form-font);
+  border: var(--b1);
 }
 
-legend {
-  font-family: var(--font-ui);
+label, legend {
+  font-size: 1rem;
+  font-family: var(--base);
+}
+
+::placeholder {
+  color: var(--ctext);
+  opacity: 0.7;
 }
 
 input,
-select,
-textarea {
-  position: relative;
-  display: block;
-  width: 100%;
+textarea,
+select {
   outline: 0 none;
-  margin-block: 0;
-  // -webkit-appearance: none;
+  width: 100%;
+  min-height: var(--form-size);
+  /* -webkit-appearance: none; */
   border: var(--line-detail);
+  border-radius: unset;
+  padding: var(--form-p);
+  font-family: var(--form-font);
+  font-size: 1rem;
+  text-align: start;
 
   @if $form-input-rounded-corners==true {
     -webkit-border-radius: var(--rad-sm);
@@ -38,45 +39,126 @@ textarea {
     -webkit-border-radius: 0;
     border-radius: 0;
   }
-
-  padding: var(--form-p);
-  min-height: var(--form-size);
-  font-family: var(--form-font);
-  text-align: start;
-  color: var(--c-text);
-
   @if $form-input-background-color==true {
     background-color: var(--c-form-bg)
   }
 
   transition: var(--ease);
-
-  &:focus {
-    z-index: 1;
-    outline: 0;
-    box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
-  }
 }
 
-::placeholder {
-  color: var(--c-text);
-  opacity: .7;
-  text-overflow: ellipsis;
+select, [type="number"] {
+  width: auto;
 }
 
-::file-selector-button {
-  border: var(--line-detail);
-  padding-block: 0.125em;
-  font-size: 1em;
-  color: white;
-  background: var(--c-tertiary);
+input:focus,
+select:focus,
+textarea:focus {
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);;
+}
+
+select:not([multiple]) {
+  height: var(--form-size);
 }
 
 [type="color"] {
   width: var(--form-size);
   height: var(--form-size);
-  padding: 0.125rem
+  padding: .25em
 }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  width: 1.3em;
+  height: 1em;
+  min-height: unset;
+}
+
+input::file-selector-button {
+  border: 0;
+  font-size: 1em;
+  color: white;
+  background: var(--c-tertiary);
+}
+
+
+// label {
+//   display: inline-block;
+//   padding: .5rem 0;
+//   font-family: var(--font-ui);
+// }
+
+// fieldset {
+//   border: var(--line-detail);
+//   padding: 0 var(--sp-2) var(--sp-2);
+//   font-family: var(--form-font);
+// }
+
+// legend {
+//   font-family: var(--font-ui);
+// }
+
+// input,
+// select,
+// textarea {
+//   position: relative;
+//   display: block;
+//   width: 100%;
+//   outline: 0 none;
+//   margin-block: 0;
+//   // -webkit-appearance: none;
+//   border: var(--line-detail);
+
+//   @if $form-input-rounded-corners==true {
+//     -webkit-border-radius: var(--rad-sm);
+//     border-radius: var(--rad-sm);
+//   } @else {
+//     -webkit-border-radius: 0;
+//     border-radius: 0;
+//   }
+
+//   padding: var(--form-p);
+//   min-height: var(--form-size);
+//   font-family: var(--form-font);
+//   font-size: 100%;
+//   text-align: start;
+//   color: var(--c-text);
+
+//   @if $form-input-background-color==true {
+//     background-color: var(--c-form-bg)
+//   }
+
+//   transition: var(--ease);
+
+//   &:focus {
+//     z-index: 1;
+//     outline: 0;
+//     box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
+//   }
+// }
+
+// ::placeholder {
+//   color: var(--c-text);
+//   opacity: 0.7;
+//   text-overflow: ellipsis;
+// }
+
+// ::file-selector-button {
+//   border: var(--line-detail);
+//   padding-block: 0.125em;
+//   font-size: 100%;
+//   color: white;
+//   background: var(--c-tertiary);
+// }
+
+// [type="color"] {
+//   width: var(--form-size);
+//   height: var(--form-size);
+//   padding: 0.125rem
+// }
 
 select,
 [type=number],
@@ -86,38 +168,7 @@ select,
 [type=button],
 [type=reset],
 [type=submit] {
-  display: inline-block;
-  width: auto;
-}
-
-[type=search] {
-  -webkit-appearance: none;
-}
-
-option {
-  padding: .25em 0;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: -0.125em;
-  width: 1.25em;
-  height: 1em;
-  margin: 0;
-}
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  margin-left: 0.25em;
-}
-
-textarea {
-  vertical-align: top;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  overflow: auto;
+  width: unset;
 }
 
 input.form-element-sm,
@@ -164,6 +215,7 @@ textarea.form-element-sm {
   
   padding: var(--btn-p);
   font-family: var(--form-font);
+  font-size: 100%;
   font-weight: var(--btn-fw);
   text-decoration: none; // prevents hover underline when button styling is applied to links
   white-space: nowrap;

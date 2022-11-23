@@ -7,7 +7,7 @@ prevLink: "Inline elements"
 nextLink: "Media"
 ---
 
-In Codebase, most form elements are rendered as block elements, for ease of styling.
+In Codebase, many form elements are rendered as block elements, for ease of styling.
 
 If you want to make an input field an inline element, add the layout [block utility class]({{ '/docs/3-layout-utilities/blocks/' | url }}) `inline-block`.
 
@@ -43,7 +43,27 @@ If you want to make an input field an inline element, add the layout [block util
 <input id="tel-example" name="examplename" placeholder="Example phone number input field" type="tel">
 ```
 
-### Search
+### Password
+
+<label for="password-example">Password:</label>
+<input id="password-example" name="examplename" placeholder="Example password input field" type="password">
+
+```html
+<label for="password-example">Password:</label>
+<input id="password-example" name="examplename" placeholder="Example password input field" type="password">
+```
+
+### File upload
+
+<label for="upload-example">File upload:</label>
+<input id="upload-example" type="file" id="upload-1" name="examplename" accept="image/png, image/jpeg">
+
+```html
+<label for="upload-example">File upload:</label>
+<input id="upload-example" type="file" id="upload-1" name="examplename" accept="image/png, image/jpeg">
+```
+
+## Search
 
 <label for="search-example">Search:</label>
 <input id="search-example" name="examplename" placeholder="Example search input field" type="search">
@@ -53,6 +73,10 @@ If you want to make an input field an inline element, add the layout [block util
 <input id="search-example" name="examplename" placeholder="Example search input field" type="search">
 ```
 
+## Numeric inputs
+
+These fields are not full-width, but whatever the visitor’s browser sets.
+
 ### Number (picker)
 
 <label for="number-example">Number:</label>
@@ -60,7 +84,7 @@ If you want to make an input field an inline element, add the layout [block util
 
 ```html
 <label for="number-example">Number:</label>
-<input id="number-example" name="examplename" placeholder=" Example number input field" type="number">
+<input type="number" id="quantity" name="example" min="0" inputmode="numeric" pattern="\d*">
 ```
 
 ### Date and time
@@ -89,26 +113,6 @@ If you want to make an input field an inline element, add the layout [block util
 <input id="time-example" name="examplename" type="time">
 ```
 
-### Password
-
-<label for="password-example">Password:</label>
-<input id="password-example" name="examplename" placeholder="Example password input field" type="password">
-
-```html
-<label for="password-example">Password:</label>
-<input id="password-example" name="examplename" placeholder="Example password input field" type="password">
-```
-
-### File upload
-
-<label for="upload-example">File upload:</label>
-<input id="upload-example" type="file" id="upload-1" name="examplename" accept="image/png, image/jpeg">
-
-```html
-<label for="upload-example">File upload:</label>
-<input id="upload-example" type="file" id="upload-1" name="examplename" accept="image/png, image/jpeg">
-```
-
 ## Color picker
 
 <label for="color-example">Color</label>
@@ -116,8 +120,7 @@ If you want to make an input field an inline element, add the layout [block util
 
 ## Textareas (multi line)
 
-<label for="textarea-example">Textarea:</label>
-<textarea id="textarea-example" name="examplename" type="textarea" placeholder="Example textarea" rows="4"></textarea>
+<label for="textarea-example">Textarea:</label><textarea id="textarea-example" name="examplename" type="textarea" placeholder="Example textarea" rows="4"></textarea>
 
 ```html
 <label for="textarea-example">Textarea:</label>
@@ -146,7 +149,7 @@ If you want to make an input field an inline element, add the layout [block util
 
 ### Multi selects
 
-<label for="multi-select-example">Multi-select:</label>
+<label for="multi-select-example">Multi select:</label>
 <select id="multi-select-example" name="examplename" multiple size="3">
   <option value="first">First option </option>
   <option value="second">Second option </option>
@@ -238,7 +241,7 @@ You can wrap a number of related inputs and buttons together in a `<fieldset>` a
     <label for="email-example">Your email:</label>
     <input id="email-example" class="mb-1" name="examplename" placeholder="Example email input field" type="email">
     <input id="checkbox-terms" name="examplename" type="checkbox">
-    <label for="checkbox-terms">I have read your <a href="">privacy policy</a>.</label><br>
+    <label for="checkbox-terms">I agree with your <a href="">privacy policy</a>.</label><br>
     <button type="submit" class="mt-1 btn-primary">Subscribe</button>
   </fieldset>
 </form>

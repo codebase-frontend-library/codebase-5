@@ -2,7 +2,7 @@
 
 <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
 
-<div id="site-top-bar" class="sticky bg-black-glass-5">
+<div id="site-top-bar" class="fixed w-100% bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
     <div class="p-2">
       <a
@@ -20,48 +20,133 @@
   </div>
 </div>
 
-<div>
-  <main class="container-sm my-3 lg:my-6">
-
-    <article  id="docs-article">
-      <div class="t-long-read">
-        <div>
-          <div class="md:aspect-ratio-2x1 flex flex-column flex-center">
-            <h1 class="h1 md:mb-6 bb-thick b-gray-900 pb-3 md:pb-6"><span class="t-heavy">Codebase</span> is a modern website SCSS library</h1>
-          </div>
-          <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.</p>
-          <p class="mb-6 pb-3">Plus, Codebase pairs well with AlpineJS.</p>
-        </div>
+<section class="h-100vh grid md:equal-2-cols">
+  
+  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-black bg-teal-200">
+    <div class="pt-3 container-xs t-long-read">
+      <h1 class="mb-0 t-bold t-center sm:t-left">Codebase is a style library for the modern web</h1>
+    </div>
+    <div class="container-xs my-4 md:my-6 inline-flex flex-wrap gap-2 h4">
+      <a href="{{ '/docs/1-getting-started/introduction/' | url }}">Docs</a>
+      <a href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Get CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
+    </div>
+    <div class="pb-3 container-xs mx-auto grid xs:equal-2-cols col-gap-3 row-gap-1">
+      <div class="flex flex-column gap-1">
+        <span>Current version: {{ metadata.version }}</span>
+        <span>CSS file size: {{ metadata.css_filesize }}</span>
       </div>
+      <div class="flex flex-column gap-1">
+        <span>Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></span>
+        <span>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="md:px-6 flex flex-column flex-center flex-middle">
+    <div class="py-3 container-xs t-long-read">
+      <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <code>grid</code>, <code>clamp()</code>,<code>var()</code>.</p>
+      <p class="mb-0">Plus, Codebase pairs well with <a href="https://alpinejs.dev" target="_blank">AlpineJS</a>.</p>
+    </div>
+  </div>
+</section>
   
-      <p class="my-6">
-        <a class="btn btn-success" href="{{ '/docs/1-getting-started/introduction/' | url }}">Documentation</a>
-        <a class="btn btn-primary" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download CSS</a>
-        <a class="btn btn-secondary" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repository</a>
+
+<main class="py-3 bg-blue-300">
+
+  <div class="md:py-6 container-xs t-lg">
+    <p>Starting from a bespoke set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to:</p>
+  </div>
+
+    <div class="container-lg grid xs:equal-2-cols gap-3 md:gap-6">
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2>Typography</h2>
+        <ul>
+          <li>Serif, sans-serif, and monospaced font stacks</li>
+          <li>Heading size formats</li>
+          <li>Font weights: lighter, normal, semi-bold, bold, heavy</li>
+          <li>Large display text for headings and landing pages</li>
+          <li>Comfortable long-read font sizes controlled by CSS clamp</li>
+          <li>Other text utilities incuding alignments, list formats, etc.</li>
+        </ul>
+      </div>
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2>Responsive layouts</h2>
+        <ul>
+          <li>A range of centered container, width, and height utilities</li>
+          <li>Real two-dimensional CSS grid layouts for templating</li>
+          <li>Flexbox layouts for components</li>
+          <li>Fixed and sticky positioning</li>
+          <li>Aspect-ratio controlled squared tiles</li>
+          <li>Edge positioning</li>
+          <li>Invisibility classes</li>
+        </ul>
+      </div>
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2>Decoration</h2>
+        <ul>
+          <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
+          <li>Box-model spacing and borders</li>
+          <li>Box shadows for layering</li>
+        </ul>
+      </div>
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2>Image handling</h2>
+        <ul>
+          <li>Cover images and positioning</li>
+          <li>A wide range of aspect ratios</li>
+          <li>Filters and opacities</li>
+          <li>Glassmorphic overlays</li>
+        </ul>
+      </div>
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2>Simple components (no JavaScript)</h2>
+        <ul>
+          <li>Buttons</li>
+          <li>Badges</li>
+          <li>Labels</li>
+          <li>Heros</li>
+          <li>Tables</li>
+          <li>Media objects</li>
+          <li>Cards</li>
+        </ul>
+      </div>
+
+      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
+        <h2> Alpine.JS powered components</h2>
+        <ul>
+          <li>Collapse (slide reveal)</li>
+          <li>Dropdowns</li>
+          <li>Modals and lightboxes</li>
+          <li>Offcanvas panels</li>
+          <li>Tab systems</li>
+          <li>Simple manual carousel</li>
+          <li>Langing page animations</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="container-lg mt-6 b-gray-600">
+
+    <div class="container-sm my-6 xs:t-center">
+      <p>
+        Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing SCSS.
       </p>
-  
-      <ul class="list-style-type-none pl-0">
-        <li class="mb-1">Current version: {{ metadata.version }}</li>
-        <li class="mb-1">CSS file size: {{ metadata.css_filesize }}</li>
-        <li class="mb-1">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/master/LICENSE">MIT</a></li>
-        <li>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></li>
-      </ul>
-    
-      <div class="my-6 md:py-6 xs:t-center">
-        <p>
-          Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing the CSS.
-        </p>
-        <p>
-          AlpineJS and its plugins are provided from the CDN recommended in the <a href="https://alpinejs.dev/)">AlpineJS.dev</a> docs.
-        </p>
-        <p>
-          Other than the Codebase logo, docs icons are from <a href="https://phosphoricons.com/">Phosphor Icons</a>.
-        </p>
-        <p>
-          Placeholder images are from <a href="https://www.pexels.com">Pexels</a>.
-        </p>
-      </div>  
-    </article>
+      <p>
+        AlpineJS and its plugins are provided from the CDN recommended in the <a href="https://alpinejs.dev/)">AlpineJS.dev</a> docs.
+      </p>
+      <p>
+        Other than the Codebase logo, docs icons are from <a href="https://phosphoricons.com/">Phosphor Icons</a>.
+      </p>
+      <p>
+        Placeholder images are from <a href="https://www.pexels.com">Pexels</a>.
+      </p>
+    </div>
     
   </main>
 </div>
