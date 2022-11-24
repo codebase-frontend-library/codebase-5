@@ -4,6 +4,10 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 24 Nov 2022 -- v.5.2.2
+
+* Fixed bug with `overflow-x` failing to to work as a wrapper around oversized tables on narrow viewports (phones). 
+
 ## 23 Nov 2022 -- v.5.2.1
 
 * Improvements to container classes, to prevent interference with e.g. the HubSpot required container-fluid class

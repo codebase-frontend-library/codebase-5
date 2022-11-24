@@ -3,7 +3,7 @@
 
 @use "../00_setup/default-variables" as *;
 
-.table {
+table[class*=table] {
   // Use table[class*=table] because you don’t want to damage TABLER ICONS,
   // https://tablericons.com -- they have “table” in their class names.
   width: 100%;

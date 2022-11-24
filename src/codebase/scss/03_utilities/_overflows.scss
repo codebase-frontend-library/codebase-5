@@ -6,6 +6,7 @@
 .overflow-x {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
 }
 .overflow-x > table[class*=table] {
   margin: 0;
@@ -14,10 +15,13 @@
 .overflow-y {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  max-height: 100vh;
 }
 .overflow-xy {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .overflow-hidden {
