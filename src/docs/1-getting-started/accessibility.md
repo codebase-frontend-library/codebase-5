@@ -35,7 +35,7 @@ The advantage of _not setting a default font size in px_ is that it allows your 
 
 For more information, see:
 
-* W3Schools, [https://www.w3schools.com/accessibility/accessibility_text_size.php](https://www.w3schools.com/accessibility/accessibility_text_size.php)
+* W3Schools, [Accessibility Text Size](https://www.w3schools.com/accessibility/accessibility_text_size.php)
 * Matej Latin’s [The State of Fluid Web Typography](https://betterwebtype.com/articles/2019/05/14/the-state-of-fluid-web-typography/).
 * Craig Abbot, [Accessibility and Font Sizes](https://www.craigabbott.co.uk/blog/accessibility-and-font-sizes)
 
@@ -50,11 +50,11 @@ Colored UI components are those most commonly expected worldwide, as used on sig
 
 These are the colors used for UI elements such as ([buttons]({{ '/docs/6-simple-components/buttons' | url }}), [badges]({{ '/docs/6-simple-components/badges' | url }}) and [labels]({{ '/docs/6-simple-components/labels' | url }})) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
 
-<div class="flex flex-wrap my-6">
-  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-success t-white t-center">success<br>#128a12<br>4.5:1</span>
-  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-warning t-black 
+<div class="flex flex-wrap gap-1 my-6">
+  <span class="square-lg inline-flex flex-center flex-middle bg-success t-white t-center">success<br>#128a12<br>4.5:1</span>
+  <span class="square-lg inline-flex flex-center flex-middle bg-warning t-black 
   t-center">warning<br>#f0b300<br>11.15:1</span>
-  <span class="mr-1 mb-1 square-lg inline-flex flex-center flex-middle bg-danger t-white t-center">danger<br>#cf000f<br>5.74:1</span>
+  <span class="square-lg inline-flex flex-center flex-middle bg-danger t-white t-center">danger<br>#cf000f<br>5.74:1</span>
   <span class="square-lg inline-flex flex-center flex-middle bg-info t-white t-center">info<br>#1262ed<br>4.54:1</span>
 </div>
 

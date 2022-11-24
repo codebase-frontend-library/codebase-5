@@ -5,16 +5,14 @@
 
 .overflow-x {
   overflow-x: auto;
-  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
-.overflow-x > [class*=table] {
+.overflow-x > table[class*=table] {
   margin: 0;
 }
 
 .overflow-y {
   overflow-y: auto;
-  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 .overflow-xy {

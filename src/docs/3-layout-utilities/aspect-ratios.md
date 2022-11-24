@@ -17,7 +17,7 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
 
 ## Image/video aspect ratios 
 
-<div class="mb-3 flex flex-grow-equal gap-1">
+<div class="mb-3 flex flex-grow-equal flex-wrap gap-1">
   <div>
     <div class="aspect-ratio-9x16 b-thin bg-gray-100">
       9×16
@@ -159,7 +159,7 @@ Example:
 
 Available square tile `aspect-ratio-` utility suffixes in Codebase:
 
-<div class="overflow-x mb-3">
+<div class="mb-3 overflow-x">
 <table class="table">
   <thead>
     <tr>
@@ -235,7 +235,7 @@ Available square tile `aspect-ratio-` utility suffixes in Codebase:
 </table>
 </div>
 
-The ‘missing’ utilities are unnecessary. E.g. you don’t need `-3x3` because you can use `-1x1`; you don’t need `-2x4` because you can use `-1x2`; and so on.
+The ‘missing’ utilities are unnecessary. E.g. you don’t need `-3x3` because you can use `-1x1`; you don’t need `-2x4` because you can use `-1x2` and so on.
 
 Besides the “all viewports” examples above, there are media query tiered variants of the squared tile aspect ratio classes: `xs:`, `sm:`, `md:`, and `lg:`.
 
@@ -243,8 +243,8 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 
 Another example:
 
-<div class="mb-3 grid xs:equal-2-cols sm:equal-3-cols">
-  <div class="xs:col-1 xs:rows-1-2 aspect-ratio-1x1 xs:aspect-ratio-1x2 relative">
+<div class="mb-3 grid equal-2-cols sm:equal-3-cols">
+  <div class="col-1 rows-1-2 aspect-ratio-1x1 aspect-ratio-1x2 relative">
     <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="Photo by Daniyal Ghanavati from Pexels">
   </div>
   <div class="sm:col-2 sm:row-1 aspect-ratio-1x1 relative">
@@ -253,7 +253,7 @@ Another example:
   <div class="sm:col-3 sm:row-1 aspect-ratio-1x1 relative">
     <img class="box img-cover" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="Photo by Erik Karits from Pexels">
   </div>
-  <div class="xs:cols-1-2 xs:row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 xs:aspect-ratio-2x1 relative">
+  <div class="cols-1-2 row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 aspect-ratio-2x1 relative">
     <img class="box img-cover" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" width="1280" height="640" loading="lazy" alt="Photo by Trudie Roden from Pexels">
   </div>
 </div>
@@ -262,8 +262,8 @@ _Images:_
 gulls by [Daniyal Ghanavati](https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels); robin by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/); swans by [Trudie Roden](https://www.pexels.com/@trudie-roden-1054578?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels); owl by [Eric Karits](https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels). All obtained from [Pexels](https://www.pexels.com).
 
 ```html
-<div class="grid xs:equal-2-cols sm:equal-3-cols">
-  <div class="xs:col-1 xs:rows-1-2 aspect-ratio-1x1 xs:aspect-ratio-1x2 relative">
+<div class="grid equal-2-cols sm:equal-3-cols">
+  <div class="col-1 rows-1-2 aspect-ratio-1x1 aspect-ratio-1x2 relative">
     <img class="box img-cover" src="" alt="">
   </div>
   <div class="sm:col-2 sm:row-1 aspect-ratio-1x1 relative">
@@ -272,7 +272,7 @@ gulls by [Daniyal Ghanavati](https://www.pexels.com/@daniyal-ghanavati-10741?utm
   <div class="sm:col-3 sm:row-1 aspect-ratio-1x1 relative">
     <img class="box img-cover" src="" alt="">
   </div>
-  <div class="xs:cols-1-2 xs:row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 xs:aspect-ratio-2x1 relative">
+  <div class="cols-1-2 row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 aspect-ratio-2x1 relative">
     <img class="box img-cover" src="" alt="">
   </div>
 </div>

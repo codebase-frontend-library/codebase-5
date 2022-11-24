@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta name="description" content="Docs for Codebase, the super tiny website frontend library (CSS/JS).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Docs for Codebase, a CSS style library for the modern web.">
 
   <title>{{ title + ' - ' if title }}Codebase</title>
 
@@ -23,12 +23,6 @@
   <style>
     html {
       scroll-behavior: smooth;
-    }
-    body { 
-      max-width: 100vw;
-    }
-    main h2, main h3, main h4, main h5, main h6 {
-      scroll-margin-top: 72px;
     }
     #site-top-bar {
       height: 56px;
@@ -81,6 +75,9 @@
       .ms-windows #site-navigation:hover > div {
         overflow-y: auto;
       }
+      main h2, main h3, main h4, main h5, main h6 {
+        scroll-margin-top: 72px;
+      }
     }
 
     @media (min-width: 1280px) {
@@ -101,6 +98,9 @@
       }
       .ms-windows #nav-on-this-page:hover > div {
         overflow-y: auto;
+      }
+      main {
+        max-width: calc(100vw - 512px);
       }
     }
 
