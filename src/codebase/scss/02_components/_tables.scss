@@ -3,17 +3,13 @@
 
 @use "../00_setup/default-variables" as *;
 
-table[class*=table] {
+.table {
   // Use table[class*=table] because you don’t want to damage TABLER ICONS,
   // https://tablericons.com -- they have “table” in their class names.
   width: 100%;
   margin-bottom: calc(var(--t-base-lh) * 1rem);
   border-collapse: collapse;
   border-spacing: 0;
-
-  &>* {
-    width: 100%;
-  }
 
   &:not(&.table-borderless) {
 
