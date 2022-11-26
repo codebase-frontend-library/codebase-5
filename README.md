@@ -10,7 +10,7 @@ Plus, Codebase pairs well with AlpineJS.
 
 ***
 
-Stylesheet (and sourcemap): [/src/dist](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist)
+Stylesheet (and sourcemap): https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist
 
 Docs: https://codebase-frontend-library.github.io/codebase-5/
 
