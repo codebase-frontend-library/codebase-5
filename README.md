@@ -10,7 +10,11 @@ Plus, Codebase pairs well with AlpineJS.
 
 ***
 
+Stylesheet (and sourcemap): https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist
+
 Docs: https://codebase-frontend-library.github.io/codebase-5/
+
+Install via Git: https://github.com/codebase-frontend-library/codebase-5.git
 
 ***
 
