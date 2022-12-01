@@ -14,6 +14,8 @@ There are only two _form_ utility classes, and these are:
 * `form-element-sm` (can be paired with `btn-sm`)
 * `form-element-lg` (can be paired with `btn-lg`)
 
+**Note:** since Codebase 5.2.3, smaller form elements have smaller text, and larger form elements have larger text.
+
 Examples:
 
 <div class="grid xs:equal-3-cols col-gap-3">

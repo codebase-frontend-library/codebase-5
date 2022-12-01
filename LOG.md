@@ -4,6 +4,10 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 01 Dec 2022 -- v.5.2.3
+
+* Smaller text for `btn-sm`. Larger text for `btn-lg`.
+
 ## 24 Nov 2022 -- v.5.2.2
 
 * Fixed bug with `overflow-x` failing to to work as a wrapper around oversized tables on narrow viewports (phones). 

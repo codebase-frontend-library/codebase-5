@@ -84,82 +84,6 @@ input::file-selector-button {
   background: var(--c-tertiary);
 }
 
-
-// label {
-//   display: inline-block;
-//   padding: .5rem 0;
-//   font-family: var(--font-ui);
-// }
-
-// fieldset {
-//   border: var(--line-detail);
-//   padding: 0 var(--sp-2) var(--sp-2);
-//   font-family: var(--form-font);
-// }
-
-// legend {
-//   font-family: var(--font-ui);
-// }
-
-// input,
-// select,
-// textarea {
-//   position: relative;
-//   display: block;
-//   width: 100%;
-//   outline: 0 none;
-//   margin-block: 0;
-//   // -webkit-appearance: none;
-//   border: var(--line-detail);
-
-//   @if $form-input-rounded-corners==true {
-//     -webkit-border-radius: var(--rad-sm);
-//     border-radius: var(--rad-sm);
-//   } @else {
-//     -webkit-border-radius: 0;
-//     border-radius: 0;
-//   }
-
-//   padding: var(--form-p);
-//   min-height: var(--form-size);
-//   font-family: var(--form-font);
-//   font-size: 100%;
-//   text-align: start;
-//   color: var(--c-text);
-
-//   @if $form-input-background-color==true {
-//     background-color: var(--c-form-bg)
-//   }
-
-//   transition: var(--ease);
-
-//   &:focus {
-//     z-index: 1;
-//     outline: 0;
-//     box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
-//   }
-// }
-
-// ::placeholder {
-//   color: var(--c-text);
-//   opacity: 0.7;
-//   text-overflow: ellipsis;
-// }
-
-// ::file-selector-button {
-//   border: var(--line-detail);
-//   padding-block: 0.125em;
-//   font-size: 100%;
-//   color: white;
-//   background: var(--c-tertiary);
-// }
-
-// [type="color"] {
-//   width: var(--form-size);
-//   height: var(--form-size);
-//   padding: 0.125rem
-// }
-
 select,
 [type=number],
 [type=date],
@@ -176,16 +100,19 @@ select.form-element-sm {
   height: var(--form-size-sm);
   min-height: unset;
   padding: var(--form-p-sm);
+  font-size: var(--form-size-sm-fs);
 }
 
 textarea.form-element-sm {
   padding: var(--form-p-sm);
+  font-size: var(--form-size-sm-fs);
 }
 
 .form-element-lg {
   height: var(--form-size-lg);
   min-height: unset;
   padding: var(--form-p-lg);
+  font-size: var(--form-size-lg-fs);
 }
 
 .inline-block input {

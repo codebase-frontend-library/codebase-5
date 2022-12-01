@@ -11,12 +11,14 @@
     height: var(--form-size-sm);
     min-height: unset;
     padding: var(--btn-p-sm);
+    font-size: var(--form-size-sm-fs);
   }
 
   &-lg {
     height: var(--form-size-lg);
     min-height: unset;
     padding: var(--btn-p-lg);
+    font-size: var(--form-size-lg-fs);
   }
 }
 
