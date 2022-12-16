@@ -177,7 +177,7 @@ button,
 [type="reset"] {
   @include button;
 
-  &:focus {
+  &:focus:not(:focus-visible) {
     z-index: 1;
     outline: 0;
     box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
