@@ -113,16 +113,6 @@ To design a wesite well for accessibility includes:
 
 See [WCAG 2.1 at a Glance](https://www.w3.org/WAI/standards-guidelines/wcag/glance/) for a brief introduction.
 
-### Hiding the focus ring
-
-Codebase also includes a `hide-focus-ring` class. It hides the focus ring on _click/tap focus_, but it is still visible when keyboard-tabbing (via the `focus-visible` selector).
-
-**Note:** use this with care — only when you are introducing _another_ focus state (e.g. a changed background color, or a revealed panel).
-
-Example: The Codebase [collapse (slide reveal)]({{ '/docs/7-alpinejs-components/collapse/' | url }}) component has 
-
-(In MacOS/iOS Safari (in 2022), you wouldn’t have seen this focus ring on click-tap anyway)
-
 ## Accessibility resources
 
 If you are unfamiliar with web accessability, I would encourage you to learn about it. Here are several to get you started. This is very much an inexaustive list – there's a lot more out there.

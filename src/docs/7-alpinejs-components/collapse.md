@@ -22,7 +22,7 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
 >
   <button
     type="button"
-    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent hide-focus-ring"
+    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent"
     @click="open = !open;"
     :aria-controls="$id('collapse')"
     :aria-expanded="open"
@@ -45,8 +45,6 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
   </div>
 </div>
 
-**Note:** `hide-focus-ring` his been used on the button in this component. See [Accessibility]({{ '/docs/1-getting-started/accessibility' | url }}).
-
 ```html
 <div 
   x-data="{ open: false }"
@@ -55,7 +53,7 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
 >
   <button
     type="button"
-    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent hide-focus-ring"
+    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent"
     @click="open = !open;"
     :aria-controls="$id('collapse')"
     :aria-expanded="open"
@@ -114,7 +112,7 @@ Instead of switching between two icons (caret down and caret up), you can have o
 >
   <button
     type="button"
-    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent hide-focus-ring"
+    class="w-100% flex-space-between b-0 unrounded hover:bg-transparent"
     @click="open = !open;"
     :aria-controls="$id('collapse')"
     :aria-expanded="open"
@@ -178,7 +176,7 @@ For a dismissable message box:
   >
     <div class="bg-success">
       <button
-        class="btn-success btn-icon unrounded float-right t-lg hide-focus-ring"
+        class="btn-success btn-icon unrounded float-right t-lg"
         :aria-expanded="open"
         aria-controls="$id('collapse')"
         aria-label="Close panel"

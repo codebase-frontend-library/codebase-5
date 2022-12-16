@@ -79,11 +79,6 @@ sup {
   box-shadow: var(--focus-shadow);
 }
 
-.hide-focus-ring:focus:not(:focus-visible) {
-  box-shadow: none;
-  outline: none;
-}
-
 small {
   font-size: 85%;
 }

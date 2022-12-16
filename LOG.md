@@ -7,6 +7,7 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 ## 16 Dec 2022 -- v.5.2.4
 
 * Activating focus ring on buttons only for `:focus-visible`.
+* Removing the `hide-focus-ring` class.
 
 ## 01 Dec 2022 -- v.5.2.3
 
