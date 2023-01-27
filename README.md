@@ -6,7 +6,7 @@ Designed for static site generators and content management systems, Codebase is 
 
 Plus, Codebase pairs well with AlpineJS.
 
-**New in v.5.3:** CSS variables.
+**New in v.5.2:** CSS variables.
 
 ***
 
