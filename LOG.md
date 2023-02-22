@@ -4,6 +4,10 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 22 Feb 2023 -- v.5.2.5
+
+* Minor bug fix: `h-max-100%` now works OK. 
+
 ## 16 Dec 2022 -- v.5.2.4
 
 * Activating focus ring on buttons only for `:focus-visible`.
