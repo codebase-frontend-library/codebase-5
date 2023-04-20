@@ -221,6 +221,9 @@
 
 .grid {
   display: grid;
+  &-dense {
+    grid-auto-flow: dense;
+  }
 }
 
 .auto {

@@ -73,6 +73,10 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
 
 **Note:** `aspect-ratio-24×9` and `aspect-ratio-32×9` have been included in Codebase, although these are not common image or video aspect ratios, becausethey are useful for _full-width hero components_ where you want your top menubar _plus_ the hero _plus_ a teaser of your subsequent content to be on display on a laptop screen (laptops, display monitors, and HDTVs often have screen sizes of 16x9 or 21×9 aspect ratio).
 
+Besides the “all viewports” examples above, since Codebase v.5.2.6 there are media query tiered variants of the image/video tile aspect ratio classes: `xs:`, `sm:`, `md:`, and `lg:`.
+
+These variants have been provided primarily for images and components using a background image, where you might want different aspect ratios at different media query breakpoint widths. E.g. now you can have an `img-cover` image panel (such as a hero component) as a square (`aspect-ratio-1x1`) on phones and as a landscape (`aspect-ratio-16x9`) on wide screens.
+
 ## Aspect ratio styles can be distorted
 
 `aspect-ratio-*` wrappers constrain their content to the set aspect ratio _unless there’s too much content_ in the immediate child element. This means that at small viewport widths, if you have a lot of text content inside, it will “override” the aspect ratio for phones. Example:

@@ -81,7 +81,7 @@ The `grid` class does not specify or predict where you will position or how you 
 
 ### Grid item wrapping
 
-Grid items will _automatically wrap_ onto a new row if your layout requires it. (This is not like flexbox, where you have to command a flexbox to wrap using a style rule.)
+Grid items will _automatically wrap_ onto a new row if your layout requires it. (This is not like flexbox, where you need to command a flexbox to wrap using a style rule.)
 
 ```html
 <div class="grid">
@@ -356,11 +356,60 @@ Now, if you want the grid item widths to be equalized, use `equal-3-cols` on the
 </div>
 ```
 
+### Controlling grid item positioning with `grid-dense` packing
+
+Since Codebase v.5.2.6 the utility class `grid-dense` has been added, to provide an easy way to pack grid cells by moving later items to fill up any empty cells that have been made earlier in the grid layout. `grid-dense` reorders the _appearance_ of grid items. using `grid-auto-flow: dense;`.
+
+**Notes on `grid-dense`:
+
+1. If you use `grid-dense`, do not also try to control grid rows.
+2. Do not use `grid-dense` where the order of grid items is essential — i.e. use it only where it does not cause a problem for accessibility.
+
+Example grid with empty cells:
+
+<div class="my-3 grid sm:equal-4-cols">
+  <div><div class="b-thin p-1 bg-gray-100">Item 1</div></div>
+  <div class="sm:cols-1-2"><div class="b-thin p-1 bg-gray-100">Item 2</div></div>
+  <div class="sm:cols-2-4"><div class="b-thin p-1 bg-gray-100">Item 3</div></div>
+  <div class="sm:col-4"><div class="b-thin p-1 bg-gray-100">Item 4</div></div>
+  <div class="sm:col-3"><div class="b-thin p-1 bg-gray-100">Item 5</div></div>
+</div>
+
+The same example grid with `grid-dense` added to the grid wrapper:
+
+<div class="my-3 grid grid-dense sm:equal-4-cols">
+  <div><div class="b-thin p-1 bg-gray-100">Item 1</div></div>
+  <div class="sm:cols-1-2"><div class="b-thin p-1 bg-gray-100">Item 2</div></div>
+  <div class="sm:cols-2-4"><div class="b-thin p-1 bg-gray-100">Item 3</div></div>
+  <div class="sm:col-4"><div class="b-thin p-1 bg-gray-100">Item 4</div></div>
+  <div class="sm:col-3"><div class="b-thin p-1 bg-gray-100">Item 5</div></div>
+</div>
+
+The same example grid with `grid-dense` and a gap:
+
+<div class="my-3 grid grid-dense gap-3 sm:equal-4-cols">
+  <div><div class="b-thin p-1 bg-gray-100">Item 1</div></div>
+  <div class="sm:cols-1-2"><div class="b-thin p-1 bg-gray-100">Item 2</div></div>
+  <div class="sm:cols-2-4"><div class="b-thin p-1 bg-gray-100">Item 3</div></div>
+  <div class="sm:col-4"><div class="b-thin p-1 bg-gray-100">Item 4</div></div>
+  <div class="sm:col-3"><div class="b-thin p-1 bg-gray-100">Item 5</div></div>
+</div>
+
+```html
+<div class="my-3 grid grid-dense gap-3 sm:equal-4-cols">
+  <div>Item 1</div>
+  <div class="sm:cols-1-2">Item 2</div>
+  <div class="sm:cols-2-4">Item 3</div>
+  <div class="sm:col-4">Item 4</div>
+  <div class="sm:col-3">Item 5</div>
+</div>
+```
+
 ### Grid item reordering
 
 You can use `col-` and or `row-` classes to display grid items in different positions, and even overlap them. However, with this added complexity, you will need to control both columns _and_ rows (be pedantic), so that CSS grid layout can figure out what you wanting to do.
 
-In the example below, the grid items are rearranged into different columns. But I want still want them to be all in one row, therefore I must specify `row-1` on each item, so that the CSS Grid engine gets it right.
+In the example below, the grid items are rearranged into different columns. But I want still want them to be all in one row (without using `grid-dense` on the grid wrapper), therefore I must specify `row-1` on each item, so that the CSS Grid engine gets it right.
 
 ```html
 <div class="grid">

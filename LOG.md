@@ -4,6 +4,13 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 20 Apr 2023 -- v.5.2.6
+
+* Added `grid-dense` to the CSS grid system.
+* Added `xs:`, `sm:`, `md:`, and `lg:` media query tiered variants to the image/video aspect ratio utilities.
+
+These variants enable you to both _set up_ and _rearrange_ a square tile array for different device sizes.
+
 ## 22 Feb 2023 -- v.5.2.5
 
 * Minor bug fix: `h-max-100%` now works OK. 

@@ -6,7 +6,6 @@
 @mixin aspect-ratio {
 
   // Image/video aspect ratios
-  // (A few more are available in the squares tiles below)
 
   &-6x16 {
     aspect-ratio: 6 / 16;
@@ -146,6 +145,7 @@
 $mq-value in $mq-width {
   @include break-min(#{$mq-value}) {
     .#{$mq-key}\:aspect-ratio {
+      @include aspect-ratio;
       @include aspect-ratio-squared-tiles;
     }
   }
