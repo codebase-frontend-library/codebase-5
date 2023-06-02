@@ -69,6 +69,7 @@ So, you would want the most important part of the image to be in the centre-midd
 
 Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position).
 
+* `img-cover img-top`
 * `img-cover img-top-right`
 * `img-cover img-right`
 * `img-cover img-bottom-right`
@@ -78,17 +79,18 @@ Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [obj
 * `img-cover img-left`
 * `img-cover img-top-left`
 
-The same tall image, positioned vertically three ways:
+The same tall image, positioned vertically three ways (smaller images have `aspect-ratio-2x1`):
 
 <div class="grid gap-3 xs:equal-2-cols mb-3">
   <div>
+    <p class="mb-1"><em>No image cover classes</em></p>
     <img src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
   </div>
   <div>
     <div>
       <p class="mb-1"><code>img-cover img-cover-top</code></p>
       <div class="mb-1 aspect-ratio-2x1 relative">
-        <img class="box img-cover img-cover-top" src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
+        <img class="box img-cover img-cover-top aspect-ratio-2x1" src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
       </div>
     </div>
     <div>
@@ -108,7 +110,7 @@ The same tall image, positioned vertically three ways:
 
 _Photo by [Andrew Hawkes](https://www.pexels.com/photo/farmhouse-on-green-grass-field-under-the-blue-sky-5063027/) from [Pexels](https://www.pexels.com)._
 
-The same wide image, positioned horizontally three ways:
+The same wide image, positioned horizontally three ways (smaller images have `aspect-ratio-1x1`:
 
 <p class="mb-1"><img src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}"></p>
 
@@ -243,7 +245,7 @@ Add a colored background behind the image, and the opacity enables the image to 
 
 <div class="grid gap-3 xs:equal-3-cols">
   <div>
-    <p><code>opacity-50%</code> over a purpla background</p>
+    <p><code>opacity-50%</code> over a purple background</p>
     <div class="bg-purple-500"><img class="opacity-50%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels"></div>
   </div>
   <div>

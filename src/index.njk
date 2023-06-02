@@ -2,7 +2,7 @@
 
 <a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
 
-<div id="site-top-bar" class="fixed w-100% bg-black-glass-5">
+<div id="site-top-bar" class="fixed w-100% bb-thin bg-white-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
     <div class="p-2">
       <a
@@ -13,7 +13,12 @@
         tabindex="1"
       >
         <!-- Codebase logo-->
-        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)"/><path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)"/><path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)"/><path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)"/></svg>
+        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="currentColor" />
+          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)" fill="currentColor" />
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="currentColor" />
+          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
+        </svg>
         <span class="t-semibold">Codebase</span>
       </a>
     </div>
@@ -22,14 +27,14 @@
 
 <section class="h-100vh grid md:equal-2-cols">
   
-  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-black bg-teal-200">
+  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-white bg-blue-600">
     <div class="pt-3 container-xs t-long-read">
       <h1 class="mb-0 t-bold t-center sm:t-left">Codebase is a CSS style library for the modern web</h1>
     </div>
     <div class="container-xs my-4 md:my-6 inline-flex flex-wrap col-gap-4 row-gap-2 h4">
-      <a class="t-decoration-none hover:t-decoration-underscore" href="{{ '/docs/1-getting-started/introduction/' | url }}">Docs</a>
-      <a class="t-decoration-none hover:t-decoration-underscore" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download CSS</a>
-      <a class="t-decoration-none hover:t-decoration-underscore" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
+      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="{{ '/docs/1-getting-started/introduction/' | url }}">Docs</a>
+      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download CSS</a>
+      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
     </div>
     <div class="pb-3 container-xs mx-auto grid xs:equal-2-cols col-gap-3 row-gap-1">
       <div class="flex flex-column gap-1">
@@ -37,8 +42,8 @@
         <span>CSS file size: {{ metadata.css_filesize }}</span>
       </div>
       <div class="flex flex-column gap-1">
-        <span>Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></span>
-        <span>Developer: <a class="t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
+        <span>Licence: <a class="t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline"href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></span>
+        <span>Developer: <a class="t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
       </div>
     </div>
   </div>
@@ -51,7 +56,7 @@
 </section>
   
 
-<main class="py-3 bg-blue-300">
+<main class="py-3 bg-blue-100">
 
   <div class="md:py-6 container-xs t-lg">
     <p>Starting from a bespoke set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to:</p>
