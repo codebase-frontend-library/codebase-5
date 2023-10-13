@@ -4,6 +4,10 @@ _Note: update version numbers need updating every time in `metadata.json`, `pack
 
 ***
 
+## 13 Oct 2023 -- v.5.2.7
+
+* Changed `t-loose` and `t-tight` units from rems to ems.
+
 ## 20 Apr 2023 -- v.5.2.6
 
 * Added `grid-dense` to the CSS grid system.
