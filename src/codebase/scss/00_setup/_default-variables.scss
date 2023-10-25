@@ -317,19 +317,19 @@ $mq-width: (
 
   // Headings
   --h1: 2.75em;
-  --h2: 2em;
-  --h3: 1.625em;
-  --h4: 1.325em;
-  --h5: 1.125em;
-  --h6: 0.875em;
+  --h2: 2.2em;
+  --h3: 1.76em;
+  --h4: 1.41em;
+  --h5: 1.13em;
+  --h6: 0.9em;
 
   // Headings for SM (approx. 0.875 * heading values above)
-  --h1-w-sm: 2.41em;
-  --h2-w-sm: 1.75em;
-  --h3-w-sm: 1.42em;
-  --h4-w-sm: 1.16em;
-  --h5-w-sm: 1.1em;
-  --h6-w-sm: 1em;
+  --h1-w-sm: 2.441em;
+  --h2-w-sm: 1.953em;
+  --h3-w-sm: 1.563em;
+  --h4-w-sm: 1.25em;
+  --h5-w-sm: 1em;
+  --h6-w-sm: 0.8em;
 
   --hd-weight: normal;
   --hd-lh: calc(1em + .5rem); // gives .5rem more than the heading’s own size

@@ -15,7 +15,9 @@ Heading font weights have been set to `normal` (default). You can override this 
 
 Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 [element grid]({{ '/docs/1-getting-started/element-grid' | url }}) units, or _one line-height of the default text size_ (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.
 
-Below the `sm` small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.
+Since Codebase v.5.2.8 heading sizes have been set up using the _major third typographic scale_, calculated by [https://type-scale.com](https://type-scale.com). Heading sizes are set using ems, so that they can be `clamp()` enlarged by wrapping with utility class `.t-long-read`.
+
+Below the `sm` small media query breakpoint (768px, default), heading variables `--h1` thorugh `--h6` are size reduced to 87.5%, so that they do not look too big on small devices.
 
 **Note:** The demo headings below are actually faked using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.
 

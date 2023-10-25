@@ -541,7 +541,8 @@
 <h2 id="headings" tabindex="-1">Headings</h2>
 <p>Heading font weights have been set to <code>normal</code> (default). You can override this for all headings in the SCSS default variables, or add a bold weight yourself on a per-heading or per-word basis, for emphasis.</p>
 <p>Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 <a href="/codebase-5/docs/1-getting-started/element-grid">element grid</a> units, or <em>one line-height of the default text size</em> (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.</p>
-<p>Below the <code>sm</code> small media query breakpoint (768px, default), all headings are size reduced to 87.5%, so that they do not look too big on small devices.</p>
+<p>Since Codebase v.5.2.8 heading sizes have been set up using the <em>major third typographic scale</em>, calculated by <a href="https://type-scale.com">https://type-scale.com</a>. Heading sizes are set using ems, so that they can be <code>clamp()</code> enlarged by wrapping with utility class <code>.t-long-read</code>.</p>
+<p>Below the <code>sm</code> small media query breakpoint (768px, default), heading variables <code>--h1</code> thorugh <code>--h6</code> are size reduced to 87.5%, so that they do not look too big on small devices.</p>
 <p><strong>Note:</strong> The demo headings below are actually faked using <code>h1</code> to <code>h6</code> <a href="/codebase-5/docs/5-typographic-utilities/inline-text">text utility classes</a> – so that they are not included in the generated “Contents” list on this page.</p>
 <p class="h1"><code>h1</code> heading</p>
 <p class="h2"><code>h2</code> heading</p>
