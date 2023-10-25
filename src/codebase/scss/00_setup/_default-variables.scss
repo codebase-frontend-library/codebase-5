@@ -43,29 +43,21 @@ $color-shade-utilities: true !default;
 // But you can cgange that, because they are declared separately
 
 $theme-color: (
-"blue":     #1262ed,
-  "green":  #128a12,
-  "amber":  #f0b300,
-  "red":    #cf000f,
+  "blue": #1262ed,
+  "green": #128a12,
+  "amber": #f0b300,
+  "red": #cf000f,
   "purple": #9400d3,
-  "teal":   #0080a2,
-  "gray":   #767676,
+  "teal": #0080a2,
+  "gray": #767676,
 );
 
-// "info":      #1262ed   // background contrast ratio 5.26:1 against WHITE text
-// "success":   #128a12   // background contrast ratio 4.5:1 against WHITE text
-// "warning":   #f0b300   // background contrast ratio 11.15:1 against BLACK text
-// "danger":    #cf000f   // background contrast ratio 5.74:1 against WHITE text
-// "primary":   #9400d3   // background contrast ratio 6.56:1 against WHITE text
-// "secondary": #0080a2   // background contrast ratio 4.56:1 against WHITE text
-// "tertiary":  #767676   // background contrast ratio 4.54:1 against WHITE text
-
 $ui-color: (
-  "info":     #1262ed,
-  "success":  #128a12,
-  "warning":  #F5D042,
-  "danger":   #cf000f,
-  "primary":  #9400d3,
+  "info": #1262ed,
+  "success": #128a12,
+  "warning": #F5D042,
+  "danger": #cf000f,
+  "primary": #9400d3,
   "secondary":#0080a2,
   "tertiary": #767676,
 );
@@ -190,15 +182,6 @@ $mq-width: (
   "sm": "w-sm",
   "md": "w-md",
   "lg": "w-lg",
-);
-
-$heading-size: (
-  "h1": 2.75em,
-  "h2": 2em,
-  "h3": 1.625em,
-  "h4": 1.325em,
-  "h5": 1.125em,
-  "h6": 1em
 );
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -338,7 +321,16 @@ $heading-size: (
   --h3: 1.625em;
   --h4: 1.325em;
   --h5: 1.125em;
-  --h6: 1em;
+  --h6: 0.875em;
+
+  // Headings for SM (approx. 0.875 * heading values above)
+  --h1-w-sm: 2.41em;
+  --h2-w-sm: 1.75em;
+  --h3-w-sm: 1.42em;
+  --h4-w-sm: 1.16em;
+  --h5-w-sm: 1.1em;
+  --h6-w-sm: 1em;
+
   --hd-weight: normal;
   --hd-lh: calc(1em + .5rem); // gives .5rem more than the heading’s own size
 

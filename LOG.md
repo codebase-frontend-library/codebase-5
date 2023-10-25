@@ -1,8 +1,10 @@
 # Log
 
-_Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `LOG.md`, and `codebase.scss`_
+<!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `LOG.md`, and `codebase.scss` -->
 
-***
+## 25 Oct 2023 -- v.5.2.8
+
+* Improved heading variables, so that `--h1` thorugh `--h6` scale down by ~0.875 for `sm` viewports. Now, the heading variables can be safely be utilised by the designer.
 
 ## 13 Oct 2023 -- v.5.2.7
 

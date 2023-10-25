@@ -74,47 +74,15 @@ h6,
 
 @include break-max(w-sm) {
 
-  h1,
-  .h1 {
-    font-size: calc(#{var(--h1)} * 0.875);
-  }
-
-  h2,
-  .h2 {
-    font-size: calc(#{var(--h2)} * 0.875);
-  }
-
-  h3,
-  .h3 {
-    font-size: calc(#{var(--h3)} * 0.875);
-  }
-
-  h4,
-  .h4 {
-    font-size: calc(#{var(--h4)} * 0.875);
-  }
-
-  h5,
-  .h5 {
-    font-size: calc(#{var(--h5)} * 0.875);
-  }
-
-  h6,
-  .h6 {
-    font-size: calc(#{var(--h6)} * 0.875);
+  :root {
+    --h1: var(--h1-w-sm);
+    --h2: var(--h2-w-sm);
+    --h3: var(--h3-w-sm);
+    --h4: var(--h4-w-sm);
+    --h5: var(--h5-w-sm);
+    --h6: var(--h6-w-sm);
   }
 }
-
-// p, li, dd, th, td, blockquote,
-// h1, .h1,
-// h2, .h2,
-// h3, .h3,
-// h4, .h4,
-// h5, .h5,
-// h6, .h6 {
-//   overflow-wrap: break-word;
-//   hyphens: auto;
-// }
 
 p,
 blockquote,
