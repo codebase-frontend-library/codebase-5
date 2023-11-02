@@ -1,6 +1,10 @@
-# Log
+# Changelog
 
-<!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `LOG.md`, and `codebase.scss` -->
+<!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
+
+## 2 Nov 2023 -- v.5.2.9
+
+* Improved `t-link-inside` and `t-link`
 
 ## 25 Oct 2023 -- v.5.2.8
 
@@ -8,7 +12,7 @@
 
 ## 13 Oct 2023 -- v.5.2.7
 
-* Changed `t-loose` and `t-tight` units from rems to ems.
+* Changed `t-loose` and `t-tight` units from `rem` to `em`. Improvement shows more when used on headings.
 
 ## 20 Apr 2023 -- v.5.2.6
 

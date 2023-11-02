@@ -151,12 +151,13 @@ blockquote {
   font-size: var(--bq-fs);
 }
 
-.t-link-inside {
+a.t-link-inside {
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 
-.t-link-inside:hover .t-link {
+a.t-link-inside:hover {
   color: inherit;
 }
 
@@ -180,6 +181,7 @@ a {
   cursor: pointer;
   transition: var(--ease);
 
+  &.t-link-inside:hover .t-link,
   &:hover,
   &:active {
     color: var(--c-link-hover);

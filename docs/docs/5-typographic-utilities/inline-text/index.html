@@ -8,7 +8,7 @@
   <title>Inline text - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.8" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.9" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -243,7 +243,7 @@
     <div class="p-2">
       <a
         id="site-title"
-        class="mb-0 ml-1 t-decoration-none"
+        class="mb-0 ml-1 t-decoration-none t-teal-600 hover:t-black"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -261,7 +261,7 @@
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.8">Download CSS</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.9">Download CSS</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -316,7 +316,7 @@
       <div id="side-menu-wrap" class="p-2 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.8">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.9">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -594,17 +594,26 @@
 </ul>
 <h2 id="links" tabindex="-1">Links</h2>
 <p>Links (also called <em>hyperlinks</em>) in Codebase are blue with an underscore by default, following the old tradition.</p>
-<p><strong>What if you wanted a whole panel, <a href="/codebase-5/docs/6-simple-components/cards">card</a>, or <a href="/codebase-5/docs/6-simple-components/heros">hero</a> block to operate as a link?</strong> You can simply use the <code>&lt;a href=&quot;&quot;&gt;</code> link tag instead of the outer <code>&lt;div&gt;</code>, and give it a Codebase <code>block</code> class to make it a block instead of an inline element:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>`</code></pre>
-<p><strong>Then, what if you only wanted some of the text in the panel to be styled as the link, but not some accompanying text?</strong> Codebase has you covered. Since v.5.0.8, you can put class <code>t-typerlink-inside</code> on the wrapper <code>&lt;a&gt;</code> tag and pair this with <code>t-link</code> on the text that you want to be the inner link (this would be the panel title).</p>
-<p><code>t-link-inside</code> simply removes the traditional link underscore. And <code>t-link</code> reinstates the underscore, on the element to which is applied. Everything else is handled either by the wrapper <code>&lt;a&gt;</code> tag, and by Codebase decoration classes.</p>
-<p><strong>Note:</strong> <code>t-link</code> doesn’t actually make an element <em>operate</em> like an <code>&lt;a&gt;</code> tag.</p>
-<a class="block container-xs mb-3 b-thin p-2 t-link-inside" href="#/">
-    <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+<p><strong>What if you wanted a whole panel, <a href="/codebase-5/docs/6-simple-components/cards">card</a>, or <a href="/codebase-5/docs/6-simple-components/heros">hero</a> to operate as a link?</strong> You can simply use the <code>&lt;a&gt;</code> link tag instead of the outer <code>&lt;div&gt;</code>, and give it a Codebase <code>block</code> class to make it a block instead of an inline element:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Then, what if you only wanted <em>some</em> of the text in the panel to be styled as the link, but not other accompanying text?</strong> Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-inside</code> on the wrapper <code>&lt;a&gt;</code> tag, and <code>t-link</code> on the inner text that you want to be the pseudo link (e.g. on the panel title text).</p>
+<ul>
+<li>
+<p>The <code>t-link-inside</code> class (must be applied to the <code>&lt;a&gt;</code> wrapper) simply removes the traditional link underscore, and resets its link text color to inherit the color of the surrounding/ “parent” panel text. (The surrounding text usually has the default text color, almost black.)</p>
+</li>
+<li>
+<p>And the <code>t-link</code> class <em>makes its element only look like a link</em> by adding back the underscore, link color, and link hover color.</p>
+</li>
+</ul>
+<p>The link functionality is still handled by the wrapper <code>&lt;a&gt;</code> tag. <code>t-link</code> doesn’t actually make an element <em>operate</em> like a link.</p>
+<p>Example:</p>
+<a class="block mb-3 b-thin p-2 t-link-inside" href="#/">
+    <h4 class="t-link">Card title</h4>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block container-xs mb-3 b-thin p-2 t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-gray-900 mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p>Above, that color change on hover isn’t very obvious. But you can add some extras, to suit your own design. For example:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Above, that <code>&lt;h4 class=&quot;t-link&quot;&gt;</code> pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design.</p>
+<p>Another example:</p>
 <style>
     .example .t-link {
         text-decoration: none;
@@ -615,10 +624,10 @@
 </style>
 <a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 <p>The box shadow on hover above is supplied by a Codebase <a href="/codebase-5/docs/4-decoration-utilities/box-shadows">box shadow</a>.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.example .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.example:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-gray-900 mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.example .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.example:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example block b-thin p-2 hover:bs-3 t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="other-text-utilities" tabindex="-1">Other text utilities</h2>
 <ul>
 <li>
@@ -647,15 +656,15 @@
 </li>
 <li>
 <p><code>t-loose</code></p>
-<p>For when you need some text to have <span class="t-loose">a little extra letter-spacing</span></p>
+<p>For when you need some text to have <span class="t-loose">extra letter-spacing</span></p>
 </li>
 <li>
 <p><code>t-tight</code></p>
-<p>For when you need some text to have <span class="t-tight">a little less letter-spacing</span></p>
+<p>For when you need some text to have <span class="t-tight">less letter-spacing</span></p>
 </li>
 <li>
 <p><code>t-nowrap</code></p>
-<p>For when you don’t want a portion of text to wrap on to a newline (not demonstrated here).</p>
+<p>For when you <em>don’t</em> want a portion of text to wrap on to a newline (not demonstrated here).</p>
 </li>
 </ul>
 
@@ -678,7 +687,7 @@
 
 </div>
 
-<footer class="relative py-6 bg-blue-700 t-center t-gray-300">
+<footer class="relative py-6 bg-teal-700 t-center t-teal-200">
   <p class="sm:mt-6">
     <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
@@ -696,7 +705,7 @@
     </a>
   </p>
   
-  <p>Version 5.2.8 • <a class="t-blue-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-blue-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.9 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

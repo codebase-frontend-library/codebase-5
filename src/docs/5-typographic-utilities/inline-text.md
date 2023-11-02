@@ -69,33 +69,39 @@ Codebase has several simple text utility classes. (See also [font-stacks]({{ '/d
 
 Links (also called _hyperlinks_) in Codebase are blue with an underscore by default, following the old tradition.
 
-**What if you wanted a whole panel, [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) block to operate as a link?** You can simply use the `<a href="">` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
+**What if you wanted a whole panel, [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) to operate as a link?** You can simply use the `<a>` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
 
 ```html
 <a class="block" href="">
     ...
-</a>`
+</a>
 ```
 
-**Then, what if you only wanted some of the text in the panel to be styled as the link, but not some accompanying text?** Codebase has you covered. Since v.5.0.8, you can put class `t-typerlink-inside` on the wrapper `<a>` tag and pair this with `t-link` on the text that you want to be the inner link (this would be the panel title).
+**Then, what if you only wanted _some_ of the text in the panel to be styled as the link, but not other accompanying text?** Codebase has you covered. Since v.5.0.8, you can put class `t-link-inside` on the wrapper `<a>` tag, and `t-link` on the inner text that you want to be the pseudo link (e.g. on the panel title text).
 
-`t-link-inside` simply removes the traditional link underscore. And `t-link` reinstates the underscore, on the element to which is applied. Everything else is handled either by the wrapper `<a>` tag, and by Codebase decoration classes.
+* The `t-link-inside` class (must be applied to the `<a>` wrapper) simply removes the traditional link underscore, and resets its link text color to inherit the color of the surrounding/ “parent” panel text. (The surrounding text usually has the default text color, almost black.)
 
-**Note:** `t-link` doesn’t actually make an element _operate_ like an `<a>` tag.
+* And the `t-link` class _makes its element only look like a link_ by adding back the underscore, link color, and link hover color. 
 
-<a class="block container-xs mb-3 b-thin p-2 t-link-inside" href="#/">
-    <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+The link functionality is still handled by the wrapper `<a>` tag. `t-link` doesn’t actually make an element _operate_ like a link.
+
+Example:
+
+<a class="block mb-3 b-thin p-2 t-link-inside" href="#/">
+    <h4 class="t-link">Card title</h4>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 
 ```html
-<a class="block container-xs mb-3 b-thin p-2 t-link-inside" href="#/">
-    <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+<a class="block t-link-inside" href="">
+    <h4 class="t-link">Card title</h4>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```
 
-Above, that color change on hover isn’t very obvious. But you can add some extras, to suit your own design. For example:
+Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design.
+
+Another example:
 
 <style>
     .example .t-link {
@@ -108,7 +114,7 @@ Above, that color change on hover isn’t very obvious. But you can add some ext
 
 <a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 
 The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4-decoration-utilities/box-shadows' | url }}).
@@ -123,9 +129,9 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
     }
 </style>
 
-<a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside" href="#/">
+<a class="example block b-thin p-2 hover:bs-3 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
-    <p class="t-gray-900 mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```
 
@@ -158,12 +164,12 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
 
 * `t-loose`
 
-    For when you need some text to have <span class="t-loose">a little extra letter-spacing</span>
+    For when you need some text to have <span class="t-loose">extra letter-spacing</span>
 
 * `t-tight`
 
-    For when you need some text to have <span class="t-tight">a little less letter-spacing</span>
+    For when you need some text to have <span class="t-tight">less letter-spacing</span>
 
 * `t-nowrap`
 
-    For when you don’t want a portion of text to wrap on to a newline (not demonstrated here).
+    For when you _don’t_ want a portion of text to wrap on to a newline (not demonstrated here).

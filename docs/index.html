@@ -8,7 +8,7 @@
   <title>Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.8" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.9" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -160,7 +160,7 @@
     <div class="p-2">
       <a
         id="site-title"
-        class="mb-0 ml-1 t-decoration-none"
+        class="mb-0 ml-1 t-decoration-none t-teal-800 hover:t-black"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -180,46 +180,46 @@
 
 <section class="h-100vh grid md:equal-2-cols">
   
-  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-white bg-blue-600">
+  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-white bg-teal-600">
     <div class="pt-3 container-xs t-long-read">
-      <h1 class="mb-0 t-bold t-center sm:t-left">Codebase is a business class CSS style library for the modern web</h1>
+      <h1 class="mb-0 t-thin t-center sm:t-left">Codebase is a <span class="h5 t-heavy">business class</span> CSS style library for the modern web</h1>
     </div>
-    <div class="container-xs my-4 md:my-6 inline-flex flex-wrap col-gap-4 row-gap-2 h4">
-      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="/codebase-5/docs/1-getting-started/introduction/">Docs</a>
-      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="/codebase-5/dist/codebase.css?v=5.2.8">Download CSS</a>
-      <a class="t-semibold t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
+    <div class="container-xs my-4 md:my-6 inline-flex flex-wrap gap-2 h4">
+      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="/codebase-5/docs/1-getting-started/introduction/">Docs</a>
+      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="/codebase-5/dist/codebase.css?v=5.2.9">Download CSS</a>
+      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
     </div>
     <div class="pb-3 container-xs mx-auto grid xs:equal-2-cols col-gap-3 row-gap-1">
       <div class="flex flex-column gap-1">
-        <span>Current version: 5.2.8</span>
+        <span>Current version: 5.2.9</span>
         <span>CSS file size: 89 KB</span>
       </div>
       <div class="flex flex-column gap-1">
-        <span>Licence: <a class="t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline"href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></span>
-        <span>Developer: <a class="t-purple-200 hover:t-white t-decoration-none hover:t-decoration-underline t-nowrap" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
+        <span>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></span>
+        <span>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
       </div>
     </div>
   </div>
   <div class="md:px-6 flex flex-column flex-center flex-middle">
     <div class="py-3 container-xs t-long-read">
-      <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <code>grid</code>, <code>clamp()</code>,<code>var()</code>.</p>
+      <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <code>grid</code>, <code>clamp()</code>, and <code>var()</code>.</p>
       <p class="mb-0">Plus, Codebase pairs well with <a href="https://alpinejs.dev" target="_blank">AlpineJS</a>.</p>
     </div>
   </div>
 </section>
   
 
-<main class="py-3 bg-blue-100">
+<main class="py-3 bg-teal-100">
 
-  <div class="md:py-6 container-xs t-lg">
-    <p>Starting from a bespoke set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to:</p>
+  <div class="md:py-6 container-sm t-lg">
+    <p>Starting from a beautifully minimalist set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to all this and more:</p>
   </div>
 
-    <div class="container-lg grid xs:equal-2-cols gap-3 md:gap-6">
+    <div class="container-lg grid xs:equal-2-cols md:equal-3-cols gap-3 md:gap-6">
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2>Typography</h2>
-        <ul>
+        <ul class="mb-0">
           <li>Serif, sans-serif, and monospaced font stacks</li>
           <li>Heading size formats</li>
           <li>Font weights: lighter, normal, semi-bold, bold, heavy</li>
@@ -231,20 +231,20 @@
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2>Responsive layouts</h2>
-        <ul>
+        <ul class="mb-0">
           <li>A range of centered container, width, and height utilities</li>
           <li>Real two-dimensional CSS grid layouts for templating</li>
           <li>Flexbox layouts for components</li>
           <li>Fixed and sticky positioning</li>
           <li>Aspect-ratio controlled squared tiles</li>
           <li>Edge positioning</li>
-          <li>Invisibility classes</li>
+          <li>Responsive invisibility classes</li>
         </ul>
       </div>
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2>Decoration</h2>
-        <ul>
+        <ul class="mb-0">
           <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
           <li>Box-model spacing and borders</li>
           <li>Box shadows for layering</li>
@@ -253,17 +253,19 @@
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2>Image handling</h2>
-        <ul>
+        <ul class="mb-0">
+          <li>Responsive images</li>
           <li>Cover images and positioning</li>
-          <li>A wide range of aspect ratios</li>
-          <li>Filters and opacities</li>
+          <li>A wide range of aspect ratios — for traditional image sizes and squared tiles</li>
+          <li>Image filters and opacities</li>
           <li>Glassmorphic overlays</li>
         </ul>
       </div>
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2>Simple components (no JavaScript)</h2>
-        <ul>
+        <p class="mb-2">Examples:</p>
+        <ul class="mb-0">
           <li>Buttons</li>
           <li>Badges</li>
           <li>Labels</li>
@@ -276,7 +278,8 @@
 
       <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
         <h2> Alpine.JS powered components</h2>
-        <ul>
+        <p class="mb-2">Examples:</p>
+        <ul class="mb-0">
           <li>Collapse (slide reveal)</li>
           <li>Dropdowns</li>
           <li>Modals and lightboxes</li>
@@ -289,15 +292,13 @@
 
     </div>
 
-    <p class="mt-6 mb-0 t-center t-lg">
-      <a class="t-decoration-none hover:t-decoration-underscore" href="/codebase-5/docs/1-getting-started/introduction/">Documentation &rarr;</a>
+    <p class="my-6 pb-6 t-center t-lg">
+      <a class="inline-block b-thick b-teal-600 rounded-pill px-3 md:px-6 py-1 t-decoration-none t-heavy t-loose t-teal-600 hover:t-white hover:bg-teal-600" href="/codebase-5/docs/1-getting-started/introduction/">Get started &rarr;</a>
     </p>
-
-    <hr class="container-lg mt-6 b-gray-600">
 
     <div class="container-sm my-6 xs:t-center">
       <p>
-        Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing SCSS.
+        Codebase and its documentation is developed in the <a href="https://www.11ty.dev/">Eleventy</a> static website generator, with NPM modules for preprocessing <a href="https://sass-lang.com">SCSS</a>.
       </p>
       <p>
         AlpineJS and its plugins are provided from the CDN recommended in the <a href="https://alpinejs.dev/)">AlpineJS.dev</a> docs.
@@ -313,7 +314,7 @@
   </main>
 </div>
 
-<footer class="relative py-6 bg-blue-700 t-center t-gray-300">
+<footer class="relative py-6 bg-teal-700 t-center t-teal-200">
   <p class="sm:mt-6">
     <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
@@ -331,7 +332,7 @@
     </a>
   </p>
   
-  <p>Version 5.2.8 • <a class="t-blue-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-blue-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.9 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 
