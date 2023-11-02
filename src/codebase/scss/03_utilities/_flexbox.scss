@@ -98,7 +98,7 @@ $mq-value in $mq-width {
 $mq-value in $mq-width {
   .#{$mq-key}\:flex {
     @include break-min(#{$mq-value}) {
-      display: flex;
+      @include flex;
     }
   }
 }
