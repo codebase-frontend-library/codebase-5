@@ -5,6 +5,7 @@
 ## 2 Nov 2023 -- v.5.2.9
 
 * Added `xs:`, `sm:`, `md:`, and `lg:` media query tiered variants to all `flex` modifier classes.
+* Added `xs:`, `sm:`, `md:`, and `lg:` media query tiers to `grid` wrapper setup classes.
 * Improved `t-link-inside` and `t-link`
 * Added `rounded-xl`
 
