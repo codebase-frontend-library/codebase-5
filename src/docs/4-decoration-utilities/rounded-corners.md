@@ -116,4 +116,4 @@ These `unrounded-*` classes work on all the `rounded-*` variations above. They a
 </div>
 </div>
 
-`unrounded` (alias `unrounded-all`) is useful if you need to remove rounded corners on a middle button in a button bar.
+`unrounded` (alias `unrounded-all`) is useful if you need to remove rounded corners on a middle button within a button bar.
