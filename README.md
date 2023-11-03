@@ -1,10 +1,10 @@
 # Codebase 5
 
-**Codebase 5 is a modern website SCSS library.**
+Codebase is a **business class** CSS style library for the modern web.
 
 Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.
 
-Plus, Codebase pairs well with AlpineJS.
+Plus, Codebase pairs well with [AlpineJS](https://alpinejs.dev).
 
 **New in v.5.2:** CSS variables.
 
