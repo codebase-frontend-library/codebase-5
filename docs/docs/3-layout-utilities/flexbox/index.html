@@ -678,17 +678,18 @@
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 250px</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  &lt;div class="grow>grow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="responsive-flex-modifier-tiers" tabindex="-1">Responsive flex modifier tiers</h2>
-<p>New in <code>v.5.2.9</code>: In addition to the <code>flex</code> setup class, you can also override eah of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths:</p>
+<p>New in Codebase v.5.2.9: In addition to the <code>flex</code> setup class, you can also override eah of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths:</p>
 <ul>
 <li><code>flex-start</code> / <code>flex-center</code> / <code>flex-end</code></li>
 <li><code>flex-top</code> / <code>flex-middle</code> / <code>flex-bottom</code></li>
 <li><code>flex-column</code> / <code>flex-column-reverse</code></li>
 <li><code>flex-row</code> / <code>flex-row-reverse</code></li>
-<li><code>flex-space-around</code> / <code>flex-space-between</code></li>
+<li><code>flex-space-around</code> / <code>flex-space-between</code> / <code>flex-space-evenly</code></li>
 <li><code>flex-grow-auto</code> / <code>flex-grow-equal</code></li>
 <li><code>flex-wrap</code></li>
 </ul>
-<p>Example: in this simple menubar, the links are centered forsmall viewports and right-aligned for medium viewports up:</p>
+<p>So, you can create layout components that use flexbox positioning, orienting, ordering, spacing, growing (stretching), and wrapping differently for different devices.</p>
+<p>Example: in this simple menubar, the links are centered for small viewports and right-aligned for medium viewports up:</p>
 <nav class="mb-3 b-thin p-block flex flex-center md:flex-end gap-2">
   <a href="#/">About</a>
   <a href="#/">Blog</a>

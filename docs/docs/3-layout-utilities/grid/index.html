@@ -600,6 +600,41 @@
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
+<h3 id="responsive-grid" tabindex="-1">Responsive grid</h3>
+<p>New in Codebase v.5.2.9: you can use the <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base <code>grid</code> class, there are 5 grid system tiers.</p>
+<div class="overflow-x mb-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grid system wrapper</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>grid</code></td>
+        <td><code>display: grid;</code> for all viewport widths</td>
+      </tr>
+      <tr>
+        <td><code>xs:grid</code></td>
+        <td><code>display: grid;</code> from 568px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>sm:grid</code></td>
+        <td><code>display: grid;</code> from 768px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>md:grid</code></td>
+        <td><code>display: grid;</code> from 1024px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>lg:grid</code></td>
+        <td><code>display: grid;</code> from 1280px (default) up</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Below these breakpoints the CSS grid layout will not take effect.</p>
 <h3 id="grid-item-wrapping" tabindex="-1">Grid item wrapping</h3>
 <p>Grid items will <em>automatically wrap</em> onto a new row if your layout requires it. (This is not like flexbox, where you need to command a flexbox to wrap using a style rule.)</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>

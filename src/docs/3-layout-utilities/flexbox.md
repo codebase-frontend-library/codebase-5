@@ -204,17 +204,19 @@ With `flex flex-column` (and the flex wrapper has `style="height: 250px"` for th
 
 ## Responsive flex modifier tiers
 
-New in `v.5.2.9`: In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths:
+New in Codebase v.5.2.9: In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths:
 
 * `flex-start` / `flex-center` / `flex-end` 
 * `flex-top` / `flex-middle` / `flex-bottom`
 * `flex-column` / `flex-column-reverse`
 * `flex-row` / `flex-row-reverse`
-* `flex-space-around` / `flex-space-between`
+* `flex-space-around` / `flex-space-between` / `flex-space-evenly`
 * `flex-grow-auto` / `flex-grow-equal`
 * `flex-wrap`
 
-Example: in this simple menubar, the links are centered forsmall viewports and right-aligned for medium viewports up:
+So, you can create layout components that use flexbox positioning, orienting, ordering, spacing, growing (stretching), and wrapping differently for different devices.
+
+Example: in this simple menubar, the links are centered for small viewports and right-aligned for medium viewports up:
 
 <nav class="mb-3 b-thin p-block flex flex-center md:flex-end gap-2">
   <a href="#/">About</a>

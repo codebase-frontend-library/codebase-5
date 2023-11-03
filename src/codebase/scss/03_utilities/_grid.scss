@@ -221,6 +221,7 @@
 
 .grid {
   display: grid;
+
   &-dense {
     grid-auto-flow: dense;
   }
@@ -288,6 +289,10 @@
 $mq-value in $mq-width {
   .#{$mq-key} {
     @include break-min(#{$mq-value}) {
+      &\:grid {
+        display: grid;
+      }
+
       &\:auto {
         @include grid-auto;
       }

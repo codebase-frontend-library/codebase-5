@@ -79,6 +79,46 @@ The `grid` class does not specify or predict where you will position or how you 
   <div class="b-thin p-1 bg-gray-100">&nbsp;</div>
 </div>
 
+### Responsive grid
+
+New in Codebase v.5.2.9: you can use the `xs:`, `sm:`, `md:`, and `lg:` prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base `grid` class, there are 5 grid system tiers.
+
+<div class="overflow-x mb-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grid system wrapper</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>grid</code></td>
+        <td><code>display: grid;</code> for all viewport widths</td>
+      </tr>
+      <tr>
+        <td><code>xs:grid</code></td>
+        <td><code>display: grid;</code> from 568px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>sm:grid</code></td>
+        <td><code>display: grid;</code> from 768px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>md:grid</code></td>
+        <td><code>display: grid;</code> from 1024px (default) up</td>
+      </tr>
+      <tr>
+        <td><code>lg:grid</code></td>
+        <td><code>display: grid;</code> from 1280px (default) up</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Below these breakpoints the CSS grid layout will not take effect.
+
+
 ### Grid item wrapping
 
 Grid items will _automatically wrap_ onto a new row if your layout requires it. (This is not like flexbox, where you need to command a flexbox to wrap using a style rule.)
