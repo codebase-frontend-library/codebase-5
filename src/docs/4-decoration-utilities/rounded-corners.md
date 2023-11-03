@@ -9,12 +9,14 @@ nextLink: "Box shadows"
 
 There are several options for rounded corners in Codebase, handled by CSS border radius. All of these apply to <em>all four corners</em> of an element.
 
-## Five levels of roundness
+## Six “levels” of roundness
 
-* `rounded-sm` / `rounded` / `rounded-lg` / `rounded-pill` / `rounded-full`
+* `rounded-sm` / `rounded` / `rounded-lg` / `rounded-xl` / `rounded-pill` / `rounded-full`
+
+New in Codebase v.5.2.9: `rounded-xl`.
 
 <div class="my-6">
-  <div class="grid gap-3 equal-2-cols sm:equal-3-cols t-center">
+  <div class="grid gap-3 equal-2-cols xs:equal-4-cols t-center">
     <div>
       <div class="mx-auto p-1 b-thin rounded-sm" style="width:100px;height:100px;"></div>rounded-sm <br> <span class="t-teal-600">border-radius<br>= 0.25rem (4px) default</span>
     </div>
@@ -24,18 +26,36 @@ There are several options for rounded corners in Codebase, handled by CSS border
     <div>
       <div class="mx-auto p-1 b-thin rounded-lg" style="width:100px;height:100px;"></div>rounded-lg <br> <span class="t-teal-600">border-radius<br>= 1rem (16px) default</span>
     </div>
-    <div class="cols-1-2">
-      <div class="mx-auto p-1 b-thin rounded-pill" style="width:100px;">&nbsp;</div>rounded-pill <br> <span class="t-teal-600">This will round the left and right of buttons, form elements, etc. where the content width is greater than its height.</span>
-    </div>
     <div>
+      <div class="mx-auto p-1 b-thin rounded-xl" style="width:100px;height:100px;"></div>rounded-xl <br> <span class="t-teal-600">border-radius<br>= 2rem (40px) default</span>
+    </div>
+    <div class="cols-1-2">
+      <div class="mx-auto p-1 b-thin rounded-pill" style="width:200px;height:100px;">&nbsp;</div>rounded-pill <br> <span class="t-teal-600">This will round the left and right of buttons, form elements, etc. where the content width is greater than its height.</span>
+    </div>
+    <div class="cols-1-2 xs:cols-3-4">
       <div class="mx-auto p-1 b-thin rounded-full" style="width:100px;height:100px;"></div>rounded-full <br> <span class="t-teal-600">This will produce an ellipse if the block element is not a square.</span>
     </div>
   </div>
 </div>
 
+Buttons and form inputs have a border radius equivalent to that of `rounded-sm`.
+
+`rounded`, `rounded-lg`, and `rounded-xl` are designed for nesting when you pair these with  `p-1`, `p-2`, or `p-3` respectively. As you can see below, the nested corners curve nicely without “pinching”.
+
+<p class="mb-1"><code>rounded-xl p-3</code>:</p>
+<div class="mb-3 b-thin rounded-xl p-3">
+<p class="mb-1"><code>rounded-lg p-2</code>:</p>
+<div class="b-thin rounded-lg p-2">
+<p class="mb-1"><code>rounded p-1</code>:</p>
+<div class="b-thin rounded p-1">
+<button>Button</button> — has equivalent of <code>rounded-sm</code> built in
+</div>
+</div>
+</div>
+
 ## Rounded corners on images
 
-If you use a `rounded` utility on a _wrapper_ around an image without padding), you will also need to add `overflow: hidden;` so that the corners of the image are hidden.
+If you use a `rounded` utility on a _wrapper_ around an image (without padding), you will also need to add `overflow: hidden;` so that the corners of the image are are hidden (seemingly “clipped”) by the wrapper’s rounded corners.
 
 <div class="grid gap-3 sm:equal-3-cols">
   <div>

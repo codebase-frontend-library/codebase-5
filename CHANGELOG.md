@@ -6,6 +6,7 @@
 
 * Added `xs:`, `sm:`, `md:`, and `lg:` media query tiered variants to all `flex` modifier classes.
 * Improved `t-link-inside` and `t-link`
+* Added `rounded-xl`
 
 ## 25 Oct 2023 -- v.5.2.8
 

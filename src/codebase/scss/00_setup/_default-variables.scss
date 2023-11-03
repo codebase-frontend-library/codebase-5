@@ -277,9 +277,10 @@ $mq-width: (
   --line-detail: var(--b1) solid var(--c-detail); // used on hr, table cell borders, inputs, classic tabs.
 
   // border radius for rounded corners
-  --rad-sm: .25rem;
-  --rad: .5rem;
-  --rad-lg: 1rem;
+  --rad-sm: .25rem; // 4px default
+  --rad: .5rem; // 8px default
+  --rad-lg: 1rem; // 16px default
+  --rad-xl: 2.5rem; // 40px default
   --rad-pill: 99em;
   --rad-circle: 50%;
 
