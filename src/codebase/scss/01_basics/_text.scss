@@ -157,10 +157,6 @@ a.t-link-inside {
   color: inherit;
 }
 
-a.t-link-inside:hover {
-  color: inherit;
-}
-
 .t-link {
   &:-moz-focusring {
     outline: var(--focus-outline);
@@ -181,7 +177,6 @@ a {
   cursor: pointer;
   transition: var(--ease);
 
-  &.t-link-inside:hover .t-link,
   &:hover,
   &:active {
     color: var(--c-link-hover);
