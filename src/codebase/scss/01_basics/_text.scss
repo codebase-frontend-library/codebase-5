@@ -151,25 +151,6 @@ blockquote {
   font-size: var(--bq-fs);
 }
 
-a.t-link-inside {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-
-.t-link {
-  &:-moz-focusring {
-    outline: var(--focus-outline);
-    box-shadow: var(--focus-shadow);
-  }
-
-  &:focus-visible {
-    outline: var(--focus-outline);
-    box-shadow: var(--focus-shadow);
-  }
-}
-
-.t-link,
 a {
   text-decoration: var(--link);
   text-decoration-skip-ink: auto;

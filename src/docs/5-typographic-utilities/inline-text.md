@@ -88,18 +88,18 @@ The link functionality is still handled by the wrapper `<a>` tag. `t-link` doesn
 Example:
 
 <a class="block mb-3 b-thin p-2 t-link-inside" href="#/">
-    <h4 class="t-link">Card title</h4>
+    <p class="h4 t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 
 ```html
 <a class="block t-link-inside" href="">
-    <h4 class="t-link">Card title</h4>
+    <p class="h4 t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```
 
-Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design.
+Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design—whether from Codebase utilities or your own CSS.
 
 Another example:
 
@@ -112,7 +112,7 @@ Another example:
     }
 </style>
 
-<a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside" href="#/">
+<a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside t-gray-700 hover:t-gray-800" href="#/">
     <p class="h4 t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
