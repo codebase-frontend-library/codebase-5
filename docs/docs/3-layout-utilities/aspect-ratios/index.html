@@ -8,7 +8,7 @@
   <title>Aspect ratios - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.9" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.10" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -261,7 +261,7 @@
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.9">Download CSS</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.10">Download CSS</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -316,7 +316,7 @@
       <div id="side-menu-wrap" class="p-2 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.9">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.10">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -540,9 +540,7 @@
       <p>Here are several utility classes that can be used on <em>wrapper</em> elements for constraining the aspect ratio of whatever is their immediate child element. These can be used to wrap tiles, cards, images, videos, embeds, or whatever you need to be constrained to an aspect ratio.</p>
 <p>Since v.1.0.3, Codebase 5 uses the new <code>aspect-ratio</code> CSS property, since this has seen <a href="https://caniuse.com/mdn-css_properties_aspect-ratio">widespread adoption in browsers in 2021</a>.</p>
 <h2 id="notes-on-aspect-ratios" tabindex="-1">Notes on aspect ratios</h2>
-<ol>
-<li>Codebase 5’s <code>aspect-ratio</code> classes maintain a block wrapper’s aspect ratio <em>unless deformed by excess content within</em>. For example, you may have a <a href="/codebase-5/docs/6-simple-components/heros">hero image with a text overlay</a>. On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.</li>
-</ol>
+<p>Codebase 5’s <code>aspect-ratio</code> classes maintain a block wrapper’s aspect ratio <em>unless deformed by excess content within</em>. For example, you may have a <a href="/codebase-5/docs/6-simple-components/heros">hero image with a text overlay</a>. On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ratio requires in order to still contain the overlay text.</p>
 <h2 id="image%2Fvideo-aspect-ratios" tabindex="-1">Image/video aspect ratios</h2>
 <div class="mb-3 flex flex-grow-equal flex-wrap gap-1">
   <div>
@@ -721,6 +719,15 @@
 <p><em>Images:</em>
 gulls by <a href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">Daniyal Ghanavati</a>; robin by <a href="https://www.pexels.com/photo/animal-avian-beak-bird-416179/">Pixabay</a>; swans by <a href="https://www.pexels.com/@trudie-roden-1054578?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">Trudie Roden</a>; owl by <a href="https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">Eric Karits</a>. All obtained from <a href="https://www.pexels.com">Pexels</a>.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid equal-2-cols sm:equal-3-cols<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-1 rows-1-2 aspect-ratio-1x1 aspect-ratio-1x2 relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box img-cover<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sm:col-2 sm:row-1 aspect-ratio-1x1 relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box img-cover<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sm:col-3 sm:row-1 aspect-ratio-1x1 relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box img-cover<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cols-1-2 row-3 sm:cols-2-3 sm:row-2 aspect-ratio-1x1 aspect-ratio-2x1 relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box img-cover<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="responsive-aspect-ratio-unsetting" tabindex="-1">Responsive aspect ratio unsetting</h2>
+<p>There may be situations on large viewports where it makes sense to unset (i.e. reset or override) aspect ratios, and instead rely on your layout to control your components’ dimentions. For example, you may have an image panel or a card that needs to have an aspect ratio set, to make it have a (minimum) height on small devices, but on large devices that aspect ratio would interfere with your grid system layout.</p>
+<p>Since v.5.2.10, Codebase has <code>aspect-ratio-unset</code> for all of Codebase’s responsive tiers:</p>
+<ul>
+<li><code>xs:aspect-ratio-unset</code></li>
+<li><code>sm:aspect-ratio-unset</code></li>
+<li><code>lg:aspect-ratio-unset</code></li>
+<li><code>xl:aspect-ratio-unset</code></li>
+</ul>
 
     </div>
   </main>
@@ -759,7 +766,7 @@ gulls by <a href="https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=at
     </a>
   </p>
   
-  <p>Version 5.2.9 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.10 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

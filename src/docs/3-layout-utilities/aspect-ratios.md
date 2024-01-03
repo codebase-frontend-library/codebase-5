@@ -13,7 +13,7 @@ Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this h
 
 ## Notes on aspect ratios
 
-1. Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio _unless deformed by excess content within_. For example, you may have a [hero image with a text overlay]({{ '/docs/6-simple-components/heros' | url }}). On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ration requires in order to still contain the overlay text.
+Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio _unless deformed by excess content within_. For example, you may have a [hero image with a text overlay]({{ '/docs/6-simple-components/heros' | url }}). On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ratio requires in order to still contain the overlay text.
 
 ## Image/video aspect ratios 
 
@@ -281,3 +281,14 @@ gulls by [Daniyal Ghanavati](https://www.pexels.com/@daniyal-ghanavati-10741?utm
   </div>
 </div>
 ```
+
+## Responsive aspect ratio unsetting
+
+There may be situations on large viewports where it makes sense to unset (i.e. reset or override) aspect ratios, and instead rely on your layout to control your components’ dimentions. For example, you may have an image panel or a card that needs to have an aspect ratio set, to make it have a (minimum) height on small devices, but on large devices that aspect ratio would interfere with your grid system layout.
+
+Since v.5.2.10, Codebase has `aspect-ratio-unset` for all of Codebase’s responsive tiers:
+
+* `xs:aspect-ratio-unset`
+* `sm:aspect-ratio-unset`
+* `lg:aspect-ratio-unset`
+* `xl:aspect-ratio-unset`

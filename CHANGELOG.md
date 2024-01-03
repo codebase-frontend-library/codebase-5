@@ -2,6 +2,10 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 3 Jan 2024 -- v.5.2.10
+
+* Added `xs:`, `sm:`, `md:`, and `lg:` — `aspect-ratio-unset`
+
 ## 2 Nov 2023 -- v.5.2.9
 
 * Added `xs:`, `sm:`, `md:`, and `lg:` media query tiered variants to all `flex` modifier classes.

@@ -38,6 +38,10 @@
   &-32x9 {
     aspect-ratio: 32 / 9;
   }
+
+  &-unset {
+    aspect-ratio: unset;
+  }
 }
 
 @mixin aspect-ratio-squared-tiles {
