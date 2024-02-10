@@ -38,12 +38,11 @@ You can use one of these, for example, when you want an [offcanvas]({{ '/docs/7-
 
 * `w-auto` / `xs:w-auto` / `sm:w-auto` / `md:w-auto` / `lg:w-auto`
 
-### Percentile widths
+### Shrinkwrap using `w-fit-content`
 
-* `w-25%`
-* `w-50%`
-* `w-75%`
-* `w-100%`
+New in Codebase v.5.2.11: `w-fit-content` uses `width: fit-content` to “shrinkwrap” a block element’s width down to the max-width of its content, if smaller than 100%. (It is still a block element.)
+
+* `w-fit-content`
 
 ## Height constraint wrappers
 

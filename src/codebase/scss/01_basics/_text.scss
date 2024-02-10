@@ -72,15 +72,14 @@ h6,
   font-size: var(--h6);
 }
 
-@include break-max(w-sm) {
-
+@include break-min(w-md) {
   :root {
-    --h1: var(--h1-w-sm);
-    --h2: var(--h2-w-sm);
-    --h3: var(--h3-w-sm);
-    --h4: var(--h4-w-sm);
-    --h5: var(--h5-w-sm);
-    --h6: var(--h6-w-sm);
+    --h1: var(--h1-bump);
+    --h2: var(--h2-bump);
+    --h3: var(--h3-bump);
+    --h4: var(--h4-bump);
+    --h5: var(--h5-bump);
+    --h6: var(--h6-bump);
   }
 }
 

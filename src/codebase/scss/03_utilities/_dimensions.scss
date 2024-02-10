@@ -37,6 +37,10 @@
     max-width: unset;
     width: auto !important;
   }
+
+  &fit-content {
+    width: fit-content;
+  }
 }
 
 @each $mq-key,

@@ -69,15 +69,15 @@ So, you would want the most important part of the image to be in the centre-midd
 
 Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position).
 
-* `img-cover img-top`
-* `img-cover img-top-right`
-* `img-cover img-right`
-* `img-cover img-bottom-right`
+* `img-cover img-cover-top`
+* `img-cover img-cover-top-right`
+* `img-cover img-cover-right`
+* `img-cover img-cover-bottom-right`
 * `img-cover` – image is centred and middled (default)
-* `img-cover img-bottom`
-* `img-cover img-bottom-left`
-* `img-cover img-left`
-* `img-cover img-top-left`
+* `img-cover img-cover-bottom`
+* `img-cover img-cover-bottom-left`
+* `img-cover img-cover-left`
+* `img-cover img-cover-top-left`
 
 The same tall image, positioned vertically three ways (smaller images have `aspect-ratio-2x1`):
 

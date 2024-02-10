@@ -2,6 +2,15 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 10 Feb 2024 -- v.5.2.11
+
+* Adjusted headings `h1` to `h6` so that they have a ×1.125 font size increase, that takes effect at `md` (1014px default).
+* Improved `t-sm` so that its _minimum_ size is 13.5px, using `max(.75em, 13.5px)`.
+* Improved `t-lg` so that it uses a `clamp()` ramp instead of a media query for its size increase (×1.25 → 1.5).
+* Added `t-display` that increases font sizes (×1.25 → 2) using a `clamp()` ramp.
+* Added `w-fit-content`.
+* Removed `w-25%`, `w-50%`, `w-75%` as these are redundant.
+
 ## 3 Jan 2024 -- v.5.2.10
 
 * Added `xs:`, `sm:`, `md:`, and `lg:` — `aspect-ratio-unset`
@@ -10,12 +19,12 @@
 
 * Added `xs:`, `sm:`, `md:`, and `lg:` media query tiered variants to all `flex` modifier classes.
 * Added `xs:`, `sm:`, `md:`, and `lg:` media query tiers to `grid` wrapper setup classes.
-* Improved `t-link-inside` and `t-link`
-* Added `rounded-xl`
+* Improved `t-link-inside` and `t-link`.
+* Added `rounded-xl`.
 
 ## 25 Oct 2023 -- v.5.2.8
 
-* Improved heading variables, so that `--h1` thorugh `--h6` scale down by ~0.875 for `sm` viewports. Now, the heading variables can be safely be utilised by the designer.
+* ~~Improved heading variables, so that `--h1` through `--h6` scale down by ~0.875 for `sm` viewports. Now, the heading variables can be safely be utilised by the designer.~~ See v.5.2.11.
 
 ## 13 Oct 2023 -- v.5.2.7
 

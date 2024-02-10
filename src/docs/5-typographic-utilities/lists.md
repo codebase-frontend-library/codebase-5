@@ -3,9 +3,9 @@ title: "Lists"
 headerTitle: "List formats"
 layout: layout.njk
 prevPage: "/docs/4-decoration-utilities/inline-text"
-nextPage: "/docs/5-typographic-utilities/large-display-text"
+nextPage: "/docs/5-typographic-utilities/bigger-text"
 prevLink: "Inline text"
-nextLink: "Large display text"
+nextLink: "Making text bigger"
 ---
 
 Codebase has several `list-style-type-` utilities (to be used on `<ol>` and `<ul>` tags), for controlling  list item indicators.

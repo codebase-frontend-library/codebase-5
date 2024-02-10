@@ -316,21 +316,21 @@ $mq-width: (
   --btn-p: .5rem 1rem;
   --btn-p-lg: .75rem 1.75rem;
 
-  // Headings
-  --h1: 2.75em;
-  --h2: 2.2em;
-  --h3: 1.76em;
-  --h4: 1.41em;
-  --h5: 1.13em;
-  --h6: 0.9em;
+  // Headings (major third typographic scale, calculated from cSalculated by https: //type-scale.com)
+  --h1: 2.441em;
+  --h2: 1.953em;
+  --h3: 1.563em;
+  --h4: 1.25em;
+  --h5: 1em;
+  --h6: 0.8em;
 
-  // Headings for SM (approx. 0.875 * heading values above)
-  --h1-w-sm: 2.441em;
-  --h2-w-sm: 1.953em;
-  --h3-w-sm: 1.563em;
-  --h4-w-sm: 1.25em;
-  --h5-w-sm: 1em;
-  --h6-w-sm: 0.8em;
+  // Heading size bump (×1.125) for MD (1024px default)
+  --h1-bump: 2.746em;
+  --h2-bump: 2.197em;
+  --h3-bump: 1.758em;
+  --h4-bump: 1.406em;
+  --h5-bump: 1.125em;
+  --h6-bump: 0.9em;
 
   --hd-weight: normal;
   --hd-lh: calc(1em + .5rem); // gives .5rem more than the heading’s own size
@@ -345,7 +345,11 @@ $mq-width: (
   --t-bolder-fw: 900;
   --t-cols-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   --t-cols: 17.5em;
-  --t-long-read: clamp(1em, calc(0.5em + 1vw), 1.25em);
+  --t-sm: max(.75em, 13.5px);
+  // Bigger text ramps from XS (512px default) to LG (1280px)
+  --t-lg: clamp(1.125em, 0.875em + 0.7813vw, 1.5em);
+  --t-display: clamp(1.25em, 0.5833em + 2.0833vw, 2.25em);
+  --t-long-read: clamp(1em, 0.8333em + 0.5208vw, 1.25em);
   --link: underline; // link text-decoration
   --bq-fs: var(--t-fs); // blockquote
   --bq-x: 2.5vw;

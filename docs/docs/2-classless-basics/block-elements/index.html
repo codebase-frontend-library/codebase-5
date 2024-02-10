@@ -8,7 +8,7 @@
   <title>Block elements - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.10" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.11" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -261,7 +261,7 @@
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.10">Download CSS</a></div>
+        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.11">Download CSS</a></div>
         <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -316,7 +316,7 @@
       <div id="side-menu-wrap" class="p-2 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.10">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.11">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -448,8 +448,7 @@
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Making text bigger</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
@@ -517,11 +516,13 @@
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
-      <div class="md:pb-3 t-lg">
+      <div class="t-lg">
         
         <div class="my-1 t-gray-500">Classless basics</div>
         
-        <h1 class="mb-0 t-thin">Block elements</h1>    
+      </div>
+      <div class="t-display">
+        <h1 class="t-thin">Block elements</h1>    
       </div>
     </div>
   </header>
@@ -541,8 +542,8 @@
 <h2 id="headings" tabindex="-1">Headings</h2>
 <p>Heading font weights have been set to <code>normal</code> (default). You can override this for all headings in the SCSS default variables, or add a bold weight yourself on a per-heading or per-word basis, for emphasis.</p>
 <p>Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 <a href="/codebase-5/docs/1-getting-started/element-grid">element grid</a> units, or <em>one line-height of the default text size</em> (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.</p>
-<p>Since Codebase v.5.2.8 heading sizes have been set up using the <em>major third typographic scale</em>, calculated by <a href="https://type-scale.com">https://type-scale.com</a>. Heading sizes are set using ems, so that they can be <code>clamp()</code> enlarged by wrapping with utility class <code>.t-long-read</code>.</p>
-<p>Below the <code>sm</code> small media query breakpoint (768px, default), heading variables <code>--h1</code> thorugh <code>--h6</code> are size reduced to 87.5%, so that they do not look too big on small devices.</p>
+<p>Since Codebase v.5.2.8 heading sizes have been set up using the <em>major third typographic scale</em>, calculated by <a href="https://type-scale.com">https://type-scale.com</a>. Heading sizes are set using ems, so that they can be <code>clamp()</code> enlarged by wrapping with utility classes — see <a href="/codebase-5/docs/5-typographic-utilities/bigger-text">making text bigger</a>.</p>
+<p>Above the <code>md</code> medium media query breakpoint (1024px, default), heading variables <code>--h1</code> thorugh <code>--h6</code> are size increased slightly.</p>
 <p><strong>Note:</strong> The demo headings below are actually faked using <code>h1</code> to <code>h6</code> <a href="/codebase-5/docs/5-typographic-utilities/inline-text">text utility classes</a> – so that they are not included in the generated “Contents” list on this page.</p>
 <p class="h1"><code>h1</code> heading</p>
 <p class="h2"><code>h2</code> heading</p>
@@ -713,7 +714,7 @@ Run</code></pre>
     </a>
   </p>
   
-  <p>Version 5.2.10 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
+  <p>Version 5.2.11 • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT licence</a> • <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub</a></p>
 
 </footer>
 

@@ -83,6 +83,7 @@ $mq-value in $mq-width {
   font-size: var(--t-fs);
   font-weight: var(--t-base-fw);
   font-style: normal;
+  line-height: inherit;
 }
 
 .t-lighter,
@@ -116,7 +117,7 @@ a.t-link-inside {
 }
 
 .t-link {
-  color: var(--c-link);
+  color: inherit;
   text-decoration: underline;
 
   &:-moz-focusring {
@@ -158,13 +159,21 @@ a.t-link-inside {
 
 small,
 .t-sm {
-  font-size: .75em;
+  font-size: max(.75em, 13.5px);
   line-height: inherit;
 }
 
-.t-md,
-.t-1em {
-  font-size: 1em;
+big,
+.t-lg {
+  font-size: var(--t-lg);
+}
+
+.t-long-read {
+  font-size: var(--t-long-read);
+}
+
+.t-display {
+  font-size: var(--t-display);
 }
 
 mark,
@@ -176,19 +185,6 @@ mark,
 
 .t-nowrap {
   white-space: nowrap;
-}
-
-big,
-.t-lg {
-  font-size: 1.25em;
-
-  @include break-min(w-md) {
-    font-size: 1.5em;
-  }
-}
-
-.t-long-read {
-  font-size: var(--t-long-read);
 }
 
 .list-style-type {
