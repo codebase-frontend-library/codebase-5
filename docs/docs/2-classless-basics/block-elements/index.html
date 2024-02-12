@@ -543,6 +543,7 @@
 <p>Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 <a href="/codebase-5/docs/1-getting-started/element-grid">element grid</a> units, or <em>one line-height of the default text size</em> (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.</p>
 <p>Since Codebase v.5.2.8 heading sizes have been set up using the <em>major third typographic scale</em>, calculated by <a href="https://type-scale.com">https://type-scale.com</a>. Heading sizes are set using ems, so that they can be <code>clamp()</code> enlarged by wrapping with utility classes — see <a href="/codebase-5/docs/5-typographic-utilities/bigger-text">making text bigger</a>.</p>
 <p>Above the <code>md</code> medium media query breakpoint (1024px, default), heading variables <code>--h1</code> thorugh <code>--h6</code> are size increased slightly.</p>
+<p>New in v.5.2.11: all headings have <code>text-wrap: balance;</code> applied.</p>
 <p><strong>Note:</strong> The demo headings below are actually faked using <code>h1</code> to <code>h6</code> <a href="/codebase-5/docs/5-typographic-utilities/inline-text">text utility classes</a> – so that they are not included in the generated “Contents” list on this page.</p>
 <p class="h1"><code>h1</code> heading</p>
 <p class="h2"><code>h2</code> heading</p>

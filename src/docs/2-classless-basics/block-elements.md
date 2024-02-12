@@ -19,6 +19,8 @@ Since Codebase v.5.2.8 heading sizes have been set up using the _major third typ
 
 Above the `md` medium media query breakpoint (1024px, default), heading variables `--h1` thorugh `--h6` are size increased slightly.
 
+New in v.5.2.11: all headings have `text-wrap: balance;` applied.
+
 **Note:** The demo headings below are actually faked using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.
 
 <p class="h1"><code>h1</code> heading</p>
