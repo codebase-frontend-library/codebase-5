@@ -48,9 +48,11 @@ New in Codebase v.5.2.11: `w-fit-content` uses `width: fit-content` to “shrink
 
 ### Min-heights
 
-* `h-50vh` / `h-100vh`
+* `h-50vh` / `h-100dvh` (alias `h-100vh`)
 
-These utilities will make a block have a _minimum_ of `50vh` or `100vh`.
+These utilities will make a block have a _minimum_ of `50vh` or `100dvh`. 
+
+`h-100dvh` is new in Codebase v.5.2.11. You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really _device viewport height_ `h-100dvh` you need. But the alias `h-100vh` is still present for backwards compatability with Codebase 5.x, and in case you forget.
 
 ### Heights
 
@@ -60,7 +62,7 @@ This utility will stretch a block vertically to fill the available space. This c
 
 ### Max-heights
 
-* `h-max-100%`
+* `h-max-100%` / `h-max-100dvh` (alias `h-max-100vh`)
 
 This utility will cause the height of an element to max out at the height of the viewport. This is useful e.g. for [tall modals]({{ '/docs/7-alpinejs-components/modals/#panel-with-scrolling-body' | url }}) with a lot of scrolling content.
 

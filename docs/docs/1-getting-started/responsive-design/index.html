@@ -444,11 +444,10 @@
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Bigger text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Making text bigger</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
@@ -610,9 +609,15 @@
 <h2 id="typography" tabindex="-1">Typography</h2>
 <p>Codebase typography is also responsive to viewport width (device size):</p>
 <ul>
-<li><a href="/codebase-5/docs/2-classless-basics/headings">Headings</a> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> have a slight downsize for phones. Below 768px (same as <code>sm:</code> default), headings become ×0.875 (87.5%) their base size</li>
-<li><a href="/codebase-5/docs/5-typographic-utilities/large-display-text">Large display text</a> (using the <code>t-lg</code> wrapper) is 1.25em (125%) of the default size of base text and headings, but for medium screens up (same as <code>md:</code> default), this increases to 1.5em (150%) of the default size.</li>
-<li><a href="/codebase-5/docs/5-typographic-utilities/long-read-text">Long read text</a> (using the <code>t-long-read</code> wrapper for essays and blog posts) starting as the normal size for base text and headings, and then these sizes proportionately using CSS <code>clamp()</code> to a comfortable maximum.</li>
+<li><a href="/codebase-5/docs/2-classless-basics/headings">Headings</a> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> have a slight upsize for tablet devices and up. At 768px (same as <code>sm:</code> default), headings become ×1.125 their base size</li>
+<li><a href="/codebase-5/docs/5-typographic-utilities/bigger-text">Bigger text</a> utilities:
+<ul>
+<li>Heading sizes <code>h1</code> to <code>h6</code></li>
+<li><code>t-lg</code> wrapper to simply increase text size by ×1.25</li>
+<li><code>t-display</code> wrapper CSS <code>clamp()</code> ramp responsively increases text size by ×1.25 up to ×2 if viewport width allows</li>
+<li><code>t-long-read</code> wrapper CSS <code>clamp()</code> ramp responsively increases text size by ×1 up to ×1.25 if viewport width allows</li>
+</ul>
+</li>
 <li>Responsive <a href="/codebase-5/docs/5-typographic-utilities/text-alignment">text alignment</a> utilities</li>
 </ul>
 <h2 id="infographic" tabindex="-1">Infographic</h2>

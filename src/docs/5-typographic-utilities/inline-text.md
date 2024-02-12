@@ -59,11 +59,9 @@ Codebase has several simple text utility classes. (See also [font-stacks]({{ '/d
 
 * `t-lg`
 
-    Big text for making <span class="t-lg">something</span> stand out.
+    Big text for making <span class="t-lg">something</span> stand out. `t-lg` enlarges text by 1.25em (×1.25).
 
-    `t-lg` enlarges text by 1.25em (125%) on small to medium screens and then 1.5em (150%) on medium screens up, to make the enlargement more obvious when viewed at a distance.
-
-    **Note:** `t-lg` doesn’t work as an _inline class_ on headings or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
+    **Note:** `t-lg` doesn’t work as an _inline class_ on headings or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See also[large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
 
 ## Links
 

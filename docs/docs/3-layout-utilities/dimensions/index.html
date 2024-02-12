@@ -444,11 +444,10 @@
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Bigger text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Making text bigger</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
@@ -569,9 +568,10 @@
 <h2 id="height-constraint-wrappers" tabindex="-1">Height constraint wrappers</h2>
 <h3 id="min-heights" tabindex="-1">Min-heights</h3>
 <ul>
-<li><code>h-50vh</code> / <code>h-100vh</code></li>
+<li><code>h-50vh</code> / <code>h-100dvh</code> (alias <code>h-100vh</code>)</li>
 </ul>
-<p>These utilities will make a block have a <em>minimum</em> of <code>50vh</code> or <code>100vh</code>.</p>
+<p>These utilities will make a block have a <em>minimum</em> of <code>50vh</code> or <code>100dvh</code>.</p>
+<p><code>h-100dvh</code> is new in Codebase v.5.2.11. You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really <em>device viewport height</em> <code>h-100dvh</code> you need. But the alias <code>h-100vh</code> is still present for backwards compatability with Codebase 5.x, and in case you forget.</p>
 <h3 id="heights" tabindex="-1">Heights</h3>
 <ul>
 <li><code>h-100%</code></li>
@@ -579,7 +579,7 @@
 <p>This utility will stretch a block vertically to fill the available space. This can be useful e.g. for “equalizing” the heights of inner-wrappers within <a href="/codebase-5/docs/3-layout-utilities/flexbox">flexbox</a> flex-items.</p>
 <h3 id="max-heights" tabindex="-1">Max-heights</h3>
 <ul>
-<li><code>h-max-100%</code></li>
+<li><code>h-max-100%</code> / <code>h-max-100dvh</code> (alias <code>h-max-100vh</code>)</li>
 </ul>
 <p>This utility will cause the height of an element to max out at the height of the viewport. This is useful e.g. for <a href="/codebase-5/docs/7-alpinejs-components/modals/#panel-with-scrolling-body">tall modals</a> with a lot of scrolling content.</p>
 <h2 id="two-dimensions" tabindex="-1">Two Dimensions</h2>

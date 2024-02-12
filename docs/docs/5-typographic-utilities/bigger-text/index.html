@@ -444,11 +444,10 @@
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/headings">Heading formats</a></li>
+      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Bigger text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Making text bigger</a></li>
       <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
@@ -522,7 +521,7 @@
         
       </div>
       <div class="t-display">
-        <h1 class="t-thin">Making text bigger</h1>    
+        <h1 class="t-thin">Bigger text</h1>    
       </div>
     </div>
   </header>
@@ -538,18 +537,34 @@
 
   <main class="col-1 sm:col-2">
     <div class="container-sm">
-      <p>In Codebase, you can control the size of text various ways:</p>
+      <p>In Codebase, you can increase the size of text in various ways using utility classes:</p>
 <ol>
-<li>Utility classes corresponding to <a href="/codebase-5/docs/5-typographic-utilities/headings">heading format</a> font-sizes for <code>h1</code> through <code>h6</code>.</li>
-<li>Wrapping text in <code>t-lg</code> causes text size to increase responsively from ×1.25 to ×1.5 depending on viewport width.</li>
+<li>Headings font-sizes: <code>h1</code> through <code>h6</code>.</li>
+<li>Wrapping text in <code>t-lg</code> simply causes text size to increase by ×1.25.</li>
 <li>New in Codebase v.5.2.11: wrapping text in <code>t-display</code> causes text size to increase responsively from ×1.25 to ×2 depending on viewport width.</li>
 <li>Wrapping text in <code>t-long-read</code> causes text size to increase responsively from ×1 to ×1.25 depending on viewport width.</li>
 </ol>
-<p>The CSS <code>clamp()</code> ramps for <code>t-lg</code>, <code>t-display</code> and <code>t-long-read</code> are set in the default varibles file:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--t-lg</span><span class="token punctuation">:</span>         <span class="token function">clamp</span><span class="token punctuation">(</span>1.125em<span class="token punctuation">,</span> 0.875em  + 0.7813vw<span class="token punctuation">,</span> 1.5em<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">--t-display</span><span class="token punctuation">:</span>    <span class="token function">clamp</span><span class="token punctuation">(</span>1.25em<span class="token punctuation">,</span>  0.5833em + 2.0833vw<span class="token punctuation">,</span> 2.25em<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">--t-long-read</span><span class="token punctuation">:</span>  <span class="token function">clamp</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span>     0.8333em + 0.5208vw<span class="token punctuation">,</span> 1.25em<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>These values above have been calculated using Petter Walbø Johnsgård’s <a href="https://clamp.font-size.app">Font-Size Clamp Generator</a> webapp, so that they ramp up from viewport width <code>xs</code> (512px default) to <code>lg</code> (1280px default).</p>
-<h2 id="lead-text-using-t-lg" tabindex="-1">Lead text using <code>t-lg</code></h2>
-<p><code>t-lg</code> makes text ×1.125 bigger, , and then ramps up to ×1.5 bigger, from viewport width <code>xs</code> (512px) to <code>lg</code> (1280px) using a CSS <code>clamp()</code>.</p>
+<p>The <code>t-display</code> and <code>t-long-read</code> CSS <code>clamp()</code> sets above have been calculated using Petter Walbø Johnsgård’s <a href="https://clamp.font-size.app">Font-Size Clamp Generator</a> webapp, so that they ramp up from viewport width <code>xs</code> (512px default) to <code>lg</code> (1280px default). At <code>xs</code>, these will begin to upsize on phones turned to landscape orientation.</p>
+<h2 id="heading-utilities-h1-%E2%80%93-h6" tabindex="-1">Heading utilities <code>h1</code> – <code>h6</code></h2>
+<p>Sometimes you may need to make some text as large as a heading, but without it actually being a heading. Or, sometimes you may need to change a heading size <em>without breaking the semantic heirarchical ordering</em> – because that would be bad for SEO.</p>
+<p>These heading format utility classes will help you out.</p>
+<p>Codebase <code>h1</code> through <code>h5</code> utilities are styled the same as the Codebase basic (classless) styling for <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> headings.</p>
+<h3 id="heading-utility-examples" tabindex="-1">Heading utility examples</h3>
+<p>The following are all <code>&lt;div&gt;</code> elements, in disguise:</p>
+<div class="my-6">
+<div class="h1"><code>h1</code> Heading level 1</div>
+<div class="h2"><code>h2</code> Heading level 2</div>
+<div class="h3"><code>h3</code> Heading level 3</div>
+<div class="h4"><code>h4</code> Heading level 4</div>
+<div class="h5"><code>h5</code> Heading level 5</div>
+<div class="h6"><code>h6</code> Heading level 6</div>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="why-you-sometimes-need-heading-utilities" tabindex="-1">Why you sometimes need heading utilities</h3>
+<p>Why would you want to use heading utilities? In your web design, you may have situations where you want to enlarge some text (to make it look like a header), but not actually have it to be a header that would interupt the sematic hierarchical ordering.</p>
+<p>Consider the following examples: you may want a title in a sidebar, footer, card, or modal to be enlarged but not by using an actual <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> tag.</p>
+<h2 id="slightly-larger-text-using-t-lg" tabindex="-1">Slightly larger text using <code>t-lg</code></h2>
+<p><code>t-lg</code> simply makes text ×1.25 bigger.</p>
 <p>Comparison with default text and heading sizes:</p>
 <div class="mb-3">
   <div class="grid gap xs:equal-2-cols gap-2">
@@ -561,7 +576,7 @@
       <p class="h4">Heading 4</p>
       <p class="h5">Heading 5</p>
       <p class="h6">Heading 6</p>
-      <p>Paragraph</p>
+      <p>Paragraph. Lorem ipsum dolor sit amet...</p>
     </div>
     <div class="b-thin p-1">
       <p class="t-bold"><code>t-lg</code>:</p>
@@ -572,15 +587,17 @@
         <p class="h4">Heading 4</p>
         <p class="h5">Heading 5</p>
         <p class="h6">Heading 6</p>
-        <p>Paragraph</p>
+        <p>Paragraph. Lorem ipsum dolor sit amet</p>
       </div>
     </div>
   </div>
 </div>
 <p>Example: you can use <code>t-lg</code> on the first paragraph in your page or blog post, to make it an enlarged <em>lead</em> paragraph.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is an example lead paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>You can also use <code>t-lg</code> to make <span class="t-lg">something important</span> stand out (because sometimes, but rarely, bold and italics and capitalization is not enougn). Or for a subtle increase in size for a blockquote.</p>
+<blockquote class="t-lg">This is an example of some text quoted from elsewhere.</blockquote>
 <h2 id="hero-text-using-t-display" tabindex="-1">Hero text using <code>t-display</code></h2>
-<p><code>t-display</code> makes text ×1.25 bigger, and then ramps up to ×2.25 bigger, from viewport width <code>xs</code> (512px) to <code>lg</code> (1280px) using a CSS <code>clamp()</code>.</p>
+<p><code>t-display</code> makes text ×1.25 bigger, and then ramps up to ×2 bigger, from viewport width <code>xs</code> (512px) to <code>lg</code> (1280px) using a CSS <code>clamp()</code>.</p>
 <p>Comparison with default text and heading sizes:</p>
 <div class="mb-3">
   <div class="grid gap xs:equal-2-cols gap-2">
@@ -592,7 +609,7 @@
       <p class="h4">Heading 4</p>
       <p class="h5">Heading 5</p>
       <p class="h6">Heading 6</p>
-      <p>Paragraph</p>
+      <p>Paragraph. Lorem ipsum dolor sit amet</p>
     </div>
     <div class="b-thin p-1">
       <p class="t-bold"><code>t-display</code>:</p>
@@ -603,14 +620,14 @@
         <p class="h4">Heading 4</p>
         <p class="h5">Heading 5</p>
         <p class="h6">Heading 6</p>
-        <p>Paragraph</p>
+        <p>Paragraph. Lorem ipsum dolor sit amet</p>
       </div>
     </div>
   </div>
 </div>
-<p>Example: the <code>t-display</code> wrapper is good for homepage or landing-page “hero” titles and slogans, or for making an important quote or message really stand out.</p>
+<p>Example: the <code>t-display</code> wrapper is good for homepage or landing page “hero” titles and slogans, or for making an important title or message really stand out.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-display<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>This is an example hero title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="comfortable-prose-using-t-long-read" tabindex="-1">Comfortable prose using <code>t-long-read</code></h2>
+<h2 id="comfort-sized-prose-using-t-long-read" tabindex="-1">Comfort-sized prose using <code>t-long-read</code></h2>
 <p>Use the <code>t-long-read</code> block wrapper utility class around text that you want to be larger on large screens, for ease of reading. For example, use <code>&lt;article class=&quot;t-long-read&quot;&gt;</code> for blog post templates.</p>
 <p>On narrow viewports (small devices), and paragraph text, list items, table cells, etc. within the example <code>t-long-read</code> wrapper below will be the Codebase default sizes (1rem = 16px). On wider viewports, all text is scaled up using a CSS <code>clamp()</code> to a comfortable maximum (1.25rem = 20px). And any headings included within a <code>t-long-read</code> wrapper will also increase in size accordingly.</p>
 <p><strong>Note:</strong> If you play around adjusting the width of the browser window (as developers do), the page layout re-painting can happen very slowly when CSS <code>clamp()</code> is used on text. This is (partly) because the text is being resized hundreds of times while you’re dragging the window width in or out – during the width range where the <code>clamp()</code>’s mid-range. <em>Most people would never see this lag</em>, because ordinary people don’t spend their days resizing their browser window. 😊</p>

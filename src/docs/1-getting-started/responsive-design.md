@@ -88,9 +88,12 @@ There are also some and viewport-height based [heights]({{ '/docs/3-layout-utili
 
 Codebase typography is also responsive to viewport width (device size):
 
-* [Headings]({{ '/docs/2-classless-basics/headings' | url }}) `<h1>` to `<h6>` have a slight downsize for phones. Below 768px (same as `sm:` default), headings become ×0.875 (87.5%) their base size
-* [Large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}) (using the `t-lg` wrapper) is 1.25em (125%) of the default size of base text and headings, but for medium screens up (same as `md:` default), this increases to 1.5em (150%) of the default size.
-* [Long read text]({{ '/docs/5-typographic-utilities/long-read-text' | url }}) (using the `t-long-read` wrapper for essays and blog posts) starting as the normal size for base text and headings, and then these sizes proportionately using CSS `clamp()` to a comfortable maximum.
+* [Headings]({{ '/docs/2-classless-basics/headings' | url }}) `<h1>` to `<h6>` have a slight upsize for tablet devices and up. At 768px (same as `sm:` default), headings become ×1.125 their base size
+* [Bigger text]({{ '/docs/5-typographic-utilities/bigger-text' | url }}) utilities:
+    * Heading sizes `h1` to `h6`
+    * `t-lg` wrapper to simply increase text size by ×1.25
+    * `t-display` wrapper CSS `clamp()` ramp responsively increases text size by ×1.25 up to ×2 if viewport width allows
+    * `t-long-read` wrapper CSS `clamp()` ramp responsively increases text size by ×1 up to ×1.25 if viewport width allows
 * Responsive [text alignment]({{ '/docs/5-typographic-utilities/text-alignment' | url }}) utilities
 
 ## Infographic

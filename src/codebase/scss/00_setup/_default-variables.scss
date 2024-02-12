@@ -347,8 +347,8 @@ $mq-width: (
   --t-cols: 17.5em;
   --t-sm: max(.75em, 13.5px);
   // Bigger text ramps from XS (512px default) to LG (1280px)
-  --t-lg: clamp(1.125em, 0.875em + 0.7813vw, 1.5em);
-  --t-display: clamp(1.25em, 0.5833em + 2.0833vw, 2.25em);
+  --t-lg: 1.25em;
+  --t-display: clamp(1.25em, 0.75em + 1.5625vw, 2em);
   --t-long-read: clamp(1em, 0.8333em + 0.5208vw, 1.25em);
   --link: underline; // link text-decoration
   --bq-fs: var(--t-fs); // blockquote

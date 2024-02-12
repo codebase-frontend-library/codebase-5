@@ -1,9 +1,9 @@
 ---
 title: "Text alignment"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/headings"
+prevPage: "/docs/5-typographic-utilities/bigger-text"
 nextPage: "/docs/5-typographic-utilities/inline-text"
-prevLink: "Headings"
+prevLink: "Bigger text"
 nextLink: "Inline text"
 ---
 

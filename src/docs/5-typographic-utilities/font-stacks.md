@@ -2,9 +2,9 @@
 title: "Font stacks"
 layout: layout.njk
 prevPage: "/docs/4-decoration-utilities/forms"
-nextPage: "/docs/5-typographic-utilities/headings"
+nextPage: "/docs/5-typographic-utilities/bigger-text"
 prevLink: "Form utilities"
-nextLink: "Headings"
+nextLink: "Bigger text"
 ---
 
 Codebase contains several text utilites for font stacks, that are either directly coded or aliased from three default font families. These are set in the SCSS default-variables file.

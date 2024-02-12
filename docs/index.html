@@ -153,8 +153,6 @@
   </script>
 
 
-<a id="docs-skip-link" href="#docs-article" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-
 <div id="site-top-bar" class="fixed w-100% bb-thin bg-white-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
     <div class="p-2">
@@ -178,119 +176,118 @@
   </div>
 </div>
 
-<section class="h-100vh grid md:equal-2-cols">
-  
-  <div class="pt-6 md:pt-0 md:px-6 flex flex-column flex-center flex-middle t-center md:t-left t-white bg-teal-600">
-    <div class="pt-3 container-xs t-long-read">
-      <h1 class="mb-0 t-thin">Codebase is a <span class="h5 t-heavy t-nowrap">business class</span> CSS style library for the modern web</h1>
+<style>
+#homepage {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 340 180' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='2'%3E%3Cpath d='M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z' fill-rule='nonzero' fill='%23e6f2f6' stroke='%23e6f2f6' stroke-width='10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 200vw auto;
+  background-position: -100vw 12.5dvh;
+}
+</style>
+
+<main id="homepage" style="padding-top: 55px;">
+
+  <header class="h-50vh container-lg py-6 flex flex-column flex-center">
+    <div class="pb-6 t-center t-display">
+      <h1 class="mb-0 t-thin">Codebase is a <span class="t-heavy">business class</span> CSS style library for the modern web</h1>
     </div>
-    <div class="container-xs my-3 md:my-4 flex flex-wrap flex-center md:flex-start gap-2 h4">
-      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="/codebase-5/docs/1-getting-started/introduction/">Docs</a>
-      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="/codebase-5/dist/codebase.css?v=5.2.11">Download CSS</a>
-      <a class="inline-block b-thin b-white rounded-pill p-block t-semibold t-white hover:t-teal-600 t-decoration-none hover:bg-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repo</a>
-    </div>
-    <div class="pb-3 container-xs mx-auto grid xs:equal-2-cols gap-1">
-      <div class="flex flex-column gap-1">
-        <span>Version: 5.2.11</span>
-        <span>CSS (minified): 91.8 KB</span>
-      </div>
-      <div class="flex flex-column gap-1">
-        <span>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></span>
-        <span>Dev: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></span>
-      </div>
+
+    <div class="pb-3 grid xs:equal-2-cols md:equal-5-cols gap-3 t-center">
+      <div><a href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
+      <div>Version: 5.2.11</div>
+      <div>CSS (minified): 91.8 KB</div>
+      <div>Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
+      <div>Dev: <a href="https://github.com/SimonPadbury">Simon Padbury</a></div>
     </div>
   </div>
-  <div class="md:px-6 flex flex-column flex-center flex-middle">
-    <div class="py-3 container-xs t-long-read">
-      <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <code>grid</code>, <code>clamp()</code>, and <code>var()</code>.</p>
-      <p class="mb-0">Plus, Codebase pairs well with <a href="https://alpinejs.dev" target="_blank">AlpineJS</a>.</p>
-    </div>
+
+  </header>
+
+  <div class="container-sm t-long-read">
+    <p>Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <code>grid</code>, <code>clamp()</code>, and <code>var()</code>.</p>
+    <p class="mb-0">Plus, Codebase pairs well with <strong>AlpineJS</strong>.</p>
   </div>
-</section>
-  
 
-<main class="py-3 bg-teal-100">
-
-  <div class="md:py-6 container-sm t-lg">
+  <div class="md:py-6 container-sm">
     <p>Starting from a beautifully minimalist set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to all this and more:</p>
   </div>
 
-    <div class="container-lg grid xs:equal-2-cols md:equal-3-cols gap-2 sm:gap-4 lg:gap-6">
+  <div class="container-lg grid xs:equal-2-cols md:equal-3-cols gap-2 sm:gap-4 lg:gap-6">
 
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2>Typography</h2>
-        <ul class="mb-0">
-          <li>Serif, sans-serif, and monospaced font stacks</li>
-          <li>Heading size formats</li>
-          <li>Font weights: lighter, normal, semi-bold, bold, heavy</li>
-          <li>Large display text for headings and landing pages</li>
-          <li>Comfortable long-read font sizes controlled by CSS clamp</li>
-          <li>Other text utilities incuding alignments, list formats, etc.</li>
-        </ul>
-      </div>
-
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2>Responsive layouts</h2>
-        <ul class="mb-0">
-          <li>A range of centered container, width, and height utilities</li>
-          <li>Real two-dimensional CSS grid layouts for templating</li>
-          <li>Flexbox layouts for components</li>
-          <li>Fixed and sticky positioning</li>
-          <li>Aspect-ratio controlled squared tiles</li>
-          <li>Edge positioning</li>
-          <li>Responsive invisibility classes</li>
-        </ul>
-      </div>
-
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2>Decoration</h2>
-        <ul class="mb-0">
-          <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
-          <li>Box-model spacing and borders</li>
-          <li>Box shadows for layering</li>
-        </ul>
-      </div>
-
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2>Image handling</h2>
-        <ul class="mb-0">
-          <li>Responsive images</li>
-          <li>Cover images and positioning</li>
-          <li>A wide range of aspect ratios — for traditional image sizes and squared tiles</li>
-          <li>Image filters and opacities</li>
-          <li>Glassmorphic overlays</li>
-        </ul>
-      </div>
-
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2>Simple components (no JavaScript)</h2>
-        <p class="mb-2">Examples:</p>
-        <ul class="mb-0">
-          <li>Buttons</li>
-          <li>Badges</li>
-          <li>Labels</li>
-          <li>Heros</li>
-          <li>Tables</li>
-          <li>Media objects</li>
-          <li>Cards</li>
-        </ul>
-      </div>
-
-      <div class="bs-3 rounded-lg p-2 md:p-4 bg-white">
-        <h2> Alpine.JS powered components</h2>
-        <p class="mb-2">Examples:</p>
-        <ul class="mb-0">
-          <li>Collapse (slide reveal)</li>
-          <li>Dropdowns</li>
-          <li>Modals and lightboxes</li>
-          <li>Offcanvas panels</li>
-          <li>Tab systems</li>
-          <li>Simple manual carousel</li>
-          <li>Langing page animations</li>
-        </ul>
-      </div>
-
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2>Typography</h2>
+      <ul class="mb-0">
+        <li>Serif, sans-serif, and monospaced font stacks</li>
+        <li>Heading size formats</li>
+        <li>Font weights: lighter, normal, semi-bold, bold, heavy</li>
+        <li>Large display text for headings and landing pages</li>
+        <li>Comfortable long-read font sizes controlled by CSS clamp</li>
+        <li>Other text utilities incuding alignments, list formats, etc.</li>
+      </ul>
     </div>
+
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2>Responsive layouts</h2>
+      <ul class="mb-0">
+        <li>A range of centered container, width, and height utilities</li>
+        <li>Real two-dimensional CSS grid layouts for templating</li>
+        <li>Flexbox layouts for components</li>
+        <li>Fixed and sticky positioning</li>
+        <li>Aspect-ratio controlled squared tiles</li>
+        <li>Edge positioning</li>
+        <li>Responsive invisibility classes</li>
+      </ul>
+    </div>
+
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2>Decoration</h2>
+      <ul class="mb-0">
+        <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
+        <li>Box-model spacing and borders</li>
+        <li>Box shadows for layering</li>
+      </ul>
+    </div>
+
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2>Image handling</h2>
+      <ul class="mb-0">
+        <li>Responsive images</li>
+        <li>Cover images and positioning</li>
+        <li>A wide range of aspect ratios — for traditional image sizes and squared tiles</li>
+        <li>Image filters and opacities</li>
+        <li>Glassmorphic overlays</li>
+      </ul>
+    </div>
+
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2>Simple components (no JavaScript)</h2>
+      <p class="mb-2">Examples:</p>
+      <ul class="mb-0">
+        <li>Buttons</li>
+        <li>Badges</li>
+        <li>Labels</li>
+        <li>Heros</li>
+        <li>Tables</li>
+        <li>Media objects</li>
+        <li>Cards</li>
+      </ul>
+    </div>
+
+    <div class="bs-1 rounded-lg p-2 md:p-4 bg-white">
+      <h2> Alpine.JS powered components</h2>
+      <p class="mb-2">Examples:</p>
+      <ul class="mb-0">
+        <li>Collapse (slide reveal)</li>
+        <li>Dropdowns</li>
+        <li>Modals and lightboxes</li>
+        <li>Offcanvas panels</li>
+        <li>Tab systems</li>
+        <li>Simple manual carousel</li>
+        <li>Langing page animations</li>
+      </ul>
+    </div>
+
+  </div>
 
     <p class="my-6 pb-6 t-center h3">
       <a class="rounded-pill px-3 md:px-5 py-1 inline-flex flex-center flex-middle gap-1 t-decoration-none t-normal t-loose t-white hover:t-white bg-teal-500 hover:bg-teal-700" href="/codebase-5/docs/1-getting-started/introduction/">

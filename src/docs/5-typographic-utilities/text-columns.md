@@ -1,9 +1,9 @@
 ---
 title: "Text columns"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/bigger-text"
+prevPage: "/docs/5-typographic-utilities/list-formats"
 nextPage: "/docs/6-simple-components/menus"
-prevLink: "Making text bigger"
+prevLink: "list-formats"
 nextLink: "Menus"
 ---
 
