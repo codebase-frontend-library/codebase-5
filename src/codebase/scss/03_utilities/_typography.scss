@@ -166,6 +166,7 @@ small,
 big,
 .t-lg {
   font-size: var(--t-lg);
+  line-height: inherit;
 }
 
 .t-long-read {
