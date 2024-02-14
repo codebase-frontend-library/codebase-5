@@ -25,21 +25,11 @@
       scroll-behavior: smooth;
     }
     #site-top-bar {
-      height: 56px;
       z-index: 990;
     }
-    #site-title {
-      display: block;
-      font-size: 1.325rem;
-      line-height: 1.5rem;
-    }
     #site-title svg {
-      position: relative;
-      height: 18px;
-      width: 34px;
-      top: .0625em;
-      margin-right: .325em;
-      transform: scale(1.5);
+      height: 35px;
+      width: 70px;
     }
 
     @media (max-width: 767px) {
@@ -243,16 +233,16 @@
     <div class="p-2">
       <a
         id="site-title"
-        class="mb-0 ml-1 t-decoration-none t-teal-600 hover:t-black"
+        class="flex flex-middle gap-1 h3 mb-0 pl-1 t-decoration-none t-teal-600 hover:t-black"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
       >
         <!-- Codebase logo-->
-        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
-          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="#5caec3" />
+        <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="#8ac5d4" />
           <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)" fill="currentColor" />
-          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="#5caec3" />
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="#8ac5d4" />
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="t-semibold">Codebase</span>
@@ -742,17 +732,16 @@
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="inline-block mt-2 t-semibold">
-          Codebase
+          Codebase <span class="t-sm t-teal-300">v.5.2.11</span>
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 flex flex-space-around flex-wrap gap-3 t-center">
+  <div class="container-md py-3 flex flex-space-around flex-wrap gap-3 t-center">
     <div><a class="t-teal-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div>Version: 5.2.11</div>
-    <div>CSS (minified): 91.8 KB</div>
+    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (91.8 KB)</div>
     <div>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>

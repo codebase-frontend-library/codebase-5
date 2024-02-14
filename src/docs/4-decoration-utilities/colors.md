@@ -158,7 +158,7 @@ In the default variables file, the following two Sass maps set up the named colo
 $named-color: () !default;
 $named-color: map-merge((
   "-green":          map-get($ui-color, success),
-  "-amber":         map-get($ui-color, warning),
+  "-amber":          map-get($ui-color, warning),
   "-red":            map-get($ui-color, danger),
   "-blue":           map-get($ui-color, info),
   "-purple":         map-get($ui-color, primary),

@@ -10,17 +10,16 @@
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="inline-block mt-2 t-semibold">
-          Codebase
+          Codebase <span class="t-sm t-teal-300">v.{{ metadata.version }}</span>
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 flex flex-space-around flex-wrap gap-3 t-center">
+  <div class="container-md py-3 flex flex-space-around flex-wrap gap-3 t-center">
     <div><a class="t-teal-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div>Version: {{ metadata.version }}</div>
-    <div>CSS (minified): {{ metadata.css_filesize }}</div>
+    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> ({{ metadata.css_filesize }})</div>
     <div>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>

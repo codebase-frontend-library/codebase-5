@@ -143,11 +143,11 @@ Codebase contains three `font-family` system font stacks, plus a few more that a
 
 Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [System Font Stacks](https://systemfontstack.com) (but not including the emoji fonts).
 
-Codebase’s `$font-stack-base` follows the popular trend for sans-serif in web design. It is applied to the HTML `<body>` tag by default.
+Codebase’s `--font-base` follows the popular trend for sans-serif in web design. It is applied to the HTML `<body>` tag by default.
 
-User interface (UI) elements such as buttons and form inputs have the user interface `$font-stack-ui` applied. This defaults to `$font-stack-base`, so they look the same. But from this default setup you can diverge – you can have different font stacks for base and UI.
+User interface (UI) elements such as buttons and form inputs have the user interface `--font-ui` applied. This defaults to `--font-base`, so they look the same. But from this default setup you can diverge – you can have different font stacks for base and UI.
 
-Then, the HTML `<code>` example tag and a couple of others have a monospace font stack, `$font-stack-mono`. And there’s a default serif font stack `$font-stack-serif` available, but no classless HTML elements have it applied (default). The serif font stank is there as a starter, for you to use if you want a serif alternative for long test articles, blog posts etc.
+Then, the HTML `<code>` example tag and a couple of others have a monospace font stack, `--font-mono`. And there’s a default serif font stack `--font-serif` available, but no classless HTML elements have it applied (default). The serif font stank is there as a starter, for you to use if you want a serif alternative for long test articles, blog posts etc.
 
 More information on Codebase font stacks, and how they are used, can be found at [typographic utilities: font stacks]({{ '/docs/5-typographic-utilities/font-stacks/' | url }}).
 

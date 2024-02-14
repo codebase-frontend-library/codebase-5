@@ -15,82 +15,61 @@ Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [Sy
 
 ### Base font stack (sans-serif)
 
-The HTML `<body>` tag has `$font-stack-base` that is a common sans-serif font stack. This is what most of Codebase looks like, by default.
+The HTML `<body>` tag has the CSS variable `--font-base` that sets a common sans-serif font stack. This is what most of Codebase looks like, by default.
 
 ```css
-$font-stack-base:
-  -apple-system,
-  BlinkMacSystemFont,
-  "Avenir Next",
-  Avenir,
-  "Segoe UI",
-  "Helvetica Neue",
-  Helvetica,
-  Cantarell,
-  Ubuntu,
-  Roboto,
-  Noto,
-  Arial,
-  sans-serif !default;
+:root {
+  --font-base: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
 ```
 
-<p class="b-thin p-3"><code>$font-stack-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p class="b-thin p-3"><code>--font-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
-Codebase also carries a sans-serif font stack in the SCSS variable `$font-stack-sans-serif`. But by default, it is aliased from `$font-stack-base` – it’s the same.
+Codebase also carries a sans-serif font stack in the SCSS variable `--font-sans-serif`. But by default, it is aliased from `--font-base` – it’s the same.
 
-Unless you change things in your design, `$font-stack-sans-serif` is only available via the text utility class `t-sans-serif`.
+Unless you change things in your design, `--font-sans-serif` is only available via the text utility class `t-sans-serif`.
 
 ### Monospaced font stack
 
-A few elements such as `<code>` have a monospaced font stack, `$font-stack-mono`.
+A few elements such as `<code>` have a monospaced font stack, `--font-mono`.
 
 ```css
-$font-stack-mono:
-  Menlo,
-  Consolas,
-  Monaco,
-  "Liberation Mono",
-  "Lucida Console",
-  monospace !default;
+:root {
+  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+}
 ```
 
-<p class="b-thin p-3 t-mono"><code>$font-stack-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p class="b-thin p-3 t-mono"><code>--font-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
-Unless you change things in your design, `$font-stack-mono` is only available via the text utility class `t-mono`.
+Unless you change things in your design, `--font-mono` is only available via the text utility class `t-mono`.
 
 ### Serif font stack
 
-There is also a default serif `$font-stack-serif` but Codebase does not apply it to any classless HTML elements.
+There is also a default serif `--font-serif` but Codebase does not apply it to any classless HTML elements.
 
-Unless you change things in your design, `$font-stack-serif` is only available via the text utility class `t-serif`.
+Unless you change things in your design, `--font-serif` is only available via the text utility class `t-serif`.
 
 ```css
-$font-stack-serif:
-  "Iowan Old Style",
-  "Apple Garamond",
-  Baskerville,
-  "Times New Roman",
-  "Droid Serif",
-  Times,
-  "Source Serif Pro",
-  serif !default;
+:root {
+  --font-serif: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif;
+}
 ```
 
-<p class="b-thin p-3 t-serif"><code>$font-stack-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p class="b-thin p-3 t-serif"><code>--font-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 
 ### User interface (UI) font stack
 
-User interface elements (form inputs, labels, buttons, etc.) have `$font-stack-ui` applied, but it is aliased from `$font-stack-base`.
+User interface elements (form inputs, labels, buttons, etc.) have `--font-ui` applied, but it is aliased from `--font-base`.
 
-Only when you diverge from the Codebase default, applying different font-stacks for `$font-stack-ui` and `$font-stack-base`, will you see a difference.
+Only when you diverge from the Codebase default, applying different font-stacks for `--font-ui` and `--font-base`, will you see a difference.
 
-Besides HTML tags for buttons, form elements and labels, `$font-stack-ui` is available via the text utility class `t-ui`.
+Besides HTML tags for buttons, form elements and labels, `--font-ui` is available via the text utility class `t-ui`.
 
 ### Other aliased font stacks
 
-`$font-stack-sans-serif` and `$font-stack-brand` are available in the default variables, but by default these are aliased to `$font-stack-base`. So at the start, these look no different. They are ready for you to customize in your design.
+`--font-sans-serif` and `--font-brand` are available in the default variables, but by default these are aliased to `--font-base`. So at the start, these look no different. They are ready for you to customize in your design.
 
-`$font-stack-prose` is also available, but by default it is aliased to `$font-stack-serif`.
+`--font-prose` is also available, but by default it is aliased to `--font-serif`.
 
 Unless you change things in your design, these last three font stacks are only available through using the following three text utility classes. So, they don’t add much at all to the default `codebase.css` payload:
 
@@ -112,44 +91,44 @@ Unless you change things in your design, these last three font stacks are only a
   </thead>
   <tbody>
     <tr>
-      <td><code>$font-stack-base</code></td>
+      <td><code>--font-base</code></td>
       <td><code>ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code></td>
       <td><code>&lt;body&gt;</code> Therefore everything gets this by default.</td>
       <td>None.</td>
     </tr>
     <tr>
-      <td><code>$font-stack-mono</code></td>
+      <td><code>--font-mono</code></td>
       <td><code>SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace</code></td>
       <td><code>&lt;code&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;samp&gt;</code></td>
       <td><code>t-mono</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-serif</code</td>
+      <td><code>--font-serif</code</td>
       <td><code>"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif</code></td>
       <td>None</td>
       <td><code>t-serif</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-ui</code</td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td><code>--font-ui</code</td>
+      <td>Aliased from <code>--font-base</code></td>
       <td><code>&lt;label&gt;</code> <code>&lt;input&gt;</code> <code>&lt;textarea&gt;</code> <code>&lt;select&gt;</code> <code>&lt;button&gt;</code></td>
       <td><code>btn</code><br> <code>badge</code><br> <code>label</code><br> <code>t-ui</code></td>
     </tr>
     <tr>
-      <td class="t-nowrap"><code>$font-stack-sans-serif</code></td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td class="t-nowrap"><code>--font-sans-serif</code></td>
+      <td>Aliased from <code>--font-base</code></td>
       <td>None</td>
       <td><code class="t-nowrap">t-sans-serif</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-brand</code</td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td><code>--font-brand</code</td>
+      <td>Aliased from <code>--font-base</code></td>
       <td>None</td>
       <td><code>t-brand</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-prose</code</td>
-      <td>Aliased from <code class="t-nowrap">$font-stack-serif</code></td>
+      <td><code>--font-prose</code</td>
+      <td>Aliased from <code class="t-nowrap">--font-serif</code></td>
       <td>None</td>
       <td><code>t-prose</code></td>
     </tr>

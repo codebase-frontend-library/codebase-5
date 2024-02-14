@@ -25,21 +25,11 @@
       scroll-behavior: smooth;
     }
     #site-top-bar {
-      height: 56px;
       z-index: 990;
     }
-    #site-title {
-      display: block;
-      font-size: 1.325rem;
-      line-height: 1.5rem;
-    }
     #site-title svg {
-      position: relative;
-      height: 18px;
-      width: 34px;
-      top: .0625em;
-      margin-right: .325em;
-      transform: scale(1.5);
+      height: 35px;
+      width: 70px;
     }
 
     @media (max-width: 767px) {
@@ -243,16 +233,16 @@
     <div class="p-2">
       <a
         id="site-title"
-        class="mb-0 ml-1 t-decoration-none t-teal-600 hover:t-black"
+        class="flex flex-middle gap-1 h3 mb-0 pl-1 t-decoration-none t-teal-600 hover:t-black"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
       >
         <!-- Codebase logo-->
-        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
-          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="#5caec3" />
+        <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
+          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="#8ac5d4" />
           <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)" fill="currentColor" />
-          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="#5caec3" />
+          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="#8ac5d4" />
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="t-semibold">Codebase</span>
@@ -541,28 +531,28 @@
 <p>Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s <a href="https://systemfontstack.com">System Font Stacks</a> (but not including the emoji fonts).</p>
 <h2 id="default-font-stacks" tabindex="-1">Default font stacks</h2>
 <h3 id="base-font-stack-(sans-serif)" tabindex="-1">Base font stack (sans-serif)</h3>
-<p>The HTML <code>&lt;body&gt;</code> tag has <code>$font-stack-base</code> that is a common sans-serif font stack. This is what most of Codebase looks like, by default.</p>
-<pre class="language-css"><code class="language-css">$<span class="token property">font-stack-base</span><span class="token punctuation">:</span><br>  -apple-system<span class="token punctuation">,</span><br>  BlinkMacSystemFont<span class="token punctuation">,</span><br>  <span class="token string">"Avenir Next"</span><span class="token punctuation">,</span><br>  Avenir<span class="token punctuation">,</span><br>  <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span><br>  <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span><br>  Helvetica<span class="token punctuation">,</span><br>  Cantarell<span class="token punctuation">,</span><br>  Ubuntu<span class="token punctuation">,</span><br>  Roboto<span class="token punctuation">,</span><br>  Noto<span class="token punctuation">,</span><br>  Arial<span class="token punctuation">,</span><br>  sans-serif !default<span class="token punctuation">;</span></code></pre>
-<p class="b-thin p-3"><code>$font-stack-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
-<p>Codebase also carries a sans-serif font stack in the SCSS variable <code>$font-stack-sans-serif</code>. But by default, it is aliased from <code>$font-stack-base</code> – it’s the same.</p>
-<p>Unless you change things in your design, <code>$font-stack-sans-serif</code> is only available via the text utility class <code>t-sans-serif</code>.</p>
+<p>The HTML <code>&lt;body&gt;</code> tag has the CSS variable <code>--font-base</code> that sets a common sans-serif font stack. This is what most of Codebase looks like, by default.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--font-base</span><span class="token punctuation">:</span> -apple-system<span class="token punctuation">,</span> BlinkMacSystemFont<span class="token punctuation">,</span> <span class="token string">"Avenir Next"</span><span class="token punctuation">,</span> Avenir<span class="token punctuation">,</span> <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span> <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> Cantarell<span class="token punctuation">,</span> Ubuntu<span class="token punctuation">,</span> Roboto<span class="token punctuation">,</span> Noto<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p class="b-thin p-3"><code>--font-base</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p>Codebase also carries a sans-serif font stack in the SCSS variable <code>--font-sans-serif</code>. But by default, it is aliased from <code>--font-base</code> – it’s the same.</p>
+<p>Unless you change things in your design, <code>--font-sans-serif</code> is only available via the text utility class <code>t-sans-serif</code>.</p>
 <h3 id="monospaced-font-stack" tabindex="-1">Monospaced font stack</h3>
-<p>A few elements such as <code>&lt;code&gt;</code> have a monospaced font stack, <code>$font-stack-mono</code>.</p>
-<pre class="language-css"><code class="language-css">$<span class="token property">font-stack-mono</span><span class="token punctuation">:</span><br>  Menlo<span class="token punctuation">,</span><br>  Consolas<span class="token punctuation">,</span><br>  Monaco<span class="token punctuation">,</span><br>  <span class="token string">"Liberation Mono"</span><span class="token punctuation">,</span><br>  <span class="token string">"Lucida Console"</span><span class="token punctuation">,</span><br>  monospace !default<span class="token punctuation">;</span></code></pre>
-<p class="b-thin p-3 t-mono"><code>$font-stack-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
-<p>Unless you change things in your design, <code>$font-stack-mono</code> is only available via the text utility class <code>t-mono</code>.</p>
+<p>A few elements such as <code>&lt;code&gt;</code> have a monospaced font stack, <code>--font-mono</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--font-mono</span><span class="token punctuation">:</span> Menlo<span class="token punctuation">,</span> Consolas<span class="token punctuation">,</span> Monaco<span class="token punctuation">,</span> <span class="token string">"Liberation Mono"</span><span class="token punctuation">,</span> <span class="token string">"Lucida Console"</span><span class="token punctuation">,</span> monospace<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p class="b-thin p-3 t-mono"><code>--font-mono</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p>Unless you change things in your design, <code>--font-mono</code> is only available via the text utility class <code>t-mono</code>.</p>
 <h3 id="serif-font-stack" tabindex="-1">Serif font stack</h3>
-<p>There is also a default serif <code>$font-stack-serif</code> but Codebase does not apply it to any classless HTML elements.</p>
-<p>Unless you change things in your design, <code>$font-stack-serif</code> is only available via the text utility class <code>t-serif</code>.</p>
-<pre class="language-css"><code class="language-css">$<span class="token property">font-stack-serif</span><span class="token punctuation">:</span><br>  <span class="token string">"Iowan Old Style"</span><span class="token punctuation">,</span><br>  <span class="token string">"Apple Garamond"</span><span class="token punctuation">,</span><br>  Baskerville<span class="token punctuation">,</span><br>  <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span><br>  <span class="token string">"Droid Serif"</span><span class="token punctuation">,</span><br>  Times<span class="token punctuation">,</span><br>  <span class="token string">"Source Serif Pro"</span><span class="token punctuation">,</span><br>  serif !default<span class="token punctuation">;</span></code></pre>
-<p class="b-thin p-3 t-serif"><code>$font-stack-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
+<p>There is also a default serif <code>--font-serif</code> but Codebase does not apply it to any classless HTML elements.</p>
+<p>Unless you change things in your design, <code>--font-serif</code> is only available via the text utility class <code>t-serif</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--font-serif</span><span class="token punctuation">:</span> <span class="token string">"Iowan Old Style"</span><span class="token punctuation">,</span> <span class="token string">"Apple Garamond"</span><span class="token punctuation">,</span> Baskerville<span class="token punctuation">,</span> <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span> <span class="token string">"Droid Serif"</span><span class="token punctuation">,</span> Times<span class="token punctuation">,</span> <span class="token string">"Source Serif Pro"</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p class="b-thin p-3 t-serif"><code>--font-serif</code><br><br>Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</p>
 <h3 id="user-interface-(ui)-font-stack" tabindex="-1">User interface (UI) font stack</h3>
-<p>User interface elements (form inputs, labels, buttons, etc.) have <code>$font-stack-ui</code> applied, but it is aliased from <code>$font-stack-base</code>.</p>
-<p>Only when you diverge from the Codebase default, applying different font-stacks for <code>$font-stack-ui</code> and <code>$font-stack-base</code>, will you see a difference.</p>
-<p>Besides HTML tags for buttons, form elements and labels, <code>$font-stack-ui</code> is available via the text utility class <code>t-ui</code>.</p>
+<p>User interface elements (form inputs, labels, buttons, etc.) have <code>--font-ui</code> applied, but it is aliased from <code>--font-base</code>.</p>
+<p>Only when you diverge from the Codebase default, applying different font-stacks for <code>--font-ui</code> and <code>--font-base</code>, will you see a difference.</p>
+<p>Besides HTML tags for buttons, form elements and labels, <code>--font-ui</code> is available via the text utility class <code>t-ui</code>.</p>
 <h3 id="other-aliased-font-stacks" tabindex="-1">Other aliased font stacks</h3>
-<p><code>$font-stack-sans-serif</code> and <code>$font-stack-brand</code> are available in the default variables, but by default these are aliased to <code>$font-stack-base</code>. So at the start, these look no different. They are ready for you to customize in your design.</p>
-<p><code>$font-stack-prose</code> is also available, but by default it is aliased to <code>$font-stack-serif</code>.</p>
+<p><code>--font-sans-serif</code> and <code>--font-brand</code> are available in the default variables, but by default these are aliased to <code>--font-base</code>. So at the start, these look no different. They are ready for you to customize in your design.</p>
+<p><code>--font-prose</code> is also available, but by default it is aliased to <code>--font-serif</code>.</p>
 <p>Unless you change things in your design, these last three font stacks are only available through using the following three text utility classes. So, they don’t add much at all to the default <code>codebase.css</code> payload:</p>
 <ul>
 <li><code>t-sans-serif</code></li>
@@ -582,44 +572,44 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>$font-stack-base</code></td>
+      <td><code>--font-base</code></td>
       <td><code>ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code></td>
       <td><code>&lt;body&gt;</code> Therefore everything gets this by default.</td>
       <td>None.</td>
     </tr>
     <tr>
-      <td><code>$font-stack-mono</code></td>
+      <td><code>--font-mono</code></td>
       <td><code>SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace</code></td>
       <td><code>&lt;code&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;samp&gt;</code></td>
       <td><code>t-mono</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-serif</code</td>
+      <td><code>--font-serif</code</td>
       <td><code>"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif</code></td>
       <td>None</td>
       <td><code>t-serif</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-ui</code</td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td><code>--font-ui</code</td>
+      <td>Aliased from <code>--font-base</code></td>
       <td><code>&lt;label&gt;</code> <code>&lt;input&gt;</code> <code>&lt;textarea&gt;</code> <code>&lt;select&gt;</code> <code>&lt;button&gt;</code></td>
       <td><code>btn</code><br> <code>badge</code><br> <code>label</code><br> <code>t-ui</code></td>
     </tr>
     <tr>
-      <td class="t-nowrap"><code>$font-stack-sans-serif</code></td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td class="t-nowrap"><code>--font-sans-serif</code></td>
+      <td>Aliased from <code>--font-base</code></td>
       <td>None</td>
       <td><code class="t-nowrap">t-sans-serif</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-brand</code</td>
-      <td>Aliased from <code>$font-stack-base</code></td>
+      <td><code>--font-brand</code</td>
+      <td>Aliased from <code>--font-base</code></td>
       <td>None</td>
       <td><code>t-brand</code></td>
     </tr>
     <tr>
-      <td><code>$font-stack-prose</code</td>
-      <td>Aliased from <code class="t-nowrap">$font-stack-serif</code></td>
+      <td><code>--font-prose</code</td>
+      <td>Aliased from <code class="t-nowrap">--font-serif</code></td>
       <td>None</td>
       <td><code>t-prose</code></td>
     </tr>
@@ -658,17 +648,16 @@
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="inline-block mt-2 t-semibold">
-          Codebase
+          Codebase <span class="t-sm t-teal-300">v.5.2.11</span>
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 flex flex-space-around flex-wrap gap-3 t-center">
+  <div class="container-md py-3 flex flex-space-around flex-wrap gap-3 t-center">
     <div><a class="t-teal-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div>Version: 5.2.11</div>
-    <div>CSS (minified): 91.8 KB</div>
+    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (91.8 KB)</div>
     <div>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>
