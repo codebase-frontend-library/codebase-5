@@ -5,7 +5,6 @@
 ## 12 Feb 2024 -- v.5.2.11
 
 * Adjusted headings `h1` to `h6` so that they have a ×1.125 font size increase, that takes effect at `md` (1024px default).
-* Added `text-wrap: balance;` to headings.
 * Improved `t-sm` so that its _minimum_ size is 13.5px, using `max(.75em, 13.5px)`.
 * Improved `t-lg` so that it simply upsizes by ×1.25.
 * Added `t-display` that increases font sizes (×1.25 → 2) using a `clamp()` ramp.
