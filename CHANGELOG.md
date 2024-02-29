@@ -2,6 +2,11 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 29 Feb 2024 -- v.5.2.12
+
+* Added position `static` utility to all breakpoints.
+* Added tet-wrap `t-balance` utility.
+
 ## 12 Feb 2024 -- v.5.2.11
 
 * Adjusted headings `h1` to `h6` so that they have a ×1.125 font size increase, that takes effect at `md` (1024px default).

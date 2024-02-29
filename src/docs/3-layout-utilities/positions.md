@@ -17,6 +17,7 @@ Codebase has utility classes for several types of block positioning:
 * `absolute`
 * `fixed`
 * `sticky`
+* `static` (default, and for a reset)
 
 Each of the above affect blocks at all viewport widths. Plus there are `xs:`, `sm:`, `md:`, and `lg:` responsive tiers of each. 
 

@@ -79,12 +79,12 @@ You usually see thumbail images or avatars set in squares – or circles, which 
 With Codebase, you can use `square` to make elements square, and `square rounded-full overflow-hidden` to make elements circular.
 
 * `square-sm`: 3rem<sup>2</sup> (24px<sup>2</sup> default)
-* `square-md` (alias `square`): 4.5rem<sup>2</sup> (72px<sup>2</sup> default)
+* `square` (alias `square-md`): 4.5rem<sup>2</sup> (72px<sup>2</sup> default)
 * `square-lg`: 6rem<sup>2</sup> (96px<sup>2</sup> default)
 
 ### Responsive squares
 
-`square`’s have the full set of media query breakpoint variations (`md:`, `sm:`, `md:`, and `lg:`) so that you can make them larger or smaller in various layout contexts.
+`square`’s have the full set of media query breakpoint variations (`xs:`, `sm:`, `md:`, and `lg:`) so that you can make them larger or smaller in various layout contexts.
 
 <div class="flex flex-middle gap-3 mb-1">
   <div>

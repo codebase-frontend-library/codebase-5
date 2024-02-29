@@ -151,6 +151,10 @@ a.t-link-inside {
   letter-spacing: -.0625em;
 }
 
+.t-balance {
+  text-wrap: balance;
+}
+
 .t-columns {
   column-width: var(--t-cols);
   column-gap: 1.5rem; // fallback
