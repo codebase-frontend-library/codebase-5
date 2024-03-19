@@ -305,9 +305,6 @@ Codebase `overflow-x` uses to remove margins from around Codebase table classes 
       <th>Table Header 10</th>
       <th>Table Header 11</th>
       <th>Table Header 12</th>
-      <th>Table Header 13</th>
-      <th>Table Header 14</th>
-      <th>Table Header 15</th>
     </tr>
   </thead>
   <tbody>
@@ -324,9 +321,6 @@ Codebase `overflow-x` uses to remove margins from around Codebase table classes 
       <td>Table content 10.1</td>
       <td>Table content 11.1</td>
       <td>Table content 12.1</td>
-      <td>Table content 13.1</td>
-      <td>Table content 14.1</td>
-      <td>Table content 15.1</td>
     </tr>
     <tr>
       <td>Table content 1.2</td>
@@ -341,9 +335,6 @@ Codebase `overflow-x` uses to remove margins from around Codebase table classes 
       <td>Table content 10.2</td>
       <td>Table content 11.2</td>
       <td>Table content 12.2</td>
-      <td>Table content 13.2</td>
-      <td>Table content 14.2</td>
-      <td>Table content 15.2</td>
     </tr>
     <tr>
       <td>Table content 1.3</td>
@@ -358,9 +349,6 @@ Codebase `overflow-x` uses to remove margins from around Codebase table classes 
       <td>Table content 10.3</td>
       <td>Table content 11.3</td>
       <td>Table content 12.3</td>
-      <td>Table content 13.3</td>
-      <td>Table content 14.3</td>
-      <td>Table content 15.3</td>
     </tr>
   </tbody>
 </table>
