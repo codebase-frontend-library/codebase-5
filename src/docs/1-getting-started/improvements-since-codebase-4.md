@@ -28,7 +28,7 @@ The Codebase [AlpineJS components]({{ '/docs/7-alpinejs-components/collapse' | u
 
 Another tier `xs` has been added to [media query width controlled CSS classes]({{ '/docs/1-getting-started/responsive-design/#responsive-layouts' | url }}), to enable greater design control for the wide range of phones and small tablets.
 
-### Utilities with madia query variants
+### Utilities with media query variants
 
 Several utility classes now have a large range media width variants, so that you can adjust them for different viewports (device sizes):
 
