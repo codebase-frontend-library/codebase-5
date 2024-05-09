@@ -126,7 +126,7 @@ $theme-color: (
   "amber":  #f0b300,
   "red":    #cf000f,
   "purple": #9400d3,
-  "teal":   #0080a2,
+  "teal":   #0d98ba,
   "gray":   #767676,
 );
 ```
