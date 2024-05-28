@@ -2,6 +2,11 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 28 May 2024 -- v.5.2.2
+
+* Media query controlled max-width utilities (e.g. md:w-xs), so that layout blocks can be set to different max-widths at different breakpoint widths.
+* Increased heading sizes (for both base and `MD` bump sizes).
+
 ## 9 May 2024 -- v.5.2.13
 
 * Improved the `teal` color.

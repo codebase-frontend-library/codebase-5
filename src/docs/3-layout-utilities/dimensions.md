@@ -30,7 +30,10 @@ Therefore, blocks with little or no content will be _stretched_ to their max wid
 * `w-lg` – max-width: 1280px
 * `w-xl` – max-width: 1536px
 * `w-xxl` – max-width: 1792px
-* `w-max-100vw` - max-width: 100vw
+
+Since v.5.2.2: All the above have meda query breakpoint variants. So e.g. you can have a block set to max-with `SM` for smaller screens using `w-sm`, but then on marger screens where you may want a multi-column layout, you can constrain the width of that same block to `md:w-xs`.
+
+There is also `w-max-100vw` - max-width: 100vw
 
 ### Max-width overrides
 

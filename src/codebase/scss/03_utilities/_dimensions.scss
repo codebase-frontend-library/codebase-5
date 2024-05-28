@@ -4,7 +4,7 @@
 @use "../00_setup/default-variables" as *;
 @use "sass:math";
 
-.w {
+@mixin widths {
   &-xxs {
     width: min(100%, var(--w-xxs));
   }
@@ -43,28 +43,20 @@
   }
 }
 
+.w {
+  @include widths;
+}
+
 @each $mq-key,
 $mq-value in $mq-width {
   @include break-min(#{$mq-value}) {
-    .#{$mq-key}\:w-auto {
-      max-width: unset;
-      width: auto !important;
+    .#{$mq-key}\:w {
+      @include widths;
     }
   }
 }
 
 .w {
-  &-25\% {
-    width: 25%;
-  }
-
-  &-50\% {
-    width: 50%;
-  }
-
-  &-75\% {
-    width: 75%;
-  }
 
   &-100\% {
     width: 100%;

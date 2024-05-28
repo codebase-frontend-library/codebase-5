@@ -317,20 +317,20 @@ $mq-width: (
   --btn-p-lg: .75rem 1.75rem;
 
   // Headings (major third typographic scale, calculated from cSalculated by https: //type-scale.com)
-  --h1: 2.441em;
-  --h2: 1.953em;
-  --h3: 1.563em;
-  --h4: 1.25em;
-  --h5: 1em;
-  --h6: 0.8em;
+  --h1: 2.488em;
+  --h2: 2.074em;
+  --h3: 1.728em;
+  --h4: 1.44em;
+  --h5: 1.2em;
+  --h6: 1rem;
 
-  // Heading size bump (×1.125) for MD (1024px default)
-  --h1-bump: 2.746em;
-  --h2-bump: 2.197em;
-  --h3-bump: 1.758em;
-  --h4-bump: 1.406em;
-  --h5-bump: 1.125em;
-  --h6-bump: 0.9em;
+  // Heading size bump for MD (@ 1024px default)
+  --h1-bump: 2.986em;
+  --h2-bump: 2.488em;
+  --h3-bump: 2.074em;
+  --h4-bump: 1.728em;
+  --h5-bump: 1.44em;
+  --h6-bump: 1.2em;
 
   --hd-weight: normal;
   --hd-lh: calc(1em + .5rem); // gives .5rem more than the heading’s own size
