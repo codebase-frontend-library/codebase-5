@@ -78,11 +78,9 @@ $mq-value in $mq-width {
   font-style: normal;
 }
 
-.p,
+.t-para,
 .t-default {
-  font-size: var(--t-fs);
-  font-weight: var(--t-base-fw);
-  font-style: normal;
+  font-size: 1rem;
   line-height: inherit;
 }
 
@@ -92,7 +90,6 @@ $mq-value in $mq-width {
 }
 
 .t-italic,
-.t-italics,
 .t-em {
   font-style: italic;
 }
@@ -106,10 +103,19 @@ $mq-value in $mq-width {
   text-decoration: underline;
 }
 
-a.t-link-inside {
+.t-link-inside {
   cursor: pointer;
   text-decoration: none;
   color: unset;
+
+  &:hover {
+    color: unset;
+  }
+
+  .t-link {
+    color: var(--c-link);
+    text-decoration: underline;
+  }
 
   &:hover .t-link {
     color: var(--c-link-hover);
@@ -117,9 +123,6 @@ a.t-link-inside {
 }
 
 .t-link {
-  color: inherit;
-  text-decoration: underline;
-
   &:-moz-focusring {
     outline: var(--focus-outline);
     box-shadow: var(--focus-shadow);
@@ -144,11 +147,11 @@ a.t-link-inside {
 }
 
 .t-loose {
-  letter-spacing: .0625em;
+  letter-spacing: .025em;
 }
 
 .t-tight {
-  letter-spacing: -.0625em;
+  letter-spacing: -.05em;
 }
 
 .t-balance {
@@ -163,7 +166,7 @@ a.t-link-inside {
 
 small,
 .t-sm {
-  font-size: max(.75em, 13.5px);
+  font-size: var(--t-sm);
   line-height: inherit;
 }
 

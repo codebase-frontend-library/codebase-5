@@ -2,7 +2,7 @@
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.2.2
+ * v.5.2.3
  */
 
 // BASICS
@@ -30,9 +30,9 @@
 @use "03_utilities/box-shadows";
 @use "03_utilities/blocks";
 @use "03_utilities/overflows";
+@use "03_utilities/typography";
 @use "03_utilities/colors";
 @use "03_utilities/glass";
-@use "03_utilities/typography";
 @use "03_utilities/images";
 @use "03_utilities/floats";
 @use "03_utilities/transformations";

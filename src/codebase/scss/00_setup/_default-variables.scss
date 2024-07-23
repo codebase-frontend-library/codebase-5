@@ -345,8 +345,7 @@ $mq-width: (
   --t-bolder-fw: 900;
   --t-cols-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   --t-cols: 17.5em;
-  --t-sm: max(.75em, 13.5px);
-  // Bigger text ramps from XS (512px default) to LG (1280px)
+  --t-sm: .875em;
   --t-lg: 1.25em;
   --t-display: clamp(1.25em, 0.75em + 1.5625vw, 2em);
   --t-long-read: clamp(1em, 0.8333em + 0.5208vw, 1.25em);

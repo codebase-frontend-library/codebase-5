@@ -51,23 +51,26 @@ Codebase has several simple text utility classes. (See also [font-stacks]({{ '/d
 
     Small text for <span class="t-sm">when you need small print</span>
 
-    `t-sm` shrinks text to 0.75em (75%) of its base size. (So, it is 12px when the default text size is 16px.)
-
-* `t-md` (alias: `t-1em`)
-
-    Overrides text size, resetting it to 1em (which will be dependant on the font size set by a parent element).
+    `t-sm` shrinks text to 0.875em (87.5%) of its inherited size. (So, it is 14px when the default text size is 16px.)
 
 * `t-lg`
 
-    Big text for making <span class="t-lg">something</span> stand out. `t-lg` enlarges text by 1.25em (×1.25).
+    Big text for making <span class="t-lg">something</span> stand out. `t-lg` enlarges text by 1.25em (125%) of its inherited size.
 
-    **Note:** `t-lg` doesn’t work as an _inline class_ on headings or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See also[large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
+    **Note:** `t-lg` doesn’t work as an _inline class_ on headings or [heading utilities]({{ '/docs/5-typographic-utilities/headings' | url }}). If you want a heading to be bigger, then use `t-lg` on a block _wrapper_ around the heading. See also [large display text]({{ '/docs/5-typographic-utilities/large-display-text' | url }}).
+
+* `t-para` (alias: `t-default`)
+
+    Overrides text size, resetting it to the default 1rem (which will be dependant on the font size set by a parent element).
 
 ## Links
 
 Links (also called _hyperlinks_) in Codebase are blue with an underscore by default, following the old tradition.
 
-**What if you wanted a whole panel, [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) to operate as a link?** You can simply use the `<a>` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
+### Panel links
+
+**Q: What if you wanted a whole panel, such as a [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) to operate as a link?**<br>
+A: You can simply use the `<a>` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
 
 ```html
 <a class="block" href="">
@@ -75,7 +78,8 @@ Links (also called _hyperlinks_) in Codebase are blue with an underscore by defa
 </a>
 ```
 
-**Then, what if you only wanted _some_ of the text in the panel to be styled as the link, but not other accompanying text?** Codebase has you covered. Since v.5.0.8, you can put class `t-link-inside` on the wrapper `<a>` tag, and `t-link` on the inner text that you want to be the pseudo link (e.g. on the panel title text).
+**Q: Then, what if you wanted only _some_ of the text in the panel to be styled as the link, but not other accompanying text?**<br>
+A: Codebase has you covered. Since v.5.0.8, you can put class `t-link-inside` on the wrapper `<a>` tag, and `t-link` on the inner text that you want to be the pseudo link (e.g. on the panel title text).
 
 * The `t-link-inside` class (must be applied to the `<a>` wrapper) simply removes the traditional link underscore, and resets its link text color to inherit the color of the surrounding/ “parent” panel text. (The surrounding text usually has the default text color, almost black.)
 
@@ -99,19 +103,20 @@ Example:
 
 Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design—whether from Codebase utilities or your own CSS.
 
-Another example:
+A second example — setting the underline to appear only on the `t-link` and only on hover (and a box shadow that appears only on hover):
 
 <style>
-    .example .t-link {
+    .t-link-inside.t-decoration-none .t-link,
+    .t-link-inside.hover\:t-decoration-underline:hover {
         text-decoration: none;
     }
-    .example:hover .t-link {
+    .hover\:t-decoration-underline:hover .t-link {
         text-decoration: underline;
     }
 </style>
 
-<a class="example block container-xs mb-3 b-thin p-2 hover:bs-3 t-link-inside t-gray-700 hover:t-gray-800" href="#/">
-    <p class="h4 t-link">Card title</p>
+<a class="block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+    <p class="h4 mb-1 t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 
@@ -119,16 +124,57 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
 
 ```html
 <style>
-    .example .t-link {
+    .t-link-inside.t-decoration-none .t-link,
+    .t-link-inside.hover\:t-decoration-underline:hover {
         text-decoration: none;
     }
-    .example:hover .t-link {
+    .hover\:t-decoration-underline:hover .t-link {
         text-decoration: underline;
     }
 </style>
 
-<a class="example block b-thin p-2 hover:bs-3 t-link-inside" href="#/">
-    <p class="h4 t-link">Card title</p>
+<a class="block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+    <p class="h4 mb-1 t-link">Card title</p>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+</a>
+```
+
+A third example — removing the underline (see above), and controlling the text color in base and hover states (plus adding a background color on hover):
+
+<style>
+    .t-link-inside.t-green-500 {
+        color: unset;
+    }
+    .t-link-inside.t-green-500 .t-link {
+        color: var(--green-500);
+    }
+
+    .hover\:t-green-600:hover .t-link {
+        color: var(--green-600)
+    }
+</style>
+
+<a class="block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100" href="#/">
+    <p class="h4 mb-1 t-bold t-link">Card title</p>
+    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+</a>
+
+```html
+<style>
+    .t-link-inside.t-green-500 {
+        color: unset;
+    }
+    .t-link-inside.t-green-500 .t-link {
+        color: var(--green-500);
+    }
+
+    .hover\:t-green-600:hover .t-link {
+        color: var(--green-600)
+    }
+</style>
+
+<a class="block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100" href="#/">
+    <p class="h4 mb-1 t-bold t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```

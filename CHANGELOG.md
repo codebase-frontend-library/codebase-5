@@ -2,6 +2,11 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 23 July 2025 -- v.5.2.3
+
+* Improved `t-tight` and `t-loose` letter spacing.
+* Improved `t-link-inside` / `t-link` (i.e. panel links) and examples.
+
 ## 28 May 2024 -- v.5.2.2
 
 * Media query controlled max-width utilities (e.g. md:w-xs), so that layout blocks can be set to different max-widths at different breakpoint widths.
