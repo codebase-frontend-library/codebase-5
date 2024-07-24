@@ -103,7 +103,9 @@ Example:
 
 Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design—whether from Codebase utilities or your own CSS.
 
-A second example — setting the underline to appear only on the `t-link` and only on hover (and a box shadow that appears only on hover):
+It’s easier if you use your own CSS at this point (e.g. make your own `.special-panel` class). But if you want to  use Codebase utilities, you will need to interrupt the cascade of the `a` anchor tag styling.
+
+A second example: using cascade interruption to set the underline to appear only on the `t-link` and only on hover (and a box shadow that appears only on hover):
 
 <style>
     .t-link-inside.t-decoration-none .t-link,
@@ -139,7 +141,7 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
 </a>
 ```
 
-A third example — removing the underline (i.e. is affected the additional styling above), and controlling the text color in base and hover states (plus adding a background color on hover):
+A third example: again using cascade interruption to removing the underline (i.e. the below is also affected the additional styling above), but now adding in different text colors in base and hover states (plus adding a background color on hover):
 
 <style>
     .t-link-inside.t-green-500 {
