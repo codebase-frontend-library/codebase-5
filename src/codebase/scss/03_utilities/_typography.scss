@@ -103,35 +103,19 @@ $mq-value in $mq-width {
   text-decoration: underline;
 }
 
-.t-link-inside {
-  cursor: pointer;
+.t-link-inside,
+.t-link-inside:hover {
   text-decoration: none;
   color: unset;
-
-  &:hover {
-    color: unset;
-  }
-
-  .t-link {
-    color: var(--c-link);
-    text-decoration: underline;
-  }
-
-  &:hover .t-link {
-    color: var(--c-link-hover);
-  }
 }
 
 .t-link {
-  &:-moz-focusring {
-    outline: var(--focus-outline);
-    box-shadow: var(--focus-shadow);
-  }
+  color: var(--c-link);
+  text-decoration: underline;
+}
 
-  &:focus-visible {
-    outline: var(--focus-outline);
-    box-shadow: var(--focus-shadow);
-  }
+a.t-link-inside:hover .t-link {
+  color: var(--c-link-hover);
 }
 
 .t-strike {

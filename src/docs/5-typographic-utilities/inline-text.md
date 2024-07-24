@@ -139,7 +139,7 @@ The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4
 </a>
 ```
 
-A third example — removing the underline (see above), and controlling the text color in base and hover states (plus adding a background color on hover):
+A third example — removing the underline (i.e. is affected the additional styling above), and controlling the text color in base and hover states (plus adding a background color on hover):
 
 <style>
     .t-link-inside.t-green-500 {
@@ -149,7 +149,7 @@ A third example — removing the underline (see above), and controlling the text
         color: var(--green-500);
     }
 
-    .hover\:t-green-600:hover .t-link {
+    .t-link-inside.hover\:t-green-600:hover .t-link {
         color: var(--green-600)
     }
 </style>
@@ -168,7 +168,7 @@ A third example — removing the underline (see above), and controlling the text
         color: var(--green-500);
     }
 
-    .hover\:t-green-600:hover .t-link {
+    .t-link-inside.hover\:t-green-600:hover .t-link {
         color: var(--green-600)
     }
 </style>
