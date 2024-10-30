@@ -21,6 +21,9 @@
   <meta name="theme-color" content="#ffffff">
   
   <style>
+    {# * {
+        outline: 1px solid limegreen !important;
+    } #}
     html {
       scroll-behavior: smooth;
     }
@@ -28,8 +31,12 @@
       z-index: 990;
     }
     #site-title svg {
-      height: 35px;
-      width: 70px;
+      height: 30px;
+      width: 60px;
+    }
+
+    pre code {
+      white-space: pre-wrap !important;
     }
 
     @media (max-width: 767px) {
@@ -42,6 +49,7 @@
     @media (min-width: 768px) {
       #site-page {
         grid-template-columns: 256px calc(100vw - 256px);
+        max-width: 100vw;
       }
       #site-navigation > div {
         top: 57px;

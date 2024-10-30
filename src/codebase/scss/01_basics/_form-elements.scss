@@ -8,7 +8,8 @@ fieldset {
   border: var(--b1);
 }
 
-label, legend {
+label,
+legend {
   font-size: 1rem;
   font-family: var(--base);
 }
@@ -21,10 +22,9 @@ label, legend {
 input,
 textarea,
 select {
-  outline: 0 none;
   width: 100%;
   min-height: var(--form-size);
-  /* -webkit-appearance: none; */
+  // -webkit-appearance: none;
   border: var(--line-detail);
   border-radius: unset;
   padding: var(--form-p);
@@ -35,10 +35,13 @@ select {
   @if $form-input-rounded-corners==true {
     -webkit-border-radius: var(--rad-sm);
     border-radius: var(--rad-sm);
-  } @else {
+  }
+
+  @else {
     -webkit-border-radius: 0;
     border-radius: 0;
   }
+
   @if $form-input-background-color==true {
     background-color: var(--c-form-bg)
   }
@@ -46,18 +49,20 @@ select {
   transition: var(--ease);
 }
 
-select, [type="number"] {
+select,
+[type="number"] {
   width: auto;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  position: relative;
-  z-index: 1;
-  outline: 0;
-  box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);;
-}
+//input:focus,
+// select:focus,
+// textarea:focus {
+//   position: relative;
+//   z-index: 1;
+//   outline: transparent;
+//   box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
+//   ;
+// }
 
 select:not([multiple]) {
   height: var(--form-size);
@@ -136,10 +141,10 @@ textarea.form-element-sm {
   margin: 0;
   border: var(--line-detail);
 
-  @if $form-input-rounded-corners == true {
+  @if $form-input-rounded-corners ==true {
     border-radius: var(--rad-sm);
   }
-  
+
   padding: var(--btn-p);
   font-family: var(--form-font);
   font-size: 100%;
@@ -177,11 +182,11 @@ button,
 [type="reset"] {
   @include button;
 
-  &:focus-visible {
-    z-index: 1;
-    outline: 0;
-    box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
-  }
+  // &:focus-visible {
+  //   z-index: 1;
+  //   outline: transparent;
+  //   box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
+  // }
 }
 
 .btn {

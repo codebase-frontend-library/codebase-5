@@ -69,15 +69,22 @@ sup {
 }
 
 // see also .t-link in _text.css
-:-moz-focusring {
-  outline: var(--focus-outline);
-  box-shadow: var(--focus-shadow);
+
+:-moz-focusring,
+:focus-visible {
+  outline-offset: 2px;
+  outline-width: 2px;
 }
 
-:focus-visible {
-  outline: var(--focus-outline);
-  box-shadow: var(--focus-shadow);
-}
+// :-moz-focusring {
+//   outline: var(--focus-outline);
+//   box-shadow: var(--focus-shadow);
+// }
+
+// :focus-visible {
+//   outline: var(--focus-outline);
+//   box-shadow: var(--focus-shadow);
+//}
 
 small {
   font-size: 85%;

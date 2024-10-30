@@ -5,7 +5,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  outline: 0;
+  outline: transparent;
 }
 
 .img-cover {
@@ -14,27 +14,35 @@ img {
   object-fit: cover !important;
   object-position: center;
   overflow: hidden;
+
   &-right-top {
     object-position: right top;
   }
+
   &-right {
     object-position: right;
   }
+
   &-right-bottom {
     object-position: right bottom;
   }
+
   &-bottom {
     object-position: bottom;
   }
+
   &-left-bottom {
     object-position: left bottom;
   }
+
   &-left {
     object-position: left;
   }
+
   &-left-top {
     object-position: left top;
   }
+
   &-top {
     object-position: top;
   }

@@ -170,9 +170,9 @@ a {
 }
 
 pre {
-  max-width: calc(100vw - 2rem);
   margin-bottom: calc(var(--t-base-lh) * 1rem);
   font-family: var(--font-base);
+  overflow: auto;
 
   &>code {
     display: block;

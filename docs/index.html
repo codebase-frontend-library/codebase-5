@@ -8,7 +8,7 @@
   <title>Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.2.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -21,6 +21,7 @@
   <meta name="theme-color" content="#ffffff">
   
   <style>
+    
     html {
       scroll-behavior: smooth;
     }
@@ -28,8 +29,12 @@
       z-index: 990;
     }
     #site-title svg {
-      height: 35px;
-      width: 70px;
+      height: 30px;
+      width: 60px;
+    }
+
+    pre code {
+      white-space: pre-wrap !important;
     }
 
     @media (max-width: 767px) {
@@ -42,6 +47,7 @@
     @media (min-width: 768px) {
       #site-page {
         grid-template-columns: 256px calc(100vw - 256px);
+        max-width: 100vw;
       }
       #site-navigation > div {
         top: 57px;
@@ -189,8 +195,8 @@
     <div class="pb-3 flex flex-space-around flex-wrap gap-3 t-center">
       <div><a href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
       <div><a href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-      <div>Version: 5.2.3</div>
-      <div><a href="/codebase-5/dist/codebase.css">CSS (minified)</a> (95 KB)</div>
+      <div>Version: 5.2.4</div>
+      <div><a href="/codebase-5/dist/codebase.css">CSS (minified)</a> (92.5 KB)</div>
       <div>Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
       <div>Developer: <a href="https://github.com/SimonPadbury">Simon Padbury</a></div>
     </div>
@@ -324,7 +330,7 @@
           <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
         </svg>
         <span class="inline-block mt-2 t-semibold">
-          Codebase <span class="t-sm t-teal-300">v.5.2.3</span>
+          Codebase <span class="t-sm t-teal-300">v.5.2.4</span>
         </span>
       </span>
     </a>
@@ -333,7 +339,7 @@
   <div class="container-md py-3 flex flex-space-around flex-wrap gap-3 t-center">
     <div><a class="t-teal-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (95 KB)</div>
+    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (92.5 KB)</div>
     <div>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>

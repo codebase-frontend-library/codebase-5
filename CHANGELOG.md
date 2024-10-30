@@ -2,7 +2,11 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
-## 23 July 2025 -- v.5.2.3
+## 30 Oct 2024 -- v.5.2.4
+
+* Reverted to the browser built-in accessibility focus ring outline (no longer using a box shadow). But set 2px outline thickness and 2px offset. Evergreen browsers have outlines that now follow rounded corners on inputs and buttons.
+
+## 23 July 2024 -- v.5.2.3
 
 * Improved `t-tight` and `t-loose` letter spacing.
 * Improved `t-link-inside` / `t-link` (i.e. panel links) and examples.
