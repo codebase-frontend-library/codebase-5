@@ -1,6 +1,6 @@
 # Codebase 5
 
-Codebase is a **business class** CSS style library for the modern web.
+Codebase is a business class CSS style library for the modern web.
 
 Designed for static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries – with some new techniques.
 
