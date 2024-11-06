@@ -2,7 +2,7 @@
 title: "Text columns"
 layout: layout.njk
 prevPage: "/docs/5-typographic-utilities/list-formats"
-nextPage: "/docs/6-simple-components/menus"
+nextPage: "/docs/6-simple-components/menus-and-menubars"
 prevLink: "list-formats"
 nextLink: "Menus"
 ---
@@ -16,7 +16,7 @@ If you have some blocks of text that you want to arrange as text columns on a we
 
 ## Example using `t-columns`
 
-<div class="mb-3">
+<div class="mb-2">
   <div class=" t-columns">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi. In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque. Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque. In ornare lectus dui, tempor ultricies felis commodo nec. Praesent placerat venenatis nibh vel consequat. Mauris vitae molestie tellus. Maecenas feugiat vulputate purus, sit amet rutrum ligula venenatis eleifend. Vivamus suscipit nisi eget faucibus sagittis. Praesent tincidunt est nisl, vel convallis ligula blandit sit amet. Proin vestibulum justo sit amet enim consequat tristique.</p>
     <p>Maecenas posuere elit justo, sit amet bibendum tellus sagittis ut. Pellentesque nec sapien eu quam lacinia sollicitudin. Morbi ut malesuada magna. Vivamus in augue consequat, pretium diam nec, ultrices dui. Donec rutrum et massa id sodales. Morbi auctor enim at tortor tempus, in auctor augue ultrices. Integer pellentesque varius tincidunt. Cras tincidunt urna sed ipsum aliquet iaculis.</p>

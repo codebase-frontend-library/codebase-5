@@ -5,7 +5,7 @@
 @use "sass:math";
 
 fieldset {
-  border: var(--b1);
+  border: var(--line-detail);
 }
 
 label,
@@ -24,7 +24,6 @@ textarea,
 select {
   width: 100%;
   min-height: var(--form-size);
-  // -webkit-appearance: none;
   border: var(--line-detail);
   border-radius: unset;
   padding: var(--form-p);
@@ -49,21 +48,6 @@ select {
   transition: var(--ease);
 }
 
-select,
-[type="number"] {
-  width: auto;
-}
-
-//input:focus,
-// select:focus,
-// textarea:focus {
-//   position: relative;
-//   z-index: 1;
-//   outline: transparent;
-//   box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
-//   ;
-// }
-
 select:not([multiple]) {
   height: var(--form-size);
 }
@@ -77,7 +61,8 @@ select:not([multiple]) {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  width: 1.3em;
+  margin-inline: 0.25rem;
+  width: 1em;
   height: 1em;
   min-height: unset;
 }
@@ -87,17 +72,6 @@ input::file-selector-button {
   font-size: 1em;
   color: white;
   background: var(--c-tertiary);
-}
-
-select,
-[type=number],
-[type=date],
-[type=month],
-[type=time],
-[type=button],
-[type=reset],
-[type=submit] {
-  width: unset;
 }
 
 input.form-element-sm,
@@ -148,10 +122,10 @@ textarea.form-element-sm {
   padding: var(--btn-p);
   font-family: var(--form-font);
   font-size: 100%;
-  font-weight: var(--btn-fw);
-  text-decoration: none; // prevents hover underline when button styling is applied to links
+  font-weight: var(--btn);
+  text-decoration: none;
   white-space: nowrap;
-  color: var(--c-text); // so that button text isn’t overridden by the the color of link text
+  color: var(--c-text);
   background-color: transparent;
   transition: var(--ease);
 
@@ -180,13 +154,8 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"] {
+  width: unset;
   @include button;
-
-  // &:focus-visible {
-  //   z-index: 1;
-  //   outline: transparent;
-  //   box-shadow: 0 0 0 var(--form-focus) var(--c-form-focus);
-  // }
 }
 
 .btn {

@@ -2,6 +2,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @use "../00_setup/default-variables" as *;
+@use "sass:list";
 
 // Badges
 
@@ -62,11 +63,14 @@
 }
 
 // UI colors
-@each $key,
-$val in $ui-setup {
-  .badge-#{$key},
-  .label-#{$key} {
-    background-color: nth($val, 1);
-    color: nth($val, 3)
+
+@if $ui-color-utilities == true {
+  @each $key,
+    $val in $ui-setup {
+    .badge-#{$key},
+    .label-#{$key} {
+      background-color: list.nth($val, 1);
+      color: list.nth($val, 3)
+    }
   }
 }

@@ -11,7 +11,7 @@ In HTML, [inline-level elements](https://developer.mozilla.org/en-US/docs/Web/HT
 
 ## List of inline elements
 
-<div class="xs:flex gap-3 flex-grow-auto mb-3">
+<div class="xs:flex gap-3 flex-grow-auto mb-2">
   <div>
     <i>italics</i><br><em>emphasis</em><br>
     <b>bold</b><br><strong>strong</strong><br>

@@ -1,9 +1,9 @@
 ---
 title: "Heros"
 layout: layout.njk
-prevPage: "/docs/6-simple-components/menus"
+prevPage: "/docs/6-simple-components/menus-and-menubars"
 nextPage: "/docs/6-simple-components/buttons"
-prevLink: "Menus"
+prevLink: "Menus and menubars"
 nextLink: "Buttons"
 ---
 
@@ -11,17 +11,17 @@ Creating a hero image with a text overlay is simple using Codebase utilities.
 
 ## Hero example
 
-<div class="mb-3 aspect-ratio-16x9 relative">
+<div class="mb-2 aspect-ratio-16x9 relative">
   <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
-      <h1 class="t-semibold t-black">Overlay title</h1>
+      <h1 class="mt-0 t-semibold t-black">Overlay title</h1>
       <p class="mb-0 t-black">Lorem ipsum dolor sit amet...</p>
     </div>
   </div>
 </div>
 
-_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
+_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni) from [Pexels](https://www.pexels.com)._
 
 ```html
 <div class="aspect-ratio-16x9 relative">
@@ -32,7 +32,7 @@ _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributio
   <!-- The hero overlay -->
   <div class="aspect-ratio-16x9 flex flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
-      <h1 class="t-semibold t-black">Overlay title</h1>
+      <h1 class="mt-0 t-semibold t-black">Overlay title</h1>
       <p class="mb-0 t-black">Lorem ipsum dolor sit amet...</p>
     </div>
   </div>

@@ -83,7 +83,7 @@ The `grid` class does not specify or predict where you will position or how you 
 
 New in Codebase v.5.2.9: you can use the `xs:`, `sm:`, `md:`, and `lg:` prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base `grid` class, there are 5 grid system tiers.
 
-<div class="overflow-x mb-3">
+<div class="overflow-x mb-2">
   <table class="table">
     <thead>
       <tr>

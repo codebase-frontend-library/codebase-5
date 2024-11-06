@@ -7,39 +7,15 @@
 @use "sass:math";
 
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3 {
-  line-height: 1.3; // Fallback
-}
-
 h4,
-.h4,
 h5,
-.h5,
-h6,
-.h6 {
-  line-height: 1.5; // Fallback
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin-top: 0;
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+h6 {
+  margin-block: var(--hd-m-block);
   font-weight: var(--hd-weight);
   line-height: var(--hd-lh);
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -72,28 +48,16 @@ h6,
   font-size: var(--h6);
 }
 
-@include break-min(w-md) {
-  :root {
-    --h1: var(--h1-bump);
-    --h2: var(--h2-bump);
-    --h3: var(--h3-bump);
-    --h4: var(--h4-bump);
-    --h5: var(--h5-bump);
-    --h6: var(--h6-bump);
-  }
-}
-
 p,
 blockquote,
 dl {
-  margin-top: 0;
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-block: 0 var(--t-base-mb);
+  overflow-wrap: break-word;
 }
 
 ol,
 ul {
-  margin-top: 0;
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-block: 0 var(--t-base-mb);
   padding-left: calc(var(--t-base-lh) * 1rem);
 }
 
@@ -111,11 +75,11 @@ td p:last-of-type {
 }
 
 dd {
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-bottom: var(--t-base-mb);
 }
 
 dt {
-  font-weight: var(--t-bold-fw);
+  font-weight: var(--t-bold);
 }
 
 dd {
@@ -123,11 +87,11 @@ dd {
 }
 
 details {
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-bottom: var(--t-base-mb);
 }
 
 summary {
-  font-weight: var(--t-bold-fw);
+  font-weight: var(--t-bold);
 }
 
 summary:hover {
@@ -143,16 +107,14 @@ hr {
 }
 
 blockquote {
-  margin: calc(var(--t-base-lh) * 1rem) 0;
+  margin: var(--t-base-mb) 0;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   padding-inline: var(--bq-x);
   font-size: var(--bq-fs);
 }
 
-a {
-  text-decoration: var(--link);
-  text-decoration-skip-ink: auto;
+a, .t-link {
   color: var(--c-link);
   cursor: pointer;
   transition: var(--ease);
@@ -169,8 +131,14 @@ a {
   }
 }
 
+a, .t-link, u {
+  text-underline-offset: var(--t-line-offset);
+}
+
+// See also 03_utilities/typography.css for more on `.t-link`
+
 pre {
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-bottom: var(--t-base-mb);
   font-family: var(--font-base);
   overflow: auto;
 

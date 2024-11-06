@@ -2,7 +2,7 @@
 title: "Lists"
 headerTitle: "List formats"
 layout: layout.njk
-prevPage: "/docs/4-decoration-utilities/inline-text"
+prevPage: "/docs/5-typographic-utilities/inline-text"
 nextPage: "/docs/5-typographic-utilities/text-columns"
 prevLink: "Inline text"
 nextLink: "Text columns"
@@ -114,4 +114,4 @@ Normal (classless):
 
 At their most basic, web navigation menus are lists of hyperlinks. Usually they are styled up a bit, to make them look more interesting.
 
-See the simple [menus (and menubars)]({{ '/docs/6-simple-components/menus/' | url }}) component.
+See the simple [menus (and menubars)]({{ '/docs/6-simple-components/menus-and-menubars/' | url }}) component.

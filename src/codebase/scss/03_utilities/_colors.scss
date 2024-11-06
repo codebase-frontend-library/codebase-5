@@ -9,29 +9,29 @@
 
 
 // UI colors
-@each $key,
-$val in $ui-color {
-  .bg-#{$key} {
-    background-color: $val
-  }
+@if $ui-color-utilities == true {
+  @each $key,
+  $val in $ui-color {
+    .bg-#{$key} {
+      background-color: $val
+    }
 
-  .t-#{$key} {
-    color: $val
-  }
+    .t-#{$key} {
+      color: $val
+    }
 
-  .b-#{$key} {
-    border-color: $val
+    .b-#{$key} {
+      border-color: $val
+    }
   }
 }
 
 // Shades of named theme colors
-@if $color-shade-utilities ==true {
+@if $color-shade-utilities == true {
 
-  @each $key,
-  $val in $theme-color {
+  @each $key, $val in $theme-color {
 
-    @each $key2,
-    $val2 in $shade {
+    @each $key2, $val2 in $shade {
 
       .b-#{$key}-#{$key2},
       .hover\:b-#{$key}-#{$key2}:hover {

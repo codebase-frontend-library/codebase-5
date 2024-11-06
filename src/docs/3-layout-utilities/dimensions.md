@@ -55,7 +55,7 @@ New in Codebase v.5.2.11: `w-fit-content` uses `width: fit-content` to “shrink
 
 These utilities will make a block have a _minimum_ of `50vh` or `100dvh`. 
 
-`h-100dvh` is new in Codebase v.5.2.11. You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really _device viewport height_ `h-100dvh` you need. But the alias `h-100vh` is still present for backwards compatability with Codebase 5.x, and in case you forget.
+`h-100dvh` is new in Codebase v.5.2.11. You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really _device viewport height_ `h-100dvh` that you need. But the alias `h-100vh` is still present for backwards compatability with Codebase 5.x, and in case you forget.
 
 ### Heights
 
@@ -167,7 +167,7 @@ The `box` utility expands (you could say, “inflates”) an element to the full
 
 `box` is used to make a hero image fill its wrapper in the Codebase [hero component]({{ '/docs/7-simple-components/heros' | url }}).
 
-<div class="mb-3 aspect-ratio-16x9 relative">
+<div class="mb-2 aspect-ratio-16x9 relative">
   <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   <div class="aspect-ratio-16x9 flex flex-column flex-center flex-middle">
     <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
@@ -177,7 +177,7 @@ The `box` utility expands (you could say, “inflates”) an element to the full
   </div>
 </div>
 
-_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
+_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni) from [Pexels](https://www.pexels.com)._
 
 ```html
 <div class="aspect-ratio-16x9 relative">

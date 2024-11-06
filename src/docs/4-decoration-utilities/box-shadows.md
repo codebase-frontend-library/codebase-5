@@ -16,19 +16,19 @@ Box shadows can take your design to a new level. 😂
 <div class="my-6">
   <div class="flex flex-wrap gap-3">
     <div class="sm:w-20%">
-      <div class="bs-1 mb-3 p-2">bs-1</div>
+      <div class="bs-1 mb-2 p-2">bs-1</div>
     </div>
     <div class="sm:w-20%">
-      <div class="bs-2 mb-3 p-2">bs-2</div>
+      <div class="bs-2 mb-2 p-2">bs-2</div>
     </div>
     <div class="sm:w-20%">
-      <div class="bs-3 mb-3 p-2">bs-3</div>
+      <div class="bs-3 mb-2 p-2">bs-3</div>
     </div>
     <div class="sm:w-20%">
-      <div class="bs-4 mb-3 p-2">bs-4</div>
+      <div class="bs-4 mb-2 p-2">bs-4</div>
     </div>
     <div class="sm:w-20%">
-      <div class="bs-5 mb-3 p-2">bs-5</div>
+      <div class="bs-5 mb-2 p-2">bs-5</div>
     </div>
   </div>
 </div>
@@ -83,7 +83,7 @@ Since v.5.0.7 Codebase also has responsive box shadow removal. Sometimes you wan
 
 **Example 1:** you may have an offcanvas sidebar (requiring a box shadow) on small screens that becomes a normal on-canvas panel (requiring no box shadow) for medium screens up.
 
-<div class="w-xs mx-auto mb-3 bs-2 md:bs-0 b-thin p-2">
+<div class="w-xs mx-auto mb-2 bs-2 md:bs-0 b-thin p-2">
   bs-2 md:bs-0
 </div>
 

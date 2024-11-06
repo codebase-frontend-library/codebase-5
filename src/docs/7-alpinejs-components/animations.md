@@ -28,7 +28,7 @@ Here are two options:
 
 ### On click (on tap)
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -70,7 +70,7 @@ Instead, use “on click” because it is more intuitive. It behaves as your vis
 
 ### On scroll into view
 
-<div class="mb-3">
+<div class="mb-2">
 <div
   x-data="{ activated: false }"
   x-intersect.enter="activated = true"
@@ -121,7 +121,7 @@ You’ve seen `transition-transform-600ms` being used in the demo examples above
 
 Example: `translate-right-100%` (with timing `transition-transform-600ms`)
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -149,7 +149,7 @@ Scales both in the X and Y axis, retaining the elements proportions.
 
 Example: `scale-150%`
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -175,7 +175,7 @@ A scale animation has also been added to a [dropdown]({{ '/docs/7-alpinejs-compo
 
 Example: `rotate-180`
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -209,7 +209,7 @@ Example: `transform-origin-top` has been used on the [dropdown]({{ '/docs/7-alpi
 
 Example fading to `opacity-50%`:
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -244,7 +244,7 @@ In some circumatances, you may also need to add the CSS utility `preserve-3d` to
 
 Example: `flip-y`
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -262,7 +262,7 @@ Example: `flip-y`
 
 Example: `flip-y backface-hidden`
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
@@ -300,7 +300,7 @@ Example fading. Here a ternary class toggler is required in the Alpine component
 :class="activated ? 'fade-out opacity-0' : 'fade-in opacity-100%'"
 ```
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div class="w-50% b-dashed b-black">
     <div
@@ -328,7 +328,7 @@ Example fading. Here a ternary class toggler is required in the Alpine component
 :class="activated ? 'scale-out scale-75%' : 'scale-in scale-100%'"
 ```
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div class="w-50% b-dashed b-black">
     <div
@@ -360,7 +360,7 @@ Example color animation:
 :class="activated ? 't-black bg-white' : 't-white bg-black'"
 ```
 
-<div class="mb-3">
+<div class="mb-2">
 <div x-data="{ activated: false }">
   <div class="w-50% b-dashed b-black">
     <div
@@ -378,35 +378,11 @@ Example color animation:
 </div>
 </div>
 
-Example width animation:
-
-```html
-:class="activated ? 'w-100%' : 'w-25%'"
-```
-
-<div class="mb-3">
-<div x-data="{ activated: false }">
-  <div class="b-dashed b-black">
-    <div
-      @click="activated = !activated"
-      aria-controls="panel-4"
-      :aria-expanded="activated"
-      @keyup.escape="activated = false"
-      id="panel-4"
-      class="p-2 t-bold t-white bg-blue-600 transition-all-600ms"
-      :class="activated ? 'w-100%' : 'w-25%'"
-    >
-      Click me
-    </div>
-  </div>
-</div>
-</div>
-
 ## Examples
 
 ### Featured image and text card
 
-With two components (one in each grid cell) that are triggered to `true` when they enter the viewport on scroll, using `x-intersect`. Refresh your browser to see it happen again.
+With two components (one in each grid cell) that are triggered to `true` when they enter the viewport on scroll, using `x-intersect` both on entering and leaving the viewport. So, these animations will be triggered every time the panels are scrolled into the viewport, whether you scroll down or up.
 
 <div class="my-6 rounded p-2 bg-green-100">
   <div
@@ -416,6 +392,7 @@ With two components (one in each grid cell) that are triggered to `true` when th
       class="xs:col-1 xs:row-1"
       x-data="{ inViewport: false }"
       x-intersect:enter="inViewport = true"
+      x-intersect:leave="inViewport = false"
     >
       <div
         class="h2 t-bold transition-all-300ms"
@@ -439,24 +416,25 @@ With two components (one in each grid cell) that are triggered to `true` when th
       </p>
       <p
         class="transition-all-900ms"
-          x-show="inViewport"
-          x-transition:enter-start="translate-bottom-100%"
-          x-transition:enter-end="translate-0"
-          x-transition:leave-start="translate-0"
-          x-transition:leave-end="translate-bottom-100%"
+        x-show="inViewport"
+        x-transition:enter-start="translate-bottom-100%"
+        x-transition:enter-end="translate-0"
+        x-transition:leave-start="translate-0"
+        x-transition:leave-end="translate-bottom-100%"
       >
         <a
           class="btn b-black t-black hover:t-white hover:bg-black"
-          href="/#"
+          href=""
         >
-          Find out more &rarr;
+          Find out more &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
         </a>
       </p>
     </div>
-        <div
+    <div
       class="xs:col-2 xs:row-1"
       x-data="{ inViewport: false }"
       x-intersect:enter="inViewport = true"
+      x-intersect:leave="inViewport = false"
     >
       <div
         class="flip"
@@ -496,7 +474,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
   </p>
   <div id="panel-5">
     <div
-      class="h2 t-center t-heavy transition-transform-600ms"
+      class="h2 mb-2 t-center t-heavy transition-transform-600ms"
       x-show="activated"
       x-transition:enter-start="opacity-0 translate-bottom-100%"
       x-transition:enter-end="opacity-100% translate-0"

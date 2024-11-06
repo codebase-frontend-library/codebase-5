@@ -12,7 +12,7 @@ Sometimes you may need to make some text as large as a heading, but without it a
 
 These heading format utility classes will help you out.
 
-Codebase `h1` through `h5` utilities are styled the same as the Codebase basic (classless) styling for `<h1>` through `<h6>` headings.
+Since Codebase 5.3.0: Codebase `h1` through `h5` utilities onlyaffect font-size – they do not affect margins or font-weighs.
 
 ## Heading utility examples
 

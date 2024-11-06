@@ -2,14 +2,14 @@
 title: "Font stacks"
 layout: layout.njk
 prevPage: "/docs/4-decoration-utilities/forms"
-nextPage: "/docs/5-typographic-utilities/bigger-text"
+nextPage: "/docs/5-typographic-utilities/making-text-bigger"
 prevLink: "Form utilities"
-nextLink: "Bigger text"
+nextLink: "Making text bigger"
 ---
 
 Codebase contains several text utilites for font stacks, that are either directly coded or aliased from three default font families. These are set in the SCSS default-variables file.
 
-Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [System Font Stacks](https://systemfontstack.com) (but not including the emoji fonts).
+Since v.5.3.0, Codebase has had three simple modern font stacks.
 
 ## Default font stacks
 
@@ -19,7 +19,7 @@ The HTML `<body>` tag has the CSS variable `--font-base` that sets a common sans
 
 ```css
 :root {
-  --font-base: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  --font-base: ui-sans-serif, system-ui, sans-serif;
 }
 ```
 
@@ -35,7 +35,7 @@ A few elements such as `<code>` have a monospaced font stack, `--font-mono`.
 
 ```css
 :root {
-  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+  --font-mono: ui-monospace, Menlo, Consolas, "Courier New", monospace;
 }
 ```
 
@@ -51,7 +51,7 @@ Unless you change things in your design, `--font-serif` is only available via th
 
 ```css
 :root {
-  --font-serif: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif;
+  --font-serif: ui-serif, Cambria, "Times New Roman", Times, serif;
 }
 ```
 
@@ -79,7 +79,7 @@ Unless you change things in your design, these last three font stacks are only a
 
 ## How the font stacks are used in Codebase
 
-<div class="overflow-x mb-3">
+<div class="overflow-x mb-2">
 <table class="table">
   <thead>
     <tr>
@@ -92,19 +92,19 @@ Unless you change things in your design, these last three font stacks are only a
   <tbody>
     <tr>
       <td><code>--font-base</code></td>
-      <td><code>ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code></td>
+      <td><code>ui-sans-serif, system-ui, sans-serif</code></td>
       <td><code>&lt;body&gt;</code> Therefore everything gets this by default.</td>
       <td>None.</td>
     </tr>
     <tr>
       <td><code>--font-mono</code></td>
-      <td><code>SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Lucida Console", "Courier New", monospace</code></td>
+      <td><code>ui-monospace, Menlo, Consolas, "Courier New", monospace</code></td>
       <td><code>&lt;code&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;samp&gt;</code></td>
       <td><code>t-mono</code></td>
     </tr>
     <tr>
       <td><code>--font-serif</code</td>
-      <td><code>"Hoefler Text", Cambria, "Times New Roman", "Liberation Serif", Times, serif</code></td>
+      <td><code>ui-serif, Cambria, "Times New Roman", Times, serif</code></td>
       <td>None</td>
       <td><code>t-serif</code></td>
     </tr>

@@ -4,35 +4,35 @@
 @use "../00_setup/default-variables" as *;
 
 .container {
-  width: min(100% - (var(--container-x-space) * 2), var(--container));
+  width: min(100% - (var(--container-x) * 2), var(--container));
   margin-inline: auto;
   &-xxl {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-xxl));
+    width: min(100% - (var(--container-x) * 2), var(--w-xxl));
     margin-inline: auto;
   }
 
   &-xl {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-xl));
+    width: min(100% - (var(--container-x) * 2), var(--w-xl));
     margin-inline: auto;
   }
 
   &-lg {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-lg));
+    width: min(100% - (var(--container-x) * 2), var(--w-lg));
     margin-inline: auto;
   }
 
   &-md {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-md));
+    width: min(100% - (var(--container-x) * 2), var(--w-md));
     margin-inline: auto;
   }
 
   &-sm {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-sm));
+    width: min(100% - (var(--container-x) * 2), var(--w-sm));
     margin-inline: auto;
   }
 
   &-xs {
-    width: min(100% - (var(--container-x-space) * 2), var(--w-xs));
+    width: min(100% - (var(--container-x) * 2), var(--w-xs));
     margin-inline: auto;
   }
 }

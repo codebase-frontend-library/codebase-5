@@ -67,7 +67,7 @@ Improvements to [colors]({{ '/docs/4-decoration-utilities/colors' | url }}):
 
 ## Accessibility
 
-Codebase CSS has several mproved accessibility features, such as `:focus` rings on [buttons]({{ '/docs/6-simple-components/buttons' | url }}), and `:focus-visible` rings on links.
+Codebase CSS has several improved accessibility features, such as focus `:focus` rings on [buttons]({{ '/docs/6-simple-components/buttons' | url }}), and `:focus-visible` rings on links.
 
 In addition, AlpineJS dropdown component examples have been refactored for accessibility, and they include [ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) labels, roles, and states.
 

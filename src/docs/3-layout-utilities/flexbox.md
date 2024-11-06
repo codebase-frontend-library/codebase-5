@@ -13,7 +13,7 @@ Codebase’s simple `flex` flexbox layout system enables you to organize wrapped
 
 1. Besides `flex` (takes effect at all screen widths), there are also responsive prefix flex wrappers: `xs:flex`, `sm:flex`, `md:flex` and `lg:flex`. The flexbox effect for these responsive wrappers will take effect at extra-small, small, medium or large viewport widths.
 
-    <div class="overflow-x mb-3">
+    <div class="overflow-x mb-2">
     <table class="table">
       <thead>
         <tr>
@@ -77,7 +77,7 @@ All you need is `flex`:
 </div>
 ```
 
-The `flex` wrapper (and its breakpoint width variants; see above), is great for making, e.g. [menubars]({{ '/docs/6-simple-components/menus/#menubars' | url }}).
+The `flex` wrapper (and its breakpoint width variants; see above), is great for making, e.g. [menubars]({{ '/docs/6-simple-components/menus-and-menubars/#menubars' | url }}).
 
 ### Columnar flexbox
 
@@ -218,14 +218,14 @@ So, you can create layout components that use flexbox positioning, orienting, or
 
 Example: in this simple menubar, the links are centered for small viewports and right-aligned for medium viewports up:
 
-<nav class="mb-3 b-thin p-block flex flex-center md:flex-end gap-2">
+<nav class="mb-2 b-thin p-cell flex flex-center md:flex-end gap-2">
   <a href="#/">About</a>
   <a href="#/">Blog</a>
   <a href="#/">Contact</a>
 </nav>
 
 ```html
-<nav class="b-thin p-block flex flex-center md:flex-end gap-2">
+<nav class="b-thin p-cell flex flex-center md:flex-end gap-2">
   <a href="">About</a>
   <a href="">Blog</a>
   <a href="">Contact</a>

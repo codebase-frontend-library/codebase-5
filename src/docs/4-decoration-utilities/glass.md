@@ -18,7 +18,7 @@ Codebase contains some partially transparent white or black backgrounds that hav
 
 Dark glass `bg-black-glass-*` utilities over a dark background image:
 
-<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+<div class="mb-2 aspect-ratio-16x9 flex flex-center flex-middle relative">
   <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
   <div class="box p-3 sm:p-6">
     <div class="h-100% grid equal-6-cols">
@@ -34,7 +34,7 @@ Dark glass `bg-black-glass-*` utilities over a dark background image:
 
 Light glass `bg-white-glass-*` utilities over a dark background image:
 
-<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+<div class="mb-2 aspect-ratio-16x9 flex flex-center flex-middle relative">
   <img class="box img-cover" src="{{ '/img/pexels-pixabay-372470.jpg' | url }}" width="1280" height="832" loading="lazy" alt="Photo by Pixabay from Pexels">
   <div class="box p-3 sm:p-6">
     <div class="h-100% grid equal-6-cols">
@@ -54,7 +54,7 @@ _Photo by [Pixabay](https://www.pexels.com/photo/architecture-bay-boats-bridge-3
 
 Dark glass `glass-black-*` utilities over a dark background image:
 
-<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+<div class="mb-2 aspect-ratio-16x9 flex flex-center flex-middle relative">
   <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
   <div class="box p-3 sm:p-6">
     <div class="h-100% grid equal-6-cols">
@@ -70,7 +70,7 @@ Dark glass `glass-black-*` utilities over a dark background image:
 
 Light glass `glass-white-*` utilities over a dark background image:
 
-<div class="mb-3 aspect-ratio-16x9 flex flex-center flex-middle relative">
+<div class="mb-2 aspect-ratio-16x9 flex flex-center flex-middle relative">
   <img class="box img-cover opacity-50%" src="{{ '/img/pexels-ollie-craig-6398582.jpg' | url }}" width="1280" height="960" loading="lazy" alt="Photo by Ollie Craig from Pexels">
   <div class="box p-3 sm:p-6">
     <div class="h-100% grid equal-6-cols">
@@ -84,7 +84,7 @@ Light glass `glass-white-*` utilities over a dark background image:
   </div>
 </div>
 
-_Photo by [Ollie Craig](https://www.pexels.com/@olliecraig1?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
+_Photo by [Ollie Craig](https://www.pexels.com/@olliecraig1) from [Pexels](https://www.pexels.com)._
 
 ## Notes on glass
 
@@ -122,7 +122,7 @@ Of course, you can use different colors for greating a tinted glass effect. I do
 
 Examples:
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="aspect-ratio-16x9 flex flex-center flex-middle relative">
     <img class="box img-cover" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
     <div class="box p-3 sm:p-6">
@@ -134,7 +134,7 @@ Examples:
   </div>
 </div>
 
-_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
+_Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni) from [Pexels](https://www.pexels.com)._
 
 ```css
 /* Filter only */

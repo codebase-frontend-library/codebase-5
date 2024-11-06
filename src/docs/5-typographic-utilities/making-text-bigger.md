@@ -1,10 +1,10 @@
 ---
-title: "Bigger text"
+title: "Making text bigger"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/lists"
-nextPage: "/docs/5-typographic-utilities/text-columns"
-prevLink: "Lists"
-nextLink: "Text columns"
+prevPage: "/docs/5-typographic-utilities/font-stacks"
+nextPage: "/docs/5-typographic-utilities/text-alignment"
+prevLink: "Font stacks"
+nextLink: "Text alignment"
 ---
 
 In Codebase, you can increase the size of text in various ways using utility classes:
@@ -22,19 +22,19 @@ Sometimes you may need to make some text as large as a heading, but without it a
 
 These heading format utility classes will help you out.
 
-Codebase `h1` through `h5` utilities are styled the same as the Codebase basic (classless) styling for `<h1>` through `<h6>` headings.
+Codebase `h1` through `h6` utilities are styled the same as the Codebase basic (classless) styling for `<h1>` through `<h6>` headings.
 
 ### Heading utility examples
 
 The following are all `<div>` elements, in disguise:
 
 <div class="my-6">
-<div class="h1"><code>h1</code> Heading level 1</div>
-<div class="h2"><code>h2</code> Heading level 2</div>
-<div class="h3"><code>h3</code> Heading level 3</div>
-<div class="h4"><code>h4</code> Heading level 4</div>
-<div class="h5"><code>h5</code> Heading level 5</div>
-<div class="h6"><code>h6</code> Heading level 6</div>
+<p class="h1"><code>h1</code> heading</p>
+<p class="h2"><code>h2</code> heading</p>
+<p class="h3"><code>h3</code> heading</p>
+<p class="h4"><code>h4</code> heading</p>
+<p class="h5"><code>h5</code> heading</p>
+<p class="h6"><code>h6</code> heading</p>
 </div>
 
 ```html
@@ -63,7 +63,7 @@ Consider the following examples: you may want a title in a sidebar, footer, card
 
 Comparison with default text and heading sizes:
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="grid gap xs:equal-2-cols gap-2">
     <div class="b-thin p-1">
       <p class="t-bold">Default:</p>
@@ -106,7 +106,7 @@ You can also use `t-lg` to make <span class="t-lg">something important</span> st
 
 Comparison with default text and heading sizes:
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="grid gap xs:equal-2-cols gap-2">
     <div class="b-thin p-1">
       <p class="t-bold">Default:</p>
@@ -147,11 +147,9 @@ Use the `t-long-read` block wrapper utility class around text that you want to b
 
 On narrow viewports (small devices), and paragraph text, list items, table cells, etc. within the example `t-long-read` wrapper below will be the Codebase default sizes (1rem = 16px). On wider viewports, all text is scaled up using a CSS `clamp()` to a comfortable maximum (1.25rem = 20px). And any headings included within a `t-long-read` wrapper will also increase in size accordingly.
 
-**Note:** If you play around adjusting the width of the browser window (as developers do), the page layout re-painting can happen very slowly when CSS `clamp()` is used on text. This is (partly) because the text is being resized hundreds of times while you’re dragging the window width in or out – during the width range where the `clamp()`’s mid-range. _Most people would never see this lag_, because ordinary people don’t spend their days resizing their browser window. 😊
-
 Comparison of default vs `t-long-read` text sizes:
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="grid gap-2 xs:equal-2-cols">
     <div class="b-thin p-1">
       <p class="t-bold">Default:</p>

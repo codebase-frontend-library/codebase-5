@@ -50,7 +50,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
 
 <p class="t-center"> &check; = displayed; &cross; = hidden</p>
 
-<div class="overflow-x mb-3">
+<div class="overflow-x mb-2">
 <table class="table-compact">
   <thead>
     <tr>
@@ -67,7 +67,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr class="bt-thick">
       <td><code>xs:hidden-below</code></td>
       <td>
-        <div class="xs:hidden-below p-block bg-green-200">Example</div>
+        <div class="xs:hidden-below p-cell bg-green-200">Example</div>
       </td>
       <td>&cross;</td>
       <td>&check;</td>
@@ -78,7 +78,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code class="t-nowrap">sm:hidden-below</code></td>
       <td>
-        <div class="sm:hidden-below p-block bg-green-200">Example</div>
+        <div class="sm:hidden-below p-cell bg-green-200">Example</div>
       </td>
       <td>&cross;</td>
       <td>&cross;</td>
@@ -89,7 +89,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code class="t-nowrap">md:hidden-below</code></td>
       <td>
-        <div class="md:hidden-below p-block bg-green-200">Example</div>
+        <div class="md:hidden-below p-cell bg-green-200">Example</div>
       </td>
       <td>&cross;</td>
       <td>&cross;</td>
@@ -100,7 +100,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code>lg:hidden-below</code></td>
       <td>
-        <div class="lg:hidden-below p-block bg-green-200">Example</div>
+        <div class="lg:hidden-below p-cell bg-green-200">Example</div>
       </td>
       <td>&cross;</td>
       <td>&cross;</td>
@@ -111,7 +111,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr class="bt-thick">
       <td><code>xs:hidden</code></td>
       <td>
-        <div class="xs:hidden p-block bg-green-200">Example</div>
+        <div class="xs:hidden p-cell bg-green-200">Example</div>
       </td>
       <td>&check;</td>
       <td>&cross;</td>
@@ -122,7 +122,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code>sm:hidden</code></td>
       <td>
-        <div class="sm:hidden p-block bg-green-200">Example</div>
+        <div class="sm:hidden p-cell bg-green-200">Example</div>
       </td>
       <td>&check;</td>
       <td>&check;</td>
@@ -133,7 +133,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code>md:hidden</code></td>
       <td>
-        <div class="md:hidden p-block bg-green-200">Example</div>
+        <div class="md:hidden p-cell bg-green-200">Example</div>
       </td>
       <td>&check;</td>
       <td>&check;</td>
@@ -144,7 +144,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
     <tr>
       <td><code>lg:hidden</code></td>
       <td>
-        <div class="lg:hidden p-block bg-green-200">Example</div>
+        <div class="lg:hidden p-cell bg-green-200">Example</div>
       </td>
       <td>&check;</td>
       <td>&check;</td>

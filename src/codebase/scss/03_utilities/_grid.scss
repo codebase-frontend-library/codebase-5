@@ -246,7 +246,7 @@
 @mixin gap {
 
   @each $key,
-  $val in $spacing-setup {
+  $val in $spacing {
     &-#{$key} {
       gap: $val;
     }

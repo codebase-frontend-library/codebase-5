@@ -3,11 +3,9 @@
 
 @use "../00_setup/default-variables" as *;
 
-table[class*=table] {
-  // Use table[class*=table] because you don’t want to damage TABLER ICONS,
-  // https://tablericons.com -- they have “table” in their class names.
+.table {
   width: 100%;
-  margin-bottom: calc(var(--t-base-lh) * 1rem);
+  margin-bottom: var(--t-base-mb);
   border-collapse: collapse;
   border-spacing: 0;
 
@@ -21,7 +19,7 @@ table[class*=table] {
 
   th,
   td {
-    padding: var(--sp-block);
+    padding: var(--sp-cell);
     vertical-align: top;
     text-align: unset;
   }

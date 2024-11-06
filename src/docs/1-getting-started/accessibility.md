@@ -48,7 +48,7 @@ Colored UI components are those most commonly expected worldwide, as used on sig
 * Danger is red
 * Information is blue
 
-These are the colors used for UI elements such as ([buttons]({{ '/docs/6-simple-components/buttons' | url }}), [badges]({{ '/docs/6-simple-components/badges' | url }}) and [labels]({{ '/docs/6-simple-components/labels' | url }})) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
+These are the colors used for UI elements such as [buttons]({{ '/docs/6-simple-components/buttons' | url }}), [badges]({{ '/docs/6-simple-components/badges' | url }}) and [labels]({{ '/docs/6-simple-components/labels' | url }}) have their colors set to conform with **WCAG 2.1 Level AA guidelines for text at font-size 16px**, using the [Adobe Color accessible color generator](https://color.adobe.com/create/color-contrast-analyzer). The required color contrast ratio is 4.5:1 or better.
 
 <div class="flex flex-wrap gap-1 my-6">
   <span class="square-lg inline-flex flex-center flex-middle bg-success t-white t-center">success<br>#128a12<br>4.5:1</span>
@@ -74,12 +74,18 @@ While other CSS frameworks (such as [Bootstrap](https://getbootstrap.com/docs/5.
 
 ## Focus ring styling
 
-Interactive elements require a visual indicator that to lake them obvious for sighted keyboard users, who use “tabbing” to get around the webpage’s [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) (a.k.a. tab index). 
+Interactive elements require a visual indicator that to lake them obvious for sighted keyboard users, who use “tabbing” to get around the webpage’s [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) (a.k.a. tab index).
 
-In Codebase, focus ring styling has been improved for links, buttons, form inputs, etc. Seeing that Chrome, Edge, Firefox, and Safari all now have a similar-looking default focus ring, since v.5.0.7 Codebase improves upon this as follows:
+Since Codebase v.5.2.5, focus rings have mostly reverted to the browser default styling, since these have improved in all the popular evergreen browsers (Chrome, Edge, Safari, Firefox). They are now light on dark backgrounds and light on dark backgrounds, and they are now rounded around rounded corners (e.g. on buttons and form fields).
 
-* `:focus-visible` – since Codebase v.5.1.0, focus rings on links have black and white "checker" dotted line, comprised of black dotted outline overlaying a solid white box-shadow of the same thickness. The black makes the focus ring easy to see over light colors whereas the white makes it easy to see over dark colors.
-* `:focus` – focus rings on form elements and buttons (including styled `.btn` pseudo-buttons) have a 0.25rem light blue box shadow.
+The ring is still difficult to see when it's next to a simlar colured button (e.g. a dark ring around a dark button over a light background), so I have included an outline-offset. This offset also improved readability of links within blocks of text when they have received focus.
+
+```css
+:focus-visible {
+  outline-width: 2px;
+  outline-offset: 3px;
+}
+```
 
 ## AlpineJS powered components
 

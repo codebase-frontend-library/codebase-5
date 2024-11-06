@@ -8,7 +8,7 @@
   <title>Inline text - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.2.4" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -29,8 +29,12 @@
       z-index: 990;
     }
     #site-title svg {
-      height: 30px;
-      width: 60px;
+      height: 25px;
+      width: 50px;
+    }
+
+    main > div > h2:first-child {
+      margin-top: 0;
     }
 
     pre code {
@@ -39,7 +43,7 @@
 
     @media (max-width: 767px) {
       #side-menu-wrap {
-        max-height: calc(100vh - 57px);
+        max-height: calc(100vh - 42px);
         overflow-y: auto;
       }
     }
@@ -50,8 +54,8 @@
         max-width: 100vw;
       }
       #site-navigation > div {
-        top: 57px;
-        max-height: calc(100vh - 57px);
+        top: 42px;
+        max-height: calc(100vh - 42px);
         scrollbar-gutter: stable;
         overflow-y: auto;
       }
@@ -75,7 +79,8 @@
       }
       #nav-on-this-page > div {
         width: 100%;
-        max-height: calc(100vh - 55px);
+        top: 42px;
+        max-height: calc(100vh - 42px);
         scrollbar-gutter: stable;
         overflow-y: auto;
       }
@@ -216,7 +221,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sm:sticky bb-thin bg-white-glass-5">
+<div id="site-top-bar" class="sm:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -232,33 +237,30 @@
         :aria-expanded="$store.docsNav"
         x-show="$store.docsNav.belowBP"
       >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
       </button>
     </div>
   
     <div class="p-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h4 mb-0 pl-1 t-decoration-none t-teal-600 hover:t-black"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
       >
         <!-- Codebase logo-->
-        <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
-          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="currentColor" />
-          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)" fill="currentColor" />
-          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="currentColor" />
-          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
+        <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase</span>
       </a>
     </div>
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-block t-gray-600 t-decoration-none t-semibold hover:t-decoration-underline hover:t-black  t-semibold" href="/codebase-5/dist/codebase.css?v=5.2.4">Download CSS</a></div>
-        <div><a class="p-block t-gray-600 t-decoration-none hover:t-decoration-underline hover:t-black  t-semibold" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.0">Download CSS</a></div>
+        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
   
@@ -304,25 +306,25 @@
           class="m-1 btn-icon rounded-full"
           aria-label="Close menu"
           @click="$store.docsNav.open = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
           </button>
         </div>
       </div>
     
-      <div id="side-menu-wrap" class="p-2 pb-6">
+      <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.2.4">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.0">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
-        <p class="h5 lg:mt-1 t-semibold">Documentation</p>
+        <p class="h5 mb-2 t-semibold">Documentation</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu1open = !$store.docsNav.menu1open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu1open" @keyup.escape="$store.docsNav.menu1open = false">
     <svg
       class="transition-all-300ms"
-      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      :class="$store.docsNav.menu1open && 'rotate-90'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Getting started</span>
   </button>
   <div
@@ -333,12 +335,12 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
     </ul>
   </div>  
 </div>
@@ -348,7 +350,7 @@
     <svg
       class="transition-all-300ms"
       :class="$store.docsNav.menu2open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Classless basics</span>
   </button>
   <div
@@ -358,22 +360,22 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
     </ul>
   </div>
 </div>
 
-<p class="my-2 t-loose t-uppercase t-gray-600">Utilities</p>
+<p class="my-2 t-loose t-uppercase t-gray-700">Utilities</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu3open = !$store.docsNav.menu3open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu3open" @keyup.escape="$store.docsNav.menu3open = false">
     <svg
       class="transition-all-300ms"
       :class="$store.docsNav.menu3open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Layout</span>
   </button>
   <div
@@ -383,16 +385,16 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
     </ul>
   </div>
 </div>
@@ -402,7 +404,7 @@
     <svg
       class="transition-all-300ms"
       :class="$store.docsNav.menu4open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Decoration</span>
   </button>
   <div
@@ -412,14 +414,14 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
     </ul>
   </div>
 </div>
@@ -429,7 +431,7 @@
     <svg
       class="transition-all-300ms"
       :class="$store.docsNav.menu5open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Typography</span>
   </button>
   <div
@@ -439,24 +441,24 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/bigger-text">Bigger text</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/lists">List formats</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
     </ul>
   </div>
 </div>
 
-<p class="my-2 t-loose t-uppercase t-gray-600">Components</p>
+<p class="my-2 t-loose t-uppercase t-gray-700">Components</p>
 
 <div x-id="['menu']">
   <button class="w-100% flex-start b-0 px-0 unrounded hover:bg-transparent" @click="$store.docsNav.menu6open = !$store.docsNav.menu6open" :aria-controls="$id('menu')" :aria-expanded="$store.docsNav.menu6open" @keyup.escape="$store.docsNav.menu6open = false">
     <svg
       class="transition-all-300ms" 
       :class="$store.docsNav.menu6open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">Simple (CSS only)</span>
   </button>
   <div
@@ -466,14 +468,14 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/menus">Menus</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
     </ul>
   </div>
 </div>
@@ -483,7 +485,7 @@
     <svg
       class="transition-all-300ms"
       :class="$store.docsNav.menu7open && 'rotate-90'"
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     <span class="ml-space t-semibold">With AlpineJS</span>
   </button>
   <div
@@ -493,13 +495,13 @@
     x-collapse.duration.300ms
   >
     <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -510,22 +512,22 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-2x1 flex flex-column flex-center ">
-      <div class="t-lg">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
+      <div class="h2 my-0">
         
-        <div class="my-1 t-gray-500">Typographic utilities</div>
+        <div class="my-1 t-thin t-gray-800">Typographic utilities</div>
         
       </div>
       <div class="t-display">
-        <h1 class="h2 t-thin">Inline text</h1>    
+        <h1 class="h2 mt-0 t-bold t-balance">Inline text</h1>    
       </div>
     </div>
   </header>
 
   <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
-    <div class="container-sm mx-auto lg:sticky mb-6" style="top: 55px;">
-      <div class="b-thin b-gray-400 rounded px-2 pt-2 lg:b-0">
-        <div class="h5 lg:mt-1 t-semibold">Contents</div>
+    <div class="container-sm mx-auto lg:sticky mb-6">
+      <div class="b-thin b-gray-400 rounded px-2 pt-2 lg:pt-4 lg:b-0">
+        <div class="h5 mb-2 t-semibold">On this page</div>
         <div id="toc"></div>    
       </div>
     </div>
@@ -589,11 +591,22 @@
 </ul>
 <h2 id="links" tabindex="-1">Links</h2>
 <p>Links (also called <em>hyperlinks</em>) in Codebase are blue with an underscore by default, following the old tradition.</p>
-<h3 id="panel-links" tabindex="-1">Panel links</h3>
+<h3 id="links-with-and-without-underlines" tabindex="-1">Links with and without underlines</h3>
+<p>Links automatically get an underline. But there are cases where you may not want that, such as in menus: use <code>t-decoration-none</code>.</p>
+<p>But then you will still need to indicate to users who hover over the link that the link is “working”. This can be done in various ways: adding back the underline, or adding a background colour on hover. See Codebase simple <a href="/codebase-5/docs/6-simple-components/menus-and-menubars">menu components</a>.</p>
+<ul class="flex flex-column gap-2">
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 1</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 2</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 3</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 4</a></li>
+</ul>
+<p>(You will also want to add a gap between each menu item, so that people can click indivicual links on touch screens — as I have done here using Codebase flexbox utility classes.)</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column gap-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="whole-panel-links" tabindex="-1">Whole-panel links</h3>
 <p><strong>Q: What if you wanted a whole panel, such as a <a href="/codebase-5/docs/6-simple-components/cards">card</a>, or <a href="/codebase-5/docs/6-simple-components/heros">hero</a> to operate as a link?</strong><br>
 A: You can simply use the <code>&lt;a&gt;</code> link tag instead of the outer <code>&lt;div&gt;</code>, and give it a Codebase <code>block</code> class to make it a block instead of an inline element:</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p><strong>Q: Then, what if you wanted only <em>some</em> of the text in the panel to be styled as the link, but not other accompanying text?</strong><br>
+<p><strong>Q: But what if you wanted only <em>some</em> of the text in the panel to be styled as the link, but not other accompanying text?</strong><br>
 A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-inside</code> on the wrapper <code>&lt;a&gt;</code> tag, and <code>t-link</code> on the inner text that you want to be the pseudo link (e.g. on the panel title text).</p>
 <ul>
 <li>
@@ -605,30 +618,25 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
 </ul>
 <p>The link functionality is still handled by the wrapper <code>&lt;a&gt;</code> tag. <code>t-link</code> doesn’t actually make an element <em>operate</em> like a link.</p>
 <p>Example:</p>
-<a class="block mb-3 b-thin p-2 t-link-inside" href="#/">
+<a class="block mb-2 b-thin p-2 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p>Above, that <code>&lt;h4 class=&quot;t-link&quot;&gt;</code> pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design—whether from Codebase utilities or your own CSS.</p>
-<p>It’s easier if you use your own CSS at this point (e.g. make your own <code>.special-panel</code> class). But if you want to  use Codebase utilities, you will need to interrupt the cascade of the <code>a</code> anchor tag styling.</p>
-<p>A second example: using cascade interruption to set the underline to appear only on the <code>t-link</code> and only on hover (and a box shadow that appears only on hover):</p>
-<style>
-    .t-link-inside.t-decoration-none .t-link,
-    .t-link-inside.hover\:t-decoration-underline:hover {
-        text-decoration: none;
-    }
-    .hover\:t-decoration-underline:hover .t-link {
-        text-decoration: underline;
-    }
-</style>
-<a class="block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>You need to supply a text color for the accompanying text, else it will inherit the link color (default is hyperlink blue).</p>
+<p>You can even combine <code>t-link-inside</code> with <code>t-decoration-none</code>...</p>
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none" href="#/">
     <p class="h4 mb-1 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
-<p>The box shadow on hover above is supplied by a Codebase <a href="/codebase-5/docs/4-decoration-utilities/box-shadows">box shadow</a>.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.t-link-inside.t-decoration-none .t-link,<br>    .t-link-inside.hover\:t-decoration-underline:hover</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.hover\:t-decoration-underline:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p>A third example: again using cascade interruption to removing the underline (i.e. the below is also affected the additional styling above), but now adding in different text colors in base and hover states (plus adding a background color on hover):</p>
+<p>...and with <code>t-decoration-none hover:t-decoration-underline</code>:</p>
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+    <p class="h4 mb-1 t-link">Card title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+<p>The box shadow on hover in the examples above is supplied by a Codebase <a href="/codebase-5/docs/4-decoration-utilities/box-shadows">box shadow</a>.</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- t-decoration-none --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- t-decoration-none AND hover:t-decoration-underline --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>A third example: adding in different text colors in base and hover states will require you adding your own CSS (example showing how you can utilize Codebase variables):</p>
 <style>
     .t-link-inside.t-green-500 {
         color: unset;
@@ -641,11 +649,11 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
         color: var(--green-600)
     }
 </style>
-<a class="block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100" href="#/">
+<a class="block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600" href="#/">
     <p class="h4 mb-1 t-bold t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.t-link-inside.t-green-500</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.t-link-inside.t-green-500 .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-500<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token selector">.t-link-inside.hover\:t-green-600:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-600<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-bold t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.t-link-inside.t-green-500</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.t-link-inside.t-green-500 .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-500<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token selector">.t-link-inside.hover\:t-green-600:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-600<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600 <span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-bold t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="other-text-utilities" tabindex="-1">Other text utilities</h2>
 <ul>
 <li>
@@ -655,18 +663,6 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
 <li>
 <p><code>t-muted</code></p>
 <p><span class="t-muted">Muted text (opacity set to 0.4)</span></p>
-</li>
-<li>
-<p><code>t-decoration-none</code></p>
-<p>Removes underscore (underline)</p>
-</li>
-<li>
-<p><code>hover:t-decoration-none</code></p>
-<p>Removes underscore (underline) on hover</p>
-</li>
-<li>
-<p><code>hover:t-decoration-underscore</code> (alias <code>hover:t-decoration-underline</code>)</p>
-<p>Adds underscore (underline) on hover</p>
 </li>
 <li>
 <p><code>t-uppercase</code></p>
@@ -694,10 +690,10 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
       <hr>
       <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/text-alignment">&larr; Text alignment</a></li>
+        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/text-alignment">❮ Text alignment</a></li>
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-600 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/lists">Lists &rarr;</a></li>
+        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats ❯</a></li>
           
       </ul>
     </div>
@@ -705,30 +701,26 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
 
 </div>
 
-<footer class="relative py-6 bg-teal-700 t-center t-teal-200">
-  <p class="sm:mt-6">
+<footer class="relative py-3 bg-gray-900 t-center t-gray-400">
+  <p class="sm:mt-3">
     <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
         <!-- Codebase logo-->
-        <svg class="inline-block" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" fill="currentColor" >
-          <path d="M199.492 119.492c12.106-12.107 31.734-12.107 43.84-.001 12.106 12.107 12.106 31.735 0 43.842l73.7-72.833-73.7-72.833c12.106 12.107 12.106 31.735 0 43.842-12.106 12.106-31.734 12.106-43.84-.001-16.012-16.011-41.972-16.011-57.984 0-16.011 16.012-16.011 41.972 0 57.984 16.012 16.011 41.972 16.011 57.984 0Z" transform="translate(3.078 -6.276) scale(1.50431)" fill="currentColor" />
-          <path d="M220 270.13 90 399.87l130 130 20.5-20.811L130 399.87l110.805-109.5L220 270.13Z" transform="matrix(-1 0 0 1 610 -270)" fill="currentColor" />
-          <path d="M97.668 17.667 23.877 90.503l73.791 72.83c-40.224-40.225-40.224-105.441 0-145.666Z" transform="translate(3.951 -6.276) scale(1.50431)" fill="currentColor" />
-          <path d="M220 270.13 109.87 380 90 399.87l.13.13-.13.13 130 129.74 20.815-20.37L129.87 400 240.5 290.8 220 270.13Z" transform="translate(-90 -270.13)" fill="currentColor" />
-        </svg>
-        <span class="inline-block mt-2 t-semibold">
-          Codebase <span class="t-sm t-teal-300">v.5.2.4</span>
+        <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
+        <span class="inline-block mt-2 t-loose t-semibold">
+          Codebase
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-md py-3 flex flex-space-around flex-wrap gap-3 t-center">
-    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
-    <div><a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-teal-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (92.5 KB)</div>
-    <div>Licence: <a class="t-teal-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-teal-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.0</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
+    <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94.2 KB)</div>
+    <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
+    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>
 
 </footer>

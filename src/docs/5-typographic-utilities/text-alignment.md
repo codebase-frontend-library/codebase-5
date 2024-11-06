@@ -1,12 +1,11 @@
 ---
 title: "Text alignment"
 layout: layout.njk
-prevPage: "/docs/5-typographic-utilities/bigger-text"
+prevPage: "/docs/5-typographic-utilities/making-text-bigger"
 nextPage: "/docs/5-typographic-utilities/inline-text"
-prevLink: "Bigger text"
+prevLink: "Making text bigger"
 nextLink: "Inline text"
 ---
-
 
 ## Simple text alignment
 
@@ -33,7 +32,7 @@ With these, you can set the text alignment for phones first, and then _override_
 
 Consider this card design:
 
-<div class="mb-3 grid gap-3 sm:equal-2-cols">
+<div class="mb-2 grid gap-3 sm:equal-2-cols">
   <div>
     <div class="rounded p-2 bg-amber-100">
       <p class="h4 mb-1 sm:t-center">Card title</p>

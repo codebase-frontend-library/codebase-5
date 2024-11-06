@@ -14,7 +14,7 @@ Codebase has a set of responsive float utilities.
 
 ## Float right
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="float-right">
     <div class="b-dashed p-2">This is an example of<br> <code>float-right</code></div>
   </div>
@@ -23,7 +23,7 @@ Codebase has a set of responsive float utilities.
 
 ## Float left
 
-<div class="mb-3">
+<div class="mb-2">
   <div class="float-left">
     <div class="b-dashed p-2">This is an example of<br> <code>float-left</code></div>
   </div>

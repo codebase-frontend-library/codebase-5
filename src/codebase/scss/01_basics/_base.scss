@@ -5,11 +5,9 @@
 @use "../00_setup/default-variables" as *;
 
 // For AlpineJS =======================
-
 [x-cloak] {
   display: none !important;
 }
-
 // ====================================
 
 *,
@@ -41,11 +39,12 @@ body {
 
 abbr[title] {
   text-decoration: underline dotted;
+  text-underline-offset: 2px;
 }
 
 b,
 strong {
-  font-weight: var(--t-bold-fw);
+  font-weight: var(--t-bold);
 }
 
 sub,
@@ -68,23 +67,12 @@ sup {
   box-shadow: none;
 }
 
-// see also .t-link in _text.css
-
-:-moz-focusring,
+input:focus,
+form button:focus,
 :focus-visible {
-  outline-offset: 2px;
   outline-width: 2px;
+  outline-offset: 3px;
 }
-
-// :-moz-focusring {
-//   outline: var(--focus-outline);
-//   box-shadow: var(--focus-shadow);
-// }
-
-// :focus-visible {
-//   outline: var(--focus-outline);
-//   box-shadow: var(--focus-shadow);
-//}
 
 small {
   font-size: 85%;
@@ -116,7 +104,6 @@ iframe {
 }
 
 [type="number"] {
-
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     height: auto;
@@ -126,14 +113,9 @@ iframe {
 [type="search"] {
   -webkit-appearance: textfield;
   appearance: textfield;
-  outline-offset: -2px;
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;
     appearance: none;
   }
-}
-
-summary {
-  display: list-item;
 }

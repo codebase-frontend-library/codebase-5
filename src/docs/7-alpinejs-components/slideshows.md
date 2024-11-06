@@ -113,7 +113,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-blue-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-blue-700">Slide 1 of 5</div>
+      <div class="p-cell t-center t-white bg-blue-700">Slide 1 of 5</div>
     </div>
     <div
       role="group"
@@ -126,7 +126,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-teal-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-teal-700">Slide 2 of 5</div>
+      <div class="p-cell t-center t-white bg-teal-700">Slide 2 of 5</div>
     </div>
     <div
       role="group" 
@@ -139,7 +139,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-green-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-green-700">Slide 3 of 5</div>
+      <div class="p-cell t-center t-white bg-green-700">Slide 3 of 5</div>
     </div>
     <div
       role="group" 
@@ -152,7 +152,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-amber-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-amber-700">Slide 4 of 5</div>
+      <div class="p-cell t-center t-white bg-amber-700">Slide 4 of 5</div>
     </div>
     <div
       role="group" 
@@ -165,7 +165,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-red-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-red-700">Slide 5 of 5</div>
+      <div class="p-cell t-center t-white bg-red-700">Slide 5 of 5</div>
     </div>
     <!-- Prev/Next arrow buttons (looping) -->
     <div class="box flex flex-space-between flex-middle flex-row-reverse lg:hidden-below">
@@ -174,14 +174,14 @@ A Codebase slideshow example with 5 slides:
           class="ml-1 btn-icon rounded-full"
           x-on:click="currentSlide = currentSlide === slides.length ? 1 : currentSlide + 1"
           aria-hidden="true"
-        >→</button>
+        ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></button>
       </div>
       <div class="translate-left-100%">
         <button
           class="mr-1 btn-icon rounded-full"
           x-on:click="currentSlide = currentSlide === 1 ? slides.length : currentSlide - 1"
           aria-hidden="true"
-        >←</button>
+        ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg></button>
       </div>
     </div>
   </div>
@@ -288,7 +288,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-blue-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-blue-700">Slide 1 of 5</div>
+      <div class="p-cell t-center t-white bg-blue-700">Slide 1 of 5</div>
     </div>
     <div
       role="group"
@@ -301,7 +301,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-teal-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-teal-700">Slide 2 of 5</div>
+      <div class="p-cell t-center t-white bg-teal-700">Slide 2 of 5</div>
     </div>
     <div
       role="group" 
@@ -314,7 +314,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-green-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-green-700">Slide 3 of 5</div>
+      <div class="p-cell t-center t-white bg-green-700">Slide 3 of 5</div>
     </div>
     <div
       role="group" 
@@ -327,7 +327,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-amber-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-amber-700">Slide 4 of 5</div>
+      <div class="p-cell t-center t-white bg-amber-700">Slide 4 of 5</div>
     </div>
     <div
       role="group" 
@@ -340,7 +340,7 @@ A Codebase slideshow example with 5 slides:
     >
       <!-- demo -->
       <div class="flex flex-center flex-middle t-thin bg-red-200 aspect-ratio-21x9"></div>
-      <div class="p-block t-center t-white bg-red-700">Slide 5 of 5</div>
+      <div class="p-cell t-center t-white bg-red-700">Slide 5 of 5</div>
     </div>
     <!-- Prev/Next arrow buttons (looping) -->
     <div class="box flex flex-space-between flex-middle flex-row-reverse md:hidden-below">

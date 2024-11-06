@@ -22,7 +22,7 @@ If you are using an `ol` or `ul` then the following example is a good place to s
 4. Make each link in the menu to be styled as a block-level element, and add some padding – this increases the link area for large fingers on touch screen devices.
 5. You may want menu links not to be styled the same as traditional colored links within your main content (prose text).
 
-<div class="mb-3 xs:flex gap-3 flex-grow-equal">
+<div class="mb-2 xs:flex gap-3 flex-grow-equal">
 <div>
 <p>An unordered list of links:</p>
 <ul>
@@ -93,30 +93,30 @@ You can look at the source code to see how the following examples have been deco
   <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 5</a></li>
 </ul>
 <ul class="list-style-type-none pl-0">
-  <li><a class="bb-thin b-white block p-block t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black" href="#/">Link 1</a></li>
-  <li><a class="bb-thin b-white block p-block t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 2</a></li>
-  <li><a class="bb-thin b-white block p-block t-bold t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black"  href="#/">Link 3</a>
+  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black" href="#/">Link 1</a></li>
+  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 2</a></li>
+  <li><a class="bb-thin b-white block p-cell t-bold t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black"  href="#/">Link 3</a>
     <ul class="list-style-type-none pl-0">
-      <li><a class="bb-thin b-white block p-block pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.1</a></li>
-      <li><a class="bb-thin b-white block p-block pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.2</a></li>
-      <li><a class="bb-thin b-white block p-block pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.3</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.1</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.2</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="bb-thin b-white block p-block t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 4</a></li>
-  <li><a class="bb-thin b-white block p-block t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 5</a></li>
+  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 4</a></li>
+  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 5</a></li>
 </ul>
 <ul class="list-style-type-none pl-0">
-  <li><a class="block p-block t-decoration-none hover:bg-teal-100" href="#/">Link 1</a></li>
-  <li><a class="block p-block t-decoration-none hover:bg-teal-100" href="#/">Link 2</a></li>
-  <li class="bt-thin bb-thin bl-heavy b-teal-400 hover:bg-teal-100"><a class="block p-block t-bold t-decoration-none hover:bg-teal-200" href="#/">Link 3</a>
+  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 1</a></li>
+  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 2</a></li>
+  <li class="bt-thin bb-thin bl-heavy b-teal-400 hover:bg-teal-100"><a class="block p-cell t-bold t-decoration-none hover:bg-teal-200" href="#/">Link 3</a>
     <ul class="list-style-type-none pl-0">
-      <li><a class="block p-block t-decoration-none hover:bg-teal-200" href="#/">Link 3.1</a></li>
-      <li><a class="block p-block t-decoration-none hover:bg-teal-200" href="#/">Link 3.2</a></li>
-      <li><a class="block p-block t-decoration-none hover:bg-teal-200" href="#/">Link 3.3</a></li>
+      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.1</a></li>
+      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.2</a></li>
+      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="block p-block t-decoration-none hover:bg-teal-100" href="#/">Link 4</a></li>
-  <li><a class="block p-block t-decoration-none hover:bg-teal-100" href="#/">Link 5</a></li>
+  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 4</a></li>
+  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 5</a></li>
 </ul>
 </div>
 </div>
@@ -131,19 +131,19 @@ In the example below, `sm:flex` has been used, so that the menu stays as a colum
 
 With some other simple components inside for proof of concept.
 
-<div class="mb-3 b-dashed">
+<div class="mb-2 b-dashed">
 <ul class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/">Link 1</a></li>
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/">Link 2 with a badge<sup class="badge badge-warning">1</sup></a></li>
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/"><span class="label bg-success t-white t-uppercase">New</span> Link 3 with a label</a></li>
+  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 1</a></li>
+  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 2 with a badge<sup class="badge badge-warning">1</sup></a></li>
+  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/"><span class="label bg-success t-white t-uppercase">New</span> Link 3 with a label</a></li>
   <li><a class="btn btn-primary btn-sm w-100% flex-start" href="#/">Link 5</a></li>
-  <li><a class="block p-block t-decoration-none" href="#/">Link 6</a></li>
+  <li><a class="block p-cell t-decoration-none" href="#/">Link 6</a></li>
 </ul>
 </div>
 
 ```html
 <ul class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
-  <li><a class="block p-block t-decoration-none t-nowrap" href="#/">Link 1</a></li>
+  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 1</a></li>
   ...
   <li><a class="btn btn-primary btn-sm w-100% flex-start" href="#/">Link 5</a></li>
   ...
@@ -156,12 +156,12 @@ If you have items of different heights (e.g. badges, buttons, search form) and y
 
 Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-components/dropdowns' | url }}) (sub menu):
 
-<div class="mb-3 xs:flex flex-middle flex-space-between bg-purple-600">
+<div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
     <a class="block p-2 t-lg t-bold t-decoration-none t-white hover:t-white" href="#/">Brand</a>
   </div>
   <ul class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end">
-    <li><a class="block p-block t-decoration-none t-white hover:t-white" href="#/">Home</a></li>
+    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="#/">Home</a></li>
     <li>
       <div
         x-data="{
@@ -188,11 +188,11 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           :aria-expanded="open"
           :aria-controls="$id('dropdown-panel')"
           type="button"
-          class="b-0 unrounded t-normal t-white hover:t-white hover:bg-transparent"
+          class="b-0 unrounded t-normal t-white hover:t-white hover:bg-purple-700"
           :class="open && 'bg-purple-700 hover:bg-purple-700'"
         >
           <span>About</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
         </button>
         <div
           x-cloak
@@ -204,24 +204,24 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           style="min-width: 9rem"
         >
           <ul class="list-style-type-none mb-0 px-0 py-1">
-            <li><a class="block p-block t-decoration-none" href="#/">Company info</a></li>
-            <li><a class="block p-block t-decoration-none" href="#/">Management</a></li>
-            <li><a class="block p-block t-decoration-none" href="#/">Careers</a></li>
+            <li><a class="block p-cell t-decoration-none" href="#/">Company info</a></li>
+            <li><a class="block p-cell t-decoration-none" href="#/">Management</a></li>
+            <li><a class="block p-cell t-decoration-none" href="#/">Careers</a></li>
           </ul>
         </div>
       </div>
     </li>
-    <li><a class="block p-block t-decoration-none t-white hover:t-white" href="#/">Contact</a></li>
+    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="#/">Contact</a></li>
   </ul>
 </div>
 
 ```html
-<div class="mb-3 xs:flex flex-middle flex-space-between bg-purple-600">
+<div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
     <a class="block p-2 t-lg t-bold t-decoration-none t-white hover:t-white" href="">Brand</a>
   </div>
   <ul class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end">
-    <li><a class="block p-block t-decoration-none t-white hover:t-white" href="">Home</a></li>
+    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="">Home</a></li>
     <li>
       <div
         x-data="{
@@ -248,7 +248,7 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           :aria-expanded="open"
           :aria-controls="$id('dropdown-panel')"
           type="button"
-          class="b-0 unrounded t-normal t-white hover:t-white hover:bg-transparent"
+          class="b-0 unrounded t-normal t-white hover:t-white hover:bg-purple-700"
           :class="open && 'bg-purple-700 hover:bg-purple-700'"
         >
           <span>About</span>
@@ -264,14 +264,14 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           style="min-width: 9rem"
         >
           <ul class="list-style-type-none mb-0 px-0 py-1">
-            <li><a class="block p-block t-decoration-none" href="">Company info</a></li>
-            <li><a class="block p-block t-decoration-none" href="">Management</a></li>
-            <li><a class="block p-block t-decoration-none" href="">Careers</a></li>
+            <li><a class="block p-cell t-decoration-none" href="">Company info</a></li>
+            <li><a class="block p-cell t-decoration-none" href="">Management</a></li>
+            <li><a class="block p-cell t-decoration-none" href="">Careers</a></li>
           </ul>
         </div>
       </div>
     </li>
-    <li><a class="block p-block t-decoration-none t-white hover:t-white" href="">Contact</a></li>
+    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="">Contact</a></li>
   </ul>
 </div>
 ```

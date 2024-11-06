@@ -17,7 +17,7 @@ Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio 
 
 ## Image/video aspect ratios 
 
-<div class="mb-3 flex flex-grow-equal flex-wrap gap-1">
+<div class="mb-2 flex flex-grow-equal flex-wrap gap-1">
   <div>
     <div class="aspect-ratio-9x16 b-thin bg-gray-100">
       9×16
@@ -81,7 +81,7 @@ These variants have been provided primarily for images and components using a ba
 
 `aspect-ratio-*` wrappers constrain their content to the set aspect ratio _unless there’s too much content_ in the immediate child element. This means that at small viewport widths, if you have a lot of text content inside, it will “override” the aspect ratio for phones. Example:
 
-<div class="mb-3 aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle">
+<div class="mb-2 aspect-ratio-21x9 bg-amber-200 flex flex-center flex-middle">
   <div class="w-xs p-1">This content is within a wrapper with <code class="b-thin">aspect-ratio-21x9</code> but at smaller viewport widths, all this text will deform the aspect ratio wrapper constraint. (That’s a good thing.) // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad corrupti expedita blanditiis! Consequatur mollitia temporibus dolorum, dolorem dolor soluta vero ab facere sint velit. Dolor consequuntur repellat, minus molestiae totam earum accusantium dolorum eligendi exercitationem ratione aliquam quibusdam nihil veniam atque labore magni doloremque iusto!</div>
 </div>
 
@@ -105,7 +105,7 @@ There are sufficient aspect ratio squared tile utility classes, for up to a 6×6
 
 Example:
 
-<div class="mb-3 grid equal-6-cols">
+<div class="mb-2 grid equal-6-cols">
   <div class="col-1 row-1 aspect-ratio-1x1 b-thin bg-gray-100">
     1×1
   </div>
@@ -133,7 +133,7 @@ Example:
 </div>
 
 ```html
-<div class="mb-3 grid equal-6-cols">
+<div class="mb-2 grid equal-6-cols">
   <div class="col-1 row-1 aspect-ratio-1x1">
     1×1
   </div>
@@ -163,7 +163,7 @@ Example:
 
 Available square tile `aspect-ratio-` utility suffixes in Codebase:
 
-<div class="mb-3 overflow-x">
+<div class="mb-2 overflow-x">
 <table class="table">
   <thead>
     <tr>
@@ -247,7 +247,7 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 
 Another example:
 
-<div class="mb-3 grid equal-2-cols sm:equal-3-cols">
+<div class="mb-2 grid equal-2-cols sm:equal-3-cols">
   <div class="col-1 rows-1-2 aspect-ratio-1x1 aspect-ratio-1x2 relative">
     <img class="box img-cover" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="Photo by Daniyal Ghanavati from Pexels">
   </div>
@@ -263,7 +263,7 @@ Another example:
 </div>
 
 _Images:_ 
-gulls by [Daniyal Ghanavati](https://www.pexels.com/@daniyal-ghanavati-10741?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels); robin by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/); swans by [Trudie Roden](https://www.pexels.com/@trudie-roden-1054578?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels); owl by [Eric Karits](https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels). All obtained from [Pexels](https://www.pexels.com).
+gulls by [Daniyal Ghanavati](https://www.pexels.com/@daniyal-ghanavati-10741); robin by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/); swans by [Trudie Roden](https://www.pexels.com/@trudie-roden-1054578); owl by [Eric Karits](https://www.pexels.com/@erik-karits-2093459). All obtained from [Pexels](https://www.pexels.com).
 
 ```html
 <div class="grid equal-2-cols sm:equal-3-cols">

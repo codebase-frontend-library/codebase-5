@@ -44,12 +44,12 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       @click.stop
       @keyup.escape="isOpen = false"
     >
-      <div class="mb-3 t-right">
+      <div class="mb-2 t-right">
         <button
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
         </button>
       </div>
       <div class="h3" id="offcanvas-ex-1-title">Offcanvas 1 Panel Title</div>
@@ -98,12 +98,12 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       @click.stop
       @keyup.escape="isOpen = false"
     >
-      <div class="mb-3">
+      <div class="mb-2">
         <button
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
         </button>
       </div>
       <div class="h3" id="offcanvas-ex-2-title">Offcanvas 2 Panel Title</div>
@@ -152,12 +152,12 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       @click.stop
       @keyup.escape="isOpen = false"
     >
-      <div class="mb-3 t-right">
+      <div class="mb-2 t-right">
         <button
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
         </button>
       </div>
       <div class="h3" id="offcanvas-ex-3-title">Offcanvas 3 Panel Title</div>
@@ -206,12 +206,12 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       @click.stop
       @keyup.escape="isOpen = false"
     >
-      <div class="mb-3 t-right">
+      <div class="mb-2 t-right">
         <button
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
         </button>
       </div>
       <div class="h3" id="offcanvas-ex-4-title">Offcanvas 4 Panel Title</div>
@@ -258,7 +258,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       @click.stop
       @keyup.escape="isOpen = false"
     >
-      <div class="mb-3 t-right">
+      <div class="mb-2 t-right">
         <button
         class="btn-icon btn-sm rounded-full"
         aria-label="Close offcanvas panel"
@@ -325,7 +325,7 @@ As descibed previously, the control button can be in its own separate Alpine com
 
 The Codebase offcanvas CSS classes are as follows:
 
-<div class="overflow-x mb-3">
+<div class="overflow-x mb-2">
 <table class="table">
   <thead>
     <tr>
@@ -418,12 +418,12 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     @click.stop
     @keyup.escape="$store.offcanvasEx5.isOpen = false"
   >
-    <div class="mb-3 t-right">
+    <div class="mb-2 t-right">
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx5.isOpen = false">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
       </button>
     </div>
     <div class="h3" id="offcanvas-ex-5-title">Offcanvas 5 Panel Title</div>
@@ -483,7 +483,7 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     @click.stop
     @keyup.escape="$store.offcanvasEx5.isOpen = false"
   >
-    <div class="mb-3 t-right">
+    <div class="mb-2 t-right">
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
@@ -585,14 +585,14 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
     @keyup.escape="$store.offcanvasEx6.isOpen = !$store.offcanvasEx6.isBelowBP || false"
   >
     <div
-      class="mb-3 t-right"
+      class="mb-2 t-right"
       x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button
       class="btn-icon btn-sm rounded-full"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx6.isOpen = false">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
       </button>
     </div>
     <div class="h3" id="offcanvas-ex-6-title">Offcanvas 6 Panel Title</div>
@@ -677,7 +677,7 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
     @keyup.escape="$store.offcanvasEx6.isOpen = !$store.offcanvasEx6.isBelowBP || false"
   >
     <div
-      class="mb-3 t-right"
+      class="mb-2 t-right"
       x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button

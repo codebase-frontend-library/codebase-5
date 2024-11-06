@@ -27,7 +27,7 @@ The image below is wider than this column of text, but it is constrained to down
 
 <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="736" height="480" loading="lazy" alt="Photo by Erik Karits from Pexels">
 
-_Photo by [Eric Karits](https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com)._
+_Photo by [Eric Karits](https://www.pexels.com/@erik-karits-2093459) from [Pexels](https://www.pexels.com)._
 
 ```html
 <img src="" width="" height="" loading="lazy" alt="">
@@ -45,7 +45,7 @@ An image with a `<figcaption>`, all enclosed in `<figure>`:
 
 <figure>
   <img src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="736" height="480" loading="lazy" alt="Photo by Erik Karits from Pexels">
-  <figcaption>Photo by <a href="https://www.pexels.com/@erik-karits-2093459?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Eric Karits</a> from <a href="https://www.pexels.com">Pexels</a>.</figcaption>
+  <figcaption>Photo by <a href="https://www.pexels.com/@erik-karits-2093459">Eric Karits</a> from <a href="https://www.pexels.com">Pexels</a>.</figcaption>
 </figure>
 
 ```html

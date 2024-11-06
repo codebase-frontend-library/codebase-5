@@ -7,35 +7,7 @@ prevLink: "Improvements since Codebase 4"
 nextLink: "Inline elements"
 ---
 
-In HTML, [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) such as headers, paragraphs, and DIVs, occupy 100% of the width of their parent element. Their height depends on how much content they have inside.
-
-## Headings
-
-Heading font weights have been set to `normal` (default). You can override this for all headings in the SCSS default variables, or add a bold weight yourself on a per-heading or per-word basis, for emphasis.
-
-Same as with paragraphs, headings have zero top margin while the bottom margin is set as equal to 3 [element grid]({{ '/docs/1-getting-started/element-grid' | url }}) units, or _one line-height of the default text size_ (1.5rem) – thereby leaving an “empty line” gap between paragraphs and headings. Heading sizes are set using a Sass map in the default variables file.
-
-Since Codebase v.5.2.8 heading sizes have been set up using the _major third typographic scale_, calculated by [https://type-scale.com](https://type-scale.com). Heading sizes are set using ems, so that they can be `clamp()` enlarged by wrapping with utility classes — see [making text bigger](/codebase-5/docs/5-typographic-utilities/bigger-text).
-
-Above the `md` medium media query breakpoint (1024px, default), heading variables `--h1` thorugh `--h6` are size increased slightly.
-
-**Note:** The demo headings below are actually faked using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.
-
-<p class="h1"><code>h1</code> heading</p>
-<p class="h2"><code>h2</code> heading</p>
-<p class="h3"><code>h3</code> heading</p>
-<p class="h4"><code>h4</code> heading</p>
-<p class="h5"><code>h5</code> heading</p>
-<p class="h6"><code>h6</code> heading</p>
-
-```html
-<h2>h2 heading</h2>
-<h1>h1 heading</h1>
-<h3>h3 heading</h3>
-<h4>h4 heading</h4>
-<h5>h5 heading</h5>
-<h6>h6 heading</h6>
-```
+In HTML, [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) such as paragraphs, headers, and DIVs, occupy 100% of the width of their parent element. Their height depends on how much content they have inside.
 
 ## Paragraphs
 
@@ -47,7 +19,46 @@ Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim
 <p>Lorem ipsum dolor sit amet...</p>
 ```
 
-Same as with headings, paragraphs have zero top margin while the bottom margin is set as equal to _one line-height of the default text size_, i.e. 1.5rem – thereby leaving an “empty line” gap between paragraphs and headings.
+Paragraphs have zero top margin while the bottom margin is set as equal to **1rem** (=2 element grid units), thereby leaving a little whitespace between paragraphs (and other typographic block elements).
+
+## Headings
+
+Heading font weights have been set to `semibold` (default). You can override this for all headings in the SCSS default variables, or set a different weight yourself on a per-heading or per-word basis, for emphasis.
+
+Since Codebase v.5.2.5, heading tags have **2rem** top margin while the bottom margin is set as equal to **1rem**. Heading variables are set using a Sass map in the default variables file.
+
+(The demo headings below are simulated using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.)
+
+<p class="h1 t-semibold"><code>h1</code> heading</p>
+<p class="h2 t-semibold"><code>h2</code> heading</p>
+<p class="h3 t-semibold"><code>h3</code> heading</p>
+<p class="h4 t-semibold"><code>h4</code> heading</p>
+<p class="h5 t-semibold"><code>h5</code> heading</p>
+<p class="h6 t-semibold"><code>h6</code> heading</p>
+
+```html
+<h2>h2 heading</h2>
+<h1>h1 heading</h1>
+<h3>h3 heading</h3>
+<h4>h4 heading</h4>
+<h5>h5 heading</h5>
+<h6>h6 heading</h6>
+```
+
+Since v.5.3.5 heading sizes have been set as follows:
+
+```scss
+:root {
+  --h1: 2.25em; // 36px
+  --h2: 1.875em; // 30px
+  --h3: 1.5em; // 24px
+  --h4: 1.25em; // 20px
+  --h5: 1.125em; // 18px
+  --h6: 1em; // 16px
+}
+```
+
+**Removed in v.5.3.5:** ~~Above the md medium media query breakpoint (1024px, default), heading variables --h1 thorugh --h6 are size increased slightly.~~
 
 ## Lists
 

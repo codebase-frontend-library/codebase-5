@@ -89,19 +89,19 @@ There are also some and viewport-height based [heights]({{ '/docs/3-layout-utili
 Codebase typography is also responsive to viewport width (device size):
 
 * [Headings]({{ '/docs/2-classless-basics/headings' | url }}) `<h1>` to `<h6>` have a slight upsize for tablet devices and up. At 768px (same as `sm:` default), headings become ×1.125 their base size
-* [Bigger text]({{ '/docs/5-typographic-utilities/bigger-text' | url }}) utilities:
+* Utilities for [making text bigger]({{ '/docs/5-typographic-utilities/making-text-bigger' | url }}):
     * Heading sizes `h1` to `h6`
     * `t-lg` wrapper to simply increase text size by ×1.25
     * `t-display` wrapper CSS `clamp()` ramp responsively increases text size by ×1.25 up to ×2 if viewport width allows
     * `t-long-read` wrapper CSS `clamp()` ramp responsively increases text size by ×1 up to ×1.25 if viewport width allows
 * Responsive [text alignment]({{ '/docs/5-typographic-utilities/text-alignment' | url }}) utilities
 
-## Infographic
+## Infographic: Responsive CSS classes in Codebase
 
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="relative mb-3 b-thin rounded py-2"
+  class="relative mb-2 b-thin rounded py-2"
 >
   <div class="absolute right inline-block mr-2 sm:hidden-below">
     <button
@@ -113,7 +113,7 @@ Codebase typography is also responsive to viewport width (device size):
       aria-label="Enlarge infographic"
       class="btn-primary btn-icon btn-sm"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="168 48 208 48 208 88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="88 208 48 208 48 168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="208 168 208 208 168 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="48 88 48 48 88 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="168 48 208 48 208 88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="88 208 48 208 48 168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="208 168 208 208 168 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="48 88 48 48 88 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
     </button>
   </div>
   <div
@@ -124,7 +124,7 @@ Codebase typography is also responsive to viewport width (device size):
     @keyup.escape.prevent.stop="open = false"
   >
     <div
-      :class="open ? 'box py-6 bg-white overflow-y scale-in' : 'mb-3'"
+      :class="open ? 'box py-6 bg-white overflow-y scale-in' : 'mb-2'"
     >
       <button
         type="button"
@@ -134,7 +134,7 @@ Codebase typography is also responsive to viewport width (device size):
         :aria-expanded="open"
         aria-label="close popout"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 160 96 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="48 160 96 160 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="160 208 160 160 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="96 48 96 96 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 160 96 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="48 160 96 160 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="160 208 160 160 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><polyline points="96 48 96 96 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
       </button>
       <div class="container-lg">
         <p class="t-center t-semibold" :class="open ? 'h1' : 'h4'">Responsive CSS classes<br>in Codebase</p>

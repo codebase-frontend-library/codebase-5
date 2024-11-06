@@ -4,6 +4,7 @@
 // NOTE: for the bacic button styling (including `.btn`), see `01_basics/_form-elements.scss`
 
 @use "../00_setup/default-variables" as *;
+@use "sass:list";
 
 // Button size
 .btn {
@@ -41,19 +42,22 @@
 }
 
 // UI colors
-@each $key,
-$val in $ui-setup {
-  .btn-#{$key} {
-    border-color: nth($val, 1);
-    background-color: nth($val, 1);
-    color: nth($val, 3);
 
-    &:hover,
-    &:active,
-    &.active {
-      border-color: nth($val, 2);
-      background-color: nth($val, 2);
-      color: nth($val, 4);
+@if $ui-color-utilities == true {
+  @each $key,
+  $val in $ui-setup {
+    .btn-#{$key} {
+      border-color: list.nth($val, 1);
+      background-color: list.nth($val, 1);
+      color: list.nth($val, 3);
+
+      &:hover,
+      &:active,
+      &.active {
+        border-color: list.nth($val, 2);
+        background-color: list.nth($val, 2);
+        color: list.nth($val, 4);
+      }
     }
   }
 }

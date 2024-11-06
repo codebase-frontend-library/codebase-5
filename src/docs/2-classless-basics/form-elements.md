@@ -7,7 +7,7 @@ prevLink: "Inline elements"
 nextLink: "Media"
 ---
 
-In Codebase, many form elements are rendered as block elements, for ease of styling.
+In Codebase, many form elements have a width of 100%, for ease of styling.
 
 If you want to make an input field an inline element, add the layout [block utility class]({{ '/docs/3-layout-utilities/blocks/' | url }}) `inline-block`.
 
@@ -169,7 +169,7 @@ These fields are not full-width, but whatever the visitor’s browser sets.
 
 ### Radio
 
-<form class="mb-3">
+<form class="mb-2">
   <input id="radio-1" name="examplename" checked="checked" type="radio">
   <label for="radio-1">Radio 1</label><br>
   <input id="radio-2" name="examplename" type="radio">
@@ -189,7 +189,7 @@ These fields are not full-width, but whatever the visitor’s browser sets.
 
 ### Checkbox
 
-<form class="mb-3">
+<form class="mb-2">
   <input id="checkbox-1" name="examplename" checked="checked" type="checkbox">
   <label for="checkbox-1">Checkbox 1 </label><br>
   <input id="checkbox-2" name="examplename" type="checkbox">

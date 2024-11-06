@@ -72,26 +72,26 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
   ...
 </table>
 
-<table class="table-borderless">
+<table class="table table-borderless">
   ...
 </table>
 
-<table class="table-compact">
+<table class="table table-compact">
   ...
 </table>
 
-<table class="table-fixed">
+<table class="table table-fixed">
   ...
 </table>
 
-<table class="table-striped">
+<table class="table table-striped">
   ...
 </table>
 ```
 
 `table-borderless` – no borders around table or cells
 
-<table class="table-borderless">
+<table class="table table-borderless">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -125,7 +125,7 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
 
 `table-compact` – less padding
 
-<table class="table-compact">
+<table class="table table-compact">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -159,7 +159,7 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
 
 `table-fixed` - applies a _fixed width_ to each table cell using `table-layout: fixed;`, so that column widths are equalized:
 
-<table class="table-fixed">
+<table class="table table-fixed">
   <thead>
     <tr>
       <th>Table Header Number One</th>
@@ -193,7 +193,7 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
 
 `table-striped` – applies a _transparent white tint_ and a _transparent black tint_ to alterating rows:
 
-<table class="table-striped">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -230,12 +230,12 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
 You can combine table styles. For example:
 
 ```html
-<table class="table-borderless table-compact table-striped">
+<table class="table table-borderless table-compact table-striped">
   ...
 </table>
 ```
 
-<table class="table-borderless table-compact table-striped">
+<table class="table table-borderless table-compact table-striped">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -279,18 +279,18 @@ For `table` `<th>` or `<td>` center or right alignment, use `t-center` or `t-rig
 
 For adding horizontal scrolling to a table that is too wide for the available space (especially important on narrow viewports), wrap the table in a `<div>` that has the `overflow-x` utility class.
 
-Codebase `overflow-x` uses to remove margins from around Codebase table classes (but not from the classless `<table>` tag). Therefore you may also need to add some bottom margin to the overflow wrapper – e.g. using `mb-3`
+Codebase `overflow-x` uses to remove margins from around Codebase table classes (but not from the classless `<table>` tag). Therefore you may also need to add some bottom margin to the overflow wrapper – e.g. using `mb-2`
 
 ```html
-<div class="overflow-x mb-3">
-  <table class="table-compact table-striped">
+<div class="overflow-x mb-2">
+  <table class="table table-compact table-striped">
     ...
   </table>
 </div>
 ```
 
-<div class="overflow-x mb-3">
-<table class="table-compact table-striped">
+<div class="overflow-x mb-2">
+<table class="table table-compact table-striped">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -362,9 +362,9 @@ Here’s one way of doing that:
 <script>
   (function () {
 
-    [].forEach.call(document.querySelectorAll('[class^="table"]'), function(el) {
+    [].forEach.call(document.querySelectorAll('.table'), function(el) {
       var table = el.outerHTML;
-      var tableWrapped = '<div class="overflow-x mb-3">' + table + '</div>';
+      var tableWrapped = '<div class="overflow-x mb-2">' + table + '</div>';
       el.outerHTML = tableWrapped;
     });
 

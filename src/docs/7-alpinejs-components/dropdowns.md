@@ -40,7 +40,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="btn-primary"
   >
     <span>Click me</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
   </button>
   <!-- Panel -->
   <div
@@ -52,9 +52,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -101,9 +101,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -159,7 +159,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="btn-primary"
   >
     <span>Click me</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
   </button>
   <!-- Panel -->
   <div
@@ -172,9 +172,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -223,9 +223,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -254,7 +254,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
   @keydown.escape.prevent.stop="close($refs.button)"
   @focusin.window="! $refs.panel.contains($event.target) && close()"
   x-id="['dropdown-panel']"
-  class="relative mb-3"
+  class="relative mb-2"
 >
   <!-- Button -->
   <button
@@ -266,7 +266,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="btn-primary"
   >
     <span>Click me</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
   </button>
   <!-- Panel -->
   <div
@@ -279,9 +279,9 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -304,7 +304,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
   @keydown.escape.prevent.stop="close($refs.button)"
   @focusin.window="! $refs.panel.contains($event.target) && close()"
   x-id="['dropdown-panel']"
-  class="relative mb-3"
+  class="relative mb-2"
 >
   <!-- Button -->
   <button
@@ -329,9 +329,9 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">First menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Second menu item</a></li>
-      <li><a class="block p-block py-1 t-decoration-none" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-decoration-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>

@@ -132,7 +132,7 @@ These classes apply `margin-right: auto` and/or `margin-left: auto` to push an i
 
 For example, `ml-auto` will push an element to the right 
 
-<div class="mb-3 b-dashed">
+<div class="mb-2 b-dashed">
 <div class="square ml-auto b-thin p-1 bg-gray-100"><code>ml-auto</code></div>
 </div>
 
@@ -178,13 +178,13 @@ Example of responsive [borders]({{ '/docs/4-decoration-utilities/borders/' | url
 </div>
 ```
 
-### Block padding
+### Cell padding
 
-Table cells (`th` and `td`), and buttons have the same “block padding” built into them: `padding: 0.5rem 1rem`. This same block padding is available in the utility class `p-block`:
+Table cells (`th` and `td`) and buttons have the same “cell padding” built into them: `padding: 0.5rem 1rem`. This same cell padding is available in the utility class `p-cell` (this also has an alias `p-block`):
 
-<div class="my-6 b-dashed p-block">This has block padding supplied by the utility class <code>p-block</code></div>
+<div class="my-6 b-dashed p-cell">This has cell padding supplied by the utility class <code>p-cell</code></div>
 
-You can use `p-block` as a quick way of setting up menus, tab panels, etc.
+You can use `p-cell` as a quick way of setting up menus, cards, tab panels, etc.
 
 ## Empty line spacing
 
@@ -194,36 +194,36 @@ This can be done by top or bottoms margin or padding, using the element grid suf
 
 As margins:
 
-<div class="mb-3 b-dashed">
-  <div class="mt-3 bg-gray-100">mt-3</div>
+<div class="mb-2 b-dashed">
+  <div class="mt-2 bg-gray-100">mt-2</div>
 </div>
 
-<div class="mb-3 b-dashed">
-  <div class="mb-3 bg-gray-100">mb-3</div>
+<div class="mb-2 b-dashed">
+  <div class="mb-2 bg-gray-100">mb-2</div>
 </div>
 
-<div class="mb-3 b-dashed">
+<div class="mb-2 b-dashed">
   <div class="mt-6 bg-gray-100">mt-6</div>
 </div>
 
-<div class="mb-3 b-dashed">
+<div class="mb-2 b-dashed">
   <div class="mb-6 bg-gray-100">mb-6</div>
 </div>
 
 As paddings:
 
-<div class="mb-3 bg-gray-100 pt-3">
+<div class="mb-2 bg-gray-100 pt-3">
   <div class="b-dashed">pt-3</div>
 </div>
 
-<div class="mb-3 bg-gray-100 pb-3">
+<div class="mb-2 bg-gray-100 pb-3">
   <div class="b-dashed">pb-3</div>
 </div>
 
-<div class="mb-3 bg-gray-100 pt-6">
-  <div class="b-dashed">pt-6</div>
+<div class="mb-2 bg-gray-100 pt-4">
+  <div class="b-dashed">pt-4</div>
 </div>
 
-<div class="mb-3 bg-gray-100 pb-6">
-  <div class="b-dashed">pb-6</div>
+<div class="mb-2 bg-gray-100 pb-4">
+  <div class="b-dashed">pb-4</div>
 </div>

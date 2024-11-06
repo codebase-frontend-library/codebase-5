@@ -2,6 +2,21 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 6 Nov 2024 -- v.5.3.0
+
+* Updated NPM packages, including Eleventy and Dart-Sass. The Dart-Sass update required making some updates to several Sass functions in Codebase, fixing breaking changes for the preprocessor.
+* Colors now have `color-mix()` functons and OKLAB color space. Base color variables are now available for overriding in the root variables.
+* Reverted to a simpler focus ring stying using recent browser defaults, because this is now working well in all the evergreen browsers (including rounded corners). But, added a little outline-offset to improve readability and visibility when touching a simlar-colored button.
+* Simpler font stacks.
+* A little text-underline-offset has been added to links.
+* Reduced `margin-bottom` of typographic base block elements (and `.table`) to 1rem. Now controlled by a variable.
+* Simplified heading sizes (ems equivalent of 16px, 18px, 20px, 24px, 30px, 36px, as usually specified in WYSIWYG editors). Also, simplified by removing heading size bump for MD screens (use the responsive `clamp()` controled `t-long-read` or `t-display` in those situations where you need bigger text).
+* All Heading tags and heading utility classes now have built-in `margin-top`. As margin-block controlled by a variable. (Use `mt-0` to override.)
+* "Heading sizes" utility classes now only change text sizes. They do not affect margins offont weights.
+* Improved `.t-decoration-none` and `.t-link-inside` (panel links).
+* All tables now need the `.table` class.
+* Paddings utility `.p-block` renamed `.p-cell` (alias `.p-block` is still available.)
+
 ## 30 Oct 2024 -- v.5.2.4
 
 * Reverted to the browser built-in accessibility focus ring outline (no longer using a box shadow). But set 2px outline thickness and 2px offset. Evergreen browsers have outlines that now follow rounded corners on inputs and buttons.
@@ -15,10 +30,6 @@
 
 * Media query controlled max-width utilities (e.g. md:w-xs), so that layout blocks can be set to different max-widths at different breakpoint widths.
 * Increased heading sizes (for both base and `MD` bump sizes).
-
-## 9 May 2024 -- v.5.2.13
-
-* Improved the `teal` color.
 
 ## 29 Feb 2024 -- v.5.2.12
 
@@ -63,7 +74,7 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 
 ## 22 Feb 2023 -- v.5.2.5
 
-* Minor bug fix: `h-max-100%` now works OK. 
+* Minor bug fix: `h-max-100%` now works OK.
 
 ## 16 Dec 2022 -- v.5.2.4
 
@@ -76,7 +87,7 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 
 ## 24 Nov 2022 -- v.5.2.2
 
-* Fixed bug with `overflow-x` failing to to work as a wrapper around oversized tables on narrow viewports (phones). 
+* Fixed bug with `overflow-x` failing to to work as a wrapper around oversized tables on narrow viewports (phones).
 
 ## 23 Nov 2022 -- v.5.2.1
 
@@ -133,7 +144,7 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 
 * For improved accessibility, defailt font size is now 100% (not 16px). This will still be 16px for many people, but now visually impaired people or others who increase the default font size in their browser settings can do so.
 * x-axis and y-axis margin utilities (`mx-` and `my-`) now use `margin-inline` and `margin-block`. Similar for paddings.
-* Improved system font stacks, based on https://systemfontstack.com.
+* Improved system font stacks, based on [https://systemfontstack.com](https://systemfontstack.com).
 * Hover states for box shadows.
 * Added posiiton utilities `z-index-997` and `z-index-998` for better handling of offcanvas, modals, etc.
 * Set long-read `clamp()` to max at 1.25rem size.
@@ -169,6 +180,6 @@ These variants enable you to both _set up_ and _rearrange_ a square tile array f
 * Added `b-transparent` and `hover:b-transparent`.
 * A few minor fixes.
 
-## 11 Jan 2022 -- v.51.0.0
+## 11 Jan 2022 -- v.5.0.0
 
 * Initial upload of Codebase v.5.0.0.

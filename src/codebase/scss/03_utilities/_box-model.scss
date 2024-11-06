@@ -13,15 +13,16 @@
 // (Border extras -- none)
 
 // Padding extras
+.p-cell,
 .p-block {
-  padding: var(--sp-block);
+  padding: var(--sp-cell);
 }
 
 // Box model generator
 
 // All viewports
 @each $key,
-$val in $spacing-setup {
+$val in $spacing {
   .m-#{$key} {
     margin: $val;
   }
@@ -102,19 +103,19 @@ $val in $borders {
   }
 
   .#{$key}-dashed {
-    #{$val}: var(--b1) dashed var(--c-detail);
+    #{$val}: var(--b-thin) dashed var(--c-detail);
   }
 
   .#{$key}-thin {
-    #{$val}: var(--b1) solid var(--c-detail);
+    #{$val}: var(--b-thin) solid var(--c-detail);
   }
 
   .#{$key}-thick {
-    #{$val}: var(--b2) solid var(--c-detail);
+    #{$val}: var(--b-thick) solid var(--c-detail);
   }
 
   .#{$key}-heavy {
-    #{$val}: var(--b3) solid var(--c-detail);
+    #{$val}: var(--b-heavy) solid var(--c-detail);
   }
 }
 
@@ -194,7 +195,7 @@ $mq-value in $mq-width {
       }
 
       .#{$mq-key}\:p-block {
-        padding: var(--sp-block);
+        padding: var(--sp-cell);
       }
     }
 
@@ -205,19 +206,19 @@ $mq-value in $mq-width {
       }
 
       .#{$mq-key}\:#{$key}-dashed {
-        #{$val}: var(--b1) dashed var(--c-detail);
+        #{$val}: var(--b-thin) dashed var(--c-detail);
       }
 
       .#{$mq-key}\:#{$key}-thin {
-        #{$val}: var(--b1) solid var(--c-detail);
+        #{$val}: var(--b-thin) solid var(--c-detail);
       }
 
       .#{$mq-key}\:#{$key}-thick {
-        #{$val}: var(--b2) solid var(--c-detail);
+        #{$val}: var(--b-thick) solid var(--c-detail);
       }
 
       .#{$mq-key}\:#{$key}-heavy {
-        #{$val}: var(--b3) solid var(--c-detail);
+        #{$val}: var(--b-heavy) solid var(--c-detail);
       }
     }
   }

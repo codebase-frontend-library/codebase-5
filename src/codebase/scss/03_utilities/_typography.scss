@@ -61,20 +61,20 @@ $mq-value in $mq-width {
 
 .t-bolder,
 .t-heavy {
-  font-weight: var(--t-bolder-fw);
+  font-weight: var(--t-heavy);
 }
 
 .t-bold,
 .t-strong {
-  font-weight: var(--t-bold-fw);
+  font-weight: var(--t-bold);
 }
 
 .t-semibold {
-  font-weight: var(--t-semi-fw);
+  font-weight: var(--t-semibold);
 }
 
 .t-normal {
-  font-weight: var(--t-base-fw);
+  font-weight: var(--t-normal);
   font-style: normal;
 }
 
@@ -86,7 +86,7 @@ $mq-value in $mq-width {
 
 .t-lighter,
 .t-thin {
-  font-weight: var(--t-thin-fw);
+  font-weight: var(--t-thin);
 }
 
 .t-italic,
@@ -94,28 +94,27 @@ $mq-value in $mq-width {
   font-style: italic;
 }
 
-.t-decoration-none,
-.hover\:t-decoration-none:hover {
+.t-decoration-none {
   text-decoration: none;
 }
 
+.t-decoration-underline,
 .hover\:t-decoration-underline:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-.t-link-inside,
-.t-link-inside:hover {
+.t-link-inside {
   text-decoration: none;
-  color: unset;
-}
-
-.t-link {
-  color: var(--c-link);
-  text-decoration: underline;
-}
-
-a.t-link-inside:hover .t-link {
-  color: var(--c-link-hover);
+  .t-link {
+    text-decoration: underline;
+  }
+  &.t-decoration-none.hover\:t-decoration-underline,
+  &.t-decoration-none .t-link {
+    text-decoration: none;
+  }
+  &.t-decoration-none.hover\:t-decoration-underline:hover .t-link {
+    text-decoration: underline;
+  }
 }
 
 .t-strike {

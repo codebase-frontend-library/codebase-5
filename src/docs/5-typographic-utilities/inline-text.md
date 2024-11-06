@@ -2,9 +2,9 @@
 title: "Inline text"
 layout: layout.njk
 prevPage: "/docs/5-typographic-utilities/text-alignment"
-nextPage: "/docs/5-typographic-utilities/lists"
+nextPage: "/docs/5-typographic-utilities/list-formats"
 prevLink: "Text alignment"
-nextLink: "Lists"
+nextLink: "List formats"
 ---
 
 Codebase has several simple text utility classes. (See also [font-stacks]({{ '/docs/5-typographic-utilities/font-stacks' | url }}).)
@@ -67,7 +67,31 @@ Codebase has several simple text utility classes. (See also [font-stacks]({{ '/d
 
 Links (also called _hyperlinks_) in Codebase are blue with an underscore by default, following the old tradition.
 
-### Panel links
+### Links with and without underlines
+
+Links automatically get an underline. But there are cases where you may not want that, such as in menus: use `t-decoration-none`.
+
+But then you will still need to indicate to users who hover over the link that the link is “working”. This can be done in various ways: adding back the underline, or adding a background colour on hover. See Codebase simple [menu components]({{ '/docs/6-simple-components/menus-and-menubars' | url }}).
+
+<ul class="flex flex-column gap-2">
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 1</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 2</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 3</a></li>
+<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 4</a></li>
+</ul>
+
+(You will also want to add a gap between each menu item, so that people can click indivicual links on touch screens &mdash; as I have done here using Codebase flexbox utility classes.)
+
+```html
+<ul class="flex flex-column gap-2">
+  <li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 1</a></li>
+  <li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 2</a></li>
+  <li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 3</a></li>
+  <li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 4</a></li>
+</ul>
+```
+
+### Whole-panel links
 
 **Q: What if you wanted a whole panel, such as a [card]({{ '/docs/6-simple-components/cards' | url }}), or [hero]({{ '/docs/6-simple-components/heros' | url }}) to operate as a link?**<br>
 A: You can simply use the `<a>` link tag instead of the outer `<div>`, and give it a Codebase `block` class to make it a block instead of an inline element:
@@ -78,70 +102,62 @@ A: You can simply use the `<a>` link tag instead of the outer `<div>`, and give 
 </a>
 ```
 
-**Q: Then, what if you wanted only _some_ of the text in the panel to be styled as the link, but not other accompanying text?**<br>
+**Q: But what if you wanted only _some_ of the text in the panel to be styled as the link, but not other accompanying text?**<br>
 A: Codebase has you covered. Since v.5.0.8, you can put class `t-link-inside` on the wrapper `<a>` tag, and `t-link` on the inner text that you want to be the pseudo link (e.g. on the panel title text).
 
 * The `t-link-inside` class (must be applied to the `<a>` wrapper) simply removes the traditional link underscore, and resets its link text color to inherit the color of the surrounding/ “parent” panel text. (The surrounding text usually has the default text color, almost black.)
 
-* And the `t-link` class _makes its element only look like a link_ by adding back the underscore, link color, and link hover color. 
+* And the `t-link` class _makes its element only look like a link_ by adding back the underscore, link color, and link hover color.
 
 The link functionality is still handled by the wrapper `<a>` tag. `t-link` doesn’t actually make an element _operate_ like a link.
 
 Example:
 
-<a class="block mb-3 b-thin p-2 t-link-inside" href="#/">
+<a class="block mb-2 b-thin p-2 t-link-inside" href="#/">
     <p class="h4 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
 
 ```html
 <a class="block t-link-inside" href="">
     <p class="h4 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```
 
-Above, that `<h4 class="t-link">` pseudo link’s color change on hover is not very obvious. But you can add some extras, to suit your own design—whether from Codebase utilities or your own CSS.
+You need to supply a text color for the accompanying text, else it will inherit the link color (default is hyperlink blue).
 
-It’s easier if you use your own CSS at this point (e.g. make your own `.special-panel` class). But if you want to  use Codebase utilities, you will need to interrupt the cascade of the `a` anchor tag styling.
+You can even combine `t-link-inside` with `t-decoration-none`...
 
-A second example: using cascade interruption to set the underline to appear only on the `t-link` and only on hover (and a box shadow that appears only on hover):
-
-<style>
-    .t-link-inside.t-decoration-none .t-link,
-    .t-link-inside.hover\:t-decoration-underline:hover {
-        text-decoration: none;
-    }
-    .hover\:t-decoration-underline:hover .t-link {
-        text-decoration: underline;
-    }
-</style>
-
-<a class="block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none" href="#/">
     <p class="h4 mb-1 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
 
-The box shadow on hover above is supplied by a Codebase [box shadow]({{ '/docs/4-decoration-utilities/box-shadows' | url }}).
+...and with `t-decoration-none hover:t-decoration-underline`:
+
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+    <p class="h4 mb-1 t-link">Card title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+
+The box shadow on hover in the examples above is supplied by a Codebase [box shadow]({{ '/docs/4-decoration-utilities/box-shadows' | url }}).
 
 ```html
-<style>
-    .t-link-inside.t-decoration-none .t-link,
-    .t-link-inside.hover\:t-decoration-underline:hover {
-        text-decoration: none;
-    }
-    .hover\:t-decoration-underline:hover .t-link {
-        text-decoration: underline;
-    }
-</style>
-
-<a class="block mb-3 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+<!-- t-decoration-none -->
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none" href="#/">
     <p class="h4 mb-1 t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+
+<!-- t-decoration-none AND hover:t-decoration-underline -->
+<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
+    <p class="h4 mb-1 t-link">Card title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
 ```
 
-A third example: again using cascade interruption to removing the underline (i.e. the below is also affected the additional styling above), but now adding in different text colors in base and hover states (plus adding a background color on hover):
+A third example: adding in different text colors in base and hover states will require you adding your own CSS (example showing how you can utilize Codebase variables):
 
 <style>
     .t-link-inside.t-green-500 {
@@ -156,7 +172,7 @@ A third example: again using cascade interruption to removing the underline (i.e
     }
 </style>
 
-<a class="block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100" href="#/">
+<a class="block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600" href="#/">
     <p class="h4 mb-1 t-bold t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
@@ -175,7 +191,7 @@ A third example: again using cascade interruption to removing the underline (i.e
     }
 </style>
 
-<a class="block mb-3 b-thin p-2 t-link-inside t-decoration-none t-green-500 hover:t-green-600 hover:bg-green-100" href="#/">
+<a class="block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600 " href="#/">
     <p class="h4 mb-1 t-bold t-link">Card title</p>
     <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
 </a>
@@ -191,22 +207,9 @@ A third example: again using cascade interruption to removing the underline (i.e
 
     <span class="t-muted">Muted text (opacity set to 0.4)</span>
 
-* `t-decoration-none`
-
-    Removes underscore (underline)
-
-* `hover:t-decoration-none`
-
-    Removes underscore (underline) on hover
-
-* `hover:t-decoration-underscore` (alias `hover:t-decoration-underline`)
-
-    Adds underscore (underline) on hover
-
 * `t-uppercase`
 
     <span class="t-uppercase">Text in uppercase</span> (all capitals)
-
 
 * `t-loose`
 

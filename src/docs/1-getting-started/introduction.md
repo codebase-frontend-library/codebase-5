@@ -9,10 +9,10 @@ You can start working immediately with Codebase in a simple HTML setup.
 
 <div class="my-6 flex gap-3 flex-wrap flex-center t-center">
   <div>
-    <a class="btn btn-primary btn-lg rounded-pill" href="{{ '/dist/codebase.css' | url }}">Download CSS</code></a>
+    <a class="btn btn-primary rounded-pill" href="{{ '/dist/codebase.css' | url }}">Download CSS</code></a>
   </div>
   <div>
-    <a class="btn btn-secondary btn-lg rounded-pill" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repostory</a>
+    <a class="btn btn-secondary rounded-pill" href="https://github.com/codebase-frontend-library/codebase-5">GitHub repostory</a>
   </div>
 </div>
 
@@ -75,7 +75,7 @@ There are two occasions when Codebase adds some bespoke component CSS classes:
 
 Here are some simple components that you can build using Codebase (I’m calling a component “simple” if it requires only CSS and no JavaScript for functionality):
 
-* [Menus]({{ '/docs/6-simple-components/menus' | url }})
+* [Menus and menubars]({{ '/docs/6-simple-components/menus-and-menubars' | url }})
 * [Heros]({{ '/docs/6-simple-components/heros' | url }})
 * [Buttons]({{ '/docs/6-simple-components/buttons' | url }})
 * [Badges]({{ '/docs/6-simple-components/badges' | url }})
@@ -111,37 +111,34 @@ Available in the repository are all the Codebase [SCSS files](https://github.com
 **Notes:**
 
 1. **Since v.5.2, Codebase has been refactored to use [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, whereas these were all Sass variables previously. Also, all the `!default` flags have been removed from these variables, as they can now be overridden in the CSS without requiring Sass to do so.
-2. **Since Codebase v.5.2, _PostCSS_ and its associated dependencies have not been used in this project**, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` on the _Sass_ package.
+2. **Since v.5.2, the Sass preprocessor has been updated to Dart-Sass.**
+3. **Since v.5.2, _PostCSS_ and its associated dependencies have not been used in this project**, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` on the _Sass_ package.
 
 You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 
-The Codebase SCSS library contains a lot of [default variables](https://github.com/codebase-frontend-library/codebase-5/tree/master/src/codebase/scss/00_setup/_default-variables.scss) that are under a `!default` flag – so that they can be overridden.
+### Sass Maps in Codebase
 
-For example, here is the [Sass map](https://sass-lang.com/documentation/values/maps) of the seven default theme colors in Codebase:
+For example, here is the [Sass map](https://sass-lang.com/documentation/values/maps) of the nine shades that can be applied to one of the seven default theme colors in Codebase:
 
 ```scss
-$theme-color: (
-  "blue":   #1262ed,
-  "green":  #128a12,
-  "amber":  #f0b300,
-  "red":    #cf000f,
-  "purple": #9400d3,
-  "teal":   #0d98ba,
-  "gray":   #767676,
+$shade: (
+  "100": white 90%,
+  "200": white 72%,
+  "300": white 54%,
+  "400": white 36%,
+  "500": white 18%,
+  "600": black 0%,
+  "700": black 18%,
+  "800": black 36%,
+  "900": black 54%
 );
 ```
 
-These colors are the same as those in the `$ui-color` map that sets the UI colors (for buttons, badges, and labels) but you can change that by editing the `$theme-color` map and preprocessing the SCSS.
-
-You can override all these names and color codes, remove some or add more – to suit your branding – and the Codebase utility classes will all be generated using `each()` loops. So, you don’t need to figure out or input all the shades or each color.
-
-Read more on [CSS variables in Codebase]({{ '/docs/1-getting-started/css-variables/' | url }}).
+The Codebase color utility class generator uses this Sass map. These shades are applied by a `color-mix()` function using the OKLAB color space (since Codebase v.5.3.0). See [Color utilities]({{ '/docs/4-decoration-utilities/colors' | url }}).
 
 ## System font stacks
 
-Codebase contains three `font-family` system font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.
-
-Since v.5.0.6, Codebase’s font stacks have been based on Tom MacWright’s [System Font Stacks](https://systemfontstack.com) (but not including the emoji fonts).
+Codebase contains three simple `font-family` system font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.
 
 Codebase’s `--font-base` follows the popular trend for sans-serif in web design. It is applied to the HTML `<body>` tag by default.
 

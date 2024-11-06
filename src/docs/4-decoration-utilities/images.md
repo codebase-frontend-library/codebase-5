@@ -81,7 +81,7 @@ Since v.5.0.9 Codebase has `img-cover-*` positioning utility classes, using [obj
 
 The same tall image, positioned vertically three ways (smaller images have `aspect-ratio-2x1`):
 
-<div class="grid gap-3 xs:equal-2-cols mb-3">
+<div class="grid gap-3 xs:equal-2-cols mb-2">
   <div>
     <p class="mb-1"><em>No image cover classes</em></p>
     <img src="{{ '/img/pexels-andrew-hawkes-5063027-tall.jpg' | url}}">
@@ -114,7 +114,7 @@ The same wide image, positioned horizontally three ways (smaller images have `as
 
 <p class="mb-1"><img src="{{ '/img/pexels-pixabay-206762-short.jpg' | url}}"></p>
 
-<div class="grid gap-3 xs:equal-3-cols mb-3">
+<div class="grid gap-3 xs:equal-3-cols mb-2">
   <div>
     <p class="mb-1"><code>img-cover img-cover-left</code></p>
     <div class="aspect-ratio-1x1 relative">
@@ -209,7 +209,7 @@ Since Codebase v5.10, there are hover states set for each.
 
 These opacity utility classes can also be manipulated by [AlpineJS animations]({{ '/docs/7-alpinejs-components/animations/' | url }}).
 
-<div class="mb-3 grid gap-3 xs:equal-3-cols">
+<div class="mb-2 grid gap-3 xs:equal-3-cols">
   <div>
     <p><code>opacity-25%</code></p>
     <img class="opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
@@ -226,7 +226,7 @@ These opacity utility classes can also be manipulated by [AlpineJS animations]({
 
 Hover states:
 
-<div class="mb-3 grid gap-3 xs:equal-3-cols">
+<div class="mb-2 grid gap-3 xs:equal-3-cols">
   <div>
     <p><code>hover:opacity-25%</code></p>
     <img class="hover:opacity-25%" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">

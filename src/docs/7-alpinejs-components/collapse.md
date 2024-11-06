@@ -18,7 +18,7 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
 <div 
   x-data="{ open: false }"
   x-id="['collapse']"
-  class="mb-3 b-thin rounded"
+  class="mb-2 b-thin rounded"
 >
   <button
     type="button"
@@ -29,8 +29,8 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
     @keydown.escape.prevent.stop="open = false"
   >
     <span class="t-semibold">Collapse toggle</span>
-    <svg x-cloak x-show="!open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
-    <svg x-cloak x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+    <svg x-cloak x-show="!open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
+    <svg x-cloak x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
   </button>
   <div
     x-cloak
@@ -108,7 +108,7 @@ Instead of switching between two icons (caret down and caret up), you can have o
 <div 
   x-data="{ open: false }"
   x-id="['collapse']"
-  class="mb-3 bt-thin bb-thin"
+  class="mb-2 bt-thin bb-thin"
 >
   <button
     type="button"
@@ -122,7 +122,7 @@ Instead of switching between two icons (caret down and caret up), you can have o
     <svg 
       class="transition-all-300ms"
       :class="open && 'rotate-180'"  
-      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg>
   </button>
   <div
     x-cloak
@@ -166,7 +166,7 @@ For a dismissable message box:
 <div
   x-data="{ open: true }"
   x-id="['collapse']"
-  class="mb-3"
+  class="mb-2"
 >
   <div
     x-show="open"
@@ -182,7 +182,7 @@ For a dismissable message box:
         aria-label="Close panel"
         @click="open = false"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
       </button>
       <div class="p-2 t-white">
         <p class="mb-1 t-lg">Success</p>
