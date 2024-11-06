@@ -16,6 +16,7 @@
 * Improved `.t-decoration-none` and `.t-link-inside` (panel links).
 * All tables now need the `.table` class.
 * Paddings utility `.p-block` renamed `.p-cell` (alias `.p-block` is still available.)
+* Removed `  -webkit-overflow-scrolling: touch;` from the body tag.
 
 ## 30 Oct 2024 -- v.5.2.4
 
