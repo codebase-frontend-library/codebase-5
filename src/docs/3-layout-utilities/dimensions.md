@@ -143,8 +143,6 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 
 _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/) from [Pexels](https://www.pexels.com).
 
-**Note:** `rounded-*` utility classes have `overflow: hidden` built in, so that content (in these examples, images) do not protrude out of the rounded corners.
-
 ```html
 <div class="square-sm rounded-full overflow-hidden">
   <img src="" width="" height="" alt="">

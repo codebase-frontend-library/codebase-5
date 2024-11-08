@@ -13,7 +13,7 @@ img {
   height: 100%;
   object-fit: cover !important;
   object-position: center;
-  overflow: hidden;
+  overflow: clip;
 
   &-right-top {
     object-position: right top;

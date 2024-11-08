@@ -3,10 +3,6 @@
 
 @use "../00_setup/default-variables" as *;
 
-// [class*=rounded] {
-//   overflow: hidden;
-// }
-
 .rounded {
   border-radius: var(--rad-md);
 

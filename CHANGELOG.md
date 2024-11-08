@@ -2,6 +2,10 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 8 Nov 2024 -- v.5.3.1
+
+* Added utility `overflow-clip` using `overflow: clip`. (`overflow-hidden` is now aliased to this, for backwards compatability.)
+
 ## 6 Nov 2024 -- v.5.3.0
 
 * Updated NPM packages, including Eleventy and Dart-Sass. The Dart-Sass update required making some updates to several Sass functions in Codebase, fixing breaking changes for the preprocessor.

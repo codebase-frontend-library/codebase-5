@@ -25,6 +25,10 @@ Use `overflow-xy` when you have both width and height constraints but you want t
 
 ## Overflow hidden
 
-* `overflow-hidden`
-    
-Use `overflow-hidden` when you have too much content for displaying in a block element that has a constrained width and/or height, but you don’t want to show either horizontal or vertical scroll.
+* `overflow-clip` (alias `overflow-hidden`)
+
+Since Codebase v.5.3.1, these have the style rule `overflow: clip`, so that they do not create a scrolling context (see [Scroll-Driven Animations: You want overflow: clip, not overflow: hidden](https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/) by Bramus Van Damme).
+
+Use `overflow-clip` when you have too much content for displaying in a block element that has a constrained width and/or height, but you don’t want to show either horizontal or vertical scroll.
+
+(the Utility class named `overflow-hidden` is is still present for backwards compatability, but it now uses `overflow: clip` with `overflow: hidden` as a fallback.)

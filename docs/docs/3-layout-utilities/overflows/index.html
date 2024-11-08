@@ -8,7 +8,7 @@
   <title>Overflows - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.0" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.1" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -259,7 +259,7 @@
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.0">Download CSS</a></div>
+        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.1">Download CSS</a></div>
         <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -314,7 +314,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.0">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.1">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -551,9 +551,11 @@
 <p>Use <code>overflow-xy</code> when you have both width and height constraints but you want to show both horizontal and vertical scroll. This utility may be useful if you want to show a large map or <a href="/codebase-5/docs/6-simple-components/tables#oversized-tables">oversized table</a>.</p>
 <h2 id="overflow-hidden" tabindex="-1">Overflow hidden</h2>
 <ul>
-<li><code>overflow-hidden</code></li>
+<li><code>overflow-clip</code> (alias <code>overflow-hidden</code>)</li>
 </ul>
-<p>Use <code>overflow-hidden</code> when you have too much content for displaying in a block element that has a constrained width and/or height, but you don’t want to show either horizontal or vertical scroll.</p>
+<p>Since Codebase v.5.3.1, these have the style rule <code>overflow: clip</code>, so that they do not create a scrolling context (see <a href="https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/">Scroll-Driven Animations: You want overflow: clip, not overflow: hidden</a> by Bramus Van Damme).</p>
+<p>Use <code>overflow-clip</code> when you have too much content for displaying in a block element that has a constrained width and/or height, but you don’t want to show either horizontal or vertical scroll.</p>
+<p>(the Utility class named <code>overflow-hidden</code> is is still present for backwards compatability, but it now uses <code>overflow: clip</code> with <code>overflow: hidden</code> as a fallback.)</p>
 
     </div>
   </main>
@@ -588,10 +590,10 @@
   </p>
 
   <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.0</div>
+    <div>Version: 5.3.1</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94.2 KB)</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </div>

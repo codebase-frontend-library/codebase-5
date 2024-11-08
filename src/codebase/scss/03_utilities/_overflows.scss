@@ -24,8 +24,10 @@
   max-height: 100vh;
 }
 
-.overflow-hidden {
+.overflow-hidden,
+.overflow-clip {
   overflow: hidden;
+  overflow: clip;
 }
 
 .overflow-visible {
