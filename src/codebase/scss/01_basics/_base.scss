@@ -69,8 +69,9 @@ sup {
 input:focus,
 form button:focus,
 :focus-visible {
-  outline-width: 2px;
-  outline-offset: 3px;
+  // https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus
+  outline: auto 2px Highlight;
+  outline: auto 5px -webkit-focus-ring-color;
 }
 
 small {
