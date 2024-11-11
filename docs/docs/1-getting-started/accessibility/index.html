@@ -8,7 +8,7 @@
   <title>Accessibility - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.1" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.2" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -259,7 +259,7 @@
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.1">Download CSS</a></div>
+        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.2">Download CSS</a></div>
         <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
       </div>  
     </div>
@@ -314,7 +314,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.1">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.2">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -579,9 +579,8 @@
 <p>While other CSS frameworks (such as <a href="https://getbootstrap.com/docs/5.0/customize/color/">Bootstrap</a>) have set blue as their primary (accent) color, a purple has been chosen for Codebase, so that blue can be used for the UI “info” color.</p>
 <h2 id="focus-ring-styling" tabindex="-1">Focus ring styling</h2>
 <p>Interactive elements require a visual indicator that to lake them obvious for sighted keyboard users, who use “tabbing” to get around the webpage’s <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">accessibility tree</a> (a.k.a. tab index).</p>
-<p>Since Codebase v.5.2.5, focus rings have mostly reverted to the browser default styling, since these have improved in all the popular evergreen browsers (Chrome, Edge, Safari, Firefox). They are now light on dark backgrounds and light on dark backgrounds, and they are now rounded around rounded corners (e.g. on buttons and form fields).</p>
-<p>The ring is still difficult to see when it's next to a simlar colured button (e.g. a dark ring around a dark button over a light background), so I have included an outline-offset. This offset also improved readability of links within blocks of text when they have received focus.</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">:focus-visible</span> <span class="token punctuation">{</span><br>  <span class="token property">outline-width</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span><br>  <span class="token property">outline-offset</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Since Codebase v.5.2.5, focus rings have mostly reverted to the browser default styling, now copying the <a href="https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus">Accessability Style Guide</a>. The handling of the focus ring havs improved in all the popular evergreen browsers (Chrome, Edge, Safari, Firefox): now light on dark backgrounds and light on dark backgrounds, and now rounded around rounded corners (e.g. on buttons and form fields).</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">input:focus,<br>form button:focus,<br>:focus-visible</span> <span class="token punctuation">{</span><br>  <span class="token property">outline</span><span class="token punctuation">:</span> auto 2px Highlight<span class="token punctuation">;</span><br>  <span class="token property">outline</span><span class="token punctuation">:</span> auto 5px -webkit-focus-ring-color<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <h2 id="alpinejs-powered-components" tabindex="-1">AlpineJS powered components</h2>
 <p>Besides moving up to AlpineJS version 3, the Alpine powered components in these docs have been improved to enable usability via keyboard and assistive tech:</p>
 <ul>
@@ -691,7 +690,7 @@
   </p>
 
   <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.1</div>
+    <div>Version: 5.3.2</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>

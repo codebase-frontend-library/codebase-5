@@ -76,14 +76,14 @@ While other CSS frameworks (such as [Bootstrap](https://getbootstrap.com/docs/5.
 
 Interactive elements require a visual indicator that to lake them obvious for sighted keyboard users, who use “tabbing” to get around the webpage’s [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) (a.k.a. tab index).
 
-Since Codebase v.5.2.5, focus rings have mostly reverted to the browser default styling, since these have improved in all the popular evergreen browsers (Chrome, Edge, Safari, Firefox). They are now light on dark backgrounds and light on dark backgrounds, and they are now rounded around rounded corners (e.g. on buttons and form fields).
-
-The ring is still difficult to see when it's next to a simlar colured button (e.g. a dark ring around a dark button over a light background), so I have included an outline-offset. This offset also improved readability of links within blocks of text when they have received focus.
+Since Codebase v.5.2.5, focus rings have mostly reverted to the browser default styling, now copying the [Accessability Style Guide](https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus). The handling of the focus ring havs improved in all the popular evergreen browsers (Chrome, Edge, Safari, Firefox): now light on dark backgrounds and light on dark backgrounds, and now rounded around rounded corners (e.g. on buttons and form fields).
 
 ```css
+input:focus,
+form button:focus,
 :focus-visible {
-  outline-width: 2px;
-  outline-offset: 3px;
+  outline: auto 2px Highlight;
+  outline: auto 5px -webkit-focus-ring-color;
 }
 ```
 

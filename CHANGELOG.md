@@ -2,6 +2,10 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 11 Nov 2024 -- v.5.3.2
+
+* Focus ring now copying the [Accessability Style Guide](https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus).
+
 ## 8 Nov 2024 -- v.5.3.1
 
 * Added utility `overflow-clip` using `overflow: clip`. (`overflow-hidden` is now aliased to this, for backwards compatability.)
