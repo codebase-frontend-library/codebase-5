@@ -14,33 +14,37 @@ h5,
 h6 {
   margin-block: var(--hd-m-block);
   font-weight: var(--hd-weight);
-  line-height: var(--hd-lh);
   overflow-wrap: break-word;
 }
 
 h1,
 .h1 {
   font-size: var(--h1);
+  line-height: var(--hd-lh);
 }
 
 h2,
 .h2 {
   font-size: var(--h2);
+  line-height: var(--hd-lh);
 }
 
 h3,
 .h3 {
   font-size: var(--h3);
+  line-height: var(--hd-lh);
 }
 
 h4,
 .h4 {
   font-size: var(--h4);
+  line-height: var(--hd-lh);
 }
 
 h5,
 .h5 {
   font-size: var(--h5);
+  line-height: var(--hd-lh);
 }
 
 h6,
