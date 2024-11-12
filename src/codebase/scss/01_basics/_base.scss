@@ -31,7 +31,7 @@ body {
   background-color: var(--c-page-bg);
 }
 
-*:root {
+:root {
   -moz-tab-size: 4;
   tab-size: 4;
 }
@@ -72,6 +72,9 @@ form button:focus,
   // https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus
   outline: auto 2px Highlight;
   outline: auto 5px -webkit-focus-ring-color;
+  // Codebase extras
+  outline-offset: 3px;
+  z-index: 1;
 }
 
 small {
