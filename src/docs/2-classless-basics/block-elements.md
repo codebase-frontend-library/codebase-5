@@ -19,13 +19,13 @@ Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim
 <p>Lorem ipsum dolor sit amet...</p>
 ```
 
-Paragraphs have zero top margin while the bottom margin is set as equal to **1rem** (=2 element grid units), thereby leaving a little whitespace between paragraphs (and other typographic block elements).
+Paragraphs have zero top margin while the bottom margin is set as equal to 1rem (=2 element grid units), thereby leaving a little whitespace between paragraphs (and other typographic block elements).
 
 ## Headings
 
 Heading font weights have been set to `semibold` (default). You can override this for all headings in the SCSS default variables, or set a different weight yourself on a per-heading or per-word basis, for emphasis.
 
-Since Codebase v.5.2.5, heading tags have **2rem** top margin while the bottom margin is set as equal to **1rem**. Heading variables are set using a Sass map in the default variables file.
+Heading tags have 2rem top margin while the bottom margin is set as equal to 1rem (**exception:** if the heading is the `:first-child` of any wrapper, then its top margin is removed). Heading variables are set using a Sass map in the default variables file.
 
 (The demo headings below are simulated using `h1` to `h6` [text utility classes]({{ '/docs/5-typographic-utilities/inline-text' | url }}) – so that they are not included in the generated “Contents” list on this page.)
 
@@ -58,7 +58,7 @@ Since v.5.3.5 heading sizes have been set as follows:
 }
 ```
 
-**Removed in v.5.3.5:** ~~Above the md medium media query breakpoint (1024px, default), heading variables --h1 thorugh --h6 are size increased slightly.~~
+Removed in v.5.3.5: ~~Above the md medium media query breakpoint (1024px, default), heading variables --h1 thorugh --h6 are size increased slightly.~~
 
 ## Lists
 

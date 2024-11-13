@@ -213,11 +213,11 @@ A third example: adding in different text colors in base and hover states will r
 
 * `t-loose`
 
-    For when you need some text to have <span class="t-loose">extra letter-spacing</span>
+    <span class="t-loose">For when you need some text to have extra letter-spacing</span>
 
 * `t-tight`
 
-    For when you need some text to have <span class="t-tight">less letter-spacing</span>
+    <span class="t-tight">For when you need some text to have less letter-spacing</span>
 
 * `t-nowrap`
 

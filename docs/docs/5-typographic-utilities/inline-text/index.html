@@ -33,10 +33,6 @@
       width: 50px;
     }
 
-    main > div > h2:first-child {
-      margin-top: 0;
-    }
-
     pre code {
       white-space: pre-wrap !important;
     }
@@ -65,7 +61,7 @@
       .ms-windows #site-navigation:hover > div {
         overflow-y: auto;
       }
-      main h2, main h3, main h4, main h5, main h6 {
+      :target {
         scroll-margin-top: 72px;
       }
     }
@@ -670,11 +666,11 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
 </li>
 <li>
 <p><code>t-loose</code></p>
-<p>For when you need some text to have <span class="t-loose">extra letter-spacing</span></p>
+<p><span class="t-loose">For when you need some text to have extra letter-spacing</span></p>
 </li>
 <li>
 <p><code>t-tight</code></p>
-<p>For when you need some text to have <span class="t-tight">less letter-spacing</span></p>
+<p><span class="t-tight">For when you need some text to have less letter-spacing</span></p>
 </li>
 <li>
 <p><code>t-nowrap</code></p>

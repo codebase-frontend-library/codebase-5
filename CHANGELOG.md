@@ -5,6 +5,7 @@
 ## 11 Nov 2024 -- v.5.3.2
 
 * Focus ring now copying the [Accessability Style Guide](https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus).
+* Heading tags that are `:first-child` now have their top margins removed.
 
 ## 8 Nov 2024 -- v.5.3.1
 
