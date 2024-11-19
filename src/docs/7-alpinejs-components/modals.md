@@ -148,7 +148,7 @@ Simply add `@click.outside` to the modal panel.
   >
     <div
       class="w-xs m-3 b-thin rounded p-2 bg-white"
-      @click.outside="open = false"      
+      @click.outside="open = false"
     >
       <div class="h3">Modal title</div>
       <p>Modal content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
@@ -407,13 +407,13 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
     >
       <button
         type="button"
-        class="btn-icon bg-white rounded-full badge-top-right t-lg"
+        class="btn-icon bg-white rounded rounded-pill badge-top-right t-lg"
         aria-label="Close modal"
         @click="open = false"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
       </button>
-      <div class="p-cell rounded-sm unrounded-bottom bg-amber-200">
+      <div class="p-cell unrounded rounded-tl rounded-tr rounded-sm bg-amber-200">
         <p class="h4 m-0" id="modal-2a-title">Modal header</p>
       </div>
       <div class="p-2">
@@ -453,7 +453,7 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
   >
     <div
       class="w-lg h-max-100% flex flex-column m-3 b-thin rounded bg-white"
-      @click.outside="open = false"      
+      @click.outside="open = false"
     >
       <div class="bb-thin p-cell">
         <button class="btn-icon btn-sm float-right my-1 scroll-unlock" aria-label="Close modal" @click="open = false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
@@ -549,17 +549,17 @@ Modal panels that contain (or may contain) a lot of content can break on small s
                 </div>
               </td>
               <td>
-                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                <button type="button" class="btn-icon btn-sm rounded rounded-pill t-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="118.1 174.1 152 208 185.9 174.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="152" y1="128" x2="152" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><path d="M96,208H72A56,56,0,0,1,72,96a57.5,57.5,0,0,1,13.9,1.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path><path d="M80,128a80,80,0,1,1,144,48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg>
                 </button>
               </td>
               <td>
-                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                <button type="button" class="btn-icon btn-sm rounded rounded-pill t-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M228.1,121.2,84.2,33.2A8,8,0,0,0,72,40V216a8,8,0,0,0,12.2,6.8l143.9-88A7.9,7.9,0,0,0,228.1,121.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg>
                 </button>
               </td>
               <td>
-                <button type="button" class="btn-icon btn-sm rounded-full t-lg">
+                <button type="button" class="btn-icon btn-sm rounded rounded-pill t-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M77.4,201.9l-32.3,27A8,8,0,0,1,32,222.8V64a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V192a8,8,0,0,1-8,8H82.5A7.8,7.8,0,0,0,77.4,201.9Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg>
                 </button>
               </td>
@@ -571,8 +571,8 @@ Modal panels that contain (or may contain) a lot of content can break on small s
       </div>
       <div class="bt-thin p-2">
         <form class="flex" action="">
-          <input type="text" class="unrounded-right" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search...">
-          <button type="button" aria-label="Search" class="btn-icon unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
+          <input type="text" class="unrounded rounded-bl rounded-tl rounded-sm" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search...">
+          <button type="button" aria-label="Search" class="btn-icon unrounded rounded-tr rounded-br rounded-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
         </form>
       </div>
     </div>
@@ -669,7 +669,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     :aria-label="$id('modal')"
     class="fixed box z-index-999 flex flex-center flex-middle bg-black"
   >
-    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+    <button type="button" class="fixed top right m-2 btn-icon rounded rounded-pill btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
     </button>
     <img class="img-contain" src="{{ '/img/pexels-daniyal-ghanavati-110320.jpg' | url }}" width="640" height="978" loading="lazy" alt="A placeholder image">
@@ -705,7 +705,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     :aria-label="$id('modal')"
     class="fixed box z-index-999 flex flex-center flex-middle bg-black"
   >
-    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+    <button type="button" class="fixed top right m-2 btn-icon rounded rounded-pill btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
     </button>
     <img class="img-contain" src="{{ '/img/pexels-trudie-roden-2419158.jpg' | url }}" width="1280" height="640" loading="lazy" alt="A placeholder image">
@@ -741,7 +741,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
     :aria-label="$id('modal')"
     class="fixed box z-index-999 flex flex-center flex-middle bg-black"
   >
-    <button type="button" class="fixed top right m-2 btn-icon rounded-full btn-tertiary" @click="open = false">
+    <button type="button" class="fixed top right m-2 btn-icon rounded rounded-pill btn-tertiary" @click="open = false">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
     </button>
     <img class="img-contain" src="{{ '/img/pexels-erik-karits-3738673.jpg' | url }}" width="1280" height="834" loading="lazy" alt="A placeholder image">

@@ -31,7 +31,7 @@ A Codebase slideshow example with 5 slides:
       <button 
         id="slide1"
         x-ref="slide1"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 1 && 'btn-success'"
         aria-label="Slide 1 selector"
         aria-controls="slide1-panel"
@@ -45,7 +45,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide2"
         x-ref="slide2"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 2 && 'btn-success'"
         aria-label="Slide 2 selector"
         aria-controls="slide2-panel"
@@ -60,7 +60,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide3"
         x-ref="slide3"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 3 && 'btn-success'"
         aria-label="Slide 3 selector"
         aria-controls="slide3-panel"
@@ -75,7 +75,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide4"
         x-ref="slide4"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 4 && 'btn-success'"
         aria-label="Slide 3 selector"
         aria-controls="slide4-panel"
@@ -91,7 +91,7 @@ A Codebase slideshow example with 5 slides:
         role="tab"
         id="slide5"
         x-ref="slide5"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 5 && 'btn-success'"
         aria-controls="slide5-panel"
         :aria-selected="currentSlide === 5"
@@ -171,14 +171,14 @@ A Codebase slideshow example with 5 slides:
     <div class="box flex flex-space-between flex-middle flex-row-reverse lg:hidden-below">
       <div class="translate-right-100%">
         <button
-          class="ml-1 btn-icon rounded-full"
+          class="ml-1 btn-icon rounded rounded-pill"
           x-on:click="currentSlide = currentSlide === slides.length ? 1 : currentSlide + 1"
           aria-hidden="true"
         ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></button>
       </div>
       <div class="translate-left-100%">
         <button
-          class="mr-1 btn-icon rounded-full"
+          class="mr-1 btn-icon rounded rounded-pill"
           x-on:click="currentSlide = currentSlide === 1 ? slides.length : currentSlide - 1"
           aria-hidden="true"
         ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg></button>
@@ -206,7 +206,7 @@ A Codebase slideshow example with 5 slides:
       <button 
         id="slide1"
         x-ref="slide1"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 1 && 'btn-success'"
         aria-label="Slide 1 selector"
         aria-controls="slide1-panel"
@@ -220,7 +220,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide2"
         x-ref="slide2"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 2 && 'btn-success'"
         aria-label="Slide 2 selector"
         aria-controls="slide2-panel"
@@ -235,7 +235,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide3"
         x-ref="slide3"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 3 && 'btn-success'"
         aria-label="Slide 3 selector"
         aria-controls="slide3-panel"
@@ -250,7 +250,7 @@ A Codebase slideshow example with 5 slides:
       <button
         id="slide4"
         x-ref="slide4"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 4 && 'btn-success'"
         aria-label="Slide 3 selector"
         aria-controls="slide4-panel"
@@ -266,7 +266,7 @@ A Codebase slideshow example with 5 slides:
         role="tab"
         id="slide5"
         x-ref="slide5"
-        class="mx-1 btn-sm btn-icon rounded-full"
+        class="mx-1 btn-sm btn-icon rounded rounded-pill"
         :class="currentSlide === 5 && 'btn-success'"
         aria-controls="slide5-panel"
         :aria-selected="currentSlide === 5"
@@ -346,14 +346,14 @@ A Codebase slideshow example with 5 slides:
     <div class="box flex flex-space-between flex-middle flex-row-reverse md:hidden-below">
       <div class="translate-right-100%">
         <button
-          class="ml-1 btn-icon rounded-full"
+          class="ml-1 btn-icon rounded rounded-pill"
           x-on:click="currentSlide = currentSlide === slides.length ? 1 : currentSlide + 1"
           aria-hidden="true"
         >→</button>
       </div>
       <div class="translate-left-100%">
         <button
-          class="mr-1 btn-icon rounded-full"
+          class="mr-1 btn-icon rounded rounded-pill"
           x-on:click="currentSlide = currentSlide === 1 ? slides.length : currentSlide - 1"
           aria-hidden="true"
         >←</button>

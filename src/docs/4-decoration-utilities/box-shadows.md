@@ -7,7 +7,7 @@ prevLink: "Rounded corners"
 nextLink: "Images"
 ---
 
-Box shadows can take your design to a new level. 😂
+Box shadows can take your design to a new level.
 
 ## Box shadow levels
 

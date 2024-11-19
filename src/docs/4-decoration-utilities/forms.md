@@ -41,15 +41,15 @@ Go large – to grab people’s attention:
 
 <div class="w-xs mx-auto mb-2">
   <form class="flex">
-    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
-    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg">Subscribe</button>
+    <input id="email-example" class="form-element-lg b-thick b-success unrounded rounded-bl rounded-tl rounded-pill p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
+    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success unrounded rounded-tr rounded-br rounded-pill p-3 t-lg">Subscribe</button>
   </form>
 </div>
 
 ```html
 <input 
   id="email-example" 
-  class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" 
+  class="form-element-lg b-thick b-success unrounded rounded-bl rounded-tl rounded-pill p-3 t-lg bg-green-200" 
   name="examplename" 
   placeholder="Your email" 
   type="email"
@@ -57,7 +57,7 @@ Go large – to grab people’s attention:
 <button 
   aria-label="Submit" 
   type="submit" 
-  class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg"
+  class="btn btn-success btn-lg b-thick b-success unrounded rounded-tr rounded-br rounded-pill p-3 t-lg"
 >Subscribe</button>
 ```
 
@@ -65,15 +65,15 @@ Go small – to fit a form into a menubar, or into a table cell:
 
 <div class="w-xxs mx-auto mb-2">
   <form class="flex" action="">
-    <input type="search" class="form-element-sm b-primary unrounded-right bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
-    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
+    <input type="search" class="form-element-sm b-primary unrounded rounded-bl rounded-tl rounded-sm bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
+    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded rounded-tr rounded-br rounded-sm"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
   </form>
 </div>
 
 ```html
 <input 
   type="search" 
-  class="form-element-sm b-primary unrounded-right bg-purple-100" 
+  class="form-element-sm b-primary unrounded rounded-bl rounded-tl rounded-sm bg-purple-100" 
   id="site-search" 
   name="site-search" 
   autocomplete="off" 
@@ -82,7 +82,7 @@ Go small – to fit a form into a menubar, or into a table cell:
 >
 <button 
   aria-label="Search"
-  class="btn btn-primary btn-icon btn-sm unrounded-left"
+  class="btn btn-primary btn-icon btn-sm unrounded rounded-tr rounded-br rounded-sm"
 >
   <!-- Search icon -->
 </button>

@@ -46,7 +46,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     >
       <div class="mb-2 t-right">
         <button
-        class="btn-icon btn-sm rounded-full"
+        class="btn-icon btn-sm rounded rounded-pill"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -100,7 +100,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     >
       <div class="mb-2">
         <button
-        class="btn-icon btn-sm rounded-full"
+        class="btn-icon btn-sm rounded rounded-pill"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -154,7 +154,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     >
       <div class="mb-2 t-right">
         <button
-        class="btn-icon btn-sm rounded-full"
+        class="btn-icon btn-sm rounded rounded-pill"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -208,7 +208,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     >
       <div class="mb-2 t-right">
         <button
-        class="btn-icon btn-sm rounded-full"
+        class="btn-icon btn-sm rounded rounded-pill"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -260,7 +260,7 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
     >
       <div class="mb-2 t-right">
         <button
-        class="btn-icon btn-sm rounded-full"
+        class="btn-icon btn-sm rounded rounded-pill"
         aria-label="Close offcanvas panel"
         @click="isOpen = false">
           <!-- Icon close x -->
@@ -420,7 +420,7 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
   >
     <div class="mb-2 t-right">
       <button
-      class="btn-icon btn-sm rounded-full"
+      class="btn-icon btn-sm rounded rounded-pill"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx5.isOpen = false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -485,7 +485,7 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
   >
     <div class="mb-2 t-right">
       <button
-      class="btn-icon btn-sm rounded-full"
+      class="btn-icon btn-sm rounded rounded-pill"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx5.isOpen = false">
         <!-- Icon close x -->
@@ -589,7 +589,7 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
       x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button
-      class="btn-icon btn-sm rounded-full"
+      class="btn-icon btn-sm rounded rounded-pill"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx6.isOpen = false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -681,7 +681,7 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
       x-show="$store.offcanvasEx6.isBelowBP"
     >
       <button
-      class="btn-icon btn-sm rounded-full"
+      class="btn-icon btn-sm rounded rounded-pill"
       aria-label="Close offcanvas panel"
       @click="$store.offcanvasEx6.isOpen = false">
         <!--icon close x -->

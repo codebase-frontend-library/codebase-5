@@ -49,7 +49,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     x-show="open"
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
       <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
@@ -98,7 +98,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     x-show="open"
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
       <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
@@ -168,7 +168,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     x-show="open"
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute right z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
@@ -219,7 +219,7 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     x-show="open"
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute right z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
@@ -276,7 +276,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
     x-transition.origin.top.left
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
       <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>
@@ -326,7 +326,7 @@ In the following example An Alpine built-in animation has been added: `x-transit
     x-transition.origin.top.left
     @click.outside="close($refs.button)"
     :id="$id('dropdown-panel')"
-    class="absolute z-index-1 b-thin rounded-sm bs-2 bg-white"
+    class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
       <li><a class="block p-cell py-1 t-decoration-none" href="#/">First menu item</a></li>

@@ -39,9 +39,9 @@ _Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/)
 
 Example with image on the right, and some other decoration:
 
-<div class="container-sm my-6">
-<div class="flex flex-row-reverse b-thin rounded-lg p-2">
-  <a class="square rounded overflow-hidden" href="#/">
+<div class="my-6">
+<div class="flex flex-row-reverse b-thin rounded rounded-lg p-2">
+  <a class="square rounded overflow-clip" href="#/">
     <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="placeholder">
   </a>
   <div class="mr-2">
@@ -56,28 +56,28 @@ Example with image on the right, and some other decoration:
 Media objects can easily be modified as required, and nested. For example:
 
 <div class="flex">
-  <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
+  <a class="mr-2 square-sm b-thin rounded rounded-pill overflow-clip" href="#/">
     <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
   </a>
   <div>
     <div class="h4 mb-1">Freda Blogworthy</div>
-    <div class="mb-2 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+    <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
     <div class="flex">
-      <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
+      <a class="mr-2 square-sm b-thin rounded rounded-pill overflow-clip" href="#/">
         <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
       </a>
       <div>
         <div class="h4 mb-1">Thomas Wingman</div>
-        <div class="mb-2 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+        <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>
     </div>
     <div class="flex">
-      <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
+      <a class="mr-2 square-sm b-thin rounded-tr rounded-tl rounded-bl rounded-lg overflow-clip" href="#/">
         <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
       </a>
       <div>
         <div class="h4 mb-1">Duck Billington</div>
-        <div class="mb-2 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+        <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
       </div>
     </div>
   </div>

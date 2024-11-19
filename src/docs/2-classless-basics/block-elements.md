@@ -58,8 +58,6 @@ Since v.5.3.5 heading sizes have been set as follows:
 }
 ```
 
-Removed in v.5.3.5: ~~Above the md medium media query breakpoint (1024px, default), heading variables --h1 thorugh --h6 are size increased slightly.~~
-
 ## Lists
 
 ### Ordered lists (numbered)

@@ -51,7 +51,7 @@ So, for example, if you want to hide a sidebar on an iPad in portrait orientatio
 <p class="t-center"> &check; = displayed; &cross; = hidden</p>
 
 <div class="overflow-x mb-2">
-<table class="table-compact">
+<table class="table table-compact">
   <thead>
     <tr>
       <th>Class</th>

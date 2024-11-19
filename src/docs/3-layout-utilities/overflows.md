@@ -23,7 +23,7 @@ Use `overflow-y` when you have content that is too tall for its wrapper. (`overf
 
 Use `overflow-xy` when you have both width and height constraints but you want to show both horizontal and vertical scroll. This utility may be useful if you want to show a large map or [oversized table]({{ '/docs/6-simple-components/tables#oversized-tables' | url }}).
 
-## Overflow hidden
+## Overflow clip
 
 * `overflow-clip` (alias `overflow-hidden`)
 

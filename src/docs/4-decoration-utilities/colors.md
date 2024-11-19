@@ -37,8 +37,8 @@ Toggle the panel background color (white or black):
     @click="isDark = !isDark"
     aria-controls="panel-1"
   >
-    <span x-cloak x-show="!isDark" class="p-cell b-thin rounded-sm t-white bg-black">Toggle to black</span>
-    <span x-cloak x-show="isDark" class="p-cell b-thin rounded-sm bg-white">Toggle to white</span>
+    <span x-cloak x-show="!isDark" class="p-cell b-thin rounded rounded-sm t-white bg-black">Toggle to black</span>
+    <span x-cloak x-show="isDark" class="p-cell b-thin rounded rounded-sm bg-white">Toggle to white</span>
   </button>
   <div
     class="my-3 b-thin rounded p-2"
@@ -245,7 +245,7 @@ There are also a few [extra color utilities](#extra-color-utilies) that I will m
 Examples:
 
 <div class="mb-2">
-  <p class="b-thin b-green-400 rounded-sm p-cell bg-green-200 t-green-700">b-thin b-green-400 rounded-sm p-cell bg-green-200 t-green-700</p>
+  <p class="b-thin b-green-400 rounded rounded-sm p-cell bg-green-200 t-green-700">b-thin b-green-400 rounded rounded-sm p-cell bg-green-200 t-green-700</p>
   <p class="t-amber-600">t-amber-600</p>
   <p class="p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700">p-3 b-thick b-red-400 hover:b-red-500 bg-red-200 hover:bg-red-300 t-lg t-bold t-red-500 hover:t-red-700</p>
 </div>

@@ -200,7 +200,7 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           x-show="open"
           @click.outside="close($refs.button)"
           :id="$id('dropdown-panel')"
-          class="absolute xs:right z-index-1 b-thin rounded-sm bs-2 bg-white"
+          class="absolute xs:right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
           style="min-width: 9rem"
         >
           <ul class="list-style-type-none mb-0 px-0 py-1">
@@ -260,7 +260,7 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           x-show="open"
           @click.outside="close($refs.button)"
           :id="$id('dropdown-panel')"
-          class="absolute xs:right z-index-1 b-thin rounded-sm bs-2 bg-white"
+          class="absolute xs:right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
           style="min-width: 9rem"
         >
           <ul class="list-style-type-none mb-0 px-0 py-1">

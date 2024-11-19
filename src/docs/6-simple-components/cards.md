@@ -263,7 +263,7 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
         >
           <div
             class="w-xs h-max-100% flex flex-column m-3 b-thin rounded bg-white"
-            @click.outside="open = false"      
+            @click.outside="open = false"
           >
             <div class="bb-thin p-cell">
               <button type="button" class="float-right my-1 btn-sm" @click="open = false">Done</button>
@@ -308,8 +308,8 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
             </div>
             <div class="bt-thin p-2">
               <form class="flex" action="">
-                <input type="text" class="rounded-pill unrounded-right" id="comment-form" name="comment-form" autocomplete="off" aria-label="" placeholder="Write a comment...">
-                <button aria-label="Submit" class="rounded-pill unrounded-left">Submit</button>
+                <input type="text" class="unrounded rounded-bl rounded-tl rounded-pill" id="comment-form" name="comment-form" autocomplete="off" aria-label="" placeholder="Write a comment...">
+                <button aria-label="Submit" class="unrounded rounded-tr rounded-br rounded-pill">Submit</button>
               </form>
             </div>
           </div>

@@ -2,6 +2,13 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 19 Nov 2024 -- v.5.3.3
+
+* Reinvention of the way Codebase handles rounded corners. Breaking changes:
+  * Different border radius size classes now only provide _values_ — e.g. they need to be paired with `rounded`, `rounded-tl` etc. class as a modifier;
+  * Now there is only one `unrounded` reset. Four corner-specific rounding corner classes have been added.
+  * Removed `rounded-circle` and `rounded-full` (you only need `rounded-pill` to accomplish all thay they were used for).
+
 ## 11 Nov 2024 -- v.5.3.2
 
 * Focus ring now copying the [Accessability Style Guide](https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus).
@@ -25,7 +32,7 @@
 * Improved `.t-decoration-none` and `.t-link-inside` (panel links).
 * All tables now need the `.table` class.
 * Paddings utility `.p-block` renamed `.p-cell` (alias `.p-block` is still available.)
-* Removed `  -webkit-overflow-scrolling: touch;` from the body tag.
+* Removed `-webkit-overflow-scrolling: touch;` from the body tag.
 
 ## 30 Oct 2024 -- v.5.2.4
 

@@ -487,7 +487,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
           x-transition:enter-start="opacity-0 pt-4"
           x-transition:enter-end="opacity-100% pt-0"
         >
-          <div class="square mx-auto mb-2 rounded-full bg-amber-400">&nbsp;</div>
+          <div class="square mx-auto mb-2 rounded rounded-pill bg-amber-400">&nbsp;</div>
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a viverra nisi.</div>
         </div>
       </div>
@@ -498,7 +498,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
           x-transition:enter-start="opacity-0 pt-4"
           x-transition:enter-end="opacity-100% pt-0"
         >
-          <div class="square mx-auto mb-2 rounded-full bg-amber-400">&nbsp;</div>
+          <div class="square mx-auto mb-2 rounded rounded-pill bg-amber-400">&nbsp;</div>
           <div>In vel porttitor mauris, id ullamcorper odio. Morbi id ornare neque.</div>
         </div>
       </div>
@@ -509,7 +509,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
           x-transition:enter-start="opacity-0 pt-4"
           x-transition:enter-end="opacity-100% pt-0"
         >
-          <div class="square mx-auto mb-2 rounded-full bg-amber-400">&nbsp;</div>
+          <div class="square mx-auto mb-2 rounded rounded-pill bg-amber-400">&nbsp;</div>
           <div>Aenean faucibus risus quis ipsum malesuada, iaculis semper lectus pellentesque.</div>
         </div>
       </div>
@@ -520,7 +520,7 @@ Click/tap to activate. (This could just as easily have been set to activate on s
           x-transition:enter-start="opacity-0 pt-4"
           x-transition:enter-end="opacity-100% pt-0"
         >
-          <div class="square mx-auto mb-2 rounded-full bg-amber-400">&nbsp;</div>
+          <div class="square mx-auto mb-2 rounded rounded-pill bg-amber-400">&nbsp;</div>
           <div>In ornare lectus dui, tempor ultricies felis commodo nec. Praesent placerat venenatis nibh vel consequat.</div>
         </div>
       </div>

@@ -25,19 +25,16 @@ select {
   width: 100%;
   min-height: var(--form-size);
   border: var(--line-detail);
-  border-radius: unset;
   padding: var(--form-p);
   font-family: var(--form-font);
   font-size: 1rem;
   text-align: start;
 
-  @if $form-input-rounded-corners==true {
-    -webkit-border-radius: var(--rad-sm);
-    border-radius: var(--rad-sm);
+  @if $form-input-rounded-corners ==true {
+    --rad: var(--rad-sm);
+    border-radius: var(--rad);
   }
-
   @else {
-    -webkit-border-radius: 0;
     border-radius: 0;
   }
 
@@ -116,7 +113,11 @@ textarea.form-element-sm {
   border: var(--line-detail);
 
   @if $form-input-rounded-corners ==true {
-    border-radius: var(--rad-sm);
+    --rad: var(--rad-sm);
+    border-radius: var(--rad);
+  }
+  @else {
+    border-radius: 0;
   }
 
   padding: var(--btn-p);
@@ -135,14 +136,6 @@ textarea.form-element-sm {
     color: var(--c-btn-text);
     background-color: var(--c-btn-hover);
     cursor: pointer;
-  }
-
-  @if $button-rounded-corners ==true {
-    border-radius: var(--rad-sm);
-  }
-
-  @else {
-    border-radius: 0;
   }
 
   &.block {

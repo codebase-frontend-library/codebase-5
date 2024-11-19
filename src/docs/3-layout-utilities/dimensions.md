@@ -79,7 +79,7 @@ You can also control blocks two-dimensionally using [flexbox]({{ '/docs/3-layout
 
 You usually see thumbail images or avatars set in squares – or circles, which are fully-rounded squares.
 
-With Codebase, you can use `square` to make elements square, and `square rounded-full overflow-hidden` to make elements circular.
+With Codebase, you can use `square` to make elements square, and `square rounded rounded-pill overflow-clip` to make elements circular.
 
 * `square-sm`: 3rem<sup>2</sup> (24px<sup>2</sup> default)
 * `square` (alias `square-md`): 4.5rem<sup>2</sup> (72px<sup>2</sup> default)
@@ -125,17 +125,17 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 
 <div class="flex flex-middle gap-3 mb-1">
   <div>
-    <div class="square-sm rounded-full overflow-hidden">
+    <div class="square-sm rounded rounded-pill overflow-clip">
       <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
   <div>
-    <div class="square rounded-full overflow-hidden">
+    <div class="square rounded rounded-pill overflow-clip">
       <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
   <div>
-    <div class="square-lg rounded-full overflow-hidden">
+    <div class="square-lg rounded rounded-pill overflow-clip">
       <img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="A fully rounded square image">
     </div>
   </div>
@@ -144,15 +144,15 @@ _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avia
 _Image attribution:_ Photo by [Pixabay](https://www.pexels.com/photo/animal-avian-beak-bird-416179/) from [Pexels](https://www.pexels.com).
 
 ```html
-<div class="square-sm rounded-full overflow-hidden">
+<div class="square-sm rounded rounded-pill overflow-clip">
   <img src="" width="" height="" alt="">
 </div>
 
-<div class="square rounded-full overflow-hidden">
+<div class="square rounded rounded-pill overflow-clip">
   <img src="" width="" height="" alt="">
 </div>
 
-<div class="square-lg rounded-full overflow-hidden">
+<div class="square-lg rounded rounded-pill overflow-clip">
   <img src="" width="" height="" alt="">
 </div>
 ```

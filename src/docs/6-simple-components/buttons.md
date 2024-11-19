@@ -151,9 +151,9 @@ Here’s something else you can do: if you have both text and an icon in the but
 </button>
 ```
 
-## Pills
+## Pill buttons
 
-You can changed the rounded corners of buttons using [rounded corner]({{ '/docs/4-decoration-utilities/rounded-corners' | url }}) utilities.
+You can change the rounded corners of buttons using [rounded corner]({{ '/docs/4-decoration-utilities/rounded-corners' | url }}) utilities. (In the case of buttons and form elements that have built-in border radous, you don't need the `rounded` utility class.)
 
 <button class="btn-secondary rounded-pill">Pill-shaped button</button>
 
@@ -183,6 +183,7 @@ For SVG icons, set the height to match your line height (1.5rem = 24px). And wit
   OK
 </button>
 ```
+
 **Notes:**
 
 1. Codebase buttons already have built in `display: inline-flex;` with flex items centered and middled. This should automatically line up text and icons. However, if you use an _icon font_, you may find it necessary to put the icon in its own `<span>` or `<i>` tag within the button.
@@ -202,16 +203,16 @@ Add `btn-icon` to get square buttons.
   <button class="btn-icon btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
 </div>
 
-Since `btn-icon` renders a square, you can also add  `rounded-full` to make it a circle.
+Since `btn-icon` renders a square, you can also add  `rounded-pill` to make it a circle.
 
 <div class="flex flex-middle mb-2">
-  <button class="btn-icon rounded-full btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><circle cx="128" cy="176" r="16"></circle><path d="M128,136a28,28,0,1,0-28-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,80h88a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path><path d="M93.3,104H32V64a8,8,0,0,1,8-8H93.3a8.1,8.1,0,0,1,4.8,1.6L128,80,98.1,102.4A8.1,8.1,0,0,1,93.3,104Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg></button>&nbsp;
-  <button class="btn-icon rounded-full btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
+  <button class="btn-icon rounded-pill btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><circle cx="128" cy="176" r="16"></circle><path d="M128,136a28,28,0,1,0-28-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,80h88a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path><path d="M93.3,104H32V64a8,8,0,0,1,8-8H93.3a8.1,8.1,0,0,1,4.8,1.6L128,80,98.1,102.4A8.1,8.1,0,0,1,93.3,104Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg></button>&nbsp;
+  <button class="btn-icon rounded-pill btn-tertiary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="192 104 152 104 152 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="48" x2="152" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="64 152 104 152 104 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="208" x2="104" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="152 192 152 152 192 152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="208" y1="208" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><polyline points="104 64 104 104 64 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline><line x1="48" y1="48" x2="104" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
 </div>
 
 ## Button sizes
@@ -228,16 +229,16 @@ Since `btn-icon` renders a square, you can also add  `rounded-full` to make it a
 <a href="#/" class="btn btn-lg">Large</a>
 ```
 
-Using `btn-icon` at these different button sizes will maintain its square shape. And maintain a circle shape if used in combination with `rounded-full`:
+Using `btn-icon` at these different button sizes will maintain its square shape. And maintain a circle shape if used in combination with `rounded-pill`:
 
-<button class="btn btn-sm btn-icon rounded-full">A</button>
-<button class="btn btn-icon rounded-full">B</button>
-<button class="btn btn-lg btn-icon rounded-full">C</button>
+<button class="btn btn-sm btn-icon rounded-pill">A</button>
+<button class="btn btn-icon rounded-pill">B</button>
+<button class="btn btn-lg btn-icon rounded-pill">C</button>
 
 ```html
-<button class="btn btn-sm btn-icon rounded-full">A</button>
-<button class="btn btn-icon rounded-full">B</button>
-<button class="btn btn-lg btn-icon rounded-full">C</button>
+<button class="btn btn-sm btn-icon rounded-pill">A</button>
+<button class="btn btn-icon rounded-pill">B</button>
+<button class="btn btn-lg btn-icon rounded-pill">C</button>
 ```
 
 **Note:** The font-size change for smaller or larger buttons will affect icon fonts but it does not affect SVG icons.
@@ -256,25 +257,25 @@ If you want smaller or larger icons, then you must make them smaller or larger y
 
 ## Combos
 
-A row of buttons would touch each other (buttons are ordinarily inline elements), unless you leave spaces between them. Leave no spaces if you want the buttons to touch each other, as in a “tool bar”. Or if you find it necessary, wrap them in a `flex`
+A row of buttons would touch each other (buttons are ordinarily inline elements), unless you leave spaces between them. Leave no spaces if you want the buttons to touch each other, as in a “tool bar”. Or if you find it necessary, wrap them in a `flex`.
 
 You can remove some of the rounded corners using some `unrounded` utilities (see [rounded corners]({{ '/docs/4-decoration-utilities/rounded-corners' | url }})).
 
-<div class="flex flex-center mb-2">
-<button class="btn-icon unrounded-right">
+<div class="flex flex-center mt-6 mb-2">
+<button class="btn-icon unrounded rounded-bl rounded-tl rounded-sm">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M64,120h88a40,40,0,0,1,0,80H64V48h76a36,36,0,0,1,0,72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></path></svg>
 </button>
-<button class="btn-icon unrounded-left">
+<button class="btn-icon unrounded rounded-tr rounded-br rounded-sm">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="152" y1="56" x2="104" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="64" y1="200" x2="144" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="112" y1="56" x2="192" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
 </button>
 &nbsp;
-<button class="btn-icon unrounded-right">
+<button class="btn-icon unrounded rounded-bl rounded-tl rounded-sm">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="108" x2="168" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="188" x2="168" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
 </button>
 <button class="btn-icon unrounded">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="64" y1="108" x2="192" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="64" y1="188" x2="192" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
 </button>
-<button class="btn-icon unrounded-left">
+<button class="btn-icon unrounded rounded-tr rounded-br rounded-sm">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="68" x2="216" y2="68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="88" y1="108" x2="216" y2="108" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="148" x2="216" y2="148" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="88" y1="188" x2="216" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
 </button>
 &nbsp;
@@ -284,54 +285,58 @@ You can remove some of the rounded corners using some `unrounded` utilities (see
 </div>
 
 ```html
-<button class="btn-icon unrounded-right">
+<button class="btn-icon unrounded rounded-bl rounded-tl rounded-sm">
   <!-- left-align icon -->
 </button>
 <button class="btn-icon unrounded">
   <!-- center icon -->
 </button>
-<button class="btn-icon unrounded-left">
+<button class="btn-icon unrounded rounded-tr rounded-br rounded-sm">
   <!-- right-align icon -->
 </button>
 ```
 
-Go large – to grab people’s attention: 
+Go large – to grab people’s attention:
 
 <div class="w-xs mx-auto mb-2">
   <form class="flex">
-    <input id="email-example" class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
-    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg">Subscribe</button>
+    <input id="email-example" class="form-element-lg b-thick b-success unrounded rounded-bl rounded-tl rounded-pill p-3 t-lg bg-green-200" name="examplename" placeholder="Your email" type="email">
+    <button aria-label="Submit" type="submit" class="btn btn-success btn-lg b-thick b-success unrounded rounded-tr rounded-br rounded-pill p-3 t-lg">Subscribe</button>
   </form>
 </div>
 
 ```html
-<input 
-  id="email-example" 
-  class="form-element-lg b-thick b-success rounded-pill unrounded-right p-3 t-lg bg-green-200" 
-  name="examplename" 
-  placeholder="Your email" 
-  type="email"
->
-<button 
-  aria-label="Submit" 
-  type="submit" 
-  class="btn btn-success btn-lg b-thick b-success rounded-pill unrounded-left p-3 t-lg"
->Subscribe</button>
+<form class="flex">
+  <input 
+    id="email-example" 
+    class="form-element-lg b-thick b-success unrounded rounded-bl rounded-tl rounded-pill p-3 t-lg bg-green-200" 
+    name="examplename" 
+    placeholder="Your email" 
+    type="email"
+  >
+  <button 
+    aria-label="Submit" 
+    type="submit" 
+    class="btn btn-success btn-lg b-thick b-success unrounded rounded-tr rounded-br rounded-pill p-3 t-lg"
+  >
+    Subscribe
+  </button>
+</form>
 ```
 
 Go small – to fit a form into a menubar, or into a table cell:
 
 <div class="w-xxs mx-auto mb-2">
   <form class="flex" action="">
-    <input type="search" class="form-element-sm b-primary unrounded-right bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
-    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
+    <input type="search" class="form-element-sm b-primary unrounded rounded-bl rounded-tl rounded-sm bg-purple-100" id="site-search" name="site-search" autocomplete="off" aria-label="" placeholder="Search">
+    <button aria-label="Search" class="btn btn-primary btn-icon btn-sm unrounded rounded-tr rounded-br rounded-sm"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg></button>
   </form>
 </div>
 
 ```html
 <input 
   type="search" 
-  class="form-element-sm b-primary unrounded-right bg-purple-100" 
+  class="form-element-sm b-primary unrounded rounded-bl rounded-tl rounded-sm bg-purple-100" 
   id="site-search" 
   name="site-search" 
   autocomplete="off" 
@@ -340,7 +345,7 @@ Go small – to fit a form into a menubar, or into a table cell:
 >
 <button 
   aria-label="Search"
-  class="btn btn-primary btn-icon btn-sm unrounded-left"
+  class="btn btn-primary btn-icon btn-sm unrounded rounded-tr rounded-br rounded-sm"
 >
   <!-- Search icon -->
 </button>
