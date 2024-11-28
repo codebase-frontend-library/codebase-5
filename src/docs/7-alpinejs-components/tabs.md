@@ -31,7 +31,7 @@ Here’s an unstyled tabs example, ready for you to style your own way. Explanat
 2. `tabindex` is set as 0 for hidden tabs, swapped to am index number when a tab is selected (brought into view). Selecting tabs can by done by click/tap, keyboard arrow, or assistive tech.
 3. A Selected tab labels have a color change, adding the `active` class (looks the same as the `:hover` state).
 
-<div class="mb-2">
+<div class="mb-4">
 <div x-cloak x-data="{ currentTab: 1 }">
   <nav
     role="tablist"
@@ -221,7 +221,7 @@ Codebase has styling for a “classic tabs” component.
 2. The classics tabs classes simply apply coloring to the tab labels, unrounded (square) corners to the bottom of tab labels, and a white mask over the button of the selected tab button so that it appears to be seamlessly attached to its tabpanel.
 3. Other Codebase utilities are used, to complete the classic tabs styling.
 
-<div class="mb-2">
+<div class="my-4">
 <div x-cloak x-data="{ currentTab: 1 }">
   <ul
     role="tablist"
@@ -233,7 +233,7 @@ Codebase has styling for a “classic tabs” component.
         role="tab"
         id="first-tab"
         x-ref="firstTab"
-        class="tab rounded rounded-tl rounded-tr rounded-sm"
+        class="tab unrounded rounded-tl rounded-tr rounded-sm"
         aria-controls="first-tab-panel"
         :aria-selected="currentTab === 1"
         @click="currentTab = 1"
@@ -248,7 +248,7 @@ Codebase has styling for a “classic tabs” component.
         role="tab"
         id="second-tab"
         x-ref="secondTab"
-        class="tab rounded rounded-tl rounded-tr rounded-sm"
+        class="tab unrounded rounded-tl rounded-tr rounded-sm"
         aria-controls="second-tab-panel"
         :aria-selected="currentTab === 2"
         @click="currentTab = 2"
@@ -264,7 +264,7 @@ Codebase has styling for a “classic tabs” component.
         role="tab"
         id="third-tab"
         x-ref="thirdTab"
-        class="tab rounded rounded-tl rounded-tr rounded-sm"
+        class="tab unrounded rounded-tl rounded-tr rounded-sm"
         aria-controls="third-tab-panel"
         :aria-selected="currentTab === 3"
         @click="currentTab = 3"

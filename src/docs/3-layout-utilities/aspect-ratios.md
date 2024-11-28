@@ -9,8 +9,6 @@ nextLink: "Floats"
 
 Here are several utility classes that can be used on _wrapper_ elements for constraining the aspect ratio of whatever is their immediate child element. These can be used to wrap tiles, cards, images, videos, embeds, or whatever you need to be constrained to an aspect ratio.
 
-Since v.1.0.3, Codebase 5 uses the new `aspect-ratio` CSS property, since this has seen [widespread adoption in browsers in 2021](https://caniuse.com/mdn-css_properties_aspect-ratio).
-
 ## Notes on aspect ratios
 
 Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio _unless deformed by excess content within_. For example, you may have a [hero image with a text overlay]({{ '/docs/6-simple-components/heros' | url }}). On wider viewports it makes sense to maintain the aspect ratio but on small phones the text may be too much for the down-scaled wrapper, so you will want it to be taller than the aspect ratio requires in order to still contain the overlay text.

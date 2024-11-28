@@ -78,7 +78,6 @@ $mq-value in $mq-width {
   font-style: normal;
 }
 
-.t-para,
 .t-default {
   font-size: 1rem;
   line-height: inherit;
@@ -92,31 +91,6 @@ $mq-value in $mq-width {
 .t-italic,
 .t-em {
   font-style: italic;
-}
-
-.t-decoration-none {
-  text-decoration: none;
-}
-
-.t-decoration-underline,
-.hover\:t-decoration-underline:hover {
-    text-decoration: underline;
-}
-
-.t-link-inside {
-  text-decoration: none;
-  &.t-decoration-none:hover {
-    text-decoration: none;
-  }
-}
-.t-link {
-  text-decoration: underline;
-  .t-decoration-none & {
-    text-decoration: none;
-  }
-  .hover\:t-decoration-underline:hover & {
-    text-decoration: underline;
-  }
 }
 
 .t-strike {

@@ -5,7 +5,7 @@
     <div class="p-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="{{ '/' | url }}"
         tabindex="1"
@@ -14,7 +14,7 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase CSS</span>
       </a>
     </div>
   </div>
@@ -40,105 +40,107 @@
     <div class="py-4 t-center t-display">
       <h1 class="h2 mt-0 t-bold t-balance">Codebase is a business class style library for the modern web</h1>
     </div>
-    <div class="py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <menu class="py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
       <div>Version: {{ metadata.version }}</div>
       <div><a href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
       <div><a href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
       <div><a href="/codebase-5/dist/codebase.css">CSS (minified)</a> ({{ metadata.css_filesize }})</div>
       <div class="md:col-2 lg:col-5">Licence: <a href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-      <div>Developer: <a href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-    </div>
+      <div>Dev: <a href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+    </menu>
   </header>
 
-  <div class="container-md pb-3 lg:pb-5">
-    <p class="h3 mt-0 t-thin t-balance md:t-center">Designed to work with static site generators and content management systems, Codebase is a package of lessons learned from semantic component frameworks and utility libraries, with new techniques such as CSS <strong class="t-normal">grid</strong>, <strong class="t-normal">clamp()</strong>, and <strong class="t-normal">var()</strong>. Plus, Codebase collaborates well with <a target="_blank" class="https://alpinejs.dev">AlpineJS</a>.</p>
-    <p class="w-sm mx-auto md:t-center">Starting from a beautifully minimalist set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to all this and more...</p>
-  </div>
-
-  <div class="container-lg grid xs:equal-2-cols md:equal-3-cols gap-2 sm:gap-4 lg:gap-6">
-
-    <div>
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M204,56V88a4,4,0,0,1-8,0V60H132V196h28a4,4,0,0,1,0,8H96a4,4,0,0,1,0-8h28V60H60V88a4,4,0,0,1-8,0V56a4,4,0,0,1,4-4H200A4,4,0,0,1,204,56Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance">Typography</h2>
-      <ul>
-        <li>Serif, sans-serif, and monospaced font stacks</li>
-        <li>Font weights: thin, normal, semibold, bold, heavy</li>
-        <li>Heading size also as utility classes</li>
-        <li>Large display text for headings and landing pages</li>
-        <li>Comfortable long-read font sizes controlled by CSS clamp</li>
-        <li>Other text utilities incuding alignments, list formats, etc.</li>
-      </ul>
+  <section>
+    <div class="container-md pb-3 lg:pb-5">
+      <p class="h3 mt-0 t-thin t-balance md:t-center">Designed to work with static site generators and content management systems, Codebase is a package of lessons learned from front-end component frameworks and utility style libraries, with new <a target="_blank" href="https://developer.mozilla.org/en-US/blog/baseline-unified-view-stable-web-features/">Baseline widely supported</a> techniques such as CSS <strong class="t-normal">grid</strong>, <strong class="t-normal">clamp()</strong>, and <strong class="t-normal">var()</strong>. Plus, Codebase works well with <a target="_blank" href="https://alpinejs.dev">AlpineJS</a>.</p>
+      <p class="w-sm mx-auto md:t-center">Starting from a beautifully minimalist set of classless HTML tag styles for cross-browser compatibility, Codebase brings you a “utility first” approach to all this and more...</p>
     </div>
 
-    <div>
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,76H204V64a20,20,0,0,0-20-20H40A20,20,0,0,0,20,64v96a20,20,0,0,0,20,20H156v12a20,20,0,0,0,20,20h48a20,20,0,0,0,20-20V96A20,20,0,0,0,224,76ZM40,172a12,12,0,0,1-12-12V64A12,12,0,0,1,40,52H184a12,12,0,0,1,12,12V76H176a20,20,0,0,0-20,20v76Zm196,20a12,12,0,0,1-12,12H176a12,12,0,0,1-12-12V96a12,12,0,0,1,12-12h48a12,12,0,0,1,12,12ZM132,208a4,4,0,0,1-4,4H88a4,4,0,0,1,0-8h40A4,4,0,0,1,132,208Zm80-96a4,4,0,0,1-4,4H192a4,4,0,0,1,0-8h16A4,4,0,0,1,212,112Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance">Responsive layouts</h2>
-      <ul>
-        <li>A range of centered container, width, and height utilities</li>
-        <li>Real two-dimensional CSS grid layouts for templating</li>
-        <li>Flexbox layouts for components</li>
-        <li>Fixed and sticky positioning</li>
-        <li>Aspect-ratio controlled squared tiles</li>
-        <li>Edge positioning</li>
-        <li>Responsive invisibility classes</li>
-      </ul>
-    </div>
+    <div class="container-lg grid xs:equal-2-cols md:equal-3-cols gap-2 sm:gap-4 lg:gap-6">
 
-    <div>
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M198,56.74A99.31,99.31,0,0,0,128,28h-1A100,100,0,0,0,28,128c0,41.22,25.55,75.85,66.69,90.38a28.34,28.34,0,0,0,9.42,1.63A28,28,0,0,0,132,192a20,20,0,0,1,20-20h46.21a27.84,27.84,0,0,0,27.3-21.76,100.37,100.37,0,0,0,2.49-23.1A99.26,99.26,0,0,0,198,56.74Zm19.74,91.72A19.89,19.89,0,0,1,198.21,164H152a28,28,0,0,0-28,28,20,20,0,0,1-26.64,18.83C59.51,197.46,36,165.72,36,128a92,92,0,0,1,91.05-92H128a92,92,0,0,1,89.72,112.46ZM136,76a8,8,0,1,1-8-8A8,8,0,0,1,136,76ZM92,100a8,8,0,1,1-8-8A8,8,0,0,1,92,100Zm0,56a8,8,0,1,1-8-8A8,8,0,0,1,92,156Zm88-56a8,8,0,1,1-8-8A8,8,0,0,1,180,100Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance">Decoration</h2>
-      <ul>
-        <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
-        <li>Box-model spacing and borders</li>
-        <li>4 levels of rounded corners</li>
-        <li>Box shadows for layering</li>
-      </ul>
-    </div>
+      <div>
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M204,56V88a4,4,0,0,1-8,0V60H132V196h28a4,4,0,0,1,0,8H96a4,4,0,0,1,0-8h28V60H60V88a4,4,0,0,1-8,0V56a4,4,0,0,1,4-4H200A4,4,0,0,1,204,56Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance">Typography</h2>
+        <ul>
+          <li>Serif, sans-serif, and monospaced font stacks</li>
+          <li>Font weights: thin, normal, semibold, bold, heavy</li>
+          <li>Heading size also as utility classes</li>
+          <li>Large display text for headings and landing pages</li>
+          <li>Comfortable long-read font sizes controlled by CSS clamp</li>
+          <li>Other text utilities incuding alignments, list formats, etc.</li>
+        </ul>
+      </div>
 
-    <div>
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M216,44H40A12,12,0,0,0,28,56V200a12,12,0,0,0,12,12H216a12,12,0,0,0,12-12V56A12,12,0,0,0,216,44ZM40,52H216a4,4,0,0,1,4,4V168.4l-32.89-32.89a12,12,0,0,0-17,0l-22.83,22.83-46.82-46.83a12,12,0,0,0-17,0L36,159V56A4,4,0,0,1,40,52ZM36,200V170.34l53.17-53.17a4,4,0,0,1,5.66,0L181.66,204H40A4,4,0,0,1,36,200Zm180,4H193l-40-40,22.83-22.83a4,4,0,0,1,5.66,0L220,179.71V200A4,4,0,0,1,216,204ZM148,100a8,8,0,1,1,8,8A8,8,0,0,1,148,100Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance">Image handling</h2>
-      <ul>
-        <li>Responsive images</li>
-        <li>Cover images and positioning</li>
-        <li>A wide range of aspect ratios — for traditional image sizes and squared tiles</li>
-        <li>Image filters and opacities</li>
-        <li>Glassmorphic overlays</li>
-      </ul>
-    </div>
+      <div>
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M224,76H204V64a20,20,0,0,0-20-20H40A20,20,0,0,0,20,64v96a20,20,0,0,0,20,20H156v12a20,20,0,0,0,20,20h48a20,20,0,0,0,20-20V96A20,20,0,0,0,224,76ZM40,172a12,12,0,0,1-12-12V64A12,12,0,0,1,40,52H184a12,12,0,0,1,12,12V76H176a20,20,0,0,0-20,20v76Zm196,20a12,12,0,0,1-12,12H176a12,12,0,0,1-12-12V96a12,12,0,0,1,12-12h48a12,12,0,0,1,12,12ZM132,208a4,4,0,0,1-4,4H88a4,4,0,0,1,0-8h40A4,4,0,0,1,132,208Zm80-96a4,4,0,0,1-4,4H192a4,4,0,0,1,0-8h16A4,4,0,0,1,212,112Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance">Responsive layouts</h2>
+        <ul>
+          <li>A range of centered container, width, and height utilities</li>
+          <li>Real two-dimensional CSS grid layouts for templating</li>
+          <li>Flexbox layouts for components</li>
+          <li>Fixed and sticky positioning</li>
+          <li>Aspect-ratio controlled squared tiles</li>
+          <li>Edge positioning</li>
+          <li>Responsive invisibility classes</li>
+        </ul>
+      </div>
 
-    <div>
-      
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M218.14,161.93a4,4,0,0,0-3.86-.24,24,24,0,0,1-34.23-23.25,24,24,0,0,1,34.23-20.13A4,4,0,0,0,220,114.7V72a12,12,0,0,0-12-12H167a32,32,0,1,0-62.91-10.33A32.57,32.57,0,0,0,105,60H64A12,12,0,0,0,52,72v37a32,32,0,1,0-10.33,62.91A32.28,32.28,0,0,0,52,171v37a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V165.31A4,4,0,0,0,218.14,161.93ZM212,208a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V165.31a4,4,0,0,0-1.86-3.38,4,4,0,0,0-3.85-.24,24,24,0,0,1-34.24-20.13,24,24,0,0,1,34.24-23.25A4,4,0,0,0,60,114.7V72a4,4,0,0,1,4-4h46.69a4,4,0,0,0,3.62-5.71,24,24,0,0,1,20.13-34.24,24,24,0,0,1,23.25,34.24A4,4,0,0,0,161.31,68H208a4,4,0,0,1,4,4v37a32.57,32.57,0,0,0-10.33-.94A32,32,0,1,0,212,171Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance">Simple components (no JavaScript)</h2>
-      <p class="mb-2">Examples:</p>
-      <ul>
-        <li>Buttons</li>
-        <li>Badges</li>
-        <li>Labels</li>
-        <li>Heros</li>
-        <li>Tables</li>
-        <li>Media objects</li>
-        <li>Cards</li>
-      </ul>
-    </div>
+      <div>
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M198,56.74A99.31,99.31,0,0,0,128,28h-1A100,100,0,0,0,28,128c0,41.22,25.55,75.85,66.69,90.38a28.34,28.34,0,0,0,9.42,1.63A28,28,0,0,0,132,192a20,20,0,0,1,20-20h46.21a27.84,27.84,0,0,0,27.3-21.76,100.37,100.37,0,0,0,2.49-23.1A99.26,99.26,0,0,0,198,56.74Zm19.74,91.72A19.89,19.89,0,0,1,198.21,164H152a28,28,0,0,0-28,28,20,20,0,0,1-26.64,18.83C59.51,197.46,36,165.72,36,128a92,92,0,0,1,91.05-92H128a92,92,0,0,1,89.72,112.46ZM136,76a8,8,0,1,1-8-8A8,8,0,0,1,136,76ZM92,100a8,8,0,1,1-8-8A8,8,0,0,1,92,100Zm0,56a8,8,0,1,1-8-8A8,8,0,0,1,92,156Zm88-56a8,8,0,1,1-8-8A8,8,0,0,1,180,100Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance">Decoration</h2>
+        <ul>
+          <li>Color swatches for borders, text, and backgrounds (with hover states)</li>
+          <li>Box-model spacing and borders</li>
+          <li>4 levels of rounded corners</li>
+          <li>Box shadows for layering</li>
+        </ul>
+      </div>
 
-    <div>
-      <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M210.83,85.17l-56-56A4,4,0,0,0,152,28H56A12,12,0,0,0,44,40v72a4,4,0,0,0,8,0V40a4,4,0,0,1,4-4h92V88a4,4,0,0,0,4,4h52V216a4,4,0,0,1-4,4H176a4,4,0,0,0,0,8h24a12,12,0,0,0,12-12V88A4,4,0,0,0,210.83,85.17ZM156,41.65,198.34,84H156ZM143.84,195.8a17,17,0,0,1-7.43,12.41c-4.39,2.91-10,3.77-15.22,3.77A57.89,57.89,0,0,1,107,210.11a4,4,0,0,1,2.15-7.7c4.22,1.17,16.56,3.29,22.83-.88a8.94,8.94,0,0,0,3.91-6.75c.83-6.45-4.38-8.69-15.64-11.94-9.68-2.8-21.72-6.28-20.14-18.77a16.66,16.66,0,0,1,7.22-12.13c4.56-3.07,11-4.36,19.1-3.82a61.33,61.33,0,0,1,10.48,1.61,4,4,0,0,1-2.05,7.74c-4.29-1.13-16.81-3.12-23.06,1.11a8.51,8.51,0,0,0-3.75,6.49c-.66,5.17,3.89,7,14.42,10.08C132.26,178,145.64,181.84,143.84,195.8ZM76,152v38a22,22,0,0,1-44,0,4,4,0,0,1,8,0,14,14,0,0,0,28,0V152a4,4,0,0,1,8,0Z"></path></svg>
-      <h2 class="h4 mt-1 t-bold t-balance"> Alpine.JS powered components</h2>
-      <p class="mb-2">Examples:</p>
-      <ul>
-        <li>Collapse (slide reveal)</li>
-        <li>Dropdowns</li>
-        <li>Modals and lightboxes</li>
-        <li>Offcanvas panels</li>
-        <li>Tab systems</li>
-        <li>Simple manual carousel</li>
-        <li>Langing page animations</li>
-      </ul>
-    </div>
+      <div>
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M216,44H40A12,12,0,0,0,28,56V200a12,12,0,0,0,12,12H216a12,12,0,0,0,12-12V56A12,12,0,0,0,216,44ZM40,52H216a4,4,0,0,1,4,4V168.4l-32.89-32.89a12,12,0,0,0-17,0l-22.83,22.83-46.82-46.83a12,12,0,0,0-17,0L36,159V56A4,4,0,0,1,40,52ZM36,200V170.34l53.17-53.17a4,4,0,0,1,5.66,0L181.66,204H40A4,4,0,0,1,36,200Zm180,4H193l-40-40,22.83-22.83a4,4,0,0,1,5.66,0L220,179.71V200A4,4,0,0,1,216,204ZM148,100a8,8,0,1,1,8,8A8,8,0,0,1,148,100Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance">Image handling</h2>
+        <ul>
+          <li>Responsive images</li>
+          <li>Cover images and positioning</li>
+          <li>A wide range of aspect ratios — for traditional image sizes and squared tiles</li>
+          <li>Image filters and opacities</li>
+          <li>Glassmorphic overlays</li>
+        </ul>
+      </div>
 
-  </div>
+      <div>
+        
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M218.14,161.93a4,4,0,0,0-3.86-.24,24,24,0,0,1-34.23-23.25,24,24,0,0,1,34.23-20.13A4,4,0,0,0,220,114.7V72a12,12,0,0,0-12-12H167a32,32,0,1,0-62.91-10.33A32.57,32.57,0,0,0,105,60H64A12,12,0,0,0,52,72v37a32,32,0,1,0-10.33,62.91A32.28,32.28,0,0,0,52,171v37a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V165.31A4,4,0,0,0,218.14,161.93ZM212,208a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V165.31a4,4,0,0,0-1.86-3.38,4,4,0,0,0-3.85-.24,24,24,0,0,1-34.24-20.13,24,24,0,0,1,34.24-23.25A4,4,0,0,0,60,114.7V72a4,4,0,0,1,4-4h46.69a4,4,0,0,0,3.62-5.71,24,24,0,0,1,20.13-34.24,24,24,0,0,1,23.25,34.24A4,4,0,0,0,161.31,68H208a4,4,0,0,1,4,4v37a32.57,32.57,0,0,0-10.33-.94A32,32,0,1,0,212,171Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance">Simple components (no JavaScript)</h2>
+        <p class="mb-2">Examples:</p>
+        <ul>
+          <li>Buttons</li>
+          <li>Badges</li>
+          <li>Labels</li>
+          <li>Heros</li>
+          <li>Tables</li>
+          <li>Media objects</li>
+          <li>Cards</li>
+          <li>Whole-panel links</li>
+        </ul>
+      </div>
+
+      <div>
+        <svg class="square" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M210.83,85.17l-56-56A4,4,0,0,0,152,28H56A12,12,0,0,0,44,40v72a4,4,0,0,0,8,0V40a4,4,0,0,1,4-4h92V88a4,4,0,0,0,4,4h52V216a4,4,0,0,1-4,4H176a4,4,0,0,0,0,8h24a12,12,0,0,0,12-12V88A4,4,0,0,0,210.83,85.17ZM156,41.65,198.34,84H156ZM143.84,195.8a17,17,0,0,1-7.43,12.41c-4.39,2.91-10,3.77-15.22,3.77A57.89,57.89,0,0,1,107,210.11a4,4,0,0,1,2.15-7.7c4.22,1.17,16.56,3.29,22.83-.88a8.94,8.94,0,0,0,3.91-6.75c.83-6.45-4.38-8.69-15.64-11.94-9.68-2.8-21.72-6.28-20.14-18.77a16.66,16.66,0,0,1,7.22-12.13c4.56-3.07,11-4.36,19.1-3.82a61.33,61.33,0,0,1,10.48,1.61,4,4,0,0,1-2.05,7.74c-4.29-1.13-16.81-3.12-23.06,1.11a8.51,8.51,0,0,0-3.75,6.49c-.66,5.17,3.89,7,14.42,10.08C132.26,178,145.64,181.84,143.84,195.8ZM76,152v38a22,22,0,0,1-44,0,4,4,0,0,1,8,0,14,14,0,0,0,28,0V152a4,4,0,0,1,8,0Z"></path></svg>
+        <h2 class="h4 mt-1 t-bold t-balance"> Alpine.JS powered components</h2>
+        <p class="mb-2">Examples:</p>
+        <ul>
+          <li>Collapse (slide reveal)</li>
+          <li>Dropdowns</li>
+          <li>Modals and lightboxes</li>
+          <li>Offcanvas panels</li>
+          <li>Tab systems</li>
+          <li>Simple manual carousel</li>
+          <li>Langing page animations</li>
+        </ul>
+      </div>
+
+    </div>
 
     <p class="pt-4 lg:pt-6 t-center">
       <a class="btn btn-primary btn-lg rounded-pill" href="/codebase-5/docs/1-getting-started/introduction/">
@@ -165,9 +167,9 @@
         Placeholder images are from <a href="https://www.pexels.com">Pexels</a>.
       </p>
     </div>
-    
-  </main>
-</div>
+
+    </section>    
+</main>
 
 {% include "site-footer.njk" %}
 

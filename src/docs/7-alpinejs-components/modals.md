@@ -16,7 +16,7 @@ Codebase modals follow some aspects of the [AlpineJS modal](https://alpinejs.dev
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -108,13 +108,13 @@ Codebase modals follow some aspects of the [AlpineJS modal](https://alpinejs.dev
 4. The modal cover (wrapper) covers the entire screen once the modal is opened. It is required for centering and middling the modal panel in the viewport window using flexbox. The modal cover  is transparent by default, but you can give it a dark blurry tint using `bg-black-glass-3`. Alternatively, you can use `bg-black` if you are using the modal as a lightbox.
 5. The modal panel will become as wide as its content requires. But you can constrain the width using one of Codebase’s (max-width) [width constraint wrappers]({{ '/docs/3-layout-utilities/dimensions/#max-width-wrappers' | url}}). `w-xs` is commonly used for narrow modals.
 6. The modal can be opened open/close by the modal open button (mouse click, touch screen tap, etc.) and by _tabbing_ onto the modal open button and hitting the _enter key_ or the _space bar_. The modal open button operates as a _toggle_ so that keyboard and assistive tech users can immediately close it again if they want to. However, mouse and touch screen users can’t toggle it closed because the modal will have opened and covered the viewport. Therefore a modal closed button needs to be supplied. (And an optional “click outside to dismiss” function.)
-6. Modals require the [AlpineJS Focus plugin](https://alpinejs.dev/plugins/focus) for keeping the focus on the modal once it has been tabbed into, because you don’t want to allow tabbers to move the focus out of the modal until it has been dismissed. ALpine’s `x-trap` puts the focus on the _first_ focusable element inside the modal. Usually you will want this to be the modal close button.
-7. Keyboard users can click the modal close button by tabbing onto it, then using the hitting the _enter key_ or the _space bar_ to dismiss the modal. The focus will then be returned to the dropdown button.
-8. The modal can be closed by hitting the _escape key_, whether the focus is on the modal open button or somewhere in the modal. And the focus will be returned to the modal open button.
-7. Modals require some [accessibility features](https://www.w3.org/TR/wai-aria-practices/#dialog_modal) such as `role="dialog"` and `aria-modal="true"`. The example Codebase/ AlplineJS powered modals on this page should have all the accessibility features that you need, following the [MDN Accessibility (ARIA) guidelines for `role="dialog"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). (If something is wrong or missing here, please open a pull request and provide an explanation and example.)
-8. All CSS transitions are handled by [AlpineJS x-transition](https://alpinejs.dev/directives/transition).
-9. If you want “click outside to dismiss”, you can easily add using AlpineJS `@click.outside="open = false"` to the `modal-panel`.
-10. The ID of the modal (used by `aria-controls=""` on its respective modal open button) has been assigned using the Alpine [x-id](https://alpinejs.dev/directives/id) directive, which automatically adds an incremented number to your specified ID (prefix). That way, you can include several modal components to a webpage without having to think up an ID for each one. (However, this won’t work if you have your [modal open button in a separate Alpine component](#modal-open-button-in-a-separate-alpine-component).)
+7. Modals require the [AlpineJS Focus plugin](https://alpinejs.dev/plugins/focus) for keeping the focus on the modal once it has been tabbed into, because you don’t want to allow tabbers to move the focus out of the modal until it has been dismissed. ALpine’s `x-trap` puts the focus on the _first_ focusable element inside the modal. Usually you will want this to be the modal close button.
+8. Keyboard users can click the modal close button by tabbing onto it, then using the hitting the _enter key_ or the _space bar_ to dismiss the modal. The focus will then be returned to the dropdown button.
+9. The modal can be closed by hitting the _escape key_, whether the focus is on the modal open button or somewhere in the modal. And the focus will be returned to the modal open button.
+10. Modals require some [accessibility features](https://www.w3.org/TR/wai-aria-practices/#dialog_modal) such as `role="dialog"` and `aria-modal="true"`. The example Codebase/ AlplineJS powered modals on this page should have all the accessibility features that you need, following the [MDN Accessibility (ARIA) guidelines for `role="dialog"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). (If something is wrong or missing here, please open a pull request and provide an explanation and example.)
+11. All CSS transitions are handled by [AlpineJS x-transition](https://alpinejs.dev/directives/transition).
+12. If you want “click outside to dismiss”, you can easily add using AlpineJS `@click.outside="open = false"` to the `modal-panel`.
+13. The ID of the modal (used by `aria-controls=""` on its respective modal open button) has been assigned using the Alpine [x-id](https://alpinejs.dev/directives/id) directive, which automatically adds an incremented number to your specified ID (prefix). That way, you can include several modal components to a webpage without having to think up an ID for each one. (However, this won’t work if you have your [modal open button in a separate Alpine component](#modal-open-button-in-a-separate-alpine-component).)
 
 ## Adding “click outside to dismiss”
 
@@ -125,7 +125,7 @@ Simply add `@click.outside` to the modal panel.
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -181,7 +181,7 @@ You can add some animations to the modal panel using Codebase [animations]({{ '/
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -242,9 +242,7 @@ You can add some animations to the modal panel using Codebase [animations]({{ '/
 
 ## Open button in a separate Alpine component
 
-Until Alpine v.3, having a toggler or button as a separate component was possible using the Alpine `$dispatch` magic property and the window as an event bus (see Hugo Di Francesco, [https://codewithhugo.com/alpinejs-component-communication-event-bus/](https://codewithhugo.com/alpinejs-component-communication-event-bus/)).
-
-But Alpine 3 has built-in global state storage, using `Alpine.store()` (see [https://alpinejs.dev/globals/alpine-store](https://alpinejs.dev/globals/alpine-store)). So, we can use that instead.
+Alpine 3 has built-in global state storage using `Alpine.store()` (see [https://alpinejs.dev/globals/alpine-store](https://alpinejs.dev/globals/alpine-store)). We use this to pass instructions between the control button and its respective modal.
 
 **Modal example 1d** – with a control button in a separate Alpine component:
 
@@ -261,7 +259,7 @@ But Alpine 3 has built-in global state storage, using `Alpine.store()` (see [htt
 <div
   x-data
   @keydown.escape.prevent.stop="$store.modalEx1d.expandedState = false"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -317,7 +315,7 @@ This is conceptually simpler than the window bus:
 <div
   x-data
   @keydown.escape.prevent.stop="$store.modalEx1d.expandedState = false"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -380,7 +378,7 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -430,7 +428,7 @@ Above, you’ve seen simple modal panels that have a thin border, rounded corner
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -502,7 +500,7 @@ Modal panels that contain (or may contain) a lot of content can break on small s
 <div
   x-data="{ open: false, rows: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -593,7 +591,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="relative mb-2 b-thin rounded py-2"
+  class="my-4 relative b-thin rounded py-2"
 >
   <div class="absolute right inline-block mr-2">
     <button
@@ -648,7 +646,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -684,7 +682,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"
@@ -720,7 +718,7 @@ Most modals are invisible (and inaccessible) until triggered, but some are embed
 <div
   x-data="{ open: false }"
   x-id="['modal']"
-  class="mb-2"
+  class="my-4"
 >
   <button
     type="button"

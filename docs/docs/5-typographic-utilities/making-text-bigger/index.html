@@ -8,7 +8,7 @@
   <title>Making text bigger - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -46,7 +46,7 @@
 
     @media (min-width: 768px) {
       #site-page {
-        grid-template-columns: 256px calc(100vw - 256px);
+        grid-template-columns: 256px 1fr;
         max-width: 100vw;
       }
       #site-navigation > div {
@@ -99,11 +99,8 @@
     #toc li {
       margin-bottom: 1rem;
     }
-    #toc a {
+    #toc a:not(:hover):not(:focus-visible) {
       text-decoration: none;
-    }
-    #toc a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 1279px) {
       #toc ul ul {
@@ -139,20 +136,21 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
-
 </head>
 
 <body>
-  <script>
+  <script defer>
     if (navigator.appVersion.indexOf("Win") != -1) {
       document.body.classList.add('ms-windows');
     }
   </script>
 
 
-<div class="w-xxl mx-auto">
-  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-</div>
+  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="block p-1 visually-hidden">
+    <div class="container">
+    <span class="panel-link-title">Skip to main content</span>
+    </div>
+  </a>
 
 <script>
   document.addEventListener('alpine:init', () => {
@@ -217,7 +215,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -227,7 +225,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1 t-gray-600 hover:t-black hover:bg-transparent"
+        class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -237,10 +235,10 @@
       </button>
     </div>
   
-    <div class="p-1">
+    <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -249,15 +247,15 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase CSS</span>
       </a>
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.3">Download CSS</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.4">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
     </div>
   
@@ -311,7 +309,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.3">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.4">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -331,14 +329,14 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Accessibility</a></li>
+    </menu>
   </div>  
 </div>
 
@@ -356,12 +354,12 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </menu>
   </div>
 </div>
 
@@ -381,18 +379,18 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </menu>
   </div>
 </div>
 
@@ -410,16 +408,16 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
+    </menu>
   </div>
 </div>
 
@@ -437,14 +435,14 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </menu>
   </div>
 </div>
 
@@ -464,16 +462,17 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/panel-links">Panel links</a></li>
+    </menu>
   </div>
 </div>
 
@@ -491,14 +490,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -509,13 +508,13 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
-      <div class="h2 m-0">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
+      <div class="m-0">
         
         <div class="my-1 t-thin t-gray-800">Typographic utilities</div>
         
       </div>
-      <div class="t-display">
+      <div>
         <h1 class="h2 mt-0 t-bold t-balance">Making text bigger</h1>    
       </div>
     </div>
@@ -535,16 +534,15 @@
       <p>In Codebase, you can increase the size of text in various ways using utility classes:</p>
 <ol>
 <li>Headings font-sizes: <code>h1</code> through <code>h6</code>.</li>
-<li>Wrapping text in <code>t-lg</code> simply causes text size to increase by ×1.25.</li>
-<li>New in Codebase v.5.2.11: wrapping text in <code>t-display</code> causes text size to increase responsively from ×1.25 to ×2 depending on viewport width.</li>
+<li>Wrapping text in <code>t-lg</code> simply causes text size to increase by ×1.325.</li>
+<li>Wrapping text in <code>t-display</code> causes text size to increase responsively from ×1.25 to ×2 depending on viewport width.</li>
 <li>Wrapping text in <code>t-long-read</code> causes text size to increase responsively from ×1 to ×1.25 depending on viewport width.</li>
 </ol>
 <p>The <code>t-display</code> and <code>t-long-read</code> CSS <code>clamp()</code> sets above have been calculated using Petter Walbø Johnsgård’s <a href="https://clamp.font-size.app">Font-Size Clamp Generator</a> webapp, so that they ramp up from viewport width <code>xs</code> (512px default) to <code>lg</code> (1280px default). At <code>xs</code>, these will begin to upsize on phones turned to landscape orientation.</p>
-<h2 id="heading-utilities-h1-%E2%80%93-h6" tabindex="-1">Heading utilities <code>h1</code> – <code>h6</code></h2>
+<h2 id="heading-size-utilities" tabindex="-1">Heading size utilities</h2>
 <p>Sometimes you may need to make some text as large as a heading, but without it actually being a heading. Or, sometimes you may need to change a heading size <em>without breaking the semantic heirarchical ordering</em> – because that would be bad for SEO.</p>
 <p>These heading format utility classes will help you out.</p>
 <p>Codebase <code>h1</code> through <code>h6</code> utilities are styled the same as the Codebase basic (classless) styling for <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> headings.</p>
-<h3 id="heading-utility-examples" tabindex="-1">Heading utility examples</h3>
 <p>The following are all <code>&lt;div&gt;</code> elements, in disguise:</p>
 <div class="my-6">
 <p class="h1"><code>h1</code> heading</p>
@@ -555,44 +553,17 @@
 <p class="h6"><code>h6</code> heading</p>
 </div>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading level 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="why-you-sometimes-need-heading-utilities" tabindex="-1">Why you sometimes need heading utilities</h3>
+<h3 id="why-you-sometimes-need-heading-size-utilities" tabindex="-1">Why you sometimes need heading size utilities</h3>
 <p>Why would you want to use heading utilities? In your web design, you may have situations where you want to enlarge some text (to make it look like a header), but not actually have it to be a header that would interupt the sematic hierarchical ordering.</p>
 <p>Consider the following examples: you may want a title in a sidebar, footer, card, or modal to be enlarged but not by using an actual <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> tag.</p>
-<h2 id="slightly-larger-text-using-t-lg" tabindex="-1">Slightly larger text using <code>t-lg</code></h2>
-<p><code>t-lg</code> simply makes text ×1.25 bigger.</p>
-<p>Comparison with default text and heading sizes:</p>
-<div class="mb-2">
-  <div class="grid gap xs:equal-2-cols gap-2">
-    <div class="b-thin p-1">
-      <p class="t-bold">Default:</p>
-      <p class="h1">Heading 1</p>
-      <p class="h2">Heading 2</p>
-      <p class="h3">Heading 3</p>
-      <p class="h4">Heading 4</p>
-      <p class="h5">Heading 5</p>
-      <p class="h6">Heading 6</p>
-      <p>Paragraph. Lorem ipsum dolor sit amet...</p>
-    </div>
-    <div class="b-thin p-1">
-      <p class="t-bold"><code>t-lg</code>:</p>
-      <div class="t-lg">
-        <p class="h1">Heading 1</p>
-        <p class="h2">Heading 2</p>
-        <p class="h3">Heading 3</p>
-        <p class="h4">Heading 4</p>
-        <p class="h5">Heading 5</p>
-        <p class="h6">Heading 6</p>
-        <p>Paragraph. Lorem ipsum dolor sit amet</p>
-      </div>
-    </div>
-  </div>
-</div>
+<h2 id="simply-larger-text" tabindex="-1">Simply larger text</h2>
+<p><code>t-lg</code> makes text 1.325× bigger.</p>
 <p>Example: you can use <code>t-lg</code> on the first paragraph in your page or blog post, to make it an enlarged <em>lead</em> paragraph.</p>
+<p class="t-lg">This is an example lead paragraph</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is an example lead paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
-<p>You can also use <code>t-lg</code> to make <span class="t-lg">something important</span> stand out (because sometimes, but rarely, bold and italics and capitalization is not enougn). Or for a subtle increase in size for a blockquote.</p>
-<blockquote class="t-lg">This is an example of some text quoted from elsewhere.</blockquote>
-<h2 id="hero-text-using-t-display" tabindex="-1">Hero text using <code>t-display</code></h2>
-<p><code>t-display</code> makes text ×1.25 bigger, and then ramps up to ×2 bigger, from viewport width <code>xs</code> (512px) to <code>lg</code> (1280px) using a CSS <code>clamp()</code>.</p>
+<p>You can also use <code>t-lg</code> to make <span class="t-lg">something important</span> stand out (because sometimes, but rarely, bold and italics and capitalization is not enougn). Or for an increase in size for a blockquote.</p>
+<h2 id="display-(hero)-text" tabindex="-1">Display (hero) text</h2>
+<p><code>t-display</code> makes text 1.25× bigger, and then ramps up to 2× bigger, from viewport width <code>xs</code> (512px) to <code>lg</code> (1280px) using a CSS <code>clamp()</code>.</p>
 <p>Comparison with default text and heading sizes:</p>
 <div class="mb-2">
   <div class="grid gap xs:equal-2-cols gap-2">
@@ -622,9 +593,9 @@
 </div>
 <p>Example: the <code>t-display</code> wrapper is good for homepage or landing page “hero” titles and slogans, or for making an important title or message really stand out.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-display<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>This is an example hero title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="comfort-sized-prose-using-t-long-read" tabindex="-1">Comfort-sized prose using <code>t-long-read</code></h2>
+<h2 id="comfortable-sized-prose-for-longform-reading" tabindex="-1">Comfortable-sized prose for longform reading</h2>
 <p>Use the <code>t-long-read</code> block wrapper utility class around text that you want to be larger on large screens, for ease of reading. For example, use <code>&lt;article class=&quot;t-long-read&quot;&gt;</code> for blog post templates.</p>
-<p>On narrow viewports (small devices), and paragraph text, list items, table cells, etc. within the example <code>t-long-read</code> wrapper below will be the Codebase default sizes (1rem = 16px). On wider viewports, all text is scaled up using a CSS <code>clamp()</code> to a comfortable maximum (1.25rem = 20px). And any headings included within a <code>t-long-read</code> wrapper will also increase in size accordingly.</p>
+<p>On narrow viewports (small devices), and paragraph text, list items, table cells, etc. within the example <code>t-long-read</code> wrapper below will be the Codebase default sizes (1rem = 16px on phones or 18px on viewports 768px width up). On wider viewports, all text is scaled up using a CSS <code>clamp()</code> to a comfortable maximum (1.25rem). And any headings included within a <code>t-long-read</code> wrapper will also increase in size accordingly.</p>
 <p>Comparison of default vs <code>t-long-read</code> text sizes:</p>
 <div class="mb-2">
   <div class="grid gap-2 xs:equal-2-cols">
@@ -660,14 +631,14 @@
   <footer class="col-1 sm:col-2">
     <div class="container-sm py-6">
       <hr>
-      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+      <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/font-stacks">❮ Font stacks</a></li>
+        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/font-stacks">❮ Font stacks</a></li>
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment ❯</a></li>
           
-      </ul>
+      </nav>
     </div>
   </footer>
 
@@ -675,25 +646,25 @@
 
 <footer class="relative py-3 bg-gray-900 t-center t-gray-400">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
+    <a id="site-footer-title" class="h3 inline-block t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
-        <!-- Codebase logo-->
+        <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
         <span class="inline-block mt-2 t-loose t-semibold">
-          Codebase
+          Codebase CSS
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.3</div>
+  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.4</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (96 KB)</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-  </div>
+    <div>Dev: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  </menu>
 
 </footer>
 

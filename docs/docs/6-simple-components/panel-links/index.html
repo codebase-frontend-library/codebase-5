@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Docs for Codebase, a CSS style library for the modern web.">
 
-  <title>Heros - Codebase</title>
+  <title>Panel links - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
   <link href="/codebase-5/dist/codebase.css?v=5.3.4" rel="stylesheet">
@@ -515,7 +515,7 @@
         
       </div>
       <div>
-        <h1 class="h2 mt-0 t-bold t-balance">Heros</h1>    
+        <h1 class="h2 mt-0 t-bold t-balance">Panel links</h1>    
       </div>
     </div>
   </header>
@@ -531,35 +531,55 @@
 
   <main class="col-1 sm:col-2">
     <div class="container-sm">
-      <p>Creating a hero image with a text overlay is simple using Codebase utilities.</p>
-<h2 id="hero-example" tabindex="-1">Hero example</h2>
-<div class="mb-2 aspect-ratio-16x9 relative">
-  <img class="box img-cover" src="/codebase-5/img/pexels-oleg-magni-1837592.jpg" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
-  <div class="aspect-ratio-16x9 flex flex-center flex-middle">
-    <div class="m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg">
-      <h1 class="mt-0 t-semibold t-black">Overlay title</h1>
-      <p class="mb-0 t-black">Lorem ipsum dolor sit amet...</p>
-    </div>
-  </div>
-</div>
-<p><em>Photo by <a href="https://www.pexels.com/@oleg-magni">Oleg Magni</a> from <a href="https://www.pexels.com">Pexels</a>.</em></p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-16x9 relative<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- The hero image --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box img-cover<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">loading</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br>  <span class="token comment">&lt;!-- The hero overlay --></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aspect-ratio-16x9 flex flex-center flex-middle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>m-4 p-2 xs:p-6 bg-white-glass-3 t-center t-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mt-0 t-semibold t-black<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Overlay title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-black<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="notes-on-heros" tabindex="-1">Notes on heros</h2>
+      <p>Codebase panel links are modified <code>&lt;a href=&quot;&quot;&gt;</code> (links) where you want <em>only some</em> of the text to behave as the “link text” but then you have other text and/or an icon or image. Examples would be a <a href="/codebase-5/docs/6-simple-components/media-objects">media object</a>, <a href="/codebase-5/docs/6-simple-components/cards">card</a> or <a href="/codebase-5/docs/6-simple-components/heros">hero</a> component, where you want the whole thing to behave as a “big button”.</p>
+<h2 id="simple-panel-link-example" tabindex="-1">Simple panel link example</h2>
+<p>You need two utility classes: <code>panel-link</code> and <code>panel-link-title</code> — plus, you will need to set your choice of color on your other text:</p>
+<a class="mb-2 b-thin p-2 panel-link" href="#/">
+    <p class="h4 panel-link-title">Panel link title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-link<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-link-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Panel link title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="notes-on-panel-links" tabindex="-1">Notes on panel links</h2>
 <ol>
-<li>You can set the dimensions of your hero component to suit your needs. But an easy way to do it is to use a Codebase <a href="/codebase-5/docs/3-layout-utilities/aspect-ratios/">aspect ratio wrapper</a> utility class, as you can see in the example above. Alternatively you could set a <code>min-height</code> on the wrapper.</li>
-<li>When necessary on small viewports, <code>aspect-ratio-*</code> wrappers will <em>vertically deform</em> to accommodate the content of their immediate child element – so, if you (or a subsequent content creator) puts in a title or other stuff that is longer or more than you expected, it doesn’t get messed up pn small devices.</li>
-<li>The hero image needs CSS classes <code>box img-cover</code>.</li>
-<li><em>The overlay also needs the same aspect-ratio wrapper</em> so that it expands to cover the image. Then you can use <a href="/codebase-5/docs/3-layout-utilities/flexbox">flexbox</a> to position your overlay panel anywhere you want (the example here is centered and middled).</li>
-<li>You will need a big enough image, of course, with its most important content in its center and middle, so that it is not “cropped off”. Any the image will need to be square or approximately square. For the reason why – see <a href="/codebase-5/docs/4-decoration-utilities/images/#cover-images">cover images</a>.</li>
-<li>Also, you will need to figure out what colour is best for the text over your choice of image, for the obtaining the best legibility. Usually I use the <code>t-black</code> utility over light images and <code>t-white</code> over dark images. And, if you are struggling to read your hero title and/or other text over your image, there are a few options that you can explore:
-<ul>
-<li>Darken your image behind white text, or lighen your image behind black text.</li>
-<li>Make your image grayscale (or other color scale), or blurred. Codebase contains grayscale and blur <a href="/codebase-5/docs/4-decoration-utilities/images/#css-filters">CSS filters</a>.</li>
-<li>Give your text a text shadow. (The text shadow needs to be dark over a dark image and light over a light image.)</li>
-<li>Try a Codebase <a href="/codebase-5/docs/4-decoration-utilities/glass">glass</a> overlay behind your text.</li>
-</ul>
-</li>
+<li><code>panel-link</code> provides <code>display: block</code> (so that the <code>&lt;a href=&quot;&quot;&gt;</code> behaves as a block and not an inline element), puts out of gear the default link styling, and provides a <code>:focus-visible</code> focus ring.</li>
+<li><code>panel-link-title</code> makes the panel link title <em>look like</em> the link by adding back the link color and underline link hover color, and the link hover color and thicker underline. It will also apply the default <code>:focus-visible</code> style to the title. So, panel links get a combination of both <a href="/codebase-5/docs/1-getting-started/accessibility/#focus-state-styling">focus state styles</a>.</li>
+<li>The link functionality is still handled by the wrapper <code>&lt;a href=&quot;&quot;&gt;</code> tag. <code>panel-link-tite</code> doesn’t actually make an element <em>operate like</em> a link.</li>
+<li>You can change the link text color on the <code>&lt;a class=&quot;panel-link&quot; href=&quot;&quot;&gt;</code> as normal. This will change the color or all text in the panel link. But For your <em>other text</em> within the panel link (everything that’s not your <code>panel-link-title</code>), you need to specify the color you want it to be — otherwise it will still be the link color.</li>
 </ol>
+<p class="bl-heavy b-blue-200 p-2 bg-blue-100"><strong>Note:</strong> Previously in Codebase, panel link styling has been provided by <code>t-link-inside</code> and <code>t-link</code> utility classes. These are still available (for backwards compatibility) but they will be deprevated.</p>
+<h2 id="panel-links-and-underline-indicators" tabindex="-1">Panel links and underline indicators</h2>
+<p>You can combine <code>panel-link</code> with <code>t-no-underline</code> (on the link wrapper):</p>
+<a class="mb-2 b-thin hover:bs-3 p-2 panel-link t-no-underline" href="#/">
+    <p class="h4 mb-1 panel-link-title">Panel link title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 b-thin hover:bs-3 p-2 panel-link t-no-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 panel-link-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Panel link title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>(Also in the example above, a box shadow on hover has ben supplied by a Codebase <a href="/codebase-5/docs/4-decoration-utilities/box-shadows">box shadow</a>, to indicate that the link still works.)</p>
+<p>And you can combine <code>panel-link</code> with <code>t-underline-hover-only</code>:</p>
+<a class="mb-2 b-thin p-2 panel-link t-underline-hover-only" href="#/">
+    <p class="h4 mb-1 panel-link-title">Panel link title</p>
+    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
+</a>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 b-thin p-2 panel-link t-underline-hover-only<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 panel-link-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Panel link title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Another example: adding in different text colors:</p>
+<a class="mb-2 b-thin p-2 panel-link t-underline-hover-only t-green-500 hover:t-green-600" href="#/">
+    <p class="h4 mb-1 t-bold panel-link-title">Panel link title</p>
+    <p class="mb-0 t-gray-500">Lorem ipsim dolor sit amet ...</p>
+</a>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-link t-underline-hover-only t-green-500 hover:t-green-600<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-link-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Panel link title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-gray-500<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="example%3A-media-object-as-a-panel-link" tabindex="-1">Example: media object as a panel link</h2>
+<p>In this example, the entire media object is a link.</p>
+<div class="my-6">
+  <a class="panel-link b-thin rounded p-2 flex gap-2 t-underline-hover-only t-gray-900 hover:t-black" href="">
+    <span class="square rounded overflow-clip" href="#/">
+      <img class="img-cover" src="/codebase-5/img/pexels-pixabay-416179.jpg" width="600" height="600" loading="lazy" alt="placeholder">
+    </span>
+    <div class="mr-2">
+      <div class="h4 mb-0 t-bold panel-link-title">Name or Title</div>
+      <p class="mb-0 t-gray-700">Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. </p>
+    </div>
+  </a>
+</div>
 
     </div>
   </main>
@@ -569,10 +589,10 @@
       <hr>
       <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         
-        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/6-simple-components/menus-and-menubars">❮ Menus and menubars</a></li>
+        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/6-simple-components/cards">❮ Cards</a></li>
         
         
-        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/6-simple-components/buttons">Buttons ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse ❯</a></li>
           
       </nav>
     </div>

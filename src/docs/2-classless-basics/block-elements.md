@@ -9,6 +9,8 @@ nextLink: "Inline elements"
 
 In HTML, [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) such as paragraphs, headers, and DIVs, occupy 100% of the width of their parent element. Their height depends on how much content they have inside.
 
+Paragraphs inherit the default font size of 100% (usually defaults to 16px), that bump up to 112.5% (18px) for `sm` viewports up.
+
 ## Paragraphs
 
 A simple paragraph:

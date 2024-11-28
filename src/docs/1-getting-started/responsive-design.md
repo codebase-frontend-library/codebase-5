@@ -1,5 +1,5 @@
 ---
-title: "Responsive design"
+title: "Responsive design in Codebase"
 layout: layout.njk
 prevPage: "/docs/1-getting-started/introduction"
 nextPage: "/docs/1-getting-started/element-grid"
@@ -88,10 +88,10 @@ There are also some and viewport-height based [heights]({{ '/docs/3-layout-utili
 
 Codebase typography is also responsive to viewport width (device size):
 
-* [Headings]({{ '/docs/2-classless-basics/headings' | url }}) `<h1>` to `<h6>` have a slight upsize for tablet devices and up. At 768px (same as `sm:` default), headings become ×1.125 their base size
+* The default text size is 100% (usually 16px) on small devices, bumping up to 112.5% at 768px (same as `sm:` default) (usualy 18px). So for text at 768px and above, 1rem = 18px.
 * Utilities for [making text bigger]({{ '/docs/5-typographic-utilities/making-text-bigger' | url }}):
-    * Heading sizes `h1` to `h6`
-    * `t-lg` wrapper to simply increase text size by ×1.25
+    * Heading-sized utility classes `h1` to `h6`
+    * `t-lg` wrapper to simply increase text size by ×1.25 (so for )
     * `t-display` wrapper CSS `clamp()` ramp responsively increases text size by ×1.25 up to ×2 if viewport width allows
     * `t-long-read` wrapper CSS `clamp()` ramp responsively increases text size by ×1 up to ×1.25 if viewport width allows
 * Responsive [text alignment]({{ '/docs/5-typographic-utilities/text-alignment' | url }}) utilities

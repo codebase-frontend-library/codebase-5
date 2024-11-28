@@ -8,7 +8,7 @@
   <title>Introduction - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -46,7 +46,7 @@
 
     @media (min-width: 768px) {
       #site-page {
-        grid-template-columns: 256px calc(100vw - 256px);
+        grid-template-columns: 256px 1fr;
         max-width: 100vw;
       }
       #site-navigation > div {
@@ -99,11 +99,8 @@
     #toc li {
       margin-bottom: 1rem;
     }
-    #toc a {
+    #toc a:not(:hover):not(:focus-visible) {
       text-decoration: none;
-    }
-    #toc a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 1279px) {
       #toc ul ul {
@@ -139,20 +136,21 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
-
 </head>
 
 <body>
-  <script>
+  <script defer>
     if (navigator.appVersion.indexOf("Win") != -1) {
       document.body.classList.add('ms-windows');
     }
   </script>
 
 
-<div class="w-xxl mx-auto">
-  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-</div>
+  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="block p-1 visually-hidden">
+    <div class="container">
+    <span class="panel-link-title">Skip to main content</span>
+    </div>
+  </a>
 
 <script>
   document.addEventListener('alpine:init', () => {
@@ -217,7 +215,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -227,7 +225,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1 t-gray-600 hover:t-black hover:bg-transparent"
+        class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -237,10 +235,10 @@
       </button>
     </div>
   
-    <div class="p-1">
+    <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -249,15 +247,15 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase CSS</span>
       </a>
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.3">Download CSS</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.4">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
     </div>
   
@@ -311,7 +309,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.3">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.4">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -331,14 +329,14 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Accessibility</a></li>
+    </menu>
   </div>  
 </div>
 
@@ -356,12 +354,12 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </menu>
   </div>
 </div>
 
@@ -381,18 +379,18 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </menu>
   </div>
 </div>
 
@@ -410,16 +408,16 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
+    </menu>
   </div>
 </div>
 
@@ -437,14 +435,14 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </menu>
   </div>
 </div>
 
@@ -464,16 +462,17 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/panel-links">Panel links</a></li>
+    </menu>
   </div>
 </div>
 
@@ -491,14 +490,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -509,13 +508,13 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
-      <div class="h2 m-0">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
+      <div class="m-0">
         
         <div class="my-1 t-thin t-gray-800">Getting started</div>
         
       </div>
-      <div class="t-display">
+      <div>
         <h1 class="h2 mt-0 t-bold t-balance">Introduction</h1>    
       </div>
     </div>
@@ -549,7 +548,7 @@
 <li>Create your first HTML page – e.g. copying the starter example below.</li>
 <li>Link to <code>codebase.css</code> and <code>alpine.js</code> in the HTML <code>&lt;head&gt;</code>:</li>
 </ol>
-<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Codebase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/path/to/your/codebase.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/path/to/your/alpine.js<span class="token punctuation">"</span></span> <span class="token attr-name">defer</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><br>    <br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hello world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Codebase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/path/to/your/codebase.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br>    <span class="token comment">&lt;!-- Alpine and Plugins -- for development; host these yourself for production. --></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/alpinejs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><br>    <br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hello world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ message: 'I ❤️ Alpine' }<span class="token punctuation">"</span></span> <span class="token attr-name">x-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>Make the paths to your <code>codebase.css</code> and <code>alpine.js</code> follow your project’s directory structure to link to your files.</p>
 <h2 id="the-stylesheet" tabindex="-1">The stylesheet</h2>
 <p><code>codebase.css</code> is production-ready, meaning that you can just drop it into your project and use it as-is.</p>
@@ -575,9 +574,15 @@
 <li><a href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
 <li><a href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
 <li><a href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+<li><a href="/codebase-5/docs/6-simple-components/panel-links/">Panel links</a></li>
 </ul>
 <h4 id="components-using-alpinejs" tabindex="-1">Components using AlpineJS</h4>
-<p>Codebase pairs well with <a href="https://alpinejs.dev/">AlpineJS</a>. The Codebase components examples in these doce have been re-factored to use Alpine v3.</p>
+<p>Codebase pairs well with <a href="https://alpinejs.dev/">AlpineJS</a>. The Codebase components examples in these docs have been re-factored to use Alpine v3.</p>
+<p><strong>Notes:</strong></p>
+<ol>
+<li><code>codebase.css</code> does not require Alpine as a dependency. You can use Codebase with other JS frameworks, or none at all.</li>
+<li>Codebase (and this documentation) does not include AlpineJS. You will need to <a href="https://github.com/alpinejs/alpine">source the latest version</a> for yourself, or link to it from a CDN (e.g. <a href="https://unpkg.com/">UNPKG</a> or <a href="https://www.jsdelivr.com/package/npm/alpinejs">JSDELIVR</a>).</li>
+</ol>
 <p>The following are several examples of Codebase components that can be powered by Alpine:</p>
 <ul>
 <li><a href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
@@ -588,22 +593,21 @@
 <li><a href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
 <li><a href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
 </ul>
-<p><strong>Note:</strong> Codebase (and this documentation) does not include AlpineJS. You will need to <a href="https://github.com/alpinejs/alpine">source the latest version</a> for yourself, or link to it from a CDN (e.g. <a href="https://www.jsdelivr.com/package/npm/alpinejs">JSDELIVR</a>).</p>
 <h2 id="the-scss-library" tabindex="-1">The SCSS library</h2>
 <p>Codebase is a highly versatile SCSS library, preprocessed and minified to CSS.</p>
 <p>The SCSS library is clean, modern and minimalist, and highly versatile because of all the utility classes it contains. It can do most things that most people want, “out of the box”.</p>
 <p>Available in the repository are all the Codebase <a href="https://github.com/codebase-frontend-library/codebase-5/tree/main/src/codebase/scss">SCSS files</a>.</p>
 <p><strong>Notes:</strong></p>
 <ol>
-<li><strong>Since v.5.2, Codebase has been refactored to use <a href="/codebase-5/docs/1-getting-started/css-variables/">CSS variables</a></strong>, whereas these were all Sass variables previously. Also, all the <code>!default</code> flags have been removed from these variables, as they can now be overridden in the CSS without requiring Sass to do so.</li>
-<li><strong>Since v.5.2, the Sass preprocessor has been updated to Dart-Sass.</strong></li>
-<li><strong>Since v.5.2, <em>PostCSS</em> and its associated dependencies have not been used in this project</strong>, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why <em>PostCSS</em> has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with <em>PostCSS</em> removed, I can’t use <em>cssnano</em> (a dependency) for minification; therefore I am simply using <code>--style compact</code> on the <em>Sass</em> package.</li>
+<li>Codebase uses <a href="/codebase-5/docs/1-getting-started/css-variables/">CSS variables</a>**, not Sass variables.</li>
+<li><em>PostCSS</em> and its associated dependencies have not been used. So there are no generated vendor prefixes (for supporting pre ~2018 browsers). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. CSS minification is done thorugh <code>--style compact</code> on the <em>Sass</em> package (not CSS Nano).</li>
+<li>Internet Explorer is not supported.</li>
 </ol>
 <p>You can incrementally add your web project’s distinctive design features after including Codebase in your HTML <code>&lt;head&gt;</code> (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.</p>
 <h3 id="sass-maps-in-codebase" tabindex="-1">Sass Maps in Codebase</h3>
 <p>For example, here is the <a href="https://sass-lang.com/documentation/values/maps">Sass map</a> of the nine shades that can be applied to one of the seven default theme colors in Codebase:</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$shade</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"100"</span><span class="token punctuation">:</span> white 90%<span class="token punctuation">,</span><br>  <span class="token string">"200"</span><span class="token punctuation">:</span> white 72%<span class="token punctuation">,</span><br>  <span class="token string">"300"</span><span class="token punctuation">:</span> white 54%<span class="token punctuation">,</span><br>  <span class="token string">"400"</span><span class="token punctuation">:</span> white 36%<span class="token punctuation">,</span><br>  <span class="token string">"500"</span><span class="token punctuation">:</span> white 18%<span class="token punctuation">,</span><br>  <span class="token string">"600"</span><span class="token punctuation">:</span> black 0%<span class="token punctuation">,</span><br>  <span class="token string">"700"</span><span class="token punctuation">:</span> black 18%<span class="token punctuation">,</span><br>  <span class="token string">"800"</span><span class="token punctuation">:</span> black 36%<span class="token punctuation">,</span><br>  <span class="token string">"900"</span><span class="token punctuation">:</span> black 54%<br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>The Codebase color utility class generator uses this Sass map. These shades are applied by a <code>color-mix()</code> function using the OKLAB color space (since Codebase v.5.3.0). See <a href="/codebase-5/docs/4-decoration-utilities/colors">Color utilities</a>.</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$lightness</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"100"</span><span class="token punctuation">:</span> white 90%<span class="token punctuation">,</span><br>  <span class="token string">"200"</span><span class="token punctuation">:</span> white 72%<span class="token punctuation">,</span><br>  <span class="token string">"300"</span><span class="token punctuation">:</span> white 54%<span class="token punctuation">,</span><br>  <span class="token string">"400"</span><span class="token punctuation">:</span> white 36%<span class="token punctuation">,</span><br>  <span class="token string">"500"</span><span class="token punctuation">:</span> white 18%<span class="token punctuation">,</span><br>  <span class="token string">"600"</span><span class="token punctuation">:</span> black 0%<span class="token punctuation">,</span><br>  <span class="token string">"700"</span><span class="token punctuation">:</span> black 18%<span class="token punctuation">,</span><br>  <span class="token string">"800"</span><span class="token punctuation">:</span> black 36%<span class="token punctuation">,</span><br>  <span class="token string">"900"</span><span class="token punctuation">:</span> black 54%<br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The Codebase color utility class generator uses this Sass map. These shades are applied by a <code>color-mix()</code> function using the OKCH color space (since Codebase v.5.3.4). See <a href="/codebase-5/docs/4-decoration-utilities/colors">Color utilities</a>.</p>
 <h2 id="system-font-stacks" tabindex="-1">System font stacks</h2>
 <p>Codebase contains three simple <code>font-family</code> system font stacks, plus a few more that are aliased from these three. These aliases can make Codebase SCSS adaptable to the needs of your project.</p>
 <p>Codebase’s <code>--font-base</code> follows the popular trend for sans-serif in web design. It is applied to the HTML <code>&lt;body&gt;</code> tag by default.</p>
@@ -613,7 +617,8 @@
 <h2 id="browser-support" tabindex="-1">Browser support</h2>
 <p>Codebase works on all the common modern web browsers such as Chrome, Safari, Edge, Firefox, Opera, and others.</p>
 <p>Codebase is not compatible with older browsers such as Internet Explorer 11 and Opera Mini.</p>
-<p><strong>Note:</strong> also, <a href="https://alpinejs.dev/upgrade-guide#no-ie-11">Alpine v.3x does not support IE11</a>.</p>
+<p>Also, <a href="https://alpinejs.dev/upgrade-guide#no-ie-11">Alpine v.3x does not support IE11</a>.</p>
+<p>And more importantly, since June 2022 <a href="https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/">Microsoft no longer supports IE11</a>.</p>
 
     </div>
   </main>
@@ -621,12 +626,12 @@
   <footer class="col-1 sm:col-2">
     <div class="container-sm py-6">
       <hr>
-      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+      <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design ❯</a></li>
           
-      </ul>
+      </nav>
     </div>
   </footer>
 
@@ -634,25 +639,25 @@
 
 <footer class="relative py-3 bg-gray-900 t-center t-gray-400">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
+    <a id="site-footer-title" class="h3 inline-block t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
-        <!-- Codebase logo-->
+        <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
         <span class="inline-block mt-2 t-loose t-semibold">
-          Codebase
+          Codebase CSS
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.3</div>
+  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.4</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (96 KB)</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-  </div>
+    <div>Dev: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  </menu>
 
 </footer>
 

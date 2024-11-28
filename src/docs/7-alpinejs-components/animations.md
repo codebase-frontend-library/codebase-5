@@ -17,6 +17,8 @@ _Codebase is not a full animation library, and neither is Alpine._ If you want t
 
 Also, “no code” website builders (such as [Webflow](https://webflow.com/) and [Wix](https://www.wix.com/)) have some element animation effects built in.
 
+**Note:** with the new [scroll-driven animations](https://scroll-driven-animations.style/) coming along, many of the animations that designers use these libraries for will have a browser-native way of achieving much the same thing. However, as of November 2024, only Chrome, Edge and other CHromium based browsers can do native scroll-driven animations (not Firefox and Safari). See [canIuse: animation-timeline](https://caniuse.com/?search=animation-timeline).
+
 Codebase animations can be used in components such as [collapse]({{ '/docs/7-alpinejs-components/collapse' | url }}), [dropdowns]({{ '/docs/7-alpinejs-components/dropdowns' | url }}), [modals]({{ '/docs/7-alpinejs-components/modals' | url }}), and [offcanvas]({{ '/docs/7-alpinejs-components/offcanvas' | url }}) panels. They can also be used for adding visual interest to block elements on a homepage or landing page.
 
 ## Animation trigger events
@@ -32,6 +34,8 @@ Here are two options:
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-1"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -48,6 +52,8 @@ Here are two options:
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-1"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -76,7 +82,7 @@ Instead, use “on click” because it is more intuitive. It behaves as your vis
   x-intersect.enter="activated = true"
 >
   <div
-    id="panel-3"
+    id="panel-2"
     class="w-50% p-2 bg-green-200 transition-transform-600ms"
     x-show="activated"
     x-transition:enter="translate-right-100%"
@@ -94,7 +100,7 @@ _The scroll animation above occurs once._ To see it happen again, refresh your b
   x-intersect:enter="activated = true"
 >
   <div
-    id="panel-3"
+    id="panel-2"
     class="w-50% p-2 bg-green-200 transition-transform-600ms"
     x-show="activated"
     x-transition:enter="translate-right-100%"
@@ -108,8 +114,8 @@ _The scroll animation above occurs once._ To see it happen again, refresh your b
 
 Besides the three trigger events documented above, Cosebase also has seversl CSS built-in `transition` timings, that you can use to control faster or slower animations. Animation speeds are controlled in _milliseconds_ (ms).
 
-* Transition all:<br>`transition-all-150ms` / `transition-all-300ms` / `transition-all-600ms` / `transition-all-900ms` / `transition-all-1200ms` / `transition-all-1500ms` / `transition-all-1800ms` / `transition-all-2400ms`
-* Transition CSS transforms only:<br>`transition-transform-150ms` / `transition-transform-300ms` / `transition-transform-600ms` / `transition-transform-900ms` / `transition-transform-1200ms` / `transition-transform-1500ms` / `transition-transform-1800ms` / `transition-transform-2400ms`
+* Transition all: `transition-all-150ms` / `transition-all-300ms` / `transition-all-600ms` / `transition-all-900ms` / `transition-all-1200ms` / `transition-all-1500ms` / `transition-all-1800ms` / `transition-all-2400ms`
+* Transition CSS transforms only: `transition-transform-150ms` / `transition-transform-300ms` / `transition-transform-600ms` / `transition-transform-900ms` / `transition-transform-1200ms` / `transition-transform-1500ms` / `transition-transform-1800ms` / `transition-transform-2400ms`
 
 You’ve seen `transition-transform-600ms` being used in the demo examples above.
 
@@ -125,6 +131,8 @@ Example: `translate-right-100%` (with timing `transition-transform-600ms`)
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-3"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -153,6 +161,8 @@ Example: `scale-150%`
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-4"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -179,10 +189,12 @@ Example: `rotate-180`
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-5"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-5"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'rotate-180'"
   >
@@ -197,8 +209,8 @@ A rotation is also used in a [collapse]({{ '/docs/7-alpinejs-components/collapse
 
 The transform origin of elements defalts to its center-middle. You can change that by adding one of the following `transform-origin-*` utilities:
 
-* (Center or middle of) edges:<br>`transform-origin-top` / `transform-origin-right` / `transform-origin-bottom`/ `transform-origin-left`/ 
-* Corners:<br>`transform-origin-top-right`/ `transform-origin-bottom-right` / `transform-origin-bottom-left` . `transform-origin-top-left`
+* (Center or middle of) edges: `transform-origin-top` / `transform-origin-right` / `transform-origin-bottom`/ `transform-origin-left`/ 
+* Corners: `transform-origin-top-right`/ `transform-origin-bottom-right` / `transform-origin-bottom-left` . `transform-origin-top-left`
 
 Example: `transform-origin-top` has been used on the [dropdown]({{ '/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation' | url }}) animation demo.
 
@@ -213,10 +225,12 @@ Example fading to `opacity-50%`:
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-6"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-6"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-all-600ms"
     :class="activated && 'opacity-50%'"
   >
@@ -248,10 +262,12 @@ Example: `flip-y`
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-7"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-7"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'flip-y'"
   >
@@ -266,10 +282,12 @@ Example: `flip-y backface-hidden`
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-8"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-8"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'flip-y backface-hidden'"
   >
@@ -291,7 +309,6 @@ In addition to the above, a few simple [keyframes](https://developer.mozilla.org
 
 These can be useful for revealing and hiding panels.
 
-
 #### Fade-in/out
 
 Example fading. Here a ternary class toggler is required in the Alpine component:
@@ -305,10 +322,12 @@ Example fading. Here a ternary class toggler is required in the Alpine component
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-9"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-9"
       class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
       :class="activated ? 'fade-out opacity-0' : 'fade-in opacity-100%'"
     >
@@ -333,10 +352,12 @@ Example fading. Here a ternary class toggler is required in the Alpine component
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-10"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-10"
       class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
       :class="activated ? 'scale-out scale-75%' : 'scale-in scale-100%'"
     >
@@ -365,10 +386,12 @@ Example color animation:
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-11"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-11"
       class="p-2 t-bold t-white transition-all-600ms"
       :class="activated ? 't-black bg-white' : 't-white bg-black'"
     >
@@ -461,13 +484,13 @@ Click/tap to activate. (This could just as easily have been set to activate on s
     <button
       class="btn-primary"
       @click="activated = true"
-      aria-controls="panel-5"
+      aria-controls="panel-12"
       :aria-expanded="activated"
     >Activate</button>
     <button
       class="btn-secondary"
       @click="activated = false"
-      aria-controls="panel-5"
+      aria-controls="panel-12"
       :aria-expanded="activated"
       @keyup.escape="activated = true"
     >Reset</button>

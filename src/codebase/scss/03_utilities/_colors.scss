@@ -31,7 +31,7 @@
 
   @each $key, $val in $theme-color {
 
-    @each $key2, $val2 in $shade {
+    @each $key2, $val2 in $lightness {
 
       .b-#{$key}-#{$key2},
       .hover\:b-#{$key}-#{$key2}:hover {

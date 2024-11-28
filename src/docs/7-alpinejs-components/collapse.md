@@ -1,9 +1,9 @@
 ---
 title: "Collapse"
 layout: layout.njk
-prevPage: "/docs/6-simple-components/cards"
+prevPage: "/docs/6-simple-components/panel-links"
 nextPage: "/docs/7-alpinejs-components/dropdowns"
-prevLink: "Cards"
+prevLink: "Panel links"
 nextLink: "Dropdowns"
 ---
 
@@ -18,7 +18,7 @@ Codebase collapse components make use of the [AlpineJS Collapse Plugin](https://
 <div 
   x-data="{ open: false }"
   x-id="['collapse']"
-  class="mb-2 b-thin rounded"
+  class="my-4 b-thin rounded"
 >
   <button
     type="button"
@@ -108,7 +108,7 @@ Instead of switching between two icons (caret down and caret up), you can have o
 <div 
   x-data="{ open: false }"
   x-id="['collapse']"
-  class="mb-2 bt-thin bb-thin"
+  class="my-4 bt-thin bb-thin"
 >
   <button
     type="button"
@@ -166,7 +166,7 @@ For a dismissable message box:
 <div
   x-data="{ open: true }"
   x-id="['collapse']"
-  class="mb-2"
+  class="my-4"
 >
   <div
     x-show="open"

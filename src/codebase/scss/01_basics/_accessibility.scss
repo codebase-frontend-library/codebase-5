@@ -1,0 +1,154 @@
+// BASICS: ACCESSIBILITY (interactive elements)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// As of November 2024: Based on design systems of nhs.co.uk and .gov.uk
+// -- https://service-manual.nhs.uk/design-system/styles/focus-state
+// -- https://design-system.service.gov.uk/
+
+@use "../00_setup/default-variables" as *;
+
+// Links (and “panel links”)
+// =========================
+
+a, .panel-link-title, .t-link, .t-underline {
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: var(--link-underline);
+}
+
+a {
+  color: var(--c-link);
+  cursor: pointer;
+  transition: var(--ease);
+
+  &:hover,
+  &:active {
+    color: var(--c-link-hover);
+    text-decoration-thickness: var(--link-underline-hover);
+  }
+
+  &.t-underline-hover-only:hover {
+    text-decoration: underline;
+    text-decoration-thickness: var(--link-underline-hover);
+  }
+
+  @if $link-color-visited==true {
+    &:visited {
+      color: var(--c-link-visited);
+    }
+  }
+}
+
+.panel-link,
+.t-link-inside {
+  display: block;
+}
+
+.panel-link,
+.t-no-underline,
+
+.t-no-underline .panel-link-title,
+.t-no-underline:hover .panel-link-title,
+
+.t-no-underline .t-link,
+.t-no-underline:hover .t-link,
+
+.t-underline-hover-only:not(:hover),
+
+.t-underline-hover-only .panel-link-title,
+.t-underline-hover-only.panel-link:hover,
+
+.t-underline-hover-only .t-link,
+.t-underline-hover-only.t-ink-inside:hover,
+
+.links-no-underline a,
+.links-no-underline a:hover,
+.links-underline-hover-only a {
+  text-decoration: none;
+}
+
+.links-underline-hover-only a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: var(--link-underline-hover);
+}
+
+.t-underline-hover-only.panel-link:hover .panel-link-title,
+.t-underline-hover-only.t-link-inside:hover .t-link {
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: var(--link-underline-hover);
+}
+
+a.panel-link:hover .panel-link-title,
+a.t-link-inside:hover .t-link {
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: var(--link-underline-hover);
+}
+
+// Focus states
+// ============
+// Based on the design systems of the UK National Health Service (NHS) and UK Government (GOV.UK)
+// https://service-manual.nhs.uk/design-system/styles/focus-state
+// https://design-system.service.gov.uk/get-started/focus-states/
+
+a:not(.panel-link):not(.t-link-inside):focus-visible {
+// a.panel-link:focus-visible .panel-link-title,
+// a.t-link-inside:focus-visible .t-link {
+//a:focus-visible {
+  outline: none;
+  color: black !important; // to override utility class text color
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: max(2px, .125em);
+  background-color: var(--amber-500);
+}
+
+a.panel-link:focus-visible,
+a.t-link-inside:focus-visible {
+  outline: none;
+  background-color: var(--amber-500);
+}
+
+a.panel-link:focus-visible .panel-link-title,
+a.t-link-inside:focus-visible .t-link {
+  color: black !important; // to override utility class text color
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: max(2px, .125em);
+}
+
+a.panel-link:focus-visible :not(.panel-link-title),
+a.t-link-inside:focus-visible :not(.t-link) {
+  color: var(--amber-800)
+}
+
+
+input:focus,
+textarea:focus,
+select:focus,
+form button:focus,
+:focus-visible:not(a) {
+  box-shadow: 0 0 0 3px black;
+  outline: 3px solid var(--amber-500);
+  outline-offset: 3px;
+  z-index: 1;
+}
+
+a:focus-visible img {
+  filter: opacity(65%);
+}
+
+
+// Visually hidden utility (screen reader only)
+// ============================================
+// From: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
+
+.visually-hidden:not(:focus):not(:active),
+.screen-reader-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}

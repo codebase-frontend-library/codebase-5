@@ -81,7 +81,7 @@ The `grid` class does not specify or predict where you will position or how you 
 
 ### Responsive grid
 
-New in Codebase v.5.2.9: you can use the `xs:`, `sm:`, `md:`, and `lg:` prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base `grid` class, there are 5 grid system tiers.
+You can use the `xs:`, `sm:`, `md:`, and `lg:` prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base `grid` class, there are 5 grid system tiers.
 
 <div class="overflow-x mb-2">
   <table class="table">

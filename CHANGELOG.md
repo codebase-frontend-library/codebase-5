@@ -2,6 +2,15 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
+## 28 Nov 2024 v.5.3.4
+
+* Font size bump 112.5% (default 18px) for 768px up.
+* Color variable outputs changed to the OKLCH color space.
+* Accessibility: focus state styling now based on that of the design systems of the NHS.co.uk and GOV.UK.
+* Improved `t-link-inside` and renamed as `panel-link` (old name is still present for backgards compatability).
+* Improved link variations: `t-no-underline` / `t-underline-hover-only`
+* Added link groups (for menus): `links-no-underline` / `links-underline-hover-only`
+
 ## 19 Nov 2024 -- v.5.3.3
 
 * Reinvention of the way Codebase handles rounded corners. Breaking changes:
@@ -29,7 +38,7 @@
 * Simplified heading sizes (ems equivalent of 16px, 18px, 20px, 24px, 30px, 36px, as usually specified in WYSIWYG editors). Also, simplified by removing heading size bump for MD screens (use the responsive `clamp()` controled `t-long-read` or `t-display` in those situations where you need bigger text).
 * All Heading tags and heading utility classes now have built-in `margin-top`. As margin-block controlled by a variable. (Use `mt-0` to override.)
 * "Heading sizes" utility classes now only change text sizes. They do not affect margins offont weights.
-* Improved `.t-decoration-none` and `.t-link-inside` (panel links).
+* Improved `.t-no-underline` and `.t-link-inside` (panel links).
 * All tables now need the `.table` class.
 * Paddings utility `.p-block` renamed `.p-cell` (alias `.p-block` is still available.)
 * Removed `-webkit-overflow-scrolling: touch;` from the body tag.

@@ -2,11 +2,12 @@
  * CODEBASE 5
  * MIT Licence 
  * https://github.com/codebase-frontend-library/codebase-5
- * v.5.3.3
+ * v.5.3.4
  */
 
 // BASICS
 @use "01_basics/base";
+@use "01_basics/accessibility";
 @use "01_basics/text";
 @use "01_basics/form-elements";
 @use "01_basics/media";

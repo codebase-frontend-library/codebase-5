@@ -53,7 +53,7 @@ Codebase’s simple `flex` flexbox layout system enables you to organize wrapped
 4. `flex` is not used for a pseudo grid system. Instead, Codebase has a [real grid]({{ '/docs/3-layout-utilities/grid' | url }}) that uses _CSS Grid Layout_.
 5. By default, flex sytems do not _wrap_ their content onto a new row if there is not enough space available. So, if you require wrapping, use `flex flex-wrap`.
 6. If required in your design, you can override a flexbox at a wider breakpoint the element so that it is back to being a full-width block, using a responsive [block]({{ '/docs/3-layout-utilities/blocks' | url }}) utility.
-7. New in `v.5.2.9`: In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths — see [responsive flex modifier tiers](#responsive-flex-modifier-tiers).
+7. In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths — see [responsive flex modifier tiers](#responsive-flex-modifier-tiers).
 
 ## Setting up a `flex` flexbox
 
@@ -204,7 +204,7 @@ With `flex flex-column` (and the flex wrapper has `style="height: 250px"` for th
 
 ## Responsive flex modifier tiers
 
-New in Codebase v.5.2.9: In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths:
+In addition to the `flex` setup class, you can also override eah of the flex modifier classes at the `xs`, `sm`, `md`, and `lg` breakpoint widths:
 
 * `flex-start` / `flex-center` / `flex-end` 
 * `flex-top` / `flex-middle` / `flex-bottom`

@@ -8,7 +8,7 @@
   <title>Inline text - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -46,7 +46,7 @@
 
     @media (min-width: 768px) {
       #site-page {
-        grid-template-columns: 256px calc(100vw - 256px);
+        grid-template-columns: 256px 1fr;
         max-width: 100vw;
       }
       #site-navigation > div {
@@ -99,11 +99,8 @@
     #toc li {
       margin-bottom: 1rem;
     }
-    #toc a {
+    #toc a:not(:hover):not(:focus-visible) {
       text-decoration: none;
-    }
-    #toc a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 1279px) {
       #toc ul ul {
@@ -139,20 +136,21 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
-
 </head>
 
 <body>
-  <script>
+  <script defer>
     if (navigator.appVersion.indexOf("Win") != -1) {
       document.body.classList.add('ms-windows');
     }
   </script>
 
 
-<div class="w-xxl mx-auto">
-  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-</div>
+  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="block p-1 visually-hidden">
+    <div class="container">
+    <span class="panel-link-title">Skip to main content</span>
+    </div>
+  </a>
 
 <script>
   document.addEventListener('alpine:init', () => {
@@ -217,7 +215,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -227,7 +225,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1 t-gray-600 hover:t-black hover:bg-transparent"
+        class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -237,10 +235,10 @@
       </button>
     </div>
   
-    <div class="p-1">
+    <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -249,15 +247,15 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase CSS</span>
       </a>
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.3">Download CSS</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.4">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
     </div>
   
@@ -311,7 +309,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.3">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.4">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -331,14 +329,14 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Accessibility</a></li>
+    </menu>
   </div>  
 </div>
 
@@ -356,12 +354,12 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </menu>
   </div>
 </div>
 
@@ -381,18 +379,18 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </menu>
   </div>
 </div>
 
@@ -410,16 +408,16 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
+    </menu>
   </div>
 </div>
 
@@ -437,14 +435,14 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </menu>
   </div>
 </div>
 
@@ -464,16 +462,17 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/panel-links">Panel links</a></li>
+    </menu>
   </div>
 </div>
 
@@ -491,14 +490,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -509,13 +508,13 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
-      <div class="h2 m-0">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
+      <div class="m-0">
         
         <div class="my-1 t-thin t-gray-800">Typographic utilities</div>
         
       </div>
-      <div class="t-display">
+      <div>
         <h1 class="h2 mt-0 t-bold t-balance">Inline text</h1>    
       </div>
     </div>
@@ -578,8 +577,8 @@
 </li>
 <li>
 <p><code>t-lg</code></p>
-<p>Big text for making <span class="t-lg">something</span> stand out. <code>t-lg</code> enlarges text by 1.25em (125%) of its inherited size.</p>
-<p><strong>Note:</strong> <code>t-lg</code> doesn’t work as an <em>inline class</em> on headings or <a href="/codebase-5/docs/5-typographic-utilities/headings">heading utilities</a>. If you want a heading to be bigger, then use <code>t-lg</code> on a block <em>wrapper</em> around the heading. See also <a href="/codebase-5/docs/5-typographic-utilities/large-display-text">large display text</a>.</p>
+<p>Big text for making <span class="t-lg">something</span> stand out. <code>t-lg</code> enlarges text to 1.325em of its inherited size.</p>
+<p><strong>Note:</strong> <code>t-lg</code> will not do what you want as an <em>inline class</em> on headings or <a href="/codebase-5/docs/5-typographic-utilities/headings">heading utilities</a>. If you want a heading to be bigger, then use <code>t-lg</code> on a block <em>wrapper</em> around the heading (see <a href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">making text bigger</a>.</p>
 </li>
 <li>
 <p><code>t-para</code> (alias: <code>t-default</code>)</p>
@@ -589,68 +588,36 @@
 <h2 id="links" tabindex="-1">Links</h2>
 <p>Links (also called <em>hyperlinks</em>) in Codebase are blue with an underscore by default, following the old tradition.</p>
 <h3 id="links-with-and-without-underlines" tabindex="-1">Links with and without underlines</h3>
-<p>Links automatically get an underline. But there are cases where you may not want that, such as in menus: use <code>t-decoration-none</code>.</p>
-<p>But then you will still need to indicate to users who hover over the link that the link is “working”. This can be done in various ways: adding back the underline, or adding a background colour on hover. See Codebase simple <a href="/codebase-5/docs/6-simple-components/menus-and-menubars">menu components</a>.</p>
-<ul class="flex flex-column gap-2">
-<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 1</a></li>
-<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 2</a></li>
-<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 3</a></li>
-<li><a class="t-decoration-none hover:t-decoration-underline" href="">Menu item 4</a></li>
-</ul>
-<p>(You will also want to add a gap between each menu item, so that people can click indivicual links on touch screens — as I have done here using Codebase flexbox utility classes.)</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-column gap-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="whole-panel-links" tabindex="-1">Whole-panel links</h3>
-<p><strong>Q: What if you wanted a whole panel, such as a <a href="/codebase-5/docs/6-simple-components/cards">card</a>, or <a href="/codebase-5/docs/6-simple-components/heros">hero</a> to operate as a link?</strong><br>
-A: You can simply use the <code>&lt;a&gt;</code> link tag instead of the outer <code>&lt;div&gt;</code>, and give it a Codebase <code>block</code> class to make it a block instead of an inline element:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p><strong>Q: But what if you wanted only <em>some</em> of the text in the panel to be styled as the link, but not other accompanying text?</strong><br>
-A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-inside</code> on the wrapper <code>&lt;a&gt;</code> tag, and <code>t-link</code> on the inner text that you want to be the pseudo link (e.g. on the panel title text).</p>
+<p>Links get an underline by default. But there are situations where you may not want that, such as in menus.</p>
+<p>For single links:</p>
 <ul>
-<li>
-<p>The <code>t-link-inside</code> class (must be applied to the <code>&lt;a&gt;</code> wrapper) simply removes the traditional link underscore, and resets its link text color to inherit the color of the surrounding/ “parent” panel text. (The surrounding text usually has the default text color, almost black.)</p>
-</li>
-<li>
-<p>And the <code>t-link</code> class <em>makes its element only look like a link</em> by adding back the underscore, link color, and link hover color.</p>
-</li>
+<li><code>t-no-underline</code> — <a class="t-no-underline" href="">a link with no underline</a></li>
+<li><code>t-underline-hover-only</code> — <a class="t-underline-hover-only" href="">a link with underline only on hover</a></li>
 </ul>
-<p>The link functionality is still handled by the wrapper <code>&lt;a&gt;</code> tag. <code>t-link</code> doesn’t actually make an element <em>operate</em> like a link.</p>
-<p>Example:</p>
-<a class="block mb-2 b-thin p-2 t-link-inside" href="#/">
-    <p class="h4 t-link">Card title</p>
-    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
-</a>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block t-link-inside<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p>You need to supply a text color for the accompanying text, else it will inherit the link color (default is hyperlink blue).</p>
-<p>You can even combine <code>t-link-inside</code> with <code>t-decoration-none</code>...</p>
-<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none" href="#/">
-    <p class="h4 mb-1 t-link">Card title</p>
-    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
-</a>
-<p>...and with <code>t-decoration-none hover:t-decoration-underline</code>:</p>
-<a class="block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline" href="#/">
-    <p class="h4 mb-1 t-link">Card title</p>
-    <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
-</a>
-<p>The box shadow on hover in the examples above is supplied by a Codebase <a href="/codebase-5/docs/4-decoration-utilities/box-shadows">box shadow</a>.</p>
-<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- t-decoration-none --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- t-decoration-none AND hover:t-decoration-underline --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 hover:bs-3 t-link-inside t-decoration-none hover:t-decoration-underline<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0 t-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
-<p>A third example: adding in different text colors in base and hover states will require you adding your own CSS (example showing how you can utilize Codebase variables):</p>
-<style>
-    .t-link-inside.t-green-500 {
-        color: unset;
-    }
-    .t-link-inside.t-green-500 .t-link {
-        color: var(--green-500);
-    }
-
-    .t-link-inside.hover\:t-green-600:hover .t-link {
-        color: var(--green-600)
-    }
-</style>
-<a class="block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600" href="#/">
-    <p class="h4 mb-1 t-bold t-link">Card title</p>
-    <p class="mb-0">Lorem ipsim dolor sit amet ...</p>
-</a>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>    <span class="token selector">.t-link-inside.t-green-500</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.t-link-inside.t-green-500 .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-500<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token selector">.t-link-inside.hover\:t-green-600:hover .t-link</span> <span class="token punctuation">{</span><br>        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--green-600<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block mb-2 b-thin p-2 t-link-inside t-decoration-none hover:t-decoration-underline t-green-500 hover:t-green-600 <span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h4 mb-1 t-bold t-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsim dolor sit amet ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>Similar to the above, but for groups of links (use one of these on a <code>&lt;nav&gt;</code> or <code>&lt;menu&gt;</code> wrapper):</p>
+<ul>
+<li><code>links-no-underline</code></li>
+<li><code>links-underline-hover-only</code></li>
+</ul>
+<p>Example using <code>links-no-underline</code>:</p>
+<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline">
+  <menuitem><a href="">Menu item 1</a></menuitem>
+  <menuitem><a href="">Menu item 2</a></menuitem>
+  <menuitem><a href="">Menu item 3</a></menuitem>
+  <menuitem><a href="">Menu item 4</a></menuitem>
+</menu>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span></code></pre>
+<p>(You will also want to add a gap between each menu item, so that people can click indivicual links on touch screens — as I have done here using Codebase flexbox utility classes.)</p>
+<p>Example using <code>links-underline-hover-only</code>:</p>
+<nav class="mb-2 flex flex-column gap-2 links-underline-hover-only">
+  <li><a href="">Nav item 1</a></li>
+  <li><a href="">Nav item 2</a></li>
+  <li><a href="">Nav item 3</a></li>
+  <li><a href="">Nav item 4</a></li>
+</nav>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 flex flex-column gap-2 links-underline-hover-only<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Nav item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Nav item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Nav item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Nav item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+<p>But then, if it is not obvious, you may still need to indicate to users who hover over the link that the link is “working”. This can be done in various ways: adding back the underline, or adding a background colour on hover. See Codebase simple <a href="/codebase-5/docs/6-simple-components/menus-and-menubars">menu components</a>.</p>
+<p>What if you have a whole panel that needs to be a</p>
 <h2 id="other-text-utilities" tabindex="-1">Other text utilities</h2>
 <ul>
 <li>
@@ -685,14 +652,14 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
   <footer class="col-1 sm:col-2">
     <div class="container-sm py-6">
       <hr>
-      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+      <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/text-alignment">❮ Text alignment</a></li>
+        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/5-typographic-utilities/text-alignment">❮ Text alignment</a></li>
         
         
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats ❯</a></li>
           
-      </ul>
+      </nav>
     </div>
   </footer>
 
@@ -700,25 +667,25 @@ A: Codebase has you covered. Since v.5.0.8, you can put class <code>t-link-insid
 
 <footer class="relative py-3 bg-gray-900 t-center t-gray-400">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
+    <a id="site-footer-title" class="h3 inline-block t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
-        <!-- Codebase logo-->
+        <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
         <span class="inline-block mt-2 t-loose t-semibold">
-          Codebase
+          Codebase CSS
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.3</div>
+  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.4</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (96 KB)</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-  </div>
+    <div>Dev: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  </menu>
 
 </footer>
 

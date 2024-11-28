@@ -1,8 +1,10 @@
 {% include "_html-head.njk" %}
 
-<div class="w-xxl mx-auto">
-  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-</div>
+  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="block p-1 visually-hidden">
+    <div class="container">
+    <span class="panel-link-title">Skip to main content</span>
+    </div>
+  </a>
 
 {% include "site-top-bar.njk" %}
 
@@ -62,8 +64,8 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
-      <div class="h2 m-0">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
+      <div class="m-0">
         {% if '1-getting-started' in page.url %}
         <div class="my-1 t-thin t-gray-800">Getting started</div>
         {% elif '2-classless-basics' in page.url %}
@@ -80,7 +82,7 @@
         <div class="my-1 t-thin t-gray-800">AlpineJS components</div>
         {% endif %}
       </div>
-      <div class="t-display">
+      <div>
         <h1 class="h2 mt-0 t-bold t-balance">{{ headerTitle if headerTitle else title }}</h1>    
       </div>
     </div>
@@ -104,14 +106,14 @@
   <footer class="col-1 sm:col-2">
     <div class="container-sm py-6">
       <hr>
-      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+      <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         {% if prevPage %}
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-left" href="{{ prevPage | url }}">❮ {{ prevLink if prevLink else "Previous page" }}</a></li>
+        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="{{ prevPage | url }}">❮ {{ prevLink if prevLink else "Previous page" }}</a></li>
         {% endif %}
         {% if nextPage %}
-        <li class="l-2 t-right"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-right" href="{{ nextPage | url }}">{{ nextLink if nextLink else "Next page" }} ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="{{ nextPage | url }}">{{ nextLink if nextLink else "Next page" }} ❯</a></li>
         {% endif %}  
-      </ul>
+      </nav>
     </div>
   </footer>
 

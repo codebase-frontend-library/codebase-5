@@ -53,9 +53,9 @@ New in Codebase v.5.2.11: `w-fit-content` uses `width: fit-content` to “shrink
 
 * `h-50vh` / `h-100dvh` (alias `h-100vh`)
 
-These utilities will make a block have a _minimum_ of `50vh` or `100dvh`. 
+These utilities will make a block have a _minimum_ of `50vh` or `100dvh`.
 
-`h-100dvh` is new in Codebase v.5.2.11. You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really _device viewport height_ `h-100dvh` that you need. But the alias `h-100vh` is still present for backwards compatability with Codebase 5.x, and in case you forget.
+You want to allow for iOS/iPadOS Safari’s retractable toolbars, so it’s really _device viewport height_ not _viewport height_ that you need.
 
 ### Heights
 

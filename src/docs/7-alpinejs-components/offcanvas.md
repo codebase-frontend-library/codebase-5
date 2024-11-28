@@ -55,10 +55,10 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       <div class="h3" id="offcanvas-ex-1-title">Offcanvas 1 Panel Title</div>
       <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
       <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
+        <ul class="flex flex-column gap-2">
+          <li><a href="#/">Example link 1</a></li>
+          <li><a href="#/">Example link 2</a></li>
+          <li><a href="#/">Example link 3</a></li>
         </ul>
       </nav>
     </div>
@@ -109,10 +109,10 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       <div class="h3" id="offcanvas-ex-2-title">Offcanvas 2 Panel Title</div>
       <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
       <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
+        <ul class="flex flex-column gap-2">
+          <li><a href="#/">Example link 1</a></li>
+          <li><a href="#/">Example link 2</a></li>
+          <li><a href="#/">Example link 3</a></li>
         </ul>
       </nav>
     </div>
@@ -163,10 +163,10 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       <div class="h3" id="offcanvas-ex-3-title">Offcanvas 3 Panel Title</div>
       <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
       <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
+        <ul class="flex flex-column gap-2">
+          <li><a href="#/">Example link 1</a></li>
+          <li><a href="#/">Example link 2</a></li>
+          <li><a href="#/">Example link 3</a></li>
         </ul>
       </nav>
     </div>
@@ -217,10 +217,10 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       <div class="h3" id="offcanvas-ex-4-title">Offcanvas 4 Panel Title</div>
       <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
       <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
+        <ul class="flex flex-column gap-2">
+          <li><a href="#/">Example link 1</a></li>
+          <li><a href="#/">Example link 2</a></li>
+          <li><a href="#/">Example link 3</a></li>
         </ul>
       </nav>
     </div>
@@ -269,10 +269,10 @@ Codebase’s offcanvas panels can slide in from any side of the viewport (top, r
       <div class="h3" id="offcanvas-ex-4-title">Offcanvas 4 Panel Title</div>
       <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
       <nav>
-        <ul class="menu">
-          <li><a class="py-1" href="#/">Example link 1</a></li>
-          <li><a class="py-1" href="#/">Example link 2</a></li>
-          <li><a class="py-1" href="#/">Example link 3</a></li>
+        <ul class="flex flex-column gap-2">
+          <li><a href="#/">Example link 1</a></li>
+          <li><a href="#/">Example link 2</a></li>
+          <li><a href="#/">Example link 3</a></li>
         </ul>
       </nav>
     </div>
@@ -367,9 +367,7 @@ The Codebase offcanvas CSS classes are as follows:
 
 ## Button as a separate component
 
-Until Alpine v.3, having a toggler or button as a separate component was possible using the Alpine `$dispatch` magic property and the [window as an event bus](https://codewithhugo.com/alpinejs-component-communication-event-bus/).
-
-But Alpine 3 has built-in global state storage, using [Alpine.store()](https://alpinejs.dev/globals/alpine-store). So, we can use that instead.
+Alpine 3 has built-in global state storage, using [Alpine.store()](https://alpinejs.dev/globals/alpine-store). We use this to pass instructions between the control button and its respective offcanvas panel.
 
 **Example 5:** with a control button in a separate Alpine component:
 
@@ -429,10 +427,10 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     <div class="h3" id="offcanvas-ex-5-title">Offcanvas 5 Panel Title</div>
     <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
     <nav>
-      <ul class="menu">
-        <li><a class="py-1" href="#/">Example link 1</a></li>
-        <li><a class="py-1" href="#/">Example link 2</a></li>
-        <li><a class="py-1" href="#/">Example link 3</a></li>
+      <ul class="flex flex-column gap-2">
+        <li><a href="#/">Example link 1</a></li>
+        <li><a href="#/">Example link 2</a></li>
+        <li><a href="#/">Example link 3</a></li>
       </ul>
     </nav>
   </div>
@@ -494,10 +492,10 @@ But Alpine 3 has built-in global state storage, using [Alpine.store()](https://a
     <div class="h3" id="offcanvas-ex-5-title">Offcanvas 5 Panel Title</div>
     <p>Offcanvas content. Click the “Close” button to dismiss – or click outside to dismiss.</p>
     <nav>
-      <ul class="menu">
-        <li><a class="py-1" href="#/">Example link 1</a></li>
-        <li><a class="py-1" href="#/">Example link 2</a></li>
-        <li><a class="py-1" href="#/">Example link 3</a></li>
+      <ul class="flex flex-column gap-2">
+        <li><a href="#/">Example link 1</a></li>
+        <li><a href="#/">Example link 2</a></li>
+        <li><a href="#/">Example link 3</a></li>
       </ul>
     </nav>
   </div>
@@ -601,10 +599,10 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
         And it will behave as an offcanvas panel below 
         <code class="b-thin">md</code>.</p>
     <nav>
-      <ul class="menu">
-        <li><a class="py-1" href="#/">Example link 1</a></li>
-        <li><a class="py-1" href="#/">Example link 2</a></li>
-        <li><a class="py-1" href="#/">Example link 3</a></li>
+      <ul class="flex flex-column gap-2">
+        <li><a href="#/">Example link 1</a></li>
+        <li><a href="#/">Example link 2</a></li>
+        <li><a href="#/">Example link 3</a></li>
       </ul>
     </nav>
   </div>
@@ -693,10 +691,10 @@ So, in the `Alpine.store()` data you want the `isOpen` state to initialize as `f
         And it will behave as an offcanvas panel below 
         <code class="b-thin">md</code>.</p>
     <nav>
-      <ul class="menu">
-        <li><a class="py-1" href="#/">Example link 1</a></li>
-        <li><a class="py-1" href="#/">Example link 2</a></li>
-        <li><a class="py-1" href="#/">Example link 3</a></li>
+      <ul class="flex flex-column gap-2">
+        <li><a href="#/">Example link 1</a></li>
+        <li><a href="#/">Example link 2</a></li>
+        <li><a href="#/">Example link 3</a></li>
       </ul>
     </nav>
   </div>

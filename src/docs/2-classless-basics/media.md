@@ -33,6 +33,12 @@ _Photo by [Eric Karits](https://www.pexels.com/@erik-karits-2093459) from [Pexel
 <img src="" width="" height="" loading="lazy" alt="">
 ```
 
+### Linked images
+
+<a href="#/" class="inline-block"><img src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="250" height="250" alt="Photo by Pixabay from Pexels"></a>
+
+If an `<img src="">` is a child of an `<a href="">`, then the image will become slightly transparent (using the opacity filter) when the `<a href="">` has `:focus-visible`, allowing its amber background color to show through. See [accessibility focus styling]({{ "/docs/1-getting-started/accessibility/#focus-state-styling" | url }}).
+
 ### Lazy loading
 
 As in the example above, you can add the attribute `loading="lazy"` to images, especially if they are big and lower down the webpage (below the “fold”). Then the visitor’s browser can defer loading the image until the visitor has scrolled down to see it. This will improve your page’s performance, making it seem to load quicker.

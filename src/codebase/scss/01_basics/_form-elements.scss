@@ -30,7 +30,7 @@ select {
   font-size: 1rem;
   text-align: start;
 
-  @if $form-input-rounded-corners ==true {
+  @if $form-input-rounded-corners == true {
     --rad: var(--rad-sm);
     border-radius: var(--rad);
   }
@@ -38,7 +38,7 @@ select {
     border-radius: 0;
   }
 
-  @if $form-input-background-color==true {
+  @if $form-input-background-color == true {
     background-color: var(--c-form-bg)
   }
 

@@ -112,6 +112,6 @@ Normal (classless):
 
 ## Menus are usually lists
 
-At their most basic, web navigation menus are lists of hyperlinks. Usually they are styled up a bit, to make them look more interesting.
+At their most basic, web navigation menus are lists of hyperlinks. Usually they are styled up a bit, to make them look more interesting. And for accessabiilty, you should swap the (outer) `<ul>` for `<nav>` or `<menu>` tag.
 
 See the simple [menus (and menubars)]({{ '/docs/6-simple-components/menus-and-menubars/' | url }}) component.

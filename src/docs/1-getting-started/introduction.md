@@ -38,13 +38,19 @@ dist/
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Codebase</title>
     <link rel="stylesheet" href="/path/to/your/codebase.css">
-    <script src="/path/to/your/alpine.js" defer></script>
+
+    <!-- Alpine and Plugins -- for development; host these yourself for production. -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
   </head>
   <body>
     
     <h1>Hello world</h1>
+    <p x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></p>
 
-  </body>
+</body>
 </html>
 ```
 
@@ -83,10 +89,16 @@ Here are some simple components that you can build using Codebase (I’m calling
 * [Tables]({{ '/docs/6-simple-components/tables' | url }})
 * [Media objects]({{ '/docs/6-simple-components/media-objects' | url }})
 * [Cards]({{ '/docs/6-simple-components/cards' | url }})
+* [Panel links]({{ "/docs/6-simple-components/panel-links/" | url }})
 
 #### Components using AlpineJS
 
-Codebase pairs well with [AlpineJS](https://alpinejs.dev/). The Codebase components examples in these doce have been re-factored to use Alpine v3.
+Codebase pairs well with [AlpineJS](https://alpinejs.dev/). The Codebase components examples in these docs have been re-factored to use Alpine v3.
+
+**Notes:**
+
+1. `codebase.css` does not require Alpine as a dependency. You can use Codebase with other JS frameworks, or none at all.
+2. Codebase (and this documentation) does not include AlpineJS. You will need to [source the latest version](https://github.com/alpinejs/alpine) for yourself, or link to it from a CDN (e.g. [UNPKG](https://unpkg.com/) or [JSDELIVR](https://www.jsdelivr.com/package/npm/alpinejs)).
 
 The following are several examples of Codebase components that can be powered by Alpine:
 
@@ -98,8 +110,6 @@ The following are several examples of Codebase components that can be powered by
 * [Slideshows]({{ '/docs/7-alpinejs-components/slideshows' | url }})
 * [Animations]({{ '/docs/7-alpinejs-components/animations' | url }})
 
-**Note:** Codebase (and this documentation) does not include AlpineJS. You will need to [source the latest version](https://github.com/alpinejs/alpine) for yourself, or link to it from a CDN (e.g. [JSDELIVR](https://www.jsdelivr.com/package/npm/alpinejs)).
-
 ## The SCSS library
 
 Codebase is a highly versatile SCSS library, preprocessed and minified to CSS.
@@ -110,9 +120,9 @@ Available in the repository are all the Codebase [SCSS files](https://github.com
 
 **Notes:**
 
-1. **Since v.5.2, Codebase has been refactored to use [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, whereas these were all Sass variables previously. Also, all the `!default` flags have been removed from these variables, as they can now be overridden in the CSS without requiring Sass to do so.
-2. **Since v.5.2, the Sass preprocessor has been updated to Dart-Sass.**
-3. **Since v.5.2, _PostCSS_ and its associated dependencies have not been used in this project**, as ithey are not needed for adding vendor prefixes (browsers older than ~2018, including Internet Explorer, aren’t supported). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. The main reason why _PostCSS_ has been removed is because I didn’t want it converting the CSS variables static CSS (for old browser support). Also, with _PostCSS_ removed, I can’t use _cssnano_ (a dependency) for minification; therefore I am simply using `--style compact` on the _Sass_ package.
+1. Codebase uses [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, not Sass variables.
+2. _PostCSS_ and its associated dependencies have not been used. So there are no generated vendor prefixes (for supporting pre ~2018 browsers). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. CSS minification is done thorugh `--style compact` on the _Sass_ package (not CSS Nano).
+3. Internet Explorer is not supported.
 
 You can incrementally add your web project’s distinctive design features after including Codebase in your HTML `<head>` (or including it whichever way you need to do it in your design platform). And you can customize Codebase itself.
 
@@ -121,7 +131,7 @@ You can incrementally add your web project’s distinctive design features after
 For example, here is the [Sass map](https://sass-lang.com/documentation/values/maps) of the nine shades that can be applied to one of the seven default theme colors in Codebase:
 
 ```scss
-$shade: (
+$lightness: (
   "100": white 90%,
   "200": white 72%,
   "300": white 54%,
@@ -134,7 +144,7 @@ $shade: (
 );
 ```
 
-The Codebase color utility class generator uses this Sass map. These shades are applied by a `color-mix()` function using the OKLAB color space (since Codebase v.5.3.0). See [Color utilities]({{ '/docs/4-decoration-utilities/colors' | url }}).
+The Codebase color utility class generator uses this Sass map. These shades are applied by a `color-mix()` function using the OKCH color space (since Codebase v.5.3.4). See [Color utilities]({{ '/docs/4-decoration-utilities/colors' | url }}).
 
 ## System font stacks
 
@@ -154,4 +164,6 @@ Codebase works on all the common modern web browsers such as Chrome, Safari, Edg
 
 Codebase is not compatible with older browsers such as Internet Explorer 11 and Opera Mini.
 
-**Note:** also, [Alpine v.3x does not support IE11](https://alpinejs.dev/upgrade-guide#no-ie-11).
+Also, [Alpine v.3x does not support IE11](https://alpinejs.dev/upgrade-guide#no-ie-11).
+
+And more importantly, since June 2022 [Microsoft no longer supports IE11](https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/).

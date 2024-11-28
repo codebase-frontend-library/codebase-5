@@ -34,25 +34,25 @@ If you are using an `ol` or `ul` then the following example is a good place to s
 </ul>
 </div>
 <div>
-<p>The same unordered list, styled as a menu:</p>
-<ul class="list-style-type-none p-0 flex flex-column gap-2">
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Here’s a thing</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Something else</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">Thingmabob</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">And another thing</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="#/">One last thing</a></li>
-</ul>
+<p>The same unordered list, but using the <code>&lt;nav&gt;</code> tag for improved accessability, and styled as a menu:</p>
+<nav class="list-style-type-none mb-2 p-0 flex flex-column gap-2 links-underline-hover-only">
+  <li><a class="t-gray-600 hover:t-black" href="#/">Here’s a thing</a></li>
+  <li><a class="t-gray-600 hover:t-black" href="#/">Something else</a></li>
+  <li><a class="t-gray-600 hover:t-black" href="#/">Thingmabob</a></li>
+  <li><a class="t-gray-600 hover:t-black" href="#/">And another thing</a></li>
+  <li><a class="t-gray-600 hover:t-black" href="#/">One last thing</a></li>
+</nav>
 </div>
 </div>
 
 ```html
-<ul class="list-style-type-none p-0 flex flex-column gap-2">
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-  <li><a class="block t-decoration-none t-gray-600 hover:t-black" href="">...</a></li>
-</ul>
+<nav class="list-style-type-none mb-2 p-0 flex flex-column gap-2 links-underline-hover-only">
+  <li><a class="block t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-gray-600 hover:t-black" href="">...</a></li>
+  <li><a class="block t-gray-600 hover:t-black" href="">...</a></li>
+</nav>
 ```
 
 ## More menu examples
@@ -60,7 +60,7 @@ If you are using an `ol` or `ul` then the following example is a good place to s
 Following the code example below are three examples of menus with sub menus – all styled with Codebase utilities applied to the same example base:
 
 ```html
-<ul>
+<nav>
   <li><a href="">Link 1</a></li>
   <li><a href="">Link 2</a></li>
   <li><a href="">Link 3</a>
@@ -72,52 +72,52 @@ Following the code example below are three examples of menus with sub menus – 
   </li>
   <li><a href="">Link 4</a></li>
   <li><a href="">Link 5</a></li>
-</ul>
+</nav>
 ```
 
 You can look at the source code to see how the following examples have been decorated with utility classes.
 
 <div class="my-6">
 <div class="xs:flex gap-3 flex-grow-equal">
-<ul class="list-style-type-none p-0 flex flex-column gap-2">
-  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 1</a></li>
-  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 2</a></li>
-  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3</a>
+<nav class="list-style-type-none links-underline-hover-only p-0 flex flex-column gap-2">
+  <li><a class="block" href="#/">Link 1</a></li>
+  <li><a class="block" href="#/">Link 2</a></li>
+  <li><a class="block" href="#/">Link 3</a>
     <ul class="list-style-type-none mt-2 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.1</a></li>
-      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.2</a></li>
-      <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 3.3</a></li>
+      <li><a class="block" href="#/">Link 3.1</a></li>
+      <li><a class="block" href="#/">Link 3.2</a></li>
+      <li><a class="block" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 4</a></li>
-  <li><a class="block t-decoration-none hover:t-underscore" href="#/">Link 5</a></li>
-</ul>
-<ul class="list-style-type-none pl-0">
-  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black" href="#/">Link 1</a></li>
-  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 2</a></li>
-  <li><a class="bb-thin b-white block p-cell t-bold t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black"  href="#/">Link 3</a>
+  <li><a class="block" href="#/">Link 4</a></li>
+  <li><a class="block" href="#/">Link 5</a></li>
+</nav>
+<nav class="list-style-type-none links-underline-none pl-0">
+  <li><a class="bb-thin b-white block p-cell bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black" href="#/">Link 1</a></li>
+  <li><a class="bb-thin b-white block p-cell bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 2</a></li>
+  <li><a class="bb-thin b-white block p-cell t-bold bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black"  href="#/">Link 3</a>
     <ul class="list-style-type-none pl-0">
-      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.1</a></li>
-      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.2</a></li>
-      <li><a class="bb-thin b-white block p-cell pl-4 t-decoration-none bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.3</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.1</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.2</a></li>
+      <li><a class="bb-thin b-white block p-cell pl-4 bg-blue-200 hover:bg-blue-300 t-gray-900 hover:t-black" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 4</a></li>
-  <li><a class="bb-thin b-white block p-cell t-decoration-none bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 5</a></li>
-</ul>
-<ul class="list-style-type-none pl-0">
-  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 1</a></li>
-  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 2</a></li>
-  <li class="bt-thin bb-thin bl-heavy b-teal-400 hover:bg-teal-100"><a class="block p-cell t-bold t-decoration-none hover:bg-teal-200" href="#/">Link 3</a>
+  <li><a class="bb-thin b-white block p-cell bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 4</a></li>
+  <li><a class="bb-thin b-white block p-cell bg-blue-100 hover:bg-blue-200 t-gray-900 hover:t-black"  href="#/">Link 5</a></li>
+</nav>
+<nav class="list-style-type-none links-underline-none pl-0">
+  <li><a class="block p-cell hover:bg-teal-100" href="#/">Link 1</a></li>
+  <li><a class="block p-cell hover:bg-teal-100" href="#/">Link 2</a></li>
+  <li class="bt-thin bb-thin bl-heavy b-teal-400 hover:bg-teal-100"><a class="block p-cell t-bold hover:bg-teal-200" href="#/">Link 3</a>
     <ul class="list-style-type-none pl-0">
-      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.1</a></li>
-      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.2</a></li>
-      <li><a class="block p-cell t-decoration-none hover:bg-teal-200" href="#/">Link 3.3</a></li>
+      <li><a class="block p-cell hover:bg-teal-200" href="#/">Link 3.1</a></li>
+      <li><a class="block p-cell hover:bg-teal-200" href="#/">Link 3.2</a></li>
+      <li><a class="block p-cell hover:bg-teal-200" href="#/">Link 3.3</a></li>
     </ul>
   </li>
-  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 4</a></li>
-  <li><a class="block p-cell t-decoration-none hover:bg-teal-100" href="#/">Link 5</a></li>
-</ul>
+  <li><a class="block p-cell hover:bg-teal-100" href="#/">Link 4</a></li>
+  <li><a class="block p-cell hover:bg-teal-100" href="#/">Link 5</a></li>
+</nav>
 </div>
 </div>
 
@@ -132,22 +132,22 @@ In the example below, `sm:flex` has been used, so that the menu stays as a colum
 With some other simple components inside for proof of concept.
 
 <div class="mb-2 b-dashed">
-<ul class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
-  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 1</a></li>
-  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 2 with a badge<sup class="badge badge-warning">1</sup></a></li>
-  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/"><span class="label bg-success t-white t-uppercase">New</span> Link 3 with a label</a></li>
+<nav class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
+  <li><a class="block p-cell t-nowrap" href="#/">Link 1</a></li>
+  <li><a class="block p-cell t-nowrap" href="#/">Link 2 with a badge<sup class="badge badge-warning">1</sup></a></li>
+  <li><a class="block p-cell t-nowrap" href="#/"><span class="label bg-success t-white t-uppercase">New</span> Link 3 with a label</a></li>
   <li><a class="btn btn-primary btn-sm w-100% flex-start" href="#/">Link 5</a></li>
-  <li><a class="block p-cell t-decoration-none" href="#/">Link 6</a></li>
-</ul>
+  <li><a class="block p-cell" href="#/">Link 6</a></li>
+</nav>
 </div>
 
 ```html
-<ul class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
-  <li><a class="block p-cell t-decoration-none t-nowrap" href="#/">Link 1</a></li>
+<nav class="list-style-type-none mb-0 pl-0 sm:flex flex-middle flex-wrap">
+  <li><a class="block p-cell t-nowrap" href="#/">Link 1</a></li>
   ...
   <li><a class="btn btn-primary btn-sm w-100% flex-start" href="#/">Link 5</a></li>
   ...
-</ul>
+</nav>
 ```
 
 If you have items of different heights (e.g. badges, buttons, search form) and you want them to line up at the vertical middle, add `flex-middle` as in this example. If your menubar is overloaded with items, ensure that it behaves OK on smaller screens by adding `flex-wrap` or `overflow-x` – or adjust the breakpoint (e.g. maybe you need to use `md:flex` instead of `sm:flex`).
@@ -158,10 +158,10 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
 
 <div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
-    <a class="block p-2 t-lg t-bold t-decoration-none t-white hover:t-white" href="#/">Brand</a>
+    <a class="block p-2 t-lg t-bold t-white hover:t-white t-no-underline" href="#/">Brand</a>
   </div>
-  <ul class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end">
-    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="#/">Home</a></li>
+  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-no-underline">
+    <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="#/">Home</a></li>
     <li>
       <div
         x-data="{
@@ -201,27 +201,27 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           @click.outside="close($refs.button)"
           :id="$id('dropdown-panel')"
           class="absolute xs:right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
-          style="min-width: 9rem"
+          style="min-width: 10rem"
         >
-          <ul class="list-style-type-none mb-0 px-0 py-1">
-            <li><a class="block p-cell t-decoration-none" href="#/">Company info</a></li>
-            <li><a class="block p-cell t-decoration-none" href="#/">Management</a></li>
-            <li><a class="block p-cell t-decoration-none" href="#/">Careers</a></li>
+          <ul class="list-style-type-none mb-0 px-0 py-1 links-underline-hover-only">
+            <li><a class="block p-cell" href="#/">Company info</a></li>
+            <li><a class="block p-cell" href="#/">Management</a></li>
+            <li><a class="block p-cell" href="#/">Careers</a></li>
           </ul>
         </div>
       </div>
     </li>
-    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="#/">Contact</a></li>
-  </ul>
+    <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="#/">Contact</a></li>
+  </nav>
 </div>
 
 ```html
 <div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
-    <a class="block p-2 t-lg t-bold t-decoration-none t-white hover:t-white" href="">Brand</a>
+    <a class="block p-2 t-lg t-bold t-white hover:t-white t-no-underline" href="">Brand</a>
   </div>
-  <ul class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end">
-    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="">Home</a></li>
+  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-no-underline">
+    <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="">Home</a></li>
     <li>
       <div
         x-data="{
@@ -261,17 +261,17 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
           @click.outside="close($refs.button)"
           :id="$id('dropdown-panel')"
           class="absolute xs:right z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
-          style="min-width: 9rem"
+          style="min-width: 10rem"
         >
-          <ul class="list-style-type-none mb-0 px-0 py-1">
-            <li><a class="block p-cell t-decoration-none" href="">Company info</a></li>
-            <li><a class="block p-cell t-decoration-none" href="">Management</a></li>
-            <li><a class="block p-cell t-decoration-none" href="">Careers</a></li>
+          <ul class="list-style-type-none mb-0 px-0 py-1 links-underline-hover-only">
+            <li><a class="block p-cell" href="">Company info</a></li>
+            <li><a class="block p-cell" href="">Management</a></li>
+            <li><a class="block p-cell" href="">Careers</a></li>
           </ul>
         </div>
       </div>
     </li>
-    <li><a class="block p-cell t-decoration-none t-white hover:t-white hover:bg-purple-700" href="">Contact</a></li>
-  </ul>
+    <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="">Contact</a></li>
+  </nav>
 </div>
 ```

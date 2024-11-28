@@ -6,7 +6,7 @@ Designed for static site generators and content management systems, Codebase is 
 
 Plus, Codebase pairs well with [AlpineJS](https://alpinejs.dev).
 
-* New in v.5.3: CSS `color-mix(in OKLAB ...)` functions.
+* New in v.5.4: CSS `color-mix(in OKLCH ...)` functions.
 * New in v.5.2: CSS `var()` custom properties.
 
 ***
@@ -19,7 +19,7 @@ Install via Git: https://github.com/codebase-frontend-library/codebase-5.git
 
 ***
 
-* Current version: 5.3.3 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
-* CSS file size: 94 KB
+* Current version: 5.3.4 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
+* CSS file size: 96 KB
 * Licence: MIT
 * Developer: Simon Padbury

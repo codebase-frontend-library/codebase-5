@@ -2,9 +2,9 @@
 title: "Cards"
 layout: layout.njk
 prevPage: "/docs/6-simple-components/media-objects"
-nextPage: "/docs/7-alpinejs-components/collapse"
+nextPage: "/docs/6-simple-components/panel-links"
 prevLink: "Media objects"
-nextLink: "Collapse"
+nextLink: "Panel links"
 ---
 
 Codebase cards are built entirely of utility classes – they have no unique card CSS.
@@ -13,7 +13,7 @@ Control the width of a card any way that makes sense in your design. “Raise”
 
 ## A simple card
 
-<div class="flex flex-column w-xxs mx-auto rounded overflow-hidden bs-1 mb-2">
+<div class="flex flex-column w-xxs mx-auto rounded overflow-clip bs-1 mb-2">
   <a href="#/" class="aspect-ratio-16x9 relative">
     <img class="box img-cover" src="{{ '/img/pexels-oleg-magni-1837592.jpg' | url }}" width="1280" height="853" loading="lazy" alt="Photo by Oleg Magni from Pexels">
   </a>
@@ -29,7 +29,7 @@ Control the width of a card any way that makes sense in your design. “Raise”
 _Photo by [Oleg Magni](https://www.pexels.com/@oleg-magni) from [Pexels](https://www.pexels.com)._
 
 ```html
-<div class="flex flex-column w-xxs mx-auto rounded overflow-hidden bs-1 mb-2">
+<div class="flex flex-column w-xxs mx-auto rounded overflow-clip bs-1 mb-2">
   <a href="" class="aspect-ratio-16x9 relative">
     <img class="box img-cover" src="" width="" height="" loading="lazy" alt="">
   </a>
@@ -144,7 +144,7 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
 <div class="w-xs mx-auto my-6 rounded bs-1">
   <div class="flex">
     <div class="grow flex p-2">
-      <a class="square-sm rounded-full overflow-hidden" href="#/">
+      <a class="square-sm rounded rounded-pill overflow-clip" href="#/">
         <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}">
       </a>
       <div class="grow pl-2">
@@ -279,28 +279,28 @@ In the example below, the “Like” button triggers a [dropdown]({{ '/docs/7-al
               </span> Freda Blogworthy and 52 others
             </p>
             <div class="flex">
-              <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-                <img class="img-cover" src="/codebase-5/img/pexels-pixabay-416179.jpg">
+              <a class="mr-2 square-sm b-thin rounded rounded-pill overflow-clip" href="#/">
+                <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
               </a>
               <div>
-                <div class="h4 mb-1">Freda Blogworthy</div>
-                <div class="mb-2 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+                <div class="h4 mb-1"><a class="t-underline-hover-only t-gray-900 hover:t-black" href="">Freda Blogworthy</a></div>
+                <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
                 <div class="flex">
-                  <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-                    <img class="img-cover" src="/codebase-5/img/pexels-pixabay-416179.jpg">
+                  <a class="mr-2 square-sm b-thin rounded rounded-pill overflow-clip" href="#/">
+                    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
                   </a>
                   <div>
-                    <div class="h4 mb-1">Tomas Wingman <span class="t-sm t-uppercase">[Author]</span></div>
-                    <div class="mb-2 bg-amber-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+                    <div class="h4 mb-1"><a class="t-underline-hover-only t-gray-900 hover:t-black" href="">Thomas Wingman</a></div>
+                    <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
                   </div>
                 </div>
                 <div class="flex">
-                  <a class="mr-2 square-sm b-thin rounded-full overflow-hidden" href="#/">
-                    <img class="img-cover" src="/codebase-5/img/pexels-pixabay-416179.jpg">
+                  <a class="mr-2 square-sm b-thin rounded rounded-pill overflow-clip" href="#/">
+                    <img class="img-cover" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Placeholder">
                   </a>
                   <div>
-                    <div class="h4 mb-1">Duck Billington</div>
-                    <div class="mb-2 bg-blue-100 rounded-lg unrounded-top-left p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
+                    <div class="h4 mb-1"><a class="t-underline-hover-only t-gray-900 hover:t-black" href="">Duck Billington</a></div>
+                    <div class="mb-2 bg-blue-100 rounded-tr rounded-br rounded-bl rounded-lg p-2">Lorem ipsum dolor sit amet, vis in blandit singulis, an unum doming facilisi vim. Facete aliquam bonorum id quo, ex labore tincidunt mel, usu no quod liberavisse. Ex sea dolorum insolens assueverit, sed ut harum latine dignissim. Vis cibo vidit ea, eu duo debet platonem explicari, pro ex graece meliore. Illum graeci inciderint mei et, ei decore nostro vim.</div>
                   </div>
                 </div>
               </div>

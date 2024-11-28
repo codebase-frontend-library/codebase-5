@@ -48,7 +48,7 @@
 
     @media (min-width: 768px) {
       #site-page {
-        grid-template-columns: 256px calc(100vw - 256px);
+        grid-template-columns: 256px 1fr;
         max-width: 100vw;
       }
       #site-navigation > div {
@@ -101,11 +101,8 @@
     #toc li {
       margin-bottom: 1rem;
     }
-    #toc a {
+    #toc a:not(:hover):not(:focus-visible) {
       text-decoration: none;
-    }
-    #toc a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 1279px) {
       #toc ul ul {
@@ -141,11 +138,10 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
-
 </head>
 
 <body>
-  <script>
+  <script defer>
     if (navigator.appVersion.indexOf("Win") != -1) {
       document.body.classList.add('ms-windows');
     }

@@ -68,10 +68,15 @@ ul {
   padding-left: calc(var(--t-base-lh) * 1rem);
 }
 
-ol ol,
-ul ul,
-ol ul,
-ul ol {
+menu {
+  margin-block: 0 var(--t-base-mb);
+  padding-left: 1rem;
+}
+
+menu ul,
+nav ul,
+li ul,
+li ol {
   margin-bottom: 0;
 }
 
@@ -121,37 +126,15 @@ blockquote {
   font-size: var(--bq-fs);
 }
 
-a, .t-link {
-  color: var(--c-link);
-  cursor: pointer;
-  transition: var(--ease);
-
-  &:hover,
-  &:active {
-    color: var(--c-link-hover);
-  }
-
-  @if $link-color-visited==true {
-    &:visited {
-      color: var(--c-link-visited);
-    }
-  }
-}
-
-a, .t-link, u {
-  text-underline-offset: var(--t-line-offset);
-}
-
-// See also 03_utilities/typography.css for more on `.t-link`
-
 pre {
   margin-bottom: var(--t-base-mb);
   font-family: var(--font-base);
-  overflow: auto;
-
-  &>code {
+  &:not(:has(code)) {
+    overflow: auto;
+  }
+  code {
     display: block;
-    overflow-x: auto;
+    overflow: auto;
   }
 }
 

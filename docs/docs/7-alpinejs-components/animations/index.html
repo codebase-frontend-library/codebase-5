@@ -8,7 +8,7 @@
   <title>Animations - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.3" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.4" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -46,7 +46,7 @@
 
     @media (min-width: 768px) {
       #site-page {
-        grid-template-columns: 256px calc(100vw - 256px);
+        grid-template-columns: 256px 1fr;
         max-width: 100vw;
       }
       #site-navigation > div {
@@ -99,11 +99,8 @@
     #toc li {
       margin-bottom: 1rem;
     }
-    #toc a {
+    #toc a:not(:hover):not(:focus-visible) {
       text-decoration: none;
-    }
-    #toc a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 1279px) {
       #toc ul ul {
@@ -139,20 +136,21 @@
   <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs"></script>
-
 </head>
 
 <body>
-  <script>
+  <script defer>
     if (navigator.appVersion.indexOf("Win") != -1) {
       document.body.classList.add('ms-windows');
     }
   </script>
 
 
-<div class="w-xxl mx-auto">
-  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="inline-block m-1 visually-hidden">Skip to main content</a>
-</div>
+  <a id="docs-skip-link" href="#docs-header" tabindex="1" class="block p-1 visually-hidden">
+    <div class="container">
+    <span class="panel-link-title">Skip to main content</span>
+    </div>
+  </a>
 
 <script>
   document.addEventListener('alpine:init', () => {
@@ -217,7 +215,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -227,7 +225,7 @@
     >
       <button
         x-cloak
-        class="btn-icon rounded-full ml-1 t-gray-600 hover:t-black hover:bg-transparent"
+        class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
         :aria-expanded="$store.docsNav"
@@ -237,10 +235,10 @@
       </button>
     </div>
   
-    <div class="p-1">
+    <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-decoration-none t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -249,15 +247,15 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase</span>
+        <span class="t-loose t-semibold">Codebase CSS</span>
       </a>
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below">
-        <div><a class="p-cell t-gray-100 t-decoration-none t-semibold hover:t-decoration-underline hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.3">Download CSS</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
-        <div><a class="p-cell t-gray-100 t-decoration-none hover:t-decoration-underline hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.4">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
     </div>
   
@@ -311,7 +309,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.3">Download</a></div>
+          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.4">Download</a></div>
           <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -331,14 +329,14 @@
     x-show="$store.docsNav.menu1open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Assessibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/introduction/">Introduction</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/responsive-design">Responsive design</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/element-grid">Element grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/css-variables">CSS variables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/improvements-since-codebase-4">Improvements since Codebase 4</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/1-getting-started/accessibility">Accessibility</a></li>
+    </menu>
   </div>  
 </div>
 
@@ -356,12 +354,12 @@
     x-show="$store.docsNav.menu2open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/block-elements">Block elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/inline-elements">Inline elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/form-elements">Form elements</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/2-classless-basics/media">Media</a></li>
+    </menu>
   </div>
 </div>
 
@@ -381,18 +379,18 @@
     x-show="$store.docsNav.menu3open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/containers">Containers</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/blocks">Blocks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/positions">Positions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/dimensions">Dimensions</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/flexbox">Flexbox</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/grid">Grid</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/aspect-ratios">Aspect ratios</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/floats">Floats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/overflows">Overflows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/3-layout-utilities/invisibility">Invisibility</a></li>
+    </menu>
   </div>
 </div>
 
@@ -410,16 +408,16 @@
     x-show="$store.docsNav.menu4open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/colors">Colors</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/glass">Glass</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/spacing">Spacing</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/borders">Borders</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/rounded-corners">Rounded corners</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/box-shadows">Box shadows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/images">Images</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/4-decoration-utilities/forms">Forms</a></li>
+    </menu>
   </div>
 </div>
 
@@ -437,14 +435,14 @@
     x-show="$store.docsNav.menu5open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/font-stacks">Font stacks</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/making-text-bigger">Making text bigger</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-alignment">Text alignment</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/inline-text">Inline text</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/list-formats">List formats</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/5-typographic-utilities/text-columns">Text columns</a></li>
+    </menu>
   </div>
 </div>
 
@@ -464,16 +462,17 @@
     x-show="$store.docsNav.menu6open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
-    </ul>
+    <menu class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/menus-and-menubars">Menus and menubars</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/heros">Heros</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/buttons">Buttons</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/badges">Badges</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/labels">Labels</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/tables">Tables</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/media-objects">Media objects</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/cards">Cards</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/6-simple-components/panel-links">Panel links</a></li>
+    </menu>
   </div>
 </div>
 
@@ -491,14 +490,14 @@
     x-show="$store.docsNav.menu7open"
     x-collapse.duration.300ms
   >
-    <ul class="list-style-type-none mt-1 flex flex-column gap-2">
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
-      <li><a class="block t-decoration-none hover:t-decoration-underline t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
+    <ul class="list-style-type-none links-underline-hover-only mt-1 flex flex-column gap-2">
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/collapse">Collapse</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/dropdowns">Dropdowns</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/modals">Modals</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/offcanvas">Offcanvas</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/tabs">Tabs</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/slideshows">Slideshows</a></li>
+      <li><a class="t-gray-700 hover:t-black" href="/codebase-5/docs/7-alpinejs-components/animations">Animations</a></li>
     </ul>
   </div>
 </div>
@@ -509,13 +508,13 @@
   </nav>
 
   <header id="docs-header" class="col-1 row-1 sm:col-2">
-    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center ">
-      <div class="h2 m-0">
+    <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
+      <div class="m-0">
         
         <div class="my-1 t-thin t-gray-800">AlpineJS components</div>
         
       </div>
-      <div class="t-display">
+      <div>
         <h1 class="h2 mt-0 t-bold t-balance">Animations</h1>    
       </div>
     </div>
@@ -541,6 +540,7 @@
 <li><a href="https://michalsnik.github.io/aos/">Animate on Scroll (AOS)</a> – a JavaScript/CSS library for triggering animations when you scroll down to them</li>
 </ul>
 <p>Also, “no code” website builders (such as <a href="https://webflow.com/">Webflow</a> and <a href="https://www.wix.com/">Wix</a>) have some element animation effects built in.</p>
+<p><strong>Note:</strong> with the new <a href="https://scroll-driven-animations.style/">scroll-driven animations</a> coming along, many of the animations that designers use these libraries for will have a browser-native way of achieving much the same thing. However, as of November 2024, only Chrome, Edge and other CHromium based browsers can do native scroll-driven animations (not Firefox and Safari). See <a href="https://caniuse.com/?search=animation-timeline">canIuse: animation-timeline</a>.</p>
 <p>Codebase animations can be used in components such as <a href="/codebase-5/docs/7-alpinejs-components/collapse">collapse</a>, <a href="/codebase-5/docs/7-alpinejs-components/dropdowns">dropdowns</a>, <a href="/codebase-5/docs/7-alpinejs-components/modals">modals</a>, and <a href="/codebase-5/docs/7-alpinejs-components/offcanvas">offcanvas</a> panels. They can also be used for adding visual interest to block elements on a homepage or landing page.</p>
 <h2 id="animation-trigger-events" tabindex="-1">Animation trigger events</h2>
 <p>Here are two options:</p>
@@ -553,6 +553,8 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-1"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -564,7 +566,7 @@
   </div>
 </div>
 </div>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = !activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keyup.escape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated &amp;&amp; 'translate-right-100%'<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Click me, and I will move.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> Click me again, and I will return to my original position.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = !activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keydown.enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = !activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name">@keyup.escape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = false<span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-1<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated &amp;&amp; 'translate-right-100%'<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Click me, and I will move.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> Click me again, and I will return to my original position.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="on-hover-(a.k.a.-mouseover)-is-not-recommended-for-animations" tabindex="-1">On hover (a.k.a. mouseover) is not recommended for animations</h3>
 <p>While it is also possible to animate <strong>on hover</strong> (a.k.a. on mouseover), it is not recommended in most situations because you also have to support touch screens. “On hover” behaves as a <em>tap plus focus</em> for touch screen devices, and tapping outside the “on hover” element will leave the focus on that element. This means that you would have to tap away a second time (or double tap) in order to remove the focus. But that will confuse your visitors.</p>
 <p>Instead, use “on click” because it is more intuitive. It behaves as your visitor would expect it to – and provides essentially the same experience whether using a touch screen or a pointing device (mouse or other).</p>
@@ -576,7 +578,7 @@
   x-intersect.enter="activated = true"
 >
   <div
-    id="panel-3"
+    id="panel-2"
     class="w-50% p-2 bg-green-200 transition-transform-600ms"
     x-show="activated"
     x-transition:enter="translate-right-100%"
@@ -586,12 +588,12 @@
 </div>
 </div>
 <p><em>The scroll animation above occurs once.</em> To see it happen again, refresh your browser.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-intersect:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = true<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-3<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-right-100%<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    When you scroll down to me, I move.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ activated: false }<span class="token punctuation">"</span></span><br>  <span class="token attr-name"><span class="token namespace">x-intersect:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated = true<span class="token punctuation">"</span></span><br><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-2<span class="token punctuation">"</span></span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-50% p-2 bg-green-200 transition-transform-600ms<span class="token punctuation">"</span></span><br>    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activated<span class="token punctuation">"</span></span><br>    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-right-100%<span class="token punctuation">"</span></span><br>  <span class="token punctuation">></span></span><br>    When you scroll down to me, I move.<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="animation-timing" tabindex="-1">Animation timing</h2>
 <p>Besides the three trigger events documented above, Cosebase also has seversl CSS built-in <code>transition</code> timings, that you can use to control faster or slower animations. Animation speeds are controlled in <em>milliseconds</em> (ms).</p>
 <ul>
-<li>Transition all:<br><code>transition-all-150ms</code> / <code>transition-all-300ms</code> / <code>transition-all-600ms</code> / <code>transition-all-900ms</code> / <code>transition-all-1200ms</code> / <code>transition-all-1500ms</code> / <code>transition-all-1800ms</code> / <code>transition-all-2400ms</code></li>
-<li>Transition CSS transforms only:<br><code>transition-transform-150ms</code> / <code>transition-transform-300ms</code> / <code>transition-transform-600ms</code> / <code>transition-transform-900ms</code> / <code>transition-transform-1200ms</code> / <code>transition-transform-1500ms</code> / <code>transition-transform-1800ms</code> / <code>transition-transform-2400ms</code></li>
+<li>Transition all: <code>transition-all-150ms</code> / <code>transition-all-300ms</code> / <code>transition-all-600ms</code> / <code>transition-all-900ms</code> / <code>transition-all-1200ms</code> / <code>transition-all-1500ms</code> / <code>transition-all-1800ms</code> / <code>transition-all-2400ms</code></li>
+<li>Transition CSS transforms only: <code>transition-transform-150ms</code> / <code>transition-transform-300ms</code> / <code>transition-transform-600ms</code> / <code>transition-transform-900ms</code> / <code>transition-transform-1200ms</code> / <code>transition-transform-1500ms</code> / <code>transition-transform-1800ms</code> / <code>transition-transform-2400ms</code></li>
 </ul>
 <p>You’ve seen <code>transition-transform-600ms</code> being used in the demo examples above.</p>
 <h2 id="animation-utilities" tabindex="-1">Animation utilities</h2>
@@ -604,6 +606,8 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-3"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -627,6 +631,8 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
     aria-controls="panel-4"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
@@ -649,10 +655,12 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-5"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-5"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'rotate-180'"
   >
@@ -664,8 +672,8 @@
 <h3 id="transform-origin" tabindex="-1">Transform origin</h3>
 <p>The transform origin of elements defalts to its center-middle. You can change that by adding one of the following <code>transform-origin-*</code> utilities:</p>
 <ul>
-<li>(Center or middle of) edges:<br><code>transform-origin-top</code> / <code>transform-origin-right</code> / <code>transform-origin-bottom</code>/ <code>transform-origin-left</code>/</li>
-<li>Corners:<br><code>transform-origin-top-right</code>/ <code>transform-origin-bottom-right</code> / <code>transform-origin-bottom-left</code> . <code>transform-origin-top-left</code></li>
+<li>(Center or middle of) edges: <code>transform-origin-top</code> / <code>transform-origin-right</code> / <code>transform-origin-bottom</code>/ <code>transform-origin-left</code>/</li>
+<li>Corners: <code>transform-origin-top-right</code>/ <code>transform-origin-bottom-right</code> / <code>transform-origin-bottom-left</code> . <code>transform-origin-top-left</code></li>
 </ul>
 <p>Example: <code>transform-origin-top</code> has been used on the <a href="/codebase-5/docs/7-alpinejs-components/dropdowns/#adding-a-panel-reveal-animation">dropdown</a> animation demo.</p>
 <h3 id="opacity" tabindex="-1">Opacity</h3>
@@ -678,10 +686,12 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-6"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-6"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-all-600ms"
     :class="activated && 'opacity-50%'"
   >
@@ -708,10 +718,12 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-7"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-7"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'flip-y'"
   >
@@ -724,10 +736,12 @@
 <div x-data="{ activated: false }">
   <div
     @click="activated = !activated"
-    aria-controls="panel-4"
+    tabindex="0"
+    @keydown.enter="activated = !activated"
+    aria-controls="panel-8"
     :aria-expanded="activated"
     @keyup.escape="activated = false"
-    id="panel-4"
+    id="panel-8"
     class="w-50% p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
     :class="activated && 'flip-y backface-hidden'"
   >
@@ -753,10 +767,12 @@
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-9"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-9"
       class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
       :class="activated ? 'fade-out opacity-0' : 'fade-in opacity-100%'"
     >
@@ -774,10 +790,12 @@
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-10"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-10"
       class="p-2 t-bold t-white bg-blue-600 transition-transform-600ms"
       :class="activated ? 'scale-out scale-75%' : 'scale-in scale-100%'"
     >
@@ -797,10 +815,12 @@
   <div class="w-50% b-dashed b-black">
     <div
       @click="activated = !activated"
-      aria-controls="panel-4"
+      tabindex="0"
+      @keydown.enter="activated = !activated"
+      aria-controls="panel-11"
       :aria-expanded="activated"
       @keyup.escape="activated = false"
-      id="panel-4"
+      id="panel-11"
       class="p-2 t-bold t-white transition-all-600ms"
       :class="activated ? 't-black bg-white' : 't-white bg-black'"
     >
@@ -886,13 +906,13 @@
     <button
       class="btn-primary"
       @click="activated = true"
-      aria-controls="panel-5"
+      aria-controls="panel-12"
       :aria-expanded="activated"
     >Activate</button>
     <button
       class="btn-secondary"
       @click="activated = false"
-      aria-controls="panel-5"
+      aria-controls="panel-12"
       :aria-expanded="activated"
       @keyup.escape="activated = true"
     >Reset</button>
@@ -993,12 +1013,12 @@
   <footer class="col-1 sm:col-2">
     <div class="container-sm py-6">
       <hr>
-      <ul class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto">
+      <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         
-        <li class="pr-2"><a class="inline-block py-1 t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/7-alpinejs-components/slideshows">❮ Slideshows</a></li>
+        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="/codebase-5/docs/7-alpinejs-components/slideshows">❮ Slideshows</a></li>
         
           
-      </ul>
+      </nav>
     </div>
   </footer>
 
@@ -1006,25 +1026,25 @@
 
 <footer class="relative py-3 bg-gray-900 t-center t-gray-400">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="/codebase-5/">
+    <a id="site-footer-title" class="h3 inline-block t-decoration-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
-        <!-- Codebase logo-->
+        <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
         <span class="inline-block mt-2 t-loose t-semibold">
-          Codebase
+          Codebase CSS
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.3</div>
+  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.4</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (94 KB)</div>
+    <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> (96 KB)</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-  </div>
+    <div>Dev: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  </menu>
 
 </footer>
 

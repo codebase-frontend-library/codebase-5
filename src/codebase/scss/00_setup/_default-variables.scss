@@ -18,6 +18,7 @@
 // (1.) Toggles ////////////////////////////////////////////////////////////////
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+$font-size-bump: true !default;
 $link-color-visited: false !default;
 $form-input-background-color: false !default;
 $form-input-rounded-corners: true !default;
@@ -64,7 +65,7 @@ $ui-color: (
 
 // These colors are used for UI elements, and they are used for the color utilities, at the `-600` shade level.
 
-$shade: (
+$lightness: (
   "100": white 90%,
   "200": white 72%,
   "300": white 54%,
@@ -182,13 +183,13 @@ $mq-width: (
   // Theme colors
   --blue: #1262ed;
   --green: #128a12;
-  --amber: #f0b300;
+  --amber: #e6de00;
   --red: #cf000f;
   --purple: #9400d3;
   --teal: #0080A2;
   --gray: #767676;
 
-  // UI colors -- equate to the -600 shade of each named color (see the $shade() map)
+  // UI colors -- equate to the -600 shade of each named color (see the $lightness() map)
   --c-info: var(--blue);
   --c-success: var(--green);
   --c-warning: var(--amber);
@@ -197,21 +198,21 @@ $mq-width: (
   --c-secondary: var(--teal);
   --c-tertiary: var(--gray);
 
-  // UI colors on :hover -- equate to the -700 shade of each named color (see the $shade() map)
-  --c-warning-hover: color-mix(in OKLAB, var(--c-warning), black 18%);
-  --c-danger-hover: color-mix(in OKLAB, var(--c-danger), black 18%);
-  --c-success-hover: color-mix(in OKLAB, var(--c-success), black 18%);
-  --c-info-hover: color-mix(in OKLAB, var(--c-info), black 18%);
-  --c-primary-hover: color-mix(in OKLAB, var(--c-primary), black 18%);
-  --c-secondary-hover: color-mix(in OKLAB, var(--c-secondary), black 18%);
-  --c-tertiary-hover: color-mix(in OKLAB, var(--c-tertiary), black 18%);
+  // UI colors on :hover -- equate to the -700 shade of each named color (see the $lightness() map)
+  --c-warning-hover: color-mix(in OKLCH, var(--c-warning), black 18%);
+  --c-danger-hover: color-mix(in OKLCH, var(--c-danger), black 18%);
+  --c-success-hover: color-mix(in OKLCH, var(--c-success), black 18%);
+  --c-info-hover: color-mix(in OKLCH, var(--c-info), black 18%);
+  --c-primary-hover: color-mix(in OKLCH, var(--c-primary), black 18%);
+  --c-secondary-hover: color-mix(in OKLCH, var(--c-secondary), black 18%);
+  --c-tertiary-hover: color-mix(in OKLCH, var(--c-tertiary), black 18%);
 
   // Color shades variables generator
   @each $key,
   $val in $theme-color {
     @each $key2,
-    $val2 in $shade {
-      --#{$key}-#{$key2}: color-mix(in OKLAB, #{$val}, #{$val2});
+    $val2 in $lightness {
+      --#{$key}-#{$key2}: color-mix(in OKLCH, #{$val}, #{$val2});
     }
   }
 
@@ -221,7 +222,6 @@ $mq-width: (
   --c-detail: rgba(0,0,0,0.15);
   --c-default: var(--gray-600);
   --c-text: var(--gray-900);
-  --c-form-focus: var(--blue-300);
   --c-link: var(--blue-600);
   --c-link-hover: var(--blue-800);
   --c-link-visited: var(--purple-700);
@@ -246,8 +246,13 @@ $mq-width: (
   --glass-4: saturate(1.8) blur(13px);
   --glass-5: saturate(1.8) blur(19px);
 
-  // State transition (used on form focus, button hover, link hover, and color utility hover)
+  // State transition (used on button hover, link hover, and color utility hover)
   --ease: all 0.15s ease-in-out;
+
+  // Link underlines
+  --link-underline: 1px;
+  --link-underline-hover: 2px;
+  --link-underline-offset: 0.25em;
 
   // Width variables generator
   @each $name,
@@ -299,14 +304,14 @@ $mq-width: (
   --form-p-sm: 0.25rem 0.5rem; // padding
   --form-p: .5rem;
   --form-p-lg: .75rem;
-  --form-focus: 0.1875rem;
   --btn: 600;
   --btn-p-sm: .25rem .75rem;
   --btn-p: .5rem 1rem;
   --btn-p-lg: .75rem 1.75rem;
 
   // Text
-  --t-fs: 100%;
+  --t-fs: 100%; // usually 16px
+  --t-fs-bump: 112.5%; // usually 18px
   --t-base-lh: 1.5; // line-height
   --t-base-mb: 1rem; // margin-bottom (2 element grid units)
   --t-thin: 200;
@@ -318,7 +323,7 @@ $mq-width: (
   --t-cols-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   --t-cols: 17.5em;
   --t-sm: .875em;
-  --t-lg: 1.25em;
+  --t-lg: 1.325em;
   --t-display: clamp(1.25em, 0.75em + 1.5625vw, 2em);
   --t-long-read: clamp(1em, 0.8333em + 0.5208vw, 1.25em);
   --bq-fs: var(--t-fs); // blockquote

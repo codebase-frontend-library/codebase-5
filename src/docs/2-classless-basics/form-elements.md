@@ -211,11 +211,25 @@ These fields are not full-width, but whatever the visitor’s browser sets.
 
 This is what a Codebase default (classless) button looks like:
 
-<button type="submit">Button</button> – button, i.e. `<button>`
+<button type="button">Button</button> – button, i.e. `<button>`
 
 ```html
-<button type="submit">Button</button>
+<button type="button">Button</button>
 ```
+
+**Note:** If you use a `<button>` outside of a `<form>` (e.g. as a control for a navigation dropdown), it will have no `:focus` incicator ring (the ring wil show only for `:focus-visible`). But if you use a `<button>` as part of a form, it will get a `:focus` ring.
+
+```html
+<button type="button">Button</button>
+
+<!-- A button in a form -->
+<form>
+  ...
+  <button type="Submit">Submit</button>
+</form>
+```
+
+`<input>` buttons always get a `:focus` ring.
 
 <p>
   <input value="Click me" type="button">

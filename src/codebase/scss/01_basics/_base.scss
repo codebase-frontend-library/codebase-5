@@ -17,7 +17,7 @@
 }
 
 body {
-  min-height: 100%;
+  min-height: 100dvh;
   scroll-behavior: smooth;
   margin: 0;
   font-family: var(--font-base);
@@ -31,6 +31,14 @@ body {
   background-color: var(--c-page-bg);
 }
 
+@if $font-size-bump == true {
+  @include break-min(w-sm) {
+    body {
+      font-size: var(--t-fs-bump);
+    }
+  }
+}
+
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
@@ -38,7 +46,7 @@ body {
 
 abbr[title] {
   text-decoration: underline dotted;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 b,
@@ -64,17 +72,6 @@ sup {
 
 :-moz-ui-invalid {
   box-shadow: none;
-}
-
-input:focus,
-form button:focus,
-:focus-visible {
-  // https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-link-focus
-  outline: auto 2px Highlight;
-  outline: auto 5px -webkit-focus-ring-color;
-  // Codebase extras
-  outline-offset: 3px;
-  z-index: 1;
 }
 
 small {

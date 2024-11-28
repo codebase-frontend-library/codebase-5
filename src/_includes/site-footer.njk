@@ -1,23 +1,23 @@
 <footer class="relative py-3 bg-gray-900 t-center t-gray-400">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 t-decoration-none t-white hover:t-white" href="{{ '/' | url }}">
+    <a id="site-footer-title" class="h3 inline-block t-decoration-none t-white hover:t-white" href="{{ '/' | url }}">
       <span class="inline-flex flex-column flex-middle flex-center">
-        <!-- Codebase logo-->
+        <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
         <span class="inline-block mt-2 t-loose t-semibold">
-          Codebase
+          Codebase CSS
         </span>
       </span>
     </a>
   </p>
 
-  <div class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
     <div>Version: {{ metadata.version }}</div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
     <div><a class="t-gray-200 hover:t-white" href="/codebase-5/dist/codebase.css">CSS (minified)</a> ({{ metadata.css_filesize }})</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
-    <div>Developer: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
-  </div>
+    <div>Dev: <a class="t-gray-200 hover:t-white" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
+  </menu>
 
 </footer>

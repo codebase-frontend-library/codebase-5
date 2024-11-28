@@ -376,7 +376,7 @@
         <tspan x="-69.859" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">• Text alignments (right, center and left)</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 561.737, 1797.4)">
-        <tspan x="-136.334" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">The utility classes for `t-long-read` text are also responsive to viewport width.</tspan>
+        <tspan x="-136.334" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">The utility classes for `t-long-read` and `t-display` text are also responsive to viewport width.</tspan>
       </text>
       <text transform="matrix(2.2, 0, 0, 2.2, 624.396, 1817.2)">
         <tspan x="-164.814" y="2" font-family="Arial, sans-serif" font-size="8" fill="#363636">But these cannot be represented in the scheme above because they involve a CSS `clamp()`</tspan>

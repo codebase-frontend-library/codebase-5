@@ -3,18 +3,6 @@
 
 @use "../00_setup/default-variables" as *;
 
-// From: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
-.visually-hidden:not(:focus):not(:active),
-.screen-reader-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-}
-
 .hidden { // all viewports
   display: none;
 }
