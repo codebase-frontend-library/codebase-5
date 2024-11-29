@@ -91,9 +91,6 @@ a.t-link-inside:hover .t-link {
 // https://design-system.service.gov.uk/get-started/focus-states/
 
 a:not(.panel-link):not(.t-link-inside):focus-visible {
-// a.panel-link:focus-visible .panel-link-title,
-// a.t-link-inside:focus-visible .t-link {
-//a:focus-visible {
   outline: none;
   color: black !important; // to override utility class text color
   text-decoration: underline;
