@@ -199,20 +199,20 @@ $mq-width: (
   --c-tertiary: var(--gray);
 
   // UI colors on :hover -- equate to the -700 shade of each named color (see the $lightness() map)
-  --c-warning-hover: color-mix(in OKLCH, var(--c-warning), black 18%);
-  --c-danger-hover: color-mix(in OKLCH, var(--c-danger), black 18%);
-  --c-success-hover: color-mix(in OKLCH, var(--c-success), black 18%);
-  --c-info-hover: color-mix(in OKLCH, var(--c-info), black 18%);
-  --c-primary-hover: color-mix(in OKLCH, var(--c-primary), black 18%);
-  --c-secondary-hover: color-mix(in OKLCH, var(--c-secondary), black 18%);
-  --c-tertiary-hover: color-mix(in OKLCH, var(--c-tertiary), black 18%);
+  --c-warning-hover: color-mix(in OKLAB, var(--c-warning), black 18%);
+  --c-danger-hover: color-mix(in OKLAB, var(--c-danger), black 18%);
+  --c-success-hover: color-mix(in OKLAB, var(--c-success), black 18%);
+  --c-info-hover: color-mix(in OKLAB, var(--c-info), black 18%);
+  --c-primary-hover: color-mix(in OKLAB, var(--c-primary), black 18%);
+  --c-secondary-hover: color-mix(in OKLAB, var(--c-secondary), black 18%);
+  --c-tertiary-hover: color-mix(in OKLAB, var(--c-tertiary), black 18%);
 
   // Color shades variables generator
   @each $key,
   $val in $theme-color {
     @each $key2,
     $val2 in $lightness {
-      --#{$key}-#{$key2}: color-mix(in OKLCH, #{$val}, #{$val2});
+      --#{$key}-#{$key2}: color-mix(in OKLAB, #{$val}, #{$val2});
     }
   }
 

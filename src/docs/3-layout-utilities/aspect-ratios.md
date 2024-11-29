@@ -17,21 +17,6 @@ Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio 
 
 <div class="mb-2 flex flex-grow-equal flex-wrap gap-1">
   <div>
-    <div class="aspect-ratio-9x16 b-thin bg-gray-100">
-      9×16
-    </div>
-  </div>
-  <div>
-    <div class="aspect-ratio-5x7 b-thin bg-gray-100">
-      5×7
-    </div>
-  </div>
-  <div>
-    <div class="aspect-ratio-7x5 b-thin bg-gray-100">
-      7×5
-    </div>
-  </div>
-  <div>
     <div class="aspect-ratio-16x9 b-thin bg-gray-100">
       16×9
     </div>
@@ -54,12 +39,6 @@ Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio 
 </div>
 
 ```html
-<div class="aspect-ratio-9x16"> ... </div>
-
-<div class="aspect-ratio-5x7"> ... </div>
-
-<div class="aspect-ratio-7x5"> ... </div>
-
 <div class="aspect-ratio-16x9"> ... </div>
 
 <div class="aspect-ratio-21x9"> ... </div>
@@ -69,9 +48,9 @@ Codebase 5’s `aspect-ratio` classes maintain a block wrapper’s aspect ratio 
 <div class="aspect-ratio-32x9"> ... </div>
 ```
 
-**Note:** `aspect-ratio-24×9` and `aspect-ratio-32×9` have been included in Codebase, although these are not common image or video aspect ratios, becausethey are useful for _full-width hero components_ where you want your top menubar _plus_ the hero _plus_ a teaser of your subsequent content to be on display on a laptop screen (laptops, display monitors, and HDTVs often have screen sizes of 16x9 or 21×9 aspect ratio).
+**Note:** Laptops, display monitors, and HDTVs often have screen sizes of 16x9 or 21×9 aspect ratio. Additionaly, `aspect-ratio-24×9` and `aspect-ratio-32×9` have been included in Codebase because they are useful for _full-width hero components_ where you want your top menubar _plus_ the hero _plus_ a teaser of your subsequent content to be on display on a laptop screen.
 
-Besides the “all viewports” examples above, since Codebase v.5.2.6 there are media query tiered variants of the image/video tile aspect ratio classes: `xs:`, `sm:`, `md:`, and `lg:`.
+Besides the “all viewports” examples above, there are media query tiered variants of the image/video tile aspect ratio classes: `xs:`, `sm:`, `md:`, and `lg:`.
 
 These variants have been provided primarily for images and components using a background image, where you might want different aspect ratios at different media query breakpoint widths. E.g. now you can have an `img-cover` image panel (such as a hero component) as a square (`aspect-ratio-1x1`) on phones and as a landscape (`aspect-ratio-16x9`) on wide screens.
 

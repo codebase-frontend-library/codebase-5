@@ -57,88 +57,88 @@ Toggle the panel background color (white or black):
         <div><code>900</code></div>
       </div>
       <p class="my-1"><code>bg-amber-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-amber-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-amber-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-amber-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-red-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-red-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-red-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-red-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-green-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-green-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-green-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-green-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-blue-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-blue-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-blue-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-blue-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-purple-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-purple-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-purple-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-purple-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-teal-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-teal-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-teal-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-teal-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal-900 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-gray-</code></p>
-      <div class="flex flex-grow-equal">
-        <div class="mr-1 rounded bg-gray-100 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-200 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-300 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-400 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-500 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-600 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-700 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-800 aspect-ratio-1x1"></div>
-        <div class="mr-1 rounded bg-gray-900 aspect-ratio-1x1"></div>
+      <div class="flex flex-grow-equal gap-1">
+        <div class="rounded bg-gray-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray-900 aspect-ratio-1x1"></div>
       </div>
     </div>
   </div>
@@ -150,13 +150,15 @@ That makes 378 color utilities. Plus there are several extras below.
 
 The color shades are generated by nested `@each` loops in `codebase/scss/03_utilities/_colors.scss`, that follow the Sass map in `codebase/scss/00_setup/_default-variables.scss`.
 
-Since Codebase v.5.3.4, the shades are generated using some new CSS features: the `color-mix()` function and the OKLCH color space. OKLCH is the cylindrical counterpart of the OKLAB color space.
+Since Codebase v.5.3.4, the shades are generated using some new CSS features: the `color-mix()` function and the OKLAB color space.
 
-* Information on [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) at Mozilla Developer Network.
+* Information on [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) at Mozilla Developer Network
 * Wikepedia article on the [OKLAB](https://en.wikipedia.org/wiki/Oklab_color_space)
 * [Interview With Björn Ottosson, creator of the OKLAB color space](https://www.smashingmagazine.com/2024/10/interview-bjorn-ottosson-creator-oklab-color-space/) on Smashing Magazine.
-* [OK, OKLCH 👑](https://chriscoyier.net/2023/01/22/ok-oklch-%F0%9F%91%91/) by Chris Coyer
-* [CanIuse OKLCH](https://caniuse.com/?search=oklch)
+* [An interactive review of Oklab](https://raphlinus.github.io/color/2021/01/18/oklab-critique.html), by Ralph Levien
+* [CanIuse: OKLAB color model](https://caniuse.com/mdn-css_types_color_oklab)
+
+(The OKLCH color space was also explored, but I found problems with the `color-mix()` lighter shades. This especially affected the generated light greens, that turned out orange.)
 
 The Codebase color swatches generator picks the theme colors, and then mixes in white or black to generate the shades.
 

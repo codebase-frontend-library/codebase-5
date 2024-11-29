@@ -7,7 +7,7 @@ Designed for static site generators and content management systems, Codebase is 
 Plus, Codebase pairs well with [AlpineJS](https://alpinejs.dev).
 
 * New in v.5.3.4: focus state styling based on that of the NHS.uk and GOV.UK design systems
-* New in v.5.3: CSS `color-mix(in OKLCH ...)` functions.
+* New in v.5.3: CSS `color-mix(in OKLAB ...)` functions.
 * New in v.5.2: CSS `var()` custom properties.
 
 ***

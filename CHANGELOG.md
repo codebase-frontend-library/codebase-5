@@ -5,7 +5,7 @@
 ## 28 Nov 2024 v.5.3.4
 
 * Font size bump 112.5% (default 18px) for 768px up.
-* Color variable outputs changed to the OKLCH color space.
+* Color variable outputs changed to the OKLAB color space. (Tried the OKLCH color space, but this  distorted the lightness levels, especially of the lighter greens coming out as orange.)
 * Accessibility: focus state styling now based on that of the design systems of the NHS.co.uk and GOV.UK.
 * Improved `t-link-inside` and renamed as `panel-link` (old name is still present for backgards compatability).
 * Improved link variations: `t-no-underline` / `t-underline-hover-only`
