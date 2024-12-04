@@ -52,8 +52,8 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download</a></div>
-          <div><a class="block py-1 t-decoration-none hover:t-decoration-underline t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
+          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download</a></div>
+          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
         {% include "site-side-nav.njk" %}
@@ -108,10 +108,10 @@
       <hr>
       <nav class="list-style-type-none mb-0 pl-0 flex flex-wrap flex-grow-auto col-gap-4">
         {% if prevPage %}
-        <li class="py-1"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-left" href="{{ prevPage | url }}">❮ {{ prevLink if prevLink else "Previous page" }}</a></li>
+        <li class="py-1"><a class="inline-block t-underline-hover-only t-gray-900 hover:t-black float-left" href="{{ prevPage | url }}">❮ {{ prevLink if prevLink else "Previous page" }}</a></li>
         {% endif %}
         {% if nextPage %}
-        <li class="py-1 t-right"><a class="inline-block t-decoration-none t-gray-900 hover:t-black float-right" href="{{ nextPage | url }}">{{ nextLink if nextLink else "Next page" }} ❯</a></li>
+        <li class="py-1 t-right"><a class="inline-block t-underline-hover-only t-gray-900 hover:t-black float-right" href="{{ nextPage | url }}">{{ nextLink if nextLink else "Next page" }} ❯</a></li>
         {% endif %}  
       </nav>
     </div>
