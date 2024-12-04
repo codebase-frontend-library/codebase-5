@@ -131,12 +131,14 @@ These fields are not full-width, but whatever the visitor’s browser sets.
 
 ### Single selects
 
+<div>
 <label for="single-select-example">Single select:</label>
 <select id="single-select-example" name="examplename">
   <option value="first">First option </option>
   <option value="second">Second option </option>
   <option value="third">Third option</option>
 </select>
+</div>
 
 ```html
 <label for="single-select-example">Single select:</label>
@@ -149,12 +151,14 @@ These fields are not full-width, but whatever the visitor’s browser sets.
 
 ### Multi selects
 
+<div>
 <label for="multi-select-example">Multi select:</label>
 <select id="multi-select-example" name="examplename" multiple size="3">
   <option value="first">First option </option>
   <option value="second">Second option </option>
   <option value="third">Third option</option>
 </select>
+</div>
 
 ```html
 <label for="multi-select-example">Multi-select:</label>
