@@ -9,11 +9,10 @@
   border-collapse: collapse;
   border-spacing: 0;
 
-  &:not(&.table-borderless) {
-
+  &:not(.table-borderless, .table-lined) {
     th,
     td {
-      border: var(--line-detail);
+      border: var(--line);
     }
   }
 
@@ -27,8 +26,14 @@
 
 // Table variations
 .table {
+  &-lined {
+    border-top: var(--line);
+    border-bottom: var(--line);
+    tbody tr {
+      border-top: var(--line);
+    }
+  }
   &-compact {
-
     th,
     td {
       padding: 0.25rem 0.5rem;
@@ -40,7 +45,6 @@
   }
 
   &-striped {
-
     thead,
     tbody tr:nth-child(even) {
       background-color: rgba(255, 255, 255, 0.05);

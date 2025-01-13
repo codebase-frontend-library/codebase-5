@@ -5,7 +5,7 @@
 @use "sass:math";
 
 fieldset {
-  border: var(--line-detail);
+  border: var(--line);
 }
 
 label,
@@ -24,7 +24,7 @@ textarea,
 select {
   width: 100%;
   min-height: var(--form-size);
-  border: var(--line-detail);
+  border: var(--line);
   padding: var(--form-p);
   font-family: var(--form-font);
   font-size: 1rem;
@@ -110,7 +110,7 @@ textarea.form-element-sm {
   justify-content: center;
   align-items: center;
   margin: 0;
-  border: var(--line-detail);
+  border: var(--line);
 
   @if $form-input-rounded-corners ==true {
     --rad: var(--rad-sm);

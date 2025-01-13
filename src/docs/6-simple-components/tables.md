@@ -123,6 +123,40 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
   </tbody>
 </table>
 
+`table-lined` – top and bottom border around table; top border on table rows (within the `tbody`)
+
+<table class="table table-lined">
+  <thead>
+    <tr>
+      <th>Table Header 1</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1.1</td>
+      <td>Table content 2.1</td>
+      <td>Table content 3.1</td>
+    </tr>
+    <tr>
+      <td>Table content 1.2</td>
+      <td>Table content 2.2</td>
+      <td>Table content 3.2</td>
+    </tr>
+    <tr>
+      <td>Table content 1.3</td>
+      <td>Table content 2.3</td>
+      <td>Table content 3.3</td>
+    </tr>
+    <tr>
+      <td>Table content 1.4</td>
+      <td>Table content 2.4</td>
+      <td>Table content 3.4</td>
+    </tr>
+  </tbody>
+</table>
+
 `table-compact` – less padding
 
 <table class="table table-compact">
@@ -230,12 +264,12 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
 You can combine table styles. For example:
 
 ```html
-<table class="table table-borderless table-compact table-striped">
+<table class="table table-lined table-compact table-striped">
   ...
 </table>
 ```
 
-<table class="table table-borderless table-compact table-striped">
+<table class="table table-lined table-compact table-striped">
   <thead>
     <tr>
       <th>Table Header 1</th>

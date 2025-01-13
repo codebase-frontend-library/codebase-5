@@ -269,11 +269,11 @@ $mq-width: (
   --sp-cell: 0.5rem 1rem;
 
   // Borders
-  --b-thin: 1px; // used by b-thin, b-dashed, and --line-detail (hr, .table, form inputs, etc.)
+  --b-thin: 1px; // used by b-thin, b-dashed, and --line (hr, .table, form inputs, etc.)
   --b-thick: 4px; // used by b-thick
   --b-heavy: 8px; // used by b-heavy
 
-  --line-detail: var(--b-thin) solid var(--c-detail); // used on hr, table cell borders, inputs, classic tabs.
+  --line: var(--b-thin) solid var(--c-detail); // used on hr, table cell borders, inputs, classic tabs.
 
   // Border radius for rounded corners
   --rad-sm: .25rem; // 4px default

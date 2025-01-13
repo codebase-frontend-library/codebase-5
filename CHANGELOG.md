@@ -2,7 +2,12 @@
 
 <!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
 
-## 28 Nov 2024 v.5.3.4
+## 28 Nov 2025 -- v.5.3.5
+
+* Added table modifier class `--t-lined`
+* Variable `--line-detail` renamed as `--line` throughout.
+
+## 28 Nov 2024 -- v.5.3.4
 
 * Font size bump 112.5% (default 18px) for 768px up.
 * Color variable outputs changed to the OKLAB color space. (Tried the OKLCH color space, but this  distorted the lightness levels, especially of the lighter greens coming out as orange.)
