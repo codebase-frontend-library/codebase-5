@@ -11,7 +11,7 @@ nextLink: "Block elements"
 Numerous accessibility considerations have been factored into Codebase 5. These are, in summary:
 
 1. Default font size is 100% (usually defaults to 16px), bumping up to 112.5% (18px) for `sm` viewports up (see [responsive design]({{ "/docs/1-getting-started/responsive-design/" | url }})).
-2. Accessible UI colors
+2. Accessible user interface (UI) colors
 3. Link underine becomes thicker on hover, making the hover state more obvious
 4. `:focus` ring styling for form elements and buttons
 5. `:focus-visible` styling for links
@@ -23,7 +23,7 @@ The 100% font size defaults to 16px in most web browsers. Various guidelines rec
 
 The advantage of _not setting a default font size in px_ is that it allows your website to be scaled to the _user’s_ preferred default font size – some people with sight impairments may increase their default font size in their browser settings. You don’t want to prevent that from happening by setting your font size in px.
 
-From there, all typography sizes and spacing sizes (margins, paddings, and gaps) in Codebase are set in rems or ems -- making them dependant on the root font size.
+From there, all typography sizes and spacing sizes (margins, paddings, and gaps) in Codebase are set in rems or ems – making them dependant on the root font size.
 
 ```scss
 // In: 00_setup/_default-variables.scss
@@ -117,9 +117,9 @@ Notes on focus states in Codebase:
 </form>
 ```
 
-2. If a scrollable element has overflowing content, then it will recieve `:focus-visible` when tabbing &mdash; except that are using the Safari browser can't tab onto e.g. overflowing `<pre>` elements, or overflowing elements with the Codebase `overflow-x` or `overflow-y` class.
+2. If a scrollable element has overflowing content, then it will recieve `:focus-visible` when tabbing &mdash; except that are using the Safari browser can’t tab onto e.g. overflowing `<pre>` elements, or overflowing elements with the Codebase `overflow-x` or `overflow-y` class.
 3. Images within Links (i.e. `a img`) will become slightly transparent (using an opacity filter) when the link has recieved `:focus-visible`, allowing the amber background to show though. See [media: linked images]({{ "/docs/2-classless-basics/media/#linked-images" | url }})
-4. Codebase also has [panel links]({{ "/docs/6-simple-components/panel-links/" | url }}) &mdash; these are simply links where you want only _some_ of the text to look like a link (e.g. maybe you have an explainer in smaller text on a big button; maybe you have a feature panel where you want the whole thing wrapped in an `<a href="">` (link), but only the title to be styled as a link (with an underscore etc.)). For these, when the panel recieves `:focus-visible`, only the panel link title text becomes black and recieves the thick black underline, while  the other text becomes a dark amber color (so that the user's attention goes to the link title), while the whole panel gets the amber background `:focus-visible` panel gets the amber background. And if there's an image in your panel link, then it will get the opacity filter effect too.
+4. Codebase also has [panel links]({{ "/docs/6-simple-components/panel-links/" | url }}) &mdash; these are simply links where you want only _some_ of the text to look like a link (e.g. maybe you have an explainer in smaller text on a big button; maybe you have a feature panel where you want the whole thing wrapped in an `<a href="">` (link), but only the title to be styled as a link (with an underscore etc.)). For these, when the panel recieves `:focus-visible`, only the panel link title text becomes black and recieves the thick black underline, while  the other text becomes a dark amber color (so that the user's attention goes to the link title), while the whole panel gets the amber background `:focus-visible` panel gets the amber background. And if there’s an image in your panel link, then it will get the opacity filter effect too.
 
 ## AlpineJS powered components
 

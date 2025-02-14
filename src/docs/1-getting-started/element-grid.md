@@ -19,7 +19,6 @@ This is similar in principle to various 8px grids out there (also known as 8-poi
 In Codebase, one element grid unit = 0.5rem = 8px (default).
 </p>
 
-
 ## How the element grid is used
 
 The Codebase element grid has been deployed a follows:
@@ -65,32 +64,39 @@ The element grid has been used throughout Codebase’s classless (basic) styling
   <thead>
     <tr>
       <th>Element grid measure</th>
+      <th>CSS variable</th>
       <th>Utility class suffix</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>0.5rem</code></td>
+      <td><code>--sp-1</code></td>
       <td><code>-1</code></td>
     </tr>
     <tr>
       <td><code>1rem</code></td>
+      <td><code>--sp-2</code></td>
       <td><code>-2</code></td>
     </tr>
     <tr>
       <td><code>1.5rem</code> = 1 line height</td>
+      <td><code>--sp-3</code></td>
       <td><code>-3</code></td>
     </tr>
     <tr>
       <td><code>2rem</code></td>
+      <td><code>--sp-4</code></td>
       <td><code>-4</code></td>
     </tr>
     <tr>
       <td><code>2.5rem</code></td>
+      <td><code>--sp-5</code></td>
       <td><code>-5</code></td>
     </tr>
     <tr>
       <td><code>3rem</code> = 2 lines</td>
+      <td><code>--sp-6</code></td>
       <td><code>-6</code></td>
     </tr>
   </tbody>

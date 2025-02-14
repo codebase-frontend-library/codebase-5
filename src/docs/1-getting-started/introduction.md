@@ -26,7 +26,7 @@ dist/
 
 ## Simple HTML setup
 
-1. [Download the CSS]({{ '/dist/codebase.css' | url }}) (alternatively, get the entire `dist/`) and place it in your project.
+1. [Download the CSS]({{ '/dist/codebase.css' | url }}) and place it in your project.
 2. Create your first HTML page – e.g. copying the starter example below.
 3. Link to `codebase.css` and `alpine.js` in the HTML `<head>`:
 
@@ -79,7 +79,7 @@ There are two occasions when Codebase adds some bespoke component CSS classes:
 
 #### Simple components
 
-Here are some simple components that you can build using Codebase (I’m calling a component “simple” if it requires only CSS and no JavaScript for functionality):
+Here are some simple component examples that you can build using Codebase (I’m calling a component “simple” if it requires only CSS and no JavaScript for functionality):
 
 * [Menus and menubars]({{ '/docs/6-simple-components/menus-and-menubars' | url }})
 * [Heros]({{ '/docs/6-simple-components/heros' | url }})
@@ -93,7 +93,7 @@ Here are some simple components that you can build using Codebase (I’m calling
 
 #### Components using AlpineJS
 
-Codebase pairs well with [AlpineJS](https://alpinejs.dev/). The Codebase components examples in these docs have been re-factored to use Alpine v3.
+Codebase pairs well with [AlpineJS](https://alpinejs.dev/). The Codebase-plus-AlpineJS component examples in these docs have been re-factored to use Alpine v3.
 
 **Notes:**
 
@@ -120,7 +120,7 @@ Available in the repository are all the Codebase [SCSS files](https://github.com
 
 **Notes:**
 
-1. Codebase uses [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }})**, not Sass variables.
+1. Codebase uses [CSS variables]({{ '/docs/1-getting-started/css-variables/' | url }}), not Sass variables.
 2. _PostCSS_ and its associated dependencies have not been used. So there are no generated vendor prefixes (for supporting pre ~2018 browsers). In the few places where vendor prefixes are still required (in the body tag, and in the glassmorphic overlays), I have added them manually. CSS minification is done thorugh `--style compact` on the _Sass_ package (not CSS Nano).
 3. Internet Explorer is not supported.
 
