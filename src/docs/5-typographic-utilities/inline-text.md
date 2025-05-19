@@ -45,6 +45,12 @@ Codebase has several simple text utility classes. (See also [font-stacks]({{ '/d
 
     <span class="t-italic">Italic text</span> (same as `<i>` and `<em>`)
 
+## Text underlines
+
+In addition to the `<u>` underline HTML tag, there's also the `t-underline` utility class.
+
+**Note:** These do not have the same style or functionality of the [link](#links) tag, that traditionally has an underline (when used within content prose).
+
 ## Text sizes
 
 * `t-sm` (alias: the `<small>` HTML tag)
@@ -73,17 +79,17 @@ Links get an underline by default. But there are situations where you may not wa
 
 For single links:
 
-* `t-no-underline` &mdash; <a class="t-no-underline" href="">a link with no underline</a>
+* `t-underline-none` &mdash; <a class="t-underline-none" href="">a link with no underline</a>
 * `t-underline-hover-only` &mdash; <a class="t-underline-hover-only" href="">a link with underline only on hover</a>
 
 Similar to the above, but for groups of links (use one of these on a `<nav>` or `<menu>` wrapper):
 
-* `links-no-underline`
+* `links-underline-none`
 * `links-underline-hover-only`
 
-Example using `links-no-underline`:
+Example using `links-underline-none`:
 
-<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline">
+<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-underline-none">
   <menuitem><a href="">Menu item 1</a></menuitem>
   <menuitem><a href="">Menu item 2</a></menuitem>
   <menuitem><a href="">Menu item 3</a></menuitem>
@@ -91,7 +97,7 @@ Example using `links-no-underline`:
 </menu>
 
 ```html
-<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline">
+<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-underline-none">
   <menuitem><a href="">Menu item 1</a></menuitem>
   <menuitem><a href="">Menu item 2</a></menuitem>
   <menuitem><a href="">Menu item 3</a></menuitem>

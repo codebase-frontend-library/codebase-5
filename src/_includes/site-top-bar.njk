@@ -84,7 +84,7 @@
     <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-underline-none t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="{{ '/' | url }}"
         tabindex="1"
@@ -98,7 +98,7 @@
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-underline-none">
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="{{ '/dist/codebase.css' | url }}{{ '?v=' + metadata.version }}">Download CSS</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>

@@ -44,13 +44,13 @@ a {
 }
 
 .panel-link,
-.t-no-underline,
+.t-underline-none,
 
-.t-no-underline .panel-link-title,
-.t-no-underline:hover .panel-link-title,
+.t-underline-none .panel-link-title,
+.t-underline-none:hover .panel-link-title,
 
-.t-no-underline .t-link,
-.t-no-underline:hover .t-link,
+.t-underline-none .t-link,
+.t-underline-none:hover .t-link,
 
 .t-underline-hover-only:not(:hover),
 
@@ -60,8 +60,8 @@ a {
 .t-underline-hover-only .t-link,
 .t-underline-hover-only.t-ink-inside:hover,
 
-.links-no-underline a,
-.links-no-underline a:hover,
+.links-underline-none a,
+.links-underline-none a:hover,
 .links-underline-hover-only a {
   text-decoration: none;
 }

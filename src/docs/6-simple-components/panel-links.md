@@ -36,15 +36,15 @@ You need two utility classes: `panel-link` and `panel-link-title` &mdash; plus, 
 
 ## Panel links and underline indicators
 
-You can combine `panel-link` with `t-no-underline` (on the link wrapper):
+You can combine `panel-link` with `t-underline-none` (on the link wrapper):
 
-<a class="mb-2 b-thin hover:bs-3 p-2 panel-link t-no-underline" href="#/">
+<a class="mb-2 b-thin hover:bs-3 p-2 panel-link t-underline-none" href="#/">
     <p class="h4 mb-1 panel-link-title">Panel link title</p>
     <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>
 
 ```html
-<a class="mb-2 b-thin hover:bs-3 p-2 panel-link t-no-underline" href="#/">
+<a class="mb-2 b-thin hover:bs-3 p-2 panel-link t-underline-none" href="#/">
     <p class="h4 mb-1 panel-link-title">Panel link title</p>
     <p class="mb-0 t-gray-900">Lorem ipsim dolor sit amet ...</p>
 </a>

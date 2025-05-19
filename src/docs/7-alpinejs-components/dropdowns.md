@@ -52,9 +52,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -101,9 +101,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -172,9 +172,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -223,9 +223,9 @@ Codebase dropdowns follow the design pattern of the [AlpineJS dropdown](https://
     style="min-width: 12rem"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -279,9 +279,9 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>
@@ -329,9 +329,9 @@ In the following example An Alpine built-in animation has been added: `x-transit
     class="absolute z-index-1 b-thin rounded rounded-sm bs-2 bg-white"
   >
     <ul class="list-style-type-none mb-0 px-0 py-1">
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">First menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Second menu item</a></li>
-      <li><a class="block p-cell py-1 t-no-underline" href="#/">Third menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">First menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Second menu item</a></li>
+      <li><a class="block p-cell py-1 t-underline-none" href="#/">Third menu item</a></li>
     </ul>
   </div>
 </div>

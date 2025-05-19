@@ -8,7 +8,7 @@
   <title>Inline text - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.5" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.6" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -239,7 +239,7 @@
     <div class="px-1">
       <a
         id="site-title"
-        class="flex flex-middle gap-1 h6 my-0 pl-1 t-no-underline t-white hover:t-white"
+        class="flex flex-middle gap-1 h6 my-0 pl-1 t-underline-none t-white hover:t-white"
         :class="scrollAtTop ? 'enlarged' : ''"
         href="/codebase-5/"
         tabindex="1"
@@ -248,13 +248,13 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.3.5</span>
+        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.3.6</span>
       </a>
     </div>
   
     <div class="grow">
-      <div class="menu pr-1 flex flex-end sm:hidden-below links-no-underline">
-        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.5">Download CSS</a></div>
+      <div class="menu pr-1 flex flex-end sm:hidden-below links-underline-none">
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.6">Download CSS</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
@@ -310,7 +310,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.5">Download</a></div>
+          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.6">Download</a></div>
           <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -569,6 +569,9 @@
 <p><span class="t-italic">Italic text</span> (same as <code>&lt;i&gt;</code> and <code>&lt;em&gt;</code>)</p>
 </li>
 </ul>
+<h2 id="text-underlines" tabindex="-1">Text underlines</h2>
+<p>In addition to the <code>&lt;u&gt;</code> underline HTML tag, there's also the <code>t-underline</code> utility class.</p>
+<p><strong>Note:</strong> These do not have the same style or functionality of the <a href="#links">link</a> tag, that traditionally has an underline (when used within content prose).</p>
 <h2 id="text-sizes" tabindex="-1">Text sizes</h2>
 <ul>
 <li>
@@ -592,22 +595,22 @@
 <p>Links get an underline by default. But there are situations where you may not want that, such as in menus.</p>
 <p>For single links:</p>
 <ul>
-<li><code>t-no-underline</code> — <a class="t-no-underline" href="">a link with no underline</a></li>
+<li><code>t-underline-none</code> — <a class="t-underline-none" href="">a link with no underline</a></li>
 <li><code>t-underline-hover-only</code> — <a class="t-underline-hover-only" href="">a link with underline only on hover</a></li>
 </ul>
 <p>Similar to the above, but for groups of links (use one of these on a <code>&lt;nav&gt;</code> or <code>&lt;menu&gt;</code> wrapper):</p>
 <ul>
-<li><code>links-no-underline</code></li>
+<li><code>links-underline-none</code></li>
 <li><code>links-underline-hover-only</code></li>
 </ul>
-<p>Example using <code>links-no-underline</code>:</p>
-<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline">
+<p>Example using <code>links-underline-none</code>:</p>
+<menu class="mb-2 p-cell flex gap-3 bg-gray-100 links-underline-none">
   <menuitem><a href="">Menu item 1</a></menuitem>
   <menuitem><a href="">Menu item 2</a></menuitem>
   <menuitem><a href="">Menu item 3</a></menuitem>
   <menuitem><a href="">Menu item 4</a></menuitem>
 </menu>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 p-cell flex gap-3 bg-gray-100 links-no-underline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 p-cell flex gap-3 bg-gray-100 links-underline-none<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Menu item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span></code></pre>
 <p>(You will also want to add a gap between each menu item, so that people can click indivicual links on touch screens — as I have done here using Codebase flexbox utility classes.)</p>
 <p>Example using <code>links-underline-hover-only</code>:</p>
 <nav class="mb-2 flex flex-column gap-2 links-underline-hover-only">
@@ -668,7 +671,7 @@
 
 <footer class="relative py-3 bg-gray-900 t-center t-gray-500">
   <p class="sm:mt-3">
-    <a id="site-footer-title" class="h3 inline-block t-no-underline t-white hover:t-white" href="/codebase-5/">
+    <a id="site-footer-title" class="h3 inline-block t-underline-none t-white hover:t-white" href="/codebase-5/">
       <span class="inline-flex flex-column flex-middle flex-center">
         <!-- Codebase logo -->
         <svg style="height: 60px;" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2"><path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path></svg>
@@ -679,8 +682,8 @@
     </a>
   </p>
 
-  <menu class="container-lg py-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.5</div>
+  <menu class="container-lg pt-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
+    <div>Version: 5.3.6</div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/dist/codebase.css">CSS (minified)</a> 96 KB</div>

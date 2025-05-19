@@ -158,9 +158,9 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
 
 <div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
-    <a class="block p-2 t-lg t-bold t-white hover:t-white t-no-underline" href="#/">Brand</a>
+    <a class="block p-2 t-lg t-bold t-white hover:t-white t-underline-none" href="#/">Brand</a>
   </div>
-  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-no-underline">
+  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-underline-none">
     <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="#/">Home</a></li>
     <li>
       <div
@@ -218,9 +218,9 @@ Example menubar with an [AplineJS powered dropdown]({{ '/docs/7-alpinejs-compone
 ```html
 <div class="mb-2 xs:flex flex-middle flex-space-between bg-purple-600">
   <div>
-    <a class="block p-2 t-lg t-bold t-white hover:t-white t-no-underline" href="">Brand</a>
+    <a class="block p-2 t-lg t-bold t-white hover:t-white t-underline-none" href="">Brand</a>
   </div>
-  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-no-underline">
+  <nav class="list-style-type-none mb-0 pl-0 xs:flex flex-middle flex-end links-underline-none">
     <li><a class="block p-cell t-white hover:t-white hover:bg-purple-700" href="">Home</a></li>
     <li>
       <div
