@@ -1,6 +1,10 @@
 # Changelog
 
-<!-- Note: update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` -->
+<!-- 
+Notes: 
+(1.) Update version numbers need updating every time in `metadata.json`, `package.json`, `package-lock.json` (×2), `README.md`, `CHANGELOG.md`, and `codebase.scss` 
+(2.) Remember to do `npx -y pagefind --site docs` before deployment
+-->
 
 ## 19 Mar 2025 -- v.5.3.6
 

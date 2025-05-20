@@ -28,7 +28,7 @@ All of the above is doable using Codebase and AlpineJS. Play with the example be
 Here’s an unstyled tabs example, ready for you to style your own way. Explanation:
 
 1. Tab elements have their appropriate [ARIA roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role) `tablist`, `tab`, and `tabpanel`: tab labels are `<button role="tab" class="btn-info">` wrapped in a `<nav role="tablist">`, and the panels are `<div role="tabpanel">. Other ARIA attributes are also included.
-2. `tabindex` is set as 0 for hidden tabs, swapped to am index number when a tab is selected (brought into view). Selecting tabs can by done by click/tap, keyboard arrow, or assistive tech.
+2. `tabindex` is set as 0 for hidden tabs, swapped to an index number when a tab is selected (brought into view). Selecting tabs can by done by click/tap, keyboard arrow, or assistive tech.
 3. A Selected tab labels have a color change, adding the `active` class (looks the same as the `:hover` state).
 
 <div class="mb-4">

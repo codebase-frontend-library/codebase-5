@@ -124,6 +124,7 @@
     }
 
     /* Examples */
+
     svg tspan {
       font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 0;
@@ -131,6 +132,52 @@
     .month span {
       width: calc(100% / 7);
       margin: 0.5rem 0;
+    }
+
+    /* Pagefind */
+
+    .pagefind-ui__form {
+      position: relative;
+      display: block;
+      margin-top: 1em;
+    }
+
+    .pagefind-ui__search-input {
+      display: block;
+      width: 100%;
+      border-radius: 3em;
+      padding-left: 1em;
+    }
+
+    .pagefind-ui__suppressed {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pagefind-ui__search-clear {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      border: 0;
+      border-radius: 0 3em 3em 0;
+      font-size: 0.85rem;
+      font-weight: normal;
+      background-color: transparent;
+    }
+
+    .pagefind-ui__results-area {
+      margin-top: 1em;
+    }
+
+    .pagefind-ui__result-image {
+      display: none;
+    }
+
+    div:not(.pagefind-ui__result-nested)>.pagefind-ui__result-title {
+      margin-bottom: 0;
+      font-size: var(--h4);
+      font-weight: var(--t-semibold);
     }
   </style>
 

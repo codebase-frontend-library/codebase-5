@@ -63,7 +63,21 @@
     </div>
   </nav>
 
-  <header id="docs-header" class="col-1 row-1 sm:col-2">
+  <div class="col-1 row-1 sm:col-2">
+    <div class="container-sm py-2">
+      {#<link href="/codebase-5/pagefind/pagefind-ui.css" rel="stylesheet">#}
+      <script src="/codebase-5/pagefind/pagefind-ui.js"></script>
+      <div id="search"></div>
+      <p class="mt-1 mr-3 mb-0 t-sm t-right">Search powered by <a class="t-underline-hover-only" href="https://pagefind.app">Pagefind</a>.</p>
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search", showSubResults: true });
+        });
+      </script>
+    </div>
+  </div>
+
+  <header id="docs-header" class="col-1 row-1 sm:col-2 sm:row-2">
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
       <div class="m-0">
         {% if '1-getting-started' in page.url %}
