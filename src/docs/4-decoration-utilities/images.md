@@ -42,7 +42,7 @@ Follow these two rules when using `img-cover`:
 
 2. Be sure to optimize the filesize of your image. You don’t want to make your visitor wait a long time  (several seconds, or more) for your image to load if they have a slow connection.
 
-Many web platforms have _image processors_ built in, or added via a plugin. For example: 
+Many web platforms have _image processors_ built in, or added via a plugin. For example:
 
 * The [Eleventy](https://www.11ty.dev) static site generator has an [Eleventy-image plugin](https://www.11ty.dev/docs/plugins/image/)
 * [WordPress](https://wordpress.org) has a [built-in image processor](https://www.wpbeginner.com/beginners-guide/wordpress-image-sizes-beginners-guide/) for automatic image resizing and loading for different sized devices (and lazy loading). Plus, there are several image-optimizer plugins.
@@ -165,9 +165,7 @@ The image below is a square, therefore on wider viewports, there will be empty s
 
 ### Grayscale filter
 
-<div style="height: 460px;">
-  <img class="img-cover img-grayscale" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
-</div>
+<img class="aspect-ratio-16x9 img-cover img-grayscale" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 
 ```html
 <img class="img-grayscale" src="" width="" height="" loading="lazy" alt="">
@@ -175,22 +173,20 @@ The image below is a square, therefore on wider viewports, there will be empty s
 
 ### Blur filter
 
-<div style="height: 460px;">
-  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
-</div>
+<img class="aspect-ratio-16x9 img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 
 ```html
 <img class="img-blur" src="" width="" height="" loading="lazy" alt="">
 ```
 
-What if you don’t want the blurry edges spreading outside of the image rectangle? Then you can wrap the image in a block that has the `overflow-hidden` utility class.
+What if you don’t want the blurry edges spreading outside of the image rectangle? Then you can wrap the image in a block that has the `overflow-clip` utility class.
 
-<div class="overflow-hidden" style="height: 460px;">
-  <img class="img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
+<div class="overflow-clip">
+  <img class="aspect-ratio-16x9 img-cover img-blur" src="{{ '/img/pexels-pixabay-416179.jpg' | url }}" width="600" height="600" loading="lazy" alt="Photo by Pixabay from Pexels">
 </div>
 
 ```html
-<div class="overflow-hidden">
+<div class="overflow-clip">
   <img class="img-blur" src="" width="" height="" loading="lazy" alt="">
 </div>
 ```
