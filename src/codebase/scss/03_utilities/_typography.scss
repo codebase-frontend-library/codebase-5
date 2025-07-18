@@ -110,11 +110,11 @@ $mq-value in $mq-width {
 }
 
 .t-loose {
-  letter-spacing: .025em;
+  letter-spacing: var(--t-loose);
 }
 
 .t-tight {
-  letter-spacing: -.05em;
+  letter-spacing: var(--t-tight);
 }
 
 .t-balance {

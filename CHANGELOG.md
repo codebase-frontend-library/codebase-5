@@ -6,6 +6,10 @@ Notes:
 (2.) Remember to do `npx -y pagefind --site docs` before deployment
 -->
 
+## 18 July 2025 -- v.5.3.7
+
+* Improved `t-loose` and `t-tight` by making them based on `ch` units. And set them as CSS variables.
+
 ## 19 Mar 2025 -- v.5.3.6
 
 * Changed utility classes `t-no-underline` to `t-underline-none` and `links-no-underline` and `links-underline-none`.

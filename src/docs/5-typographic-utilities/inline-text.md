@@ -131,6 +131,9 @@ What if you have a whole panel that needs to be a
 
 ## Other text utilities
 
+* `t-nowrap`
+
+    For when you _don’t_ want a portion of text to wrap on to a newline (not demonstrated here).
 * `t-strike`
 
     <span class="t-strike">Strikethrough text</span>
@@ -151,6 +154,55 @@ What if you have a whole panel that needs to be a
 
     <span class="t-tight">For when you need some text to have less letter-spacing</span>
 
-* `t-nowrap`
+You may want looser text on buttons (especially CTAs):
 
-    For when you _don’t_ want a portion of text to wrap on to a newline (not demonstrated here).
+<a class="btn btn-success btn-lg" href="#">Buy now</a>
+
+<a class="btn btn-success btn-lg t-loose" href="#">Buy now</a> with `t-loose`
+
+You may want tighter text in headings:
+
+<div class="overflow-x mb-2">
+<table class="table">
+<thead>
+<tr>
+<th>with <code>t-tight</code></th>
+<th>Default spacing</th>
+<th>with <code>t-loose</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p class="h1 t-tight">Heading 1</p>
+<p class="h2 t-tight">Heading 2</p>
+<p class="h3 t-tight">Heading 3</p>
+<p class="h4 t-tight">Heading 4</p>
+<p class="h5 t-tight">Heading 5</p>
+<p class="h6 t-tight">Heading 6</p>
+<p class="t-tight">Lorem ipsum dolor sit amet...</p>
+</td>
+<td>
+<p class="h1">Heading 1</p>
+<p class="h2">Heading 2</p>
+<p class="h3">Heading 3</p>
+<p class="h4">Heading 4</p>
+<p class="h5">Heading 5</p>
+<p class="h6">Heading 6</p>
+<p>Lorem ipsum dolor sit amet...</p>
+</td>
+<td>
+<p class="h1 t-loose">Heading 1</p>
+<p class="h2 t-loose">Heading 2</p>
+<p class="h3 t-loose">Heading 3</p>
+<p class="h4 t-loose">Heading 4</p>
+<p class="h5 t-loose">Heading 5</p>
+<p class="h6 t-loose">Heading 6</p>
+<p class="t-loose">Lorem ipsum dolor sit amet...</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+Letter-spacing is controlled by variables `--t-loose` and `--t-tight`.

@@ -3,8 +3,8 @@
     let viewportWidth = window.innerWidth;
     
     Alpine.store('docsNav', {
-      open: window.innerWidth >= 768,
-      belowBP: window.innerWidth < 768,
+      open: window.innerWidth >= 1024,
+      belowBP: window.innerWidth < 1024,
       menu1open: false,
       menu2open: false,
       menu3open: false,
@@ -46,7 +46,7 @@
           
           viewportWidth = currentWidth;
           
-          if (viewportWidth >= 768) {
+          if (viewportWidth >= 1024) {
             this.open = true,
             this.belowBP = false
           } else {
@@ -61,7 +61,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 md:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -74,7 +74,7 @@
         class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
-        :aria-expanded="$store.docsNav"
+        :aria-expanded="$store.docsNav.open"
         x-show="$store.docsNav.belowBP"
       >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>

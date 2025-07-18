@@ -319,6 +319,8 @@ $mq-width: (
   --t-semibold: 600;
   --t-bold: 700;
   --t-heavy: 900;
+  --t-loose: .1ch;
+  --t-tight: -.05ch;
   --t-line-offset: 2px;
   --t-cols-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   --t-cols: 17.5em;

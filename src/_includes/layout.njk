@@ -11,8 +11,8 @@
 </div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-  <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
-    <div class="sm:sticky">
+  <nav id="site-navigation" class="sm:rows-1-5 lg:rows-1-4 relative">
+    <div class="md:sticky">
       {# include "site-side-nav.njk" #}
       <div
       x-data
@@ -26,7 +26,7 @@
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-left-100%"
       x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
-      class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+      class="offcanvas offcanvas-left md:offcanvas-override w-xxs bs-1 bg-white-glass-5"
       @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
       @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
     >
@@ -77,7 +77,7 @@
     </div>
   </div>
 
-  <header id="docs-header" class="col-1 row-1 sm:col-2 sm:row-2">
+  <header id="docs-header" class="col-1 row-2 sm:col-2 sm:row-2">
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
       <div class="m-0">
         {% if '1-getting-started' in page.url %}
@@ -102,7 +102,7 @@
     </div>
   </header>
 
-  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+  <nav id="nav-on-this-page" class="col-1 row-3 sm:col-2 lg:col-3 lg:rows-1-3">
     <div class="container-sm mx-auto lg:sticky mb-6">
       <div class="b-thin b-gray-400 rounded px-2 pt-2 lg:pt-4 lg:b-0">
         <div class="h5 mb-2 t-semibold">On this page</div>

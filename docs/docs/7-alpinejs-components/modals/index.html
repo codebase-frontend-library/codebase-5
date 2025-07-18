@@ -8,7 +8,7 @@
   <title>Modals - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.6" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.3.7" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -36,16 +36,22 @@
 
     pre code {
       white-space: pre-wrap !important;
+      max-width: calc(100vw - 2rem);
+    }
+    .table, 
+    .overflow-x:has(.table),
+    pre code {
+      max-width: calc(100vw - 2rem);
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       #side-menu-wrap {
         max-height: calc(100vh - 42px);
         overflow-y: auto;
       }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       #site-page {
         grid-template-columns: 256px 1fr;
         max-width: 100vw;
@@ -205,8 +211,8 @@
     let viewportWidth = window.innerWidth;
     
     Alpine.store('docsNav', {
-      open: window.innerWidth >= 768,
-      belowBP: window.innerWidth < 768,
+      open: window.innerWidth >= 1024,
+      belowBP: window.innerWidth < 1024,
       menu1open: false,
       menu2open: false,
       menu3open: false,
@@ -248,7 +254,7 @@
           
           viewportWidth = currentWidth;
           
-          if (viewportWidth >= 768) {
+          if (viewportWidth >= 1024) {
             this.open = true,
             this.belowBP = false
           } else {
@@ -263,7 +269,7 @@
   })
 </script>
 
-<div id="site-top-bar" class="py-1 md:py-0 sm:sticky bg-black-glass-5">
+<div id="site-top-bar" class="py-1 md:py-0 md:sticky bg-black-glass-5">
   <div class="w-xxl mx-auto h-100% relative flex flex-middle">
 
     <!-- Navicon -->
@@ -276,7 +282,7 @@
         class="btn-icon rounded-full ml-1 b-gray-300 hover:b-gray-300 t-gray-300 hover:t-white hover:bg-transparent"
         @click="$store.docsNav.open = true"
         aria-label="Site menu"
-        :aria-expanded="$store.docsNav"
+        :aria-expanded="$store.docsNav.open"
         x-show="$store.docsNav.belowBP"
       >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line><line x1="40" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line></svg>
@@ -295,13 +301,13 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.3.6</span>
+        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.3.7</span>
       </a>
     </div>
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below links-underline-none">
-        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.6">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.7">Download CSS</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
@@ -316,8 +322,8 @@
 </div>
 <div id="site-page" class="w-xxl mx-auto grid sm:auto-2-cols md:auto-3-cols">
 
-  <nav id="site-navigation" class="sm:rows-1-4 lg:rows-1-3 relative">
-    <div class="sm:sticky">
+  <nav id="site-navigation" class="sm:rows-1-5 lg:rows-1-4 relative">
+    <div class="md:sticky">
       
       <div
       x-data
@@ -331,7 +337,7 @@
       x-transition:leave-start="translate-0"
       x-transition:leave-end="translate-left-100%"
       x-trap.noscroll.inert="$store.docsNav.open && $store.docsNav.belowBP"
-      class="offcanvas offcanvas-left sm:offcanvas-override w-xxs bs-1 bg-white-glass-5"
+      class="offcanvas offcanvas-left md:offcanvas-override w-xxs bs-1 bg-white-glass-5"
       @click.outside="$store.docsNav.open = !$store.docsNav.belowBP || false"
       @keyup.escape="$store.docsNav.open = !$store.docsNav.belowBP || false"
     >
@@ -357,7 +363,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.6">Download</a></div>
+          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.7">Download</a></div>
           <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -569,7 +575,7 @@
     </div>
   </div>
 
-  <header id="docs-header" class="col-1 row-1 sm:col-2 sm:row-2">
+  <header id="docs-header" class="col-1 row-2 sm:col-2 sm:row-2">
     <div class="container-sm py-3 xs:py-6 md:aspect-ratio-3x1 flex flex-column flex-center t-display">
       <div class="m-0">
         
@@ -582,7 +588,7 @@
     </div>
   </header>
 
-  <nav id="nav-on-this-page" class="col-1 row-2 sm:col-2 lg:col-3 lg:rows-1-3">
+  <nav id="nav-on-this-page" class="col-1 row-3 sm:col-2 lg:col-3 lg:rows-1-3">
     <div class="container-sm mx-auto lg:sticky mb-6">
       <div class="b-thin b-gray-400 rounded px-2 pt-2 lg:pt-4 lg:b-0">
         <div class="h5 mb-2 t-semibold">On this page</div>
@@ -1210,7 +1216,7 @@
   </p>
 
   <menu class="container-lg pt-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.6</div>
+    <div>Version: 5.3.7</div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/dist/codebase.css">CSS (minified)</a> 96 KB</div>

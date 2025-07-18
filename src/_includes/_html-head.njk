@@ -38,16 +38,22 @@
 
     pre code {
       white-space: pre-wrap !important;
+      max-width: calc(100vw - 2rem);
+    }
+    .table, 
+    .overflow-x:has(.table),
+    pre code {
+      max-width: calc(100vw - 2rem);
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       #side-menu-wrap {
         max-height: calc(100vh - 42px);
         overflow-y: auto;
       }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       #site-page {
         grid-template-columns: 256px 1fr;
         max-width: 100vw;
