@@ -6,6 +6,10 @@ Notes:
 (2.) Remember to do `npx -y pagefind --site docs` before deployment
 -->
 
+## 25 July 2025 -- v.5.3.8
+
+* Added positioning utilities `top-100%`, `right-100%`, `bottom-100%`, or `left-100%` (and media query breakpoint width variants).
+
 ## 18 July 2025 -- v.5.3.7
 
 * Improved `t-loose` and `t-tight` by making them based on `ch` units. And set them as CSS variables.

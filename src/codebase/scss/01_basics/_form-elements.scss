@@ -105,6 +105,7 @@ textarea.form-element-sm {
 @mixin button {
   position: relative;
   -webkit-appearance: none;
+  appearance: none;
   height: var(--form-size);
   display: inline-flex;
   justify-content: center;

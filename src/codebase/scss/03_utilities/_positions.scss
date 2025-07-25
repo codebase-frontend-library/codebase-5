@@ -68,6 +68,22 @@
   left: 0;
 }
 
+.top-100\% {
+  top: 100%;
+}
+
+.right-100\% {
+  right: 100%;
+}
+
+.bottom-100\% {
+  bottom: 100%;
+}
+
+.left-100\% {
+  left: 100%;
+}
+
 @each $mq-key, $mq-value in $mq-width {
   @include break-min(#{$mq-value}) {
     .#{$mq-key}\:sticky {
@@ -104,6 +120,21 @@
 
     .#{$mq-key}\:left {
       left: 0;
+    }
+    .#{$mq-key}\:top-100\% {
+      top: 100%
+    }
+
+    .#{$mq-key}\:right-100\% {
+      right: 100%;
+    }
+
+    .#{$mq-key}\:bottom-100\% {
+      bottom: 100%;
+    }
+
+    .#{$mq-key}\:left-100\% {
+      left: 100%;
     }
   }
 }

@@ -12,15 +12,15 @@ Plus, Codebase pairs well with [AlpineJS](https://alpinejs.dev).
 
 ***
 
-Stylesheet (and sourcemap): https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist
+Stylesheet (and sourcemap): [https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist](https://github.com/codebase-frontend-library/codebase-5/tree/main/src/dist)
 
-Docs: https://codebase-frontend-library.github.io/codebase-5/
+Docs: [https://codebase-frontend-library.github.io/codebase-5/](https://codebase-frontend-library.github.io/codebase-5/)
 
-Install via Git: https://github.com/codebase-frontend-library/codebase-5.git
+Install via Git: [https://github.com/codebase-frontend-library/codebase-5.git](https://github.com/codebase-frontend-library/codebase-5.git)
 
 ***
 
-* Current version: 5.3.7 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
+* Current version: 5.3.8 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
 * CSS file size: 96 KB
 * Licence: MIT
 * Developer: Simon Padbury

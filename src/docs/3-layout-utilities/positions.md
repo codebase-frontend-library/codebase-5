@@ -34,47 +34,77 @@ The upper `z-index-*` utilities (997, 998 and 999) can be used for modals, offca
 
 ## Positioning absolute and fixed elements
 
-In conjunction with the `absolute` and `fixed` positioning utilities above, you can also control where the positioned element will be placed: in the `top`, `right`, `bottom`, or `left` of its parent element.
+In conjunction with the `absolute` and `fixed` positioning utilities above, you can also control where the positioned element will be placed: in the `top`, `right`, `bottom`, or `left` of its parent element (or whatever is set to position `relative`).
 
-<div class="my-6 b-dashed">
-  <div class="aspect-ratio-4x3 relative">
+There are also `top-100%`, `right-100%`, `bottom-100%`, or `left-100%` for e.g. positioning pop-out labels and dropdown panels.
+
+**Note:** the `-100%` variants have the effect of locating the element outside the opposite edge. E.g. `right-100%` shifts the element out of the left edge of the parent element (or whatever is set to position `relative`).
+
+<div class="w-xxs mx-auto my-6 b-dashed b-gray-500">
+  <div class="aspect-ratio-1x1 relative">
     <div class="box">
       <div class="absolute top w-100% flex flex-center">
         <label class="label bg-blue-200">absolute top</label>
       </div>
+      <div class="absolute top-100% w-100% flex flex-center">
+        <label class="label bg-blue-300">absolute top-100%</label>
+      </div>
       <div class="absolute right h-100% flex flex-middle">
         <label class="label bg-red-200">absolute right</label>
       </div>
+      <div class="absolute right-100% h-100% flex flex-middle">
+        <label class="label bg-red-300">absolute right-100%</label>
+      </div>
       <div class="absolute bottom w-100% flex flex-center">
-      <label class="label bg-teal-200">absolute bottom</label>
-        </div>
+        <label class="label bg-teal-200">absolute bottom</label>
+      </div>
+      <div class="absolute bottom-100% w-100% flex flex-center">
+        <label class="label bg-teal-300">absolute bottom-100%</label>
+      </div>
       <div class="absolute left h-100% flex flex-middle">
         <label class="label bg-green-200">absolute left</label>
+      </div>
+      <div class="absolute left-100% h-100% flex flex-middle">
+        <label class="label bg-green-300">absolute left-100%</label>
       </div>
     </div>
   </div>
 </div>
 
-Each of the above affect positioning at all viewport widths. Plus there are `xs:`, `sm:`, `md:`, and `lg:` responsive tiers of each.
-
 ```html
-<div class="aspect-ratio-4x3 relative">
-  <div class="box">
-    <div class="absolute top w-100% flex flex-center">
-      <label class="label bg-blue-200">absolute top</label>
-    </div>
-    <div class="absolute right h-100% flex flex-middle">
-      <label class="label bg-red-200">absolute right</label>
-    </div>
-    <div class="absolute bottom w-100% flex flex-center">
-    <label class="label bg-teal-200">absolute bottom</label>
+<div class="w-xxs mx-auto my-6 b-dashed b-gray-500">
+  <div class="aspect-ratio-1x1 relative">
+    <div class="box">
+      <div class="absolute top w-100% flex flex-center">
+        <label class="label bg-blue-200">absolute top</label>
       </div>
-    <div class="absolute left h-100% flex flex-middle">
-      <label class="label bg-green-200">absolute left</label>
+      <div class="absolute top-100% w-100% flex flex-center">
+        <label class="label bg-blue-300">absolute top-100%</label>
+      </div>
+      <div class="absolute right h-100% flex flex-middle">
+        <label class="label bg-red-200">absolute right</label>
+      </div>
+      <div class="absolute right-100% h-100% flex flex-middle">
+        <label class="label bg-red-300">absolute right-100%</label>
+      </div>
+      <div class="absolute bottom w-100% flex flex-center">
+        <label class="label bg-teal-200">absolute bottom</label>
+      </div>
+      <div class="absolute bottom-100% w-100% flex flex-center">
+        <label class="label bg-teal-300">absolute bottom-100%</label>
+      </div>
+      <div class="absolute left h-100% flex flex-middle">
+        <label class="label bg-green-200">absolute left</label>
+      </div>
+      <div class="absolute left-100% h-100% flex flex-middle">
+        <label class="label bg-green-300">absolute left-100%</label>
+      </div>
     </div>
   </div>
 </div>
 ```
+
+Each of the above affect positioning at all viewport widths. Plus there are `xs:`, `sm:`, `md:`, and `lg:` responsive tiers of each.
 
 ## Position sticky
 
