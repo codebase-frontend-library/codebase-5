@@ -76,6 +76,10 @@ The Codebase `table` component class expands tables to 100% width, aligns everyt
   ...
 </table>
 
+<table class="table table-lined">
+  ...
+</table>
+
 <table class="table table-compact">
   ...
 </table>
