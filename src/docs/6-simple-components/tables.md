@@ -392,7 +392,7 @@ Codebase `overflow-x` uses to remove margins from around Codebase table classes 
 </table>
 </div>
 
-Are you have a situation where there is (or is going to be) multiple oversized, layout-breaking tables? Then you can add some JavaScript to your template, that automatically adds this `overflow-x` wrapper to all tables that have the `table` class.
+If you have a situation where there is (or is going to be) multiple oversized, layout-breaking tables, then you can add some JavaScript to your template, that automatically adds this `overflow-x` wrapper to all tables that have the `table` class.
 
 Here’s one way of doing that:
 
