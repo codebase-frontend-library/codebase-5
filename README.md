@@ -20,7 +20,7 @@ Install via Git: [https://github.com/codebase-frontend-library/codebase-5.git](h
 
 ***
 
-* Current version: 5.3.8 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
+* Current version: 5.3.9 -- see [changelog](https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md)
 * CSS file size: 96 KB
 * Licence: MIT
 * Developer: Simon Padbury

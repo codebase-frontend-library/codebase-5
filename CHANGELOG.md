@@ -6,6 +6,10 @@ Notes:
 (2.) Remember to do `npx -y pagefind --site docs` before deployment
 -->
 
+## 17 Oct 2025 -- v.5.3.9
+
+* Increased size of `<h1>` and `.h1` to 2.5em.
+
 ## 25 July 2025 -- v.5.3.8
 
 * Added positioning utilities `top-100%`, `right-100%`, `bottom-100%`, or `left-100%` (and media query breakpoint width variants).
