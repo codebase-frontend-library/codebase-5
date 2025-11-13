@@ -258,7 +258,7 @@ $mq-width: (
   --sp-4: 2rem;
   --sp-5: 2.5rem;
   --sp-6: 3rem;
-  --sp-cell: 0.5rem 1rem;
+  --sp-cell: var(--sp-1) var(--sp-2);
 
   // Borders
   --b-thin: 1px; // used by b-thin, b-dashed, and --line (hr, .table, form inputs, etc.)
