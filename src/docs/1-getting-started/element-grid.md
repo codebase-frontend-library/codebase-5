@@ -53,7 +53,7 @@ $spacing: (
 <img src="{{ '/img/element-grid.svg' | url }}" width="736" height="446">
 </div>
 
-**Note:** the padding for buttons and table cells corresponds to Codebase utility classes `px-2 py-1`. Since this would be used frequently for menu items, tab labels, etc., Codebase also has `p-cell` that adds padding `var(--sp-1) var(--sp-2);` in one utility class.
+**Note:** the padding for buttons and table cells has `--sp-cell` thatcorresponds to Codebase utility classes `var(--sp-1) var(--sp-2);`. Since this would also be used frequently for menu items, tab labels, etc., Codebase also has this as utility class `p-cell`.
 
 ## Utility class spacing
 
