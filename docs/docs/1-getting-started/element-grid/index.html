@@ -8,7 +8,7 @@
   <title>Element grid - Codebase</title>
 
   <link href="/codebase-5/prism/prism.css" rel="stylesheet">
-  <link href="/codebase-5/dist/codebase.css?v=5.3.9" rel="stylesheet">
+  <link href="/codebase-5/dist/codebase.css?v=5.4.0" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/codebase-5/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/codebase-5/apple-touch-icon.png">
@@ -17,7 +17,7 @@
   <link rel="manifest" href="/codebase-5/site.webmanifest">
   <link rel="mask-icon" href="/codebase-5/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-config" content="/codebase-5/browserconfig.xml">
-  <meta name="generator" content="Eleventy v3.0.0">
+  <meta name="generator" content="Eleventy v1.0.2">
   <meta name="msapplication-TileColor" content="#9f00a7">
   <meta name="theme-color" content="#ffffff">
   
@@ -301,13 +301,13 @@
         <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
           <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
         </svg>
-        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.3.9</span>
+        <span class="t-loose t-semibold">Codebase CSS</span> <span class="ml-1 t-sm t-gray-400">v.5.4.0</span>
       </a>
     </div>
   
     <div class="grow">
       <div class="menu pr-1 flex flex-end sm:hidden-below links-underline-none">
-        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.3.9">Download CSS</a></div>
+        <div class="p-cell"><a class="t-gray-100 hover:t-white" href="/codebase-5/dist/codebase.css?v=5.4.0">Download CSS</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         <div class="p-cell"><a class="t-gray-100 hover:t-white" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/CHANGELOG.md">Changelog</a></div>
       </div>  
@@ -363,7 +363,7 @@
       <div id="side-menu-wrap" class="p-2 md:pt-4 pb-6">
     
         <div class="mb-3 sm:hidden">
-          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.3.9">Download</a></div>
+          <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="/codebase-5/dist/codebase.css?v=5.4.0">Download</a></div>
           <div><a class="block py-1 t-underline-hover-only t-gray-600 hover:t-gray-900" href="https://github.com/codebase-frontend-library/codebase-5">Github</a></div>
         </div>
 
@@ -614,7 +614,7 @@ In Codebase, one element grid unit = 0.5rem = 8px (default).
 <li>By default, the base typography vertical rhythm (line-height) is set at 1.5rem (= 3 element grid units).</li>
 <li>Spacing utilities for margins, paddings and gaps (used in both flexbox and grid) have been set using values from the 0.5rem element grid.</li>
 </ol>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$spacing</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"0"</span><span class="token punctuation">:</span> 0<span class="token punctuation">,</span><br>  <span class="token string">"1"</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">,</span><br>  <span class="token string">"2"</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">,</span><br>  <span class="token string">"3"</span><span class="token punctuation">:</span> 1.5rem<span class="token punctuation">,</span><br>  <span class="token string">"4"</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">,</span><br>  <span class="token string">"5"</span><span class="token punctuation">:</span> 2.5rem<span class="token punctuation">,</span><br>  <span class="token string">"6"</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token property"><span class="token variable">$spacing-setup</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"0"</span><span class="token punctuation">:</span> 0<span class="token punctuation">,</span><br>  <span class="token string">"1"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-1<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"2"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-2<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"3"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-3<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"4"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-4<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"5"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-5<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"6"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-6<span class="token punctuation">)</span><span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token property">--sp-1</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span><br><span class="token property">--sp-2</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br><span class="token property">--sp-3</span><span class="token punctuation">:</span> 1.5rem<span class="token punctuation">;</span><br><span class="token property">--sp-4</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span><br><span class="token property">--sp-5</span><span class="token punctuation">:</span> 2.5rem<span class="token punctuation">;</span><br><span class="token property">--sp-6</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span><br><br><span class="token comment">// Spacing (paddings, margins, and gaps)</span><br><br><span class="token property"><span class="token variable">$spacing</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><br>  <span class="token string">"0"</span><span class="token punctuation">:</span> 0<span class="token punctuation">,</span><br>  <span class="token string">"1"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-1<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"2"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-2<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"3"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-3<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"4"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-4<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"5"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-5<span class="token punctuation">)</span><span class="token punctuation">,</span><br>  <span class="token string">"6"</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sp-6<span class="token punctuation">)</span><span class="token punctuation">,</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="infographic%3A-the-codebase-element-grid" tabindex="-1">Infographic: the Codebase element grid</h2>
 <div class="my-6">
 <img src="/codebase-5/img/element-grid.svg" width="736" height="446">
@@ -697,10 +697,10 @@ In Codebase, one element grid unit = 0.5rem = 8px (default).
   </p>
 
   <menu class="container-lg pt-3 grid xs:equal-2-cols sm:equal-3-cols md:equal-4-cols lg:equal-6-cols gap-2 t-center">
-    <div>Version: 5.3.9</div>
+    <div>Version: 5.4.0</div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/docs/1-getting-started/introduction/">Documentation</a></div>
     <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="https://github.com/codebase-frontend-library/codebase-5">GitHub Repository</a></div>
-    <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/dist/codebase.css">CSS (minified)</a> 96 KB</div>
+    <div><a class="t-gray-200 hover:t-white t-underline-hover-only" href="/codebase-5/dist/codebase.css">CSS (minified)</a> 102 KB</div>
     <div class="md:col-2 lg:col-5">Licence: <a class="t-gray-200 hover:t-white t-underline-hover-only" href="https://github.com/codebase-frontend-library/codebase-5/blob/main/LICENCE">MIT</a></div>
     <div>Dev: <a class="t-gray-200 hover:t-white t-underline-hover-only" href="https://github.com/SimonPadbury">Simon Padbury</a></div>
   </menu>

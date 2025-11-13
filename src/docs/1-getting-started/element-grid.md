@@ -27,17 +27,16 @@ The Codebase element grid has been deployed a follows:
 2. Spacing utilities for margins, paddings and gaps (used in both flexbox and grid) have been set using values from the 0.5rem element grid.
 
 ```scss
-$spacing: (
-  "0": 0,
-  "1": 0.5rem,
-  "2": 1rem,
-  "3": 1.5rem,
-  "4": 2rem,
-  "5": 2.5rem,
-  "6": 3rem,
-);
+--sp-1: 0.5rem;
+--sp-2: 1rem;
+--sp-3: 1.5rem;
+--sp-4: 2rem;
+--sp-5: 2.5rem;
+--sp-6: 3rem;
 
-$spacing-setup: (
+// Spacing (paddings, margins, and gaps)
+
+$spacing: (
   "0": 0,
   "1": var(--sp-1),
   "2": var(--sp-2),

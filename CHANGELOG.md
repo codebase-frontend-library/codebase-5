@@ -6,6 +6,10 @@ Notes:
 (2.) Remember to do `npx -y pagefind --site docs` before deployment
 -->
 
+## 13 Nov 2025 -- v.5.4.0
+
+* Set spacing (for margin, padding, and flexbox/grid gap) using CSS variables instead of Sass variables.
+
 ## 17 Oct 2025 -- v.5.3.9
 
 * Increased size of `<h1>` and `.h1` to 2.5em.

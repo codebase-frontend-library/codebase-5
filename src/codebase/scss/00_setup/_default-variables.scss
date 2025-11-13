@@ -116,16 +116,6 @@ $ui-setup: (
 
 $spacing: (
   "0": 0,
-  "1": 0.5rem,
-  "2": 1rem,
-  "3": 1.5rem,
-  "4": 2rem,
-  "5": 2.5rem,
-  "6": 3rem,
-);
-
-$spacing-setup: (
-  "0": 0,
   "1": #{var(--sp-1)},
   "2": #{var(--sp-2)},
   "3": #{var(--sp-3)},
@@ -210,6 +200,7 @@ $mq-width: (
   // Color shades variables generator
   @each $key,
   $val in $theme-color {
+
     @each $key2,
     $val2 in $lightness {
       --#{$key}-#{$key2}: color-mix(in OKLAB, #{$val}, #{$val2});
@@ -219,7 +210,7 @@ $mq-width: (
   // Base theme colors
   --c-page-bg: #ffffff;
   --c-page-bg-alt: var(--gray-100);
-  --c-detail: rgba(0,0,0,0.15);
+  --c-detail: rgba(0, 0, 0, 0.15);
   --c-default: var(--gray-600);
   --c-text: var(--gray-900);
   --c-link: var(--blue-600);
@@ -260,12 +251,13 @@ $mq-width: (
     --#{$name}: #{$value};
   }
 
-  // Spacing variables generator (paddings, margins, and gaps)
-  @each $name,
-  $value in $spacing {
-    --sp-#{$name}: #{$value};
-  }
-
+  // Spacing (paddings, margins, and gaps)
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 2.5rem;
+  --sp-6: 3rem;
   --sp-cell: 0.5rem 1rem;
 
   // Borders
